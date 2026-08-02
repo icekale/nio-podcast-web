@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { SEED_ALBUMS, discoverAlbums, getEpisodes } from './api';
+import { SEED_ALBUMS, discoverAlbums, getEpisodes, getCachedAlbums } from './api';
 import './App.css';
 
 /* ══════════ Player ══════════ */
@@ -113,12 +113,25 @@ function Home({ onSelect, onPlay }) {
   const [discTotal, setDiscTotal] = useState(0);
 
   useEffect(() => {
+    const cached = getCachedAlbums();
+
+    if (cached && cached.length > 0) {
+      // Have cache — show instantly, refresh silently in background
+      setAlbums(cached);
+      discoverAlbums(() => {})
+        .then(f => { if (f.length > 0) { setAlbums(f); } })
+        .catch(() => {});
+      return;
+    }
+
+    // No cache — show seed data while discovering with progress
     const seed = SEED_ALBUMS.map(a => ({...a, pic:'', host:'', count:0}));
     setAlbums(seed);
     setDiscTotal(2000);
-    discoverAlbums((f,t)=>{ setDiscProg(f); setDiscTotal(t); })
-      .then(f=>{ if(f.length>0) setAlbums(f); })
-      .catch(()=>{});
+
+    discoverAlbums((f, t) => { setDiscProg(f); setDiscTotal(t); })
+      .then(f => { if (f.length > 0) setAlbums(f); })
+      .catch(() => {});
   }, []);
 
   const filt = search ? albums.filter(a => a.name.includes(search) || a.desc.includes(search)) : albums;

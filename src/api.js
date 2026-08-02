@@ -1,5 +1,29 @@
 // Nio Radio public API — no auth required
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
+const CACHE_KEY = 'nio_albums_cache';
+const CACHE_TS_KEY = 'nio_albums_ts';
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24h
+
+export function getCachedAlbums() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    const ts = localStorage.getItem(CACHE_TS_KEY);
+    if (raw && ts) {
+      const age = Date.now() - Number(ts);
+      if (age < CACHE_TTL) {
+        return JSON.parse(raw);
+      }
+    }
+  } catch (_) {}
+  return null;
+}
+
+function setCachedAlbums(albums) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(albums));
+    localStorage.setItem(CACHE_TS_KEY, String(Date.now()));
+  } catch (_) {}
+}
 
 // Pre-discovered album IDs (from our earlier probing)
 const SEED_ALBUMS = [
@@ -83,6 +107,8 @@ export async function discoverAlbums(onProgress) {
     onProgress?.(found.length, start + BATCH);
   }
 
+  // Cache results for next visit
+  setCachedAlbums(found);
   return found.sort((a, b) => b.count - a.count);
 }
 
