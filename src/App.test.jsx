@@ -376,4 +376,26 @@ describe('mobile app shell', () => {
     const buttons = dialog.querySelectorAll('button');
     expect(document.activeElement).toBe(buttons[buttons.length - 1]);
   });
+
+  it('supports arrow and boundary keys for queue tabs', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const queueTab = screen.getByRole('tab', { name: '播放列表' });
+    const historyTab = screen.getByRole('tab', { name: '最近听过' });
+    const laterTab = screen.getByRole('tab', { name: '稍后播放' });
+
+    queueTab.focus();
+    fireEvent.keyDown(queueTab, { key: 'ArrowRight' });
+    expect(historyTab).toHaveAttribute('aria-selected', 'true');
+    await waitFor(() => expect(document.activeElement).toBe(historyTab));
+
+    fireEvent.keyDown(historyTab, { key: 'End' });
+    expect(laterTab).toHaveAttribute('aria-selected', 'true');
+    await waitFor(() => expect(document.activeElement).toBe(laterTab));
+
+    fireEvent.keyDown(laterTab, { key: 'Home' });
+    expect(queueTab).toHaveAttribute('aria-selected', 'true');
+    await waitFor(() => expect(document.activeElement).toBe(queueTab));
+  });
 });
