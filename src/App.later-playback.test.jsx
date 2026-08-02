@@ -1,6 +1,8 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { within } from '@testing-library/react';
+vi.mock('./api', async importOriginal => ({ ...(await importOriginal()), getEpisodes: vi.fn() }));
+import { getEpisodes } from './api';
 import App from './App';
 
 const episode = (id, title = `第${id}集`) => ({
@@ -30,6 +32,7 @@ describe('later playback integration', () => {
   beforeEach(() => {
     window.history.replaceState({ nioDepth: 0 }, '', '#/');
     window.localStorage.clear();
+    getEpisodes.mockReset();
   });
 
   it('removes a later episode after natural playback ends', async () => {
@@ -55,5 +58,48 @@ describe('later playback integration', () => {
     fireEvent.click(within(dialog).getByRole('button', { name: '第二集' }));
 
     await waitFor(() => expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第二集'));
+  });
+
+  it('shows an empty later state and opens the add-program picker', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+
+    expect(within(dialog).getByText('稍后播放是空的')).toBeInTheDocument();
+    fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
+    expect(within(dialog).getByRole('heading', { name: '添加节目' })).toBeInTheDocument();
+  });
+
+  it('browses albums and adds an episode without leaving the picker', async () => {
+    getEpisodes.mockResolvedValue({ episodes: [episode(4, '待添加节目')], hasMore: false });
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '选择专辑 NIO 精选' }));
+    fireEvent.click(await within(dialog).findByRole('button', { name: '添加 待添加节目 到稍后播放' }));
+
+    expect(within(dialog).getByText('已添加到稍后播放')).toBeInTheDocument();
+    expect(within(dialog).getByRole('button', { name: '返回稍后播放' })).toBeInTheDocument();
+  });
+
+  it('shows a duplicate notice and keeps one later item', async () => {
+    getEpisodes.mockResolvedValue({ episodes: [episode(4, '待添加节目')], hasMore: false });
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(4, '待添加节目')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '选择专辑 NIO 精选' }));
+    fireEvent.click(await within(dialog).findByRole('button', { name: '添加 待添加节目 到稍后播放' }));
+
+    expect(within(dialog).getByText('已在稍后播放')).toBeInTheDocument();
+    expect(JSON.parse(window.localStorage.getItem('nio_play_later_v1'))).toHaveLength(1);
   });
 });
