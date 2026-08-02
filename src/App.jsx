@@ -183,29 +183,27 @@ const EpisodeList = memo(function EpisodeList({ album, onBack, onPlay }) {
 const Home = memo(function Home({ onSelect }) {
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState('');
-  const [discProg, setDiscProg] = useState(0);
-  const [discTotal, setDiscTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const cached = getCachedAlbums();
 
     if (cached && cached.length > 0) {
-      // Have cache — show instantly, refresh silently in background
+      // Cache hit — show instantly, silently refresh in background
       setAlbums(cached);
-      discoverAlbums(() => {})
-        .then(f => { if (f.length > 0) { setAlbums(f); } })
-        .catch(() => {});
+      discoverAlbums(data => { if (data.length > 0) setAlbums(data); });
       return;
     }
 
-    // No cache — show seed data while discovering with progress
+    // No cache — show seed instantly while Phase 1 runs
     const seed = SEED_ALBUMS.map(a => ({...a, pic:'', host:'', count:0}));
     setAlbums(seed);
-    setDiscTotal(2000);
+    setLoading(true);
 
-    discoverAlbums((f, t) => { setDiscProg(f); setDiscTotal(t); })
-      .then(f => { if (f.length > 0) setAlbums(f); })
-      .catch(() => {});
+    discoverAlbums(data => {
+      if (data.length > 0) setAlbums(data);
+      setLoading(false);
+    });
   }, []);
 
   const q = search.trim().toLowerCase();
@@ -222,7 +220,7 @@ const Home = memo(function Home({ onSelect }) {
     <div>
       <header className="nav">
         <span className="nav-logo">Nio Podcast</span>
-        <span className="nav-status" role="status">{discProg > 0 ? `${discProg} 个专辑` : ''}</span>
+        <span className="nav-status" role="status">{loading ? '发现中…' : `${albums.length} 个专辑`}</span>
       </header>
 
       <section className="hero">
@@ -230,17 +228,6 @@ const Home = memo(function Home({ onSelect }) {
         <h1>探索播客</h1>
         <p className="hero-desc">蔚来电台精选内容，随时随地收听</p>
       </section>
-
-      {/* Discovery Progress */}
-      {discProg < discTotal && discTotal > 0 && (
-        <div className="progress-section">
-          <div className="progress-bar" role="progressbar"
-            aria-label="专辑发现进度" aria-valuemin={0} aria-valuenow={discProg} aria-valuemax={discTotal}>
-            <div className="progress-fill" style={{width:`${Math.min(100,(discProg/discTotal)*100)}%`}} />
-          </div>
-          <div className="progress-text">正在发现专辑… {discProg}/{discTotal}</div>
-        </div>
-      )}
 
       {/* Search */}
       <div className="search-section">
