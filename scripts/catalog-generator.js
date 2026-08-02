@@ -32,6 +32,10 @@ export function sortGeneratedAlbums(albums) {
   });
 }
 
+export function sameCatalogContent(previous, next) {
+  return JSON.stringify(previous?.albums || []) === JSON.stringify(next?.albums || []);
+}
+
 async function withTimeout(task, timeoutMs, id) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) return task;
   let timer;
