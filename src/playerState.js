@@ -67,10 +67,14 @@ export function selectEpisode(state, episode, queue = state.queue) {
 export function insertNext(state, episode) {
   const next = normalizeEpisode(episode);
   if (!next) return state;
+  if (episodeKey(state.currentEpisode) === episodeKey(next)) return state;
+  const currentId = episodeKey(state.currentEpisode);
   const queue = state.queue.filter(item => episodeKey(item) !== episodeKey(next));
-  const insertAt = Math.min(state.queueIndex + 1, queue.length);
+  const currentIndex = queue.findIndex(item => episodeKey(item) === currentId);
+  const insertAt = Math.min(Math.max(currentIndex, -1) + 1, queue.length);
   queue.splice(insertAt, 0, next);
-  return { ...state, queue };
+  const queueIndex = queue.findIndex(item => episodeKey(item) === currentId);
+  return { ...state, queue, queueIndex: queueIndex >= 0 ? queueIndex : 0 };
 }
 
 export function removeFromQueue(state, episodeId) {
@@ -78,7 +82,16 @@ export function removeFromQueue(state, episodeId) {
   const index = state.queue.findIndex(item => episodeKey(item) === id);
   if (index < 0) return state;
   const queue = state.queue.filter(item => episodeKey(item) !== id);
-  if (!queue.length) return { ...state, queue, queueIndex: 0, currentEpisode: null, isPlaying: false };
+  if (!queue.length) return {
+    ...state,
+    queue,
+    queueIndex: 0,
+    currentEpisode: null,
+    positionSeconds: 0,
+    durationSeconds: 0,
+    isPlaying: false,
+    error: null,
+  };
   if (index === state.queueIndex) {
     const queueIndex = Math.min(index, queue.length - 1);
     return { ...state, queue, queueIndex, currentEpisode: queue[queueIndex], positionSeconds: 0, durationSeconds: 0 };

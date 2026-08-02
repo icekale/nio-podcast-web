@@ -113,4 +113,18 @@ describe('audio API boundary', () => {
     await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
     expect(calls).toBe(2);
   });
+
+  it('evicts the oldest episode page after the cache limit', async () => {
+    let calls = 0;
+    const fetchImpl = async () => {
+      calls += 1;
+      return responseFor({ dataList: [], totalCount: 0, haveNext: 0 });
+    };
+
+    for (let page = 1; page <= 100; page += 1) await getEpisodes(5, page, 30, fetchImpl);
+    await getEpisodes(5, 101, 30, fetchImpl);
+    await getEpisodes(5, 1, 30, fetchImpl);
+
+    expect(calls).toBe(102);
+  });
 });

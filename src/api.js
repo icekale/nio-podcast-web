@@ -1,6 +1,7 @@
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
+const EPISODE_CACHE_MAX_ENTRIES = 100;
 const CACHE_KEY = 'nio_catalog_cache_v1';
 const episodeCache = new Map();
 const episodeRequests = new Map();
@@ -111,6 +112,9 @@ export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = 
   const request = requestEpisodes(albumId, page, pageSize, fetchImpl)
     .then(result => {
       episodeCache.set(key, { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS });
+      while (episodeCache.size > EPISODE_CACHE_MAX_ENTRIES) {
+        episodeCache.delete(episodeCache.keys().next().value);
+      }
       return result;
     })
     .finally(() => episodeRequests.delete(key));

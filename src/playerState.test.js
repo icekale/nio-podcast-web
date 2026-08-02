@@ -36,6 +36,22 @@ describe('player state', () => {
     expect(removeFromQueue(withNext, 3).queue.map(item => item.id)).toEqual([1, 2]);
   });
 
+  it('keeps the current episode aligned when moving an existing item next', () => {
+    const state = selectEpisode(enqueueEpisodes(createPlayerState(), [episode(1), episode(2), episode(3), episode(4)]), episode(3));
+
+    const movedBeforeCurrent = insertNext(state, episode(1));
+    expect(movedBeforeCurrent.queue.map(item => item.id)).toEqual([2, 3, 1, 4]);
+    expect(movedBeforeCurrent.queueIndex).toBe(1);
+    expect(movedBeforeCurrent.currentEpisode.id).toBe(3);
+
+    const movedAfterCurrent = insertNext(state, episode(4));
+    expect(movedAfterCurrent.queue.map(item => item.id)).toEqual([1, 2, 3, 4]);
+    expect(movedAfterCurrent.queueIndex).toBe(2);
+    expect(movedAfterCurrent.currentEpisode.id).toBe(3);
+
+    expect(insertNext(state, episode(3))).toEqual(state);
+  });
+
   it('advances to the next item without changing the queue order', () => {
     const state = enqueueEpisodes(createPlayerState(), [episode(1), episode(2)]);
     const next = advanceQueue(state);

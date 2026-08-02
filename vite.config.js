@@ -43,5 +43,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './src/testSetup.js',
+    include: ['src/**/*.{test,spec}.{js,jsx}', 'scripts/**/*.{test,spec}.{js,jsx}'],
+    exclude: ['**/node_modules/**', '**/.worktrees/**'],
   },
 })
