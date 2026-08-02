@@ -407,12 +407,13 @@ it('reveals a remove action after a horizontal swipe', async () => {
   fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
   fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
   fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
-  const row = screen.getByText('第一集').closest('.queue-row');
+  const dialog = screen.getByRole('dialog', { name: '播放列表' });
+  const row = within(dialog).getByText('第一集').closest('.queue-row');
   fireEvent.pointerDown(row, { pointerId: 1, clientX: 200, clientY: 100, pointerType: 'touch' });
   fireEvent.pointerMove(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
   fireEvent.pointerUp(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
-  fireEvent.click(screen.getByRole('button', { name: '移除 第一集' }));
-  expect(screen.queryByText('第一集')).not.toBeInTheDocument();
+  fireEvent.click(within(dialog).getByRole('button', { name: '移除 第一集' }));
+  expect(within(dialog).queryByText('第一集')).not.toBeInTheDocument();
 });
 
 it('reorders later items after a long-press vertical drag', async () => {
@@ -422,14 +423,15 @@ it('reorders later items after a long-press vertical drag', async () => {
   fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
   fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
   vi.useFakeTimers();
-  const row = screen.getByText('第二集').closest('.later-row');
+  const dialog = screen.getByRole('dialog', { name: '播放列表' });
+  const row = within(dialog).getByText('第二集').closest('.later-row');
   fireEvent.pointerDown(row, { pointerId: 2, clientX: 180, clientY: 160, pointerType: 'touch' });
   vi.advanceTimersByTime(250);
   fireEvent.pointerMove(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
   fireEvent.pointerUp(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
   vi.useRealTimers();
 
-  const rows = [...screen.getByRole('dialog', { name: '播放列表' }).querySelectorAll('.later-row')];
+  const rows = [...dialog.querySelectorAll('.later-row')];
   expect(rows[0]).toHaveTextContent('第二集');
 });
 ```
