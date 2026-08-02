@@ -195,7 +195,7 @@ describe('later playback integration', () => {
     fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
     const dialog = screen.getByRole('dialog', { name: '播放列表' });
     fireEvent.click(within(dialog).getByRole('button', { name: '管理 第二集' }));
-    fireEvent.click(within(dialog).getByRole('button', { name: '上移' }));
+    fireEvent.click(within(dialog).getByRole('menuitem', { name: '上移' }));
 
     const rows = [...dialog.querySelectorAll('.later-row')];
     expect(rows.map(row => row.textContent)).toEqual([

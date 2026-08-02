@@ -282,9 +282,9 @@ describe('mobile app shell', () => {
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
 
     fireEvent.click(screen.getAllByRole('button', { name: /管理/ })[0]);
-    fireEvent.click(screen.getByRole('button', { name: '移出列表' }));
+    fireEvent.click(screen.getByRole('menuitem', { name: '移出列表' }));
     fireEvent.click(screen.getByRole('button', { name: /管理/ }));
-    fireEvent.click(screen.getByRole('button', { name: '移出列表' }));
+    fireEvent.click(screen.getByRole('menuitem', { name: '移出列表' }));
 
     await waitFor(() => expect(screen.queryByRole('region', { name: '当前播放' })).not.toBeInTheDocument());
     expect(audio.getAttribute('src')).toBeNull();
