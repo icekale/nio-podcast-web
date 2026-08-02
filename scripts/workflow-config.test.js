@@ -16,4 +16,29 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('0 4 * * 0,6');
     expect(workflow).toContain('Asia/Shanghai');
   });
+
+  it('verifies and deploys a catalog before committing it to main', () => {
+    const workflow = readFileSync(resolve(process.cwd(), '.github/workflows/update-catalog.yml'), 'utf8');
+    const generate = workflow.indexOf('- name: Generate catalog');
+    const test = workflow.indexOf('- name: Test application');
+    const lint = workflow.indexOf('- name: Lint application');
+    const build = workflow.indexOf('- name: Build PWA');
+    const deploy = workflow.indexOf('- name: Deploy GitHub Pages');
+    const commit = workflow.indexOf('- name: Commit catalog state');
+
+    expect(generate).toBeGreaterThanOrEqual(0);
+    expect(test).toBeGreaterThan(generate);
+    expect(lint).toBeGreaterThan(test);
+    expect(build).toBeGreaterThan(lint);
+    expect(deploy).toBeGreaterThan(build);
+    expect(commit).toBeGreaterThan(deploy);
+
+    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Deploy GitHub Pages', 'Commit catalog state']) {
+      const start = workflow.indexOf(`- name: ${step}`);
+      const end = workflow.indexOf('\n      - name:', start + 1);
+      const block = workflow.slice(start, end < 0 ? undefined : end);
+      expect(block).toContain("if: steps.changes.outputs.changed == 'true'");
+    }
+    expect(workflow).toContain('git pull --rebase origin main');
+  });
 });
