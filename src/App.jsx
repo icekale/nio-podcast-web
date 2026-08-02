@@ -6,6 +6,7 @@ import {
   Clock3,
   ListMusic,
   ListPlus,
+  List,
   MoreHorizontal,
   Music2,
   Pause,
@@ -88,7 +89,7 @@ function EpisodeRow({ episode, onPlay, active = false, progress = 0, action }) {
   );
 }
 
-function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSearch, onBack }) {
+function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const selection = useMemo(() => selectHomeEpisodes(catalog.albums, new Date()), [catalog.albums]);
   const recommendation = selection.episodes[0];
@@ -109,7 +110,7 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
   return (
     <div className="screen home-screen">
       <header className={`top-bar${scrolled ? ' top-bar-scrolled' : ''}`}>
-        <button type="button" className="icon-button" aria-label="返回" onClick={onBack}><ArrowLeft size={25} /></button>
+        <button type="button" className="icon-button" aria-label="全部专辑" onClick={onOpenAlbums}><List size={24} /></button>
         <span className="top-title">{scrolled ? '今日推荐' : 'NIO Radio'}</span>
         <div className="top-actions">
           {scrolled && player.currentEpisode ? <button type="button" className="continue-button" onClick={() => onPlay(player.currentEpisode)}>▶ 继续播放</button> : null}
@@ -154,6 +155,22 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
   );
 }
 
+function AlbumResults({ albums, onOpenAlbum }) {
+  return (
+    <ul className="album-results">
+      {albums.map(album => (
+        <li key={album.id}>
+          <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
+            <Artwork src={album.imageUrl} alt="" className="album-art" />
+            <span className="album-result-copy"><strong>{album.name}</strong><span>{album.latestEpisode?.title || album.description || '暂无节目'}</span></span>
+            <ChevronRight size={19} aria-hidden="true" />
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function SearchScreen({ catalog, onBack, onOpenAlbum }) {
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -174,18 +191,25 @@ function SearchScreen({ catalog, onBack, onOpenAlbum }) {
       </header>
       <section className="search-results" aria-live="polite">
         <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count">{filtered.length}</span></div>
-        <ul className="album-results">
-          {filtered.map(album => (
-            <li key={album.id}>
-              <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
-                <Artwork src={album.imageUrl} alt="" className="album-art" />
-                <span className="album-result-copy"><strong>{album.name}</strong><span>{album.latestEpisode?.title || album.description}</span></span>
-                <ChevronRight size={19} aria-hidden="true" />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
+      </section>
+    </div>
+  );
+}
+
+function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
+  return (
+    <div className="screen albums-screen">
+      <header className="top-bar">
+        <button type="button" className="icon-button" aria-label="返回主页" onClick={onBack}><ArrowLeft size={25} /></button>
+        <span className="top-title">全部专辑</span>
+        <button type="button" className="icon-button" aria-label="搜索" onClick={onSearch}><Search size={22} /></button>
+      </header>
+      <section className="search-results" aria-labelledby="albums-title">
+        <div className="section-heading-row"><h1 id="albums-title">全部专辑</h1><span className="section-count">{catalog.albums.length}</span></div>
+        <AlbumResults albums={catalog.albums} onOpenAlbum={onOpenAlbum} />
+        {!catalog.albums.length ? <div className="empty-state">暂无可用专辑</div> : null}
       </section>
     </div>
   );
@@ -311,6 +335,7 @@ export default function App({ initialCatalog = null }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
+  const [backHash, setBackHash] = useState('#/');
   const audioRef = useRef(null);
   const playerRef = useRef(player);
   const queueButtonRef = useRef(null);
@@ -330,6 +355,12 @@ export default function App({ initialCatalog = null }) {
     if (!window.location.hash) window.history.replaceState(null, '', '#/');
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  useEffect(() => {
+    if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [route.screen]);
 
   const savePlayer = useCallback((next, force = false) => {
     const now = Date.now();
@@ -357,13 +388,15 @@ export default function App({ initialCatalog = null }) {
     result?.catch(() => setIsPlaying(false));
   }, [player.currentEpisode?.id]);
 
-  const go = useCallback(hash => {
+  const go = useCallback((hash, parentHash = null) => {
+    if (parentHash) setBackHash(parentHash);
     window.location.hash = hash;
     setRoute(parseHash(hash));
   }, []);
   const openQueue = useCallback(() => go(withQueueHash(window.location.hash || '#/', true)), [go]);
   const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/')), [go]);
-  const goBack = useCallback(() => { if (route.queueOpen) closeQueue(); else if (route.screen === 'home') window.history.back(); else go('#/'); }, [closeQueue, go, route]);
+  const goBack = useCallback(() => { if (route.queueOpen) closeQueue(); else if (route.screen === 'home') window.history.back(); else go(backHash); }, [backHash, closeQueue, go, route]);
+  const openAlbums = useCallback(() => go('#/albums', '#/'), [go]);
   const retryCatalog = useCallback(() => { setCatalogState(previous => ({ ...previous, loading: true, error: null })); loadCatalog().then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale })).catch(error => setCatalogState(previous => ({ ...previous, loading: false, error }))); }, []);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
@@ -412,8 +445,9 @@ export default function App({ initialCatalog = null }) {
   return (
     <main className="app">
       <div className="app-content">
-        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={episodes => startPlayback(episodes[0], episodes)} onSearch={() => go('#/search')} onBack={goBack} /> : null}
-        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} onBack={goBack} onOpenAlbum={id => go(`#/album/${id}`)} /> : null}
+        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={episodes => startPlayback(episodes[0], episodes)} onSearch={() => go('#/search', '#/')} onOpenAlbums={openAlbums} /> : null}
+        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={() => go('#/')} onSearch={() => go('#/search', '#/albums')} onOpenAlbum={id => go(`#/album/${id}`, '#/albums')} /> : null}
+        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} onBack={goBack} onOpenAlbum={id => go(`#/album/${id}`, '#/search')} /> : null}
         {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
         {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
       </div>

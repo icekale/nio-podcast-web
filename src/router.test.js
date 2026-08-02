@@ -4,6 +4,7 @@ import { closeQueueHash, parseHash, withQueueHash } from './router';
 describe('hash router', () => {
   it('parses home and album routes', () => {
     expect(parseHash('#/')).toEqual({ screen: 'home', albumId: null, queueOpen: false });
+    expect(parseHash('#/albums')).toEqual({ screen: 'albums', albumId: null, queueOpen: false });
     expect(parseHash('#/album/23')).toEqual({ screen: 'album', albumId: 23, queueOpen: false });
   });
 

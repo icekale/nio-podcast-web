@@ -41,6 +41,52 @@ describe('mobile app shell', () => {
     expect(screen.getAllByText('第一集').length).toBeGreaterThan(0);
   });
 
+  it('opens the full album directory from the home back control', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+
+    expect(window.location.hash).toBe('#/albums');
+    expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
+    expect(screen.getByText('NIO 精选')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: '返回主页' }));
+    await waitFor(() => expect(screen.getByRole('heading', { name: '今日推荐' })).toBeInTheDocument());
+  });
+
+  it('resets the document scroll when opening the album directory', async () => {
+    document.documentElement.scrollTop = 240;
+    document.body.scrollTop = 240;
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+
+    await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
+    expect(document.documentElement.scrollTop).toBe(0);
+    expect(document.body.scrollTop).toBe(0);
+  });
+
+  it('returns to the album directory after searching from the directory', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: '搜索' }));
+    expect(await screen.findByRole('searchbox', { name: '搜索专辑' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: '返回' }));
+    await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
+  });
+
+  it('returns to the album directory after opening an album from the directory', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
+    expect(window.location.hash).toBe('#/album/1');
+
+    fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
+    await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
+  });
+
   it('keeps the player mounted when media events update playback state', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
