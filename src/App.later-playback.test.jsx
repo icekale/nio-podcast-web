@@ -28,6 +28,7 @@ const catalog = {
 
 describe('later playback integration', () => {
   afterEach(cleanup);
+  afterEach(() => vi.useRealTimers());
 
   beforeEach(() => {
     window.history.replaceState({ nioDepth: 0 }, '', '#/');
@@ -112,5 +113,57 @@ describe('later playback integration', () => {
     fireEvent.click(screen.getByRole('button', { name: '稍后播放' }));
 
     expect(window.localStorage.getItem('nio_play_later_v1')).toContain('专辑节目');
+  });
+
+  it('moves later items with keyboard-friendly menu actions', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集'), episode(2, '第二集'), episode(3, '第三集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    fireEvent.click(within(dialog).getByRole('button', { name: '管理 第二集' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '上移' }));
+
+    const rows = [...dialog.querySelectorAll('.later-row')];
+    expect(rows.map(row => row.textContent)).toEqual([
+      expect.stringContaining('第二集'),
+      expect.stringContaining('第一集'),
+      expect.stringContaining('第三集'),
+    ]);
+  });
+
+  it('reveals a remove action after a horizontal swipe', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    const row = within(dialog).getByText('第一集').closest('.later-row');
+    fireEvent.pointerDown(row, { pointerId: 1, clientX: 200, clientY: 100, pointerType: 'touch' });
+    fireEvent.pointerMove(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
+    fireEvent.pointerUp(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
+    fireEvent.click(within(dialog).getByRole('button', { name: '移除 第一集' }));
+
+    expect(within(dialog).queryByText('第一集')).not.toBeInTheDocument();
+  });
+
+  it('reorders later items after a long-press vertical drag', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集'), episode(2, '第二集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    const row = within(dialog).getByText('第二集').closest('.later-row');
+    vi.useFakeTimers();
+    fireEvent.pointerDown(row, { pointerId: 2, clientX: 180, clientY: 160, pointerType: 'touch' });
+    vi.advanceTimersByTime(250);
+    fireEvent.pointerMove(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
+    fireEvent.pointerUp(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
+
+    const rows = [...dialog.querySelectorAll('.later-row')];
+    expect(rows[0]).toHaveTextContent('第二集');
   });
 });

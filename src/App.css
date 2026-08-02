@@ -273,8 +273,8 @@ h1, h2, p { margin: 0; }
 .sheet-handle { width: 3.5rem; height: 0.3rem; margin: 0 auto var(--space-4); border-radius: var(--radius-pill); background: var(--line); }
 .sheet-header { display: flex; align-items: center; justify-content: space-between; }
 .sheet-header h2 { font-size: 1.55rem; font-weight: 650; }
-.queue-tabs { display: flex; gap: var(--space-6); margin-top: var(--space-4); border-bottom: 1px solid var(--line); }
-.queue-tabs button { position: relative; padding: 0.55rem 0 0.8rem; color: var(--muted); background: transparent; font-size: 1rem; }
+.queue-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--space-4); border-bottom: 1px solid var(--line); }
+.queue-tabs button { position: relative; min-width: 0; overflow: hidden; padding: 0.55rem 0.1rem 0.8rem; color: var(--muted); background: transparent; font-size: 0.92rem; text-overflow: ellipsis; white-space: nowrap; }
 .queue-tabs button span { margin-left: 0.2rem; font-size: 0.75rem; }
 .queue-tabs button.is-selected { color: var(--ink); font-weight: 650; }
 .queue-tabs button.is-selected::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 0.18rem; content: ""; background: var(--teal); }
@@ -288,6 +288,22 @@ h1, h2, p { margin: 0; }
 .queue-row.is-current .queue-copy strong { color: var(--teal-dark); }
 .queue-playing { display: inline-flex; align-items: center; color: var(--teal); }
 .queue-actions { position: relative; flex: 0 0 auto; }
+.later-add-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-3) 0 var(--space-2); color: var(--muted-strong); font-size: 0.82rem; }
+.later-add-row .secondary-button { min-height: 2.5rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; }
+.later-notice { min-height: 1.2rem; padding: 0 var(--space-1); color: var(--teal-dark); font-size: 0.78rem; }
+.later-picker { min-height: 16rem; }
+.later-picker-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-2) 0 var(--space-3); }
+.later-picker-header h3 { min-width: 0; overflow: hidden; flex: 1; font-size: 1rem; font-weight: 620; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.later-picker-intro { padding: 0 0 var(--space-3); color: var(--muted); font-size: 0.8rem; }
+.later-picker-list { margin-top: var(--space-2); }
+.later-row { overflow: hidden; touch-action: pan-y; }
+.later-row .queue-row-main { position: relative; z-index: 1; background: var(--surface); transition: transform 160ms ease, opacity 160ms ease; }
+.later-row.is-swiped .queue-row-main { transform: translateX(-4.75rem); }
+.later-row.is-dragging .queue-row-main { opacity: 0.68; }
+.later-swipe-action { position: absolute; top: 0; right: 0; bottom: 0; width: 4.75rem; background: var(--danger); color: #ffffff; font-size: 0.78rem; }
+.later-actions { position: relative; z-index: 2; flex: 0 0 auto; background: var(--surface); }
+.later-row.is-swiped .later-actions { opacity: 0; pointer-events: none; }
+.episode-action-notice { position: absolute; right: 0; top: 2.75rem; z-index: 3; width: max-content; padding: var(--space-1) var(--space-2); color: var(--teal-dark); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: 0.72rem; box-shadow: 0 4px 12px rgba(6, 18, 32, 0.12); }
 .row-action-menu { position: absolute; z-index: 2; right: 0; top: 2.75rem; display: grid; width: 8rem; padding: var(--space-1); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: 0 4px 12px rgba(6, 18, 32, 0.12); }
 .row-action-menu button { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2); background: transparent; font-size: 0.78rem; text-align: left; }
 .row-action-menu button:active { background: var(--surface-soft); }

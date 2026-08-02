@@ -24,4 +24,10 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/prefers-reduced-motion:\s*reduce/);
     expect(css).not.toMatch(/\.route-view[^}]*\bwill-change\s*:/);
   });
+
+  it('keeps later playback gestures on a bounded paint path', () => {
+    expect(css).not.toMatch(/\.later-row[^}]*backdrop-filter\s*:/);
+    expect(css).toMatch(/\.queue-tabs[^}]*grid-template-columns:\s*repeat\(3/);
+    expect(css).toMatch(/prefers-reduced-motion:\s*reduce/);
+  });
 });
