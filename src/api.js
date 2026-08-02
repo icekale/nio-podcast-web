@@ -1,6 +1,9 @@
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const FETCH_TIMEOUT_MS = 8000;
+const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
 const CACHE_KEY = 'nio_catalog_cache_v1';
+const episodeCache = new Map();
+const episodeRequests = new Map();
 
 export class ApiError extends Error {
   constructor(code, message, cause) {
@@ -32,7 +35,12 @@ function mapEpisode(ep) {
   };
 }
 
-export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = globalThis.fetch) {
+export function clearEpisodeCache() {
+  episodeCache.clear();
+  episodeRequests.clear();
+}
+
+async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
   if (globalThis.navigator?.onLine === false) {
     throw new ApiError('OFFLINE', '当前处于离线状态');
   }
@@ -89,6 +97,25 @@ export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = 
   } finally {
     clearTimeout(timer);
   }
+}
+
+export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = globalThis.fetch) {
+  const key = `${albumId}:${page}:${pageSize}`;
+  const cached = episodeCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.value;
+  if (cached) episodeCache.delete(key);
+
+  const inFlight = episodeRequests.get(key);
+  if (inFlight) return inFlight;
+
+  const request = requestEpisodes(albumId, page, pageSize, fetchImpl)
+    .then(result => {
+      episodeCache.set(key, { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS });
+      return result;
+    })
+    .finally(() => episodeRequests.delete(key));
+  episodeRequests.set(key, request);
+  return request;
 }
 
 export function getCachedAlbums(storage = globalThis.localStorage) {
