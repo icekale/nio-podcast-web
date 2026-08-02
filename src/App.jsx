@@ -301,7 +301,7 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
   );
 }
 
-function QueueSheet({ player, activeTab, setActiveTab, onClose, onPlay, onPlayNext, onRemove }) {
+function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayNext, onRemove }) {
   const closeRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
@@ -316,10 +316,20 @@ function QueueSheet({ player, activeTab, setActiveTab, onClose, onPlay, onPlayNe
     return () => { window.removeEventListener('keydown', handleKeyDown); document.body.style.overflow = previousOverflow; };
   }, [onClose]);
 
+  useEffect(() => {
+    if (!isClosing) return undefined;
+    const timer = window.setTimeout(onExited, 250);
+    return () => window.clearTimeout(timer);
+  }, [isClosing, onExited]);
+
+  const handleAnimationEnd = event => {
+    if (isClosing && event.target === event.currentTarget && event.animationName === 'queue-sheet-out') onExited();
+  };
+
   return (
-    <div className="queue-overlay">
+    <div className={`queue-overlay${isClosing ? ' is-closing' : ''}`}>
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
-      <section className="queue-sheet" role="dialog" aria-modal="true" aria-labelledby="queue-title" onPointerDown={event => { startY.current = event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }}>
+      <section className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }}>
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
@@ -347,6 +357,8 @@ function readStoredPlayer() {
 export default function App({ initialCatalog = null }) {
   const [route, setRoute] = useState(() => parseHash());
   const [routeMotion, setRouteMotion] = useState('none');
+  const [queuePresent, setQueuePresent] = useState(() => route.queueOpen);
+  const [queueClosing, setQueueClosing] = useState(false);
   const [catalogState, setCatalogState] = useState(() => {
     if (!initialCatalog) return { catalog: null, loading: true, error: null, stale: false };
     return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
@@ -361,6 +373,7 @@ export default function App({ initialCatalog = null }) {
   const lastSavedAt = useRef(0);
   const scrollPositions = useRef(new Map());
   const routeRef = useRef(route);
+  const queueFocusRef = useRef(null);
   playerRef.current = player;
 
   const applyRoute = useCallback(nextRoute => {
@@ -371,6 +384,11 @@ export default function App({ initialCatalog = null }) {
       : routeMotionFor(previousRoute, nextRoute));
     routeRef.current = nextRoute;
     setRoute(nextRoute);
+  }, []);
+
+  const handleQueueExited = useCallback(() => {
+    setQueuePresent(false);
+    setQueueClosing(false);
   }, []);
 
   useEffect(() => {
@@ -404,6 +422,22 @@ export default function App({ initialCatalog = null }) {
     document.documentElement.scrollTop = position;
     document.body.scrollTop = position;
   }, [route.screen]);
+
+  useEffect(() => {
+    if (route.queueOpen) {
+      setQueuePresent(true);
+      setQueueClosing(false);
+    } else if (queuePresent) {
+      setQueueClosing(true);
+    }
+  }, [queuePresent, route.queueOpen]);
+
+  useEffect(() => {
+    if (queuePresent || !queueFocusRef.current) return;
+    const trigger = queueFocusRef.current;
+    queueFocusRef.current = null;
+    trigger.focus?.({ preventScroll: true });
+  }, [queuePresent]);
 
   const savePlayer = useCallback((next, force = false) => {
     const now = Date.now();
@@ -448,7 +482,10 @@ export default function App({ initialCatalog = null }) {
     else window.history.pushState(state, '', hash);
     applyRoute(parseHash(hash));
   }, [applyRoute, saveScrollPosition]);
-  const openQueue = useCallback(() => go(withQueueHash(window.location.hash || '#/', true)), [go]);
+  const openQueue = useCallback(() => {
+    queueFocusRef.current = queueButtonRef.current;
+    go(withQueueHash(window.location.hash || '#/', true));
+  }, [go]);
   const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/'), { replace: true }), [go]);
   const goBack = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
@@ -540,7 +577,7 @@ export default function App({ initialCatalog = null }) {
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); }} onPause={() => setIsPlaying(false)} onError={() => { setAudioError('音频加载失败，请检查网络后重试'); setIsPlaying(false); }} onEnded={handleEnded} />
       {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setAudioError('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
-      {route.queueOpen ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
+      {queuePresent ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
     </main>
   );
 }

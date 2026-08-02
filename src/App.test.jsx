@@ -204,6 +204,38 @@ describe('mobile app shell', () => {
     expect(window.location.hash).toBe('#/');
   });
 
+  it('keeps the queue mounted during its closing animation and restores focus', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const trigger = await screen.findByRole('button', { name: '打开播放列表' });
+    trigger.focus();
+    fireEvent.click(trigger);
+
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: '收起播放列表' }));
+
+    fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
+    expect(dialog).toHaveClass('is-closing');
+    expect(window.location.hash).toBe('#/');
+    expect(screen.getByRole('dialog', { name: '播放列表' })).toBeInTheDocument();
+
+    fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('uses the same closing state for Escape', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    await fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(dialog).toHaveClass('is-closing');
+    fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
+  });
+
   it('lets browser Back close the sheet before changing the route', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
