@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 const css = readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8');
 const topBarRule = css.match(/\.top-bar\s*\{([^}]*)\}/)?.[1] || '';
 const albumRowRule = css.match(/\.album-results li\s*\{([^}]*)\}/)?.[1] || '';
+const laterSwipeRule = css.match(/\.later-swipe-action\s*\{([^}]*)\}/)?.[1] || '';
 
 describe('mobile scroll rendering', () => {
   it('keeps album rows on the normal paint path during fast scrolling', () => {
@@ -23,5 +24,17 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/@keyframes queue-sheet-out/);
     expect(css).toMatch(/prefers-reduced-motion:\s*reduce/);
     expect(css).not.toMatch(/\.route-view[^}]*\bwill-change\s*:/);
+  });
+
+  it('keeps later playback gestures on a bounded paint path', () => {
+    expect(css).not.toMatch(/\.later-row[^}]*backdrop-filter\s*:/);
+    expect(css).toMatch(/\.queue-tabs[^}]*grid-template-columns:\s*repeat\(3/);
+    expect(css).toMatch(/prefers-reduced-motion:\s*reduce/);
+  });
+
+  it('keeps the remove action hidden until a row is swiped', () => {
+    expect(laterSwipeRule).toMatch(/transform:\s*translateX\(100%\)/);
+    expect(laterSwipeRule).toMatch(/pointer-events:\s*none/);
+    expect(css).toMatch(/\.later-row\.is-swiped \.later-swipe-action\s*\{[^}]*transform:\s*translateX\(0\)/);
   });
 });

@@ -2,6 +2,8 @@ import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useStat
 import {
   ArrowLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   CircleAlert,
   Clock3,
   ListMusic,
@@ -32,6 +34,13 @@ import {
   selectEpisode,
   serializePlayerState,
 } from './playerState';
+import {
+  addLaterEpisode,
+  moveLaterEpisode,
+  readLaterEpisodes,
+  removeLaterEpisode,
+  writeLaterEpisodes,
+} from './laterPlayback';
 import './App.css';
 
 function formatDuration(milliseconds) {
@@ -105,6 +114,24 @@ function EpisodeRow({ episode, onPlay, active = false, progress = 0, action }) {
       </button>
       {action ? <div className="episode-action">{action}</div> : null}
     </li>
+  );
+}
+
+function LaterEpisodeAction({ episode, onAdd }) {
+  const [open, setOpen] = useState(false);
+  const [notice, setNotice] = useState('');
+
+  const handleAdd = () => {
+    setNotice(onAdd(episode) ? '已添加到稍后播放' : '已在稍后播放');
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
+      {open ? <div className="row-action-menu"><button type="button" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
+      {notice ? <span className="episode-action-notice" role="status" aria-live="polite">{notice}</span> : null}
+    </>
   );
 }
 
@@ -234,7 +261,7 @@ const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onO
   );
 });
 
-const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
+const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, onAddLater }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -279,7 +306,7 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
         <div className="album-intro"><Artwork src={album.imageUrl} alt="" className="album-hero-art" /><div><h2 id="album-episodes-title">节目列表</h2><p>{album.description || 'NIO Radio 精选内容'}</p></div></div>
         {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请检查网络后重试</span><button type="button" onClick={() => loadPage(retryPage ?? page)}><RotateCcw size={16} />重新加载</button></div> : null}
         {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
-        {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} />)}</ul> : null}
+        {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} action={<LaterEpisodeAction episode={episode} onAdd={onAddLater} />} />)}</ul> : null}
         {!loading && !error && !episodes.length ? <div className="empty-state">这个专辑还没有节目</div> : null}
         {hasMore && !loading ? <button type="button" className="secondary-button load-more-button" onClick={() => loadPage(page + 1)}>加载更多</button> : null}
         {loading && episodes.length ? <div className="loading-more" role="status">正在加载下一页…</div> : null}
@@ -304,12 +331,190 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
   );
 }
 
-function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayNext, onRemove }) {
+function LaterPicker({ catalog, onBack, onAdd }) {
+  const [selectedAlbumId, setSelectedAlbumId] = useState(null);
+  const [episodes, setEpisodes] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
+  const requestSeq = useRef(0);
+  const selectedAlbum = catalog?.albums.find(album => album.id === selectedAlbumId);
+
+  const loadPage = useCallback(async (albumId, pageNumber) => {
+    const sequence = ++requestSeq.current;
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await getEpisodes(albumId, pageNumber);
+      if (sequence !== requestSeq.current) return;
+      setEpisodes(previous => pageNumber === 1 ? result.episodes : [...previous, ...result.episodes]);
+      setPage(pageNumber);
+      setHasMore(result.hasMore);
+    } catch (reason) {
+      if (sequence === requestSeq.current) setError(reason);
+    } finally {
+      if (sequence === requestSeq.current) setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (selectedAlbumId == null) return undefined;
+    setEpisodes([]);
+    setPage(1);
+    setHasMore(false);
+    loadPage(selectedAlbumId, 1);
+    return undefined;
+  }, [loadPage, selectedAlbumId]);
+
+  if (!catalog) {
+    return (
+      <div className="later-picker">
+        <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>添加节目</h3><span className="icon-button-spacer" /></div>
+        <div className="loading-state" role="status">正在准备节目目录…</div>
+      </div>
+    );
+  }
+
+  if (!selectedAlbum) {
+    return (
+      <div className="later-picker">
+        <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>添加节目</h3><span className="icon-button-spacer" /></div>
+        <p className="later-picker-intro">选择专辑后添加单期节目</p>
+        <AlbumPickerList albums={catalog.albums} onSelect={setSelectedAlbumId} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="later-picker">
+      <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>{selectedAlbum.name}</h3><span className="icon-button-spacer" /></div>
+      {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请重试</span><button type="button" onClick={() => loadPage(selectedAlbum.id, page)}><RotateCcw size={16} />重试</button></div> : null}
+      {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
+      {episodes.length ? <ul className="episode-list later-picker-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} action={<button type="button" className="icon-button" aria-label={`添加 ${episode.title} 到稍后播放`} onClick={() => onAdd(episode)}><ListPlus size={17} /></button>} onPlay={() => {}} />)}</ul> : null}
+      {!loading && !error && !episodes.length ? <div className="empty-state">这个专辑还没有节目</div> : null}
+      {hasMore && !loading ? <button type="button" className="secondary-button load-more-button" onClick={() => loadPage(selectedAlbum.id, page + 1)}>加载更多</button> : null}
+      {loading && episodes.length ? <div className="loading-more" role="status">正在加载下一页…</div> : null}
+    </div>
+  );
+}
+
+function AlbumPickerList({ albums, onSelect }) {
+  return (
+    <ul className="album-results later-album-picker-list">
+      {albums.map(album => (
+        <li key={album.id}>
+          <button type="button" className="album-result" aria-label={`选择专辑 ${album.name}`} onClick={() => onSelect(album.id)}>
+            <Artwork src={album.imageUrl} alt="" className="album-art" />
+            <span className="album-result-copy"><strong>{album.name}</strong><span>{album.latestEpisode?.title || album.description || '暂无节目'}</span></span>
+            <ChevronRight size={19} aria-hidden="true" />
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [swiped, setSwiped] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const gestureRef = useRef(null);
+  const longPressRef = useRef(null);
+  const suppressClickRef = useRef(false);
+
+  const clearLongPress = () => {
+    if (longPressRef.current) window.clearTimeout(longPressRef.current);
+    longPressRef.current = null;
+  };
+
+  useEffect(() => clearLongPress, []);
+
+  const handlePointerDown = event => {
+    if (event.target.closest('.later-actions, .later-swipe-action')) return;
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    gestureRef.current = { startX: event.clientX, startY: event.clientY, mode: 'pending' };
+    if (event.pointerType !== 'mouse') {
+      longPressRef.current = window.setTimeout(() => {
+        if (gestureRef.current?.mode === 'pending') {
+          gestureRef.current.mode = 'drag';
+          setDragging(true);
+        }
+      }, 250);
+    }
+  };
+
+  const handlePointerMove = event => {
+    const gesture = gestureRef.current;
+    if (!gesture) return;
+    const deltaX = event.clientX - gesture.startX;
+    const deltaY = event.clientY - gesture.startY;
+    if (gesture.mode === 'pending') {
+      if (Math.abs(deltaX) < 12 && Math.abs(deltaY) < 12) return;
+      clearLongPress();
+      if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < -12) {
+        gesture.mode = 'swipe';
+        setSwiped(true);
+        event.preventDefault();
+      } else {
+        gesture.mode = 'cancelled';
+      }
+    } else if (gesture.mode === 'swipe') {
+      setSwiped(deltaX < -12);
+      event.preventDefault();
+    } else if (gesture.mode === 'drag') {
+      event.preventDefault();
+    }
+  };
+
+  const handlePointerUp = event => {
+    const gesture = gestureRef.current;
+    if (!gesture) return;
+    clearLongPress();
+    const deltaY = event.clientY - gesture.startY;
+    if (gesture.mode === 'drag') {
+      setDragging(false);
+      if (deltaY < -32 && index > 0) onMove(index, index - 1);
+      if (deltaY > 32 && index < count - 1) onMove(index, index + 1);
+      suppressClickRef.current = true;
+    } else if (gesture.mode === 'swipe') {
+      suppressClickRef.current = true;
+    }
+    gestureRef.current = null;
+  };
+
+  const handleMainClick = () => {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      return;
+    }
+    if (swiped) {
+      setSwiped(false);
+      return;
+    }
+    onPlay();
+  };
+
+  return (
+    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
+      <button type="button" className="later-swipe-action" aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
+      <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
+      <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setMenuOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div className="row-action-menu"><button type="button" disabled={index === 0} onClick={() => { onMove(index, index - 1); setMenuOpen(false); }}><ChevronUp size={15} />上移</button><button type="button" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); setMenuOpen(false); }}><ChevronDown size={15} />下移</button><button type="button" onClick={() => { onRemove(episode.id); setMenuOpen(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
+    </li>
+  );
+}
+
+function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove, catalog, onAddLater, onRemoveLater, onMoveLater }) {
   const closeRef = useRef(null);
   const dialogRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
-  const items = activeTab === 'queue' ? player.queue : player.history;
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [notice, setNotice] = useState('');
+  const noticeTimer = useRef(null);
+  const items = activeTab === 'queue' ? player.queue : activeTab === 'history' ? player.history : laterEpisodes;
+
+  useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -348,6 +553,19 @@ function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onCl
     if (isClosing && event.target === event.currentTarget && event.animationName === 'queue-sheet-out') onExited();
   };
 
+  const selectTab = tab => {
+    setActiveTab(tab);
+    setPickerOpen(false);
+    setNotice('');
+  };
+
+  const handleAddLater = episode => {
+    const added = onAddLater(episode);
+    setNotice(added ? '已添加到稍后播放' : '已在稍后播放');
+    window.clearTimeout(noticeTimer.current);
+    noticeTimer.current = window.setTimeout(() => setNotice(''), 2400);
+  };
+
   return (
     <div className={`queue-overlay${isClosing ? ' is-closing' : ''}`}>
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
@@ -355,17 +573,21 @@ function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onCl
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
-          <button type="button" role="tab" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onClick={() => setActiveTab('queue')}>播放列表 <span aria-hidden="true">{player.queue.length}</span></button>
-          <button type="button" role="tab" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => setActiveTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
+          <button type="button" role="tab" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onClick={() => selectTab('queue')}>播放列表 <span aria-hidden="true">{player.queue.length}</span></button>
+          <button type="button" role="tab" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => selectTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
+          <button type="button" role="tab" aria-label="稍后播放" aria-selected={activeTab === 'later'} className={activeTab === 'later' ? 'is-selected' : ''} onClick={() => selectTab('later')}>稍后播放 <span aria-hidden="true">{laterEpisodes.length}</span></button>
         </div>
+        {activeTab === 'later' && !pickerOpen ? <div className="later-add-row"><span>保存的节目</span><button type="button" className="secondary-button" aria-label="添加节目" disabled={!catalog} onClick={() => { if (catalog) setPickerOpen(true); }}><ListPlus size={16} />添加节目</button></div> : null}
+        {notice ? <div className="later-notice" role="status" aria-live="polite">{notice}</div> : null}
         <div className="queue-scroll">
-          {items.length ? <ul className="queue-list">{items.map((episode, index) => {
+          {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {
+            if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} />;
             const active = activeTab === 'queue' && player.currentEpisode?.id === episode.id;
             return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}`}>
-              <button type="button" className="queue-row-main" onClick={() => onPlay(episode)}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
+              <button type="button" className="queue-row-main" aria-label={activeTab === 'later' ? episode.title : undefined} onClick={() => (activeTab === 'later' ? onPlayLater(episode) : onPlay(episode))}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
               {activeTab === 'queue' ? <div className="queue-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setActionsFor(actionsFor === episode.id ? null : episode.id)}><MoreHorizontal size={20} /></button>{actionsFor === episode.id ? <div className="row-action-menu"><button type="button" onClick={() => { onPlayNext(episode); setActionsFor(null); }}><ListPlus size={16} />下一首播放</button><button type="button" onClick={() => { onRemove(episode.id); setActionsFor(null); }}><Trash2 size={16} />移出列表</button></div> : null}</div> : null}
             </li>;
-          })}</ul> : <div className="queue-empty"><Music2 size={28} /><p>{activeTab === 'queue' ? '播放列表是空的' : '还没有听过的节目'}</p><span>选择一个节目后，它会出现在这里</span></div>}
+          })}</ul> : <div className="queue-empty"><Music2 size={28} /><p>{activeTab === 'queue' ? '播放列表是空的' : activeTab === 'history' ? '还没有听过的节目' : '稍后播放是空的'}</p><span>选择一个节目后，它会出现在这里</span></div>}
         </div>
       </section>
     </div>
@@ -386,17 +608,20 @@ export default function App({ initialCatalog = null }) {
     return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
   });
   const [player, setPlayer] = useState(readStoredPlayer);
+  const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
   const audioRef = useRef(null);
   const playerRef = useRef(player);
+  const laterEpisodesRef = useRef(laterEpisodes);
   const queueButtonRef = useRef(null);
   const lastSavedAt = useRef(0);
   const scrollPositions = useRef(new Map());
   const routeRef = useRef(route);
   const queueFocusRef = useRef(null);
   playerRef.current = player;
+  laterEpisodesRef.current = laterEpisodes;
 
   const applyRoute = useCallback(nextRoute => {
     const previousRoute = routeRef.current;
@@ -465,6 +690,33 @@ export default function App({ initialCatalog = null }) {
     const now = Date.now();
     if (!force && now - lastSavedAt.current < 5000) return;
     try { window.localStorage.setItem(PLAYER_STORAGE_KEY, serializePlayerState(next)); lastSavedAt.current = now; } catch { /* optional persistence */ }
+  }, []);
+
+  const addToLater = useCallback(episode => {
+    const result = addLaterEpisode(laterEpisodesRef.current, episode);
+    if (!result.added) return false;
+    laterEpisodesRef.current = result.items;
+    setLaterEpisodes(result.items);
+    writeLaterEpisodes(result.items);
+    return true;
+  }, []);
+
+  const removeFromLater = useCallback(id => {
+    setLaterEpisodes(previous => {
+      const next = removeLaterEpisode(previous, id);
+      if (next.length !== previous.length) writeLaterEpisodes(next);
+      laterEpisodesRef.current = next;
+      return next;
+    });
+  }, []);
+
+  const moveFromLater = useCallback((fromIndex, toIndex) => {
+    setLaterEpisodes(previous => {
+      const next = moveLaterEpisode(previous, fromIndex, toIndex);
+      if (next !== previous) writeLaterEpisodes(next);
+      laterEpisodesRef.current = next;
+      return next;
+    });
   }, []);
 
   useEffect(() => { savePlayer(player); }, [player, savePlayer]);
@@ -605,6 +857,8 @@ export default function App({ initialCatalog = null }) {
   }, [isPlaying, player, savePlayer, setPlaybackFailure]);
 
   const handleEnded = useCallback(() => {
+    const completedEpisode = playerRef.current.currentEpisode;
+    if (completedEpisode) removeFromLater(completedEpisode.id);
     setPlayer(previous => {
       const next = advanceQueue(previous);
       if (next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id) return { ...next, history: recordHistory(previous.history, next.currentEpisode), isPlaying: true };
@@ -612,7 +866,7 @@ export default function App({ initialCatalog = null }) {
     });
     const next = advanceQueue(playerRef.current);
     setIsPlaying(Boolean(next.currentEpisode && next.currentEpisode.id !== playerRef.current.currentEpisode?.id));
-  }, []);
+  }, [removeFromLater]);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
   const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
@@ -639,13 +893,13 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
-          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
+          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
       {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
-      {queuePresent ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
+      {queuePresent ? <QueueSheet player={player} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayLater={episode => startPlayback(episode, laterEpisodes)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} /> : null}
     </main>
   );
 }
