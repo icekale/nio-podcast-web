@@ -32,6 +32,12 @@ import {
   selectEpisode,
   serializePlayerState,
 } from './playerState';
+import {
+  addLaterEpisode,
+  readLaterEpisodes,
+  removeLaterEpisode,
+  writeLaterEpisodes,
+} from './laterPlayback';
 import './App.css';
 
 function formatDuration(milliseconds) {
@@ -304,12 +310,12 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
   );
 }
 
-function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayNext, onRemove }) {
+function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove }) {
   const closeRef = useRef(null);
   const dialogRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
-  const items = activeTab === 'queue' ? player.queue : player.history;
+  const items = activeTab === 'queue' ? player.queue : activeTab === 'history' ? player.history : laterEpisodes;
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -357,15 +363,16 @@ function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onCl
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
           <button type="button" role="tab" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onClick={() => setActiveTab('queue')}>播放列表 <span aria-hidden="true">{player.queue.length}</span></button>
           <button type="button" role="tab" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => setActiveTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
+          <button type="button" role="tab" aria-label="稍后播放" aria-selected={activeTab === 'later'} className={activeTab === 'later' ? 'is-selected' : ''} onClick={() => setActiveTab('later')}>稍后播放 <span aria-hidden="true">{laterEpisodes.length}</span></button>
         </div>
         <div className="queue-scroll">
           {items.length ? <ul className="queue-list">{items.map((episode, index) => {
             const active = activeTab === 'queue' && player.currentEpisode?.id === episode.id;
             return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}`}>
-              <button type="button" className="queue-row-main" onClick={() => onPlay(episode)}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
+              <button type="button" className="queue-row-main" aria-label={activeTab === 'later' ? episode.title : undefined} onClick={() => (activeTab === 'later' ? onPlayLater(episode) : onPlay(episode))}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
               {activeTab === 'queue' ? <div className="queue-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setActionsFor(actionsFor === episode.id ? null : episode.id)}><MoreHorizontal size={20} /></button>{actionsFor === episode.id ? <div className="row-action-menu"><button type="button" onClick={() => { onPlayNext(episode); setActionsFor(null); }}><ListPlus size={16} />下一首播放</button><button type="button" onClick={() => { onRemove(episode.id); setActionsFor(null); }}><Trash2 size={16} />移出列表</button></div> : null}</div> : null}
             </li>;
-          })}</ul> : <div className="queue-empty"><Music2 size={28} /><p>{activeTab === 'queue' ? '播放列表是空的' : '还没有听过的节目'}</p><span>选择一个节目后，它会出现在这里</span></div>}
+          })}</ul> : <div className="queue-empty"><Music2 size={28} /><p>{activeTab === 'queue' ? '播放列表是空的' : activeTab === 'history' ? '还没有听过的节目' : '稍后播放是空的'}</p><span>选择一个节目后，它会出现在这里</span></div>}
         </div>
       </section>
     </div>
@@ -386,17 +393,20 @@ export default function App({ initialCatalog = null }) {
     return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
   });
   const [player, setPlayer] = useState(readStoredPlayer);
+  const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
   const audioRef = useRef(null);
   const playerRef = useRef(player);
+  const laterEpisodesRef = useRef(laterEpisodes);
   const queueButtonRef = useRef(null);
   const lastSavedAt = useRef(0);
   const scrollPositions = useRef(new Map());
   const routeRef = useRef(route);
   const queueFocusRef = useRef(null);
   playerRef.current = player;
+  laterEpisodesRef.current = laterEpisodes;
 
   const applyRoute = useCallback(nextRoute => {
     const previousRoute = routeRef.current;
@@ -465,6 +475,22 @@ export default function App({ initialCatalog = null }) {
     const now = Date.now();
     if (!force && now - lastSavedAt.current < 5000) return;
     try { window.localStorage.setItem(PLAYER_STORAGE_KEY, serializePlayerState(next)); lastSavedAt.current = now; } catch { /* optional persistence */ }
+  }, []);
+
+  const addToLater = useCallback(episode => {
+    setLaterEpisodes(previous => {
+      const result = addLaterEpisode(previous, episode);
+      writeLaterEpisodes(result.items);
+      return result.items;
+    });
+  }, []);
+
+  const removeFromLater = useCallback(id => {
+    setLaterEpisodes(previous => {
+      const next = removeLaterEpisode(previous, id);
+      if (next.length !== previous.length) writeLaterEpisodes(next);
+      return next;
+    });
   }, []);
 
   useEffect(() => { savePlayer(player); }, [player, savePlayer]);
@@ -605,6 +631,8 @@ export default function App({ initialCatalog = null }) {
   }, [isPlaying, player, savePlayer, setPlaybackFailure]);
 
   const handleEnded = useCallback(() => {
+    const completedEpisode = playerRef.current.currentEpisode;
+    if (completedEpisode) removeFromLater(completedEpisode.id);
     setPlayer(previous => {
       const next = advanceQueue(previous);
       if (next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id) return { ...next, history: recordHistory(previous.history, next.currentEpisode), isPlaying: true };
@@ -612,7 +640,7 @@ export default function App({ initialCatalog = null }) {
     });
     const next = advanceQueue(playerRef.current);
     setIsPlaying(Boolean(next.currentEpisode && next.currentEpisode.id !== playerRef.current.currentEpisode?.id));
-  }, []);
+  }, [removeFromLater]);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
   const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
@@ -645,7 +673,7 @@ export default function App({ initialCatalog = null }) {
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
       {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
-      {queuePresent ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
+      {queuePresent ? <QueueSheet player={player} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayLater={episode => startPlayback(episode, laterEpisodes)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} onAddLater={addToLater} onRemoveLater={removeFromLater} /> : null}
     </main>
   );
 }
