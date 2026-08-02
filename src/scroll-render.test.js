@@ -15,4 +15,13 @@ describe('mobile scroll rendering', () => {
     expect(topBarRule).not.toMatch(/backdrop-filter\s*:/);
     expect(topBarRule).toMatch(/background:\s*var\(--surface\)/);
   });
+
+  it('defines bounded route and queue motion with reduced-motion coverage', () => {
+    expect(css).toMatch(/@keyframes route-forward-in/);
+    expect(css).toMatch(/@keyframes route-back-in/);
+    expect(css).toMatch(/@keyframes queue-sheet-in/);
+    expect(css).toMatch(/@keyframes queue-sheet-out/);
+    expect(css).toMatch(/prefers-reduced-motion:\s*reduce/);
+    expect(css).not.toMatch(/\.route-view[^}]*\bwill-change\s*:/);
+  });
 });
