@@ -1,0 +1,60 @@
+import { describe, expect, it } from 'vitest';
+import { ApiError, getEpisodes, normalizeAudioUrl } from './api';
+
+const responseFor = result => ({
+  ok: true,
+  json: async () => ({ result }),
+});
+
+describe('audio API boundary', () => {
+  it('normalizes CDN audio URLs to HTTPS', () => {
+    expect(normalizeAudioUrl('http://cdn.example/audio.aac')).toBe('https://cdn.example/audio.aac');
+    expect(normalizeAudioUrl('')).toBe('');
+  });
+
+  it('maps episode fields and pagination from the public API', async () => {
+    const fetchImpl = async () => responseFor({
+      totalCount: 31,
+      haveNext: 1,
+      dataList: [{
+        audioId: 9,
+        audioName: '测试节目',
+        albumId: 5,
+        albumName: '测试专辑',
+        albumPic: 'https://cdn.example/cover.jpg',
+        host: ['NIO Radio'],
+        duration: 125000,
+        onlineTime: 1700000000000,
+        aacPlayUrl192: 'http://cdn.example/audio.aac',
+      }],
+    });
+
+    await expect(getEpisodes(5, 1, 30, fetchImpl)).resolves.toEqual({
+      episodes: [{
+        id: 9,
+        title: '测试节目',
+        albumId: 5,
+        albumName: '测试专辑',
+        albumPic: 'https://cdn.example/cover.jpg',
+        albumDesc: '',
+        host: 'NIO Radio',
+        duration: 125000,
+        onlineTime: 1700000000000,
+        audioUrl: 'https://cdn.example/audio.aac',
+        fileSize: undefined,
+      }],
+      totalCount: 31,
+      hasMore: true,
+    });
+  });
+
+  it('surfaces HTTP failures as typed errors', async () => {
+    const fetchImpl = async () => ({ ok: false, status: 503 });
+    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+  });
+
+  it('surfaces malformed responses instead of returning an empty success', async () => {
+    const fetchImpl = async () => ({ ok: true, json: async () => ({ nope: true }) });
+    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toBeInstanceOf(ApiError);
+  });
+});
