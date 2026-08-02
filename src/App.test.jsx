@@ -1,6 +1,7 @@
+import { useCallback, useState } from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import App from './App';
+import App, { AlbumResults } from './App';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
   id,
@@ -115,6 +116,24 @@ describe('mobile app shell', () => {
 
     await waitFor(() => expect(document.documentElement.scrollTop).toBe(420));
     expect(document.body.scrollTop).toBe(420);
+  });
+
+  it('does not rerender memoized album results when an unrelated parent updates', () => {
+    let renders = 0;
+    function Harness() {
+      const [, setTick] = useState(0);
+      const onRender = useCallback(() => { renders += 1; }, []);
+      const onOpenAlbum = useCallback(() => {}, []);
+      return <>
+        <button type="button" onClick={() => setTick(value => value + 1)}>tick</button>
+        <AlbumResults albums={catalog.albums} onOpenAlbum={onOpenAlbum} onRender={onRender} />
+      </>;
+    }
+
+    render(<Harness />);
+    fireEvent.click(screen.getByRole('button', { name: 'tick' }));
+    fireEvent.click(screen.getByRole('button', { name: 'tick' }));
+    expect(renders).toBe(1);
   });
 
   it('keeps the player mounted when media events update playback state', async () => {

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ChevronRight,
@@ -155,7 +155,8 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
   );
 }
 
-function AlbumResults({ albums, onOpenAlbum }) {
+export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender }) {
+  onRender?.();
   return (
     <ul className="album-results">
       {albums.map(album => (
@@ -169,9 +170,9 @@ function AlbumResults({ albums, onOpenAlbum }) {
       ))}
     </ul>
   );
-}
+});
 
-function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum }) {
+const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum }) {
   const query = searchQuery;
   const inputRef = useRef(null);
   const filtered = useMemo(() => {
@@ -196,9 +197,9 @@ function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpen
       </section>
     </div>
   );
-}
+});
 
-function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
+const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
   return (
     <div className="screen albums-screen">
       <header className="top-bar">
@@ -213,9 +214,9 @@ function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
       </section>
     </div>
   );
-}
+});
 
-function AlbumScreen({ album, onBack, onPlay }) {
+const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -264,7 +265,7 @@ function AlbumScreen({ album, onBack, onPlay }) {
       </section>
     </div>
   );
-}
+});
 
 function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQueue, queueButtonRef, onSeek }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
@@ -485,6 +486,9 @@ export default function App({ initialCatalog = null }) {
     setIsPlaying(false);
   }, []);
 
+  const openSearch = useCallback(() => go('#/search'), [go]);
+  const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
+  const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
   const updatePosition = event => setPlayer(previous => ({ ...previous, positionSeconds: Number(event.currentTarget.value) }));
   const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
 
@@ -495,9 +499,9 @@ export default function App({ initialCatalog = null }) {
   return (
     <main className="app">
       <div className="app-content">
-        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={episodes => startPlayback(episodes[0], episodes)} onSearch={() => go('#/search', '#/')} onOpenAlbums={openAlbums} /> : null}
-        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={() => go('#/search')} onOpenAlbum={id => go(`#/album/${id}`)} /> : null}
-        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={id => go(`#/album/${id}`)} /> : null}
+        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
+        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
         {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
         {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
       </div>
