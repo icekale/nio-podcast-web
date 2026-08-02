@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ChevronRight,
@@ -155,7 +155,8 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
   );
 }
 
-function AlbumResults({ albums, onOpenAlbum }) {
+export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender }) {
+  onRender?.();
   return (
     <ul className="album-results">
       {albums.map(album => (
@@ -169,10 +170,10 @@ function AlbumResults({ albums, onOpenAlbum }) {
       ))}
     </ul>
   );
-}
+});
 
-function SearchScreen({ catalog, onBack, onOpenAlbum }) {
-  const [query, setQuery] = useState('');
+const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum }) {
+  const query = searchQuery;
   const inputRef = useRef(null);
   const filtered = useMemo(() => {
     const value = query.trim().toLowerCase();
@@ -186,8 +187,8 @@ function SearchScreen({ catalog, onBack, onOpenAlbum }) {
     <div className="screen search-screen">
       <header className="top-bar">
         <button type="button" className="icon-button" aria-label="返回" onClick={onBack}><ArrowLeft size={25} /></button>
-        <div className="search-field-wrap"><Search size={18} aria-hidden="true" /><input ref={inputRef} type="search" value={query} onChange={event => setQuery(event.target.value)} aria-label="搜索专辑" placeholder="搜索专辑" /></div>
-        {query ? <button type="button" className="icon-button" aria-label="清空搜索" onClick={() => setQuery('')}><X size={20} /></button> : <span className="icon-button-spacer" />}
+        <div className="search-field-wrap"><Search size={18} aria-hidden="true" /><input ref={inputRef} type="search" value={query} onChange={event => onQueryChange(event.target.value)} aria-label="搜索专辑" placeholder="搜索专辑" /></div>
+        {query ? <button type="button" className="icon-button" aria-label="清空搜索" onClick={() => onQueryChange('')}><X size={20} /></button> : <span className="icon-button-spacer" />}
       </header>
       <section className="search-results" aria-live="polite">
         <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count">{filtered.length}</span></div>
@@ -196,9 +197,9 @@ function SearchScreen({ catalog, onBack, onOpenAlbum }) {
       </section>
     </div>
   );
-}
+});
 
-function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
+const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
   return (
     <div className="screen albums-screen">
       <header className="top-bar">
@@ -213,9 +214,9 @@ function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
       </section>
     </div>
   );
-}
+});
 
-function AlbumScreen({ album, onBack, onPlay }) {
+const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -264,7 +265,7 @@ function AlbumScreen({ album, onBack, onPlay }) {
       </section>
     </div>
   );
-}
+});
 
 function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQueue, queueButtonRef, onSeek }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
@@ -335,11 +336,11 @@ export default function App({ initialCatalog = null }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
-  const [backHash, setBackHash] = useState('#/');
   const audioRef = useRef(null);
   const playerRef = useRef(player);
   const queueButtonRef = useRef(null);
   const lastSavedAt = useRef(0);
+  const scrollPositions = useRef(new Map());
   playerRef.current = player;
 
   useEffect(() => {
@@ -350,16 +351,28 @@ export default function App({ initialCatalog = null }) {
   }, [initialCatalog]);
 
   useEffect(() => {
-    const handleHashChange = () => setRoute(parseHash());
-    window.addEventListener('hashchange', handleHashChange);
-    if (!window.location.hash) window.history.replaceState(null, '', '#/');
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    const previousRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    if (!window.history.state?.nioApp) {
+      window.history.replaceState({ ...(window.history.state || {}), nioApp: true, nioDepth: 0 }, '', window.location.href);
+    }
+    const handleRouteChange = () => setRoute(parseHash());
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    if (!window.location.hash) window.history.replaceState({ nioApp: true, nioDepth: 0 }, '', '#/');
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.history.scrollRestoration = previousRestoration;
+    };
   }, []);
 
   useEffect(() => {
-    if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    const key = closeQueueHash(window.location.hash || '#/');
+    const position = scrollPositions.current.get(key) || 0;
+    if (document.scrollingElement) document.scrollingElement.scrollTop = position;
+    document.documentElement.scrollTop = position;
+    document.body.scrollTop = position;
   }, [route.screen]);
 
   const savePlayer = useCallback((next, force = false) => {
@@ -388,15 +401,53 @@ export default function App({ initialCatalog = null }) {
     result?.catch(() => setIsPlaying(false));
   }, [player.currentEpisode?.id]);
 
-  const go = useCallback((hash, parentHash = null) => {
-    if (parentHash) setBackHash(parentHash);
-    window.location.hash = hash;
+  const saveScrollPosition = useCallback((hash = window.location.hash || '#/') => {
+    const position = Math.max(
+      window.scrollY || 0,
+      document.scrollingElement?.scrollTop || 0,
+      document.documentElement.scrollTop || 0,
+      document.body.scrollTop || 0,
+    );
+    scrollPositions.current.set(closeQueueHash(hash), position);
+  }, []);
+  const go = useCallback((hash, { replace = false } = {}) => {
+    if (!replace) saveScrollPosition();
+    const currentDepth = Number(window.history.state?.nioDepth) || 0;
+    const state = { ...(window.history.state || {}), nioApp: true, nioDepth: replace ? currentDepth : currentDepth + 1 };
+    if (replace) window.history.replaceState(state, '', hash);
+    else window.history.pushState(state, '', hash);
+    setRoute(parseHash(hash));
+  }, [saveScrollPosition]);
+  const openQueue = useCallback(() => go(withQueueHash(window.location.hash || '#/', true)), [go]);
+  const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/'), { replace: true }), [go]);
+  const goBack = useCallback(() => {
+    const depth = Number(window.history.state?.nioDepth) || 0;
+    if (route.queueOpen) {
+      if (depth > 0) window.history.back();
+      else closeQueue();
+      return;
+    }
+    if (depth > 0) {
+      window.history.back();
+      return;
+    }
+    if (route.screen === 'search') go('#/', { replace: true });
+    else if (route.screen === 'album') go('#/albums', { replace: true });
+    else if (route.screen !== 'home') go('#/', { replace: true });
+  }, [closeQueue, go, route]);
+  const openAlbums = useCallback(() => go('#/albums'), [go]);
+  const updateSearchQuery = useCallback(query => {
+    const raw = String(window.location.hash || '#/search').replace(/^#/, '') || '/search';
+    const [path, queryString = ''] = raw.split('?');
+    const params = new URLSearchParams(queryString);
+    if (query) params.set('q', query);
+    else params.delete('q');
+    const serialized = params.toString();
+    const hash = `#${path}${serialized ? `?${serialized}` : ''}`;
+    const state = { ...(window.history.state || {}), nioApp: true, nioDepth: Number(window.history.state?.nioDepth) || 0 };
+    window.history.replaceState(state, '', hash);
     setRoute(parseHash(hash));
   }, []);
-  const openQueue = useCallback(() => go(withQueueHash(window.location.hash || '#/', true)), [go]);
-  const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/')), [go]);
-  const goBack = useCallback(() => { if (route.queueOpen) closeQueue(); else if (route.screen === 'home') window.history.back(); else go(backHash); }, [backHash, closeQueue, go, route]);
-  const openAlbums = useCallback(() => go('#/albums', '#/'), [go]);
   const retryCatalog = useCallback(() => { setCatalogState(previous => ({ ...previous, loading: true, error: null })); loadCatalog().then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale })).catch(error => setCatalogState(previous => ({ ...previous, loading: false, error }))); }, []);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
@@ -435,6 +486,9 @@ export default function App({ initialCatalog = null }) {
     setIsPlaying(false);
   }, []);
 
+  const openSearch = useCallback(() => go('#/search'), [go]);
+  const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
+  const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
   const updatePosition = event => setPlayer(previous => ({ ...previous, positionSeconds: Number(event.currentTarget.value) }));
   const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
 
@@ -445,9 +499,9 @@ export default function App({ initialCatalog = null }) {
   return (
     <main className="app">
       <div className="app-content">
-        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={episodes => startPlayback(episodes[0], episodes)} onSearch={() => go('#/search', '#/')} onOpenAlbums={openAlbums} /> : null}
-        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={() => go('#/')} onSearch={() => go('#/search', '#/albums')} onOpenAlbum={id => go(`#/album/${id}`, '#/albums')} /> : null}
-        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} onBack={goBack} onOpenAlbum={id => go(`#/album/${id}`, '#/search')} /> : null}
+        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
+        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
         {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
         {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
       </div>

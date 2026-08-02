@@ -193,7 +193,7 @@ h1, h2, p { margin: 0; }
 .search-field-wrap input { width: 100%; min-height: 2.5rem; padding: 0; border: 0; outline: 0; color: var(--ink); background: transparent; }
 .search-results { padding-top: var(--space-6); }
 .album-results { border-top: 1px solid var(--line); }
-.album-results li { border-bottom: 1px solid var(--line); }
+.album-results li { border-bottom: 1px solid var(--line); content-visibility: auto; contain-intrinsic-size: 0 92px; }
 .album-result { width: 100%; gap: var(--space-4); padding: var(--space-3) 0; }
 .album-art { width: 4.25rem; height: 4.25rem; border-radius: var(--radius-sm); }
 .album-result-copy { gap: var(--space-1); }

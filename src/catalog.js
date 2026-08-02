@@ -57,7 +57,7 @@ export function writeCatalogCache(catalog, storage = globalThis.localStorage) {
 export async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = import.meta.env.BASE_URL) {
   const cached = readCatalogCache();
   try {
-    const response = await fetchImpl(`${baseUrl}data/albums.json`, { cache: 'no-store' });
+    const response = await fetchImpl(`${baseUrl}data/albums.json`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const catalog = normalizeCatalog(await response.json());
     writeCatalogCache(catalog);

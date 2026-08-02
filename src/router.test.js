@@ -9,8 +9,16 @@ describe('hash router', () => {
   });
 
   it('parses search and queue query state', () => {
-    expect(parseHash('#/search?queue=1')).toEqual({ screen: 'search', albumId: null, queueOpen: true });
+    expect(parseHash('#/search?queue=1')).toEqual({ screen: 'search', albumId: null, queueOpen: true, searchQuery: '' });
     expect(parseHash('#/?queue=1')).toEqual({ screen: 'home', albumId: null, queueOpen: true });
+  });
+
+  it('parses and serializes the search query', () => {
+    expect(parseHash('#/search?q=morning%20radio')).toEqual({
+      screen: 'search', albumId: null, queueOpen: false, searchQuery: 'morning radio',
+    });
+    expect(withQueueHash('#/search?q=morning%20radio', true)).toBe('#/search?q=morning+radio&queue=1');
+    expect(closeQueueHash('#/search?q=morning+radio&queue=1')).toBe('#/search?q=morning+radio');
   });
 
   it('normalizes invalid hashes to home', () => {

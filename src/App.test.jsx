@@ -1,6 +1,7 @@
+import { useCallback, useState } from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import App from './App';
+import App, { AlbumResults } from './App';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
   id,
@@ -27,7 +28,7 @@ describe('mobile app shell', () => {
   afterEach(cleanup);
 
   beforeEach(() => {
-    window.location.hash = '#/';
+    window.history.replaceState({ nioDepth: 0 }, '', '#/');
     window.localStorage.clear();
   });
 
@@ -85,6 +86,54 @@ describe('mobile app shell', () => {
 
     fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
     await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
+  });
+
+  it('walks back through search and albums without getting stuck', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: '搜索' }));
+    fireEvent.change(await screen.findByRole('searchbox', { name: '搜索专辑' }), { target: { value: 'NIO' } });
+    fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
+
+    fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
+    await waitFor(() => expect(window.location.hash).toBe('#/search?q=NIO'));
+    expect(await screen.findByRole('searchbox', { name: '搜索专辑' })).toHaveValue('NIO');
+
+    fireEvent.click(screen.getByRole('button', { name: '返回' }));
+    await waitFor(() => expect(window.location.hash).toBe('#/albums'));
+  });
+
+  it('restores the directory scroll position after album detail', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+    document.documentElement.scrollTop = 420;
+    document.body.scrollTop = 420;
+    fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
+    fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
+
+    await waitFor(() => expect(document.documentElement.scrollTop).toBe(420));
+    expect(document.body.scrollTop).toBe(420);
+  });
+
+  it('does not rerender memoized album results when an unrelated parent updates', () => {
+    let renders = 0;
+    function Harness() {
+      const [, setTick] = useState(0);
+      const onRender = useCallback(() => { renders += 1; }, []);
+      const onOpenAlbum = useCallback(() => {}, []);
+      return <>
+        <button type="button" onClick={() => setTick(value => value + 1)}>tick</button>
+        <AlbumResults albums={catalog.albums} onOpenAlbum={onOpenAlbum} onRender={onRender} />
+      </>;
+    }
+
+    render(<Harness />);
+    fireEvent.click(screen.getByRole('button', { name: 'tick' }));
+    fireEvent.click(screen.getByRole('button', { name: 'tick' }));
+    expect(renders).toBe(1);
   });
 
   it('keeps the player mounted when media events update playback state', async () => {

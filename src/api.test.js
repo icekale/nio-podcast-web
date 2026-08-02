@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { ApiError, getEpisodes, normalizeAudioUrl } from './api';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { ApiError, clearEpisodeCache, getEpisodes, normalizeAudioUrl } from './api';
 
 const responseFor = result => ({
   ok: true,
@@ -7,6 +7,8 @@ const responseFor = result => ({
 });
 
 describe('audio API boundary', () => {
+  beforeEach(() => clearEpisodeCache());
+
   it('normalizes CDN audio URLs to HTTPS', () => {
     expect(normalizeAudioUrl('http://cdn.example/audio.aac')).toBe('https://cdn.example/audio.aac');
     expect(normalizeAudioUrl('')).toBe('');
@@ -56,5 +58,59 @@ describe('audio API boundary', () => {
   it('surfaces malformed responses instead of returning an empty success', async () => {
     const fetchImpl = async () => ({ ok: true, json: async () => ({ nope: true }) });
     await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toBeInstanceOf(ApiError);
+  });
+
+  it('deduplicates concurrent identical episode requests', async () => {
+    let calls = 0;
+    let release;
+    const fetchImpl = () => {
+      calls += 1;
+      return new Promise(resolve => {
+        release = () => resolve(responseFor({ dataList: [], totalCount: 0, haveNext: 0 }));
+      });
+    };
+
+    const first = getEpisodes(5, 1, 30, fetchImpl);
+    const second = getEpisodes(5, 1, 30, fetchImpl);
+    release();
+
+    await expect(Promise.all([first, second])).resolves.toEqual([
+      { episodes: [], totalCount: 0, hasMore: false },
+      { episodes: [], totalCount: 0, hasMore: false },
+    ]);
+    expect(calls).toBe(1);
+  });
+
+  it('uses a successful result for ten minutes and refetches after expiry', async () => {
+    vi.useFakeTimers();
+    try {
+      let calls = 0;
+      const fetchImpl = async () => {
+        calls += 1;
+        return responseFor({ dataList: [], totalCount: 0, haveNext: 0 });
+      };
+
+      await getEpisodes(5, 1, 30, fetchImpl);
+      await getEpisodes(5, 1, 30, fetchImpl);
+      expect(calls).toBe(1);
+
+      vi.advanceTimersByTime(10 * 60 * 1000 + 1);
+      await getEpisodes(5, 1, 30, fetchImpl);
+      expect(calls).toBe(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('does not cache rejected requests', async () => {
+    let calls = 0;
+    const fetchImpl = async () => {
+      calls += 1;
+      return { ok: false, status: 503 };
+    };
+
+    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+    expect(calls).toBe(2);
   });
 });
