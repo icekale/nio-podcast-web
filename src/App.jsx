@@ -114,6 +114,24 @@ function EpisodeRow({ episode, onPlay, active = false, progress = 0, action }) {
   );
 }
 
+function LaterEpisodeAction({ episode, onAdd }) {
+  const [open, setOpen] = useState(false);
+  const [notice, setNotice] = useState('');
+
+  const handleAdd = () => {
+    setNotice(onAdd(episode) ? '已添加到稍后播放' : '已在稍后播放');
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
+      {open ? <div className="row-action-menu"><button type="button" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
+      {notice ? <span className="episode-action-notice" role="status" aria-live="polite">{notice}</span> : null}
+    </>
+  );
+}
+
 function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const selection = useMemo(() => selectHomeEpisodes(catalog.albums, new Date()), [catalog.albums]);
@@ -240,7 +258,7 @@ const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onO
   );
 });
 
-const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
+const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, onAddLater }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -285,7 +303,7 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
         <div className="album-intro"><Artwork src={album.imageUrl} alt="" className="album-hero-art" /><div><h2 id="album-episodes-title">节目列表</h2><p>{album.description || 'NIO Radio 精选内容'}</p></div></div>
         {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请检查网络后重试</span><button type="button" onClick={() => loadPage(retryPage ?? page)}><RotateCcw size={16} />重新加载</button></div> : null}
         {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
-        {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} />)}</ul> : null}
+        {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} action={<LaterEpisodeAction episode={episode} onAdd={onAddLater} />} />)}</ul> : null}
         {!loading && !error && !episodes.length ? <div className="empty-state">这个专辑还没有节目</div> : null}
         {hasMore && !loading ? <button type="button" className="secondary-button load-more-button" onClick={() => loadPage(page + 1)}>加载更多</button> : null}
         {loading && episodes.length ? <div className="loading-more" role="status">正在加载下一页…</div> : null}
@@ -764,7 +782,7 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
-          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
+          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>

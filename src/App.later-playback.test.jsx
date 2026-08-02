@@ -102,4 +102,15 @@ describe('later playback integration', () => {
     expect(within(dialog).getByText('已在稍后播放')).toBeInTheDocument();
     expect(JSON.parse(window.localStorage.getItem('nio_play_later_v1'))).toHaveLength(1);
   });
+
+  it('adds an album episode from its compact action menu', async () => {
+    getEpisodes.mockResolvedValue({ episodes: [episode(5, '专辑节目')], hasMore: false });
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
+    fireEvent.click(await screen.findByRole('button', { name: '管理 专辑节目' }));
+    fireEvent.click(screen.getByRole('button', { name: '稍后播放' }));
+
+    expect(window.localStorage.getItem('nio_play_later_v1')).toContain('专辑节目');
+  });
 });
