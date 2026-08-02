@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 vi.mock('./catalog', async importOriginal => ({
@@ -46,5 +46,22 @@ describe('catalog loading shell', () => {
     expect(document.querySelector('audio')).toBeInTheDocument();
     expect(play).not.toHaveBeenCalled();
     play.mockRestore();
+  });
+
+  it('refreshes the catalog once when the document returns to the foreground', async () => {
+    const now = 1_000;
+    const nowSpy = vi.spyOn(Date, 'now').mockReturnValue(now);
+    const catalog = { generatedAt: 1, albums: [{ id: 1, name: '目录', latestEpisode: { id: 1, title: '旧节目', onlineTime: 1 } }] };
+    const newerCatalog = { generatedAt: 2, albums: [{ id: 1, name: '目录', latestEpisode: { id: 99, title: '新节目', onlineTime: 2 } }] };
+    loadCatalog.mockReset();
+    loadCatalog.mockResolvedValueOnce({ catalog, stale: false }).mockResolvedValueOnce({ catalog: newerCatalog, stale: false });
+
+    render(<App />);
+    await waitFor(() => expect(loadCatalog).toHaveBeenCalledTimes(1));
+    nowSpy.mockReturnValue(now + 15 * 60 * 1000 + 1);
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' });
+    document.dispatchEvent(new Event('visibilitychange'));
+    await waitFor(() => expect(loadCatalog).toHaveBeenCalledTimes(2));
+    nowSpy.mockRestore();
   });
 });

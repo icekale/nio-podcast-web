@@ -1,0 +1,101 @@
+name: Update NIO Radio catalog
+
+on:
+  # Product times are Asia/Shanghai; GitHub Actions cron is UTC.
+  schedule:
+    - cron: '30 23 * * 0-4' # Beijing Mon-Fri 07:30, full discovery
+    - cron: '30 0 * * 1-5' # Beijing Mon-Fri 08:30
+    - cron: '30 1 * * 1-5' # Beijing Mon-Fri 09:30
+    - cron: '0 4 * * 1-5' # Beijing Mon-Fri 12:00
+    - cron: '0 5 * * 1-5' # Beijing Mon-Fri 13:00
+    - cron: '0 7 * * 1-5' # Beijing Mon-Fri 15:00
+    - cron: '0 9 * * 1-5' # Beijing Mon-Fri 17:00
+    - cron: '30 9 * * 1-5' # Beijing Mon-Fri 17:30
+    - cron: '0 10 * * 1-5' # Beijing Mon-Fri 18:00
+    - cron: '0 11 * * 1-5' # Beijing Mon-Fri 19:00
+    - cron: '0 12 * * 1-5' # Beijing Mon-Fri 20:00
+    - cron: '0 16 * * 1-5' # Beijing Mon-Fri 24:00 (next local day 00:00)
+    - cron: '0 4 * * 0,6' # Beijing Sat/Sun 12:00
+    - cron: '0 10 * * 0,6' # Beijing Sat/Sun 18:00
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Catalog scan mode
+        required: true
+        default: incremental
+        type: choice
+        options:
+          - incremental
+          - full
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nio-catalog-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Select catalog mode
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          INPUT_MODE: ${{ inputs.mode }}
+        run: |
+          MODE="${INPUT_MODE:-incremental}"
+          if [ "$SCHEDULE" = "30 23 * * 0-4" ]; then
+            MODE=full
+          fi
+          if [ "$MODE" != "full" ] && [ "$MODE" != "incremental" ]; then
+            echo "Unsupported catalog mode: $MODE" >&2
+            exit 1
+          fi
+          echo "NIO_CATALOG_MODE=$MODE" >> "$GITHUB_ENV"
+          echo "Selected catalog mode: $MODE"
+
+      - name: Generate catalog
+        run: npm run catalog
+
+      - name: Check for catalog changes
+        id: changes
+        run: |
+          if git diff --quiet -- public/data/albums.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Catalog unchanged; skipping commit and deployment."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit catalog state
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/albums.json
+          git commit -m "chore: update podcast catalog"
+          git push origin HEAD:main
+
+      - name: Build PWA
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Deploy GitHub Pages
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run deploy

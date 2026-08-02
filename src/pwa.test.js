@@ -25,8 +25,11 @@ function readPngSummary(path) {
 }
 
 describe('PWA cache boundaries', () => {
-  it('precaches the static catalog and bounds artwork runtime caching', () => {
-    expect(viteConfig).toContain("globPatterns: ['**/*.{js,css,html,ico,png,svg,json}']");
+  it('uses NetworkFirst for the catalog and bounds artwork runtime caching', () => {
+    expect(viteConfig).toContain("globPatterns: ['**/*.{js,css,html,ico,png,svg}']");
+    expect(viteConfig).toContain("url.pathname.endsWith('/data/albums.json')");
+    expect(viteConfig).toContain("handler: 'NetworkFirst'");
+    expect(viteConfig).toContain("cacheName: 'nio-catalog-v1'");
     expect(viteConfig).toContain("handler: 'CacheFirst'");
     expect(viteConfig).toContain("cacheName: 'nio-artwork-v1'");
     expect(viteConfig).toContain('maxEntries: 150');

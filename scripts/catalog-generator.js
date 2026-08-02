@@ -32,6 +32,10 @@ export function sortGeneratedAlbums(albums) {
   });
 }
 
+export function sameCatalogContent(previous, next) {
+  return JSON.stringify(previous?.albums || []) === JSON.stringify(next?.albums || []);
+}
+
 async function withTimeout(task, timeoutMs, id) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) return task;
   let timer;
@@ -62,6 +66,13 @@ export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTi
   const workerCount = Math.min(Math.max(1, concurrency), ids.length);
   await Promise.all(Array.from({ length: workerCount }, worker));
   return sortGeneratedAlbums(found);
+}
+
+export async function updateKnownAlbums(previousAlbums, requestAlbum, concurrency = 12) {
+  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
+  const refreshed = await scanCatalog(previous.map(album => album.id), requestAlbum, concurrency);
+  const refreshedById = new Map(refreshed.map(album => [Number(album.id), album]));
+  return sortGeneratedAlbums(previous.map(album => refreshedById.get(Number(album.id)) || album));
 }
 
 export async function requestAlbum(id, fetchImpl = globalThis.fetch) {
