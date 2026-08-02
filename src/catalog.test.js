@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { selectHomeEpisodes, sortAlbumsByLatest } from './catalog';
+import { describe, expect, it, vi } from 'vitest';
+import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -38,5 +38,19 @@ describe('catalog selectors', () => {
     const result = selectHomeEpisodes(albums, new Date('2026-08-02T10:00:00+08:00'));
     expect(result.heading).toBe('最新更新');
     expect(result.episodes.map(item => item.id)).toEqual([11, 22]);
+  });
+
+  it('uses the browser cache policy for the static catalog', async () => {
+    const fetchImpl = vi.fn(async (url, options) => {
+      expect(url).toBe('/nio-podcast-web/data/albums.json');
+      expect(options).toBeUndefined();
+      return {
+        ok: true,
+        json: async () => ({ generatedAt: 1, albums: [{ id: 1, name: '目录', latestEpisode: episode(1, 1) }] }),
+      };
+    });
+
+    await loadCatalog(fetchImpl, '/nio-podcast-web/');
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 });

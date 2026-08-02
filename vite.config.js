@@ -8,6 +8,18 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'],
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        runtimeCaching: [{
+          urlPattern: ({ request }) => request.destination === 'image',
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'nio-artwork-v1',
+            cacheableResponse: { statuses: [0, 200] },
+            expiration: { maxEntries: 150, maxAgeSeconds: 30 * 24 * 60 * 60 },
+          },
+        }],
+      },
       manifest: {
         id: '/nio-podcast-web/',
         name: 'Nio Podcast',
