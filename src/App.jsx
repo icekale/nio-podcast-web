@@ -63,7 +63,7 @@ function formatDate(timestamp) {
 }
 
 function screenRouteKey(route) {
-  return `${route.screen}:${route.albumId ?? ''}:${route.searchQuery ?? ''}`;
+  return `${route.screen}:${route.albumId ?? ''}`;
 }
 
 function sameRoute(previous, next) {
@@ -108,7 +108,7 @@ function EpisodeRow({ episode, onPlay, active = false, progress = 0, action }) {
   );
 }
 
-function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
+function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const selection = useMemo(() => selectHomeEpisodes(catalog.albums, new Date()), [catalog.albums]);
   const recommendation = selection.episodes[0];
@@ -168,7 +168,7 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
           </ul>
         ) : <div className="empty-state">暂无可播放的节目</div>}
       </section>
-      {stale ? <div className="notice-bar" role="status">显示的是上次缓存的目录 <button type="button" onClick={onRetry}>刷新目录</button></div> : null}
+      {(stale || refreshing || catalogError) ? <div className="notice-bar" role={catalogError ? 'alert' : 'status'}>{refreshing ? '正在刷新目录…' : catalogError ? '目录刷新失败，继续使用缓存内容' : '显示的是上次缓存的目录'} <button type="button" onClick={onRetry}>{refreshing ? '刷新中' : '刷新目录'}</button></div> : null}
     </div>
   );
 }
@@ -239,6 +239,7 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
+  const [retryPage, setRetryPage] = useState(null);
   const [hasMore, setHasMore] = useState(false);
   const requestSeq = useRef(0);
 
@@ -251,10 +252,12 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
       if (sequence !== requestSeq.current) return;
       setEpisodes(previous => pageNumber === 1 ? result.episodes : [...previous, ...result.episodes]);
       setPage(pageNumber);
+      setRetryPage(null);
       setHasMore(result.hasMore);
     } catch (reason) {
       if (sequence !== requestSeq.current) return;
       setError(reason);
+      setRetryPage(pageNumber);
     } finally {
       if (sequence === requestSeq.current) setLoading(false);
     }
@@ -274,7 +277,7 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay }) {
       </header>
       <section className="album-content" aria-labelledby="album-episodes-title">
         <div className="album-intro"><Artwork src={album.imageUrl} alt="" className="album-hero-art" /><div><h2 id="album-episodes-title">节目列表</h2><p>{album.description || 'NIO Radio 精选内容'}</p></div></div>
-        {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请检查网络后重试</span><button type="button" onClick={() => loadPage(page)}><RotateCcw size={16} />重新加载</button></div> : null}
+        {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请检查网络后重试</span><button type="button" onClick={() => loadPage(retryPage ?? page)}><RotateCcw size={16} />重新加载</button></div> : null}
         {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
         {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} />)}</ul> : null}
         {!loading && !error && !episodes.length ? <div className="empty-state">这个专辑还没有节目</div> : null}
@@ -303,13 +306,32 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
 
 function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayNext, onRemove }) {
   const closeRef = useRef(null);
+  const dialogRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
   const items = activeTab === 'queue' ? player.queue : player.history;
 
   useEffect(() => {
     closeRef.current?.focus();
-    const handleKeyDown = event => { if (event.key === 'Escape') onClose(); };
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (event.key !== 'Tab' || !dialogRef.current) return;
+      const focusable = [...dialogRef.current.querySelectorAll('button, input, [href], select, textarea, [tabindex]:not([tabindex="-1"])')]
+        .filter(element => !element.disabled && element.getAttribute('aria-hidden') !== 'true');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
     window.addEventListener('keydown', handleKeyDown);
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -329,7 +351,7 @@ function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onCl
   return (
     <div className={`queue-overlay${isClosing ? ' is-closing' : ''}`}>
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
-      <section className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }}>
+      <section ref={dialogRef} className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.target.closest('.queue-scroll') ? null : event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }} onPointerCancel={() => { startY.current = null; }}>
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
@@ -446,24 +468,41 @@ export default function App({ initialCatalog = null }) {
   }, []);
 
   useEffect(() => { savePlayer(player); }, [player, savePlayer]);
+  useEffect(() => { savePlayer(playerRef.current, true); }, [player.currentEpisode?.id, savePlayer]);
   useEffect(() => {
     const save = () => savePlayer(player, true);
     window.addEventListener('pagehide', save);
     return () => window.removeEventListener('pagehide', save);
   }, [player, savePlayer]);
 
+  const setPlaybackFailure = useCallback(message => {
+    setAudioError(message);
+    setIsPlaying(false);
+    setPlayer(previous => ({ ...previous, isPlaying: false }));
+  }, []);
+
   useEffect(() => {
     const audio = audioRef.current;
-    const { currentEpisode: episode, positionSeconds, durationSeconds } = playerRef.current;
-    if (!audio || !episode?.audioUrl) return;
+    const { currentEpisode: episode, positionSeconds, durationSeconds, isPlaying: shouldPlay } = playerRef.current;
+    if (!audio) return;
+    if (!episode?.audioUrl) {
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      return;
+    }
     audio.src = episode.audioUrl;
     audio.load();
     if (canResume(positionSeconds, durationSeconds)) {
       try { audio.currentTime = positionSeconds; } catch { /* metadata may not be ready */ }
     }
+    if (!shouldPlay) {
+      audio.pause();
+      return;
+    }
     const result = audio.play();
-    result?.catch(() => setIsPlaying(false));
-  }, [player.currentEpisode?.id]);
+    result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+  }, [player.currentEpisode?.id, setPlaybackFailure]);
 
   const saveScrollPosition = useCallback((hash = window.location.hash || '#/') => {
     const position = Math.max(
@@ -486,7 +525,16 @@ export default function App({ initialCatalog = null }) {
     queueFocusRef.current = queueButtonRef.current;
     go(withQueueHash(window.location.hash || '#/', true));
   }, [go]);
-  const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/'), { replace: true }), [go]);
+  const closeQueue = useCallback(() => {
+    const depth = Number(window.history.state?.nioDepth) || 0;
+    if (parseHash(window.location.hash || '#/').queueOpen && depth > 0) {
+      setQueueClosing(true);
+      window.history.back();
+      return;
+    }
+    setQueueClosing(true);
+    go(closeQueueHash(window.location.hash || '#/'), { replace: true });
+  }, [go]);
   const goBack = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
     if (route.queueOpen) {
@@ -515,10 +563,22 @@ export default function App({ initialCatalog = null }) {
     window.history.replaceState(state, '', hash);
     applyRoute(parseHash(hash));
   }, [applyRoute]);
-  const retryCatalog = useCallback(() => { setCatalogState(previous => ({ ...previous, loading: true, error: null })); loadCatalog().then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale })).catch(error => setCatalogState(previous => ({ ...previous, loading: false, error }))); }, []);
+  const retryCatalog = useCallback(() => {
+    setCatalogState(previous => ({ ...previous, loading: true, error: null }));
+    loadCatalog()
+      .then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale }))
+      .catch(error => setCatalogState(previous => ({ ...previous, loading: false, error, stale: Boolean(previous.catalog) })));
+  }, []);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
+    if (!episode) return;
     setAudioError(null);
+    const sameEpisode = playerRef.current.currentEpisode?.id === episode.id;
+    if (sameEpisode && audioRef.current) {
+      try { audioRef.current.currentTime = 0; } catch { /* media may not be ready */ }
+      const result = audioRef.current.play();
+      result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+    }
     setPlayer(previous => {
       let next = previous;
       if (visibleQueue?.length) next = enqueueEpisodes(next, visibleQueue);
@@ -526,7 +586,7 @@ export default function App({ initialCatalog = null }) {
       return { ...next, history: recordHistory(previous.history, episode), isPlaying: true };
     });
     setIsPlaying(true);
-  }, []);
+  }, [setPlaybackFailure]);
 
   const togglePlayback = useCallback(() => {
     const audio = audioRef.current;
@@ -538,11 +598,11 @@ export default function App({ initialCatalog = null }) {
       savePlayer({ ...player, isPlaying: false }, true);
     } else {
       const result = audio.play();
-      result?.catch(() => setAudioError('音频暂时无法播放，请稍后重试'));
+      result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
       setIsPlaying(true);
       setPlayer(previous => ({ ...previous, isPlaying: true }));
     }
-  }, [isPlaying, player, savePlayer]);
+  }, [isPlaying, player, savePlayer, setPlaybackFailure]);
 
   const handleEnded = useCallback(() => {
     setPlayer(previous => {
@@ -550,33 +610,41 @@ export default function App({ initialCatalog = null }) {
       if (next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id) return { ...next, history: recordHistory(previous.history, next.currentEpisode), isPlaying: true };
       return next;
     });
-    setIsPlaying(false);
+    const next = advanceQueue(playerRef.current);
+    setIsPlaying(Boolean(next.currentEpisode && next.currentEpisode.id !== playerRef.current.currentEpisode?.id));
   }, []);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
   const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
   const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
-  const updatePosition = event => setPlayer(previous => ({ ...previous, positionSeconds: Number(event.currentTarget.value) }));
+  const updatePosition = event => {
+    const position = Number(event.currentTarget.value);
+    if (!Number.isFinite(position)) return;
+    const audio = audioRef.current;
+    if (audio) {
+      try { audio.currentTime = position; } catch { /* media may not be ready */ }
+    }
+    setPlayer(previous => ({ ...previous, positionSeconds: position }));
+  };
   const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
   const routeViewKey = screenRouteKey(route);
-
-  if (catalogState.loading) return <main className="app"><div className="full-state"><div className="loading-dot" /><p>正在准备 NIO Radio…</p></div></main>;
-  if (catalogState.error && !catalogState.catalog) return <main className="app"><div className="full-state"><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已经缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></div></main>;
-  if (!catalogState.catalog) return null;
+  const hasCatalog = Boolean(catalogState.catalog);
 
   return (
     <main className="app">
-      <div className="app-content">
-        <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+      <div className="app-content" inert={queuePresent ? true : undefined}>
+        {!hasCatalog ? <div className="full-state">
+          {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
+        </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
+          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
-        </div>
+        </div>}
       </div>
-      <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); }} onPause={() => setIsPlaying(false)} onError={() => { setAudioError('音频加载失败，请检查网络后重试'); setIsPlaying(false); }} onEnded={handleEnded} />
-      {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setAudioError('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
+      <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
+      {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
       {queuePresent ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
     </main>
   );

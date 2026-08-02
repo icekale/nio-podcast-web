@@ -2,7 +2,7 @@ import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { requestAlbum, scanCatalog, writeCatalogAtomically } from './catalog-generator.js';
+import { requestAlbum, scanCatalog, sortGeneratedAlbums, writeCatalogAtomically } from './catalog-generator.js';
 
 describe('catalog generator', () => {
   it('treats an explicit empty upstream result as a missing album', async () => {
@@ -31,6 +31,22 @@ describe('catalog generator', () => {
 
     expect(peak).toBeLessThanOrEqual(2);
     expect(result.map(album => album.id)).toEqual([5, 4, 3, 2, 1]);
+  });
+
+  it('keeps successful albums when one request fails', async () => {
+    const result = await scanCatalog([1, 2, 3], async id => {
+      if (id === 2) throw new Error('temporary failure');
+      return { id, latestEpisode: { id: id * 10, onlineTime: id } };
+    }, 2);
+
+    expect(result.map(album => album.id)).toEqual([3, 1]);
+  });
+
+  it('uses album id as a stable tie-breaker for equal publish times', () => {
+    expect(sortGeneratedAlbums([
+      { id: 3, latestEpisode: { onlineTime: 10 } },
+      { id: 1, latestEpisode: { onlineTime: 10 } },
+    ]).map(album => album.id)).toEqual([1, 3]);
   });
 
   it('keeps the existing file when the final rename fails', async () => {

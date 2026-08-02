@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App, { AlbumResults } from './App';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
@@ -146,6 +146,18 @@ describe('mobile app shell', () => {
     await waitFor(() => expect(window.location.hash).toBe('#/albums'));
   });
 
+  it('keeps the search input mounted while the query changes', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: '搜索' }));
+    const input = await screen.findByRole('searchbox', { name: '搜索专辑' });
+    fireEvent.change(input, { target: { value: 'NIO' } });
+
+    await waitFor(() => expect(input).toHaveValue('NIO'));
+    expect(screen.getByRole('searchbox', { name: '搜索专辑' })).toBe(input);
+  });
+
   it('restores the directory scroll position after album detail', async () => {
     render(<App initialCatalog={catalog} />);
 
@@ -191,6 +203,64 @@ describe('mobile app shell', () => {
     expect(await screen.findByRole('button', { name: '打开播放列表' })).toBeInTheDocument();
   });
 
+  it('seeks the audio element when the progress slider changes', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 120 });
+    Object.defineProperty(audio, 'currentTime', { configurable: true, writable: true, value: 0 });
+    fireEvent.loadedMetadata(audio);
+
+    fireEvent.change(screen.getByRole('slider', { name: '播放进度' }), { target: { value: '30' } });
+
+    expect(audio.currentTime).toBe(30);
+  });
+
+  it('restarts the current episode after it was paused and selected again', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    const play = vi.spyOn(audio, 'play');
+    fireEvent.pause(audio);
+    play.mockClear();
+
+    fireEvent.click(document.querySelector('.episode-main'));
+
+    await waitFor(() => expect(play).toHaveBeenCalled());
+    expect(screen.getByRole('button', { name: '暂停' })).toBeInTheDocument();
+  });
+
+  it('returns to the play state when starting audio is rejected', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    const play = vi.spyOn(audio, 'play');
+    fireEvent.pause(audio);
+    play.mockRejectedValueOnce(new Error('blocked'));
+
+    fireEvent.click(screen.getByRole('button', { name: '播放' }));
+
+    await screen.findByRole('alert');
+    expect(screen.getByRole('button', { name: '播放' })).toBeInTheDocument();
+  });
+
+  it('stops and removes the audio source when the last queue item is removed', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    const pause = vi.spyOn(audio, 'pause');
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+
+    fireEvent.click(screen.getAllByRole('button', { name: /管理/ })[0]);
+    fireEvent.click(screen.getByRole('button', { name: '移出列表' }));
+    fireEvent.click(screen.getByRole('button', { name: /管理/ }));
+    fireEvent.click(screen.getByRole('button', { name: '移出列表' }));
+
+    await waitFor(() => expect(screen.queryByRole('region', { name: '当前播放' })).not.toBeInTheDocument());
+    expect(audio.getAttribute('src')).toBeNull();
+    expect(pause).toHaveBeenCalled();
+  });
+
   it('opens the queue in place, switches tabs, and closes through the backdrop', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
@@ -202,6 +272,9 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
     await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
     expect(window.location.hash).toBe('#/');
+
+    window.history.back();
+    await waitFor(() => expect(window.location.hash).toBe('#/'));
   });
 
   it('keeps the queue mounted during its closing animation and restores focus', async () => {
@@ -216,7 +289,7 @@ describe('mobile app shell', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
     expect(dialog).toHaveClass('is-closing');
-    expect(window.location.hash).toBe('#/');
+    await waitFor(() => expect(window.location.hash).toBe('#/'));
     expect(screen.getByRole('dialog', { name: '播放列表' })).toBeInTheDocument();
 
     fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
@@ -244,5 +317,33 @@ describe('mobile app shell', () => {
 
     window.history.back();
     await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
+  });
+
+  it('does not close the queue when dragging inside its scroll area', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+    const scroll = dialog.querySelector('.queue-scroll');
+
+    fireEvent.pointerDown(scroll, { clientY: 100 });
+    fireEvent.pointerUp(scroll, { clientY: 220 });
+
+    expect(window.location.hash).toBe('#/?queue=1');
+    expect(dialog).not.toHaveClass('is-closing');
+  });
+
+  it('traps Tab focus inside the queue dialog', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+    const close = screen.getByRole('button', { name: '收起播放列表' });
+    close.focus();
+
+    fireEvent.keyDown(window, { key: 'Tab', shiftKey: true });
+
+    const buttons = dialog.querySelectorAll('button');
+    expect(document.activeElement).toBe(buttons[buttons.length - 1]);
   });
 });

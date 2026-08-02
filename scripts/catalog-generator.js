@@ -20,17 +20,38 @@ function mapEpisode(ep) {
 }
 
 export function sortGeneratedAlbums(albums) {
-  return [...albums].sort((a, b) => Number(b.latestEpisode?.onlineTime || 0) - Number(a.latestEpisode?.onlineTime || 0));
+  return [...albums].sort((a, b) => {
+    const timeDifference = Number(b.latestEpisode?.onlineTime || 0) - Number(a.latestEpisode?.onlineTime || 0);
+    if (timeDifference) return timeDifference;
+    return Number(a.id || 0) - Number(b.id || 0);
+  });
 }
 
-export async function scanCatalog(ids, requestAlbum, concurrency = 12) {
+async function withTimeout(task, timeoutMs, id) {
+  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) return task;
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`Album ${id}: request timed out`)), timeoutMs);
+  });
+  try {
+    return await Promise.race([task, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTimeoutMs = 15000) {
   const found = [];
   let cursor = 0;
   const worker = async () => {
     while (cursor < ids.length) {
       const id = ids[cursor++];
-      const album = await requestAlbum(id);
-      if (album?.latestEpisode?.id) found.push(album);
+      try {
+        const album = await withTimeout(Promise.resolve().then(() => requestAlbum(id)), requestTimeoutMs, id);
+        if (album?.latestEpisode?.id) found.push(album);
+      } catch (error) {
+        console.warn(`Skipping album ${id}: ${error.message}`);
+      }
     }
   };
   const workerCount = Math.min(Math.max(1, concurrency), ids.length);
