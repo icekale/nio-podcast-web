@@ -1,10 +1,28 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { inflateSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
 
 const viteConfig = readFileSync(resolve(process.cwd(), 'vite.config.js'), 'utf8');
 const favicon = readFileSync(resolve(process.cwd(), 'public/favicon.svg'), 'utf8');
 const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
+
+function readPngSummary(path) {
+  const data = readFileSync(resolve(process.cwd(), path));
+  let offset = 8;
+  let header = null;
+  const imageData = [];
+  while (offset < data.length) {
+    const length = data.readUInt32BE(offset);
+    const type = data.toString('ascii', offset + 4, offset + 8);
+    const chunk = data.subarray(offset + 8, offset + 8 + length);
+    if (type === 'IHDR') header = { width: chunk.readUInt32BE(0), height: chunk.readUInt32BE(4) };
+    if (type === 'IDAT') imageData.push(chunk);
+    offset += length + 12;
+  }
+  const scanline = inflateSync(Buffer.concat(imageData));
+  return { ...header, firstPixel: [...scanline.subarray(1, 5)] };
+}
 
 describe('PWA cache boundaries', () => {
   it('precaches the static catalog and bounds artwork runtime caching', () => {
@@ -40,5 +58,13 @@ describe('public app naming', () => {
     expect(indexHtml).toContain('name="apple-mobile-web-app-title" content="NIO Radio"');
     expect(viteConfig).toContain("name: 'NIO Radio'");
     expect(viteConfig).toContain("short_name: 'NIO Radio'");
+  });
+});
+
+describe('home-screen icon fallbacks', () => {
+  it('ships NIO-colored PNGs for Chrome install prompts', () => {
+    for (const [path, size] of [['public/icon-180.png', 180], ['public/icon-192.png', 192], ['public/icon-512.png', 512]]) {
+      expect(readPngSummary(path)).toEqual({ width: size, height: size, firstPixel: [0, 190, 190, 255] });
+    }
   });
 });
