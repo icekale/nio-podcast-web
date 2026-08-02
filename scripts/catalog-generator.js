@@ -64,6 +64,13 @@ export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTi
   return sortGeneratedAlbums(found);
 }
 
+export async function updateKnownAlbums(previousAlbums, requestAlbum, concurrency = 12) {
+  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
+  const refreshed = await scanCatalog(previous.map(album => album.id), requestAlbum, concurrency);
+  const refreshedById = new Map(refreshed.map(album => [Number(album.id), album]));
+  return sortGeneratedAlbums(previous.map(album => refreshedById.get(Number(album.id)) || album));
+}
+
 export async function requestAlbum(id, fetchImpl = globalThis.fetch) {
   const body = new URLSearchParams({ albumId: String(id), sorttype: '2', pagenum: '1', pagesize: '1' });
   const response = await fetchImpl(API_URL, {
