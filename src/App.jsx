@@ -438,8 +438,7 @@ function AlbumPickerList({ albums, onSelect }) {
   );
 }
 
-function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOpen, onToggleMenu }) {
   const [swiped, setSwiped] = useState(false);
   const [dragging, setDragging] = useState(false);
   const gestureRef = useRef(null);
@@ -522,7 +521,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove }) {
     <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
       <button type="button" className="later-swipe-action" tabIndex={swiped ? 0 : -1} aria-hidden={!swiped} aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
       <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
-      <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={menuOpen} aria-haspopup="menu" aria-controls={`later-menu-${episode.id}`} onClick={() => setMenuOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div id={`later-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" disabled={index === 0} onClick={() => { onMove(index, index - 1); setMenuOpen(false); }}><ChevronUp size={15} />上移</button><button type="button" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); setMenuOpen(false); }}><ChevronDown size={15} />下移</button><button type="button" onClick={() => { onRemove(episode.id); setMenuOpen(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
+      <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={menuOpen} aria-haspopup="menu" aria-controls={`later-menu-${episode.id}`} onClick={() => onToggleMenu(!menuOpen)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div id={`later-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" disabled={index === 0} onClick={() => { onMove(index, index - 1); onToggleMenu(false); }}><ChevronUp size={15} />上移</button><button type="button" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); onToggleMenu(false); }}><ChevronDown size={15} />下移</button><button type="button" onClick={() => { onRemove(episode.id); onToggleMenu(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
     </li>
   );
 }
@@ -532,6 +531,7 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
   const dialogRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
+  const [laterActionsFor, setLaterActionsFor] = useState(null);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [notice, setNotice] = useState('');
   const noticeTimer = useRef(null);
@@ -581,6 +581,8 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
     setActiveTab(tab);
     setPickerOpen(false);
     setNotice('');
+    setActionsFor(null);
+    setLaterActionsFor(null);
   };
 
   const handleTabKeyDown = event => {
@@ -624,7 +626,7 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
         {notice ? <div className="later-notice" role="status" aria-live="polite">{notice}</div> : null}
         <div id="queue-panel" className="queue-scroll" role="tabpanel" aria-labelledby={`${activeTab}-tab`}>
           {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {
-            if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} />;
+            if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} menuOpen={laterActionsFor === episode.id} onToggleMenu={open => setLaterActionsFor(open ? episode.id : null)} />;
             const active = activeTab === 'queue' && currentEpisodeId === episode.id;
             return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}${actionsFor === episode.id ? ' is-menu-open' : ''}`}>
               <button type="button" className="queue-row-main" aria-label={activeTab === 'later' ? episode.title : undefined} onClick={() => (activeTab === 'later' ? onPlayLater(episode) : onPlay(episode))}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
