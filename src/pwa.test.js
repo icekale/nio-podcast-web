@@ -64,6 +64,16 @@ describe('public app naming', () => {
   });
 });
 
+describe('custom domain deployment', () => {
+  it('uses a relative base and publishes the GitHub Pages domain marker', () => {
+    expect(viteConfig).toContain("base: './'");
+    expect(viteConfig).toContain("id: './'");
+    expect(viteConfig).toContain("start_url: './'");
+    expect(viteConfig).toContain("scope: './'");
+    expect(readFileSync(resolve(process.cwd(), 'public/CNAME'), 'utf8').trim()).toBe('nio.k4le.top');
+  });
+});
+
 describe('home-screen icon fallbacks', () => {
   it('ships NIO-colored PNGs for Chrome install prompts', () => {
     for (const [path, size] of [['public/icon-180.png', 180], ['public/icon-192.png', 192], ['public/icon-512.png', 512]]) {

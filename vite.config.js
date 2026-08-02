@@ -33,11 +33,11 @@ export default defineConfig({
         ],
       },
       manifest: {
-        id: '/nio-podcast-web/',
+        id: './',
         name: 'NIO Radio',
         short_name: 'NIO Radio',
-        start_url: '/nio-podcast-web/',
-        scope: '/nio-podcast-web/',
+        start_url: './',
+        scope: './',
         display: 'standalone',
         background_color: '#0A0E14',
         theme_color: '#00A0E9',
@@ -52,7 +52,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/nio-podcast-web/',
+  base: './',
   test: {
     environment: 'jsdom',
     setupFiles: './src/testSetup.js',
