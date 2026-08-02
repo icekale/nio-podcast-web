@@ -2,9 +2,11 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import {
   buildCatalog,
+  mergeKnownAlbums,
   requestAlbum,
+  reconcileFullScan,
+  scanCatalog,
   sameCatalogContent,
-  updateKnownAlbums,
   writeCatalogAtomically,
 } from './catalog-generator.js';
 
@@ -30,9 +32,24 @@ if (mode === 'incremental' && !previous?.albums?.length) {
 }
 
 console.log(`${mode === 'incremental' ? 'Refreshing' : 'Scanning'} ${mode === 'incremental' ? previous.albums.length : ids.length} albums with concurrency ${concurrency}...`);
+const scanResult = mode === 'incremental'
+  ? await scanCatalog(previous.albums.map(album => album.id), (id, signal) => requestAlbum(id, globalThis.fetch, signal), concurrency)
+  : await buildCatalog(ids, globalThis.fetch, concurrency);
+const previousAlbums = previous?.albums || [];
+const previousIds = new Set(previousAlbums.map(album => Number(album.id)));
+const discoveredIds = new Set(scanResult.albums.map(album => Number(album.id)));
+const stats = {
+  discovered: scanResult.albums.length,
+  preserved: mode === 'incremental'
+    ? previousAlbums.length - scanResult.albums.length
+    : scanResult.failedIds.filter(id => previousIds.has(Number(id)) && !discoveredIds.has(Number(id))).length,
+  missing: scanResult.missingIds.length,
+  failed: scanResult.failedIds.length,
+};
+console.log(`Catalog scan: discovered ${stats.discovered}, preserved ${stats.preserved}, missing ${stats.missing}, failed ${stats.failed}`);
 const albums = mode === 'incremental'
-  ? await updateKnownAlbums(previous.albums, id => requestAlbum(id, globalThis.fetch), concurrency)
-  : (await buildCatalog(ids, globalThis.fetch, concurrency)).albums;
+  ? mergeKnownAlbums(previousAlbums, scanResult)
+  : reconcileFullScan(previousAlbums, scanResult).albums;
 if (!albums.length) throw new Error('No albums found; refusing to replace the existing catalog');
 
 const catalog = { generatedAt: Date.now(), albums };

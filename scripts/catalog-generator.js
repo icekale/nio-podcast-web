@@ -36,51 +36,76 @@ export function sameCatalogContent(previous, next) {
   return JSON.stringify(previous?.albums || []) === JSON.stringify(next?.albums || []);
 }
 
-async function withTimeout(task, timeoutMs, id) {
-  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) return task;
-  let timer;
-  const timeout = new Promise((_, reject) => {
-    timer = setTimeout(() => reject(new Error(`Album ${id}: request timed out`)), timeoutMs);
-  });
-  try {
-    return await Promise.race([task, timeout]);
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTimeoutMs = 15000) {
   const found = [];
+  const failedIds = [];
+  const missingIds = [];
   let cursor = 0;
   const worker = async () => {
     while (cursor < ids.length) {
       const id = ids[cursor++];
+      const controller = new AbortController();
+      let timer;
+      let timedOut = false;
+      const request = Promise.resolve().then(() => requestAlbum(id, controller.signal));
       try {
-        const album = await withTimeout(Promise.resolve().then(() => requestAlbum(id)), requestTimeoutMs, id);
-        if (album?.latestEpisode?.id) found.push(album);
+        const result = Number.isFinite(requestTimeoutMs) && requestTimeoutMs > 0
+          ? await Promise.race([
+            request,
+            new Promise((_, reject) => {
+              timer = setTimeout(() => {
+                timedOut = true;
+                controller.abort();
+                reject(new Error(`Album ${id}: request timed out`));
+              }, requestTimeoutMs);
+            }),
+          ])
+          : await request;
+        if (result === null) {
+          missingIds.push(id);
+        } else if (result?.latestEpisode?.id) {
+          found.push(result);
+        } else {
+          throw new Error(`Album ${id}: invalid request result`);
+        }
       } catch (error) {
+        failedIds.push(id);
         console.warn(`Skipping album ${id}: ${error.message}`);
+      } finally {
+        clearTimeout(timer);
+        if (timedOut) await request.catch(() => {});
       }
     }
   };
-  const workerCount = Math.min(Math.max(1, concurrency), ids.length);
+  const workerLimit = Number.isFinite(concurrency) ? Math.max(1, Math.floor(concurrency)) : 1;
+  const workerCount = Math.min(workerLimit, ids.length);
   await Promise.all(Array.from({ length: workerCount }, worker));
-  return sortGeneratedAlbums(found);
+  return {
+    albums: sortGeneratedAlbums(found),
+    failedIds: failedIds.sort((a, b) => Number(a) - Number(b)),
+    missingIds: missingIds.sort((a, b) => Number(a) - Number(b)),
+  };
+}
+
+export function mergeKnownAlbums(previousAlbums, scanResult) {
+  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
+  const refreshedById = new Map((scanResult?.albums || []).map(album => [Number(album.id), album]));
+  return sortGeneratedAlbums(previous.map(album => refreshedById.get(Number(album.id)) || album));
 }
 
 export async function updateKnownAlbums(previousAlbums, requestAlbum, concurrency = 12) {
   const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
-  const refreshed = await scanCatalog(previous.map(album => album.id), requestAlbum, concurrency);
-  const refreshedById = new Map(refreshed.map(album => [Number(album.id), album]));
-  return sortGeneratedAlbums(previous.map(album => refreshedById.get(Number(album.id)) || album));
+  const scanResult = await scanCatalog(previous.map(album => album.id), requestAlbum, concurrency);
+  return mergeKnownAlbums(previous, scanResult);
 }
 
-export async function requestAlbum(id, fetchImpl = globalThis.fetch) {
+export async function requestAlbum(id, fetchImpl = globalThis.fetch, signal) {
   const body = new URLSearchParams({ albumId: String(id), sorttype: '2', pagenum: '1', pagesize: '1' });
   const response = await fetchImpl(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body,
+    ...(signal ? { signal } : {}),
   });
   if (!response.ok) throw new Error(`Album ${id}: HTTP ${response.status}`);
   const result = (await response.json())?.result;
@@ -101,8 +126,37 @@ export async function requestAlbum(id, fetchImpl = globalThis.fetch) {
 }
 
 export async function buildCatalog(ids, fetchImpl = globalThis.fetch, concurrency = 12) {
-  const albums = await scanCatalog(ids, id => requestAlbum(id, fetchImpl), concurrency);
-  return { generatedAt: Date.now(), albums };
+  const scanResult = await scanCatalog(ids, (id, signal) => requestAlbum(id, fetchImpl, signal), concurrency);
+  return { generatedAt: Date.now(), ...scanResult };
+}
+
+export function reconcileFullScan(previousAlbums, scanResult) {
+  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
+  const discovered = Array.isArray(scanResult?.albums) ? scanResult.albums : [];
+  const failedIds = new Set((scanResult?.failedIds || []).map(Number));
+  const discoveredById = new Map(discovered.map(album => [Number(album.id), album]));
+  const albums = [...discovered];
+  const preserved = [];
+  for (const album of previous) {
+    const id = Number(album.id);
+    if (!discoveredById.has(id) && failedIds.has(id)) {
+      albums.push(album);
+      preserved.push(album);
+    }
+  }
+  const sortedAlbums = sortGeneratedAlbums(albums);
+  if (previous.length && sortedAlbums.length < previous.length * 0.9) {
+    throw new Error(`Full scan would remove more than 10% of existing albums (${previous.length} -> ${sortedAlbums.length})`);
+  }
+  return {
+    albums: sortedAlbums,
+    stats: {
+      discovered: discovered.length,
+      preserved: preserved.length,
+      missing: (scanResult?.missingIds || []).length,
+      failed: (scanResult?.failedIds || []).length,
+    },
+  };
 }
 
 export async function writeCatalogAtomically(target, catalog, renameImpl = rename) {
