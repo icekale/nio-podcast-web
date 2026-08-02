@@ -649,7 +649,7 @@ export default function App({ initialCatalog = null }) {
   const [catalogState, setCatalogState] = useState(() => {
     if (!initialCatalog) return { catalog: null, loading: true, error: null, stale: false };
     return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
-});
+  });
   const [player, setPlayer] = useState(readStoredPlayer);
   const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
   const [isPlaying, setIsPlaying] = useState(false);
