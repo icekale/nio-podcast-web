@@ -42,6 +42,25 @@ describe('mobile app shell', () => {
     expect(screen.getAllByText('第一集').length).toBeGreaterThan(0);
   });
 
+  it('keeps the recommendation panel mounted while the compact header changes', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
+    fireEvent.scroll(window);
+
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
+    expect(document.querySelector('.updates-section')).toBeInTheDocument();
+  });
+
+  it('initializes the compact header from a restored scroll position', async () => {
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
+    render(<App initialCatalog={catalog} />);
+
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
+  });
+
   it('opens the full album directory from the home back control', async () => {
     render(<App initialCatalog={catalog} />);
 

@@ -96,6 +96,7 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 180);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -118,24 +119,22 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
         </div>
       </header>
 
-      {!scrolled ? (
-        <section className="recommendation-panel" aria-labelledby="recommendation-title">
-          <div className="recommendation-copy">
-            <span className="section-kicker">TODAY</span>
-            <h1 id="recommendation-title">今日推荐</h1>
-            {recommendation ? (
-              <>
-                <h2>{recommendation.title}</h2>
-                <p>{recommendation.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(recommendation.duration)}</p>
-              </>
-            ) : <p>今天还没有新的节目</p>}
-          </div>
-          <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
-          <button type="button" className="primary-button" onClick={() => onPlayAll(selection.episodes)} disabled={!selection.episodes.length}>
-            <Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放
-          </button>
-        </section>
-      ) : null}
+      <section className="recommendation-panel" aria-labelledby="recommendation-title">
+        <div className="recommendation-copy">
+          <span className="section-kicker">TODAY</span>
+          <h1 id="recommendation-title">今日推荐</h1>
+          {recommendation ? (
+            <>
+              <h2>{recommendation.title}</h2>
+              <p>{recommendation.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(recommendation.duration)}</p>
+            </>
+          ) : <p>今天还没有新的节目</p>}
+        </div>
+        <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
+        <button type="button" className="primary-button" onClick={() => onPlayAll(selection.episodes)} disabled={!selection.episodes.length}>
+          <Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放
+        </button>
+      </section>
 
       <section className="updates-section" aria-labelledby="updates-title">
         <div className="section-heading-row">
