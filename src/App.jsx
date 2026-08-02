@@ -1,10 +1,31 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, memo } from 'react';
 import { SEED_ALBUMS, discoverAlbums, getEpisodes, getCachedAlbums } from './api';
 import './App.css';
 
+/* ══════════ Shared helpers ══════════ */
+// Episode durations arrive in milliseconds; the audio element reports seconds.
+function formatDuration(ms) {
+  if (!Number.isFinite(ms)) return '--:--';
+  const m = Math.floor(ms / 60000);
+  const s = Math.floor((ms % 60000) / 1000);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+function formatClock(sec) {
+  if (!Number.isFinite(sec)) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+function formatDate(ts) {
+  const d = new Date(ts);
+  if (Number.isNaN(d.getTime())) return '';
+  return `${d.getMonth() + 1}/${d.getDate()}`;
+}
+
 /* ══════════ Player ══════════ */
-function Player({ episode, onClose }) {
+const Player = memo(function Player({ episode, onClose }) {
   const aRef = useRef(null);
+  const scrubbingRef = useRef(false);
   const [play, setPlay] = useState(false);
   const [pos, setPos] = useState(0);
   const [dur, setDur] = useState(0);
@@ -12,9 +33,13 @@ function Player({ episode, onClose }) {
   useEffect(() => {
     const a = aRef.current;
     if (!a || !episode) return;
+    // Reset the bar whenever a new episode is loaded
+    setPos(0);
+    setDur(0);
+    setPlay(false);
     a.src = episode.audioUrl;
     a.load();
-    a.play().then(() => setPlay(true)).catch(() => {});
+    a.play().catch(() => {});
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: episode.title, artist: episode.host || episode.albumName,
@@ -22,91 +47,140 @@ function Player({ episode, onClose }) {
         artwork: episode.albumPic ? [{ src: episode.albumPic, sizes: '512x512', type: 'image/jpeg' }] : [],
       });
     }
-  }, [episode?.id]);
+  }, [episode]);
 
-  const toggle = () => { const a=aRef.current; if(!a)return; play?a.pause():a.play(); setPlay(!play); };
-  const fmt = s => { const m=Math.floor(s/60), sec=Math.floor(s%60); return `${m}:${sec.toString().padStart(2,'0')}`; };
-  const pct = dur ? (pos/dur)*100 : 0;
+  // Single source of truth is the <audio> element events — the UI just mirrors
+  // onPlay/onPause, so it can never drift out of sync with actual playback.
+  const toggle = () => {
+    const a = aRef.current;
+    if (!a) return;
+    if (a.paused) a.play().catch(() => {});
+    else a.pause();
+  };
+
+  const seek = e => {
+    const a = aRef.current;
+    if (!a || !dur) return;
+    scrubbingRef.current = true;
+    const t = Math.min(Number(e.target.value), dur);
+    a.currentTime = t;
+    setPos(t);
+  };
 
   if (!episode) return null;
 
   return (
     <div className="player">
       <audio ref={aRef}
-        onTimeUpdate={() => setPos(aRef.current?.currentTime||0)}
+        preload="metadata"
+        onTimeUpdate={() => { if (!scrubbingRef.current) setPos(aRef.current?.currentTime||0); }}
         onLoadedMetadata={() => setDur(aRef.current?.duration||0)}
         onPlay={() => setPlay(true)} onPause={() => setPlay(false)}
         onEnded={() => setPlay(false)} />
       <div className="player-row">
         {episode.albumPic && <img src={episode.albumPic} alt="" className="player-cover" />}
-        <div className="player-info" onClick={onClose}>
-          <div className="player-name">{episode.title}</div>
-          <div className="player-album">{episode.albumName}</div>
-        </div>
-        <button className="player-play" onClick={toggle}>{play ? '⏸' : '▶'}</button>
+        <button type="button" className="player-info" onClick={onClose} aria-label="收起播放器">
+          <span className="player-name">{episode.title}</span>
+          <span className="player-album">{episode.albumName}</span>
+        </button>
+        <button type="button" className="player-play" onClick={toggle}
+          aria-label={play ? '暂停' : '播放'} aria-pressed={play}>
+          {play ? '⏸' : '▶'}
+        </button>
       </div>
       <div className="player-bar-row">
-        <span className="player-time">{fmt(pos)}</span>
-        <input type="range" min="0" max="100" value={pct}
-          onChange={e => { const a=aRef.current; if(a){ a.currentTime=(e.target.value/100)*dur; setPos(a.currentTime); } }}
-          className="player-range" />
-        <span className="player-time">{fmt(dur)}</span>
+        <span className="player-time">{formatClock(pos)}</span>
+        <input type="range" min="0" max={dur || 0} step="1" value={pos}
+          onChange={seek}
+          onPointerUp={() => { scrubbingRef.current = false; }}
+          onKeyUp={() => { scrubbingRef.current = false; }}
+          onBlur={() => { scrubbingRef.current = false; }}
+          className="player-range" aria-label="播放进度" />
+        <span className="player-time">{formatClock(dur)}</span>
       </div>
     </div>
   );
-}
+});
 
 /* ══════════ Episodes ══════════ */
-function EpisodeList({ album, onBack, onPlay }) {
+const EpisodeList = memo(function EpisodeList({ album, onBack, onPlay }) {
   const [eps, setEps] = useState([]);
   const [load, setLoad] = useState(true);
   const [page, setPage] = useState(1);
   const [more, setMore] = useState(true);
+  const [err, setErr] = useState(false);
+  const headRef = useRef(null);
+  // Each fetch bumps the sequence; responses from superseded requests are dropped.
+  // This prevents stale pages from one album leaking into another when the user
+  // switches albums quickly, and stops double-taps on "加载更多" duplicating rows.
+  const seqRef = useRef(0);
 
   const fetch = useCallback(async (p) => {
+    const seq = ++seqRef.current;
     setLoad(true);
-    try { const r=await getEpisodes(album.id,p); setEps(prev=>p===1?r.episodes:[...prev,...r.episodes]); setMore(r.hasMore); setPage(p); }
-    catch(e){ console.error(e); }
-    setLoad(false);
+    setErr(false);
+    try {
+      const r = await getEpisodes(album.id, p);
+      if (seq !== seqRef.current) return;
+      setEps(prev => p === 1 ? r.episodes : [...prev, ...r.episodes]);
+      setMore(r.hasMore);
+      setPage(p);
+    } catch (e) {
+      if (seq !== seqRef.current) return;
+      console.error(e);
+      setErr(true);
+    } finally {
+      if (seq === seqRef.current) setLoad(false);
+    }
   }, [album.id]);
 
-  useEffect(() => { fetch(1); }, [album.id]);
+  useEffect(() => { fetch(1); }, [fetch]);
 
-  const d = ms => { const m=Math.floor(ms/60000), s=Math.floor((ms%60000)/1000); return `${m}:${s.toString().padStart(2,'0')}`; };
-  const dt = ts => { const d=new Date(ts); return `${d.getMonth()+1}/${d.getDate()}`; };
+  // Announce the new view to screen readers / keyboard users on open
+  useEffect(() => { headRef.current?.focus(); }, []);
 
   return (
-    <div>
-      <div className="ep-nav">
-        <button className="ep-back" onClick={onBack}>←</button>
+    <section>
+      <header className="ep-nav">
+        <button type="button" className="ep-back" onClick={onBack} aria-label="返回专辑列表">←</button>
         <div className="ep-nav-info">
-          <div className="ep-nav-name">{album.name}</div>
+          <h1 ref={headRef} tabIndex={-1} className="ep-nav-name">{album.name}</h1>
           <div className="ep-nav-count">{album.count} 集</div>
         </div>
-      </div>
-      <div className="ep-list">
+      </header>
+      <ul className="ep-list">
         {eps.map((ep, i) => (
-          <div key={ep.id} className="ep-row" onClick={() => onPlay(ep)}>
-            <span className="ep-idx">{i+1}</span>
-            <div className="ep-body">
-              <div className="ep-body-title">{ep.title}</div>
-              <div className="ep-body-meta">
-                <span>{d(ep.duration)}</span>
-                <span>{dt(ep.onlineTime)}</span>
-              </div>
-            </div>
-            <button className="ep-play-btn" onClick={e=>{e.stopPropagation();onPlay(ep);}}>▶</button>
-          </div>
+          <li key={ep.id} className="ep-row">
+            <button type="button" className="ep-main" onClick={() => onPlay(ep)}>
+              <span className="ep-idx">{i+1}</span>
+              <span className="ep-body">
+                <span className="ep-body-title">{ep.title}</span>
+                <span className="ep-body-meta">
+                  <span>{formatDuration(ep.duration)}</span>
+                  <span>{formatDate(ep.onlineTime)}</span>
+                </span>
+              </span>
+            </button>
+            <button type="button" className="ep-play-btn" onClick={() => onPlay(ep)} aria-label={`播放 ${ep.title}`}>▶</button>
+          </li>
         ))}
-        {more && !load && <button className="load-more" onClick={()=>fetch(page+1)}>加载更多</button>}
-        {load && <div className="spinner" />}
-      </div>
-    </div>
+        {err && (
+          <li className="ep-error" role="alert">
+            <span>加载失败</span>
+            <button type="button" className="ep-retry" onClick={() => fetch(page)}>重试</button>
+          </li>
+        )}
+        {more && !load && (
+          <li><button type="button" className="load-more" onClick={()=>fetch(page+1)}>加载更多</button></li>
+        )}
+        {load && <li className="spinner" role="status" aria-label="加载中" />}
+      </ul>
+    </section>
   );
-}
+});
 
 /* ══════════ Home ══════════ */
-function Home({ onSelect, onPlay }) {
+const Home = memo(function Home({ onSelect }) {
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState('');
   const [discProg, setDiscProg] = useState(0);
@@ -134,29 +208,34 @@ function Home({ onSelect, onPlay }) {
       .catch(() => {});
   }, []);
 
-  const filt = search ? albums.filter(a => a.name.includes(search) || a.desc.includes(search)) : albums;
-  const withPic = filt.filter(a => a.pic);
-  const noPic = filt.filter(a => !a.pic);
+  const q = search.trim().toLowerCase();
+  const filt = useMemo(
+    () => q
+      ? albums.filter(a => (a.name || '').toLowerCase().includes(q) || (a.desc || '').toLowerCase().includes(q))
+      : albums,
+    [albums, q]
+  );
+  const withPic = useMemo(() => filt.filter(a => a.pic), [filt]);
+  const noPic = useMemo(() => filt.filter(a => !a.pic), [filt]);
 
   return (
     <div>
-      {/* Nav */}
-      <div className="nav">
+      <header className="nav">
         <span className="nav-logo">Nio Podcast</span>
-        <span className="nav-status">{discProg > 0 ? `${discProg} 个专辑` : ''}</span>
-      </div>
+        <span className="nav-status" role="status">{discProg > 0 ? `${discProg} 个专辑` : ''}</span>
+      </header>
 
-      {/* Hero */}
-      <div className="hero">
+      <section className="hero">
         <span className="hero-tag">NIO Radio</span>
         <h1>探索播客</h1>
         <p className="hero-desc">蔚来电台精选内容，随时随地收听</p>
-      </div>
+      </section>
 
       {/* Discovery Progress */}
       {discProg < discTotal && discTotal > 0 && (
         <div className="progress-section">
-          <div className="progress-bar">
+          <div className="progress-bar" role="progressbar"
+            aria-label="专辑发现进度" aria-valuemin={0} aria-valuenow={discProg} aria-valuemax={discTotal}>
             <div className="progress-fill" style={{width:`${Math.min(100,(discProg/discTotal)*100)}%`}} />
           </div>
           <div className="progress-text">正在发现专辑… {discProg}/{discTotal}</div>
@@ -165,48 +244,53 @@ function Home({ onSelect, onPlay }) {
 
       {/* Search */}
       <div className="search-section">
-        <input className="search-input" placeholder="搜索专辑…" value={search} onChange={e => setSearch(e.target.value)} />
+        <input type="search" className="search-input" placeholder="搜索专辑…"
+          aria-label="搜索专辑" value={search} onChange={e => setSearch(e.target.value)} />
       </div>
 
       {/* Albums with images — horizontal scroll */}
       {withPic.length > 0 && (
-        <>
-          <div className="section"><span className="section-label">精选</span></div>
-          <div className="scroll-row">
+        <section className="section" aria-label="精选">
+          <h2 className="section-label">精选</h2>
+          <ul className="scroll-row">
             {withPic.map(a => (
-              <div key={a.id} className="h-card" onClick={() => onSelect(a)}>
-                <img src={a.pic} alt="" className="h-card-img" loading="lazy" />
-                <div className="h-card-body">
-                  <div className="h-card-title">{a.name}</div>
-                  <div className="h-card-meta">{a.count > 0 ? `${a.count} 集` : ''}</div>
-                </div>
-              </div>
+              <li key={a.id}>
+                <button type="button" className="h-card" onClick={() => onSelect(a)} aria-label={`打开专辑 ${a.name}`}>
+                  <img src={a.pic} alt="" className="h-card-img" loading="lazy" decoding="async" />
+                  <span className="h-card-body">
+                    <span className="h-card-title">{a.name}</span>
+                    <span className="h-card-meta">{a.count > 0 ? `${a.count} 集` : ''}</span>
+                  </span>
+                </button>
+              </li>
             ))}
-          </div>
-        </>
+          </ul>
+        </section>
       )}
 
       {/* Albums without images — vertical list */}
       {noPic.length > 0 && (
-        <>
-          <div className="section"><span className="section-label">全部专辑</span></div>
-          <div className="v-list">
+        <section className="section" aria-label="全部专辑">
+          <h2 className="section-label">全部专辑</h2>
+          <ul className="v-list">
             {noPic.map(a => (
-              <div key={a.id} className="v-card" onClick={() => onSelect(a)}>
-                <div className="v-card-icon">🎧</div>
-                <div className="v-card-body">
-                  <div className="v-card-title">{a.name}</div>
-                  {a.desc && <div className="v-card-desc">{a.desc}</div>}
-                </div>
-                <span className="v-card-arrow">›</span>
-              </div>
+              <li key={a.id}>
+                <button type="button" className="v-card" onClick={() => onSelect(a)} aria-label={`打开专辑 ${a.name}`}>
+                  <span className="v-card-icon" aria-hidden="true">🎧</span>
+                  <span className="v-card-body">
+                    <span className="v-card-title">{a.name}</span>
+                    {a.desc && <span className="v-card-desc">{a.desc}</span>}
+                  </span>
+                  <span className="v-card-arrow" aria-hidden="true">›</span>
+                </button>
+              </li>
             ))}
-          </div>
-        </>
+          </ul>
+        </section>
       )}
     </div>
   );
-}
+});
 
 /* ══════════ App ══════════ */
 export default function App() {
@@ -215,13 +299,19 @@ export default function App() {
   const [ep, setEp] = useState(null);
   const [pl, setPl] = useState(false);
 
-  const play = e => { setEp(e); setPl(true); };
+  const play = useCallback(e => { setEp(e); setPl(true); }, []);
+  const selectAlbum = useCallback(a => { setAlbum(a); setV('eps'); }, []);
+  const goHome = useCallback(() => setV('home'), []);
+  const closePlayer = useCallback(() => setPl(false), []);
+
+  // Start each view at the top instead of inheriting stale scroll position
+  useEffect(() => { window.scrollTo(0, 0); }, [v]);
 
   return (
-    <div className="app">
-      {v==='home' && <Home onSelect={a=>{setAlbum(a);setV('eps');}} onPlay={play} />}
-      {v==='eps' && album && <EpisodeList album={album} onBack={()=>setV('home')} onPlay={play} />}
-      {pl && ep && <Player episode={ep} onClose={()=>setPl(false)} />}
-    </div>
+    <main className="app">
+      {v==='home' && <Home onSelect={selectAlbum} />}
+      {v==='eps' && album && <EpisodeList album={album} onBack={goHome} onPlay={play} />}
+      {pl && ep && <Player episode={ep} onClose={closePlayer} />}
+    </main>
   );
 }

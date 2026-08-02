@@ -3,6 +3,10 @@ const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const CACHE_KEY = 'nio_albums_cache';
 const CACHE_TS_KEY = 'nio_albums_ts';
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24h
+const EP_CACHE_KEY = 'nio_episodes_cache_v1';
+const EP_CACHE_TTL = 60 * 60 * 1000; // 1h
+const EP_CACHE_MAX_PAGES = 50;
+const FETCH_TIMEOUT_MS = 8000;
 
 export function getCachedAlbums() {
   try {
@@ -14,7 +18,7 @@ export function getCachedAlbums() {
         return JSON.parse(raw);
       }
     }
-  } catch (_) {}
+  } catch {}
   return null;
 }
 
@@ -22,7 +26,38 @@ function setCachedAlbums(albums) {
   try {
     localStorage.setItem(CACHE_KEY, JSON.stringify(albums));
     localStorage.setItem(CACHE_TS_KEY, String(Date.now()));
-  } catch (_) {}
+  } catch {}
+}
+
+/* ── Episode page cache ─────────────────────────── */
+function episodeCacheKey(albumId, page, pageSize) {
+  return `${albumId}:${page}:${pageSize}`;
+}
+
+function getCachedEpisodePage(albumId, page, pageSize) {
+  try {
+    const raw = localStorage.getItem(EP_CACHE_KEY);
+    if (!raw) return null;
+    const cache = JSON.parse(raw);
+    const hit = cache[episodeCacheKey(albumId, page, pageSize)];
+    return hit && Date.now() - hit.ts < EP_CACHE_TTL ? hit.data : null;
+  } catch {}
+  return null;
+}
+
+function setCachedEpisodePage(albumId, page, pageSize, data) {
+  try {
+    const raw = localStorage.getItem(EP_CACHE_KEY);
+    const cache = raw ? JSON.parse(raw) : {};
+    const keys = Object.keys(cache);
+    if (keys.length >= EP_CACHE_MAX_PAGES) {
+      // Evict the oldest page so the cache cannot grow unbounded
+      keys.sort((a, b) => cache[a].ts - cache[b].ts);
+      delete cache[keys[0]];
+    }
+    cache[episodeCacheKey(albumId, page, pageSize)] = { data, ts: Date.now() };
+    localStorage.setItem(EP_CACHE_KEY, JSON.stringify(cache));
+  } catch {}
 }
 
 // Pre-discovered album IDs (from our earlier probing)
@@ -51,9 +86,34 @@ const SEED_ALBUMS = [
 
 const ALL_SEED_IDS = SEED_ALBUMS.map(a => a.id);
 
-export async function discoverAlbums(onProgress) {
+let discoveryPromise = null;      // in-flight discovery run, shared by all callers
+let discoveryProgress = null;     // latest progress callback
+
+export function discoverAlbums(onProgress) {
+  if (onProgress) discoveryProgress = onProgress;
+  if (!discoveryPromise) {
+    discoveryPromise = runDiscovery();
+    discoveryPromise.finally(() => { discoveryPromise = null; });
+  }
+  return discoveryPromise;
+}
+
+async function runDiscovery() {
   const found = [];
   const seen = new Set();
+
+  const addAlbum = (ep, totalCount) => {
+    if (!ep || seen.has(ep.albumId)) return;
+    seen.add(ep.albumId);
+    found.push({
+      id: ep.albumId,
+      name: ep.albumName,
+      desc: ep.albumDesc || '',
+      pic: ep.albumPic || '',
+      count: totalCount,
+      host: (ep.host || []).join(', ') || ep.singer || '',
+    });
+  };
 
   // Phase 1: seed albums
   for (let i = 0; i < ALL_SEED_IDS.length; i++) {
@@ -61,21 +121,10 @@ export async function discoverAlbums(onProgress) {
     try {
       const resp = await fetchEpisodePage(id, 1, 1);
       if (resp.totalCount > 0 && resp.dataList.length > 0) {
-        const ep = resp.dataList[0];
-        if (!seen.has(ep.albumId)) {
-          seen.add(ep.albumId);
-          found.push({
-            id: ep.albumId,
-            name: ep.albumName,
-            desc: ep.albumDesc || '',
-            pic: ep.albumPic || '',
-            count: resp.totalCount,
-            host: (ep.host || []).join(', ') || ep.singer || '',
-          });
-        }
+        addAlbum(resp.dataList[0], resp.totalCount);
       }
-    } catch (_) {}
-    onProgress?.(found.length, i + 1);
+    } catch {}
+    discoveryProgress?.(found.length, i + 1);
   }
 
   // Phase 2: probe remaining IDs in batches
@@ -90,26 +139,16 @@ export async function discoverAlbums(onProgress) {
     );
     for (const res of results) {
       if (res.status === 'fulfilled' && res.value.r.totalCount > 0) {
-        const ep = res.value.r.dataList?.[0];
-        if (ep && !seen.has(ep.albumId)) {
-          seen.add(ep.albumId);
-          found.push({
-            id: ep.albumId,
-            name: ep.albumName,
-            desc: ep.albumDesc || '',
-            pic: ep.albumPic || '',
-            count: res.value.r.totalCount,
-            host: (ep.host || []).join(', ') || ep.singer || '',
-          });
-        }
+        addAlbum(res.value.r.dataList?.[0], res.value.r.totalCount);
       }
     }
-    onProgress?.(found.length, start + BATCH);
+    discoveryProgress?.(found.length, start + BATCH);
   }
 
   // Cache results for next visit
-  setCachedAlbums(found);
-  return found.sort((a, b) => b.count - a.count);
+  const sorted = found.sort((a, b) => b.count - a.count);
+  setCachedAlbums(sorted);
+  return sorted;
 }
 
 async function fetchEpisodePage(albumId, pageNum, pageSize) {
@@ -119,17 +158,34 @@ async function fetchEpisodePage(albumId, pageNum, pageSize) {
     pagenum: String(pageNum),
     pagesize: String(pageSize),
   });
-  const resp = await fetch(BASE, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body,
-  });
-  const data = await resp.json();
-  return data.result || { totalCount: 0, dataList: [] };
+  // Abort hung requests so the UI never spins forever on a dead connection
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const resp = await fetch(BASE, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+      signal: ctrl.signal,
+    });
+    if (!resp.ok) throw new Error(`Request failed: ${resp.status}`);
+    const data = await resp.json();
+    return data.result || { totalCount: 0, dataList: [] };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export async function getEpisodes(albumId, page = 1, pageSize = 30) {
+  const cached = getCachedEpisodePage(albumId, page, pageSize);
+  if (cached) return cached;
   const result = await fetchEpisodePage(albumId, page, pageSize);
+  const data = normalizeEpisodes(result);
+  setCachedEpisodePage(albumId, page, pageSize, data);
+  return data;
+}
+
+function normalizeEpisodes(result) {
   return {
     episodes: (result.dataList || []).map(ep => ({
       id: ep.audioId,
