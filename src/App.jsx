@@ -97,10 +97,10 @@ function Artwork({ src, alt = '', className = '' }) {
   return <span className={`artwork artwork-empty ${className}`} aria-hidden="true"><Music2 size={22} strokeWidth={1.7} /></span>;
 }
 
-function EpisodeRow({ episode, onPlay, active = false, progress = 0, action }) {
+function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mainLabel }) {
   return (
     <li className={`episode-row${active ? ' is-active' : ''}`}>
-      <button type="button" className="episode-main" onClick={() => onPlay(episode)}>
+      <button type="button" className="episode-main" aria-label={mainLabel} onClick={() => onPlay(episode)}>
         <Artwork src={episode.albumPic} alt="" className="episode-art" />
         <span className="episode-copy">
           <span className="episode-title">{episode.title}</span>
@@ -412,7 +412,7 @@ function LaterPicker({ catalog, onBack, onAdd }) {
       <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>{selectedAlbum.name}</h3><span className="icon-button-spacer" /></div>
       {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请重试</span><button type="button" onClick={() => loadPage(selectedAlbum.id, page)}><RotateCcw size={16} />重试</button></div> : null}
       {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
-      {episodes.length ? <ul className="episode-list later-picker-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} action={<button type="button" className="icon-button" aria-label={`添加 ${episode.title} 到稍后播放`} onClick={() => onAdd(episode)}><ListPlus size={17} /></button>} onPlay={() => {}} />)}</ul> : null}
+      {episodes.length ? <ul className="episode-list later-picker-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} mainLabel={episode.title} action={<button type="button" className="icon-button" aria-label={`添加 ${episode.title} 到稍后播放`} onClick={() => onAdd(episode)}><ListPlus size={17} /></button>} onPlay={onAdd} />)}</ul> : null}
       {!loading && !error && !episodes.length ? <div className="empty-state">这个专辑还没有节目</div> : null}
       {hasMore && !loading ? <button type="button" className="secondary-button load-more-button" onClick={() => loadPage(selectedAlbum.id, page + 1)}>加载更多</button> : null}
       {loading && episodes.length ? <div className="loading-more" role="status">正在加载下一页…</div> : null}
@@ -519,10 +519,10 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove }) {
   };
 
   return (
-    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
+    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
       <button type="button" className="later-swipe-action" tabIndex={swiped ? 0 : -1} aria-hidden={!swiped} aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
       <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
-      <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setMenuOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div className="row-action-menu"><button type="button" disabled={index === 0} onClick={() => { onMove(index, index - 1); setMenuOpen(false); }}><ChevronUp size={15} />上移</button><button type="button" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); setMenuOpen(false); }}><ChevronDown size={15} />下移</button><button type="button" onClick={() => { onRemove(episode.id); setMenuOpen(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
+      <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={menuOpen} aria-haspopup="menu" aria-controls={`later-menu-${episode.id}`} onClick={() => setMenuOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div id={`later-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" role="menuitem" disabled={index === 0} onClick={() => { onMove(index, index - 1); setMenuOpen(false); }}><ChevronUp size={15} />上移</button><button type="button" role="menuitem" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); setMenuOpen(false); }}><ChevronDown size={15} />下移</button><button type="button" role="menuitem" onClick={() => { onRemove(episode.id); setMenuOpen(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
     </li>
   );
 }
@@ -610,9 +610,9 @@ function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing,
           {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {
             if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} />;
             const active = activeTab === 'queue' && player.currentEpisode?.id === episode.id;
-            return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}`}>
+            return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}${actionsFor === episode.id ? ' is-menu-open' : ''}`}>
               <button type="button" className="queue-row-main" aria-label={activeTab === 'later' ? episode.title : undefined} onClick={() => (activeTab === 'later' ? onPlayLater(episode) : onPlay(episode))}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
-              {activeTab === 'queue' ? <div className="queue-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setActionsFor(actionsFor === episode.id ? null : episode.id)}><MoreHorizontal size={20} /></button>{actionsFor === episode.id ? <div className="row-action-menu"><button type="button" onClick={() => { onPlayNext(episode); setActionsFor(null); }}><ListPlus size={16} />下一首播放</button><button type="button" onClick={() => { onRemove(episode.id); setActionsFor(null); }}><Trash2 size={16} />移出列表</button></div> : null}</div> : null}
+              {activeTab === 'queue' ? <div className="queue-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={actionsFor === episode.id} aria-haspopup="menu" aria-controls={`queue-menu-${episode.id}`} onClick={() => setActionsFor(actionsFor === episode.id ? null : episode.id)}><MoreHorizontal size={20} /></button>{actionsFor === episode.id ? <div id={`queue-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" role="menuitem" onClick={() => { onPlayNext(episode); setActionsFor(null); }}><ListPlus size={16} />下一首播放</button><button type="button" role="menuitem" onClick={() => { onRemove(episode.id); setActionsFor(null); }}><Trash2 size={16} />移出列表</button></div> : null}</div> : null}
             </li>;
           })}</ul> : <div className="queue-empty"><Music2 size={28} /><p>{activeTab === 'queue' ? '播放列表是空的' : activeTab === 'history' ? '还没有听过的节目' : '稍后播放是空的'}</p><span>选择一个节目后，它会出现在这里</span></div>}
         </div>

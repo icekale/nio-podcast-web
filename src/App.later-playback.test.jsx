@@ -146,6 +146,20 @@ describe('later playback integration', () => {
     expect(within(dialog).getByRole('button', { name: '返回稍后播放' })).toBeInTheDocument();
   });
 
+  it('adds an episode when its title or artwork is clicked in the picker', async () => {
+    getEpisodes.mockResolvedValue({ episodes: [episode(6, '整行添加节目')], hasMore: false });
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
+    fireEvent.click(within(dialog).getByRole('button', { name: '选择专辑 NIO 精选' }));
+    fireEvent.click(await within(dialog).findByRole('button', { name: '整行添加节目' }));
+
+    expect(within(dialog).getByText('已添加到稍后播放')).toBeInTheDocument();
+  });
+
   it('shows a duplicate notice and keeps one later item', async () => {
     getEpisodes.mockResolvedValue({ episodes: [episode(4, '待添加节目')], hasMore: false });
     window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(4, '待添加节目')]));
@@ -181,7 +195,7 @@ describe('later playback integration', () => {
     fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
     const dialog = screen.getByRole('dialog', { name: '播放列表' });
     fireEvent.click(within(dialog).getByRole('button', { name: '管理 第二集' }));
-    fireEvent.click(within(dialog).getByRole('button', { name: '上移' }));
+    fireEvent.click(within(dialog).getByRole('menuitem', { name: '上移' }));
 
     const rows = [...dialog.querySelectorAll('.later-row')];
     expect(rows.map(row => row.textContent)).toEqual([
@@ -189,6 +203,21 @@ describe('later playback integration', () => {
       expect.stringContaining('第一集'),
       expect.stringContaining('第三集'),
     ]);
+  });
+
+  it('marks an open later action menu on its row and exposes expanded state', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集'), episode(2, '第二集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    const trigger = within(dialog).getByRole('button', { name: '管理 第二集' });
+    fireEvent.click(trigger);
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(trigger).toHaveAttribute('aria-haspopup', 'menu');
+    expect(trigger.closest('.later-row')).toHaveClass('is-menu-open');
   });
 
   it('reveals a remove action after a horizontal swipe', async () => {
