@@ -46,7 +46,6 @@
 html { background: var(--surface-soft); }
 body {
   margin: 0;
-  min-width: 320px;
   background: var(--surface-soft);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -206,6 +205,7 @@ h1, h2, p { margin: 0; }
 .search-results { padding-top: var(--space-6); }
 .album-results { border-top: 1px solid var(--line); }
 .album-results li { border-bottom: 1px solid var(--line); }
+.album-results-more button { width: 100%; padding: var(--space-4) var(--space-3); color: var(--teal-dark); background: transparent; font-size: 0.85rem; font-weight: 650; text-align: center; }
 .album-result { width: 100%; gap: var(--space-4); padding: var(--space-3) 0; }
 .album-art { width: 4.25rem; height: 4.25rem; border-radius: var(--radius-sm); }
 .album-result-copy { gap: var(--space-1); }
@@ -236,9 +236,7 @@ h1, h2, p { margin: 0; }
   width: min(100%, 430px);
   padding: var(--space-3) var(--space-4) max(var(--space-3), env(safe-area-inset-bottom));
   transform: translateX(-50%);
-  background: color-mix(in srgb, var(--surface) 95%, transparent);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  background: var(--surface);
   border-top: 1px solid var(--line);
 }
 .mini-player audio { display: none; }
@@ -328,6 +326,14 @@ h1, h2, p { margin: 0; }
 
 @media (max-width: 359px) {
   .continue-button { display: none; }
+  .recommendation-panel { grid-template-columns: 1fr; gap: var(--space-4); padding-right: var(--space-4); padding-left: var(--space-4); }
+  .recommendation-art { width: 5.75rem; justify-self: end; }
+  .updates-section, .search-results, .album-content { padding-right: var(--space-4); padding-left: var(--space-4); }
+  .queue-sheet { padding-right: var(--space-4); padding-left: var(--space-4); }
+  .episode-art, .album-art, .queue-art { width: 3.75rem; height: 3.75rem; }
+  .episode-main, .album-result, .queue-row-main { gap: var(--space-3); }
+  .recommendation-copy h1 { font-size: 1.75rem; }
+  .album-result-copy span { overflow-wrap: anywhere; white-space: normal; }
 }
 
 @media (prefers-reduced-motion: reduce) {

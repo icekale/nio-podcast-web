@@ -42,6 +42,36 @@ describe('mobile app shell', () => {
     expect(screen.getAllByText('第一集').length).toBeGreaterThan(0);
   });
 
+  it('shows a recoverable error when the selected episode has no audio URL', async () => {
+    const catalogWithoutAudio = {
+      ...catalog,
+      albums: [{ ...catalog.albums[0], latestEpisode: { ...catalog.albums[0].latestEpisode, audioUrl: '' } }],
+    };
+    render(<App initialCatalog={catalogWithoutAudio} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('没有可播放音频');
+    expect(screen.getByRole('button', { name: '播放' })).toBeInTheDocument();
+  });
+
+  it('loads large album lists in batches', async () => {
+    const albums = Array.from({ length: 101 }, (_, index) => ({
+      id: index + 1,
+      name: `专辑 ${index + 1}`,
+      description: '描述',
+      imageUrl: '',
+      latestEpisode: episode(index + 1, `节目 ${index + 1}`),
+    }));
+    const { container } = render(<AlbumResults albums={albums} onOpenAlbum={() => {}} />);
+
+    expect(container.querySelectorAll('.album-results > li:not(.album-results-more)')).toHaveLength(100);
+    expect(container.querySelector('.album-results-more')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '加载更多专辑' }));
+    expect(container.querySelectorAll('.album-results > li:not(.album-results-more)')).toHaveLength(101);
+    expect(container.querySelector('.album-results-more')).not.toBeInTheDocument();
+  });
+
   it('keeps the recommendation panel mounted while the compact header changes', async () => {
     render(<App initialCatalog={catalog} />);
 

@@ -50,6 +50,18 @@ describe('audio API boundary', () => {
     });
   });
 
+  it('accepts a string host from the upstream API', async () => {
+    const fetchImpl = async () => responseFor({
+      dataList: [{ audioId: 10, audioName: '字符串主播', host: 'NIO Radio', duration: 60000 }],
+      totalCount: 1,
+      haveNext: 0,
+    });
+
+    await expect(getEpisodes(6, 1, 30, fetchImpl)).resolves.toMatchObject({
+      episodes: [{ id: 10, host: 'NIO Radio' }],
+    });
+  });
+
   it('surfaces HTTP failures as typed errors', async () => {
     const fetchImpl = async () => ({ ok: false, status: 503 });
     await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });

@@ -122,7 +122,12 @@ function LaterEpisodeAction({ episode, onAdd }) {
   const [notice, setNotice] = useState('');
 
   const handleAdd = () => {
-    setNotice(onAdd(episode) ? '已添加到稍后播放' : '已在稍后播放');
+    const result = onAdd(episode);
+    setNotice(!result.added
+      ? '已在稍后播放'
+      : result.persisted
+        ? '已添加到稍后播放'
+        : '已添加到稍后播放，但无法保存，刷新后可能丢失');
     setOpen(false);
   };
 
@@ -200,11 +205,24 @@ function HomeScreen({ catalog, player, stale, refreshing = false, catalogError =
   );
 }
 
+const ALBUM_PAGE_SIZE = 100;
+
+function useVisibleAlbums(albums) {
+  const [visibleCount, setVisibleCount] = useState(ALBUM_PAGE_SIZE);
+  useEffect(() => setVisibleCount(ALBUM_PAGE_SIZE), [albums]);
+  return {
+    visibleAlbums: albums.slice(0, visibleCount),
+    hasMore: visibleCount < albums.length,
+    loadMore: () => setVisibleCount(count => Math.min(count + ALBUM_PAGE_SIZE, albums.length)),
+  };
+}
+
 export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender }) {
   onRender?.();
+  const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
   return (
     <ul className="album-results">
-      {albums.map(album => (
+      {visibleAlbums.map(album => (
         <li key={album.id}>
           <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
             <Artwork src={album.imageUrl} alt="" className="album-art" />
@@ -213,6 +231,7 @@ export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, on
           </button>
         </li>
       ))}
+      {hasMore ? <li className="album-results-more"><button type="button" onClick={loadMore}>加载更多专辑</button></li> : null}
     </ul>
   );
 });
@@ -400,9 +419,10 @@ function LaterPicker({ catalog, onBack, onAdd }) {
 }
 
 function AlbumPickerList({ albums, onSelect }) {
+  const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
   return (
     <ul className="album-results later-album-picker-list">
-      {albums.map(album => (
+      {visibleAlbums.map(album => (
         <li key={album.id}>
           <button type="button" className="album-result" aria-label={`选择专辑 ${album.name}`} onClick={() => onSelect(album.id)}>
             <Artwork src={album.imageUrl} alt="" className="album-art" />
@@ -411,6 +431,7 @@ function AlbumPickerList({ albums, onSelect }) {
           </button>
         </li>
       ))}
+      {hasMore ? <li className="album-results-more"><button type="button" onClick={loadMore}>加载更多专辑</button></li> : null}
     </ul>
   );
 }
@@ -497,7 +518,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove }) {
 
   return (
     <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
-      <button type="button" className="later-swipe-action" aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
+      <button type="button" className="later-swipe-action" tabIndex={swiped ? 0 : -1} aria-hidden={!swiped} aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
       <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
       <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setMenuOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div className="row-action-menu"><button type="button" disabled={index === 0} onClick={() => { onMove(index, index - 1); setMenuOpen(false); }}><ChevronUp size={15} />上移</button><button type="button" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); setMenuOpen(false); }}><ChevronDown size={15} />下移</button><button type="button" onClick={() => { onRemove(episode.id); setMenuOpen(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
     </li>
@@ -560,8 +581,12 @@ function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing,
   };
 
   const handleAddLater = episode => {
-    const added = onAddLater(episode);
-    setNotice(added ? '已添加到稍后播放' : '已在稍后播放');
+    const result = onAddLater(episode);
+    setNotice(!result.added
+      ? '已在稍后播放'
+      : result.persisted
+        ? '已添加到稍后播放'
+        : '已添加到稍后播放，但无法保存，刷新后可能丢失');
     window.clearTimeout(noticeTimer.current);
     noticeTimer.current = window.setTimeout(() => setNotice(''), 2400);
   };
@@ -573,13 +598,13 @@ function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing,
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
-          <button type="button" role="tab" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onClick={() => selectTab('queue')}>播放列表 <span aria-hidden="true">{player.queue.length}</span></button>
-          <button type="button" role="tab" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => selectTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
-          <button type="button" role="tab" aria-label="稍后播放" aria-selected={activeTab === 'later'} className={activeTab === 'later' ? 'is-selected' : ''} onClick={() => selectTab('later')}>稍后播放 <span aria-hidden="true">{laterEpisodes.length}</span></button>
+          <button id="queue-tab" type="button" role="tab" aria-controls="queue-panel" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onClick={() => selectTab('queue')}>播放列表 <span aria-hidden="true">{player.queue.length}</span></button>
+          <button id="history-tab" type="button" role="tab" aria-controls="queue-panel" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => selectTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
+          <button id="later-tab" type="button" role="tab" aria-controls="queue-panel" aria-label="稍后播放" aria-selected={activeTab === 'later'} className={activeTab === 'later' ? 'is-selected' : ''} onClick={() => selectTab('later')}>稍后播放 <span aria-hidden="true">{laterEpisodes.length}</span></button>
         </div>
         {activeTab === 'later' && !pickerOpen ? <div className="later-add-row"><span>保存的节目</span><button type="button" className="secondary-button" aria-label="添加节目" disabled={!catalog} onClick={() => { if (catalog) setPickerOpen(true); }}><ListPlus size={16} />添加节目</button></div> : null}
         {notice ? <div className="later-notice" role="status" aria-live="polite">{notice}</div> : null}
-        <div className="queue-scroll">
+        <div id="queue-panel" className="queue-scroll" role="tabpanel" aria-labelledby={`${activeTab}-tab`}>
           {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {
             if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} />;
             const active = activeTab === 'queue' && player.currentEpisode?.id === episode.id;
@@ -694,11 +719,10 @@ export default function App({ initialCatalog = null }) {
 
   const addToLater = useCallback(episode => {
     const result = addLaterEpisode(laterEpisodesRef.current, episode);
-    if (!result.added) return false;
+    if (!result.added) return { added: false, persisted: true };
     laterEpisodesRef.current = result.items;
     setLaterEpisodes(result.items);
-    writeLaterEpisodes(result.items);
-    return true;
+    return { added: true, persisted: writeLaterEpisodes(result.items) };
   }, []);
 
   const removeFromLater = useCallback(id => {
@@ -738,6 +762,7 @@ export default function App({ initialCatalog = null }) {
     const { currentEpisode: episode, positionSeconds, durationSeconds, isPlaying: shouldPlay } = playerRef.current;
     if (!audio) return;
     if (!episode?.audioUrl) {
+      if (shouldPlay) setPlaybackFailure('该节目没有可播放音频，请稍后重试');
       audio.pause();
       audio.removeAttribute('src');
       audio.load();
@@ -825,6 +850,16 @@ export default function App({ initialCatalog = null }) {
   const startPlayback = useCallback((episode, visibleQueue = null) => {
     if (!episode) return;
     setAudioError(null);
+    if (!episode.audioUrl) {
+      setPlaybackFailure('该节目没有可播放音频，请稍后重试');
+      setPlayer(previous => {
+        let next = previous;
+        if (visibleQueue?.length) next = enqueueEpisodes(next, visibleQueue);
+        next = selectEpisode(next, episode, next.queue);
+        return { ...next, history: recordHistory(previous.history, episode), isPlaying: false };
+      });
+      return;
+    }
     const sameEpisode = playerRef.current.currentEpisode?.id === episode.id;
     if (sameEpisode && audioRef.current) {
       try { audioRef.current.currentTime = 0; } catch { /* media may not be ready */ }

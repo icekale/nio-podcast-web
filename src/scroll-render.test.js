@@ -37,4 +37,13 @@ describe('mobile scroll rendering', () => {
     expect(laterSwipeRule).toMatch(/pointer-events:\s*none/);
     expect(css).toMatch(/\.later-row\.is-swiped \.later-swipe-action\s*\{[^}]*transform:\s*translateX\(0\)/);
   });
+
+  it('allows the mobile shell to shrink for 200% text zoom', () => {
+    expect(css).not.toMatch(/body\s*\{[^}]*min-width:\s*320px/);
+    expect(css).toMatch(/@media\s*\(max-width:\s*359px\)[\s\S]*\.recommendation-panel[^}]*grid-template-columns:\s*1fr/);
+  });
+
+  it('keeps large album lists progressively rendered', () => {
+    expect(css).toMatch(/\.album-results-more\s+button/);
+  });
 });

@@ -1,4 +1,5 @@
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
+const CATALOG_FETCH_TIMEOUT_MS = 8000;
 
 export function sortAlbumsByLatest(albums) {
   return [...albums].sort((a, b) => {
@@ -56,14 +57,23 @@ export function writeCatalogCache(catalog, storage = globalThis.localStorage) {
 
 export async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = import.meta.env.BASE_URL) {
   const cached = readCatalogCache();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), CATALOG_FETCH_TIMEOUT_MS);
   try {
-    const response = await fetchImpl(`${baseUrl}data/albums.json`);
+    const response = await fetchImpl(`${baseUrl}data/albums.json`, { signal: controller.signal });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const catalog = normalizeCatalog(await response.json());
     writeCatalogCache(catalog);
     return { catalog, stale: false };
   } catch (error) {
+    if (error?.name === 'AbortError') {
+      const timeoutError = new Error('目录加载超时', { cause: error });
+      if (cached) return { catalog: cached, stale: true, error: timeoutError };
+      throw timeoutError;
+    }
     if (cached) return { catalog: cached, stale: true, error };
     throw error;
+  } finally {
+    clearTimeout(timer);
   }
 }

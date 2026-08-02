@@ -74,6 +74,46 @@ describe('later playback integration', () => {
     expect(within(dialog).getByRole('heading', { name: '添加节目' })).toBeInTheDocument();
   });
 
+  it('keeps the swipe remove action out of keyboard order until revealed', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    const remove = dialog.querySelector('.later-swipe-action');
+
+    expect(remove).toHaveAttribute('tabindex', '-1');
+    expect(remove).toHaveAttribute('aria-hidden', 'true');
+
+    const row = within(dialog).getByText('第一集').closest('.later-row');
+    fireEvent.pointerDown(row, { pointerId: 1, clientX: 200, clientY: 100, pointerType: 'touch' });
+    fireEvent.pointerMove(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
+    fireEvent.pointerUp(row, { pointerId: 1, clientX: 120, clientY: 103, pointerType: 'touch' });
+
+    expect(remove).toHaveAttribute('tabindex', '0');
+    expect(remove).toHaveAttribute('aria-hidden', 'false');
+  });
+
+  it('warns when later playback cannot be persisted', async () => {
+    const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('quota exceeded'); });
+    try {
+      render(<App initialCatalog={catalog} />);
+      fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+      fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+      const dialog = screen.getByRole('dialog', { name: '播放列表' });
+      fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+      fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
+      getEpisodes.mockResolvedValue({ episodes: [episode(4, '待添加节目')], hasMore: false });
+      fireEvent.click(within(dialog).getByRole('button', { name: '选择专辑 NIO 精选' }));
+      fireEvent.click(await within(dialog).findByRole('button', { name: '添加 待添加节目 到稍后播放' }));
+
+      expect(within(dialog).getByRole('status')).toHaveTextContent('无法保存');
+    } finally {
+      setItem.mockRestore();
+    }
+  });
+
   it('keeps add-program unavailable while a restored player waits for the catalog', async () => {
     const restored = selectEpisode(createPlayerState(), episode(1, '第一集'));
     window.localStorage.setItem(PLAYER_STORAGE_KEY, serializePlayerState(restored));

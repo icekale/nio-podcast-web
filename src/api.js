@@ -21,6 +21,11 @@ export function normalizeAudioUrl(url) {
 }
 
 function mapEpisode(ep) {
+  const host = Array.isArray(ep.host)
+    ? ep.host.join(', ')
+    : typeof ep.host === 'string'
+      ? ep.host
+      : '';
   return {
     id: ep.audioId,
     title: ep.audioName || '未命名节目',
@@ -28,7 +33,7 @@ function mapEpisode(ep) {
     albumName: ep.albumName || '',
     albumPic: ep.albumPic || '',
     albumDesc: ep.albumDesc || '',
-    host: (ep.host || []).join(', ') || ep.singer || '',
+    host: host || ep.singer || '',
     duration: ep.duration,
     onlineTime: ep.onlineTime,
     audioUrl: normalizeAudioUrl(ep.aacPlayUrl192 || ep.aacPlayUrl128 || ep.mp3PlayUrl64 || ''),

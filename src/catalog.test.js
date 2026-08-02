@@ -43,7 +43,7 @@ describe('catalog selectors', () => {
   it('uses the browser cache policy for the static catalog', async () => {
     const fetchImpl = vi.fn(async (url, options) => {
       expect(url).toBe('/nio-podcast-web/data/albums.json');
-      expect(options).toBeUndefined();
+      expect(options?.signal).toBeInstanceOf(AbortSignal);
       return {
         ok: true,
         json: async () => ({ generatedAt: 1, albums: [{ id: 1, name: '目录', latestEpisode: episode(1, 1) }] }),
@@ -52,5 +52,20 @@ describe('catalog selectors', () => {
 
     await loadCatalog(fetchImpl, '/nio-podcast-web/');
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('times out a stalled catalog request', async () => {
+    vi.useFakeTimers();
+    window.localStorage.removeItem('nio_catalog_cache_v1');
+    const fetchImpl = vi.fn((_url, { signal }) => new Promise((_, reject) => {
+      signal.addEventListener('abort', () => reject(Object.assign(new Error('aborted'), { name: 'AbortError' })), { once: true });
+    }));
+
+    const pending = loadCatalog(fetchImpl, '/nio-podcast-web/');
+    const assertion = expect(pending).rejects.toThrow('目录加载超时');
+    await vi.advanceTimersByTimeAsync(8001);
+
+    await assertion;
+    vi.useRealTimers();
   });
 });
