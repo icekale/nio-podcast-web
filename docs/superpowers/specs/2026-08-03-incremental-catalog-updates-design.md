@@ -6,7 +6,7 @@
 
 ## Architecture
 
-The repository remains the catalog state store and GitHub Actions remains the scheduler and publisher; no backend service is introduced. The catalog generator has two modes: a full discovery scan over album IDs `1..2000`, and an incremental scan over the album IDs already present in `public/data/albums.json`. Weekday 07:30 Beijing time runs full discovery; the other configured weekday times and weekend 12:00/18:00 runs use the incremental mode.
+The repository remains the catalog state store and GitHub Actions remains the scheduler and publisher; no backend service is introduced. The catalog generator has two modes: a full discovery scan over album IDs `1..2000`, and an incremental scan over the album IDs already present in `public/data/albums.json`. All product times use Beijing time (`Asia/Shanghai`): weekday 07:30 runs full discovery; the other configured weekday times and weekend 12:00/18:00 runs use the incremental mode. GitHub Actions cron entries are converted to UTC because its standard scheduler has no timezone field.
 
 The generated JSON is committed back to `main` only when episode or album data changes. The workflow then builds and publishes the PWA to `gh-pages`; unchanged runs stop before build and deployment. A workflow concurrency group prevents overlapping scans and deployments.
 
@@ -27,7 +27,7 @@ The current upstream API does not expose a global “changed since timestamp” 
 
 ## Scheduled Workflow
 
-The workflow supports both `schedule` and `workflow_dispatch`. It grants `contents: write`, checks out `main`, installs dependencies with `npm ci`, runs the selected catalog mode, and exits without a commit or deployment when `public/data/albums.json` is unchanged. The schedule uses UTC cron expressions for the agreed Beijing times. Weekend schedules run only the two incremental checks at 12:00 and 18:00 Beijing time.
+The workflow supports both `schedule` and `workflow_dispatch`. It grants `contents: write`, checks out `main`, installs dependencies with `npm ci`, runs the selected catalog mode, and exits without a commit or deployment when `public/data/albums.json` is unchanged. Every cron line includes a comment with its Beijing (`Asia/Shanghai`) time; weekday 07:30 crosses the UTC date boundary and uses the preceding UTC day. Weekend schedules run only the two incremental checks at 12:00 and 18:00 Beijing time.
 
 ## Failure Handling
 
