@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ChevronRight,
@@ -62,6 +62,25 @@ function formatDate(timestamp) {
   return `${date.getMonth() + 1}/${date.getDate()}`;
 }
 
+function screenRouteKey(route) {
+  return `${route.screen}:${route.albumId ?? ''}:${route.searchQuery ?? ''}`;
+}
+
+function sameRoute(previous, next) {
+  return previous.screen === next.screen
+    && previous.albumId === next.albumId
+    && previous.searchQuery === next.searchQuery
+    && previous.queueOpen === next.queueOpen;
+}
+
+function routeMotionFor(previous, next) {
+  if (previous.screen === 'home' && next.screen === 'albums') return 'forward';
+  if (previous.screen !== 'home' && next.screen === 'home') return 'back';
+  if (previous.screen !== 'album' && next.screen === 'album') return 'forward';
+  if (previous.screen === 'album' && next.screen !== 'album') return 'back';
+  return 'none';
+}
+
 function Artwork({ src, alt = '', className = '' }) {
   if (src) return <img className={`artwork ${className}`} src={src} alt={alt} loading="lazy" decoding="async" />;
   return <span className={`artwork artwork-empty ${className}`} aria-hidden="true"><Music2 size={22} strokeWidth={1.7} /></span>;
@@ -96,6 +115,7 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 180);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -118,24 +138,22 @@ function HomeScreen({ catalog, player, stale, onRetry, onPlay, onPlayAll, onSear
         </div>
       </header>
 
-      {!scrolled ? (
-        <section className="recommendation-panel" aria-labelledby="recommendation-title">
-          <div className="recommendation-copy">
-            <span className="section-kicker">TODAY</span>
-            <h1 id="recommendation-title">今日推荐</h1>
-            {recommendation ? (
-              <>
-                <h2>{recommendation.title}</h2>
-                <p>{recommendation.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(recommendation.duration)}</p>
-              </>
-            ) : <p>今天还没有新的节目</p>}
-          </div>
-          <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
-          <button type="button" className="primary-button" onClick={() => onPlayAll(selection.episodes)} disabled={!selection.episodes.length}>
-            <Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放
-          </button>
-        </section>
-      ) : null}
+      <section className="recommendation-panel" aria-labelledby="recommendation-title">
+        <div className="recommendation-copy">
+          <span className="section-kicker">TODAY</span>
+          <h1 id="recommendation-title">今日推荐</h1>
+          {recommendation ? (
+            <>
+              <h2>{recommendation.title}</h2>
+              <p>{recommendation.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(recommendation.duration)}</p>
+            </>
+          ) : <p>今天还没有新的节目</p>}
+        </div>
+        <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
+        <button type="button" className="primary-button" onClick={() => onPlayAll(selection.episodes)} disabled={!selection.episodes.length}>
+          <Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放
+        </button>
+      </section>
 
       <section className="updates-section" aria-labelledby="updates-title">
         <div className="section-heading-row">
@@ -283,7 +301,7 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
   );
 }
 
-function QueueSheet({ player, activeTab, setActiveTab, onClose, onPlay, onPlayNext, onRemove }) {
+function QueueSheet({ player, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayNext, onRemove }) {
   const closeRef = useRef(null);
   const startY = useRef(null);
   const [actionsFor, setActionsFor] = useState(null);
@@ -298,10 +316,20 @@ function QueueSheet({ player, activeTab, setActiveTab, onClose, onPlay, onPlayNe
     return () => { window.removeEventListener('keydown', handleKeyDown); document.body.style.overflow = previousOverflow; };
   }, [onClose]);
 
+  useEffect(() => {
+    if (!isClosing) return undefined;
+    const timer = window.setTimeout(onExited, 250);
+    return () => window.clearTimeout(timer);
+  }, [isClosing, onExited]);
+
+  const handleAnimationEnd = event => {
+    if (isClosing && event.target === event.currentTarget && event.animationName === 'queue-sheet-out') onExited();
+  };
+
   return (
-    <div className="queue-overlay">
+    <div className={`queue-overlay${isClosing ? ' is-closing' : ''}`}>
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
-      <section className="queue-sheet" role="dialog" aria-modal="true" aria-labelledby="queue-title" onPointerDown={event => { startY.current = event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }}>
+      <section className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }}>
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
@@ -328,6 +356,9 @@ function readStoredPlayer() {
 
 export default function App({ initialCatalog = null }) {
   const [route, setRoute] = useState(() => parseHash());
+  const [routeMotion, setRouteMotion] = useState('none');
+  const [queuePresent, setQueuePresent] = useState(() => route.queueOpen);
+  const [queueClosing, setQueueClosing] = useState(false);
   const [catalogState, setCatalogState] = useState(() => {
     if (!initialCatalog) return { catalog: null, loading: true, error: null, stale: false };
     return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
@@ -341,7 +372,24 @@ export default function App({ initialCatalog = null }) {
   const queueButtonRef = useRef(null);
   const lastSavedAt = useRef(0);
   const scrollPositions = useRef(new Map());
+  const routeRef = useRef(route);
+  const queueFocusRef = useRef(null);
   playerRef.current = player;
+
+  const applyRoute = useCallback(nextRoute => {
+    const previousRoute = routeRef.current;
+    if (sameRoute(previousRoute, nextRoute)) return;
+    setRouteMotion(screenRouteKey(previousRoute) === screenRouteKey(nextRoute)
+      ? 'none'
+      : routeMotionFor(previousRoute, nextRoute));
+    routeRef.current = nextRoute;
+    setRoute(nextRoute);
+  }, []);
+
+  const handleQueueExited = useCallback(() => {
+    setQueuePresent(false);
+    setQueueClosing(false);
+  }, []);
 
   useEffect(() => {
     if (initialCatalog) return undefined;
@@ -356,7 +404,7 @@ export default function App({ initialCatalog = null }) {
     if (!window.history.state?.nioApp) {
       window.history.replaceState({ ...(window.history.state || {}), nioApp: true, nioDepth: 0 }, '', window.location.href);
     }
-    const handleRouteChange = () => setRoute(parseHash());
+    const handleRouteChange = () => applyRoute(parseHash());
     window.addEventListener('popstate', handleRouteChange);
     window.addEventListener('hashchange', handleRouteChange);
     if (!window.location.hash) window.history.replaceState({ nioApp: true, nioDepth: 0 }, '', '#/');
@@ -365,15 +413,31 @@ export default function App({ initialCatalog = null }) {
       window.removeEventListener('hashchange', handleRouteChange);
       window.history.scrollRestoration = previousRestoration;
     };
-  }, []);
+  }, [applyRoute]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const key = closeQueueHash(window.location.hash || '#/');
     const position = scrollPositions.current.get(key) || 0;
     if (document.scrollingElement) document.scrollingElement.scrollTop = position;
     document.documentElement.scrollTop = position;
     document.body.scrollTop = position;
   }, [route.screen]);
+
+  useEffect(() => {
+    if (route.queueOpen) {
+      setQueuePresent(true);
+      setQueueClosing(false);
+    } else if (queuePresent) {
+      setQueueClosing(true);
+    }
+  }, [queuePresent, route.queueOpen]);
+
+  useEffect(() => {
+    if (queuePresent || !queueFocusRef.current) return;
+    const trigger = queueFocusRef.current;
+    queueFocusRef.current = null;
+    trigger.focus?.({ preventScroll: true });
+  }, [queuePresent]);
 
   const savePlayer = useCallback((next, force = false) => {
     const now = Date.now();
@@ -416,9 +480,12 @@ export default function App({ initialCatalog = null }) {
     const state = { ...(window.history.state || {}), nioApp: true, nioDepth: replace ? currentDepth : currentDepth + 1 };
     if (replace) window.history.replaceState(state, '', hash);
     else window.history.pushState(state, '', hash);
-    setRoute(parseHash(hash));
-  }, [saveScrollPosition]);
-  const openQueue = useCallback(() => go(withQueueHash(window.location.hash || '#/', true)), [go]);
+    applyRoute(parseHash(hash));
+  }, [applyRoute, saveScrollPosition]);
+  const openQueue = useCallback(() => {
+    queueFocusRef.current = queueButtonRef.current;
+    go(withQueueHash(window.location.hash || '#/', true));
+  }, [go]);
   const closeQueue = useCallback(() => go(closeQueueHash(window.location.hash || '#/'), { replace: true }), [go]);
   const goBack = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
@@ -446,8 +513,8 @@ export default function App({ initialCatalog = null }) {
     const hash = `#${path}${serialized ? `?${serialized}` : ''}`;
     const state = { ...(window.history.state || {}), nioApp: true, nioDepth: Number(window.history.state?.nioDepth) || 0 };
     window.history.replaceState(state, '', hash);
-    setRoute(parseHash(hash));
-  }, []);
+    applyRoute(parseHash(hash));
+  }, [applyRoute]);
   const retryCatalog = useCallback(() => { setCatalogState(previous => ({ ...previous, loading: true, error: null })); loadCatalog().then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale })).catch(error => setCatalogState(previous => ({ ...previous, loading: false, error }))); }, []);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
@@ -491,6 +558,7 @@ export default function App({ initialCatalog = null }) {
   const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
   const updatePosition = event => setPlayer(previous => ({ ...previous, positionSeconds: Number(event.currentTarget.value) }));
   const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
+  const routeViewKey = screenRouteKey(route);
 
   if (catalogState.loading) return <main className="app"><div className="full-state"><div className="loading-dot" /><p>正在准备 NIO Radio…</p></div></main>;
   if (catalogState.error && !catalogState.catalog) return <main className="app"><div className="full-state"><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已经缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></div></main>;
@@ -499,15 +567,17 @@ export default function App({ initialCatalog = null }) {
   return (
     <main className="app">
       <div className="app-content">
-        {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
-        {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
-        {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
-        {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
-        {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
+        <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
+          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
+          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
+          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} /> : null}
+          {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
+        </div>
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); }} onPause={() => setIsPlaying(false)} onError={() => { setAudioError('音频加载失败，请检查网络后重试'); setIsPlaying(false); }} onEnded={handleEnded} />
       {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setAudioError('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
-      {route.queueOpen ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
+      {queuePresent ? <QueueSheet player={player} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={episode => startPlayback(episode, player.queue)} onPlayNext={episode => setPlayer(previous => insertNext(previous, episode))} onRemove={id => setPlayer(previous => removeFromQueue(previous, id))} /> : null}
     </main>
   );
 }

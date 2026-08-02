@@ -42,6 +42,25 @@ describe('mobile app shell', () => {
     expect(screen.getAllByText('第一集').length).toBeGreaterThan(0);
   });
 
+  it('keeps the recommendation panel mounted while the compact header changes', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
+    fireEvent.scroll(window);
+
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
+    expect(document.querySelector('.updates-section')).toBeInTheDocument();
+  });
+
+  it('initializes the compact header from a restored scroll position', async () => {
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
+    render(<App initialCatalog={catalog} />);
+
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
+  });
+
   it('opens the full album directory from the home back control', async () => {
     render(<App initialCatalog={catalog} />);
 
@@ -53,6 +72,29 @@ describe('mobile app shell', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '返回主页' }));
     await waitFor(() => expect(screen.getByRole('heading', { name: '今日推荐' })).toBeInTheDocument());
+  });
+
+  it('marks Home to Albums navigation as forward and Back as back', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'forward');
+
+    fireEvent.click(screen.getByRole('button', { name: '返回主页' }));
+    await screen.findByRole('heading', { name: '今日推荐' });
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'back');
+  });
+
+  it('does not replay route motion for duplicate popstate and hashchange events', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'forward');
   });
 
   it('resets the document scroll when opening the album directory', async () => {
@@ -160,6 +202,38 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
     await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
     expect(window.location.hash).toBe('#/');
+  });
+
+  it('keeps the queue mounted during its closing animation and restores focus', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const trigger = await screen.findByRole('button', { name: '打开播放列表' });
+    trigger.focus();
+    fireEvent.click(trigger);
+
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: '收起播放列表' }));
+
+    fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
+    expect(dialog).toHaveClass('is-closing');
+    expect(window.location.hash).toBe('#/');
+    expect(screen.getByRole('dialog', { name: '播放列表' })).toBeInTheDocument();
+
+    fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('uses the same closing state for Escape', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    await fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(dialog).toHaveClass('is-closing');
+    fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
   });
 
   it('lets browser Back close the sheet before changing the route', async () => {
