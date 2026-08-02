@@ -22,7 +22,7 @@ export default defineConfig({
       },
       manifest: {
         id: '/nio-podcast-web/',
-        name: 'Nio Podcast',
+        name: 'NIO Radio',
         short_name: 'NIO Radio',
         start_url: '/nio-podcast-web/',
         scope: '/nio-podcast-web/',

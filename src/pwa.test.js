@@ -33,3 +33,12 @@ describe('NIO icon resources', () => {
     expect(viteConfig).toContain("{ src: 'favicon.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any' }");
   });
 });
+
+describe('public app naming', () => {
+  it('uses NIO Radio consistently across browser and PWA metadata', () => {
+    expect(indexHtml).toContain('<title>NIO Radio</title>');
+    expect(indexHtml).toContain('name="apple-mobile-web-app-title" content="NIO Radio"');
+    expect(viteConfig).toContain("name: 'NIO Radio'");
+    expect(viteConfig).toContain("short_name: 'NIO Radio'");
+  });
+});
