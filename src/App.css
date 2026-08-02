@@ -121,71 +121,50 @@ body {
 }
 .search-input::placeholder { color: var(--text-tertiary); }
 
-/* ═══════════════ SECTION ═══════════════ */
-.section {
-  padding: 12px 20px;
+/* ═══════════════ VERTICAL ALBUM LIST ═══════════════ */
+.album-list {
+  list-style: none; padding: 0 16px 16px;
 }
-.section-label {
-  font-size: 13px; font-weight: 600; color: var(--text-secondary);
-  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
-}
+.album-list li { margin-bottom: 2px; }
 
-/* ═══════════════ HORIZONTAL SCROLL ROW ═══════════════ */
-.scroll-row {
-  display: flex; gap: 12px; overflow-x: auto;
-  padding: 4px 20px 20px; scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+.album-row {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; padding: 14px; border: none;
+  background: transparent; color: inherit; cursor: pointer;
+  border-radius: var(--radius); text-align: left;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
-.scroll-row::-webkit-scrollbar { display: none; }
-.scroll-row li { flex-shrink: 0; scroll-snap-align: start; }
+.album-row:active { background: var(--bg-hover); }
 
-/* ═══════════════ ALBUM CARD — Horizontal ═══════════════ */
-.h-card {
-  display: block; width: 200px; text-align: left;
-  border-radius: var(--radius-lg); overflow: hidden;
-  background: var(--bg-card); border: 1px solid var(--border);
-  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
-}
-.h-card:active { transform: scale(0.97); }
-.h-card:hover { box-shadow: var(--shadow-lg); }
-
-.h-card-img {
-  width: 100%; height: 120px; object-fit: cover;
+.album-cover {
+  width: 56px; height: 56px; border-radius: var(--radius);
+  object-fit: cover; flex-shrink: 0;
   background: var(--bg-secondary);
 }
-.h-card-body { display: block; padding: 14px; }
-.h-card-title {
-  font-size: 14px; font-weight: 600; line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden; margin-bottom: 4px;
+.album-cover-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--nio-blue-light); color: var(--nio-blue);
+  font-size: 22px;
 }
-.h-card-meta { display: block; font-size: 12px; color: var(--text-tertiary); }
 
-/* ═══════════════ ALBUM CARD — Vertical List ═══════════════ */
-.v-list { padding: 0 20px 20px; }
-
-.v-card {
-  display: flex; align-items: center; gap: 14px; width: 100%;
-  padding: 14px; border-radius: var(--radius); text-align: left;
-  cursor: pointer; transition: background 0.15s;
-  border: 1px solid transparent;
-}
-.v-card:hover { background: var(--bg-hover); border-color: var(--border); }
-.v-card:active { background: var(--bg-hover); }
-
-.v-card-icon {
-  width: 48px; height: 48px; border-radius: var(--radius);
-  background: var(--nio-blue-light); display: flex;
-  align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0; color: var(--nio-blue);
-}
-.v-card-body { flex: 1; min-width: 0; }
-.v-card-title { display: block; font-size: 15px; font-weight: 500; margin-bottom: 2px; }
-.v-card-desc {
-  display: block; font-size: 13px; color: var(--text-secondary);
+.album-body { flex: 1; min-width: 0; }
+.album-name { font-size: 16px; font-weight: 500; line-height: 1.3; }
+.album-desc {
+  font-size: 13px; color: var(--text-secondary); margin-top: 2px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.v-card-arrow { display: block; font-size: 18px; color: var(--text-tertiary); flex-shrink: 0; }
+.album-meta {
+  font-size: 12px; color: var(--text-tertiary); margin-top: 3px;
+}
+.album-chevron {
+  font-size: 20px; color: var(--text-tertiary); flex-shrink: 0;
+  opacity: 0.5;
+}
+.album-empty {
+  padding: 40px 20px; text-align: center;
+  color: var(--text-tertiary); font-size: 14px;
+}
 
 /* ═══════════════ EPISODE LIST ═══════════════ */
 .ep-nav {
@@ -249,13 +228,14 @@ body {
   display: flex; gap: 8px;
 }
 .ep-play-btn {
-  width: 34px; height: 34px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid var(--border); background: var(--bg-card);
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; cursor: pointer; flex-shrink: 0;
+  font-size: 14px; cursor: pointer; flex-shrink: 0;
   color: var(--nio-blue); transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
-.ep-play-btn:hover { border-color: var(--nio-blue); background: var(--nio-blue-light); }
+.ep-play-btn:active { background: var(--nio-blue-light); border-color: var(--nio-blue); }
 
 /* ═══════════════ PLAYER ═══════════════ */
 .player {
@@ -373,12 +353,14 @@ body {
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .load-more {
-  display: block; width: 100%; padding: 12px; margin: 8px 0;
+  display: block; width: 100%; padding: 14px; margin: 8px 0;
   background: var(--bg-secondary); border: 1px solid var(--border);
   border-radius: var(--radius); color: var(--nio-blue);
-  font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s;
+  font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 48px;
 }
-.load-more:hover { background: var(--bg-hover); }
+.load-more:active { background: var(--bg-hover); }
 
 /* ═══════════════ SCROLLBAR ═══════════════ */
 ::-webkit-scrollbar { width: 4px; height: 4px; }

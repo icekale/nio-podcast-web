@@ -213,8 +213,6 @@ const Home = memo(function Home({ onSelect }) {
       : albums,
     [albums, q]
   );
-  const withPic = useMemo(() => filt.filter(a => a.pic), [filt]);
-  const noPic = useMemo(() => filt.filter(a => !a.pic), [filt]);
 
   return (
     <div>
@@ -235,46 +233,32 @@ const Home = memo(function Home({ onSelect }) {
           aria-label="搜索专辑" value={search} onChange={e => setSearch(e.target.value)} />
       </div>
 
-      {/* Albums with images — horizontal scroll */}
-      {withPic.length > 0 && (
-        <section className="section" aria-label="精选">
-          <h2 className="section-label">精选</h2>
-          <ul className="scroll-row">
-            {withPic.map(a => (
-              <li key={a.id}>
-                <button type="button" className="h-card" onClick={() => onSelect(a)} aria-label={`打开专辑 ${a.name}`}>
-                  <img src={a.pic} alt="" className="h-card-img" loading="lazy" decoding="async" />
-                  <span className="h-card-body">
-                    <span className="h-card-title">{a.name}</span>
-                    <span className="h-card-meta">{a.count > 0 ? `${a.count} 集` : ''}</span>
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Albums without images — vertical list */}
-      {noPic.length > 0 && (
-        <section className="section" aria-label="全部专辑">
-          <h2 className="section-label">全部专辑</h2>
-          <ul className="v-list">
-            {noPic.map(a => (
-              <li key={a.id}>
-                <button type="button" className="v-card" onClick={() => onSelect(a)} aria-label={`打开专辑 ${a.name}`}>
-                  <span className="v-card-icon" aria-hidden="true">🎧</span>
-                  <span className="v-card-body">
-                    <span className="v-card-title">{a.name}</span>
-                    {a.desc && <span className="v-card-desc">{a.desc}</span>}
-                  </span>
-                  <span className="v-card-arrow" aria-hidden="true">›</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {/* Unified vertical album list */}
+      <ul className="album-list">
+        {filt.map(a => (
+          <li key={a.id}>
+            <button type="button" className="album-row" onClick={() => onSelect(a)} aria-label={`打开专辑 ${a.name}`}>
+              {a.pic ? (
+                <img src={a.pic} alt="" className="album-cover" loading="lazy" decoding="async" />
+              ) : (
+                <span className="album-cover album-cover-placeholder" aria-hidden="true">🎧</span>
+              )}
+              <span className="album-body">
+                <span className="album-name">{a.name}</span>
+                {a.desc ? <span className="album-desc">{a.desc}</span> : null}
+                <span className="album-meta">
+                  {a.count > 0 ? `${a.count} 集` : ''}
+                  {a.host ? ` · ${a.host}` : ''}
+                </span>
+              </span>
+              <span className="album-chevron" aria-hidden="true">›</span>
+            </button>
+          </li>
+        ))}
+        {filt.length === 0 && !loading && (
+          <li className="album-empty">没有找到匹配的专辑</li>
+        )}
+      </ul>
     </div>
   );
 });
