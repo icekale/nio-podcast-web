@@ -272,7 +272,7 @@ h1, h2, p { margin: 0; }
 .sheet-header { display: flex; align-items: center; justify-content: space-between; }
 .sheet-header h2 { font-size: 1.55rem; font-weight: 650; }
 .queue-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--space-4); border-bottom: 1px solid var(--line); }
-.queue-tabs button { position: relative; min-width: 0; overflow: hidden; padding: 0.55rem 0.1rem 0.8rem; color: var(--muted); background: transparent; font-size: 0.92rem; text-overflow: ellipsis; white-space: nowrap; }
+.queue-tabs button { position: relative; min-width: 0; min-height: 2.75rem; overflow: hidden; padding: 0.55rem 0.1rem 0.8rem; color: var(--muted); background: transparent; font-size: 0.92rem; text-overflow: ellipsis; white-space: nowrap; }
 .queue-tabs button span { margin-left: 0.2rem; font-size: 0.75rem; }
 .queue-tabs button.is-selected { color: var(--ink); font-weight: 650; }
 .queue-tabs button.is-selected::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 0.18rem; content: ""; background: var(--teal); }
