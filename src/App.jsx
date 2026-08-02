@@ -339,7 +339,7 @@ function LaterPicker({ catalog, onBack, onAdd }) {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
   const requestSeq = useRef(0);
-  const selectedAlbum = catalog.albums.find(album => album.id === selectedAlbumId);
+  const selectedAlbum = catalog?.albums.find(album => album.id === selectedAlbumId);
 
   const loadPage = useCallback(async (albumId, pageNumber) => {
     const sequence = ++requestSeq.current;
@@ -366,6 +366,15 @@ function LaterPicker({ catalog, onBack, onAdd }) {
     loadPage(selectedAlbumId, 1);
     return undefined;
   }, [loadPage, selectedAlbumId]);
+
+  if (!catalog) {
+    return (
+      <div className="later-picker">
+        <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>添加节目</h3><span className="icon-button-spacer" /></div>
+        <div className="loading-state" role="status">正在准备节目目录…</div>
+      </div>
+    );
+  }
 
   if (!selectedAlbum) {
     return (
@@ -568,7 +577,7 @@ function QueueSheet({ player, laterEpisodes, activeTab, setActiveTab, isClosing,
           <button type="button" role="tab" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onClick={() => selectTab('history')}>最近听过 <span aria-hidden="true">{player.history.length}</span></button>
           <button type="button" role="tab" aria-label="稍后播放" aria-selected={activeTab === 'later'} className={activeTab === 'later' ? 'is-selected' : ''} onClick={() => selectTab('later')}>稍后播放 <span aria-hidden="true">{laterEpisodes.length}</span></button>
         </div>
-        {activeTab === 'later' && !pickerOpen ? <div className="later-add-row"><span>保存的节目</span><button type="button" className="secondary-button" aria-label="添加节目" onClick={() => setPickerOpen(true)}><ListPlus size={16} />添加节目</button></div> : null}
+        {activeTab === 'later' && !pickerOpen ? <div className="later-add-row"><span>保存的节目</span><button type="button" className="secondary-button" aria-label="添加节目" disabled={!catalog} onClick={() => { if (catalog) setPickerOpen(true); }}><ListPlus size={16} />添加节目</button></div> : null}
         {notice ? <div className="later-notice" role="status" aria-live="polite">{notice}</div> : null}
         <div className="queue-scroll">
           {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {

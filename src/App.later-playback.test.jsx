@@ -4,6 +4,7 @@ import { within } from '@testing-library/react';
 vi.mock('./api', async importOriginal => ({ ...(await importOriginal()), getEpisodes: vi.fn() }));
 import { getEpisodes } from './api';
 import App from './App';
+import { PLAYER_STORAGE_KEY, createPlayerState, selectEpisode, serializePlayerState } from './playerState';
 
 const episode = (id, title = `第${id}集`) => ({
   id,
@@ -71,6 +72,23 @@ describe('later playback integration', () => {
     expect(within(dialog).getByText('稍后播放是空的')).toBeInTheDocument();
     fireEvent.click(within(dialog).getByRole('button', { name: '添加节目' }));
     expect(within(dialog).getByRole('heading', { name: '添加节目' })).toBeInTheDocument();
+  });
+
+  it('keeps add-program unavailable while a restored player waits for the catalog', async () => {
+    const restored = selectEpisode(createPlayerState(), episode(1, '第一集'));
+    window.localStorage.setItem(PLAYER_STORAGE_KEY, serializePlayerState(restored));
+    const originalFetch = globalThis.fetch;
+    globalThis.fetch = vi.fn(() => new Promise(() => {}));
+    try {
+      render(<App />);
+      fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+      const dialog = screen.getByRole('dialog', { name: '播放列表' });
+      fireEvent.click(within(dialog).getByRole('tab', { name: '稍后播放' }));
+
+      expect(within(dialog).getByRole('button', { name: '添加节目' })).toBeDisabled();
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
   });
 
   it('browses albums and adds an episode without leaving the picker', async () => {
