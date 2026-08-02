@@ -74,6 +74,29 @@ describe('mobile app shell', () => {
     await waitFor(() => expect(screen.getByRole('heading', { name: '今日推荐' })).toBeInTheDocument());
   });
 
+  it('marks Home to Albums navigation as forward and Back as back', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'forward');
+
+    fireEvent.click(screen.getByRole('button', { name: '返回主页' }));
+    await screen.findByRole('heading', { name: '今日推荐' });
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'back');
+  });
+
+  it('does not replay route motion for duplicate popstate and hashchange events', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+
+    expect(document.querySelector('.route-view')).toHaveAttribute('data-route-motion', 'forward');
+  });
+
   it('resets the document scroll when opening the album directory', async () => {
     document.documentElement.scrollTop = 240;
     document.body.scrollTop = 240;
