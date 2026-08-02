@@ -9,16 +9,28 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'],
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
-        runtimeCaching: [{
-          urlPattern: ({ request }) => request.destination === 'image',
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'nio-artwork-v1',
-            cacheableResponse: { statuses: [0, 200] },
-            expiration: { maxEntries: 150, maxAgeSeconds: 30 * 24 * 60 * 60 },
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith('/data/albums.json'),
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'nio-catalog-v1',
+              networkTimeoutSeconds: 8,
+              cacheableResponse: { statuses: [0, 200] },
+              expiration: { maxEntries: 1, maxAgeSeconds: 2 * 24 * 60 * 60 },
+            },
           },
-        }],
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'nio-artwork-v1',
+              cacheableResponse: { statuses: [0, 200] },
+              expiration: { maxEntries: 150, maxAgeSeconds: 30 * 24 * 60 * 60 },
+            },
+          },
+        ],
       },
       manifest: {
         id: '/nio-podcast-web/',

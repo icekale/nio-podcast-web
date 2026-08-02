@@ -43,6 +43,8 @@ import {
 } from './laterPlayback';
 import './App.css';
 
+const CATALOG_REFRESH_COOLDOWN_MS = 15 * 60 * 1000;
+
 function formatDuration(milliseconds) {
   const value = Number(milliseconds);
   if (!Number.isFinite(value) || value < 0) return '--:--';
@@ -645,6 +647,7 @@ export default function App({ initialCatalog = null }) {
   const scrollPositions = useRef(new Map());
   const routeRef = useRef(route);
   const queueFocusRef = useRef(null);
+  const lastCatalogRefreshAt = useRef(0);
   playerRef.current = player;
   laterEpisodesRef.current = laterEpisodes;
 
@@ -663,12 +666,36 @@ export default function App({ initialCatalog = null }) {
     setQueueClosing(false);
   }, []);
 
+  const refreshCatalog = useCallback(({ showLoading = false } = {}) => {
+    if (showLoading) setCatalogState(previous => ({ ...previous, loading: true, error: null }));
+    lastCatalogRefreshAt.current = Date.now();
+    return loadCatalog()
+      .then(result => {
+        setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale });
+        return result;
+      })
+      .catch(error => {
+        setCatalogState(previous => ({ ...previous, loading: false, error, stale: Boolean(previous.catalog) }));
+        return null;
+      });
+  }, []);
+
   useEffect(() => {
     if (initialCatalog) return undefined;
-    let active = true;
-    loadCatalog().then(result => { if (active) setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale }); }).catch(error => { if (active) setCatalogState({ catalog: null, loading: false, error, stale: false }); });
-    return () => { active = false; };
-  }, [initialCatalog]);
+    refreshCatalog();
+    return undefined;
+  }, [initialCatalog, refreshCatalog]);
+
+  useEffect(() => {
+    if (initialCatalog) return undefined;
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== 'visible') return;
+      if (Date.now() - lastCatalogRefreshAt.current < CATALOG_REFRESH_COOLDOWN_MS) return;
+      refreshCatalog({ showLoading: true });
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [initialCatalog, refreshCatalog]);
 
   useEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
@@ -841,11 +868,8 @@ export default function App({ initialCatalog = null }) {
     applyRoute(parseHash(hash));
   }, [applyRoute]);
   const retryCatalog = useCallback(() => {
-    setCatalogState(previous => ({ ...previous, loading: true, error: null }));
-    loadCatalog()
-      .then(result => setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale }))
-      .catch(error => setCatalogState(previous => ({ ...previous, loading: false, error, stale: Boolean(previous.catalog) })));
-  }, []);
+    refreshCatalog({ showLoading: true });
+  }, [refreshCatalog]);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
     if (!episode) return;
