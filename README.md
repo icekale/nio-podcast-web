@@ -15,6 +15,9 @@
   </tr>
 </table>
 
+<p align="center"><img src="docs/images/nio-radio-pc.png" alt="NIO Radio 电脑版界面" width="100%"></p>
+<p align="center">电脑版</p>
+
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
 
 ## 主要功能
