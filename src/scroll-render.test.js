@@ -73,6 +73,8 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-toggle\s*\{[^}]*order:\s*2/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-progress-row\s*\{[^}]*order:\s*3/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-control\s*\{[^}]*order:\s*4/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen \.episode-row\s*\{[^}]*transition:\s*background-color\s+160ms\s+ease/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen \.episode-row:hover\s*\{[^}]*background:\s*var\(--surface-soft\)/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-sheet \.sheet-handle\s*\{[^}]*display:\s*none/);
     expect(css).toMatch(/\.desktop-nav-link\s*\{[^}]*transition:\s*background-color\s+160ms\s+ease,\s*color\s+160ms\s+ease/);
     expect(css).toMatch(/\.album-results\.is-grid \.album-result:hover\s*\{[^}]*translateY\(-2px\)/);
