@@ -54,7 +54,7 @@ describe('catalog selectors', () => {
     const fetchImpl = vi.fn(async (url, options) => {
       expect(url).toBe('/nio-podcast-web/data/albums.json');
       expect(options?.signal).toBeInstanceOf(AbortSignal);
-      expect(options?.cache).toBe('no-store');
+      expect(options?.cache).toBe('no-cache');
       return {
         ok: true,
         json: async () => ({ generatedAt: 1, albums: [{ id: 1, name: '目录', latestEpisode: episode(1, 1) }] }),

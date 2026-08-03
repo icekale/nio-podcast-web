@@ -62,7 +62,7 @@ export async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = import
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), CATALOG_FETCH_TIMEOUT_MS);
   try {
-    const response = await fetchImpl(`${baseUrl}data/albums.json`, { cache: 'no-store', signal: controller.signal });
+    const response = await fetchImpl(`${baseUrl}data/albums.json`, { cache: 'no-cache', signal: controller.signal });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const catalog = normalizeCatalog(await response.json());
     writeCatalogCache(catalog);
