@@ -61,6 +61,7 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.desktop-nav\s*\{[^}]*display:\s*none/);
     expect(css).toMatch(/\.app\s*\{[^}]*max-width:\s*1280px/);
     expect(css).toMatch(/\.desktop-nav\s*\{[^}]*display:\s*flex/);
+    expect(css).toMatch(/\.home-screen \.recommendation-art\s*\{[^}]*width:\s*4rem/);
     expect(css).toMatch(/\.album-results\.is-grid\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fill,\s*minmax\(170px,\s*1fr\)\)/);
     expect(css).toMatch(/\.queue-sheet\s*\{[^}]*width:\s*380px/);
     expect(css).toMatch(/@keyframes queue-sheet-in\s*\{[^}]*translate3d\(100%,\s*0,\s*0\)/);
