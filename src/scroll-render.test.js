@@ -68,5 +68,11 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.home-screen \.top-bar \.icon-button:first-child,\s*\.home-screen \.top-bar \.top-actions \.icon-button\s*\{[^}]*display:\s*none/);
     expect(css).toMatch(/\.home-screen \.top-bar\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*auto/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-sheet \.sheet-handle\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/\.desktop-nav-link\s*\{[^}]*transition:\s*background-color\s+160ms\s+ease,\s*color\s+160ms\s+ease/);
+    expect(css).toMatch(/\.album-results\.is-grid \.album-result:hover\s*\{[^}]*translateY\(-2px\)/);
+    expect(css).toMatch(/@keyframes mini-player-in\s*\{[^}]*translate3d\(-50%,\s*100%,\s*0\)/);
+    expect(css).toMatch(/@keyframes route-forward-in\s*\{[^}]*translate3d\(0,\s*8px,\s*0\)/);
+    expect(css).toMatch(/\.queue-list > li\s*\{[^}]*animation:\s*queue-row-in\s+220ms/);
+    expect(css).toMatch(/animation-delay:\s*0ms\s*!important/);
   });
 });

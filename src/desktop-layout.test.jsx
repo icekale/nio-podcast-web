@@ -76,8 +76,8 @@ describe('desktop navigation', () => {
     expect(screen.getByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
 
     fireEvent.change(searchbox, { target: { value: 'NIO' } });
-    expect(await screen.findByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /另一张专辑/ })).not.toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByRole('button', { name: /另一张专辑/ })).not.toBeInTheDocument());
+    expect(screen.getByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: '清空搜索' }));
     expect(await screen.findByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();

@@ -268,13 +268,21 @@ export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, on
 });
 
 const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum }) {
-  const query = searchQuery;
+  const [query, setQuery] = useState(searchQuery);
+  const [debouncedQuery, setDebouncedQuery] = useState(searchQuery);
   const inputRef = useRef(null);
   const filtered = useMemo(() => {
-    const value = query.trim().toLowerCase();
+    const value = debouncedQuery.trim().toLowerCase();
     if (!value) return catalog.albums;
     return catalog.albums.filter(album => `${album.name} ${album.description} ${album.host}`.toLowerCase().includes(value));
-  }, [catalog.albums, query]);
+  }, [catalog.albums, debouncedQuery]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setDebouncedQuery(query), 120);
+    return () => window.clearTimeout(timer);
+  }, [query]);
+
+  useEffect(() => setQuery(searchQuery), [searchQuery]);
 
   useEffect(() => inputRef.current?.focus(), []);
 
@@ -282,11 +290,11 @@ const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onB
     <div className="screen search-screen">
       <header className="top-bar">
         <button type="button" className="icon-button" aria-label="返回" onClick={onBack}><ArrowLeft size={25} /></button>
-        <div className="search-field-wrap"><Search size={18} aria-hidden="true" /><input ref={inputRef} type="search" value={query} onChange={event => onQueryChange(event.target.value)} aria-label="搜索专辑" placeholder="搜索专辑" /></div>
-        {query ? <button type="button" className="icon-button" aria-label="清空搜索" onClick={() => onQueryChange('')}><X size={20} /></button> : <span className="icon-button-spacer" />}
+        <div className="search-field-wrap"><Search size={18} aria-hidden="true" /><input ref={inputRef} type="search" value={query} onChange={event => { setQuery(event.target.value); onQueryChange(event.target.value); }} aria-label="搜索专辑" placeholder="搜索专辑" /></div>
+        {query ? <button type="button" className="icon-button" aria-label="清空搜索" onClick={() => { setQuery(''); onQueryChange(''); }}><X size={20} /></button> : <span className="icon-button-spacer" />}
       </header>
       <section className="search-results">
-        <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count" aria-live="polite">{filtered.length}</span></div>
+        <div className="section-heading-row"><h1>全部专辑</h1><span key={filtered.length} className="section-count" aria-live="polite">{filtered.length}</span></div>
         <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
       </section>
@@ -366,10 +374,10 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, onAddLate
   );
 });
 
-function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQueue, queueButtonRef, onSeek }) {
+function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
   return (
-    <section className="mini-player" aria-label="当前播放">
+    <section className={`mini-player${isClosing ? ' is-closing' : ''}`} aria-label="当前播放" onAnimationEnd={event => { if (isClosing && event.animationName === 'mini-player-out') onExited?.(); }}>
       <div className="mini-main">
         <Artwork src={player.currentEpisode.albumPic} alt="" className="mini-art" />
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
@@ -554,7 +562,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
   };
 
   return (
-    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); const gesture = gestureRef.current; if (gesture?.element?.hasPointerCapture?.(gesture.pointerId)) gesture.element.releasePointerCapture?.(gesture.pointerId); gestureRef.current = null; setDragging(false); }}>
+    <li style={{ '--i': Math.min(index, 8) }} className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); const gesture = gestureRef.current; if (gesture?.element?.hasPointerCapture?.(gesture.pointerId)) gesture.element.releasePointerCapture?.(gesture.pointerId); gestureRef.current = null; setDragging(false); }}>
       <button type="button" className="later-swipe-action" tabIndex={swiped ? 0 : -1} aria-hidden={!swiped} aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
       <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
       <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={menuOpen} aria-haspopup="menu" aria-controls={`later-menu-${episode.id}`} onClick={() => onToggleMenu(!menuOpen)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div id={`later-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" role="menuitem" disabled={index === 0} onClick={() => { onMove(index, index - 1); onToggleMenu(false); }}><ChevronUp size={15} />上移</button><button type="button" role="menuitem" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); onToggleMenu(false); }}><ChevronDown size={15} />下移</button><button type="button" role="menuitem" onClick={() => { onRemove(episode.id); onToggleMenu(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
@@ -678,7 +686,7 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
           {pickerOpen ? <LaterPicker catalog={catalog} onBack={() => setPickerOpen(false)} onAdd={handleAddLater} /> : items.length ? <ul className="queue-list">{items.map((episode, index) => {
             if (activeTab === 'later') return <LaterQueueRow key={`${episode.id}-${index}`} episode={episode} index={index} count={items.length} onPlay={() => onPlayLater(episode)} onRemove={onRemoveLater} onMove={onMoveLater} menuOpen={laterActionsFor === episode.id} onToggleMenu={open => setLaterActionsFor(open ? episode.id : null)} />;
             const active = activeTab === 'queue' && currentEpisodeId === episode.id;
-            return <li key={`${episode.id}-${index}`} className={`queue-row${active ? ' is-current' : ''}${actionsFor === episode.id ? ' is-menu-open' : ''}`}>
+            return <li key={`${episode.id}-${index}`} style={{ '--i': Math.min(index, 8) }} className={`queue-row${active ? ' is-current' : ''}${actionsFor === episode.id ? ' is-menu-open' : ''}`}>
               <button type="button" className="queue-row-main" aria-label={activeTab === 'later' ? episode.title : undefined} onClick={() => (activeTab === 'later' ? onPlayLater(episode) : onPlay(episode))}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span>{active ? <span className="queue-playing" aria-label="正在播放"><Music2 size={18} /></span> : null}</button>
               {activeTab === 'queue' ? <div className="queue-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={actionsFor === episode.id} aria-haspopup="menu" aria-controls={`queue-menu-${episode.id}`} onClick={() => setActionsFor(actionsFor === episode.id ? null : episode.id)}><MoreHorizontal size={20} /></button>{actionsFor === episode.id ? <div id={`queue-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" role="menuitem" onClick={() => { onPlayNext(episode); setActionsFor(null); }}><ListPlus size={16} />下一首播放</button><button type="button" role="menuitem" onClick={() => { onRemove(episode.id); setActionsFor(null); }}><Trash2 size={16} />移出列表</button></div> : null}</div> : null}
             </li>;
@@ -753,6 +761,23 @@ export default function App({ initialCatalog = null }) {
   const catalogRefreshPromise = useRef(null);
   playerRef.current = player;
   laterEpisodesRef.current = laterEpisodes;
+  const [playerVisible, setPlayerVisible] = useState(() => Boolean(player.currentEpisode));
+  const [playerClosing, setPlayerClosing] = useState(false);
+  const lastEpisodeRef = useRef(player.currentEpisode);
+
+  useEffect(() => { if (player.currentEpisode) lastEpisodeRef.current = player.currentEpisode; }, [player.currentEpisode]);
+  useEffect(() => {
+    if (player.currentEpisode) { setPlayerVisible(true); setPlayerClosing(false); return; }
+    if (!playerVisible) return;
+    if (!desktopLayout) { setPlayerVisible(false); return; }
+    setPlayerClosing(true);
+  }, [desktopLayout, player.currentEpisode, playerVisible]);
+  const handlePlayerExited = useCallback(() => { setPlayerVisible(false); setPlayerClosing(false); }, []);
+  useEffect(() => {
+    if (!playerClosing) return undefined;
+    const timer = window.setTimeout(handlePlayerExited, 220);
+    return () => window.clearTimeout(timer);
+  }, [playerClosing, handlePlayerExited]);
 
   const applyRoute = useCallback(nextRoute => {
     const previousRoute = routeRef.current;
@@ -1120,7 +1145,7 @@ export default function App({ initialCatalog = null }) {
         </div>}
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
-      {player.currentEpisode ? <MiniPlayer player={player} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} /> : null}
+      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
       {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} /> : null}
     </main>
   );

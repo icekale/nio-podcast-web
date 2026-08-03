@@ -176,7 +176,8 @@ h1, h2, p { margin: 0; }
 .updates-section, .search-results, .album-content { padding: var(--space-8) var(--space-5) 0; }
 .section-heading-row { display: flex; align-items: baseline; gap: var(--space-2); margin-bottom: var(--space-4); }
 .section-heading-row h1, .section-heading-row h2 { font-size: 1.55rem; line-height: 1.2; font-weight: 620; }
-.section-count { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+.section-count { display: inline-block; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.95rem; animation: count-pop 160ms ease-out; }
+@keyframes count-pop { from { opacity: 0.4; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 .episode-list { border-top: 1px solid var(--line); }
 .episode-row { display: flex; align-items: center; gap: var(--space-2); min-height: 5.75rem; padding: var(--space-3) 0; border-bottom: 1px solid var(--line); }
 .episode-main, .album-result, .queue-row-main {
@@ -375,6 +376,9 @@ h1, h2, p { margin: 0; }
   }
   .desktop-nav-link:hover { background: var(--surface-soft); color: var(--ink); }
   .desktop-nav-link[aria-current="page"] { background: var(--aqua); color: var(--teal-dark); font-weight: 650; }
+  .desktop-nav-link { transition: background-color 160ms ease, color 160ms ease; }
+  .desktop-nav-install { animation: desktop-install-in 200ms ease-out both; }
+  @keyframes desktop-install-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
   .desktop-nav-install {
     display: inline-flex;
     align-items: center;
@@ -402,6 +406,15 @@ h1, h2, p { margin: 0; }
   .home-screen .recommendation-art { width: 4rem; height: 4rem; }
   .home-screen .updates-section { grid-column: 2; grid-row: 2; padding: var(--space-8) 0 0; }
 
+  .route-view[data-route-motion="forward"], .route-view[data-route-motion="back"] { animation-duration: 240ms; }
+  @keyframes route-forward-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+  @keyframes route-back-in { from { opacity: 0; transform: translate3d(0, -8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+  .mini-player { animation: mini-player-in 200ms ease-out both; }
+  .mini-player.is-closing { animation: mini-player-out 180ms ease-in both; }
+  @keyframes mini-player-in { from { opacity: 0; transform: translate3d(-50%, 100%, 0); } to { opacity: 1; transform: translate3d(-50%, 0, 0); } }
+  @keyframes mini-player-out { from { opacity: 1; transform: translate3d(-50%, 0, 0); } to { opacity: 0; transform: translate3d(-50%, 100%, 0); } }
+
   .album-results.is-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -414,6 +427,13 @@ h1, h2, p { margin: 0; }
   .album-results.is-grid .album-result-copy strong { font-size: 0.95rem; }
   .album-results.is-grid .album-result-copy span { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
   .album-results.is-grid .album-results-more { grid-column: 1 / -1; }
+  .album-results.is-grid .album-result { transition: transform 160ms ease, box-shadow 160ms ease; }
+  .album-results.is-grid .album-result:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 28, 47, 0.10); }
+  .album-results.is-grid .album-result:active { transform: scale(0.98); }
+  .album-result:hover { background: var(--surface-soft); }
+
+  .queue-list > li { animation: queue-row-in 220ms ease-out both; animation-delay: calc(var(--i, 0) * 30ms); }
+  @keyframes queue-row-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
   .album-content { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 0 var(--space-8); padding: var(--space-8) 0 0; }
   .album-intro { grid-column: 1; grid-row: 1 / span 20; align-self: start; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
@@ -452,5 +472,5 @@ h1, h2, p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; }
 }
