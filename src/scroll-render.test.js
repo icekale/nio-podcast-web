@@ -26,6 +26,15 @@ describe('mobile scroll rendering', () => {
     expect(css).not.toMatch(/\.route-view[^}]*\bwill-change\s*:/);
   });
 
+  it('uses the calmer route and queue motion cadence', () => {
+    expect(css).toContain('.route-view[data-route-motion="forward"] { animation: route-forward-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }');
+    expect(css).toContain('.route-view[data-route-motion="back"] { animation: route-back-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }');
+    expect(css).toContain('animation: queue-backdrop-in 220ms ease-out both;');
+    expect(css).toContain('animation: queue-sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;');
+    expect(css).toContain('.queue-sheet.is-closing { animation: queue-sheet-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both; }');
+    expect(css).toContain('.queue-overlay.is-closing .queue-backdrop { animation: queue-backdrop-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }');
+  });
+
   it('keeps later playback gestures on a bounded paint path', () => {
     expect(css).not.toMatch(/\.later-row[^}]*backdrop-filter\s*:/);
     expect(css).toMatch(/\.queue-tabs[^}]*grid-template-columns:\s*repeat\(3/);
