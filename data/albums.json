@@ -1,6 +1,69 @@
 {
-  "generatedAt": 1785725006059,
+  "generatedAt": 1785753722280,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1640,
+      "latestEpisode": {
+        "id": 196659,
+        "title": "魅族追梦人打造“追求源于热爱”公司亮相",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "albumDesc": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+        "host": "NIO Radio",
+        "duration": 426000,
+        "onlineTime": 1785747600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/L3kDZJqoRVGbj0Ms_AAC_192_1.m4a",
+        "fileSize": 10397573
+      }
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 727,
+      "latestEpisode": {
+        "id": 196614,
+        "title": "拿了驾照，不敢上路",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "albumDesc": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+        "host": "NIO Radio",
+        "duration": 533000,
+        "onlineTime": 1785747600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/IMNY22YUQP37q4Do_AAC_192_1.m4a",
+        "fileSize": 12982071
+      }
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 66,
+      "latestEpisode": {
+        "id": 196651,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "albumDesc": "",
+        "host": "NIO Radio",
+        "duration": 55000,
+        "onlineTime": 1785747600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/WEnnHcbNDrN33lsH_AAC_192_1.m4a",
+        "fileSize": 1324001
+      }
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -1157,27 +1220,6 @@
       }
     },
     {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1639,
-      "latestEpisode": {
-        "id": 196596,
-        "title": "中国资本将全资收购猛犸象",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "albumDesc": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-        "host": "NIO Radio",
-        "duration": 425000,
-        "onlineTime": 1785488400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/31/jzVzDYKVe8XhZgGX_AAC_192_1.m4a",
-        "fileSize": 10354945
-      }
-    },
-    {
       "id": 120,
       "name": "蔚来直通车",
       "description": "网罗蔚来资讯，乐享愉悦生活，最热门最有趣的社区热点都在这里！",
@@ -1196,48 +1238,6 @@
         "onlineTime": 1785488400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/31/sU1VvXeToMN1w14b_AAC_192_1.m4a",
         "fileSize": 10365057
-      }
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 726,
-      "latestEpisode": {
-        "id": 196393,
-        "title": "花21.7亿，挖个坑？",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "albumDesc": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-        "host": "NIO Radio",
-        "duration": 518000,
-        "onlineTime": 1785488400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/24/JznvuwNj6JKTp1dV_AAC_192_1.m4a",
-        "fileSize": 12616257
-      }
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 65,
-      "latestEpisode": {
-        "id": 196592,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "albumDesc": "",
-        "host": "NIO Radio",
-        "duration": 48000,
-        "onlineTime": 1785488400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/31/LyVLkLNRT32zXnLN_AAC_192_1.m4a",
-        "fileSize": 1151621
       }
     },
     {
