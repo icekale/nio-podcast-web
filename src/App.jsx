@@ -284,8 +284,8 @@ const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onB
         <div className="search-field-wrap"><Search size={18} aria-hidden="true" /><input ref={inputRef} type="search" value={query} onChange={event => onQueryChange(event.target.value)} aria-label="搜索专辑" placeholder="搜索专辑" /></div>
         {query ? <button type="button" className="icon-button" aria-label="清空搜索" onClick={() => onQueryChange('')}><X size={20} /></button> : <span className="icon-button-spacer" />}
       </header>
-      <section className="search-results" aria-live="polite">
-        <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count">{filtered.length}</span></div>
+      <section className="search-results">
+        <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count" aria-live="polite">{filtered.length}</span></div>
         <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
       </section>
@@ -697,7 +697,7 @@ function DesktopNav({ route, laterActive, onHome, onSearch, onLater }) {
       </div>
       <nav className="desktop-nav-links" aria-label="主导航">
         <button type="button" className="desktop-nav-link" aria-current={route.screen === 'home' ? 'page' : undefined} onClick={onHome}>今日推荐</button>
-        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'search' ? 'page' : undefined} onClick={onSearch}>搜索</button>
+        <button type="button" className="desktop-nav-link" aria-current={(route.screen === 'search' || route.screen === 'albums') ? 'page' : undefined} onClick={onSearch}>搜索</button>
         <button type="button" className="desktop-nav-link" aria-current={laterActive ? 'page' : undefined} onClick={onLater}>稍后播放</button>
       </nav>
     </aside>
@@ -850,7 +850,7 @@ export default function App({ initialCatalog = null }) {
     if (queuePresent || !queueFocusRef.current) return;
     const trigger = queueFocusRef.current;
     queueFocusRef.current = null;
-    trigger.focus?.({ preventScroll: true });
+    if (trigger.isConnected) trigger.focus?.({ preventScroll: true });
   }, [queuePresent]);
 
   const savePlayer = useCallback((next, force = false) => {

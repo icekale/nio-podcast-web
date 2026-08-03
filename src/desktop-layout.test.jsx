@@ -60,6 +60,13 @@ describe('desktop navigation', () => {
     expect(within(nav).getByRole('button', { name: '今日推荐' })).not.toHaveAttribute('aria-current');
   });
 
+  it('highlights search when the album route is open', () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/albums');
+    render(<App initialCatalog={catalog} />);
+    const nav = screen.getByRole('navigation', { name: '主导航' });
+    expect(within(nav).getByRole('button', { name: '搜索' })).toHaveAttribute('aria-current', 'page');
+  });
+
   it('browses and filters the album grid from search', async () => {
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });

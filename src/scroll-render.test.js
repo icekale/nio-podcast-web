@@ -66,5 +66,7 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.queue-sheet\s*\{[^}]*width:\s*380px/);
     expect(css).toMatch(/@keyframes queue-sheet-in\s*\{[^}]*translate3d\(100%,\s*0,\s*0\)/);
     expect(css).toMatch(/\.home-screen \.top-bar \.icon-button:first-child,\s*\.home-screen \.top-bar \.top-actions \.icon-button\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/\.home-screen \.top-bar\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*auto/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-sheet \.sheet-handle\s*\{[^}]*display:\s*none/);
   });
 });

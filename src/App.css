@@ -383,7 +383,7 @@ h1, h2, p { margin: 0; }
   .mini-progress-row input { height: 1rem; }
 
   .home-screen { display: grid; grid-template-columns: minmax(320px, 38%) minmax(0, 1fr); gap: 0 var(--space-8); }
-  .home-screen .top-bar { grid-column: 1 / -1; }
+  .home-screen .top-bar { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) auto; }
   .home-screen .recommendation-panel { grid-column: 1; grid-row: 2; align-self: start; padding: var(--space-8) var(--space-6); border-radius: var(--radius-md); }
   .home-screen .recommendation-art { width: 4rem; height: 4rem; }
   .home-screen .updates-section { grid-column: 2; grid-row: 2; padding: var(--space-8) 0 0; }
@@ -424,6 +424,7 @@ h1, h2, p { margin: 0; }
     animation-duration: 280ms;
   }
   .queue-sheet.is-closing { animation-duration: 220ms; }
+  .queue-sheet .sheet-handle { display: none; }
   @keyframes queue-sheet-in {
     from { opacity: 0; transform: translate3d(100%, 0, 0); }
     to { opacity: 1; transform: translate3d(0, 0, 0); }
