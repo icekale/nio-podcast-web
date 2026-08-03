@@ -5,7 +5,9 @@ export function sortAlbumsByLatest(albums) {
   return [...albums].sort((a, b) => {
     const aTime = Number(a.latestEpisode?.onlineTime) || 0;
     const bTime = Number(b.latestEpisode?.onlineTime) || 0;
-    return bTime - aTime;
+    const timeDifference = bTime - aTime;
+    if (timeDifference) return timeDifference;
+    return (Number(a.id) || 0) - (Number(b.id) || 0);
   });
 }
 

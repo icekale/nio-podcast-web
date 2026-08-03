@@ -19,6 +19,16 @@ describe('catalog selectors', () => {
     expect(albums.map(album => album.id)).toEqual([1, 2]);
   });
 
+  it('orders equal update times by album id', () => {
+    const albums = [
+      { id: 20, latestEpisode: episode(20, 2) },
+      { id: 5, latestEpisode: episode(5, 2) },
+      { id: 1, latestEpisode: episode(1, 3) },
+    ];
+
+    expect(sortAlbumsByLatest(albums).map(album => album.id)).toEqual([1, 5, 20]);
+  });
+
   it('selects up to twelve episodes published on the requested day', () => {
     const day = new Date('2026-08-02T10:00:00+08:00');
     const albums = Array.from({ length: 14 }, (_, index) => ({
