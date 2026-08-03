@@ -104,6 +104,26 @@ describe('mobile app shell', () => {
     await waitFor(() => expect(screen.getByRole('heading', { name: '今日推荐' })).toBeInTheDocument());
   });
 
+  it('shows the pinned briefing albums first in the full album directory', async () => {
+    const pinnedCatalog = {
+      ...catalog,
+      albums: [
+        { id: 7, name: '普通专辑', description: '', imageUrl: '', latestEpisode: { ...episode(71, '最新节目'), onlineTime: Date.now() + 100000 } },
+        { id: 23, name: '资讯充电站·晚间版', description: '', imageUrl: '', latestEpisode: episode(231, '晚间节目', Date.now() - 100000) },
+        { id: 5, name: '资讯充电站·早间版', description: '', imageUrl: '', latestEpisode: episode(51, '早间节目', Date.now() - 200000) },
+      ],
+    };
+    render(<App initialCatalog={pinnedCatalog} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    await screen.findByRole('heading', { name: '全部专辑' });
+
+    const rows = screen.getAllByRole('button', { name: /资讯充电站|普通专辑/ });
+    expect(rows[0]).toHaveAccessibleName('资讯充电站·早间版早间节目');
+    expect(rows[1]).toHaveAccessibleName('资讯充电站·晚间版晚间节目');
+    expect(rows[2]).toHaveAccessibleName('普通专辑最新节目');
+  });
+
   it('marks Home to Albums navigation as forward and Back as back', async () => {
     render(<App initialCatalog={catalog} />);
 

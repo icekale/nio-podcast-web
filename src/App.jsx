@@ -20,7 +20,7 @@ import {
   X,
 } from 'lucide-react';
 import { getEpisodes } from './api';
-import { loadCatalog, normalizeCatalog, selectHomeEpisodes } from './catalog';
+import { loadCatalog, normalizeCatalog, selectHomeEpisodes, sortAlbumsForDirectory } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
 import {
   PLAYER_STORAGE_KEY,
@@ -294,6 +294,7 @@ const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onB
 });
 
 const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
+  const orderedAlbums = useMemo(() => sortAlbumsForDirectory(catalog.albums), [catalog.albums]);
   return (
     <div className="screen albums-screen">
       <header className="top-bar">
@@ -303,7 +304,7 @@ const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onO
       </header>
       <section className="search-results" aria-labelledby="albums-title">
         <div className="section-heading-row"><h1 id="albums-title">全部专辑</h1><span className="section-count">{catalog.albums.length}</span></div>
-        <AlbumResults albums={catalog.albums} onOpenAlbum={onOpenAlbum} />
+        <AlbumResults albums={orderedAlbums} onOpenAlbum={onOpenAlbum} />
         {!catalog.albums.length ? <div className="empty-state">暂无可用专辑</div> : null}
       </section>
     </div>

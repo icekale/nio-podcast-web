@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, writeCatalogCache } from './catalog';
+import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -27,6 +27,17 @@ describe('catalog selectors', () => {
     ];
 
     expect(sortAlbumsByLatest(albums).map(album => album.id)).toEqual([1, 5, 20]);
+  });
+
+  it('pins the briefing albums ahead of latest-updated albums for the directory', () => {
+    const albums = [
+      { id: 7, name: '普通专辑', latestEpisode: episode(71, 400) },
+      { id: 23, name: '资讯充电站·晚间版', latestEpisode: episode(231, 100) },
+      { id: 5, name: '资讯充电站·早间版', latestEpisode: episode(51, 200) },
+      { id: 1, name: '旧专辑', latestEpisode: episode(11, 300) },
+    ];
+
+    expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([5, 23, 7, 1]);
   });
 
   it('selects up to twelve episodes published on the requested day', () => {

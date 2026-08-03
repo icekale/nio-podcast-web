@@ -12,6 +12,24 @@ export function sortAlbumsByLatest(albums) {
   });
 }
 
+const PINNED_ALBUM_IDS = [5, 23];
+
+export function sortAlbumsForDirectory(albums) {
+  const pinnedIds = new Set(PINNED_ALBUM_IDS.map(Number));
+  const pinned = [];
+  const rest = [];
+  for (const album of albums) {
+    if (pinnedIds.has(Number(album.id))) {
+      pinned.push(album);
+    } else {
+      rest.push(album);
+    }
+  }
+  const pinnedOrder = new Map(PINNED_ALBUM_IDS.map((id, index) => [id, index]));
+  pinned.sort((a, b) => pinnedOrder.get(Number(a.id)) - pinnedOrder.get(Number(b.id)));
+  return [...pinned, ...sortAlbumsByLatest(rest)];
+}
+
 function sameLocalDay(left, right) {
   const a = new Date(left);
   const b = new Date(right);
