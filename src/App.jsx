@@ -247,11 +247,11 @@ function useVisibleAlbums(albums) {
   };
 }
 
-export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender }) {
+export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender, grid = false }) {
   onRender?.();
   const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
   return (
-    <ul className="album-results">
+    <ul className={`album-results${grid ? ' is-grid' : ''}`}>
       {visibleAlbums.map(album => (
         <li key={album.id}>
           <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
@@ -304,7 +304,7 @@ const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onO
       </header>
       <section className="search-results" aria-labelledby="albums-title">
         <div className="section-heading-row"><h1 id="albums-title">全部专辑</h1><span className="section-count">{catalog.albums.length}</span></div>
-        <AlbumResults albums={orderedAlbums} onOpenAlbum={onOpenAlbum} />
+        <AlbumResults albums={orderedAlbums} onOpenAlbum={onOpenAlbum} grid />
         {!catalog.albums.length ? <div className="empty-state">暂无可用专辑</div> : null}
       </section>
     </div>
@@ -688,11 +688,44 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
   );
 });
 
+function DesktopNav({ route, laterActive, onHome, onAlbums, onSearch, onLater }) {
+  return (
+    <aside className="desktop-nav">
+      <div className="desktop-nav-brand">
+        <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="30" height="30" />
+        <span>NIO Radio</span>
+      </div>
+      <nav className="desktop-nav-links" aria-label="主导航">
+        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'home' ? 'page' : undefined} onClick={onHome}>今日推荐</button>
+        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'albums' ? 'page' : undefined} onClick={onAlbums}>全部专辑</button>
+        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'search' ? 'page' : undefined} onClick={onSearch}>搜索</button>
+        <button type="button" className="desktop-nav-link" aria-current={laterActive ? 'page' : undefined} onClick={onLater}>稍后播放</button>
+      </nav>
+    </aside>
+  );
+}
+
+function useDesktopLayout() {
+  const [desktop, setDesktop] = useState(() => (
+    typeof window !== 'undefined' && window.matchMedia?.('(min-width: 1024px)')?.matches === true
+  ));
+  useEffect(() => {
+    const media = typeof window !== 'undefined' ? window.matchMedia?.('(min-width: 1024px)') : null;
+    if (!media) return undefined;
+    const update = () => setDesktop(media.matches);
+    update();
+    media.addEventListener?.('change', update);
+    return () => media.removeEventListener?.('change', update);
+  }, []);
+  return desktop;
+}
+
 function readStoredPlayer() {
   try { return restorePlayerState(window.localStorage.getItem(PLAYER_STORAGE_KEY)); } catch { return createPlayerState(); }
 }
 
 export default function App({ initialCatalog = null }) {
+  const desktopLayout = useDesktopLayout();
   const [route, setRoute] = useState(() => parseHash());
   const [routeMotion, setRouteMotion] = useState('none');
   const [queuePresent, setQueuePresent] = useState(() => route.queueOpen);
@@ -908,10 +941,16 @@ export default function App({ initialCatalog = null }) {
     else window.history.pushState(state, '', hash);
     applyRoute(parseHash(hash));
   }, [applyRoute, saveScrollPosition]);
-  const openQueue = useCallback(() => {
-    queueFocusRef.current = queueButtonRef.current;
+  const openQueueFrom = useCallback(trigger => {
+    queueFocusRef.current = trigger;
     go(withQueueHash(window.location.hash || '#/', true));
   }, [go]);
+  const openQueue = useCallback(() => openQueueFrom(queueButtonRef.current), [openQueueFrom]);
+  const openLater = useCallback(event => {
+    setQueueTab('later');
+    if (queuePresent) return;
+    openQueueFrom(event.currentTarget);
+  }, [openQueueFrom, queuePresent]);
   const closeQueue = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
     if (parseHash(window.location.hash || '#/').queueOpen && depth > 0) {
@@ -1034,6 +1073,16 @@ export default function App({ initialCatalog = null }) {
 
   return (
     <main className="app">
+      {desktopLayout ? (
+        <DesktopNav
+          route={route}
+          laterActive={queuePresent && queueTab === 'later'}
+          onHome={() => go('#/')}
+          onAlbums={openAlbums}
+          onSearch={openSearch}
+          onLater={openLater}
+        />
+      ) : null}
       <div className="app-content" inert={queuePresent ? true : undefined}>
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}

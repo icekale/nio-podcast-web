@@ -72,6 +72,7 @@ h1, h2, p { margin: 0; }
 .app-content { min-height: 100dvh; padding-bottom: calc(8rem + env(safe-area-inset-bottom)); }
 .screen { min-height: 100dvh; }
 .route-view { min-height: 100%; }
+.desktop-nav { display: none; }
 .route-view[data-route-motion="forward"] { animation: route-forward-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .route-view[data-route-motion="back"] { animation: route-back-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 @keyframes route-forward-in {
@@ -335,6 +336,101 @@ h1, h2, p { margin: 0; }
   .episode-main, .album-result, .queue-row-main { gap: var(--space-3); }
   .recommendation-copy h1 { font-size: 1.75rem; }
   .album-result-copy span { overflow-wrap: anywhere; white-space: normal; }
+}
+
+@media (min-width: 1024px) {
+  body { padding: 0; }
+  .app {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: minmax(100dvh, auto);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .desktop-nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    gap: var(--space-5);
+    padding: var(--space-5) var(--space-4);
+    background: var(--surface);
+    border-right: 1px solid var(--line);
+  }
+  .desktop-nav-brand { display: flex; align-items: center; gap: var(--space-2); color: var(--ink); font-weight: 650; }
+  .desktop-nav-brand img { border-radius: var(--radius-sm); }
+  .desktop-nav-links { display: flex; flex-direction: column; gap: var(--space-1); }
+  .desktop-nav-link {
+    min-height: 2.75rem;
+    padding: 0.65rem var(--space-3);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--muted-strong);
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .desktop-nav-link:hover { background: var(--surface-soft); color: var(--ink); }
+  .desktop-nav-link[aria-current="page"] { background: var(--aqua); color: var(--teal-dark); font-weight: 650; }
+  .app-content { grid-column: 2; min-width: 0; }
+
+  .mini-player { width: min(100%, 1280px); padding-top: var(--space-4); }
+  .mini-progress-row input { height: 1rem; }
+
+  .home-screen { display: grid; grid-template-columns: minmax(320px, 38%) minmax(0, 1fr); gap: 0 var(--space-8); }
+  .home-screen .top-bar { grid-column: 1 / -1; }
+  .home-screen .recommendation-panel { grid-column: 1; grid-row: 2; align-self: start; padding: var(--space-8) var(--space-6); border-radius: var(--radius-md); }
+  .home-screen .updates-section { grid-column: 2; grid-row: 2; padding: var(--space-8) 0 0; }
+
+  .album-results.is-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-5);
+    padding: var(--space-5) 0;
+  }
+  .album-results.is-grid li { border-bottom: 0; }
+  .album-results.is-grid .album-result { flex-direction: column; align-items: stretch; gap: var(--space-3); padding: 0; }
+  .album-results.is-grid .album-art { width: 100%; height: auto; aspect-ratio: 1; }
+  .album-results.is-grid .album-result-copy strong { font-size: 0.95rem; }
+  .album-results.is-grid .album-result-copy span { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .album-results.is-grid .album-results-more { grid-column: 1 / -1; }
+
+  .album-content { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 0 var(--space-8); padding: var(--space-8) 0 0; }
+  .album-intro { grid-column: 1; grid-row: 1 / span 20; align-self: start; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  .album-hero-art { width: 100%; height: auto; aspect-ratio: 1; }
+  .album-content > .inline-error,
+  .album-content > .loading-state,
+  .album-content > .loading-more,
+  .album-content > .empty-state,
+  .album-content > .load-more-button,
+  .album-content > .album-episode-list { grid-column: 2; }
+
+  .queue-sheet {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 380px;
+    max-height: 100dvh;
+    transform: none;
+    border-radius: 1.25rem 0 0 1.25rem;
+    animation-name: queue-sheet-in;
+    animation-duration: 280ms;
+  }
+  .queue-sheet.is-closing { animation-duration: 220ms; }
+  @keyframes queue-sheet-in {
+    from { opacity: 0; transform: translate3d(100%, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes queue-sheet-out {
+    from { opacity: 1; transform: translate3d(0, 0, 0); }
+    to { opacity: 0; transform: translate3d(100%, 0, 0); }
+  }
+  .queue-backdrop { animation-duration: 220ms; }
+  .queue-overlay.is-closing .queue-backdrop { animation-duration: 180ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {
