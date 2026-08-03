@@ -17,11 +17,11 @@ export default defineConfig({
           },
           {
             urlPattern: ({ request }) => request.destination === 'image',
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'nio-artwork-v1',
               cacheableResponse: { statuses: [0, 200] },
-              expiration: { maxEntries: 150, maxAgeSeconds: 30 * 24 * 60 * 60 },
+              expiration: { maxEntries: 700, maxAgeSeconds: 30 * 24 * 60 * 60 },
             },
           },
         ],

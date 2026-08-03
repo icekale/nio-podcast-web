@@ -84,7 +84,7 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 
 - 目录请求不进入 Service Worker 缓存；页面会在 5 分钟内复用 `localStorage` 目录，超过窗口再请求网络，失败时回退到最近目录。
 - 目录同时保存在 `localStorage`，页面回到前台后最多每 5 分钟刷新一次。
-- 专辑封面使用有数量上限和 30 天有效期的 `CacheFirst` 缓存。
+- 专辑封面使用最多 700 张、30 天有效期的 `StaleWhileRevalidate` 缓存，旧图即时展示并在后台更新。
 - 音频不进入 Service Worker 缓存，避免占用设备空间和缓存过期音频。
 - 播放器状态使用 `nio_player_state_v2`，稍后播放使用 `nio_play_later_v1`。
 

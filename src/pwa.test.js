@@ -30,9 +30,10 @@ describe('PWA cache boundaries', () => {
     expect(viteConfig).toContain("url.pathname.endsWith('/data/albums.json')");
     expect(viteConfig).not.toContain("handler: 'NetworkFirst'");
     expect(viteConfig).not.toContain("cacheName: 'nio-catalog-v1'");
-    expect(viteConfig).toContain("handler: 'CacheFirst'");
+    expect(viteConfig).not.toContain("handler: 'CacheFirst'");
+    expect(viteConfig).toContain("handler: 'StaleWhileRevalidate'");
     expect(viteConfig).toContain("cacheName: 'nio-artwork-v1'");
-    expect(viteConfig).toContain('maxEntries: 150');
+    expect(viteConfig).toContain('maxEntries: 700');
     expect(viteConfig).toContain('maxAgeSeconds: 30 * 24 * 60 * 60');
   });
 
