@@ -4,13 +4,13 @@
 
 **Goal:** Restore scheduled catalog publication and guarantee deterministic latest-update ordering in the full album directory.
 
-**Architecture:** Keep the current `gh-pages` deployment and React catalog normalization. Configure one repository-local bot identity before deployment, then align the client comparator with the generator's existing time-and-ID ordering.
+**Architecture:** Keep the current `gh-pages` deployment and React catalog normalization. Configure one repository-local bot identity plus the automatic Actions token before deployment, then align the client comparator with the generator's existing time-and-ID ordering.
 
 **Tech Stack:** GitHub Actions, gh-pages, React 19, Vitest, Vite 8
 
 ---
 
-### Task 1: Configure Deployment Git Identity
+### Task 1: Configure Deployment Git Identity And Authentication
 
 **Files:**
 - Modify: `.github/workflows/update-catalog.yml`
@@ -29,15 +29,17 @@ const commit = workflow.indexOf('- name: Commit catalog state');
 expect(configure).toBeGreaterThan(build);
 expect(deploy).toBeGreaterThan(configure);
 expect(commit).toBeGreaterThan(deploy);
+expect(workflow.slice(configure, deploy)).toContain('GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}');
 expect(workflow.slice(configure, deploy)).toContain('git config user.name "github-actions[bot]"');
 expect(workflow.slice(configure, deploy)).toContain('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+expect(workflow.slice(configure, deploy)).toContain('git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git');
 ```
 
 - [ ] **Step 2: Run the focused test and verify it fails**
 
 Run: `npm test -- scripts/workflow-config.test.js`
 
-Expected: FAIL because `Configure Git identity` does not exist before deployment.
+Expected: FAIL if the deployment identity, automatic token, or authenticated remote is missing before deployment.
 
 - [ ] **Step 3: Add the conditional identity step**
 
@@ -46,9 +48,12 @@ Insert this step after `Build PWA`:
 ```yaml
       - name: Configure Git identity
         if: steps.changes.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 ```
 
 Remove the same two commands from `Commit catalog state`.

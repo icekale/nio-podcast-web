@@ -41,8 +41,11 @@ describe('catalog update workflow', () => {
       const block = workflow.slice(start, end < 0 ? undefined : end);
       expect(block).toContain("if: steps.changes.outputs.changed == 'true'");
     }
-    expect(workflow.slice(configure, deploy)).toContain('git config user.name "github-actions[bot]"');
-    expect(workflow.slice(configure, deploy)).toContain('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+    const configureBlock = workflow.slice(configure, deploy);
+    expect(configureBlock).toContain('GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}');
+    expect(configureBlock).toContain('git config user.name "github-actions[bot]"');
+    expect(configureBlock).toContain('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+    expect(configureBlock).toContain('git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git');
     expect(workflow).toContain('git pull --rebase origin main');
   });
 });
