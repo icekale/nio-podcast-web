@@ -400,11 +400,11 @@ h1, h2, p { margin: 0; }
   .mini-player { width: min(100%, 1280px); padding-top: var(--space-4); }
   .mini-progress-row input { height: 1rem; }
 
-  .home-screen { display: grid; grid-template-columns: minmax(320px, 38%) minmax(0, 1fr); gap: 0 var(--space-8); }
-  .home-screen .top-bar { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) auto; }
-  .home-screen .recommendation-panel { grid-column: 1; grid-row: 2; align-self: start; padding: var(--space-8) var(--space-6); border-radius: var(--radius-md); }
+  .home-screen { display: block; }
+  .home-screen .top-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .home-screen .recommendation-panel { padding: var(--space-6) var(--space-6); border-radius: var(--radius-md); }
   .home-screen .recommendation-art { width: 4rem; height: 4rem; }
-  .home-screen .updates-section { grid-column: 2; grid-row: 2; padding: var(--space-8) 0 0; }
+  .home-screen .updates-section { padding: var(--space-8) 0 0; }
 
   .route-view[data-route-motion="forward"], .route-view[data-route-motion="back"] { animation-duration: 240ms; }
   @keyframes route-forward-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }

@@ -74,5 +74,7 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/@keyframes route-forward-in\s*\{[^}]*translate3d\(0,\s*8px,\s*0\)/);
     expect(css).toMatch(/\.queue-list > li\s*\{[^}]*animation:\s*queue-row-in\s+220ms/);
     expect(css).toMatch(/animation-delay:\s*0ms\s*!important/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen\s*\{[^}]*display:\s*block/);
+    expect(css).not.toMatch(/\.home-screen\s*\{[^}]*grid-template-columns:\s*minmax\(320px,\s*38%\)/);
   });
 });
