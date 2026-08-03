@@ -15,7 +15,7 @@
 **Files:**
 - Modify: `src/App.catalog.test.jsx`
 
-- [ ] **Step 1: Add a five-minute foreground regression test**
+- [x] **Step 1: Add a five-minute foreground regression test**
 
 Update the Testing Library import to include `fireEvent` for the route and visibility events:
 
@@ -46,7 +46,7 @@ it('refreshes stale home summaries when the document returns to the foreground',
 });
 ```
 
-- [ ] **Step 2: Add route-trigger and duplicate-request tests**
+- [x] **Step 2: Add route-trigger and duplicate-request tests**
 
 Add the following route test. It reproduces the reported symptom by changing the shared catalog after the user opens all albums:
 
@@ -96,7 +96,7 @@ it('deduplicates concurrent automatic catalog refreshes', async () => {
 });
 ```
 
-- [ ] **Step 3: Add hidden-page timer coverage**
+- [x] **Step 3: Add hidden-page timer coverage**
 
 Use Vitest fake timers for a focused test. Save the original visibility descriptor, set it to `hidden`, render with an already resolved initial catalog, advance six minutes, and assert that only the initial request ran:
 
@@ -117,7 +117,7 @@ it('does not poll the catalog while the document is hidden', async () => {
 });
 ```
 
-- [ ] **Step 4: Run the focused tests and confirm RED**
+- [x] **Step 4: Run the focused tests and confirm RED**
 
 Run:
 
@@ -132,7 +132,7 @@ Expected: the five-minute and route/timer assertions fail against the current 15
 **Files:**
 - Modify: `src/App.jsx:46,659-720,886-891`
 
-- [ ] **Step 1: Replace the cooldown and add in-flight state**
+- [x] **Step 1: Replace the cooldown and add in-flight state**
 
 Change the constant to five minutes and add a ref beside `lastCatalogRefreshAt`:
 
@@ -143,7 +143,7 @@ const lastCatalogRefreshAt = useRef(0);
 const catalogRefreshPromise = useRef(null);
 ```
 
-- [ ] **Step 2: Make refresh eligibility and deduplication explicit**
+- [x] **Step 2: Make refresh eligibility and deduplication explicit**
 
 Replace `refreshCatalog` with a callback that accepts `{ showLoading = false, force = false }`, returns the existing in-flight promise when present, skips non-forced calls inside the cooldown, records the request start time, preserves the current state on failure, and clears the ref in `finally`:
 
@@ -170,7 +170,7 @@ const refreshCatalog = useCallback(({ showLoading = false, force = false } = {})
 }, []);
 ```
 
-- [ ] **Step 3: Wire the initial, visibility, timer, and route triggers**
+- [x] **Step 3: Wire the initial, visibility, timer, and route triggers**
 
 Keep initial loading forced, make visibility refresh non-blocking, and add effects with cleanup:
 
@@ -203,7 +203,7 @@ useEffect(() => {
 
 Update manual retry to call `refreshCatalog({ showLoading: true, force: true })`. Automatic calls omit `showLoading` so the current list and player remain visually stable.
 
-- [ ] **Step 4: Run the focused tests and confirm GREEN**
+- [x] **Step 4: Run the focused tests and confirm GREEN**
 
 Run:
 
@@ -213,7 +213,7 @@ npm test -- src/App.catalog.test.jsx
 
 Expected: all catalog-loading tests pass, including the new five-minute, route, deduplication, and hidden-page cases.
 
-- [ ] **Step 5: Commit the refresh controller**
+- [x] **Step 5: Commit the refresh controller**
 
 ```bash
 git add src/App.jsx src/App.catalog.test.jsx
@@ -226,7 +226,7 @@ git commit -m "fix: refresh catalog while app stays open"
 - Modify: `src/catalog.js:60-66`
 - Modify: `src/catalog.test.js:48-61`
 
-- [ ] **Step 1: Change the request contract test to require `no-cache`**
+- [x] **Step 1: Change the request contract test to require `no-cache`**
 
 Update the existing fetch assertion from `no-store` to `no-cache`, retaining the URL and `AbortSignal` checks:
 
@@ -234,7 +234,7 @@ Update the existing fetch assertion from `no-store` to `no-cache`, retaining the
 expect(options?.cache).toBe('no-cache');
 ```
 
-- [ ] **Step 2: Run the focused catalog tests and confirm RED**
+- [x] **Step 2: Run the focused catalog tests and confirm RED**
 
 Run:
 
@@ -244,7 +244,7 @@ npm test -- src/catalog.test.js
 
 Expected: the cache-policy test fails because `loadCatalog` still uses `no-store`.
 
-- [ ] **Step 3: Change only the catalog fetch cache mode**
+- [x] **Step 3: Change only the catalog fetch cache mode**
 
 In `loadCatalog`, keep the URL, abort controller, timeout, normalization, localStorage write, and fallback behavior unchanged; replace the request options with:
 
@@ -252,7 +252,7 @@ In `loadCatalog`, keep the URL, abort controller, timeout, normalization, localS
 { cache: 'no-cache', signal: controller.signal }
 ```
 
-- [ ] **Step 4: Run catalog and PWA tests GREEN**
+- [x] **Step 4: Run catalog and PWA tests GREEN**
 
 Run:
 
@@ -262,7 +262,7 @@ npm test -- src/catalog.test.js src/pwa.test.js
 
 Expected: all catalog and service-worker cache boundary tests pass, with artwork still `CacheFirst` and audio still uncached.
 
-- [ ] **Step 5: Commit conditional revalidation**
+- [x] **Step 5: Commit conditional revalidation**
 
 ```bash
 git add src/catalog.js src/catalog.test.js
@@ -274,7 +274,7 @@ git commit -m "perf: conditionally revalidate podcast catalog"
 **Files:**
 - No source changes unless a verification failure identifies a regression in Tasks 1-3.
 
-- [ ] **Step 1: Run the complete automated suite and lint**
+- [x] **Step 1: Run the complete automated suite and lint**
 
 Run:
 
@@ -285,7 +285,7 @@ npm run lint
 
 Expected: 104 existing tests plus the new regression tests pass, and oxlint exits with code 0.
 
-- [ ] **Step 2: Build the production PWA**
+- [x] **Step 2: Build the production PWA**
 
 Run:
 
@@ -295,7 +295,7 @@ npm run build
 
 Expected: Vite produces `dist/` and the generated service worker still contains the catalog `NetworkFirst` route.
 
-- [ ] **Step 3: Run a fresh mobile-width browser check**
+- [x] **Step 3: Run a fresh mobile-width browser check**
 
 Serve the worktree build with Vite, set the browser viewport to a phone width, and verify:
 
@@ -306,10 +306,10 @@ Serve the worktree build with Vite, set the browser viewport to a phone width, a
 
 Reset the browser viewport and close temporary tabs after the check.
 
-- [ ] **Step 4: Merge and deploy only after verification**
+- [x] **Step 4: Merge and deploy only after verification**
 
 From the main worktree, fast-forward `main` to `codex/catalog-client-freshness`, push `main`, and run the existing GitHub Pages deployment workflow. Verify both `https://icekale.github.io/nio-podcast-web/#/` and `https://nio.k4le.top/#/` load the refreshed build and that `data/albums.json` responds with the current catalog.
 
-- [ ] **Step 5: Report evidence and preserve unrelated work**
+- [x] **Step 5: Report evidence and preserve unrelated work**
 
 Record the test count, lint/build exit status, deployment URL, and the unchanged untracked `docs/superpowers/plans/2026-08-03-review-fixes.md` file in the handoff.
