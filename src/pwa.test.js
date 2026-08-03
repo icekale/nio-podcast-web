@@ -63,10 +63,12 @@ describe('public app naming', () => {
     expect(viteConfig).toContain("short_name: 'NIO Radio'");
   });
 
-  it('keeps the installed app chrome aligned with the teal light interface', () => {
-    expect(indexHtml).toContain('<meta name="theme-color" content="#00BEBE" />');
+  it('keeps installed system bars aligned with the app surface', () => {
+    expect(indexHtml).toContain('<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />');
+    expect(indexHtml).toContain('<meta name="theme-color" content="#101a27" media="(prefers-color-scheme: dark)" />');
+    expect(indexHtml).toContain('<meta name="apple-mobile-web-app-status-bar-style" content="default" />');
     expect(viteConfig).toContain("background_color: '#ffffff'");
-    expect(viteConfig).toContain("theme_color: '#00BEBE'");
+    expect(viteConfig).toContain("theme_color: '#ffffff'");
   });
 
   it('keeps the primary hover label readable', () => {

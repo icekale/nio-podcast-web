@@ -34,7 +34,7 @@ export default defineConfig({
         scope: './',
         display: 'standalone',
         background_color: '#ffffff',
-        theme_color: '#00BEBE',
+        theme_color: '#ffffff',
         description: 'NIO Radio 播客客户端',
         lang: 'zh-CN',
         icons: [
