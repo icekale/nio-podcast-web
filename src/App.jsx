@@ -43,7 +43,7 @@ import {
 } from './laterPlayback';
 import './App.css';
 
-const CATALOG_REFRESH_COOLDOWN_MS = 15 * 60 * 1000;
+const CATALOG_REFRESH_COOLDOWN_MS = 5 * 60 * 1000;
 
 function formatDuration(milliseconds) {
   const value = Number(milliseconds);
@@ -666,6 +666,7 @@ export default function App({ initialCatalog = null }) {
   const routeRef = useRef(route);
   const queueFocusRef = useRef(null);
   const lastCatalogRefreshAt = useRef(0);
+  const catalogRefreshPromise = useRef(null);
   playerRef.current = player;
   laterEpisodesRef.current = laterEpisodes;
 
@@ -684,10 +685,12 @@ export default function App({ initialCatalog = null }) {
     setQueueClosing(false);
   }, []);
 
-  const refreshCatalog = useCallback(({ showLoading = false } = {}) => {
+  const refreshCatalog = useCallback(({ showLoading = false, force = false } = {}) => {
+    if (catalogRefreshPromise.current) return catalogRefreshPromise.current;
+    if (!force && Date.now() - lastCatalogRefreshAt.current < CATALOG_REFRESH_COOLDOWN_MS) return Promise.resolve(null);
     if (showLoading) setCatalogState(previous => ({ ...previous, loading: true, error: null }));
     lastCatalogRefreshAt.current = Date.now();
-    return loadCatalog()
+    const request = loadCatalog()
       .then(result => {
         setCatalogState({ catalog: result.catalog, loading: false, error: null, stale: result.stale });
         return result;
@@ -695,25 +698,38 @@ export default function App({ initialCatalog = null }) {
       .catch(error => {
         setCatalogState(previous => ({ ...previous, loading: false, error, stale: Boolean(previous.catalog) }));
         return null;
+      })
+      .finally(() => {
+        if (catalogRefreshPromise.current === request) catalogRefreshPromise.current = null;
       });
+    catalogRefreshPromise.current = request;
+    return request;
   }, []);
 
   useEffect(() => {
     if (initialCatalog) return undefined;
-    refreshCatalog();
+    refreshCatalog({ force: true });
     return undefined;
   }, [initialCatalog, refreshCatalog]);
 
   useEffect(() => {
     if (initialCatalog) return undefined;
-    const handleVisibilityChange = () => {
-      if (document.visibilityState !== 'visible') return;
-      if (Date.now() - lastCatalogRefreshAt.current < CATALOG_REFRESH_COOLDOWN_MS) return;
-      refreshCatalog({ showLoading: true });
+    const refreshWhenVisible = () => {
+      if (document.visibilityState === 'visible') refreshCatalog();
     };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener('visibilitychange', refreshWhenVisible);
+    const timer = window.setInterval(refreshWhenVisible, CATALOG_REFRESH_COOLDOWN_MS);
+    return () => {
+      document.removeEventListener('visibilitychange', refreshWhenVisible);
+      window.clearInterval(timer);
+    };
   }, [initialCatalog, refreshCatalog]);
+
+  useEffect(() => {
+    if (initialCatalog || !['home', 'albums'].includes(route.screen)) return undefined;
+    refreshCatalog();
+    return undefined;
+  }, [initialCatalog, refreshCatalog, route.screen]);
 
   useEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
@@ -886,7 +902,7 @@ export default function App({ initialCatalog = null }) {
     applyRoute(parseHash(hash));
   }, [applyRoute]);
   const retryCatalog = useCallback(() => {
-    refreshCatalog({ showLoading: true });
+    refreshCatalog({ showLoading: true, force: true });
   }, [refreshCatalog]);
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
