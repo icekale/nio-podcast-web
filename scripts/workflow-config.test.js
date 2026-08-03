@@ -23,6 +23,7 @@ describe('catalog update workflow', () => {
     const test = workflow.indexOf('- name: Test application');
     const lint = workflow.indexOf('- name: Lint application');
     const build = workflow.indexOf('- name: Build PWA');
+    const configure = workflow.indexOf('- name: Configure Git identity');
     const deploy = workflow.indexOf('- name: Deploy GitHub Pages');
     const commit = workflow.indexOf('- name: Commit catalog state');
 
@@ -30,7 +31,8 @@ describe('catalog update workflow', () => {
     expect(test).toBeGreaterThan(generate);
     expect(lint).toBeGreaterThan(test);
     expect(build).toBeGreaterThan(lint);
-    expect(deploy).toBeGreaterThan(build);
+    expect(configure).toBeGreaterThan(build);
+    expect(deploy).toBeGreaterThan(configure);
     expect(commit).toBeGreaterThan(deploy);
 
     for (const step of ['Test application', 'Lint application', 'Build PWA', 'Deploy GitHub Pages', 'Commit catalog state']) {
@@ -39,6 +41,8 @@ describe('catalog update workflow', () => {
       const block = workflow.slice(start, end < 0 ? undefined : end);
       expect(block).toContain("if: steps.changes.outputs.changed == 'true'");
     }
+    expect(workflow.slice(configure, deploy)).toContain('git config user.name "github-actions[bot]"');
+    expect(workflow.slice(configure, deploy)).toContain('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
     expect(workflow).toContain('git pull --rebase origin main');
   });
 });

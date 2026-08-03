@@ -95,6 +95,12 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: npm run build
 
+      - name: Configure Git identity
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy GitHub Pages
         if: steps.changes.outputs.changed == 'true'
         run: npm run deploy
@@ -102,8 +108,6 @@ jobs:
       - name: Commit catalog state
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/albums.json
           git commit -m "chore: update podcast catalog"
           git pull --rebase origin main
