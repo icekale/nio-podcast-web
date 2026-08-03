@@ -78,5 +78,6 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/animation-delay:\s*0ms\s*!important/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen\s*\{[^}]*display:\s*block/);
     expect(css).not.toMatch(/\.home-screen\s*\{[^}]*grid-template-columns:\s*minmax\(320px,\s*38%\)/);
+    expect(css).toMatch(/\.home-screen \.updates-section\s*\{[^}]*padding:\s*var\(--space-8\)\s*var\(--space-6\)\s*0/);
   });
 });
