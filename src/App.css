@@ -242,7 +242,7 @@ h1, h2, p { margin: 0; }
   border-top: 1px solid var(--line);
 }
 .mini-player audio { display: none; }
-.mini-main { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); min-width: 0; }
+.mini-main { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-3); min-width: 0; }
 .mini-art { width: 3rem; height: 3rem; border-radius: var(--radius-sm); }
 .mini-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; }
 .mini-copy strong { overflow: hidden; font-size: 0.9rem; font-weight: 620; text-overflow: ellipsis; white-space: nowrap; }
@@ -405,7 +405,9 @@ h1, h2, p { margin: 0; }
   .mini-player { width: min(100%, 1280px); padding-top: var(--space-4); }
   .mini-progress-row input { height: 1rem; }
   .mini-main { flex-wrap: nowrap; }
-  .mini-progress-row { order: 4; flex: 1; min-width: 0; flex-basis: auto; margin-top: 0; }
+  .mini-toggle { order: 2; }
+  .mini-progress-row { order: 3; flex: 1; min-width: 0; flex-basis: auto; margin-top: 0; }
+  .queue-control { order: 4; }
 
   .home-screen { display: block; }
   .home-screen .recommendation-panel { padding: var(--space-6) var(--space-6); border-radius: var(--radius-md); grid-template-columns: minmax(0, 1fr) auto auto; }
