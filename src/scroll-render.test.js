@@ -65,5 +65,8 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.album-results\.is-grid\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fill,\s*minmax\(170px,\s*1fr\)\)/);
     expect(css).toMatch(/\.queue-sheet\s*\{[^}]*width:\s*380px/);
     expect(css).toMatch(/@keyframes queue-sheet-in\s*\{[^}]*translate3d\(100%,\s*0,\s*0\)/);
+    expect(css).toMatch(/\.albums-search\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.albums-search\s*\{[^}]*display:\s*flex/);
+    expect(css).toMatch(/\.home-screen \.top-bar \.icon-button:first-child,\s*\.home-screen \.top-bar \.top-actions \.icon-button\s*\{[^}]*display:\s*none/);
   });
 });
