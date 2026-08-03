@@ -271,4 +271,37 @@ describe('later playback integration', () => {
     const rows = [...dialog.querySelectorAll('.later-row')];
     expect(rows[0]).toHaveTextContent('第二集');
   });
+
+  it('captures and releases the pointer during a long-press drag', async () => {
+    window.localStorage.setItem('nio_play_later_v1', JSON.stringify([episode(1, '第一集'), episode(2, '第二集')]));
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '稍后播放' }));
+    const dialog = screen.getByRole('dialog', { name: '播放列表' });
+    const row = within(dialog).getByText('第二集').closest('.later-row');
+    row.setPointerCapture = vi.fn();
+    row.releasePointerCapture = vi.fn();
+    row.hasPointerCapture = vi.fn(() => true);
+
+    vi.useFakeTimers();
+    fireEvent.pointerDown(row, { pointerId: 2, clientX: 180, clientY: 160, pointerType: 'touch' });
+    vi.advanceTimersByTime(250);
+    fireEvent.pointerMove(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
+    fireEvent.pointerUp(row, { pointerId: 2, clientX: 181, clientY: 80, pointerType: 'touch' });
+
+    expect(row.setPointerCapture).toHaveBeenCalledWith(2);
+    expect(row.releasePointerCapture).toHaveBeenCalledWith(2);
+    expect(row).not.toHaveClass('is-dragging');
+  });
+
+  it('advances to the next episode once when playback ends', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第一集');
+
+    fireEvent.ended(document.querySelector('audio'));
+
+    await waitFor(() => expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第二集'));
+  });
 });

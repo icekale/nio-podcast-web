@@ -484,11 +484,13 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
   const handlePointerDown = event => {
     if (event.target.closest('.later-actions, .later-swipe-action')) return;
     if (event.pointerType === 'mouse' && event.button !== 0) return;
-    gestureRef.current = { startX: event.clientX, startY: event.clientY, mode: 'pending' };
+    gestureRef.current = { startX: event.clientX, startY: event.clientY, mode: 'pending', element: event.currentTarget, pointerId: event.pointerId };
     if (event.pointerType !== 'mouse') {
       longPressRef.current = window.setTimeout(() => {
-        if (gestureRef.current?.mode === 'pending') {
-          gestureRef.current.mode = 'drag';
+        const gesture = gestureRef.current;
+        if (gesture?.mode === 'pending') {
+          gesture.mode = 'drag';
+          gesture.element?.setPointerCapture?.(gesture.pointerId);
           setDragging(true);
         }
       }, 250);
@@ -505,6 +507,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
       clearLongPress();
       if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < -12) {
         gesture.mode = 'swipe';
+        gesture.element?.setPointerCapture?.(gesture.pointerId);
         setSwiped(true);
         event.preventDefault();
       } else {
@@ -531,6 +534,9 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
     } else if (gesture.mode === 'swipe') {
       suppressClickRef.current = true;
     }
+    if (gesture.element?.hasPointerCapture?.(gesture.pointerId)) {
+      gesture.element.releasePointerCapture?.(gesture.pointerId);
+    }
     gestureRef.current = null;
   };
 
@@ -547,7 +553,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
   };
 
   return (
-    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); gestureRef.current = null; setDragging(false); }}>
+    <li className={`queue-row later-row${swiped ? ' is-swiped' : ''}${dragging ? ' is-dragging' : ''}${menuOpen ? ' is-menu-open' : ''}`} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={() => { clearLongPress(); const gesture = gestureRef.current; if (gesture?.element?.hasPointerCapture?.(gesture.pointerId)) gesture.element.releasePointerCapture?.(gesture.pointerId); gestureRef.current = null; setDragging(false); }}>
       <button type="button" className="later-swipe-action" tabIndex={swiped ? 0 : -1} aria-hidden={!swiped} aria-label={`移除 ${episode.title}`} onClick={() => { setSwiped(false); onRemove(episode.id); }}>移除</button>
       <button type="button" className="queue-row-main" aria-label={episode.title} onClick={handleMainClick}><Artwork src={episode.albumPic} alt="" className="queue-art" /><span className="queue-copy"><strong>{episode.title}</strong><span>{episode.albumName || 'NIO Radio'} <span aria-hidden="true">·</span> {formatDuration(episode.duration)}</span></span></button>
       <div className="later-actions"><button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={menuOpen} aria-haspopup="menu" aria-controls={`later-menu-${episode.id}`} onClick={() => onToggleMenu(!menuOpen)}><MoreHorizontal size={15} aria-hidden="true" /></button>{menuOpen ? <div id={`later-menu-${episode.id}`} className="row-action-menu" role="menu"><button type="button" role="menuitem" disabled={index === 0} onClick={() => { onMove(index, index - 1); onToggleMenu(false); }}><ChevronUp size={15} />上移</button><button type="button" role="menuitem" disabled={index === count - 1} onClick={() => { onMove(index, index + 1); onToggleMenu(false); }}><ChevronDown size={15} />下移</button><button type="button" role="menuitem" onClick={() => { onRemove(episode.id); onToggleMenu(false); }}><Trash2 size={16} />移除</button></div> : null}</div>
@@ -993,15 +999,17 @@ export default function App({ initialCatalog = null }) {
   }, [isPlaying, player, savePlayer, setPlaybackFailure]);
 
   const handleEnded = useCallback(() => {
-    const completedEpisode = playerRef.current.currentEpisode;
+    const previous = playerRef.current;
+    const completedEpisode = previous.currentEpisode;
     if (completedEpisode) removeFromLater(completedEpisode.id);
-    setPlayer(previous => {
-      const next = advanceQueue(previous);
-      if (next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id) return { ...next, history: recordHistory(previous.history, next.currentEpisode), isPlaying: true };
-      return next;
+    const next = advanceQueue(previous);
+    const hasNext = Boolean(next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id);
+    setPlayer({
+      ...next,
+      history: hasNext ? recordHistory(previous.history, next.currentEpisode) : previous.history,
+      isPlaying: hasNext,
     });
-    const next = advanceQueue(playerRef.current);
-    setIsPlaying(Boolean(next.currentEpisode && next.currentEpisode.id !== playerRef.current.currentEpisode?.id));
+    setIsPlaying(hasNext);
   }, [removeFromLater]);
 
   const openSearch = useCallback(() => go('#/search'), [go]);

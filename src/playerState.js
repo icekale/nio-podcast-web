@@ -139,9 +139,12 @@ export function restorePlayerState(raw) {
     }
     const queue = uniqueEpisodes(parsed.queue);
     const queueIndex = Math.min(Math.max(Number(parsed.queueIndex) || 0, 0), Math.max(queue.length - 1, 0));
+    const persistedCurrent = normalizeEpisode(parsed.currentEpisode);
+    const currentInQueue = Boolean(persistedCurrent) && queue.some(item => episodeKey(item) === episodeKey(persistedCurrent));
+    const currentEpisode = currentInQueue ? persistedCurrent : queue[queueIndex] || null;
     return {
       ...createPlayerState(),
-      currentEpisode: normalizeEpisode(parsed.currentEpisode) || queue[queueIndex] || null,
+      currentEpisode,
       queue,
       queueIndex,
       positionSeconds: Math.max(0, Number(parsed.positionSeconds) || 0),

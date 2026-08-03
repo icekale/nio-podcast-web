@@ -2,7 +2,6 @@ const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
 const EPISODE_CACHE_MAX_ENTRIES = 100;
-const CACHE_KEY = 'nio_catalog_cache_v1';
 const episodeCache = new Map();
 const episodeRequests = new Map();
 
@@ -126,45 +125,3 @@ export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = 
   episodeRequests.set(key, request);
   return request;
 }
-
-export function getCachedAlbums(storage = globalThis.localStorage) {
-  try {
-    const raw = storage?.getItem(CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed?.albums) ? parsed.albums : null;
-  } catch {
-    return null;
-  }
-}
-
-export function setCachedAlbums(albums, storage = globalThis.localStorage) {
-  try {
-    storage?.setItem(CACHE_KEY, JSON.stringify({ albums, savedAt: Date.now() }));
-  } catch {
-    // Storage is an enhancement; playback still works without it.
-  }
-}
-
-export async function discoverAlbums(onProgress, fetchImpl = globalThis.fetch) {
-  try {
-    const response = await fetchImpl(`${import.meta.env.BASE_URL}data/albums.json`, { cache: 'no-store' });
-    if (!response.ok) throw new ApiError('HTTP_ERROR', '目录加载失败');
-    const payload = await response.json();
-    const albums = Array.isArray(payload?.albums) ? payload.albums : [];
-    if (!albums.length) throw new ApiError('INVALID_RESPONSE', '目录为空');
-    setCachedAlbums(albums);
-    onProgress?.(albums);
-    return albums;
-  } catch (error) {
-    const cached = getCachedAlbums();
-    if (cached?.length) {
-      onProgress?.(cached);
-      return cached;
-    }
-    throw error instanceof ApiError ? error : new ApiError('NETWORK_ERROR', '目录加载失败', error);
-  }
-}
-
-export const SEED_ALBUMS = [];
-export const ALL_SEED_IDS = [];

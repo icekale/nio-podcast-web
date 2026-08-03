@@ -90,4 +90,20 @@ describe('player state', () => {
     expect(restorePlayerState('{not-json').queue).toEqual([]);
     expect(restorePlayerState(JSON.stringify({ version: 1 })).queue).toEqual([]);
   });
+
+  it('aligns a persisted current episode that is missing from the queue', () => {
+    const raw = {
+      version: 2,
+      currentEpisode: episode(9),
+      queue: [episode(1), episode(2)],
+      queueIndex: 1,
+      history: [],
+      positionSeconds: 5,
+      durationSeconds: 60,
+      updatedAt: 0,
+    };
+    const restored = restorePlayerState(JSON.stringify(raw));
+    expect(restored.currentEpisode.id).toBe(2);
+    expect(restored.queueIndex).toBe(1);
+  });
 });
