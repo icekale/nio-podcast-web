@@ -20,6 +20,7 @@ const catalog = {
   generatedAt: Date.now(),
   albums: [
     { id: 1, name: 'NIO 精选', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(1, '第一集') },
+    { id: 2, name: '另一张专辑', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(2, '第二集') },
   ],
 };
 
@@ -46,16 +47,33 @@ describe('desktop navigation', () => {
     const nav = screen.getByRole('navigation', { name: '主导航' });
     expect(nav).toBeInTheDocument();
     expect(within(nav).getByRole('button', { name: '今日推荐' })).toHaveAttribute('aria-current', 'page');
-    expect(within(nav).getByRole('button', { name: '全部专辑' })).not.toHaveAttribute('aria-current');
+    expect(within(nav).getByRole('button', { name: '搜索' })).not.toHaveAttribute('aria-current');
+    expect(within(nav).queryByRole('button', { name: '全部专辑' })).not.toBeInTheDocument();
   });
 
   it('highlights the active sidebar destination', async () => {
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
-    fireEvent.click(within(nav).getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
     await screen.findByRole('heading', { name: '全部专辑' });
-    expect(within(nav).getByRole('button', { name: '全部专辑' })).toHaveAttribute('aria-current', 'page');
+    expect(within(nav).getByRole('button', { name: '搜索' })).toHaveAttribute('aria-current', 'page');
     expect(within(nav).getByRole('button', { name: '今日推荐' })).not.toHaveAttribute('aria-current');
+  });
+
+  it('browses and filters the album grid from search', async () => {
+    render(<App initialCatalog={catalog} />);
+    const nav = screen.getByRole('navigation', { name: '主导航' });
+    fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
+    const searchbox = await screen.findByRole('searchbox', { name: '搜索专辑' });
+    expect(screen.getByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
+
+    fireEvent.change(searchbox, { target: { value: 'NIO' } });
+    expect(await screen.findByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /另一张专辑/ })).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: '清空搜索' }));
+    expect(await screen.findByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
   });
 
   it('opens the later tab from the sidebar', async () => {

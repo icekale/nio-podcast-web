@@ -376,6 +376,8 @@ h1, h2, p { margin: 0; }
   .desktop-nav-link:hover { background: var(--surface-soft); color: var(--ink); }
   .desktop-nav-link[aria-current="page"] { background: var(--aqua); color: var(--teal-dark); font-weight: 650; }
   .app-content { grid-column: 2; min-width: 0; }
+  .home-screen .top-bar .icon-button:first-child,
+  .home-screen .top-bar .top-actions .icon-button { display: none; }
 
   .mini-player { width: min(100%, 1280px); padding-top: var(--space-4); }
   .mini-progress-row input { height: 1rem; }

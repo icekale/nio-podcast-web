@@ -286,7 +286,7 @@ const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onB
       </header>
       <section className="search-results" aria-live="polite">
         <div className="section-heading-row"><h1>全部专辑</h1><span className="section-count">{filtered.length}</span></div>
-        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} />
+        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
       </section>
     </div>
@@ -688,7 +688,7 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
   );
 });
 
-function DesktopNav({ route, laterActive, onHome, onAlbums, onSearch, onLater }) {
+function DesktopNav({ route, laterActive, onHome, onSearch, onLater }) {
   return (
     <aside className="desktop-nav">
       <div className="desktop-nav-brand">
@@ -697,7 +697,6 @@ function DesktopNav({ route, laterActive, onHome, onAlbums, onSearch, onLater })
       </div>
       <nav className="desktop-nav-links" aria-label="主导航">
         <button type="button" className="desktop-nav-link" aria-current={route.screen === 'home' ? 'page' : undefined} onClick={onHome}>今日推荐</button>
-        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'albums' ? 'page' : undefined} onClick={onAlbums}>全部专辑</button>
         <button type="button" className="desktop-nav-link" aria-current={route.screen === 'search' ? 'page' : undefined} onClick={onSearch}>搜索</button>
         <button type="button" className="desktop-nav-link" aria-current={laterActive ? 'page' : undefined} onClick={onLater}>稍后播放</button>
       </nav>
@@ -1078,7 +1077,6 @@ export default function App({ initialCatalog = null }) {
           route={route}
           laterActive={queuePresent && queueTab === 'later'}
           onHome={() => go('#/')}
-          onAlbums={openAlbums}
           onSearch={openSearch}
           onLater={openLater}
         />
