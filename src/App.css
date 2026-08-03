@@ -375,6 +375,20 @@ h1, h2, p { margin: 0; }
   }
   .desktop-nav-link:hover { background: var(--surface-soft); color: var(--ink); }
   .desktop-nav-link[aria-current="page"] { background: var(--aqua); color: var(--teal-dark); font-weight: 650; }
+  .desktop-nav-install {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 2.75rem;
+    margin-top: auto;
+    padding: 0.65rem var(--space-3);
+    border-radius: var(--radius-md);
+    background: var(--aqua);
+    color: var(--teal-dark);
+    font-weight: 650;
+  }
+  .desktop-nav-install:hover { background: var(--teal); color: var(--accent-ink); }
   .app-content { grid-column: 2; min-width: 0; }
   .home-screen .top-bar .icon-button:first-child,
   .home-screen .top-bar .top-actions .icon-button { display: none; }

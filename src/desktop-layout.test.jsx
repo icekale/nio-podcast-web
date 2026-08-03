@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
@@ -81,6 +81,31 @@ describe('desktop navigation', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '清空搜索' }));
     expect(await screen.findByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
+  });
+
+  it('shows and triggers the install button from beforeinstallprompt', async () => {
+    render(<App initialCatalog={catalog} />);
+    expect(screen.queryByRole('button', { name: '安装应用' })).not.toBeInTheDocument();
+
+    const event = new Event('beforeinstallprompt', { cancelable: true });
+    const prompt = vi.fn(() => Promise.resolve());
+    event.prompt = prompt;
+    event.userChoice = Promise.resolve({ outcome: 'accepted' });
+    window.dispatchEvent(event);
+    await screen.findByRole('button', { name: '安装应用' });
+
+    fireEvent.click(screen.getByRole('button', { name: '安装应用' }));
+    await waitFor(() => expect(prompt).toHaveBeenCalled());
+    await waitFor(() => expect(screen.queryByRole('button', { name: '安装应用' })).not.toBeInTheDocument());
+  });
+
+  it('hides the install button after appinstalled', async () => {
+    render(<App initialCatalog={catalog} />);
+    window.dispatchEvent(new Event('beforeinstallprompt', { cancelable: true }));
+    await screen.findByRole('button', { name: '安装应用' });
+
+    window.dispatchEvent(new Event('appinstalled'));
+    await waitFor(() => expect(screen.queryByRole('button', { name: '安装应用' })).not.toBeInTheDocument());
   });
 
   it('opens the later tab from the sidebar', async () => {

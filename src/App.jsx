@@ -7,6 +7,7 @@ import {
   ChevronUp,
   CircleAlert,
   Clock3,
+  Download,
   ListMusic,
   ListPlus,
   List,
@@ -688,7 +689,7 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
   );
 });
 
-function DesktopNav({ route, laterActive, onHome, onSearch, onLater }) {
+function DesktopNav({ route, laterActive, onHome, onSearch, onLater, showInstall, onInstall }) {
   return (
     <aside className="desktop-nav">
       <div className="desktop-nav-brand">
@@ -700,6 +701,7 @@ function DesktopNav({ route, laterActive, onHome, onSearch, onLater }) {
         <button type="button" className="desktop-nav-link" aria-current={(route.screen === 'search' || route.screen === 'albums') ? 'page' : undefined} onClick={onSearch}>搜索</button>
         <button type="button" className="desktop-nav-link" aria-current={laterActive ? 'page' : undefined} onClick={onLater}>稍后播放</button>
       </nav>
+      {showInstall ? <button type="button" className="desktop-nav-install" onClick={onInstall}><Download size={17} aria-hidden="true" />安装应用</button> : null}
     </aside>
   );
 }
@@ -725,6 +727,7 @@ function readStoredPlayer() {
 
 export default function App({ initialCatalog = null }) {
   const desktopLayout = useDesktopLayout();
+  const [installPrompt, setInstallPrompt] = useState(null);
   const [route, setRoute] = useState(() => parseHash());
   const [routeMotion, setRouteMotion] = useState('none');
   const [queuePresent, setQueuePresent] = useState(() => route.queueOpen);
@@ -765,6 +768,28 @@ export default function App({ initialCatalog = null }) {
     setQueuePresent(false);
     setQueueClosing(false);
   }, []);
+
+  useEffect(() => {
+    const handlePrompt = event => {
+      event.preventDefault();
+      setInstallPrompt(event);
+    };
+    const handleInstalled = () => setInstallPrompt(null);
+    window.addEventListener('beforeinstallprompt', handlePrompt);
+    window.addEventListener('appinstalled', handleInstalled);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handlePrompt);
+      window.removeEventListener('appinstalled', handleInstalled);
+    };
+  }, []);
+
+  const promptInstall = useCallback(async () => {
+    const pending = installPrompt;
+    if (!pending) return;
+    await pending.prompt();
+    const choice = await pending.userChoice;
+    if (choice?.outcome === 'accepted') setInstallPrompt(null);
+  }, [installPrompt]);
 
   const refreshCatalog = useCallback(({ showLoading = false, force = false } = {}) => {
     if (catalogRefreshPromise.current) return catalogRefreshPromise.current;
@@ -1079,6 +1104,8 @@ export default function App({ initialCatalog = null }) {
           onHome={() => go('#/')}
           onSearch={openSearch}
           onLater={openLater}
+          showInstall={Boolean(installPrompt)}
+          onInstall={promptInstall}
         />
       ) : null}
       <div className="app-content" inert={queuePresent ? true : undefined}>
