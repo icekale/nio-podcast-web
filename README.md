@@ -1,6 +1,37 @@
-# NIO Radio
+<div align="center">
+  <img src="public/favicon.svg" alt="NIO Radio 图标" width="88" height="88">
+  <h1>NIO Radio</h1>
+  <p>面向手机浏览器的 NIO 播客 PWA，每日更新节目，并在本地保存你的播放进度。</p>
+</div>
 
-NIO Radio 是面向手机浏览器的 NIO 播客 PWA。应用通过 GitHub Pages 发布，目录数据由 GitHub Actions 定时更新，播放进度、历史记录和“稍后播放”保存在访问者自己的浏览器中。
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/nio-radio-home.png" alt="NIO Radio 今日更新首页"></td>
+    <td width="50%"><img src="docs/images/nio-radio-queue.png" alt="NIO Radio 播放列表"></td>
+  </tr>
+  <tr>
+    <td align="center">今日更新</td>
+    <td align="center">播放列表</td>
+  </tr>
+</table>
+
+<p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
+
+## 主要功能
+
+- 每日自动更新节目目录，并按最新节目时间展示专辑。
+- 保存播放进度和最近听过的节目，重新打开后可以继续收听。
+- 将任意节目加入“稍后播放”，在播放列表中统一管理。
+- 支持添加到手机主屏幕，以接近原生应用的方式使用。
+
+## 安装到主屏幕
+
+- Android Chrome：打开 NIO Radio，在浏览器菜单中选择“安装应用”或“添加到主屏幕”。
+- iPhone/iPad Safari：点击“分享”，然后选择“添加到主屏幕”。
+
+## 开发与运维
+
+NIO Radio 通过 GitHub Pages 发布，目录数据由 GitHub Actions 定时更新；所有播放进度、历史记录和“稍后播放”都保存在访问者自己的浏览器中。
 
 ## 本地开发
 
