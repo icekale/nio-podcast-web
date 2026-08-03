@@ -267,15 +267,16 @@ export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, on
   );
 });
 
-const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum }) {
+const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false }) {
   const [query, setQuery] = useState(searchQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(searchQuery);
   const inputRef = useRef(null);
   const filtered = useMemo(() => {
+    const base = pinnedFirst ? sortAlbumsForDirectory(catalog.albums) : catalog.albums;
     const value = debouncedQuery.trim().toLowerCase();
-    if (!value) return catalog.albums;
-    return catalog.albums.filter(album => `${album.name} ${album.description} ${album.host}`.toLowerCase().includes(value));
-  }, [catalog.albums, debouncedQuery]);
+    if (!value) return base;
+    return base.filter(album => `${album.name} ${album.description} ${album.host}`.toLowerCase().includes(value));
+  }, [catalog.albums, debouncedQuery, pinnedFirst]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query), 120);
@@ -381,10 +382,10 @@ function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQu
       <div className="mini-main">
         <Artwork src={player.currentEpisode.albumPic} alt="" className="mini-art" />
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
-        <button type="button" className="player-control" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
+        <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
+        <div className="mini-progress-row"><span>{formatClock(player.positionSeconds)}</span><input aria-label="播放进度" type="range" min="0" max={duration || 0} step="1" value={Math.min(player.positionSeconds, duration || 0)} onChange={onSeek} /><span>{formatClock(duration)}</span></div>
         <button ref={queueButtonRef} type="button" className="player-control queue-control" aria-label="打开播放列表" onClick={onOpenQueue}><ListMusic size={21} /></button>
       </div>
-      <div className="mini-progress-row"><span>{formatClock(player.positionSeconds)}</span><input aria-label="播放进度" type="range" min="0" max={duration || 0} step="1" value={Math.min(player.positionSeconds, duration || 0)} onChange={onSeek} /><span>{formatClock(duration)}</span></div>
       {audioError ? <div className="player-error" role="alert"><span>{audioError}</span><button type="button" onClick={onRetry}>重试</button></div> : null}
     </section>
   );
@@ -1139,7 +1140,7 @@ export default function App({ initialCatalog = null }) {
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
           {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
-          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} /> : null}
+          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}

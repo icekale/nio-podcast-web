@@ -21,6 +21,8 @@ const catalog = {
   albums: [
     { id: 1, name: 'NIO 精选', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(1, '第一集') },
     { id: 2, name: '另一张专辑', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(2, '第二集') },
+    { id: 5, name: '资讯充电站·早间版', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(5, '早间节目') },
+    { id: 23, name: '资讯充电站·晚间版', description: '', imageUrl: '', episodeCount: 1, latestEpisode: episode(23, '晚间节目') },
   ],
 };
 
@@ -65,6 +67,17 @@ describe('desktop navigation', () => {
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
     expect(within(nav).getByRole('button', { name: '搜索' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('pins briefing albums first when browsing search on desktop', async () => {
+    render(<App initialCatalog={catalog} />);
+    const nav = screen.getByRole('navigation', { name: '主导航' });
+    fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
+    await screen.findByRole('searchbox', { name: '搜索专辑' });
+
+    const rows = screen.getAllByRole('button', { name: /资讯充电站|NIO 精选|另一张专辑/ });
+    expect(rows[0]).toHaveAccessibleName('资讯充电站·早间版早间节目');
+    expect(rows[1]).toHaveAccessibleName('资讯充电站·晚间版晚间节目');
   });
 
   it('browses and filters the album grid from search', async () => {
