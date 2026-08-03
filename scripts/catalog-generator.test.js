@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
+  assertCatalogScanHasSuccess,
   reconcileFullScan,
   requestAlbum,
   sameCatalogContent,
@@ -113,6 +114,13 @@ describe('catalog generator', () => {
   it('does not treat an empty known-album response as deletion', async () => {
     const previous = [{ id: 1, name: '旧专辑', latestEpisode: { id: 11, onlineTime: 1 } }];
     await expect(updateKnownAlbums(previous, async () => null)).resolves.toEqual(previous);
+  });
+
+  it('rejects a scan where every requested album failed', () => {
+    expect(() => assertCatalogScanHasSuccess(
+      [{ id: 1, latestEpisode: { id: 11, onlineTime: 1 } }],
+      { albums: [], failedIds: [1], missingIds: [] },
+    )).toThrow('no successful albums');
   });
 
   it('reconciles a full scan by preserving failures and removing explicit missing albums', () => {

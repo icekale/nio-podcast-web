@@ -47,12 +47,12 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 
 生产域名为 [nio.k4le.top](https://nio.k4le.top/)。`public/CNAME` 和相对资源路径保证自定义域名可用；旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
 
-目录工作流只有在目录发生变化时才会发布。它会依次执行测试、lint、PWA 构建和 Pages 发布，全部成功后才提交 `public/data/albums.json` 到 `main`。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
+目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
 
 ## 缓存策略
 
-- 目录使用 Service Worker `NetworkFirst`，网络超时或离线时回退到最近一次缓存。
-- 目录同时保存在 `localStorage`，页面回到前台后最多每 15 分钟刷新一次。
+- 目录请求不进入 Service Worker 缓存；页面会在 5 分钟内复用 `localStorage` 目录，超过窗口再请求网络，失败时回退到最近目录。
+- 目录同时保存在 `localStorage`，页面回到前台后最多每 5 分钟刷新一次。
 - 专辑封面使用有数量上限和 30 天有效期的 `CacheFirst` 缓存。
 - 音频不进入 Service Worker 缓存，避免占用设备空间和缓存过期音频。
 - 播放器状态使用 `nio_player_state_v2`，稍后播放使用 `nio_play_later_v1`。

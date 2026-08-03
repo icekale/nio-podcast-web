@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import {
   buildCatalog,
+  assertCatalogScanHasSuccess,
   mergeKnownAlbums,
   requestAlbum,
   reconcileFullScan,
@@ -36,6 +37,7 @@ const scanResult = mode === 'incremental'
   ? await scanCatalog(previous.albums.map(album => album.id), (id, signal) => requestAlbum(id, globalThis.fetch, signal), concurrency)
   : await buildCatalog(ids, globalThis.fetch, concurrency);
 const previousAlbums = previous?.albums || [];
+assertCatalogScanHasSuccess(previousAlbums, scanResult);
 const previousIds = new Set(previousAlbums.map(album => Number(album.id)));
 const discoveredIds = new Set(scanResult.albums.map(album => Number(album.id)));
 const stats = {

@@ -13,13 +13,7 @@ export default defineConfig({
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.endsWith('/data/albums.json'),
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'nio-catalog-v1',
-              networkTimeoutSeconds: 8,
-              cacheableResponse: { statuses: [0, 200] },
-              expiration: { maxEntries: 1, maxAgeSeconds: 2 * 24 * 60 * 60 },
-            },
+            handler: 'NetworkOnly',
           },
           {
             urlPattern: ({ request }) => request.destination === 'image',
@@ -39,8 +33,8 @@ export default defineConfig({
         start_url: './',
         scope: './',
         display: 'standalone',
-        background_color: '#0A0E14',
-        theme_color: '#00A0E9',
+        background_color: '#ffffff',
+        theme_color: '#00BEBE',
         description: 'NIO Radio 播客客户端',
         lang: 'zh-CN',
         icons: [

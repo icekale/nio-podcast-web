@@ -1,6 +1,10 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+
+const deployWorkflow = existsSync(resolve(process.cwd(), '.github/workflows/deploy.yml'))
+  ? readFileSync(resolve(process.cwd(), '.github/workflows/deploy.yml'), 'utf8')
+  : '';
 
 describe('catalog update workflow', () => {
   it('defines serialized scheduled full and incremental catalog deployments', () => {
@@ -17,35 +21,25 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('Asia/Shanghai');
   });
 
-  it('verifies and deploys a catalog before committing it to main', () => {
+  it('commits catalog changes and leaves Pages publication to the main deployment workflow', () => {
     const workflow = readFileSync(resolve(process.cwd(), '.github/workflows/update-catalog.yml'), 'utf8');
-    const generate = workflow.indexOf('- name: Generate catalog');
-    const test = workflow.indexOf('- name: Test application');
-    const lint = workflow.indexOf('- name: Lint application');
-    const build = workflow.indexOf('- name: Build PWA');
-    const configure = workflow.indexOf('- name: Configure Git identity');
-    const deploy = workflow.indexOf('- name: Deploy GitHub Pages');
     const commit = workflow.indexOf('- name: Commit catalog state');
 
-    expect(generate).toBeGreaterThanOrEqual(0);
-    expect(test).toBeGreaterThan(generate);
-    expect(lint).toBeGreaterThan(test);
-    expect(build).toBeGreaterThan(lint);
-    expect(configure).toBeGreaterThan(build);
-    expect(deploy).toBeGreaterThan(configure);
-    expect(commit).toBeGreaterThan(deploy);
+    expect(commit).toBeGreaterThanOrEqual(0);
+    expect(workflow).not.toContain('npm run deploy');
 
-    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Deploy GitHub Pages', 'Commit catalog state']) {
+    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state']) {
       const start = workflow.indexOf(`- name: ${step}`);
       const end = workflow.indexOf('\n      - name:', start + 1);
       const block = workflow.slice(start, end < 0 ? undefined : end);
       expect(block).toContain("if: steps.changes.outputs.changed == 'true'");
     }
-    const configureBlock = workflow.slice(configure, deploy);
-    expect(configureBlock).toContain('GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}');
-    expect(configureBlock).toContain('git config user.name "github-actions[bot]"');
-    expect(configureBlock).toContain('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-    expect(configureBlock).toContain('git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git');
     expect(workflow).toContain('git pull --rebase origin main');
+
+    expect(deployWorkflow).toContain('push:');
+    expect(deployWorkflow).toContain('branches: [main]');
+    expect(deployWorkflow).toContain('workflow_dispatch:');
+    expect(deployWorkflow).toContain('npm run deploy');
+    expect(deployWorkflow).toContain('group: nio-pages-deploy');
   });
 });

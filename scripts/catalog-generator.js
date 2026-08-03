@@ -36,6 +36,15 @@ export function sameCatalogContent(previous, next) {
   return JSON.stringify(previous?.albums || []) === JSON.stringify(next?.albums || []);
 }
 
+export function assertCatalogScanHasSuccess(previousAlbums, scanResult) {
+  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
+  const albums = Array.isArray(scanResult?.albums) ? scanResult.albums : [];
+  const failedIds = Array.isArray(scanResult?.failedIds) ? scanResult.failedIds : [];
+  if (previous.length && !albums.length && failedIds.length) {
+    throw new Error('Catalog scan returned no successful albums; refusing to publish stale catalog');
+  }
+}
+
 export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTimeoutMs = 15000) {
   const found = [];
   const failedIds = [];

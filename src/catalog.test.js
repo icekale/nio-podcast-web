@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest } from './catalog';
+import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, writeCatalogCache } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -50,6 +50,18 @@ describe('catalog selectors', () => {
     expect(result.episodes.map(item => item.id)).toEqual([11, 22]);
   });
 
+  it('deduplicates the same latest episode mirrored by multiple albums', () => {
+    const albums = [
+      { id: 2, latestEpisode: episode(42, 3, '同一节目') },
+      { id: 1, latestEpisode: episode(42, 2, '同一节目') },
+      { id: 3, latestEpisode: episode(43, 1, '另一个节目') },
+    ];
+
+    const result = selectHomeEpisodes(albums, new Date(3));
+
+    expect(result.episodes.map(item => item.id)).toEqual([42, 43]);
+  });
+
   it('uses the browser cache policy for the static catalog', async () => {
     const fetchImpl = vi.fn(async (url, options) => {
       expect(url).toBe('/nio-podcast-web/data/albums.json');
@@ -63,6 +75,15 @@ describe('catalog selectors', () => {
 
     await loadCatalog(fetchImpl, '/nio-podcast-web/');
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('reuses a fresh local catalog without another network request', async () => {
+    const catalog = { generatedAt: Date.now(), albums: [{ id: 1, name: '缓存目录', latestEpisode: episode(1, 1) }] };
+    writeCatalogCache(catalog);
+    const fetchImpl = vi.fn();
+
+    await expect(loadCatalog(fetchImpl, '/nio-podcast-web/')).resolves.toMatchObject({ catalog: expect.objectContaining({ generatedAt: catalog.generatedAt }), cached: true });
+    expect(fetchImpl).not.toHaveBeenCalled();
   });
 
   it('times out a stalled catalog request', async () => {

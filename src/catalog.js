@@ -1,5 +1,6 @@
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
 const CATALOG_FETCH_TIMEOUT_MS = 8000;
+const CATALOG_CACHE_FRESH_MS = 5 * 60 * 1000;
 
 export function sortAlbumsByLatest(albums) {
   return [...albums].sort((a, b) => {
@@ -20,9 +21,16 @@ function sameLocalDay(left, right) {
 }
 
 export function selectHomeEpisodes(albums, now = new Date()) {
+  const seenEpisodeIds = new Set();
   const latest = sortAlbumsByLatest(albums)
     .map(album => album.latestEpisode)
-    .filter(Boolean);
+    .filter(episode => {
+      if (!episode || episode.id == null) return false;
+      const id = String(episode.id);
+      if (seenEpisodeIds.has(id)) return false;
+      seenEpisodeIds.add(id);
+      return true;
+    });
   const today = latest.filter(episode => sameLocalDay(episode.onlineTime, now)).slice(0, 12);
   return {
     heading: today.length ? '今日更新' : '最新更新',
@@ -59,6 +67,9 @@ export function writeCatalogCache(catalog, storage = globalThis.localStorage) {
 
 export async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = import.meta.env.BASE_URL) {
   const cached = readCatalogCache();
+  if (cached && Date.now() - cached.generatedAt < CATALOG_CACHE_FRESH_MS) {
+    return { catalog: cached, stale: false, cached: true };
+  }
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), CATALOG_FETCH_TIMEOUT_MS);
   try {

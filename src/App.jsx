@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import {
   ArrowLeft,
   ChevronRight,
@@ -97,7 +98,7 @@ function Artwork({ src, alt = '', className = '' }) {
   return <span className={`artwork artwork-empty ${className}`} aria-hidden="true"><Music2 size={22} strokeWidth={1.7} /></span>;
 }
 
-function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mainLabel }) {
+const EpisodeRow = memo(function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mainLabel }) {
   return (
     <li className={`episode-row${active ? ' is-active' : ''}`}>
       <button type="button" className="episode-main" aria-label={mainLabel} onClick={() => onPlay(episode)}>
@@ -117,11 +118,34 @@ function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mai
       {action ? <div className="episode-action">{action}</div> : null}
     </li>
   );
-}
+});
 
 function LaterEpisodeAction({ episode, onAdd }) {
   const [open, setOpen] = useState(false);
   const [notice, setNotice] = useState('');
+  const menuId = `episode-menu-${episode.id}`;
+
+  useEffect(() => {
+    if (!notice) return undefined;
+    const timer = setTimeout(() => flushSync(() => setNotice('')), 2400);
+    return () => clearTimeout(timer);
+  }, [notice]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const closeMenu = event => {
+      if (!event.target?.closest?.('.episode-action')) setOpen(false);
+    };
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('pointerdown', closeMenu);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', closeMenu);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
 
   const handleAdd = () => {
     const result = onAdd(episode);
@@ -135,8 +159,8 @@ function LaterEpisodeAction({ episode, onAdd }) {
 
   return (
     <>
-      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
-      {open ? <div className="row-action-menu"><button type="button" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
+      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={open} aria-haspopup="menu" aria-controls={menuId} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
+      {open ? <div id={menuId} className="row-action-menu" role="menu"><button type="button" role="menuitem" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
       {notice ? <span className="episode-action-notice" role="status" aria-live="polite">{notice}</span> : null}
     </>
   );
@@ -148,12 +172,16 @@ function HomeScreen({ catalog, player, stale, refreshing = false, catalogError =
   const recommendation = selection.episodes[0];
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 180);
+    const handleScroll = () => {
+      const next = window.scrollY > 180;
+      setScrolled(previous => previous === next ? previous : next);
+    };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handlePlay = useCallback(item => onPlay(item, selection.episodes), [onPlay, selection.episodes]);
   const progressFor = episode => {
     if (player.currentEpisode?.id === episode.id && player.durationSeconds > 0) {
       return (player.positionSeconds / player.durationSeconds) * 100;
@@ -197,7 +225,7 @@ function HomeScreen({ catalog, player, stale, refreshing = false, catalogError =
         {selection.episodes.length ? (
           <ul className="episode-list">
             {selection.episodes.map(episode => (
-              <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, selection.episodes)} active={player.currentEpisode?.id === episode.id} progress={progressFor(episode)} />
+              <EpisodeRow key={episode.id} episode={episode} onPlay={handlePlay} active={player.currentEpisode?.id === episode.id} progress={progressFor(episode)} />
             ))}
           </ul>
         ) : <div className="empty-state">暂无可播放的节目</div>}
@@ -537,6 +565,8 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
   const noticeTimer = useRef(null);
   const tabRefs = useRef(new Map());
   const items = activeTab === 'queue' ? queue : activeTab === 'history' ? history : laterEpisodes;
+  const menuStateRef = useRef({ actionsFor: null, laterActionsFor: null, pickerOpen: false });
+  menuStateRef.current = { actionsFor, laterActionsFor, pickerOpen };
 
   useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
@@ -544,6 +574,18 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
     closeRef.current?.focus();
     const handleKeyDown = event => {
       if (event.key === 'Escape') {
+        const { actionsFor: openQueueMenu, laterActionsFor: openLaterMenu, pickerOpen: isPickerOpen } = menuStateRef.current;
+        if (openQueueMenu !== null || openLaterMenu !== null) {
+          setActionsFor(null);
+          setLaterActionsFor(null);
+          event.preventDefault();
+          return;
+        }
+        if (isPickerOpen) {
+          setPickerOpen(false);
+          event.preventDefault();
+          return;
+        }
         onClose();
         return;
       }

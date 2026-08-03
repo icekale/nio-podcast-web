@@ -25,11 +25,11 @@ function readPngSummary(path) {
 }
 
 describe('PWA cache boundaries', () => {
-  it('uses NetworkFirst for the catalog and bounds artwork runtime caching', () => {
+  it('lets local storage own catalog fallback and bounds artwork runtime caching', () => {
     expect(viteConfig).toContain("globPatterns: ['**/*.{js,css,html,ico,png,svg}']");
     expect(viteConfig).toContain("url.pathname.endsWith('/data/albums.json')");
-    expect(viteConfig).toContain("handler: 'NetworkFirst'");
-    expect(viteConfig).toContain("cacheName: 'nio-catalog-v1'");
+    expect(viteConfig).not.toContain("handler: 'NetworkFirst'");
+    expect(viteConfig).not.toContain("cacheName: 'nio-catalog-v1'");
     expect(viteConfig).toContain("handler: 'CacheFirst'");
     expect(viteConfig).toContain("cacheName: 'nio-artwork-v1'");
     expect(viteConfig).toContain('maxEntries: 150');
@@ -61,6 +61,17 @@ describe('public app naming', () => {
     expect(indexHtml).toContain('name="apple-mobile-web-app-title" content="NIO Radio"');
     expect(viteConfig).toContain("name: 'NIO Radio'");
     expect(viteConfig).toContain("short_name: 'NIO Radio'");
+  });
+
+  it('keeps the installed app chrome aligned with the teal light interface', () => {
+    expect(indexHtml).toContain('<meta name="theme-color" content="#00BEBE" />');
+    expect(viteConfig).toContain("background_color: '#ffffff'");
+    expect(viteConfig).toContain("theme_color: '#00BEBE'");
+  });
+
+  it('keeps the primary hover label readable', () => {
+    expect(readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8'))
+      .toContain('.primary-button:hover { background: var(--teal-dark); color: var(--surface); }');
   });
 });
 
