@@ -807,7 +807,7 @@ export default function App({ initialCatalog = null }) {
     }
   }, [queuePresent, route.queueOpen]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (queuePresent || !queueFocusRef.current) return;
     const trigger = queueFocusRef.current;
     queueFocusRef.current = null;
