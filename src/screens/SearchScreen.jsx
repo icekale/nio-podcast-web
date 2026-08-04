@@ -3,7 +3,7 @@ import { ArrowLeft, Search, X } from 'lucide-react';
 import { sortAlbumsForDirectory } from '../catalog';
 import { AlbumResults } from '../components/AlbumResults';
 
-export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false, favoriteIds, onToggleFavorite }) {
+export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false, favoriteIds, onToggleFavorite, starAction }) {
   const [query, setQuery] = useState(searchQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(searchQuery);
   const inputRef = useRef(null);
@@ -32,7 +32,7 @@ export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = 
       </header>
       <section className="search-results">
         <div className="section-heading-row"><h1>全部专辑</h1><span key={filtered.length} className="section-count" aria-live="polite">{filtered.length}</span></div>
-        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
+        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
       </section>
     </div>

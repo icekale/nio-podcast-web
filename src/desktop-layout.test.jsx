@@ -92,8 +92,8 @@ describe('desktop navigation', () => {
     fireEvent.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '搜索' }));
     await screen.findByRole('searchbox', { name: '搜索专辑' });
 
-    fireEvent.click(screen.getByRole('button', { name: '管理 另一张专辑' }));
-    fireEvent.click(screen.getByRole('menuitem', { name: '收藏专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: '收藏 另一张专辑' }));
+    expect(screen.getByRole('button', { name: '取消收藏 另一张专辑' })).toHaveAttribute('aria-pressed', 'true');
 
     const rows = screen.getAllByRole('button', { name: /^(资讯充电站·早间版|资讯充电站·晚间版|NIO 精选|另一张专辑)/ });
     expect(rows[0]).toHaveAccessibleName('另一张专辑第二集');

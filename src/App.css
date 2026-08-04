@@ -460,6 +460,10 @@ h1, h2, p { margin: 0; }
     z-index: 1;
   }
   .album-results.is-grid .album-action .icon-button { width: 1.75rem; height: 1.75rem; }
+  .album-results.is-grid .album-action .favorite-star { color: var(--muted); }
+  .album-results.is-grid .album-action .favorite-star:hover { color: var(--teal-dark); }
+  .album-results.is-grid .album-action .favorite-star.is-favorite { color: #f2a900; }
+  .album-results.is-grid .album-action .favorite-star.is-favorite:hover { color: #d99a00; }
   .album-results.is-grid .album-result { transition: transform 160ms ease, box-shadow 160ms ease; }
   .album-results.is-grid .album-result:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 28, 47, 0.10); }
   .album-results.is-grid .album-result:active { transform: scale(0.98); }

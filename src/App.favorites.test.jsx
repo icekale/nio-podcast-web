@@ -58,6 +58,7 @@ describe('desktop favorites collection', () => {
     expect(cards).toHaveLength(2);
     expect(cards[0]).toHaveAccessibleName('资讯充电站·早间版早间节目');
     expect(cards[1]).toHaveAccessibleName('另一张专辑第二集');
+    expect(screen.getByRole('button', { name: '取消收藏 资讯充电站·早间版' })).toHaveAttribute('aria-pressed', 'true');
   });
 
   it('removes a card immediately when unfavorited', async () => {
@@ -66,11 +67,22 @@ describe('desktop favorites collection', () => {
     openFavorites();
     await screen.findByRole('heading', { name: '我的收藏' });
 
-    fireEvent.click(screen.getByRole('button', { name: '管理 另一张专辑' }));
-    fireEvent.click(screen.getByRole('menuitem', { name: '取消收藏' }));
+    fireEvent.click(screen.getByRole('button', { name: '取消收藏 另一张专辑' }));
 
     expect(screen.queryByRole('button', { name: /^另一张专辑/ })).not.toBeInTheDocument();
     expect(screen.getByText('还没有收藏专辑')).toBeInTheDocument();
+  });
+
+  it('toggles the star on the desktop search grid', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '搜索' }));
+    await screen.findByRole('searchbox', { name: '搜索专辑' });
+
+    const star = screen.getByRole('button', { name: '收藏 另一张专辑' });
+    expect(star).toHaveAttribute('aria-pressed', 'false');
+
+    fireEvent.click(star);
+    expect(screen.getByRole('button', { name: '取消收藏 另一张专辑' })).toHaveAttribute('aria-pressed', 'true');
   });
 
   it('shows the empty state and browses to the full album directory', async () => {
