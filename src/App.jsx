@@ -30,6 +30,7 @@ import { QueueSheet } from './components/QueueSheet';
 import { useDesktopLayout } from './hooks/useDesktopLayout';
 import { AlbumScreen } from './screens/AlbumScreen';
 import { AlbumsScreen } from './screens/AlbumsScreen';
+import { FavoritesScreen } from './screens/FavoritesScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { SearchScreen } from './screens/SearchScreen';
 import './App.css';
@@ -417,6 +418,7 @@ export default function App({ initialCatalog = null }) {
   }, [removeFromLater]);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
+  const openFavorites = useCallback(() => go('#/favorites'), [go]);
   const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
   const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
   const playQueueEpisode = useCallback(episode => startPlayback(episode, playerRef.current.queue), [startPlayback]);
@@ -445,6 +447,7 @@ export default function App({ initialCatalog = null }) {
           onHome={() => go('#/')}
           onSearch={openSearch}
           onLater={openLater}
+          onFavorites={openFavorites}
           showInstall={Boolean(installPrompt)}
           onInstall={promptInstall}
         />
@@ -456,6 +459,7 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
+          {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}

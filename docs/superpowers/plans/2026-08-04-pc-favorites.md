@@ -195,11 +195,10 @@ import { ArrowLeft, Star } from 'lucide-react';
 import { AlbumResults } from '../components/AlbumResults';
 
 export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favoriteIds, onToggleFavorite, onOpenAlbum, onBack, onBrowse }) {
-  const favoriteSet = useMemo(() => new Set(favoriteIds.map(Number)), [favoriteIds]);
-  const favorites = useMemo(
-    () => catalog.albums.filter(album => favoriteSet.has(Number(album.id))),
-    [catalog.albums, favoriteSet],
-  );
+  const favorites = useMemo(() => {
+    const byId = new Map(catalog.albums.map(album => [Number(album.id), album]));
+    return favoriteIds.map(Number).filter(id => byId.has(id)).map(id => byId.get(id));
+  }, [catalog.albums, favoriteIds]);
   return (
     <div className="screen favorites-screen">
       <header className="top-bar">

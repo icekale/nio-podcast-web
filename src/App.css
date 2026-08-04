@@ -199,6 +199,11 @@ h1, h2, p { margin: 0; }
 .episode-row.is-active .episode-title { color: var(--teal-dark); }
 .episode-action { position: relative; flex: 0 0 auto; }
 .empty-state { padding: 3rem 1rem; color: var(--muted-strong); text-align: center; }
+.favorites-empty { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); padding: 4rem 1rem 5rem; color: var(--muted-strong); text-align: center; }
+.favorites-empty svg { color: var(--teal-dark); }
+.favorites-empty h2 { margin: 0.5rem 0 0; color: var(--ink); font-size: 1.15rem; font-weight: 620; }
+.favorites-empty p { max-width: 24rem; margin: 0; font-size: 0.88rem; }
+.favorites-empty .secondary-button { margin-top: var(--space-2); }
 .notice-bar { margin: var(--space-5); padding: var(--space-3) var(--space-4); color: var(--muted-strong); background: var(--surface-soft); border-radius: var(--radius-sm); font-size: 0.8rem; }
 .notice-bar button { min-height: 2.75rem; margin-left: var(--space-2); padding: 0 var(--space-2); color: var(--teal-dark); background: transparent; font-weight: 650; }
 
@@ -404,6 +409,7 @@ h1, h2, p { margin: 0; }
   .search-screen .top-bar,
   .albums-screen .top-bar,
   .album-screen .top-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .favorites-screen .top-bar { display: none; }
 
   .mini-player { width: min(100%, 1280px); padding-top: var(--space-4); }
   .mini-progress-row input { height: 1rem; }
