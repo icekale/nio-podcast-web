@@ -25,6 +25,10 @@ describe('hash router', () => {
     expect(parseHash('#/unknown')).toEqual({ screen: 'home', albumId: null, queueOpen: false });
   });
 
+  it('parses the favorites route', () => {
+    expect(parseHash('#/favorites')).toEqual({ screen: 'favorites', albumId: null, queueOpen: false });
+  });
+
   it('opens and closes the queue without changing the underlying route', () => {
     expect(withQueueHash('#/album/23', true)).toBe('#/album/23?queue=1');
     expect(closeQueueHash('#/album/23?queue=1')).toBe('#/album/23');

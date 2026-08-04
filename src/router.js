@@ -5,6 +5,7 @@ export function parseHash(hash = globalThis.location?.hash || '#/') {
   const queueOpen = query.get('queue') === '1';
   if (path === '/search') return { screen: 'search', albumId: null, queueOpen, searchQuery: query.get('q') || '' };
   if (path === '/albums') return { screen: 'albums', albumId: null, queueOpen };
+  if (path === '/favorites') return { screen: 'favorites', albumId: null, queueOpen };
   const album = path.match(/^\/album\/(\d+)$/);
   if (album) return { screen: 'album', albumId: Number(album[1]), queueOpen };
   return { screen: 'home', albumId: null, queueOpen };

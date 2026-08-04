@@ -53,6 +53,13 @@ describe('desktop navigation', () => {
     expect(within(nav).queryByRole('button', { name: '全部专辑' })).not.toBeInTheDocument();
   });
 
+  it('shows the favorites destination and highlights it on the favorites route', () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/favorites');
+    render(<App initialCatalog={catalog} />);
+    const nav = screen.getByRole('navigation', { name: '主导航' });
+    expect(within(nav).getByRole('button', { name: '我的收藏' })).toHaveAttribute('aria-current', 'page');
+  });
+
   it('highlights the active sidebar destination', async () => {
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
