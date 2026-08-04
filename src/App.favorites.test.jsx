@@ -82,7 +82,9 @@ describe('desktop favorites collection', () => {
     expect(star).toHaveAttribute('aria-pressed', 'false');
 
     fireEvent.click(star);
-    expect(screen.getByRole('button', { name: '取消收藏 另一张专辑' })).toHaveAttribute('aria-pressed', 'true');
+    const favorited = screen.getByRole('button', { name: '取消收藏 另一张专辑' });
+    expect(favorited).toHaveAttribute('aria-pressed', 'true');
+    expect(favorited).toHaveClass('is-favorite');
   });
 
   it('shows the empty state and browses to the full album directory', async () => {

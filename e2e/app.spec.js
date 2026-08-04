@@ -72,6 +72,10 @@ test.describe('app smoke', () => {
     const artBottom = await first.locator('.album-art').evaluate(element => element.getBoundingClientRect().bottom);
     const actionTop = await first.locator('.album-action').evaluate(element => element.getBoundingClientRect().top);
     expect(actionTop).toBeGreaterThanOrEqual(artBottom - 1);
+
+    const star = page.locator('.album-results.is-grid .album-action button').first();
+    await star.click();
+    await expect(star).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('desktop favorites page renders', async ({ page }) => {

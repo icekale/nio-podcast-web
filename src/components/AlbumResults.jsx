@@ -34,7 +34,7 @@ function FavoriteAlbumMenu({ album, favorited, onToggle }) {
 function FavoriteStarButton({ album, favorited, onToggle }) {
   return (
     <div className="album-action">
-      <button type="button" className="icon-button favorite-star" aria-label={favorited ? `取消收藏 ${album.name}` : `收藏 ${album.name}`} aria-pressed={favorited} onClick={() => onToggle(album.id)}>
+      <button type="button" className={`icon-button favorite-star${favorited ? ' is-favorite' : ''}`} aria-label={favorited ? `取消收藏 ${album.name}` : `收藏 ${album.name}`} aria-pressed={favorited} onClick={() => onToggle(album.id)}>
         <Star size={16} aria-hidden="true" fill={favorited ? 'currentColor' : 'none'} />
       </button>
     </div>
