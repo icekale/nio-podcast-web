@@ -75,6 +75,7 @@
     later="{{later}}"
     catalog="{{catalog}}"
     bind:close="onCloseQueue"
+    bind:tabchange="onQueueTabChange"
     bind:play="onPlayQueue"
     bind:playnext="onPlayNext"
     bind:removequeue="onRemoveQueue"

@@ -63,7 +63,9 @@ Component({
       return (later || []).map((e, i) => ({ ...e, durationLabel: formatDuration(e.duration), index: i }));
     },
     onTab(event) {
-      this.setData({ tab: event.currentTarget.dataset.tab, pickerOpen: false, actionsFor: null, laterActionsFor: null, swipedId: null });
+      const tab = event.currentTarget.dataset.tab;
+      this.setData({ tab, pickerOpen: false, actionsFor: null, laterActionsFor: null, swipedId: null });
+      this.triggerEvent('tabchange', { tab });
     },
     onClose() {
       if (this.data.closing) return;

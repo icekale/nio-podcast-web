@@ -106,7 +106,7 @@ describe('catalog selectors', () => {
 
     const pending = loadCatalog(fetchImpl, '/nio-podcast-web/');
     const assertion = expect(pending).rejects.toThrow('目录加载超时');
-    await vi.advanceTimersByTimeAsync(8001);
+    await vi.advanceTimersByTimeAsync(30001);
 
     await assertion;
     vi.useRealTimers();

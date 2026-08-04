@@ -102,6 +102,7 @@ Page({
   onBack() { wx.navigateBack(); },
   onOpenQueue() { this.setData({ queueOpen: true, queueTab: 'queue' }); },
   onCloseQueue() { this.setData({ queueOpen: false }); },
+  onQueueTabChange(event) { this.setData({ queueTab: event.detail.tab }); },
   onPlayQueue(event) {
     const store = require('../../services/player-store');
     if (this.data.queueTab === 'later') store.playLater(event.detail.episode);

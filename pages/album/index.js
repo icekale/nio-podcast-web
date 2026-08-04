@@ -8,7 +8,7 @@ Page({
     episodes: [],
     page: 0,
     hasMore: false,
-    loading: true,
+    loading: false,
     loadingMore: false,
     error: false,
     retryPage: 1,
@@ -104,6 +104,7 @@ Page({
   onRetryAudio() { require('../../services/player-store').retryAudio(); },
   onOpenQueue() { this.setData({ queueOpen: true, queueTab: 'queue' }); },
   onCloseQueue() { this.setData({ queueOpen: false }); },
+  onQueueTabChange(event) { this.setData({ queueTab: event.detail.tab }); },
   onPlayQueue(event) {
     const store = require('../../services/player-store');
     if (this.data.queueTab === 'later') store.playLater(event.detail.episode);

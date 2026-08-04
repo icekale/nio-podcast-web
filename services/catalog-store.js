@@ -1,10 +1,11 @@
-const { loadCatalog, readCatalogCache, writeCatalogCache } = require('../utils/catalog');
+const { loadCatalog, normalizeCatalog, readCatalogCache, writeCatalogCache } = require('../utils/catalog');
 const { createStorage } = require('../utils/storage');
 const { config } = require('../utils/api-config');
+const BUNDLED_CATALOG = require('../data/albums.js');
 
 const COOLDOWN_MS = 5 * 60 * 1000;
 const CACHE_FRESH_MS = 5 * 60 * 1000;
-const FETCH_TIMEOUT_MS = 8000;
+const FETCH_TIMEOUT_MS = 30000;
 
 let storage = createStorage();
 let state = { catalog: null, loading: true, error: null, stale: false };
@@ -33,13 +34,22 @@ function requestCatalog(baseUrl) {
   });
 }
 
+function bundledCatalog() {
+  try {
+    return normalizeCatalog(BUNDLED_CATALOG);
+  } catch {
+    return null;
+  }
+}
+
 function initCatalogStore(options = {}) {
   storage = options.storage || createStorage();
   const requestImpl = options.requestImpl || (() => requestCatalog(options.baseUrl || config.catalogBase));
   const baseUrl = options.baseUrl || config.catalogBase;
 
   const cached = readCatalogCache(storage);
-  if (cached) state = { catalog: cached, loading: false, error: null, stale: false };
+  const seed = cached || bundledCatalog();
+  if (seed) state = { catalog: seed, loading: false, error: null, stale: Boolean(!cached) };
 
   async function refreshCatalog({ force = false, showLoading = false } = {}) {
     if (inFlight) return inFlight;

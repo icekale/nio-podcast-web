@@ -18,13 +18,14 @@ NIO Radio 播客网页版的原生微信小程序版，面向手机微信用户�
 npm install
 npm test        # Vitest 单测（目录/接口/播放状态/稍后播放/服务）
 npm run lint    # oxlint
+npm run gen:albums   # 更新内置目录后重新生成 data/albums.js（小程序需要 JS 模块）
 ```
 
 在微信开发者工具中导入本目录即可运行（`project.config.json` 已配置测试号 `touristappid` 与“不校验合法域名”）。真机预览请把 AppID 替换为你的小程序 AppID，并在手机上开启调试模式。
 
 ## 数据源
 
-- 目录：内置 `data/albums.json`（来自网页版仓库生成产物），启动后按 5 分钟新鲜度从 `https://nio.k4le.top/data/albums.json` 刷新（预览期需不校验域名/真机调试模式）。
+- 目录：内置 `data/albums.json`（来自网页版仓库生成产物）并编译为 `data/albums.js` 供小程序 require，保证首屏离线可用；启动后按 5 分钟新鲜度从 `https://nio.k4le.top/data/albums.json` 刷新（预览期需不校验域名/真机调试模式）。更新数据后执行 `npm run gen:albums`。
 - 节目列表：直连蔚来公开接口 `gateway-front-external.nio.com`，8 秒超时、10 分钟内存缓存与并发去重。
 - 音频：客户端直连蔚来 CDN 播放，不经过业务服务。
 - 上线预留：`utils/api-config.js` 提供 `mode: 'direct' | 'cloud'` 切换点，正式版可通过微信云开发云函数转发节目接口与目录。

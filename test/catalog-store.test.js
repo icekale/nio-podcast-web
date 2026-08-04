@@ -30,6 +30,21 @@ describe('catalog store', () => {
     expect(seen.at(-1).stale).toBe(false);
   });
 
+  it('seeds the bundled catalog when no cache exists', async () => {
+    const bundled = require('../data/albums.json');
+    const storage = { getItem: () => null, setItem: () => true };
+    const api = await import('../services/catalog-store');
+    const store = api.initCatalogStore({
+      storage,
+      requestImpl: async () => { throw new Error('offline'); },
+      baseUrl: 'https://nio.k4le.top/',
+    });
+    const s = store.getState();
+    expect(s.catalog.albums.length).toBe(bundled.albums.length);
+    expect(s.stale).toBe(true);
+    expect(s.error).toBeNull();
+  });
+
   it('falls back to the cached catalog on request failure', async () => {
     const payload = catalogPayload();
     const storage = {

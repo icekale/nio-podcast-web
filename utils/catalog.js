@@ -1,5 +1,5 @@
 const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
-const CATALOG_FETCH_TIMEOUT_MS = 8000;
+const CATALOG_FETCH_TIMEOUT_MS = 30000;
 const CATALOG_CACHE_FRESH_MS = 5 * 60 * 1000;
 
 function sortAlbumsByLatest(albums) {
