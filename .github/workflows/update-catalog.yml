@@ -68,7 +68,17 @@ jobs:
           echo "Selected catalog mode: $MODE"
 
       - name: Generate catalog
-        run: npm run catalog
+        run: |
+          attempts=0
+          until npm run catalog; do
+            attempts=$((attempts + 1))
+            if [ "$attempts" -ge 3 ]; then
+              echo "Catalog generation failed after 3 attempts" >&2
+              exit 1
+            fi
+            echo "Catalog generation failed (attempt ${attempts}); retrying in $((attempts * 20))s..." >&2
+            sleep "$((attempts * 20))"
+          done
 
       - name: Check for catalog changes
         id: changes
