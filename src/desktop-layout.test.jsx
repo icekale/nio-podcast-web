@@ -75,9 +75,24 @@ describe('desktop navigation', () => {
     fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
     await screen.findByRole('searchbox', { name: '搜索专辑' });
 
-    const rows = screen.getAllByRole('button', { name: /资讯充电站|NIO 精选|另一张专辑/ });
+    const rows = screen.getAllByRole('button', { name: /^(资讯充电站·早间版|资讯充电站·晚间版|NIO 精选|另一张专辑)/ });
     expect(rows[0]).toHaveAccessibleName('资讯充电站·早间版早间节目');
     expect(rows[1]).toHaveAccessibleName('资讯充电站·晚间版晚间节目');
+  });
+
+  it('favorites an album from the desktop grid and pins it first', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '搜索' }));
+    await screen.findByRole('searchbox', { name: '搜索专辑' });
+
+    fireEvent.click(screen.getByRole('button', { name: '管理 另一张专辑' }));
+    fireEvent.click(screen.getByRole('menuitem', { name: '收藏专辑' }));
+
+    const rows = screen.getAllByRole('button', { name: /^(资讯充电站·早间版|资讯充电站·晚间版|NIO 精选|另一张专辑)/ });
+    expect(rows[0]).toHaveAccessibleName('另一张专辑第二集');
+    expect(rows[1]).toHaveAccessibleName('资讯充电站·早间版早间节目');
+    expect(rows[2]).toHaveAccessibleName('资讯充电站·晚间版晚间节目');
+    expect(rows[3]).toHaveAccessibleName('NIO 精选第一集');
   });
 
   it('browses and filters the album grid from search', async () => {
@@ -85,15 +100,15 @@ describe('desktop navigation', () => {
     const nav = screen.getByRole('navigation', { name: '主导航' });
     fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
     const searchbox = await screen.findByRole('searchbox', { name: '搜索专辑' });
-    expect(screen.getByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^NIO 精选/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^另一张专辑/ })).toBeInTheDocument();
 
     fireEvent.change(searchbox, { target: { value: 'NIO' } });
-    await waitFor(() => expect(screen.queryByRole('button', { name: /另一张专辑/ })).not.toBeInTheDocument());
-    expect(screen.getByRole('button', { name: /NIO 精选/ })).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByRole('button', { name: /^另一张专辑/ })).not.toBeInTheDocument());
+    expect(screen.getByRole('button', { name: /^NIO 精选/ })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: '清空搜索' }));
-    expect(await screen.findByRole('button', { name: /另一张专辑/ })).toBeInTheDocument();
+    expect(await screen.findByRole('button', { name: /^另一张专辑/ })).toBeInTheDocument();
   });
 
   it('shows and triggers the install button from beforeinstallprompt', async () => {

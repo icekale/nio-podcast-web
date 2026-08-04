@@ -3,16 +3,16 @@ import { ArrowLeft, Search, X } from 'lucide-react';
 import { sortAlbumsForDirectory } from '../catalog';
 import { AlbumResults } from '../components/AlbumResults';
 
-export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false }) {
+export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false, favoriteIds, onToggleFavorite }) {
   const [query, setQuery] = useState(searchQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(searchQuery);
   const inputRef = useRef(null);
   const filtered = useMemo(() => {
-    const base = pinnedFirst ? sortAlbumsForDirectory(catalog.albums) : catalog.albums;
+    const base = pinnedFirst ? sortAlbumsForDirectory(catalog.albums, favoriteIds) : catalog.albums;
     const value = debouncedQuery.trim().toLowerCase();
     if (!value) return base;
     return base.filter(album => `${album.name} ${album.description} ${album.host}`.toLowerCase().includes(value));
-  }, [catalog.albums, debouncedQuery, pinnedFirst]);
+  }, [catalog.albums, debouncedQuery, pinnedFirst, favoriteIds]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query), 120);
@@ -32,10 +32,9 @@ export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = 
       </header>
       <section className="search-results">
         <div className="section-heading-row"><h1>全部专辑</h1><span key={filtered.length} className="section-count" aria-live="polite">{filtered.length}</span></div>
-        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid />
+        <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
         {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
       </section>
     </div>
   );
 });
-

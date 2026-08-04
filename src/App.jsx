@@ -22,6 +22,7 @@ import {
   removeLaterEpisode,
   writeLaterEpisodes,
 } from './laterPlayback';
+import { readFavoriteAlbums, toggleFavoriteAlbum, writeFavoriteAlbums } from './favoriteAlbums';
 import { routeMotionFor, sameRoute, screenRouteKey } from './routeUtils';
 import { DesktopNav } from './components/DesktopNav';
 import { MiniPlayer } from './components/MiniPlayer';
@@ -52,6 +53,7 @@ export default function App({ initialCatalog = null }) {
   });
   const [player, setPlayer] = useState(readStoredPlayer);
   const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
+  const [favoriteAlbums, setFavoriteAlbums] = useState(readFavoriteAlbums);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
@@ -238,6 +240,14 @@ export default function App({ initialCatalog = null }) {
       if (next !== previous) writeLaterEpisodes(next);
       laterEpisodesRef.current = next;
       return next;
+    });
+  }, []);
+
+  const toggleAlbumFavorite = useCallback(albumId => {
+    setFavoriteAlbums(previous => {
+      const next = toggleFavoriteAlbum(previous, albumId);
+      writeFavoriteAlbums(next.ids);
+      return next.ids;
     });
   }, []);
 
@@ -444,8 +454,8 @@ export default function App({ initialCatalog = null }) {
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
           {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
-          {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} /> : null}
-          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} /> : null}
+          {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
+          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}

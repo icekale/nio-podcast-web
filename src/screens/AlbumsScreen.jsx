@@ -3,8 +3,8 @@ import { ArrowLeft, Search } from 'lucide-react';
 import { sortAlbumsForDirectory } from '../catalog';
 import { AlbumResults } from '../components/AlbumResults';
 
-export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum }) {
-  const orderedAlbums = useMemo(() => sortAlbumsForDirectory(catalog.albums), [catalog.albums]);
+export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum, favoriteIds, onToggleFavorite }) {
+  const orderedAlbums = useMemo(() => sortAlbumsForDirectory(catalog.albums, favoriteIds), [catalog.albums, favoriteIds]);
   return (
     <div className="screen albums-screen">
       <header className="top-bar">
@@ -14,10 +14,9 @@ export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSear
       </header>
       <section className="search-results" aria-labelledby="albums-title">
         <div className="section-heading-row"><h1 id="albums-title">全部专辑</h1><span className="section-count">{catalog.albums.length}</span></div>
-        <AlbumResults albums={orderedAlbums} onOpenAlbum={onOpenAlbum} grid />
+        <AlbumResults albums={orderedAlbums} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
         {!catalog.albums.length ? <div className="empty-state">暂无可用专辑</div> : null}
       </section>
     </div>
   );
 });
-
