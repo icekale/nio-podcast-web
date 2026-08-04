@@ -1,6 +1,7 @@
 Component({
   properties: {
     title: { type: String, value: '' },
+    subtitle: { type: String, value: '' },
     showBack: { type: Boolean, value: false },
     showSearch: { type: Boolean, value: true },
     scrolled: { type: Boolean, value: false },

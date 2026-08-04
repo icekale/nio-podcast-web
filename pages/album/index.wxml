@@ -1,0 +1,45 @@
+<view class="screen album-screen">
+  <custom-nav title="{{album.name}}" subtitle="{{album.countLabel}}" showBack bind:back="onBack" showSearch="{{false}}" />
+
+  <view class="album-content">
+    <view class="album-intro">
+      <artwork class="album-hero-art" src="{{album.imageUrl}}" />
+      <view class="album-intro-copy">
+        <text class="album-intro-heading">节目列表</text>
+        <text class="album-intro-desc">{{album.description || 'NIO Radio 精选内容'}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{error}}" class="inline-error">
+      <text>节目加载失败，请检查网络后重试</text>
+      <button bindtap="onRetry">重新加载</button>
+    </view>
+
+    <view wx:if="{{loading && !episodes.length}}" class="loading-state">正在加载节目…</view>
+
+    <view wx:if="{{episodes.length}}" class="episode-list album-episode-list">
+      <episode-row
+        wx:for="{{episodes}}"
+        wx:key="id"
+        episode="{{item}}"
+        showManage
+        bind:play="onPlayEpisode"
+        bind:manage="onManage"
+      />
+    </view>
+
+    <view wx:if="{{!loading && !error && !episodes.length}}" class="empty-state">这个专辑还没有节目</view>
+
+    <button wx:if="{{hasMore && !loading}}" class="secondary-button load-more-button" bindtap="onLoadMore">加载更多</button>
+    <view wx:if="{{loadingMore}}" class="loading-more">正在加载下一页…</view>
+  </view>
+
+  <mini-player
+    wx:if="{{player.currentEpisode}}"
+    player="{{player}}"
+    bind:toggle="onTogglePlayback"
+    bind:seek="onSeek"
+    bind:retry="onRetryAudio"
+    bind:openqueue="onOpenQueue"
+  />
+</view>
