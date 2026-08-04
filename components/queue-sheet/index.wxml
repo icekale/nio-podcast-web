@@ -1,6 +1,6 @@
-<view wx:if="{{visible}}" class="queue-overlay" catchtouchmove="onNoop">
+<view wx:if="{{visible}}" class="queue-overlay {{closing ? 'is-closing' : ''}}" catchtouchmove="onNoop">
   <view class="queue-backdrop" bindtap="onClose" />
-  <view class="queue-sheet">
+  <view class="queue-sheet {{closing ? 'is-closing' : ''}}">
     <view class="sheet-handle" />
     <view class="sheet-header">
       <text class="sheet-title">播放列表</text>

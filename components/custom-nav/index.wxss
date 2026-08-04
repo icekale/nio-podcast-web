@@ -8,3 +8,7 @@
 .nav-subtitle { margin-top: 2rpx; color: var(--muted); font-size: 24rpx; }
 .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8rpx; min-width: 88rpx; }
 .continue-button { min-height: 88rpx; padding: 0 20rpx; color: var(--teal-dark); font-size: 25rpx; font-weight: 600; white-space: nowrap; background: transparent; }
+
+@media (max-width: 359px) {
+  .continue-button { display: none; }
+}

@@ -23,6 +23,7 @@ Component({
     laterActionsFor: null,
     swipedId: null,
     dragId: null,
+    closing: false,
     albumSource: [],
   },
   observers: {
@@ -64,7 +65,14 @@ Component({
     onTab(event) {
       this.setData({ tab: event.currentTarget.dataset.tab, pickerOpen: false, actionsFor: null, laterActionsFor: null, swipedId: null });
     },
-    onClose() { this.triggerEvent('close'); },
+    onClose() {
+      if (this.data.closing) return;
+      this.setData({ closing: true });
+      setTimeout(() => {
+        this.setData({ closing: false });
+        this.triggerEvent('close');
+      }, 240);
+    },
     onNoop() {},
     onPlay(event) {
       const id = event.currentTarget.dataset.id;

@@ -19,7 +19,7 @@
       bindchanging="onSeek"
       bindchange="onSeek"
       block-size="22"
-      activeColor="#00b9b5"
+      activeColor="{{activeColor}}"
     />
     <text>{{total}}</text>
   </view>

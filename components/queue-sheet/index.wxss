@@ -1,5 +1,6 @@
 .queue-overlay { position: fixed; inset: 0; z-index: 60; }
-.queue-backdrop { position: absolute; inset: 0; background: rgba(6, 18, 32, 0.38); }
+.queue-backdrop { position: absolute; inset: 0; background: rgba(6, 18, 32, 0.38); animation: queue-backdrop-in 220ms ease-out both; }
+.queue-overlay.is-closing .queue-backdrop { animation: queue-backdrop-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
 .queue-sheet {
   position: absolute;
   left: 0;
@@ -12,7 +13,13 @@
   background: var(--surface);
   border-radius: 40rpx 40rpx 0 0;
   box-shadow: 0 -20rpx 80rpx rgba(9, 28, 47, 0.14);
+  animation: queue-sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.queue-sheet.is-closing { animation: queue-sheet-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+@keyframes queue-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes queue-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes queue-sheet-in { from { opacity: 0; transform: translate3d(0, 100%, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes queue-sheet-out { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(0, 100%, 0); } }
 .sheet-handle { width: 112rpx; height: 10rpx; margin: 0 auto 32rpx; border-radius: 999rpx; background: var(--line); }
 .sheet-header { display: flex; align-items: center; justify-content: space-between; }
 .sheet-title { font-size: 50rpx; font-weight: 650; }
