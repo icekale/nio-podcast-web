@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import App, { AlbumResults } from './App';
+import App from './App';
+import { AlbumResults } from './components/AlbumResults';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
   id,

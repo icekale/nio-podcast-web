@@ -1,19 +1,14 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
 import {
   ArrowLeft,
   ChevronRight,
   ChevronDown,
   ChevronUp,
   CircleAlert,
-  Clock3,
-  Download,
-  ListMusic,
   ListPlus,
   List,
   MoreHorizontal,
   Music2,
-  Pause,
   Play,
   RotateCcw,
   Search,
@@ -43,129 +38,18 @@ import {
   removeLaterEpisode,
   writeLaterEpisodes,
 } from './laterPlayback';
+import { formatDuration } from './format';
+import { routeMotionFor, sameRoute, screenRouteKey } from './routeUtils';
+import { Artwork } from './components/Artwork';
+import { EpisodeRow, LaterEpisodeAction } from './components/EpisodeRow';
+import { AlbumResults } from './components/AlbumResults';
+import { MiniPlayer } from './components/MiniPlayer';
+import { DesktopNav } from './components/DesktopNav';
+import { useDesktopLayout } from './hooks/useDesktopLayout';
+import { useVisibleAlbums } from './hooks/useVisibleAlbums';
 import './App.css';
 
 const CATALOG_REFRESH_COOLDOWN_MS = 5 * 60 * 1000;
-
-function formatDuration(milliseconds) {
-  const value = Number(milliseconds);
-  if (!Number.isFinite(value) || value < 0) return '--:--';
-  const totalSeconds = Math.floor(value / 1000);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-  if (hours) return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
-}
-
-function formatClock(seconds) {
-  const value = Number(seconds);
-  if (!Number.isFinite(value) || value < 0) return '0:00';
-  const totalSeconds = Math.floor(value);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const rest = totalSeconds % 60;
-  if (hours) return `${hours}:${String(minutes).padStart(2, '0')}:${String(rest).padStart(2, '0')}`;
-  return `${minutes}:${String(rest).padStart(2, '0')}`;
-}
-
-function formatDate(timestamp) {
-  const date = new Date(timestamp);
-  if (Number.isNaN(date.getTime())) return '';
-  return `${date.getMonth() + 1}/${date.getDate()}`;
-}
-
-function screenRouteKey(route) {
-  return `${route.screen}:${route.albumId ?? ''}`;
-}
-
-function sameRoute(previous, next) {
-  return previous.screen === next.screen
-    && previous.albumId === next.albumId
-    && previous.searchQuery === next.searchQuery
-    && previous.queueOpen === next.queueOpen;
-}
-
-function routeMotionFor(previous, next) {
-  if (previous.screen === 'home' && next.screen === 'albums') return 'forward';
-  if (previous.screen !== 'home' && next.screen === 'home') return 'back';
-  if (previous.screen !== 'album' && next.screen === 'album') return 'forward';
-  if (previous.screen === 'album' && next.screen !== 'album') return 'back';
-  return 'none';
-}
-
-function Artwork({ src, alt = '', className = '' }) {
-  if (src) return <img className={`artwork ${className}`} src={src} alt={alt} loading="lazy" decoding="async" />;
-  return <span className={`artwork artwork-empty ${className}`} aria-hidden="true"><Music2 size={22} strokeWidth={1.7} /></span>;
-}
-
-const EpisodeRow = memo(function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mainLabel }) {
-  return (
-    <li className={`episode-row${active ? ' is-active' : ''}`}>
-      <button type="button" className="episode-main" aria-label={mainLabel} onClick={() => onPlay(episode)}>
-        <Artwork src={episode.albumPic} alt="" className="episode-art" />
-        <span className="episode-copy">
-          <span className="episode-title">{episode.title}</span>
-          <span className="episode-meta">
-            <span>{episode.albumName || 'NIO Radio'}</span>
-            <span className="meta-divider" aria-hidden="true">|</span>
-            <Clock3 size={14} aria-hidden="true" />
-            <span>{formatDuration(episode.duration)}</span>
-            {episode.onlineTime ? <><span className="meta-divider" aria-hidden="true">|</span><span>{formatDate(episode.onlineTime)}</span></> : null}
-            {progress > 0 ? <span className="episode-progress-label">已听{Math.round(progress)}%</span> : null}
-          </span>
-        </span>
-      </button>
-      {action ? <div className="episode-action">{action}</div> : null}
-    </li>
-  );
-});
-
-function LaterEpisodeAction({ episode, onAdd }) {
-  const [open, setOpen] = useState(false);
-  const [notice, setNotice] = useState('');
-  const menuId = `episode-menu-${episode.id}`;
-
-  useEffect(() => {
-    if (!notice) return undefined;
-    const timer = setTimeout(() => flushSync(() => setNotice('')), 2400);
-    return () => clearTimeout(timer);
-  }, [notice]);
-
-  useEffect(() => {
-    if (!open) return undefined;
-    const closeMenu = event => {
-      if (!event.target?.closest?.('.episode-action')) setOpen(false);
-    };
-    const handleKeyDown = event => {
-      if (event.key === 'Escape') setOpen(false);
-    };
-    document.addEventListener('pointerdown', closeMenu);
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('pointerdown', closeMenu);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [open]);
-
-  const handleAdd = () => {
-    const result = onAdd(episode);
-    setNotice(!result.added
-      ? '已在稍后播放'
-      : result.persisted
-        ? '已添加到稍后播放'
-        : '已添加到稍后播放，但无法保存，刷新后可能丢失');
-    setOpen(false);
-  };
-
-  return (
-    <>
-      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={open} aria-haspopup="menu" aria-controls={menuId} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
-      {open ? <div id={menuId} className="row-action-menu" role="menu"><button type="button" role="menuitem" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
-      {notice ? <span className="episode-action-notice" role="status" aria-live="polite">{notice}</span> : null}
-    </>
-  );
-}
 
 function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
@@ -247,37 +131,6 @@ function HomeScreen({ catalog, player, stale, refreshing = false, catalogError =
     </div>
   );
 }
-
-const ALBUM_PAGE_SIZE = 100;
-
-function useVisibleAlbums(albums) {
-  const [visibleCount, setVisibleCount] = useState(ALBUM_PAGE_SIZE);
-  useEffect(() => setVisibleCount(ALBUM_PAGE_SIZE), [albums]);
-  return {
-    visibleAlbums: albums.slice(0, visibleCount),
-    hasMore: visibleCount < albums.length,
-    loadMore: () => setVisibleCount(count => Math.min(count + ALBUM_PAGE_SIZE, albums.length)),
-  };
-}
-
-export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender, grid = false }) {
-  onRender?.();
-  const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
-  return (
-    <ul className={`album-results${grid ? ' is-grid' : ''}`}>
-      {visibleAlbums.map(album => (
-        <li key={album.id}>
-          <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
-            <Artwork src={album.imageUrl} alt="" className="album-art" />
-            <span className="album-result-copy"><strong>{album.name}</strong><span>{album.latestEpisode?.title || album.description || '暂无节目'}</span></span>
-            <ChevronRight size={19} aria-hidden="true" />
-          </button>
-        </li>
-      ))}
-      {hasMore ? <li className="album-results-more"><button type="button" onClick={loadMore}>加载更多专辑</button></li> : null}
-    </ul>
-  );
-});
 
 const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false }) {
   const [query, setQuery] = useState(searchQuery);
@@ -386,22 +239,6 @@ const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, onAddLate
     </div>
   );
 });
-
-function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
-  const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
-  return (
-    <section className={`mini-player${isClosing ? ' is-closing' : ''}`} aria-label="当前播放" onAnimationEnd={event => { if (isClosing && event.animationName === 'mini-player-out') onExited?.(); }}>
-      <div className="mini-main">
-        <Artwork src={player.currentEpisode.albumPic} alt="" className="mini-art" />
-        <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
-        <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
-        <div className="mini-progress-row"><span>{formatClock(player.positionSeconds)}</span><input aria-label="播放进度" type="range" min="0" max={duration || 0} step="1" value={Math.min(player.positionSeconds, duration || 0)} onChange={onSeek} /><span>{formatClock(duration)}</span></div>
-        <button ref={queueButtonRef} type="button" className="player-control queue-control" aria-label="打开播放列表" onClick={onOpenQueue}><ListMusic size={21} /></button>
-      </div>
-      {audioError ? <div className="player-error" role="alert"><span>{audioError}</span><button type="button" onClick={onRetry}>重试</button></div> : null}
-    </section>
-  );
-}
 
 function LaterPicker({ catalog, onBack, onAdd }) {
   const [selectedAlbumId, setSelectedAlbumId] = useState(null);
@@ -709,38 +546,6 @@ const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, 
     </div>
   );
 });
-
-function DesktopNav({ route, laterActive, onHome, onSearch, onLater, showInstall, onInstall }) {
-  return (
-    <aside className="desktop-nav">
-      <div className="desktop-nav-brand">
-        <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="30" height="30" />
-        <span>NIO Radio</span>
-      </div>
-      <nav className="desktop-nav-links" aria-label="主导航">
-        <button type="button" className="desktop-nav-link" aria-current={route.screen === 'home' ? 'page' : undefined} onClick={onHome}>今日推荐</button>
-        <button type="button" className="desktop-nav-link" aria-current={(route.screen === 'search' || route.screen === 'albums') ? 'page' : undefined} onClick={onSearch}>搜索</button>
-        <button type="button" className="desktop-nav-link" aria-current={laterActive ? 'page' : undefined} onClick={onLater}>稍后播放</button>
-      </nav>
-      {showInstall ? <button type="button" className="desktop-nav-install" onClick={onInstall}><Download size={17} aria-hidden="true" />安装应用</button> : null}
-    </aside>
-  );
-}
-
-function useDesktopLayout() {
-  const [desktop, setDesktop] = useState(() => (
-    typeof window !== 'undefined' && window.matchMedia?.('(min-width: 1024px)')?.matches === true
-  ));
-  useEffect(() => {
-    const media = typeof window !== 'undefined' ? window.matchMedia?.('(min-width: 1024px)') : null;
-    if (!media) return undefined;
-    const update = () => setDesktop(media.matches);
-    update();
-    media.addEventListener?.('change', update);
-    return () => media.removeEventListener?.('change', update);
-  }, []);
-  return desktop;
-}
 
 function readStoredPlayer() {
   try { return restorePlayerState(window.localStorage.getItem(PLAYER_STORAGE_KEY)); } catch { return createPlayerState(); }
