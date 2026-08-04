@@ -64,4 +64,9 @@ test.describe('app smoke', () => {
     const tops = await page.locator('.album-results.is-grid .album-row').evaluateAll((elements, count) => elements.slice(0, count).map(element => Math.round(element.querySelector('.album-art').getBoundingClientRect().top)), columns);
     expect(new Set(tops).size).toBe(1);
   });
+
+  test('desktop favorites page renders', async ({ page }) => {
+    await page.goto('/#/favorites');
+    await expect(page.getByRole('heading', { name: '我的收藏' })).toBeVisible();
+  });
 });
