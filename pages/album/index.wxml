@@ -42,4 +42,19 @@
     bind:retry="onRetryAudio"
     bind:openqueue="onOpenQueue"
   />
+
+  <queue-sheet
+    visible="{{queueOpen}}"
+    tab="{{queueTab}}"
+    player="{{player}}"
+    later="{{later}}"
+    catalog="{{catalog}}"
+    bind:close="onCloseQueue"
+    bind:play="onPlayQueue"
+    bind:playnext="onPlayNext"
+    bind:removequeue="onRemoveQueue"
+    bind:addlater="onAddLaterQueue"
+    bind:removelater="onRemoveLater"
+    bind:movelater="onMoveLater"
+  />
 </view>

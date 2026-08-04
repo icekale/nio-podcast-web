@@ -17,13 +17,17 @@ Page({
     catalogError: false,
     catalogLoading: true,
     player: null,
+    later: [],
+    catalog: null,
+    queueOpen: false,
+    queueTab: 'queue',
   },
 
   onLoad() {
     catalogStore = require('../../services/catalog-store').getStore();
     unsubscribe = catalogStore.subscribe(state => this.applyCatalog(state));
     playerUnsubscribe = require('../../services/player-store').subscribe(s => {
-      this.setData({ player: s.player });
+      this.setData({ player: s.player, later: s.later });
     });
   },
 
@@ -71,6 +75,7 @@ Page({
     const first = episodes[0] || null;
     this.setData({
       catalogLoading: false,
+      catalog,
       catalogError: Boolean(state.error),
       stale: state.stale,
       refreshing: state.loading,
@@ -106,7 +111,22 @@ Page({
   onTogglePlayback() { require('../../services/player-store').togglePlayback(); },
   onSeek(event) { require('../../services/player-store').seek(event.detail.position); },
   onRetryAudio() { require('../../services/player-store').retryAudio(); },
-  onOpenQueue() {
-    wx.showToast({ title: '播放列表即将上线', icon: 'none' });
+  onOpenQueue() { this.setData({ queueOpen: true, queueTab: 'queue' }); },
+  onCloseQueue() { this.setData({ queueOpen: false }); },
+  onPlayQueue(event) {
+    require('../../services/player-store').playEpisode(event.detail.episode, this.data.player.queue);
   },
+  onPlayNext(event) { require('../../services/player-store').playNext(event.detail.episode); },
+  onRemoveQueue(event) { require('../../services/player-store').removeQueue(event.detail.id); },
+  onAddLaterQueue(event) {
+    const result = require('../../services/player-store').addLater(event.detail.episode);
+    const text = !result.added
+      ? '已在稍后播放'
+      : result.persisted
+        ? '已添加到稍后播放'
+        : '已添加到稍后播放，但无法保存，刷新后可能丢失';
+    wx.showToast({ title: text, icon: 'none' });
+  },
+  onRemoveLater(event) { require('../../services/player-store').removeLater(event.detail.id); },
+  onMoveLater(event) { require('../../services/player-store').moveLater(event.detail.from, event.detail.to); },
 });

@@ -1,0 +1,60 @@
+.queue-overlay { position: fixed; inset: 0; z-index: 60; }
+.queue-backdrop { position: absolute; inset: 0; background: rgba(6, 18, 32, 0.38); }
+.queue-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  max-height: 78vh;
+  flex-direction: column;
+  padding: 24rpx 40rpx calc(32rpx + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-radius: 40rpx 40rpx 0 0;
+  box-shadow: 0 -20rpx 80rpx rgba(9, 28, 47, 0.14);
+}
+.sheet-handle { width: 112rpx; height: 10rpx; margin: 0 auto 32rpx; border-radius: 999rpx; background: var(--line); }
+.sheet-header { display: flex; align-items: center; justify-content: space-between; }
+.sheet-title { font-size: 50rpx; font-weight: 650; }
+.icon-button { display: flex; align-items: center; justify-content: center; width: 88rpx; height: 88rpx; border-radius: 999rpx; background: transparent; color: var(--ink); font-size: 44rpx; line-height: 1; }
+.icon-button-spacer { width: 88rpx; height: 88rpx; }
+.queue-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32rpx; border-bottom: 2rpx solid var(--line); }
+.queue-tab { position: relative; min-width: 0; min-height: 88rpx; padding: 18rpx 4rpx 26rpx; overflow: hidden; color: var(--muted); background: transparent; font-size: 29rpx; text-overflow: ellipsis; white-space: nowrap; }
+.queue-tab text { margin-left: 6rpx; font-size: 24rpx; }
+.queue-tab.is-selected { color: var(--ink); font-weight: 650; }
+.queue-tab.is-selected::after { position: absolute; right: 0; bottom: -2rpx; left: 0; height: 6rpx; content: ""; background: var(--teal); }
+.queue-scroll { min-height: 0; flex: 1; overflow: hidden; }
+.queue-row { position: relative; display: flex; align-items: center; gap: 16rpx; padding: 24rpx 0; border-bottom: 2rpx solid var(--line); overflow: hidden; }
+.queue-row.is-menu-open { padding-bottom: 240rpx; }
+.queue-row-main { position: relative; z-index: 1; display: flex; flex: 1; min-width: 0; align-items: center; gap: 32rpx; background: var(--surface); transition: transform 160ms ease; }
+.queue-art { width: 136rpx; height: 136rpx; border-radius: 16rpx; }
+.queue-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.queue-title { overflow: hidden; color: var(--ink); font-size: 30rpx; font-weight: 620; text-overflow: ellipsis; white-space: nowrap; }
+.queue-meta { margin-top: 8rpx; overflow: hidden; color: var(--muted); font-size: 24rpx; text-overflow: ellipsis; white-space: nowrap; }
+.queue-row.is-current .queue-title { color: var(--teal-dark); }
+.queue-playing { color: var(--teal); font-size: 32rpx; }
+.queue-actions, .later-actions { position: relative; z-index: 2; flex: 0 0 auto; background: var(--surface); }
+.row-action-menu { position: absolute; top: 88rpx; right: 0; z-index: 3; display: flex; width: 256rpx; flex-direction: column; padding: 8rpx; background: var(--surface); border: 2rpx solid var(--line); border-radius: 16rpx; box-shadow: 0 8rpx 24rpx rgba(6, 18, 32, 0.12); }
+.row-action-menu button { display: flex; align-items: center; min-height: 88rpx; padding: 16rpx; background: transparent; color: var(--ink); font-size: 25rpx; text-align: left; }
+.row-action-menu button[disabled] { opacity: 0.4; }
+.later-row { overflow: hidden; }
+.later-swipe-action { position: absolute; top: 0; right: 0; bottom: 0; z-index: 0; width: 152rpx; background: var(--danger); color: #ffffff; font-size: 26rpx; }
+.later-row.is-swiped .queue-row-main { transform: translateX(-152rpx); }
+.later-row.is-swiped .later-actions { opacity: 0; }
+.later-add-row { display: flex; align-items: center; justify-content: space-between; gap: 24rpx; padding: 24rpx 0 16rpx; color: var(--muted-strong); font-size: 26rpx; }
+.secondary-button { min-height: 88rpx; padding: 0 28rpx; border-radius: 16rpx; background: var(--surface-soft); color: var(--teal-dark); font-size: 26rpx; font-weight: 650; }
+.later-picker-header { display: flex; align-items: center; gap: 16rpx; padding: 16rpx 0 24rpx; }
+.later-picker-title { flex: 1; min-width: 0; overflow: hidden; font-size: 32rpx; font-weight: 620; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.album-results { border-top: 2rpx solid var(--line); }
+.loading-state, .inline-error { padding: 48rpx 0; color: var(--muted); font-size: 26rpx; text-align: center; }
+.inline-error { color: var(--danger); }
+.episode-list { border-top: 2rpx solid var(--line); }
+.picker-episode-row { display: flex; align-items: center; gap: 32rpx; min-height: 144rpx; padding: 24rpx 0; border-bottom: 2rpx solid var(--line); }
+.episode-art { width: 104rpx; height: 104rpx; border-radius: 16rpx; }
+.episode-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.episode-title { overflow: hidden; font-size: 28rpx; text-overflow: ellipsis; white-space: nowrap; }
+.episode-meta { margin-top: 8rpx; color: var(--muted); font-size: 24rpx; }
+.picker-plus { color: var(--teal-dark); font-size: 36rpx; }
+.queue-empty { display: flex; flex-direction: column; align-items: center; gap: 16rpx; padding: 112rpx 32rpx; color: var(--muted); text-align: center; }
+.queue-empty-title { color: var(--muted-strong); font-size: 32rpx; }
+.queue-empty-hint { font-size: 26rpx; }

@@ -4,6 +4,7 @@
     "artwork": "/components/artwork/index",
     "episode-row": "/components/episode-row/index",
     "mini-player": "/components/mini-player/index",
+    "queue-sheet": "/components/queue-sheet/index",
     "state-view": "/components/state-view/index"
   },
   "disableScroll": false,
