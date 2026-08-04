@@ -1,0 +1,6 @@
+.state-view { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24rpx; padding: 96rpx 32rpx; color: var(--muted-strong); text-align: center; }
+.state-title { color: var(--ink); font-size: 43rpx; }
+.state-message { max-width: 560rpx; font-size: 29rpx; }
+.primary-button { min-height: 88rpx; padding: 0 36rpx; border-radius: 999rpx; background: var(--teal); color: var(--ink); font-weight: 650; }
+.loading-dot { width: 40rpx; height: 40rpx; border: 4rpx solid var(--line); border-top-color: var(--teal); border-radius: 50%; animation: spin 700ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

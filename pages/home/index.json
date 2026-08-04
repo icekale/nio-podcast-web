@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "custom-nav": "/components/custom-nav/index",
+    "artwork": "/components/artwork/index",
+    "state-view": "/components/state-view/index"
+  },
+  "disableScroll": false,
+  "enablePullDownRefresh": false
+}

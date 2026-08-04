@@ -1,0 +1,2 @@
+.artwork { display: block; flex: 0 0 auto; background: var(--surface-soft); }
+.artwork-empty { display: flex; align-items: center; justify-content: center; color: var(--teal-dark); font-size: 40rpx; }

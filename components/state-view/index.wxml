@@ -1,0 +1,6 @@
+<view class="state-view">
+  <view wx:if="{{kind === 'loading'}}" class="loading-dot" />
+  <text wx:if="{{title}}" class="state-title">{{title}}</text>
+  <text wx:if="{{message}}" class="state-message">{{message}}</text>
+  <button wx:if="{{actionText}}" class="primary-button" bindtap="onAction">{{actionText}}</button>
+</view>

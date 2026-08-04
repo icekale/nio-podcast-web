@@ -1,0 +1,8 @@
+.nav-wrap { position: sticky; top: 0; z-index: 20; background: var(--surface); }
+.nav-bar { display: flex; align-items: center; gap: 16rpx; min-height: 128rpx; padding: 0 32rpx; border-bottom: 2rpx solid var(--line); }
+.nav-bar.is-scrolled { box-shadow: 0 2rpx 0 var(--line); }
+.icon-button { display: flex; align-items: center; justify-content: center; width: 88rpx; height: 88rpx; border-radius: 999rpx; background: transparent; color: var(--ink); font-size: 44rpx; line-height: 1; }
+.icon-button-spacer { width: 88rpx; height: 88rpx; }
+.nav-title { flex: 1; min-width: 0; text-align: center; font-size: 34rpx; font-weight: 600; }
+.nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8rpx; min-width: 88rpx; }
+.continue-button { min-height: 88rpx; padding: 0 20rpx; color: var(--teal-dark); font-size: 25rpx; font-weight: 600; white-space: nowrap; background: transparent; }
