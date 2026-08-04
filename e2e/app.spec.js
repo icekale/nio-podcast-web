@@ -65,6 +65,15 @@ test.describe('app smoke', () => {
     expect(new Set(tops).size).toBe(1);
   });
 
+  test('grid card action sits below the artwork beside the title', async ({ page }) => {
+    await page.goto('/#/search');
+    await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
+    const first = page.locator('.album-results.is-grid .album-row').first();
+    const artBottom = await first.locator('.album-art').evaluate(element => element.getBoundingClientRect().bottom);
+    const actionTop = await first.locator('.album-action').evaluate(element => element.getBoundingClientRect().top);
+    expect(actionTop).toBeGreaterThanOrEqual(artBottom - 1);
+  });
+
   test('desktop favorites page renders', async ({ page }) => {
     await page.goto('/#/favorites');
     await expect(page.getByRole('heading', { name: '我的收藏' })).toBeVisible();

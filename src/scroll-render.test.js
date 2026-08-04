@@ -92,4 +92,9 @@ describe('mobile scroll rendering', () => {
   it('keeps grid card covers top-aligned within each row', () => {
     expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*align-items:\s*stretch/);
   });
+
+  it('places the grid card action beside the title row', () => {
+    expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*container-type:\s*inline-size/);
+    expect(css).toMatch(/\.album-results\.is-grid \.album-action\s*\{[^}]*top:\s*calc\(100cqw\s*\+\s*var\(--space-3\)\)/);
+  });
 });
