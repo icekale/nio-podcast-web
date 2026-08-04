@@ -2,6 +2,7 @@
   "usingComponents": {
     "custom-nav": "/components/custom-nav/index",
     "artwork": "/components/artwork/index",
+    "episode-row": "/components/episode-row/index",
     "state-view": "/components/state-view/index"
   },
   "disableScroll": false,

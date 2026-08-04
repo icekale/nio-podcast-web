@@ -39,22 +39,6 @@
 .section-heading { font-size: 50rpx; font-weight: 620; }
 .section-count { color: var(--muted); font-size: 30rpx; }
 .episode-list { border-top: 2rpx solid var(--line); }
-.episode-row { display: flex; align-items: center; gap: 32rpx; min-height: 184rpx; padding: 24rpx 0; border-bottom: 2rpx solid var(--line); }
-.episode-art { width: 136rpx; height: 136rpx; border-radius: 16rpx; }
-.episode-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; }
-.episode-title {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  color: var(--ink);
-  font-size: 32rpx;
-  line-height: 1.35;
-}
-.episode-row.is-active .episode-title { color: var(--teal-dark); }
-.episode-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10rpx; margin-top: 16rpx; color: var(--muted); font-size: 25rpx; }
-.meta-divider { color: var(--line); }
-.episode-progress-label { color: var(--teal-dark); }
 .empty-state { padding: 96rpx 32rpx; color: var(--muted-strong); text-align: center; }
 .notice-bar {
   display: flex;
@@ -74,6 +58,5 @@
   .recommendation-panel { grid-template-columns: 1fr; gap: 32rpx; padding-right: 32rpx; padding-left: 32rpx; }
   .recommendation-art { width: 184rpx; height: 184rpx; justify-self: end; }
   .updates-section { padding-right: 32rpx; padding-left: 32rpx; }
-  .episode-art { width: 120rpx; height: 120rpx; }
   .recommendation-h1 { font-size: 56rpx; }
 }

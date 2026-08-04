@@ -1,0 +1,16 @@
+<view class="episode-row {{active ? 'is-active' : ''}}" bindtap="onPlay">
+  <artwork class="episode-art" src="{{episode.albumPic}}" />
+  <view class="episode-copy">
+    <text class="episode-title">{{episode.title}}</text>
+    <view class="episode-meta">
+      <text>{{episode.albumName || 'NIO Radio'}}</text>
+      <text class="meta-divider">|</text>
+      <text>{{episode.durationLabel}}</text>
+      <text wx:if="{{episode.dateLabel}}"><text class="meta-divider">|</text>{{episode.dateLabel}}</text>
+      <text wx:if="{{progress > 0}}" class="episode-progress-label">已听{{progress}}%</text>
+    </view>
+  </view>
+  <view wx:if="{{showManage}}" class="episode-action">
+    <button class="icon-button" aria-label="管理 {{episode.title}}" catchtap="onManage">⋯</button>
+  </view>
+</view>

@@ -100,8 +100,7 @@ Page({
     }
   },
   onPlayEpisode(event) {
-    const id = event.currentTarget.dataset.id;
-    const episode = this.data.episodes.find(e => String(e.id) === String(id));
+    const episode = event.detail.episode;
     if (episode) require('../../services/player-store').playEpisode(episode, this.data.episodes);
   },
 });

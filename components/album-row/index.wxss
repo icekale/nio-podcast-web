@@ -1,0 +1,6 @@
+.album-result { display: flex; align-items: center; gap: 32rpx; min-height: 184rpx; padding: 24rpx 0; border-bottom: 2rpx solid var(--line); }
+.album-art { width: 136rpx; height: 136rpx; border-radius: 16rpx; }
+.album-result-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 8rpx; }
+.album-name { font-size: 32rpx; font-weight: 620; color: var(--ink); }
+.album-subtitle { overflow: hidden; color: var(--muted); font-size: 26rpx; text-overflow: ellipsis; white-space: nowrap; }
+.album-chevron { flex: 0 0 auto; color: var(--muted); font-size: 40rpx; }

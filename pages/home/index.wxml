@@ -41,25 +41,14 @@
         <text class="section-count">{{count}}</text>
       </view>
       <view wx:if="{{episodes.length}}" class="episode-list">
-        <view
+        <episode-row
           wx:for="{{episodes}}"
           wx:key="id"
-          class="episode-row {{player.currentEpisode && player.currentEpisode.id === item.id ? 'is-active' : ''}}"
-          data-id="{{item.id}}"
-          bindtap="onPlayEpisode"
-        >
-          <artwork class="episode-art" src="{{item.albumPic}}" />
-          <view class="episode-copy">
-            <text class="episode-title">{{item.title}}</text>
-            <view class="episode-meta">
-              <text>{{item.albumName || 'NIO Radio'}}</text>
-              <text class="meta-divider">|</text>
-              <text>{{item.durationLabel}}</text>
-              <text wx:if="{{item.dateLabel}}"><text class="meta-divider">|</text>{{item.dateLabel}}</text>
-              <text wx:if="{{item.progressPercent > 0}}" class="episode-progress-label">已听{{item.progressPercent}}%</text>
-            </view>
-          </view>
-        </view>
+          episode="{{item}}"
+          active="{{player.currentEpisode && player.currentEpisode.id === item.id}}"
+          progress="{{item.progressPercent}}"
+          bind:play="onPlayEpisode"
+        />
       </view>
       <view wx:else class="empty-state">暂无可播放的节目</view>
     </view>
