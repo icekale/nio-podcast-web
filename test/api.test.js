@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { ApiError, clearEpisodeCache, getEpisodes, normalizeAudioUrl } from '../utils/api';
+import { clearEpisodeCache, getEpisodes, normalizeAudioUrl } from '../utils/api';
 
 function responseFor(data) {
   return { statusCode: 200, data };
