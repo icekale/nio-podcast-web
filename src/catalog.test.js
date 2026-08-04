@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, isCityChannelAlbum, loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -38,6 +38,35 @@ describe('catalog selectors', () => {
     ];
 
     expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([5, 23, 7, 1]);
+  });
+
+  it('detects city-channel albums by name', () => {
+    expect(isCityChannelAlbum({ name: '上海天气预报' })).toBe(true);
+    expect(isCityChannelAlbum({ name: '广东城市资讯' })).toBe(true);
+    expect(isCityChannelAlbum({ name: '南京城市频道' })).toBe(true);
+    expect(isCityChannelAlbum({ name: 'NIO 精选' })).toBe(false);
+    expect(isCityChannelAlbum({ name: '' })).toBe(false);
+    expect(isCityChannelAlbum(null)).toBe(false);
+  });
+
+  it('sorts city-channel albums after every regular album', () => {
+    const albums = [
+      { id: 1, name: '上海天气预报', latestEpisode: episode(11, 400) },
+      { id: 2, name: 'NIO 精选', latestEpisode: episode(22, 300) },
+      { id: 3, name: '广东城市资讯', latestEpisode: episode(33, 200) },
+    ];
+    expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([2, 1, 3]);
+  });
+
+  it('places favorites first, then pinned, then city last', () => {
+    const albums = [
+      { id: 5, name: '资讯充电站·早间版', latestEpisode: episode(51, 100) },
+      { id: 23, name: '资讯充电站·晚间版', latestEpisode: episode(231, 200) },
+      { id: 7, name: '普通专辑', latestEpisode: episode(71, 300) },
+      { id: 8, name: '上海天气预报', latestEpisode: episode(81, 400) },
+      { id: 9, name: '另一张普通专辑', latestEpisode: episode(91, 500) },
+    ];
+    expect(sortAlbumsForDirectory(albums, [9, 5]).map(album => album.id)).toEqual([9, 5, 23, 7, 8]);
   });
 
   it('selects up to twelve episodes published on the requested day', () => {
