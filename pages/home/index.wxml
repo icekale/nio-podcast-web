@@ -58,4 +58,13 @@
       <button bindtap="onRetryCatalog">{{refreshing ? '刷新中' : '刷新目录'}}</button>
     </view>
   </block>
+
+  <mini-player
+    wx:if="{{player.currentEpisode}}"
+    player="{{player}}"
+    bind:toggle="onTogglePlayback"
+    bind:seek="onSeek"
+    bind:retry="onRetryAudio"
+    bind:openqueue="onOpenQueue"
+  />
 </view>

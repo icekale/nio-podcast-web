@@ -3,6 +3,7 @@
     "custom-nav": "/components/custom-nav/index",
     "artwork": "/components/artwork/index",
     "episode-row": "/components/episode-row/index",
+    "mini-player": "/components/mini-player/index",
     "state-view": "/components/state-view/index"
   },
   "disableScroll": false,

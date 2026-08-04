@@ -1,0 +1,30 @@
+<view class="mini-player">
+  <view class="mini-main">
+    <artwork class="mini-art" src="{{player.currentEpisode.albumPic}}" />
+    <view class="mini-copy">
+      <text class="mini-title">{{player.currentEpisode.title}}</text>
+      <text class="mini-album">{{player.currentEpisode.albumName || 'NIO Radio'}}</text>
+    </view>
+    <button class="player-control" aria-label="{{player.isPlaying ? '暂停' : '播放'}}" bindtap="onToggle">{{player.isPlaying ? '❚❚' : '▶'}}</button>
+    <button class="player-control queue-control" aria-label="打开播放列表" bindtap="onOpenQueue">☰</button>
+  </view>
+  <view class="mini-progress-row">
+    <text>{{elapsed}}</text>
+    <slider
+      class="progress-slider"
+      min="0"
+      max="{{durationSeconds}}"
+      step="1"
+      value="{{positionSeconds}}"
+      bindchanging="onSeek"
+      bindchange="onSeek"
+      block-size="22"
+      activeColor="#00b9b5"
+    />
+    <text>{{total}}</text>
+  </view>
+  <view wx:if="{{player.error}}" class="player-error">
+    <text>{{player.error}}</text>
+    <button bindtap="onRetry">重试</button>
+  </view>
+</view>

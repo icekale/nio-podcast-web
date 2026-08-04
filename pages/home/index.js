@@ -103,4 +103,10 @@ Page({
     const episode = event.detail.episode;
     if (episode) require('../../services/player-store').playEpisode(episode, this.data.episodes);
   },
+  onTogglePlayback() { require('../../services/player-store').togglePlayback(); },
+  onSeek(event) { require('../../services/player-store').seek(event.detail.position); },
+  onRetryAudio() { require('../../services/player-store').retryAudio(); },
+  onOpenQueue() {
+    wx.showToast({ title: '播放列表即将上线', icon: 'none' });
+  },
 });

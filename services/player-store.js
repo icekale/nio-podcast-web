@@ -186,6 +186,13 @@ function removeQueue(id) {
   if (!state.player.currentEpisode) bgm.stop();
 }
 
+function retryAudio() {
+  const current = state.player.currentEpisode;
+  if (!current) return;
+  setPlayer({ ...state.player, error: null, isPlaying: true }, { forceSave: true });
+  loadEpisode(current, true);
+}
+
 module.exports = {
   initPlayerStore,
   subscribe,
@@ -200,4 +207,5 @@ module.exports = {
   playLater,
   playNext,
   removeQueue,
+  retryAudio,
 };
