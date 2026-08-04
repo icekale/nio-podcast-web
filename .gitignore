@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+.superpowers/
+dist/
+project.private.config.json
+*.log
