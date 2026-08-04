@@ -114,7 +114,9 @@ Page({
   onOpenQueue() { this.setData({ queueOpen: true, queueTab: 'queue' }); },
   onCloseQueue() { this.setData({ queueOpen: false }); },
   onPlayQueue(event) {
-    require('../../services/player-store').playEpisode(event.detail.episode, this.data.player.queue);
+    const store = require('../../services/player-store');
+    if (this.data.queueTab === 'later') store.playLater(event.detail.episode);
+    else store.playEpisode(event.detail.episode, this.data.player.queue);
   },
   onPlayNext(event) { require('../../services/player-store').playNext(event.detail.episode); },
   onRemoveQueue(event) { require('../../services/player-store').removeQueue(event.detail.id); },
