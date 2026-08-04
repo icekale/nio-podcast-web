@@ -417,6 +417,8 @@ h1, h2, p { margin: 0; }
   .home-screen .updates-section { padding: var(--space-8) var(--space-6) 0; }
   .home-screen .episode-row { transition: background-color 160ms ease; }
   .home-screen .episode-row:hover { background: var(--surface-soft); }
+  .album-screen .episode-row, .later-picker .episode-row { transition: background-color 160ms ease; }
+  .album-screen .episode-row:hover, .later-picker .episode-row:hover { background: var(--surface-soft); }
 
   .route-view[data-route-motion="forward"], .route-view[data-route-motion="back"] { animation-duration: 240ms; }
   @keyframes route-forward-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
@@ -439,6 +441,7 @@ h1, h2, p { margin: 0; }
   .album-results.is-grid .album-result-copy strong { font-size: 0.95rem; }
   .album-results.is-grid .album-result-copy span { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
   .album-results.is-grid .album-results-more { grid-column: 1 / -1; }
+  .album-results.is-grid .album-result > svg { display: none; }
   .album-results.is-grid .album-result { transition: transform 160ms ease, box-shadow 160ms ease; }
   .album-results.is-grid .album-result:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 28, 47, 0.10); }
   .album-results.is-grid .album-result:active { transform: scale(0.98); }

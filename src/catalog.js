@@ -30,12 +30,13 @@ export function sortAlbumsForDirectory(albums) {
   return [...pinned, ...sortAlbumsByLatest(rest)];
 }
 
-function sameLocalDay(left, right) {
-  const a = new Date(left);
-  const b = new Date(right);
-  return a.getFullYear() === b.getFullYear()
-    && a.getMonth() === b.getMonth()
-    && a.getDate() === b.getDate();
+function beijingDayKey(timestamp) {
+  const shifted = new Date(Number(timestamp) + 8 * 60 * 60 * 1000);
+  return `${shifted.getUTCFullYear()}-${shifted.getUTCMonth()}-${shifted.getUTCDate()}`;
+}
+
+function sameBeijingDay(left, right) {
+  return beijingDayKey(left) === beijingDayKey(right);
 }
 
 export function selectHomeEpisodes(albums, now = new Date()) {
@@ -49,7 +50,7 @@ export function selectHomeEpisodes(albums, now = new Date()) {
       seenEpisodeIds.add(id);
       return true;
     });
-  const today = latest.filter(episode => sameLocalDay(episode.onlineTime, now)).slice(0, 12);
+  const today = latest.filter(episode => sameBeijingDay(episode.onlineTime, now)).slice(0, 12);
   return {
     heading: today.length ? '今日更新' : '最新更新',
     episodes: (today.length ? today : latest.slice(0, 12)),

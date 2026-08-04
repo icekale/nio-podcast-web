@@ -61,6 +61,15 @@ describe('catalog selectors', () => {
     expect(result.episodes.map(item => item.id)).toEqual([11, 22]);
   });
 
+  it('groups updates by Beijing date regardless of the device timezone', () => {
+    // Beijing 08/04 07:00 equals 08/03 23:00 UTC; the device "now" is 08/04 01:00 UTC.
+    const beijingMorning = new Date('2026-08-03T23:00:00Z').getTime();
+    const albums = [{ id: 1, latestEpisode: episode(1, beijingMorning) }];
+    const result = selectHomeEpisodes(albums, new Date('2026-08-04T01:00:00Z'));
+    expect(result.heading).toBe('今日更新');
+    expect(result.episodes.map(item => item.id)).toEqual([1]);
+  });
+
   it('deduplicates the same latest episode mirrored by multiple albums', () => {
     const albums = [
       { id: 2, latestEpisode: episode(42, 3, '同一节目') },
