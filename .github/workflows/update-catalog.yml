@@ -112,3 +112,9 @@ jobs:
           git commit -m "chore: update podcast catalog"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Trigger Pages deployment
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY"
