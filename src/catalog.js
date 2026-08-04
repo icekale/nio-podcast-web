@@ -30,13 +30,13 @@ export function sortAlbumsForDirectory(albums) {
   return [...pinned, ...sortAlbumsByLatest(rest)];
 }
 
-function beijingDayKey(timestamp) {
+export function getBeijingDayKey(timestamp = Date.now()) {
   const shifted = new Date(Number(timestamp) + 8 * 60 * 60 * 1000);
   return `${shifted.getUTCFullYear()}-${shifted.getUTCMonth()}-${shifted.getUTCDate()}`;
 }
 
 function sameBeijingDay(left, right) {
-  return beijingDayKey(left) === beijingDayKey(right);
+  return getBeijingDayKey(left) === getBeijingDayKey(right);
 }
 
 export function selectHomeEpisodes(albums, now = new Date()) {

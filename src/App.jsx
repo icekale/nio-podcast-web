@@ -169,7 +169,19 @@ function LaterEpisodeAction({ episode, onAdd }) {
 
 function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
-  const selection = useMemo(() => selectHomeEpisodes(catalog.albums, new Date()), [catalog.albums]);
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const refresh = () => setNow(new Date());
+    const timer = window.setInterval(refresh, 60 * 1000);
+    document.addEventListener('visibilitychange', refresh);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener('visibilitychange', refresh);
+    };
+  }, []);
+
+  const selection = useMemo(() => selectHomeEpisodes(catalog.albums, now), [catalog.albums, now]);
   const recommendation = selection.episodes[0];
 
   useEffect(() => {

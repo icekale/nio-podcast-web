@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -68,6 +68,11 @@ describe('catalog selectors', () => {
     const result = selectHomeEpisodes(albums, new Date('2026-08-04T01:00:00Z'));
     expect(result.heading).toBe('今日更新');
     expect(result.episodes.map(item => item.id)).toEqual([1]);
+  });
+
+  it('derives the Beijing calendar day regardless of the device timezone', () => {
+    expect(getBeijingDayKey(new Date('2026-08-03T23:00:00Z').getTime())).toBe('2026-7-4');
+    expect(getBeijingDayKey(new Date('2026-08-03T15:59:59Z').getTime())).toBe('2026-7-3');
   });
 
   it('deduplicates the same latest episode mirrored by multiple albums', () => {
