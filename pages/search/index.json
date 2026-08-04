@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "album-row": "/components/album-row/index",
+    "state-view": "/components/state-view/index"
+  },
+  "enablePullDownRefresh": false
+}
