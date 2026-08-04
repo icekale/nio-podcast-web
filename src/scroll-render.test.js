@@ -88,4 +88,8 @@ describe('mobile scroll rendering', () => {
     expect(css).not.toMatch(/\.home-screen\s*\{[^}]*grid-template-columns:\s*minmax\(320px,\s*38%\)/);
     expect(css).toMatch(/\.home-screen \.updates-section\s*\{[^}]*padding:\s*var\(--space-8\)\s*var\(--space-6\)\s*0/);
   });
+
+  it('keeps grid card covers top-aligned within each row', () => {
+    expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*align-items:\s*stretch/);
+  });
 });
