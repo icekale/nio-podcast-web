@@ -83,7 +83,7 @@ function writeCatalogCache(catalog, storage = globalThis.localStorage) {
   }
 }
 
-async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = import.meta.env.BASE_URL) {
+async function loadCatalog(fetchImpl = globalThis.fetch, baseUrl = '') {
   const cached = readCatalogCache();
   if (cached && Date.now() - cached.generatedAt < CATALOG_CACHE_FRESH_MS) {
     return { catalog: cached, stale: false, cached: true };
