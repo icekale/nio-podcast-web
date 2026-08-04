@@ -1,0 +1,10 @@
+page {
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 32rpx;
+  line-height: 1.45;
+}
+button, input { font: inherit; }
+button::after { border: 0; }
+view, text, image, button { box-sizing: border-box; }

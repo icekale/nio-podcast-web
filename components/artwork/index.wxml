@@ -1,0 +1,2 @@
+<image wx:if="{{src && !failed}}" class="artwork {{className}}" src="{{src}}" mode="aspectFill" binderror="onError" />
+<view wx:else class="artwork artwork-empty {{className}}">♪</view>

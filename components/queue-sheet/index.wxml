@@ -1,0 +1,108 @@
+<view wx:if="{{visible}}" class="queue-overlay {{closing ? 'is-closing' : ''}}" catchtouchmove="onNoop">
+  <view class="queue-backdrop" bindtap="onClose" />
+  <view class="queue-sheet {{closing ? 'is-closing' : ''}}">
+    <view class="sheet-handle" />
+    <view class="sheet-header">
+      <text class="sheet-title">播放列表</text>
+      <button class="icon-button" aria-label="收起播放列表" bindtap="onClose">×</button>
+    </view>
+
+    <view class="queue-tabs">
+      <button class="queue-tab {{tab === 'queue' ? 'is-selected' : ''}}" data-tab="queue" bindtap="onTab">
+        播放列表 <text>{{player.queue.length}}</text>
+      </button>
+      <button class="queue-tab {{tab === 'history' ? 'is-selected' : ''}}" data-tab="history" bindtap="onTab">
+        最近听过 <text>{{player.history.length}}</text>
+      </button>
+      <button class="queue-tab {{tab === 'later' ? 'is-selected' : ''}}" data-tab="later" bindtap="onTab">
+        稍后播放 <text>{{later.length}}</text>
+      </button>
+    </view>
+
+    <view wx:if="{{tab === 'later' && !pickerOpen}}" class="later-add-row">
+      <text>保存的节目</text>
+      <button class="secondary-button" bindtap="onOpenPicker">＋ 添加节目</button>
+    </view>
+
+    <scroll-view class="queue-scroll" scroll-y>
+      <block wx:if="{{pickerOpen}}">
+        <view class="later-picker-header">
+          <button class="icon-button" aria-label="返回添加节目" bindtap="onClosePicker">‹</button>
+          <text class="later-picker-title">{{pickerAlbumName || '添加节目'}}</text>
+          <view class="icon-button-spacer" />
+        </view>
+        <view wx:if="{{!pickerAlbumId}}" class="album-results">
+          <album-row wx:for="{{albumSource}}" wx:key="id" album="{{item}}" bind:open="onSelectAlbum" />
+        </view>
+        <block wx:else>
+          <view wx:if="{{pickerLoading}}" class="loading-state">正在加载节目…</view>
+          <view wx:elif="{{pickerError}}" class="inline-error">节目加载失败，请重试</view>
+          <view wx:else class="episode-list">
+            <view
+              wx:for="{{pickerEpisodes}}"
+              wx:key="id"
+              class="episode-row picker-episode-row"
+              data-id="{{item.id}}"
+              bindtap="onAddLater"
+            >
+              <artwork class="episode-art" src="{{item.albumPic}}" />
+              <view class="episode-copy">
+                <text class="episode-title">{{item.title}}</text>
+                <text class="episode-meta">{{item.durationLabel}}</text>
+              </view>
+              <text class="picker-plus">＋</text>
+            </view>
+          </view>
+        </block>
+      </block>
+
+      <block wx:elif="{{items.length}}">
+        <view
+          wx:for="{{items}}"
+          wx:key="index"
+          class="queue-row {{item.active ? 'is-current' : ''}} {{tab === 'later' ? 'later-row' : ''}} {{swipedId === item.id ? 'is-swiped' : ''}} {{actionsFor === item.id || laterActionsFor === item.id ? 'is-menu-open' : ''}}"
+          data-id="{{item.id}}"
+          bindtouchstart="onRowTouchStart"
+          bindtouchmove="onRowTouchMove"
+          bindtouchend="onRowTouchEnd"
+          bindlongpress="onRowLongPress"
+        >
+          <button
+            wx:if="{{tab === 'later'}}"
+            class="later-swipe-action"
+            data-id="{{item.id}}"
+            bindtap="onRemoveLater"
+          >移除</button>
+          <view class="queue-row-main" data-id="{{item.id}}" bindtap="onPlay">
+            <artwork class="queue-art" src="{{item.albumPic}}" />
+            <view class="queue-copy">
+              <text class="queue-title">{{item.title}}</text>
+              <text class="queue-meta">{{item.albumName || 'NIO Radio'}} · {{item.durationLabel}}</text>
+            </view>
+            <text wx:if="{{item.active}}" class="queue-playing">♪</text>
+          </view>
+          <view wx:if="{{tab === 'queue'}}" class="queue-actions">
+            <button class="icon-button" data-id="{{item.id}}" bindtap="onToggleActions">⋯</button>
+            <view wx:if="{{actionsFor === item.id}}" class="row-action-menu">
+              <button bindtap="onPlayNext">下一首播放</button>
+              <button bindtap="onRemoveQueue">移出列表</button>
+            </view>
+          </view>
+          <view wx:elif="{{tab === 'later'}}" class="later-actions">
+            <button class="icon-button" data-id="{{item.id}}" bindtap="onToggleLaterActions">⋯</button>
+            <view wx:if="{{laterActionsFor === item.id}}" class="row-action-menu">
+              <button data-from="{{item.index}}" data-to="{{item.index - 1}}" disabled="{{item.index === 0}}" bindtap="onMoveLater">上移</button>
+              <button data-from="{{item.index}}" data-to="{{item.index + 1}}" disabled="{{item.index === items.length - 1}}" bindtap="onMoveLater">下移</button>
+              <button data-id="{{item.id}}" bindtap="onRemoveLater">移除</button>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <view wx:else class="queue-empty">
+        <text class="queue-empty-title">{{tab === 'queue' ? '播放列表是空的' : tab === 'history' ? '还没有听过的节目' : '稍后播放是空的'}}</text>
+        <text class="queue-empty-hint">选择一个节目后，它会出现在这里</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

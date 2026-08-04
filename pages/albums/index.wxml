@@ -1,0 +1,51 @@
+<view class="screen albums-screen">
+  <custom-nav title="全部专辑" showBack bind:back="onBack" showSearch bind:search="onOpenSearch" />
+
+  <view class="search-results">
+    <view class="section-heading-row">
+      <text class="section-heading">全部专辑</text>
+      <text class="section-count">{{total}}</text>
+    </view>
+
+    <view wx:if="{{loading && !albums.length}}" class="loading-state">
+      <state-view kind="loading" message="正在准备 NIO Radio…" />
+    </view>
+    <view wx:elif="{{error && !albums.length}}" class="loading-state">
+      <state-view kind="error" title="目录暂时无法加载" actionText="重新加载" bind:action="onRetryCatalog" />
+    </view>
+    <block wx:else>
+      <view class="album-results">
+        <album-row wx:for="{{visibleAlbums}}" wx:key="id" album="{{item}}" bind:open="onOpenAlbum" />
+      </view>
+      <button
+        wx:if="{{visibleCount < albums.length}}"
+        class="load-more-button"
+        bindtap="onLoadMore"
+      >加载更多专辑</button>
+    </block>
+  </view>
+
+  <mini-player
+    wx:if="{{player.currentEpisode}}"
+    player="{{player}}"
+    bind:toggle="onTogglePlayback"
+    bind:seek="onSeek"
+    bind:retry="onRetryAudio"
+    bind:openqueue="onOpenQueue"
+  />
+
+  <queue-sheet
+    visible="{{queueOpen}}"
+    tab="{{queueTab}}"
+    player="{{player}}"
+    later="{{later}}"
+    catalog="{{catalog}}"
+    bind:close="onCloseQueue"
+    bind:play="onPlayQueue"
+    bind:playnext="onPlayNext"
+    bind:removequeue="onRemoveQueue"
+    bind:addlater="onAddLaterQueue"
+    bind:removelater="onRemoveLater"
+    bind:movelater="onMoveLater"
+  />
+</view>

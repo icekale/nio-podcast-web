@@ -1,0 +1,18 @@
+.episode-row { display: flex; align-items: center; gap: 32rpx; min-height: 184rpx; padding: 24rpx 0; border-bottom: 2rpx solid var(--line); }
+.episode-art { width: 136rpx; height: 136rpx; border-radius: 16rpx; }
+.episode-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.episode-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 32rpx;
+  line-height: 1.35;
+}
+.episode-row.is-active .episode-title { color: var(--teal-dark); }
+.episode-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10rpx; margin-top: 16rpx; color: var(--muted); font-size: 25rpx; }
+.meta-divider { color: var(--line); }
+.episode-progress-label { color: var(--teal-dark); }
+.icon-button { display: flex; align-items: center; justify-content: center; width: 88rpx; height: 88rpx; border-radius: 999rpx; background: transparent; color: var(--ink); font-size: 40rpx; line-height: 1; }
+.episode-action { position: relative; flex: 0 0 auto; }

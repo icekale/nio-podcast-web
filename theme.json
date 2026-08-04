@@ -1,0 +1,26 @@
+{
+  "light": {
+    "--surface": "#ffffff",
+    "--surface-soft": "#f5f8f9",
+    "--aqua": "#e7f7f7",
+    "--teal": "#00b9b5",
+    "--teal-dark": "#006f6d",
+    "--ink": "#08162e",
+    "--muted": "#5f6b7b",
+    "--muted-strong": "#4b586b",
+    "--line": "#e8edf0",
+    "--danger": "#b53939"
+  },
+  "dark": {
+    "--surface": "#101a27",
+    "--surface-soft": "#182433",
+    "--aqua": "#133239",
+    "--teal": "#2bd0c6",
+    "--teal-dark": "#8af5eb",
+    "--ink": "#f0f6fa",
+    "--muted": "#b8c4ce",
+    "--muted-strong": "#d3dde5",
+    "--line": "#2b3949",
+    "--danger": "#ff9292"
+  }
+}

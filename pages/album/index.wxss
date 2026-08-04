@@ -1,0 +1,15 @@
+.screen { min-height: 100vh; }
+.album-screen { padding-bottom: calc(260rpx + env(safe-area-inset-bottom)); }
+.album-content { padding: 64rpx 40rpx 0; }
+.album-intro { display: flex; align-items: center; gap: 32rpx; padding-bottom: 48rpx; }
+.album-hero-art { width: 176rpx; height: 176rpx; border-radius: 16rpx; }
+.album-intro-copy { display: flex; min-width: 0; flex-direction: column; }
+.album-intro-heading { font-size: 38rpx; font-weight: 620; }
+.album-intro-desc { margin-top: 16rpx; color: var(--muted-strong); font-size: 26rpx; }
+.inline-error { display: flex; align-items: center; justify-content: space-between; gap: 16rpx; margin-bottom: 32rpx; padding: 24rpx 0; color: var(--danger); font-size: 27rpx; }
+.inline-error button { color: var(--teal-dark); background: var(--surface-soft); border-radius: 16rpx; font-size: 26rpx; padding: 16rpx 20rpx; }
+.loading-state, .loading-more { padding: 64rpx 0; color: var(--muted); text-align: center; }
+.episode-list { border-top: 2rpx solid var(--line); }
+.empty-state { padding: 96rpx 32rpx; color: var(--muted-strong); text-align: center; }
+.secondary-button { min-height: 88rpx; border-radius: 16rpx; background: var(--surface-soft); color: var(--teal-dark); font-weight: 650; }
+.load-more-button { width: 100%; margin-top: 32rpx; }
