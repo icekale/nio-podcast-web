@@ -21,14 +21,17 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('Asia/Shanghai');
   });
 
-  it('commits catalog changes and leaves Pages publication to the main deployment workflow', () => {
+  it('commits catalog changes and deploys Pages directly from the catalog workflow', () => {
     const workflow = readFileSync(resolve(process.cwd(), '.github/workflows/update-catalog.yml'), 'utf8');
     const commit = workflow.indexOf('- name: Commit catalog state');
+    const deploy = workflow.indexOf('- name: Deploy GitHub Pages');
 
     expect(commit).toBeGreaterThanOrEqual(0);
-    expect(workflow).not.toContain('npm run deploy');
+    expect(deploy).toBeGreaterThan(commit);
+    expect(workflow).toContain('npm run deploy');
+    expect(workflow).not.toContain('gh workflow run');
 
-    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state']) {
+    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state', 'Deploy GitHub Pages']) {
       const start = workflow.indexOf(`- name: ${step}`);
       const end = workflow.indexOf('\n      - name:', start + 1);
       const block = workflow.slice(start, end < 0 ? undefined : end);
