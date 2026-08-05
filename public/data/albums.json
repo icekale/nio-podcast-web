@@ -1,6 +1,27 @@
 {
-  "generatedAt": 1785866071415,
+  "generatedAt": 1785891304621,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 499,
+      "latestEpisode": {
+        "id": 196707,
+        "title": "《奥德赛》把爆米花装进特洛伊木马，好莱坞大片为何扎堆定制爆米花桶？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "albumDesc": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+        "host": "NIO Radio",
+        "duration": 835000,
+        "onlineTime": 1785884400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/RJd3MoNgBaAyzEmE_AAC_192_1.m4a",
+        "fileSize": 20332309
+      }
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -650,27 +671,6 @@
         "onlineTime": 1785834000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/M00CvFV8PLcVyux8_AAC_192_1.m4a",
         "fileSize": 1105081
-      }
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 498,
-      "latestEpisode": {
-        "id": 196670,
-        "title": "「蜘蛛侠」新片拿下近半国内票房，AI 模型爆发价格战",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "albumDesc": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-        "host": "NIO Radio",
-        "duration": 645000,
-        "onlineTime": 1785798000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/lsCih4DtCZTYtBe8_AAC_192_1.m4a",
-        "fileSize": 15721141
       }
     },
     {
