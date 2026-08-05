@@ -30,7 +30,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: nio-catalog-update
@@ -124,8 +123,6 @@ jobs:
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Trigger Pages deployment
+      - name: Deploy GitHub Pages
         if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY"
+        run: npm run deploy
