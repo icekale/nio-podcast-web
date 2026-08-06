@@ -142,3 +142,4 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
+        timeout-minutes: 30
