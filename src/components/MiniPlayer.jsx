@@ -6,6 +6,12 @@ export function MiniPlayer({ player, isPlaying, audioError, onToggle, onRetry, o
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
   return (
     <section className={`mini-player${isClosing ? ' is-closing' : ''}`} aria-label="当前播放" onAnimationEnd={event => { if (isClosing && event.animationName === 'mini-player-out') onExited?.(); }}>
+      {player.currentEpisode.albumPic ? (
+        <>
+          <img className="mini-art-bg" src={player.currentEpisode.albumPic} alt="" aria-hidden="true" decoding="async" />
+          <span className="mini-scrim" aria-hidden="true" />
+        </>
+      ) : null}
       <div className="mini-main">
         <Artwork src={player.currentEpisode.albumPic} alt="" className="mini-art" />
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
