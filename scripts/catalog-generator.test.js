@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   assertCatalogScanHasSuccess,
+  mergeKnownAlbums,
   reconcileFullScan,
   requestAlbum,
   sameCatalogContent,
@@ -67,6 +68,50 @@ describe('catalog generator', () => {
       failedIds: [2],
       missingIds: [3],
     });
+  });
+
+  it('trims heavy latest-episode fields from generated albums', async () => {
+    const fetchImpl = async () => ({ ok: true, json: async () => ({ result: {
+      dataList: [{
+        audioId: 10,
+        albumId: 1,
+        audioName: '第一集',
+        albumName: '专辑 A',
+        albumPic: 'pic',
+        albumDesc: 'x'.repeat(200),
+        duration: 60000,
+        onlineTime: 1000,
+        aacPlayUrl192: 'http://cdn.example/a.aac',
+        aacFileSize192: 88888,
+        host: ['A', 'B'],
+      }],
+      totalCount: 3,
+    } }) });
+
+    const album = await requestAlbum(1, fetchImpl);
+    expect(album.latestEpisode.albumDesc).toBeUndefined();
+    expect(album.latestEpisode.fileSize).toBeUndefined();
+    expect(album.latestEpisode.title).toBe('第一集');
+    expect(album.latestEpisode.audioUrl).toBe('https://cdn.example/a.aac');
+    expect(album.latestEpisode.host).toBe('A, B');
+    expect(album.description).toBe('x'.repeat(200));
+  });
+
+  it('trims heavy fields from preserved albums during merge and reconcile', async () => {
+    const previous = [{
+      id: 1,
+      name: '专辑 A',
+      latestEpisode: { id: 10, title: '旧集', albumDesc: 'old desc', fileSize: 12345, audioUrl: 'https://cdn.example/a.aac' },
+    }];
+    const merged = mergeKnownAlbums(previous, { albums: [], failedIds: [], missingIds: [] });
+    expect(merged[0].latestEpisode.albumDesc).toBeUndefined();
+    expect(merged[0].latestEpisode.fileSize).toBeUndefined();
+    expect(merged[0].latestEpisode.audioUrl).toBe('https://cdn.example/a.aac');
+
+    const reconciled = reconcileFullScan(previous, { albums: [], failedIds: [1], missingIds: [] });
+    expect(reconciled.albums[0].latestEpisode.albumDesc).toBeUndefined();
+    expect(reconciled.albums[0].latestEpisode.fileSize).toBeUndefined();
+    expect(reconciled.albums[0].latestEpisode.audioUrl).toBe('https://cdn.example/a.aac');
   });
 
   it('passes an abort signal through requestAlbum to fetch', async () => {

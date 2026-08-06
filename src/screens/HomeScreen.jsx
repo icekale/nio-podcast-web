@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { List, Play, Search } from 'lucide-react';
 import { selectHomeEpisodes } from '../catalog';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
 
-export function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onSearch, onOpenAlbums }) {
+export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
@@ -84,5 +84,5 @@ export function HomeScreen({ catalog, player, stale, refreshing = false, catalog
       {(stale || refreshing || catalogError) ? <div className="notice-bar" role={catalogError ? 'alert' : 'status'}>{refreshing ? '正在刷新目录…' : catalogError ? '目录刷新失败，继续使用缓存内容' : '显示的是上次缓存的目录'} <button type="button" onClick={onRetry}>{refreshing ? '刷新中' : '刷新目录'}</button></div> : null}
     </div>
   );
-}
+});
 

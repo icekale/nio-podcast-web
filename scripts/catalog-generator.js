@@ -3,6 +3,27 @@ import { normalizeAudioUrl } from '../src/api.js';
 
 const API_URL = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 
+const LATEST_EPISODE_FIELDS = [
+  'id',
+  'title',
+  'albumId',
+  'albumName',
+  'albumPic',
+  'host',
+  'duration',
+  'onlineTime',
+  'audioUrl',
+];
+
+function trimLatestEpisode(episode) {
+  if (!episode) return episode;
+  const trimmed = {};
+  for (const field of LATEST_EPISODE_FIELDS) {
+    if (episode[field] !== undefined) trimmed[field] = episode[field];
+  }
+  return trimmed;
+}
+
 function mapEpisode(ep) {
   const host = Array.isArray(ep.host)
     ? ep.host.join(', ')
@@ -15,12 +36,10 @@ function mapEpisode(ep) {
     albumId: ep.albumId,
     albumName: ep.albumName || '',
     albumPic: ep.albumPic || '',
-    albumDesc: ep.albumDesc || '',
     host: host || ep.singer || '',
     duration: ep.duration,
     onlineTime: ep.onlineTime,
     audioUrl: normalizeAudioUrl(ep.aacPlayUrl192 || ep.aacPlayUrl128 || ep.mp3PlayUrl64 || ''),
-    fileSize: ep.aacFileSize192,
   };
 }
 
@@ -99,7 +118,11 @@ export async function scanCatalog(ids, requestAlbum, concurrency = 12, requestTi
 export function mergeKnownAlbums(previousAlbums, scanResult) {
   const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
   const refreshedById = new Map((scanResult?.albums || []).map(album => [Number(album.id), album]));
-  return sortGeneratedAlbums(previous.map(album => refreshedById.get(Number(album.id)) || album));
+  return sortGeneratedAlbums(previous.map(album => {
+    const refreshed = refreshedById.get(Number(album.id));
+    if (refreshed) return refreshed;
+    return album?.latestEpisode ? { ...album, latestEpisode: trimLatestEpisode(album.latestEpisode) } : album;
+  }));
 }
 
 export async function updateKnownAlbums(previousAlbums, requestAlbum, concurrency = 12) {
@@ -149,8 +172,9 @@ export function reconcileFullScan(previousAlbums, scanResult) {
   for (const album of previous) {
     const id = Number(album.id);
     if (!discoveredById.has(id) && failedIds.has(id)) {
-      albums.push(album);
-      preserved.push(album);
+      const preservedAlbum = album?.latestEpisode ? { ...album, latestEpisode: trimLatestEpisode(album.latestEpisode) } : album;
+      albums.push(preservedAlbum);
+      preserved.push(preservedAlbum);
     }
   }
   const sortedAlbums = sortGeneratedAlbums(albums);

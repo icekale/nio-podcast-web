@@ -1,5 +1,29 @@
 export const LATER_PLAYBACK_STORAGE_KEY = 'nio_play_later_v1';
 
+const MAX_LATER_EPISODES = 200;
+
+const SERIALIZED_EPISODE_FIELDS = [
+  'id',
+  'title',
+  'albumId',
+  'albumName',
+  'albumPic',
+  'host',
+  'duration',
+  'onlineTime',
+  'audioUrl',
+];
+
+function serializeEpisode(episode) {
+  const normalized = normalizeEpisode(episode);
+  if (!normalized) return null;
+  const serialized = {};
+  for (const field of SERIALIZED_EPISODE_FIELDS) {
+    if (normalized[field] !== undefined) serialized[field] = normalized[field];
+  }
+  return serialized;
+}
+
 function normalizeEpisode(episode) {
   if (!episode || episode.id == null) return null;
   return { ...episode };
@@ -38,7 +62,8 @@ export function moveLaterEpisode(items, fromIndex, toIndex) {
 export function readLaterEpisodes(storage = globalThis.localStorage) {
   try {
     const parsed = JSON.parse(storage?.getItem(LATER_PLAYBACK_STORAGE_KEY) || '[]');
-    return Array.isArray(parsed) ? uniqueEpisodes(parsed) : [];
+    if (!Array.isArray(parsed)) return [];
+    return uniqueEpisodes(parsed).map(serializeEpisode).filter(Boolean).slice(0, MAX_LATER_EPISODES);
   } catch {
     return [];
   }
@@ -46,7 +71,11 @@ export function readLaterEpisodes(storage = globalThis.localStorage) {
 
 export function writeLaterEpisodes(items, storage = globalThis.localStorage) {
   try {
-    storage?.setItem(LATER_PLAYBACK_STORAGE_KEY, JSON.stringify(uniqueEpisodes(items)));
+    const serialized = uniqueEpisodes(items)
+      .map(serializeEpisode)
+      .filter(Boolean)
+      .slice(0, MAX_LATER_EPISODES);
+    storage?.setItem(LATER_PLAYBACK_STORAGE_KEY, JSON.stringify(serialized));
     return true;
   } catch {
     return false;

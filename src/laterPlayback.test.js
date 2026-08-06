@@ -42,4 +42,34 @@ describe('later playback state', () => {
     storage.value = '{bad json';
     expect(readLaterEpisodes(storage)).toEqual([]);
   });
+
+  it('trims heavy fields from persisted episodes', () => {
+    const storage = { value: '', getItem: () => storage.value, setItem: (_key, value) => { storage.value = value; } };
+    const rich = { ...episode(1), albumDesc: 'x'.repeat(200), fileSize: 999999 };
+    writeLaterEpisodes([rich], storage);
+    const read = readLaterEpisodes(storage);
+    expect(read[0].albumDesc).toBeUndefined();
+    expect(read[0].fileSize).toBeUndefined();
+    expect(read[0].audioUrl).toBe('https://cdn.example/1.aac');
+    expect(read[0].title).toBe('节目 1');
+  });
+
+  it('caps the persisted list at 200 entries', () => {
+    const storage = { value: '', getItem: () => storage.value, setItem: (_key, value) => { storage.value = value; } };
+    const many = Array.from({ length: 250 }, (_, index) => episode(index + 1));
+    writeLaterEpisodes(many, storage);
+    expect(readLaterEpisodes(storage).length).toBe(200);
+  });
+
+  it('trims heavy fields from already-persisted legacy data on read', () => {
+    const storage = {
+      value: JSON.stringify([{ ...episode(7), albumDesc: 'legacy desc', fileSize: 777 }]),
+      getItem: () => storage.value,
+      setItem: (_key, value) => { storage.value = value; },
+    };
+    const read = readLaterEpisodes(storage);
+    expect(read[0].albumDesc).toBeUndefined();
+    expect(read[0].fileSize).toBeUndefined();
+    expect(read[0].id).toBe(7);
+  });
 });
