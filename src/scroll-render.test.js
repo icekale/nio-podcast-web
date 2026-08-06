@@ -49,7 +49,7 @@ describe('mobile scroll rendering', () => {
 
   it('allows the mobile shell to shrink for 200% text zoom', () => {
     expect(css).not.toMatch(/body\s*\{[^}]*min-width:\s*320px/);
-    expect(css).toMatch(/@media\s*\(max-width:\s*359px\)[\s\S]*\.recommendation-panel[^}]*grid-template-columns:\s*1fr/);
+    expect(css).toMatch(/@media\s*\(max-width:\s*359px\)[\s\S]*\.recommendation-panel[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*5\.75rem/);
   });
 
   it('keeps large album lists progressively rendered', () => {
