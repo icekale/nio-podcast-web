@@ -186,7 +186,7 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
   );
 }
 
-export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisode, currentEpisodeId, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove, catalog, onAddLater, onRemoveLater, onMoveLater }) {
+export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove, catalog, onAddLater, onRemoveLater, onMoveLater }) {
   const closeRef = useRef(null);
   const dialogRef = useRef(null);
   const startY = useRef(null);
@@ -289,12 +289,6 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
     <div className={`queue-overlay${isClosing ? ' is-closing' : ''}`}>
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
       <section ref={dialogRef} className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.target.closest('.queue-scroll') ? null : event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }} onPointerCancel={() => { startY.current = null; }}>
-        {currentEpisode?.albumPic ? (
-          <>
-            <img className="queue-art-bg" src={currentEpisode.albumPic} alt="" aria-hidden="true" decoding="async" />
-            <span className="queue-scrim" aria-hidden="true" />
-          </>
-        ) : null}
         <div className="sheet-handle" aria-hidden="true" />
         <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
