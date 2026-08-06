@@ -1,0 +1,8 @@
+<view class="album-result" bindtap="onOpen">
+  <artwork class="album-art" src="{{album.imageUrl}}" />
+  <view class="album-result-copy">
+    <text class="album-name">{{album.name}}</text>
+    <text class="album-subtitle">{{album.subtitle || album.latestEpisode.title || album.description || '暂无节目'}}</text>
+  </view>
+  <text class="album-chevron">›</text>
+</view>

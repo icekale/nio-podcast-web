@@ -1,0 +1,15 @@
+<view class="nav-wrap" style="padding-top: {{statusBarHeight}}px;">
+  <view class="nav-bar {{scrolled ? 'is-scrolled' : ''}}">
+    <button wx:if="{{showBack}}" class="icon-button" aria-label="返回" bindtap="onBack">‹</button>
+    <button wx:else class="icon-button" aria-label="全部专辑" bindtap="onAlbums">☰</button>
+    <view class="nav-title">
+      <text class="nav-title-text">{{title}}</text>
+      <text wx:if="{{subtitle}}" class="nav-subtitle">{{subtitle}}</text>
+    </view>
+    <view class="nav-actions">
+      <button wx:if="{{showContinue}}" class="continue-button" bindtap="onContinue">▶ 继续播放</button>
+      <button wx:if="{{showSearch}}" class="icon-button" aria-label="搜索" bindtap="onSearch">⌕</button>
+      <view wx:else class="icon-button-spacer" />
+    </view>
+  </view>
+</view>

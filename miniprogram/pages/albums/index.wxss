@@ -1,0 +1,18 @@
+.screen { min-height: 100vh; }
+.albums-screen { padding-bottom: calc(260rpx + env(safe-area-inset-bottom)); }
+.search-results { padding: 64rpx 40rpx 0; }
+.section-heading-row { display: flex; align-items: baseline; gap: 16rpx; margin-bottom: 32rpx; }
+.section-heading { font-size: 50rpx; font-weight: 620; }
+.section-count { color: var(--muted); font-size: 30rpx; }
+.album-results { border-top: 2rpx solid var(--line); }
+.loading-state { padding: 96rpx 0; }
+.load-more-button {
+  width: 100%;
+  margin-top: 32rpx;
+  padding: 32rpx 24rpx;
+  color: var(--teal-dark);
+  background: transparent;
+  font-size: 27rpx;
+  font-weight: 650;
+  text-align: center;
+}

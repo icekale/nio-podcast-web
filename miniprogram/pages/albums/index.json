@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "custom-nav": "/components/custom-nav/index",
+    "album-row": "/components/album-row/index",
+    "mini-player": "/components/mini-player/index",
+    "queue-sheet": "/components/queue-sheet/index",
+    "state-view": "/components/state-view/index"
+  },
+  "enablePullDownRefresh": false
+}

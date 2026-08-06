@@ -1,0 +1,86 @@
+<view class="screen home-screen">
+  <custom-nav
+    title="{{scrolled ? '今日推荐' : 'NIO Radio'}}"
+    scrolled="{{scrolled}}"
+    showContinue="{{scrolled && player.currentEpisode}}"
+    bind:continue="onTogglePlayback"
+    bind:albums="onOpenAlbums"
+    bind:search="onOpenSearch"
+  />
+
+  <view wx:if="{{catalogLoading && !episodes.length}}" class="full-state">
+    <state-view kind="loading" message="正在准备 NIO Radio…" />
+  </view>
+
+  <view wx:elif="{{catalogError && !episodes.length}}" class="full-state">
+    <state-view
+      kind="error"
+      title="目录暂时无法加载"
+      message="请检查网络后重试，已缓存的节目仍可继续播放。"
+      actionText="重新加载"
+      bind:action="onRetryCatalog"
+    />
+  </view>
+
+  <block wx:else>
+    <view class="recommendation-panel">
+      <view class="recommendation-copy">
+        <text class="section-kicker">TODAY</text>
+        <text class="recommendation-h1">今日推荐</text>
+        <text wx:if="{{recommendation}}" class="recommendation-h2">{{recommendation.title}}</text>
+        <text wx:else class="recommendation-empty">今天还没有新的节目</text>
+        <text wx:if="{{recommendation}}" class="recommendation-meta">{{recommendation.albumName || 'NIO Radio'}} · {{recommendation.durationLabel}}</text>
+      </view>
+      <artwork class="recommendation-art" src="{{recommendation.albumPic}}" />
+      <button class="primary-button" bindtap="onPlayAll" disabled="{{!episodes.length}}">▶ 全部播放</button>
+    </view>
+
+    <view class="updates-section">
+      <view class="section-heading-row">
+        <text class="section-heading">{{heading}}</text>
+        <text class="section-count">{{count}}</text>
+      </view>
+      <view wx:if="{{episodes.length}}" class="episode-list">
+        <episode-row
+          wx:for="{{episodes}}"
+          wx:key="id"
+          episode="{{item}}"
+          active="{{player.currentEpisode && player.currentEpisode.id === item.id}}"
+          progress="{{item.progressPercent}}"
+          bind:play="onPlayEpisode"
+        />
+      </view>
+      <view wx:else class="empty-state">暂无可播放的节目</view>
+    </view>
+
+    <view wx:if="{{stale || refreshing || catalogError}}" class="notice-bar" aria-role="{{catalogError ? 'alert' : 'status'}}">
+      <text>{{refreshing ? '正在刷新目录…' : catalogError ? '目录刷新失败，继续使用缓存内容' : '显示的是上次缓存的目录'}}</text>
+      <button bindtap="onRetryCatalog">{{refreshing ? '刷新中' : '刷新目录'}}</button>
+    </view>
+  </block>
+
+  <mini-player
+    wx:if="{{player.currentEpisode}}"
+    player="{{player}}"
+    bind:toggle="onTogglePlayback"
+    bind:seek="onSeek"
+    bind:retry="onRetryAudio"
+    bind:openqueue="onOpenQueue"
+  />
+
+  <queue-sheet
+    visible="{{queueOpen}}"
+    tab="{{queueTab}}"
+    player="{{player}}"
+    later="{{later}}"
+    catalog="{{catalog}}"
+    bind:close="onCloseQueue"
+    bind:tabchange="onQueueTabChange"
+    bind:play="onPlayQueue"
+    bind:playnext="onPlayNext"
+    bind:removequeue="onRemoveQueue"
+    bind:addlater="onAddLaterQueue"
+    bind:removelater="onRemoveLater"
+    bind:movelater="onMoveLater"
+  />
+</view>

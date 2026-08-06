@@ -1,0 +1,105 @@
+const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
+const FETCH_TIMEOUT_MS = 8000;
+const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
+const EPISODE_CACHE_MAX_ENTRIES = 100;
+const episodeCache = new Map();
+const episodeRequests = new Map();
+
+class ApiError extends Error {
+  constructor(code, message, cause) {
+    super(message);
+    this.name = 'ApiError';
+    this.code = code;
+    this.cause = cause;
+  }
+}
+
+function normalizeAudioUrl(url) {
+  if (typeof url !== 'string' || !url) return '';
+  return url.startsWith('http://') ? `https://${url.slice(7)}` : url;
+}
+
+function mapEpisode(ep) {
+  const host = Array.isArray(ep.host) ? ep.host.join(', ') : typeof ep.host === 'string' ? ep.host : '';
+  return {
+    id: ep.audioId,
+    title: ep.audioName || '未命名节目',
+    albumId: ep.albumId,
+    albumName: ep.albumName || '',
+    albumPic: ep.albumPic || '',
+    albumDesc: ep.albumDesc || '',
+    host: host || ep.singer || '',
+    duration: ep.duration,
+    onlineTime: ep.onlineTime,
+    audioUrl: normalizeAudioUrl(ep.aacPlayUrl192 || ep.aacPlayUrl128 || ep.mp3PlayUrl64 || ''),
+    fileSize: ep.aacFileSize192,
+  };
+}
+
+function requestViaWx(params) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: BASE,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: params,
+      timeout: FETCH_TIMEOUT_MS,
+      success: resolve,
+      fail: reject,
+    });
+  });
+}
+
+async function requestEpisodes(albumId, page, pageSize, requestImpl) {
+  const params = {
+    albumId: String(albumId),
+    sorttype: '2',
+    pagenum: String(page),
+    pagesize: String(pageSize),
+  };
+  let response;
+  try {
+    response = await (requestImpl || requestViaWx)(params);
+  } catch (error) {
+    throw new ApiError('NETWORK_ERROR', '无法连接音频服务', error);
+  }
+  if (!response || response.statusCode < 200 || response.statusCode >= 300) {
+    throw new ApiError('HTTP_ERROR', `音频服务返回 ${response ? response.statusCode : '未知'} 状态`, response && response.statusCode);
+  }
+  const result = response.data && response.data.result;
+  if (!result || !Array.isArray(result.dataList)) {
+    throw new ApiError('INVALID_RESPONSE', '音频服务返回了无法读取的数据');
+  }
+  return {
+    episodes: result.dataList.map(mapEpisode),
+    totalCount: Number(result.totalCount) || 0,
+    hasMore: result.haveNext === 1 || result.haveNext === true,
+  };
+}
+
+function clearEpisodeCache() {
+  episodeCache.clear();
+  episodeRequests.clear();
+}
+
+async function getEpisodes(albumId, page = 1, pageSize = 30, requestImpl) {
+  const key = `${albumId}:${page}:${pageSize}`;
+  const cached = episodeCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.value;
+  if (cached) episodeCache.delete(key);
+  const inFlight = episodeRequests.get(key);
+  if (inFlight) return inFlight;
+  const request = requestEpisodes(albumId, page, pageSize, requestImpl)
+    .then(result => {
+      episodeCache.set(key, { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS });
+      while (episodeCache.size > EPISODE_CACHE_MAX_ENTRIES) {
+        episodeCache.delete(episodeCache.keys().next().value);
+      }
+      return result;
+    })
+    .finally(() => episodeRequests.delete(key));
+  episodeRequests.set(key, request);
+  return request;
+}
+
+module.exports = { ApiError, normalizeAudioUrl, getEpisodes, clearEpisodeCache };

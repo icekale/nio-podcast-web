@@ -1,0 +1,21 @@
+.mini-player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding: 24rpx 32rpx calc(24rpx + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 2rpx solid var(--line);
+}
+.mini-main { display: flex; align-items: center; gap: 24rpx; }
+.mini-art { width: 96rpx; height: 96rpx; border-radius: 16rpx; }
+.mini-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.mini-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 29rpx; font-weight: 620; }
+.mini-album { margin-top: 6rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: 24rpx; }
+.player-control { display: flex; align-items: center; justify-content: center; width: 88rpx; height: 88rpx; border-radius: 999rpx; background: var(--surface-soft); color: var(--ink); font-size: 30rpx; }
+.queue-control { color: var(--ink); }
+.mini-progress-row { display: flex; align-items: center; gap: 16rpx; margin-top: 16rpx; color: var(--muted); font-size: 22rpx; }
+.progress-slider { flex: 1; min-width: 0; margin: 0; }
+.player-error { display: flex; align-items: center; justify-content: space-between; gap: 16rpx; margin-top: 16rpx; color: var(--danger); font-size: 24rpx; }
+.player-error button { color: var(--teal-dark); background: transparent; font-weight: 650; }

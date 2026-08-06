@@ -1,0 +1,59 @@
+<view class="screen search-screen">
+  <view class="search-top-bar" style="padding-top: {{statusBarHeight}}px;">
+    <button class="icon-button" aria-label="返回" bindtap="onBack">‹</button>
+    <view class="search-field-wrap">
+      <text class="search-icon">⌕</text>
+      <input
+        class="search-input"
+        value="{{query}}"
+        placeholder="搜索专辑"
+        confirm-type="search"
+        bindinput="onInput"
+      />
+      <button wx:if="{{query}}" class="icon-button clear-button" aria-label="清空搜索" bindtap="onClear">×</button>
+      <view wx:else class="icon-button-spacer" />
+    </view>
+  </view>
+
+  <view class="search-results">
+    <view class="section-heading-row">
+      <text class="section-heading">全部专辑</text>
+      <text class="section-count">{{total}}</text>
+    </view>
+
+    <view wx:if="{{loading && !albums.length}}" class="loading-state">
+      <state-view kind="loading" message="正在准备 NIO Radio…" />
+    </view>
+    <block wx:else>
+      <view wx:if="{{albums.length}}" class="album-results">
+        <album-row wx:for="{{visibleAlbums}}" wx:key="id" album="{{item}}" bind:open="onOpenAlbum" />
+      </view>
+      <view wx:else class="empty-state">没有找到匹配的专辑</view>
+    </block>
+  </view>
+
+  <mini-player
+    wx:if="{{player.currentEpisode}}"
+    player="{{player}}"
+    bind:toggle="onTogglePlayback"
+    bind:seek="onSeek"
+    bind:retry="onRetryAudio"
+    bind:openqueue="onOpenQueue"
+  />
+
+  <queue-sheet
+    visible="{{queueOpen}}"
+    tab="{{queueTab}}"
+    player="{{player}}"
+    later="{{later}}"
+    catalog="{{catalog}}"
+    bind:close="onCloseQueue"
+    bind:tabchange="onQueueTabChange"
+    bind:play="onPlayQueue"
+    bind:playnext="onPlayNext"
+    bind:removequeue="onRemoveQueue"
+    bind:addlater="onAddLaterQueue"
+    bind:removelater="onRemoveLater"
+    bind:movelater="onMoveLater"
+  />
+</view>
