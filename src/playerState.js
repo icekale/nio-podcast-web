@@ -6,6 +6,28 @@ function normalizeEpisode(episode) {
   return { ...episode };
 }
 
+const SERIALIZED_EPISODE_FIELDS = [
+  'id',
+  'title',
+  'albumId',
+  'albumName',
+  'albumPic',
+  'host',
+  'duration',
+  'onlineTime',
+  'audioUrl',
+];
+
+function serializeEpisode(episode) {
+  const normalized = normalizeEpisode(episode);
+  if (!normalized) return null;
+  const serialized = {};
+  for (const field of SERIALIZED_EPISODE_FIELDS) {
+    if (normalized[field] !== undefined) serialized[field] = normalized[field];
+  }
+  return serialized;
+}
+
 function episodeKey(episode) {
   return String(episode?.id);
 }
@@ -121,12 +143,12 @@ export function canResume(positionSeconds, durationSeconds) {
 export function serializePlayerState(state) {
   return JSON.stringify({
     version: PLAYER_STATE_VERSION,
-    currentEpisode: normalizeEpisode(state.currentEpisode),
-    queue: uniqueEpisodes(state.queue),
+    currentEpisode: serializeEpisode(state.currentEpisode),
+    queue: uniqueEpisodes(state.queue).map(serializeEpisode),
     queueIndex: Number.isInteger(state.queueIndex) ? state.queueIndex : 0,
     positionSeconds: Number(state.positionSeconds) || 0,
     durationSeconds: Number(state.durationSeconds) || 0,
-    history: uniqueEpisodes(state.history).slice(0, 100),
+    history: uniqueEpisodes(state.history).slice(0, 100).map(serializeEpisode),
     updatedAt: Date.now(),
   });
 }

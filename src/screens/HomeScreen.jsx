@@ -5,7 +5,7 @@ import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
 
-export function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onSearch, onOpenAlbums }) {
+export function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
@@ -46,7 +46,7 @@ export function HomeScreen({ catalog, player, stale, refreshing = false, catalog
         <button type="button" className="icon-button" aria-label="全部专辑" onClick={onOpenAlbums}><List size={24} /></button>
         <span className="top-title">{scrolled ? '今日推荐' : 'NIO Radio'}</span>
         <div className="top-actions">
-          {scrolled && player.currentEpisode ? <button type="button" className="continue-button" onClick={() => onPlay(player.currentEpisode)}>▶ 继续播放</button> : null}
+          {scrolled && player.currentEpisode ? <button type="button" className="continue-button" onClick={onResume}>▶ 继续播放</button> : null}
           <button type="button" className="icon-button" aria-label="搜索" onClick={onSearch}><Search size={22} /></button>
         </div>
       </header>

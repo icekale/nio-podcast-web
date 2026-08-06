@@ -4,7 +4,6 @@ import { loadCatalog, normalizeCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
 import {
   PLAYER_STORAGE_KEY,
-  advanceQueue,
   canResume,
   createPlayerState,
   enqueueEpisodes,
@@ -63,6 +62,8 @@ export default function App({ initialCatalog = null }) {
   const laterEpisodesRef = useRef(laterEpisodes);
   const queueButtonRef = useRef(null);
   const lastSavedAt = useRef(0);
+  const lastPositionUpdateAt = useRef(0);
+  const resumeSeekAppliedRef = useRef(false);
   const scrollPositions = useRef(new Map());
   const routeRef = useRef(route);
   const queueFocusRef = useRef(null);
@@ -277,10 +278,16 @@ export default function App({ initialCatalog = null }) {
       audio.load();
       return;
     }
+    resumeSeekAppliedRef.current = false;
     audio.src = episode.audioUrl;
     audio.load();
     if (canResume(positionSeconds, durationSeconds)) {
-      try { audio.currentTime = positionSeconds; } catch { /* metadata may not be ready */ }
+      try {
+        audio.currentTime = positionSeconds;
+        resumeSeekAppliedRef.current = true;
+      } catch { /* metadata may not be ready; re-applied on loadedmetadata */ }
+    } else {
+      resumeSeekAppliedRef.current = true;
     }
     if (!shouldPlay) {
       audio.pause();
@@ -368,7 +375,7 @@ export default function App({ initialCatalog = null }) {
         let next = previous;
         if (visibleQueue?.length) next = enqueueEpisodes(next, visibleQueue);
         next = selectEpisode(next, episode, next.queue);
-        return { ...next, history: recordHistory(previous.history, episode), isPlaying: false };
+        return { ...next, isPlaying: false };
       });
       return;
     }
@@ -407,7 +414,24 @@ export default function App({ initialCatalog = null }) {
     const previous = playerRef.current;
     const completedEpisode = previous.currentEpisode;
     if (completedEpisode) removeFromLater(completedEpisode.id);
-    const next = advanceQueue(previous);
+    let next = previous;
+    let cursor = previous.queueIndex + 1;
+    while (cursor < previous.queue.length) {
+      const candidate = previous.queue[cursor];
+      if (candidate?.audioUrl) {
+        next = {
+          ...previous,
+          queueIndex: cursor,
+          currentEpisode: candidate,
+          positionSeconds: 0,
+          durationSeconds: 0,
+          error: null,
+        };
+        break;
+      }
+      cursor += 1;
+    }
+    if (next === previous) next = { ...previous, isPlaying: false };
     const hasNext = Boolean(next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id);
     setPlayer({
       ...next,
@@ -416,6 +440,15 @@ export default function App({ initialCatalog = null }) {
     });
     setIsPlaying(hasNext);
   }, [removeFromLater]);
+
+  const resumePlayback = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio || !playerRef.current.currentEpisode) return;
+    const result = audio.play();
+    result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+    setIsPlaying(true);
+    setPlayer(previous => ({ ...previous, isPlaying: true }));
+  }, [setPlaybackFailure]);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
   const openFavorites = useCallback(() => go('#/favorites'), [go]);
@@ -456,7 +489,7 @@ export default function App({ initialCatalog = null }) {
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} starAction={desktopLayout} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} starAction={desktopLayout} /> : null}
           {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} starAction={desktopLayout} /> : null}
@@ -464,7 +497,7 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>
-      <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
+      <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
       {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
       {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} /> : null}
     </main>

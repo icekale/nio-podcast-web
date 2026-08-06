@@ -31,6 +31,7 @@ describe('mobile app shell', () => {
   beforeEach(() => {
     window.history.replaceState({ nioDepth: 0 }, '', '#/');
     window.localStorage.clear();
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 });
   });
 
   it('shows the recommendation and starts all visible episodes', async () => {
@@ -475,5 +476,158 @@ describe('mobile app shell', () => {
     fireEvent.keyDown(laterTab, { key: 'Home' });
     expect(queueTab).toHaveAttribute('aria-selected', 'true');
     await waitFor(() => expect(document.activeElement).toBe(queueTab));
+  });
+
+  it('continues the current episode from the top bar instead of restarting it', async () => {
+    render(<App initialCatalog={catalog} />);
+    expect(await screen.findByText('今日推荐')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 120 });
+    Object.defineProperty(audio, 'currentTime', { configurable: true, writable: true, value: 45 });
+    fireEvent.loadedMetadata(audio);
+    fireEvent.timeUpdate(audio);
+    const play = vi.spyOn(audio, 'play');
+    fireEvent.pause(audio);
+    play.mockClear();
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 300 });
+    fireEvent.scroll(window);
+    fireEvent.click(await screen.findByRole('button', { name: /继续播放/ }));
+
+    await waitFor(() => expect(play).toHaveBeenCalled());
+    expect(audio.currentTime).toBe(45);
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 });
+  });
+
+  it('does not restart an already-playing episode from the continue button', async () => {
+    render(<App initialCatalog={catalog} />);
+    expect(await screen.findByText('今日推荐')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 120 });
+    Object.defineProperty(audio, 'currentTime', { configurable: true, writable: true, value: 30 });
+    fireEvent.loadedMetadata(audio);
+    fireEvent.timeUpdate(audio);
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 300 });
+    fireEvent.scroll(window);
+    fireEvent.click(await screen.findByRole('button', { name: /继续播放/ }));
+
+    expect(audio.currentTime).toBe(30);
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 });
+  });
+
+  it('skips an unplayable episode when advancing to the next one', async () => {
+    const playable = episode(1, '第一集');
+    const unplayable = { ...episode(2, '第二集'), audioUrl: '' };
+    const third = episode(3, '第三集');
+    localStorage.setItem('nio_player_state_v2', JSON.stringify({
+      version: 2,
+      queue: [playable, unplayable, third],
+      queueIndex: 0,
+      currentEpisode: playable,
+      positionSeconds: 0,
+      durationSeconds: 0,
+      history: [],
+      updatedAt: Date.now(),
+    }));
+    render(<App initialCatalog={catalog} />);
+    const audio = document.querySelector('audio');
+    await waitFor(() => expect(audio.getAttribute('src')).toBe(playable.audioUrl));
+    fireEvent.play(audio);
+    fireEvent.ended(audio);
+
+    await waitFor(() => expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第三集'));
+  });
+
+  it('stops at the end of the queue when no playable next episode exists', async () => {
+    const playable = episode(1, '第一集');
+    const unplayable = { ...episode(2, '第二集'), audioUrl: '' };
+    localStorage.setItem('nio_player_state_v2', JSON.stringify({
+      version: 2,
+      queue: [playable, unplayable],
+      queueIndex: 0,
+      currentEpisode: playable,
+      positionSeconds: 0,
+      durationSeconds: 0,
+      history: [],
+      updatedAt: Date.now(),
+    }));
+    render(<App initialCatalog={catalog} />);
+    const audio = document.querySelector('audio');
+    await waitFor(() => expect(audio.getAttribute('src')).toBe(playable.audioUrl));
+    fireEvent.play(audio);
+    fireEvent.ended(audio);
+
+    expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第一集');
+    expect(screen.getByRole('button', { name: '播放' })).toBeInTheDocument();
+  });
+
+  it('re-applies the resume position once metadata becomes available', async () => {
+    const playable = episode(1, '第一集');
+    localStorage.setItem('nio_player_state_v2', JSON.stringify({
+      version: 2,
+      queue: [playable],
+      queueIndex: 0,
+      currentEpisode: playable,
+      positionSeconds: 100,
+      durationSeconds: 500,
+      history: [],
+      updatedAt: Date.now(),
+    }));
+    const originalCurrentTime = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, 'currentTime');
+    let firstSeekFails = true;
+    Object.defineProperty(HTMLMediaElement.prototype, 'currentTime', {
+      configurable: true,
+      get() { return this._nioTestCurrentTime || 0; },
+      set(value) {
+        if (firstSeekFails && value > 0) {
+          firstSeekFails = false;
+          throw new Error('metadata not ready');
+        }
+        this._nioTestCurrentTime = value;
+      },
+    });
+    try {
+      render(<App initialCatalog={catalog} />);
+      const audio = document.querySelector('audio');
+      await waitFor(() => expect(audio.getAttribute('src')).toBe(playable.audioUrl));
+      Object.defineProperty(audio, 'duration', { configurable: true, value: 500 });
+      fireEvent.loadedMetadata(audio);
+
+      expect(audio.currentTime).toBe(100);
+    } finally {
+      Object.defineProperty(HTMLMediaElement.prototype, 'currentTime', originalCurrentTime);
+    }
+  });
+
+  it('throttles playback progress updates to once per second', async () => {
+    render(<App initialCatalog={catalog} />);
+    expect(await screen.findByText('今日推荐')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const audio = document.querySelector('audio');
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 120 });
+    Object.defineProperty(audio, 'currentTime', { configurable: true, value: 10 });
+    fireEvent.loadedMetadata(audio);
+    fireEvent.timeUpdate(audio);
+    expect(screen.getByRole('slider', { name: '播放进度' })).toHaveValue('10');
+    Object.defineProperty(audio, 'currentTime', { configurable: true, value: 20 });
+    fireEvent.timeUpdate(audio);
+    expect(screen.getByRole('slider', { name: '播放进度' })).toHaveValue('10');
+  });
+
+  it('does not record an unplayable episode in listening history', async () => {
+    const catalogWithoutAudio = {
+      ...catalog,
+      albums: [{ ...catalog.albums[0], latestEpisode: { ...catalog.albums[0].latestEpisode, audioUrl: '' } }],
+    };
+    render(<App initialCatalog={catalogWithoutAudio} />);
+    expect(await screen.findByText('今日推荐')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('没有可播放音频');
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('tab', { name: '最近听过' }));
+    expect(screen.getByText('还没有听过的节目')).toBeInTheDocument();
   });
 });

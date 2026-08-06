@@ -106,4 +106,22 @@ describe('player state', () => {
     expect(restored.currentEpisode.id).toBe(2);
     expect(restored.queueIndex).toBe(1);
   });
+
+  it('serializes episodes without large description and file size fields', () => {
+    const state = selectEpisode(createPlayerState(), {
+      ...episode(1),
+      albumDesc: 'x'.repeat(200),
+      fileSize: 999999,
+      host: '主持人',
+      onlineTime: 123,
+    });
+    const parsed = JSON.parse(serializePlayerState(state));
+    expect(parsed.currentEpisode).toMatchObject({ id: 1, title: '节目 1', audioUrl: 'https://cdn.example/1.aac' });
+    expect(parsed.currentEpisode.albumDesc).toBeUndefined();
+    expect(parsed.currentEpisode.fileSize).toBeUndefined();
+    expect(parsed.queue[0].albumDesc).toBeUndefined();
+    expect(parsed.queue[0].fileSize).toBeUndefined();
+    const restored = restorePlayerState(JSON.stringify(parsed));
+    expect(restored.currentEpisode.audioUrl).toBe('https://cdn.example/1.aac');
+  });
 });
