@@ -30,6 +30,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: nio-catalog-update
@@ -38,6 +40,9 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out main
         uses: actions/checkout@v4
@@ -123,6 +128,17 @@ jobs:
           git pull --rebase origin main
           git push origin HEAD:main
 
+      - name: Configure Pages
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
       - name: Deploy GitHub Pages
         if: steps.changes.outputs.changed == 'true'
-        run: npm run deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

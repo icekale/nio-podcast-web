@@ -28,10 +28,11 @@ describe('catalog update workflow', () => {
 
     expect(commit).toBeGreaterThanOrEqual(0);
     expect(deploy).toBeGreaterThan(commit);
-    expect(workflow).toContain('npm run deploy');
+    expect(workflow).toContain('actions/deploy-pages@v4');
+    expect(workflow).toContain('actions/upload-pages-artifact@v3');
     expect(workflow).not.toContain('gh workflow run');
 
-    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state', 'Deploy GitHub Pages']) {
+    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state', 'Configure Pages', 'Upload Pages artifact', 'Deploy GitHub Pages']) {
       const start = workflow.indexOf(`- name: ${step}`);
       const end = workflow.indexOf('\n      - name:', start + 1);
       const block = workflow.slice(start, end < 0 ? undefined : end);
@@ -42,7 +43,8 @@ describe('catalog update workflow', () => {
     expect(deployWorkflow).toContain('push:');
     expect(deployWorkflow).toContain('branches: [main]');
     expect(deployWorkflow).toContain('workflow_dispatch:');
-    expect(deployWorkflow).toContain('npm run deploy');
+    expect(deployWorkflow).toContain('actions/deploy-pages@v4');
+    expect(deployWorkflow).toContain('actions/upload-pages-artifact@v3');
     expect(deployWorkflow).toContain('group: nio-pages-deploy');
   });
 });
