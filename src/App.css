@@ -13,6 +13,7 @@
   --shadow-sheet: 0 -10px 40px rgba(9, 28, 47, 0.14);
   --player-scrim: rgba(255, 255, 255, 0.72);
   --player-shadow: 0 -8px 24px rgba(9, 28, 47, 0.12);
+  --sheet-scrim: rgba(255, 255, 255, 0.84);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -42,6 +43,7 @@
     --shadow-sheet: 0 -10px 40px rgba(0, 0, 0, 0.4);
     --player-scrim: rgba(11, 19, 32, 0.72);
     --player-shadow: 0 -8px 24px rgba(0, 0, 0, 0.38);
+    --sheet-scrim: rgba(11, 19, 32, 0.78);
     color-scheme: dark;
   }
 }
@@ -288,7 +290,22 @@ h1, h2, p { margin: 0; }
 
 .queue-overlay { position: fixed; z-index: 60; inset: 0; }
 .queue-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(6, 18, 32, 0.38); cursor: default; animation: queue-backdrop-in 220ms ease-out both; }
-.queue-sheet { position: absolute; right: 0; bottom: 0; left: 50%; display: flex; width: min(100%, 430px); max-height: min(78dvh, 720px); flex-direction: column; padding: var(--space-3) var(--space-5) max(var(--space-4), env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--surface); border-radius: 1.25rem 1.25rem 0 0; box-shadow: var(--shadow-sheet); animation: queue-sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.queue-sheet { position: absolute; right: 0; bottom: 0; left: 50%; display: flex; width: min(100%, 430px); max-height: min(78dvh, 720px); flex-direction: column; padding: var(--space-3) var(--space-5) max(var(--space-4), env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--surface); border-radius: 1.25rem 1.25rem 0 0; box-shadow: var(--shadow-sheet); animation: queue-sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both; isolation: isolate; overflow: clip; }
+.queue-art-bg {
+  position: absolute;
+  z-index: -1;
+  inset: -28px;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: blur(28px);
+  transform: scale(1.12);
+}
+.queue-scrim {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--sheet-scrim);
+}
 .queue-sheet.is-closing { animation: queue-sheet-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both; }
 .queue-overlay.is-closing .queue-backdrop { animation: queue-backdrop-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
 @keyframes queue-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
