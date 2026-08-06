@@ -28,6 +28,7 @@ Page({
     unsubscribe = catalogStore.subscribe(state => this.applyCatalog(state));
     playerUnsubscribe = require('../../services/player-store').subscribe(s => {
       this.setData({ player: s.player, later: s.later });
+      this.updateProgress(s.player);
     });
   },
 
@@ -43,6 +44,19 @@ Page({
   onPageScroll(event) {
     const scrolled = event.scrollTop > 180;
     if (scrolled !== this.data.scrolled) this.setData({ scrolled });
+  },
+
+  // 播放位置变化时实时刷新首页节目行的「已听 x%」（1 秒节流后调用）。
+  updateProgress(player) {
+    if (!player || !player.currentEpisode || !(player.durationSeconds > 0)) return;
+    const episodes = this.data.episodes;
+    if (!episodes.length) return;
+    const index = episodes.findIndex(e => String(e.id) === String(player.currentEpisode.id));
+    if (index < 0) return;
+    const percent = Math.round((player.positionSeconds / player.durationSeconds) * 100);
+    if (percent !== episodes[index].progressPercent) {
+      this.setData({ [`episodes[${index}].progressPercent`]: percent });
+    }
   },
 
   applyCatalog(state) {

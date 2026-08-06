@@ -27,8 +27,9 @@ Component({
     albumSource: [],
   },
   observers: {
-    'tab, player, later'(tab, player, later) {
-      this.setData({ items: this.itemsFor(tab, player, later) });
+    // 只依赖队列/历史/当前节目的引用，进度（positionSeconds）变化不触发列表重算。
+    'tab, player.queue, player.history, player.currentEpisode, later'(tab, queue, history, currentEpisode, later) {
+      this.setData({ items: this.itemsFor(tab, queue, history, currentEpisode, later) });
     },
     visible(v) {
       if (!v) {
@@ -47,18 +48,17 @@ Component({
     },
   },
   methods: {
-    itemsFor(tab, player, later) {
-      const p = player || {};
+    itemsFor(tab, queue, history, currentEpisode, later) {
       if (tab === 'queue') {
-        return (p.queue || []).map((e, i) => ({
+        return (queue || []).map((e, i) => ({
           ...e,
           durationLabel: formatDuration(e.duration),
           index: i,
-          active: p.currentEpisode && String(p.currentEpisode.id) === String(e.id),
+          active: currentEpisode && String(currentEpisode.id) === String(e.id),
         }));
       }
       if (tab === 'history') {
-        return (p.history || []).map((e, i) => ({ ...e, durationLabel: formatDuration(e.duration), index: i }));
+        return (history || []).map((e, i) => ({ ...e, durationLabel: formatDuration(e.duration), index: i }));
       }
       return (later || []).map((e, i) => ({ ...e, durationLabel: formatDuration(e.duration), index: i }));
     },
@@ -128,10 +128,12 @@ Component({
       this.setData({ swipedId: null });
     },
     onRowTouchStart(event) {
+      if (this.data.tab !== 'later') return;
       const touch = event.touches[0];
       this._gesture = { id: event.currentTarget.dataset.id, x: touch.clientX, y: touch.clientY, moved: false };
     },
     onRowTouchMove(event) {
+      if (this.data.tab !== 'later') return;
       const gesture = this._gesture;
       if (!gesture) return;
       const touch = event.touches[0];
@@ -157,6 +159,7 @@ Component({
       this.setData({ dragId: null });
     },
     onRowLongPress(event) {
+      if (this.data.tab !== 'later') return;
       this.setData({ dragId: event.currentTarget.dataset.id, swipedId: null });
     },
   },

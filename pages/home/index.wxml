@@ -3,7 +3,7 @@
     title="{{scrolled ? '今日推荐' : 'NIO Radio'}}"
     scrolled="{{scrolled}}"
     showContinue="{{scrolled && player.currentEpisode}}"
-    bind:continue="onPlayAll"
+    bind:continue="onTogglePlayback"
     bind:albums="onOpenAlbums"
     bind:search="onOpenSearch"
   />

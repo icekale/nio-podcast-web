@@ -21,12 +21,15 @@ const {
 const { createStorage } = require('../utils/storage');
 
 const SAVE_THROTTLE_MS = 5000;
+const POSITION_NOTIFY_MS = 1000;
 
 let storage = createStorage();
 let bgm = null;
 let state = { player: createPlayerState(), later: [] };
 const listeners = new Set();
 let lastSavedAt = 0;
+let lastPositionUpdateAt = 0;
+let interruptedWhilePlaying = false;
 
 function notify() {
   listeners.forEach(fn => { try { fn(state); } catch {} });
@@ -47,8 +50,9 @@ function setPlayer(next, { forceSave = false } = {}) {
 
 function setLater(items) {
   state = { ...state, later: items };
-  writeLaterEpisodes(items, storage);
+  const persisted = writeLaterEpisodes(items, storage);
   notify();
+  return persisted;
 }
 
 function loadEpisode(episode, shouldPlay) {
@@ -76,7 +80,18 @@ function initPlayerStore(options = {}) {
 
   bgm.onTimeUpdate(() => {
     const position = typeof bgm.currentTime === 'number' ? bgm.currentTime : state.player.positionSeconds;
+    const now = Date.now();
+    if (now - lastPositionUpdateAt < POSITION_NOTIFY_MS) return;
+    lastPositionUpdateAt = now;
     setPlayer({ ...state.player, positionSeconds: position });
+  });
+
+  // 捕获真实时长（秒），与 positionSeconds 单位一致；恢复播放依赖它。
+  bgm.onCanplay(() => {
+    const duration = typeof bgm.duration === 'number' && bgm.duration > 0 ? bgm.duration : 0;
+    if (duration && duration !== state.player.durationSeconds) {
+      setPlayer({ ...state.player, durationSeconds: duration });
+    }
   });
 
   bgm.onEnded(() => {
@@ -84,18 +99,24 @@ function initPlayerStore(options = {}) {
     const completed = previous.currentEpisode;
     let later = state.later;
     if (completed) later = removeLaterEpisode(later, completed.id);
-    const next = advanceQueue(previous);
-    const hasNext = Boolean(next.currentEpisode && previous.currentEpisode && next.currentEpisode.id !== previous.currentEpisode.id);
+    let next = advanceQueue(previous);
+    // 跳过没有可播放音频的节目，避免 UI 切换但音频仍在放上一集。
+    while (next.currentEpisode && !next.currentEpisode.audioUrl && next.queueIndex < next.queue.length - 1) {
+      next = advanceQueue(next);
+    }
+    const advanced = Boolean(next.currentEpisode && completed && next.currentEpisode.id !== completed.id);
+    const canPlay = Boolean(next.currentEpisode && next.currentEpisode.audioUrl);
     const player = {
       ...next,
-      history: hasNext ? recordHistory(previous.history, next.currentEpisode) : previous.history,
-      isPlaying: hasNext,
+      history: advanced && canPlay ? recordHistory(previous.history, next.currentEpisode) : previous.history,
+      isPlaying: advanced && canPlay,
+      error: advanced && !canPlay ? '没有可继续播放的节目' : next.error,
     };
     state = { ...state, player, later };
     writeLaterEpisodes(later, storage);
     notify();
     persist(true);
-    if (hasNext) loadEpisode(next.currentEpisode, true);
+    if (advanced && canPlay) loadEpisode(next.currentEpisode, true);
   });
 
   bgm.onError(() => {
@@ -103,6 +124,21 @@ function initPlayerStore(options = {}) {
   });
   bgm.onPlay(() => setPlayer({ ...state.player, isPlaying: true }));
   bgm.onPause(() => setPlayer({ ...state.player, isPlaying: false }));
+  // 通知栏/锁屏里停止播放时同步 UI 状态。
+  bgm.onStop(() => setPlayer({ ...state.player, isPlaying: false }));
+
+  // 来电等音频中断后自动续播（仅前台播放时）。
+  if (typeof wx !== 'undefined' && wx.onAudioInterruptionBegin) {
+    wx.onAudioInterruptionBegin(() => { interruptedWhilePlaying = state.player.isPlaying; });
+  }
+  if (typeof wx !== 'undefined' && wx.onAudioInterruptionEnd) {
+    wx.onAudioInterruptionEnd(() => {
+      if (interruptedWhilePlaying && state.player.currentEpisode) {
+        interruptedWhilePlaying = false;
+        bgm.play();
+      }
+    });
+  }
 
   const current = state.player.currentEpisode;
   if (current) loadEpisode(current, false);
@@ -161,8 +197,7 @@ function seek(position) {
 function addLater(episode) {
   const result = addLaterEpisode(state.later, episode);
   if (!result.added) return { added: false, persisted: true };
-  setLater(result.items);
-  return { added: true, persisted: writeLaterEpisodes(result.items, storage) };
+  return { added: true, persisted: setLater(result.items) };
 }
 
 function removeLater(id) {
@@ -182,8 +217,16 @@ function playNext(episode) {
 }
 
 function removeQueue(id) {
-  setPlayer(removeFromQueue(state.player, id), { forceSave: true });
-  if (!state.player.currentEpisode) bgm.stop();
+  const previous = state.player;
+  const removedCurrent = Boolean(previous.currentEpisode && String(previous.currentEpisode.id) === String(id));
+  const next = removeFromQueue(previous, id);
+  setPlayer(next, { forceSave: true });
+  if (removedCurrent && next.currentEpisode) {
+    // 移除的是当前播放项：重载下一集音频，避免 UI 与音频错位。
+    loadEpisode(next.currentEpisode, previous.isPlaying);
+  } else if (!next.currentEpisode) {
+    bgm.stop();
+  }
 }
 
 function retryAudio() {
