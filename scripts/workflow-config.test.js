@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 const deployWorkflow = existsSync(resolve(process.cwd(), '.github/workflows/deploy.yml'))
   ? readFileSync(resolve(process.cwd(), '.github/workflows/deploy.yml'), 'utf8')
   : '';
+const packageJson = JSON.parse(readFileSync(resolve(process.cwd(), 'package.json'), 'utf8'));
 
 describe('catalog update workflow', () => {
   it('defines serialized scheduled full and incremental catalog deployments', () => {
@@ -28,8 +29,10 @@ describe('catalog update workflow', () => {
 
     expect(commit).toBeGreaterThanOrEqual(0);
     expect(deploy).toBeGreaterThan(commit);
+    expect(workflow).toContain('git push origin HEAD:main');
     expect(workflow).toContain('actions/deploy-pages@v4');
     expect(workflow).toContain('actions/upload-pages-artifact@v3');
+    expect(workflow).toContain('name: github-pages');
     expect(workflow).not.toContain('gh workflow run');
 
     for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state', 'Configure Pages', 'Upload Pages artifact', 'Deploy GitHub Pages']) {
@@ -46,5 +49,7 @@ describe('catalog update workflow', () => {
     expect(deployWorkflow).toContain('actions/deploy-pages@v4');
     expect(deployWorkflow).toContain('actions/upload-pages-artifact@v3');
     expect(deployWorkflow).toContain('group: nio-pages-deploy');
+    expect(packageJson.scripts.deploy).toBeUndefined();
+    expect(packageJson.devDependencies['gh-pages']).toBeUndefined();
   });
 });
