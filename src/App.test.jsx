@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { AlbumResults } from './components/AlbumResults';
@@ -320,7 +320,7 @@ describe('mobile app shell', () => {
     fireEvent.click(document.querySelector('.episode-main'));
 
     await waitFor(() => expect(play).toHaveBeenCalled());
-    expect(screen.getByRole('button', { name: '暂停' })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: '暂停' }).length).toBeGreaterThan(0);
   });
 
   it('returns to the play state when starting audio is rejected', async () => {
@@ -504,7 +504,7 @@ describe('mobile app shell', () => {
 
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 300 });
     fireEvent.scroll(window);
-    fireEvent.click(await screen.findByRole('button', { name: /继续播放/ }));
+    fireEvent.click(within(document.querySelector('.top-bar')).getByRole('button', { name: /继续播放/ }));
 
     await waitFor(() => expect(play).toHaveBeenCalled());
     expect(audio.currentTime).toBe(45);
@@ -523,7 +523,7 @@ describe('mobile app shell', () => {
 
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 300 });
     fireEvent.scroll(window);
-    fireEvent.click(await screen.findByRole('button', { name: /继续播放/ }));
+    fireEvent.click(within(document.querySelector('.top-bar')).getByRole('button', { name: /继续播放/ }));
 
     expect(audio.currentTime).toBe(30);
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 });

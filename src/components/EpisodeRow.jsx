@@ -6,7 +6,7 @@ import { formatDate, formatDuration } from '../format';
 
 export const EpisodeRow = memo(function EpisodeRow({ episode, onPlay, active = false, progress = 0, action, mainLabel }) {
   return (
-    <li className={`episode-row${active ? ' is-active' : ''}`}>
+    <li className={`episode-row${active ? ' is-active' : ''}`} data-episode-id={episode.id}>
       <button type="button" className="episode-main" aria-label={mainLabel} onClick={() => onPlay(episode)}>
         <Artwork src={episode.albumPic} alt="" className="episode-art" />
         <span className="episode-copy">

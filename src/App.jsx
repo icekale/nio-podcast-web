@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { CircleAlert, RotateCcw } from 'lucide-react';
-import { loadCatalog, normalizeCatalog } from './catalog';
+import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
 import { cycleRate, readPlaybackRate, sleepDeadline, writePlaybackRate } from './playbackPrefs';
 import {
@@ -49,8 +49,10 @@ export default function App({ initialCatalog = null }) {
   const [queuePresent, setQueuePresent] = useState(() => route.queueOpen);
   const [queueClosing, setQueueClosing] = useState(false);
   const [catalogState, setCatalogState] = useState(() => {
-    if (!initialCatalog) return { catalog: null, loading: true, error: null, stale: false };
-    return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
+    if (initialCatalog) return { catalog: normalizeCatalog(initialCatalog), loading: false, error: null, stale: false };
+    const cached = readCachedCatalog();
+    if (cached) return { catalog: cached, loading: false, error: null, stale: true };
+    return { catalog: null, loading: true, error: null, stale: false };
   });
   const [player, setPlayer] = useState(readStoredPlayer);
   const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
@@ -574,7 +576,7 @@ export default function App({ initialCatalog = null }) {
 
   const shareEpisode = useCallback(async episode => {
     if (!episode) return 'none';
-    const url = `${window.location.origin}/#/album/${episode.albumId}`;
+    const url = `${window.location.origin}/#/album/${episode.albumId}?ep=${episode.id}`;
     const text = `${episode.title} · ${episode.albumName || 'NIO Radio'}`;
     if (navigator.share) {
       try { await navigator.share({ title: text, text, url }); return 'shared'; } catch { return 'cancelled'; }
@@ -624,11 +626,11 @@ export default function App({ initialCatalog = null }) {
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} starAction={desktopLayout} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} starAction={desktopLayout} /> : null}
           {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} starAction={desktopLayout} /> : null}
-          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
+          {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} episodeId={route.episodeId} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>

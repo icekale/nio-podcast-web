@@ -1,11 +1,11 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { List, Play, Search } from 'lucide-react';
+import { List, Pause, Play, Search } from 'lucide-react';
 import { selectHomeEpisodes } from '../catalog';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
 
-export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onSearch, onOpenAlbums }) {
+export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
@@ -21,6 +21,7 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
 
   const selection = useMemo(() => selectHomeEpisodes(catalog.albums, now), [catalog.albums, now]);
   const recommendation = selection.episodes[0];
+  const playingRecommendation = Boolean(recommendation && player.currentEpisode?.id === recommendation.id);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,8 +64,12 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
           ) : <p>今天还没有新的节目</p>}
         </div>
         <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
-        <button type="button" className="primary-button" onClick={() => onPlayAll(selection.episodes)} disabled={!selection.episodes.length}>
-          <Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放
+        <button type="button" className="primary-button" disabled={!selection.episodes.length} onClick={() => (playingRecommendation ? onTogglePlayback() : onPlayAll(selection.episodes))}>
+          {playingRecommendation
+            ? player.isPlaying
+              ? <><Pause size={18} fill="currentColor" aria-hidden="true" /> 暂停</>
+              : <><Play size={18} fill="currentColor" aria-hidden="true" /> 继续播放</>
+            : <><Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放</>}
         </button>
       </section>
 

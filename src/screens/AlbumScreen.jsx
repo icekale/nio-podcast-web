@@ -4,7 +4,7 @@ import { getEpisodes } from '../api';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow, LaterEpisodeAction } from '../components/EpisodeRow';
 
-export const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, onAddLater }) {
+export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack, onPlay, onAddLater }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,6 +37,19 @@ export const AlbumScreen = memo(function AlbumScreen({ album, onBack, onPlay, on
     setEpisodes([]);
     loadPage(1);
   }, [loadPage]);
+
+  // 单集深链:定位到目标节目并短暂高亮(仅在已加载的行内查找)
+  useEffect(() => {
+    if (!episodeId || !episodes.length) return undefined;
+    if (!episodes.some(episode => episode.id === episodeId)) return undefined;
+    const timer = window.setTimeout(() => {
+      const row = document.querySelector(`.episode-row[data-episode-id="${episodeId}"]`);
+      row?.scrollIntoView({ block: 'center' });
+      row?.classList.add('is-target');
+      window.setTimeout(() => row?.classList.remove('is-target'), 1600);
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, [episodeId, episodes]);
 
   return (
     <div className="screen album-screen">

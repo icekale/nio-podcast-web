@@ -1,6 +1,7 @@
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
 const CATALOG_FETCH_TIMEOUT_MS = 8000;
 const CATALOG_CACHE_FRESH_MS = 5 * 60 * 1000;
+const CATALOG_CACHE_MAX_AGE_MS = 48 * 60 * 60 * 1000;
 
 export function sortAlbumsByLatest(albums) {
   return [...albums].sort((a, b) => {
@@ -85,6 +86,12 @@ export function readCatalogCache(storage = globalThis.localStorage) {
   } catch {
     return null;
   }
+}
+
+export function readCachedCatalog() {
+  const cached = readCatalogCache();
+  if (!cached || Date.now() - cached.generatedAt > CATALOG_CACHE_MAX_AGE_MS) return null;
+  return cached;
 }
 
 export function writeCatalogCache(catalog, storage = globalThis.localStorage) {
