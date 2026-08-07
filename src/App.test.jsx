@@ -447,12 +447,11 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
     const dialog = await screen.findByRole('dialog', { name: '播放列表' });
-    const close = screen.getByRole('button', { name: '收起播放列表' });
-    close.focus();
+    const buttons = dialog.querySelectorAll('button');
+    buttons[0].focus();
 
     fireEvent.keyDown(window, { key: 'Tab', shiftKey: true });
 
-    const buttons = dialog.querySelectorAll('button');
     expect(document.activeElement).toBe(buttons[buttons.length - 1]);
   });
 

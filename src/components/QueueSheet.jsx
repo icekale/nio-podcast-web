@@ -1,10 +1,11 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ChevronDown, ChevronRight, ChevronUp, CircleAlert, ListPlus, MoreHorizontal, Music2, RotateCcw, Trash2, X } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronRight, ChevronUp, CircleAlert, ListPlus, MoreHorizontal, Music2, RotateCcw, Timer, Trash2, X } from 'lucide-react';
 import { getEpisodes } from '../api';
 import { Artwork } from './Artwork';
 import { EpisodeRow } from './EpisodeRow';
 import { formatDuration } from '../format';
 import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
+import { SLEEP_OPTIONS } from '../playbackPrefs';
 
 function LaterPicker({ catalog, onBack, onAdd }) {
   const [selectedAlbumId, setSelectedAlbumId] = useState(null);
@@ -186,7 +187,8 @@ function LaterQueueRow({ episode, index, count, onPlay, onRemove, onMove, menuOp
   );
 }
 
-export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove, catalog, onAddLater, onRemoveLater, onMoveLater }) {
+export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpisodeId, laterEpisodes, activeTab, setActiveTab, isClosing, onExited, onClose, onPlay, onPlayLater, onPlayNext, onRemove, catalog, onAddLater, onRemoveLater, onMoveLater, sleepTimer, onSetSleepTimer }) {
+  const [sleepOpen, setSleepOpen] = useState(false);
   const closeRef = useRef(null);
   const dialogRef = useRef(null);
   const startY = useRef(null);
@@ -290,7 +292,7 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
       <button type="button" className="queue-backdrop" aria-label="关闭播放列表" onClick={onClose} />
       <section ref={dialogRef} className={`queue-sheet${isClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="queue-title" onAnimationEnd={handleAnimationEnd} onPointerDown={event => { startY.current = event.target.closest('.queue-scroll') ? null : event.clientY; }} onPointerUp={event => { if (startY.current !== null && event.clientY - startY.current > 80) onClose(); startY.current = null; }} onPointerCancel={() => { startY.current = null; }}>
         <div className="sheet-handle" aria-hidden="true" />
-        <div className="sheet-header"><h2 id="queue-title">播放列表</h2><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div>
+        <div className="sheet-header"><h2 id="queue-title">播放列表</h2><div className="header-actions"><span className="sleep-trigger"><button type="button" className={`icon-button${sleepTimer ? ' is-active' : ''}`} aria-label="睡眠定时" aria-expanded={sleepOpen} aria-haspopup="menu" onClick={() => setSleepOpen(open => !open)}><Timer size={20} /></button>{sleepOpen ? <div className="sleep-menu" role="menu">{SLEEP_OPTIONS.map(minutes => <button key={minutes} type="button" role="menuitem" aria-pressed={sleepTimer?.mode === 'minutes' && sleepTimer.minutes === minutes} onClick={() => { onSetSleepTimer(minutes); setSleepOpen(false); }}>{minutes} 分钟</button>)}<button type="button" role="menuitem" aria-pressed={sleepTimer?.mode === 'episode-end'} onClick={() => { onSetSleepTimer('episode-end'); setSleepOpen(false); }}>本集结束</button>{sleepTimer ? <button type="button" role="menuitem" onClick={() => { onSetSleepTimer(null); setSleepOpen(false); }}>关闭定时</button> : null}</div> : null}</span><button ref={closeRef} type="button" className="icon-button" aria-label="收起播放列表" onClick={onClose}><X size={21} /></button></div></div>
         <div className="queue-tabs" role="tablist" aria-label="播放内容">
           <button ref={element => tabRefs.current.set('queue', element)} id="queue-tab" tabIndex={activeTab === 'queue' ? 0 : -1} type="button" role="tab" aria-controls="queue-panel" aria-label="播放列表" aria-selected={activeTab === 'queue'} className={activeTab === 'queue' ? 'is-selected' : ''} onKeyDown={handleTabKeyDown} onClick={() => selectTab('queue')}>播放列表 <span aria-hidden="true">{queue.length}</span></button>
           <button ref={element => tabRefs.current.set('history', element)} id="history-tab" tabIndex={activeTab === 'history' ? 0 : -1} type="button" role="tab" aria-controls="queue-panel" aria-label="最近听过" aria-selected={activeTab === 'history'} className={activeTab === 'history' ? 'is-selected' : ''} onKeyDown={handleTabKeyDown} onClick={() => selectTab('history')}>最近听过 <span aria-hidden="true">{history.length}</span></button>

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { CircleAlert, RotateCcw } from 'lucide-react';
 import { loadCatalog, normalizeCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
+import { cycleRate, readPlaybackRate, sleepDeadline, writePlaybackRate } from './playbackPrefs';
 import {
   PLAYER_STORAGE_KEY,
   canResume,
@@ -73,7 +74,13 @@ export default function App({ initialCatalog = null }) {
   laterEpisodesRef.current = laterEpisodes;
   const [playerVisible, setPlayerVisible] = useState(() => Boolean(player.currentEpisode));
   const [playerClosing, setPlayerClosing] = useState(false);
+  const [playbackRate, setPlaybackRate] = useState(readPlaybackRate);
+  const [sleepTimer, setSleepTimer] = useState(null);
+  const [shareFeedback, setShareFeedback] = useState(null);
   const lastEpisodeRef = useRef(player.currentEpisode);
+  const sleepTimerRef = useRef(sleepTimer);
+  sleepTimerRef.current = sleepTimer;
+  const sleepTimeoutRef = useRef(null);
 
   useEffect(() => { if (player.currentEpisode) lastEpisodeRef.current = player.currentEpisode; }, [player.currentEpisode]);
   useEffect(() => {
@@ -412,6 +419,12 @@ export default function App({ initialCatalog = null }) {
 
   const handleEnded = useCallback(() => {
     const previous = playerRef.current;
+    if (sleepTimerRef.current?.mode === 'episode-end') {
+      setSleepTimer(null);
+      setPlayer(state => ({ ...state, isPlaying: false }));
+      setIsPlaying(false);
+      return;
+    }
     const completedEpisode = previous.currentEpisode;
     if (completedEpisode) removeFromLater(completedEpisode.id);
     let next = previous;
@@ -449,6 +462,132 @@ export default function App({ initialCatalog = null }) {
     setIsPlaying(true);
     setPlayer(previous => ({ ...previous, isPlaying: true }));
   }, [setPlaybackFailure]);
+
+  const seekBySeconds = useCallback(delta => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const max = Number.isFinite(audio.duration) ? audio.duration : Number.MAX_SAFE_INTEGER;
+    const next = Math.min(Math.max((audio.currentTime || 0) + delta, 0), max);
+    try { audio.currentTime = next; } catch { /* media may not be ready */ }
+    setPlayer(previous => ({ ...previous, positionSeconds: next }));
+  }, []);
+
+  const playAdjacent = useCallback(direction => {
+    const { queue, queueIndex } = playerRef.current;
+    if (!queue.length) return;
+    let cursor = queueIndex + direction;
+    while (cursor >= 0 && cursor < queue.length) {
+      const candidate = queue[cursor];
+      if (candidate?.audioUrl) {
+        startPlayback(candidate, queue);
+        return;
+      }
+      cursor += direction;
+    }
+  }, [startPlayback]);
+
+  // 倍速:应用到音频元素(切集/load() 会重置,统一在此兜底)
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.playbackRate = playbackRate;
+  }, [playbackRate, player.currentEpisode?.id]);
+
+  // 睡眠定时:分钟模式倒计时,到点暂停
+  useEffect(() => {
+    if (!sleepTimer || sleepTimer.mode !== 'minutes') return undefined;
+    const remaining = Math.max(0, sleepTimer.deadline - Date.now());
+    sleepTimeoutRef.current = window.setTimeout(() => {
+      sleepTimeoutRef.current = null;
+      setSleepTimer(null);
+      audioRef.current?.pause();
+    }, remaining);
+    return () => {
+      if (sleepTimeoutRef.current) {
+        window.clearTimeout(sleepTimeoutRef.current);
+        sleepTimeoutRef.current = null;
+      }
+    };
+  }, [sleepTimer]);
+
+  // Media Session:锁屏/控制中心/蓝牙车机的元数据与播放控制
+  useEffect(() => {
+    const episode = player.currentEpisode;
+    if (!episode || !('mediaSession' in navigator)) return undefined;
+    const session = navigator.mediaSession;
+    try {
+      session.metadata = new MediaMetadata({
+        title: episode.title,
+        artist: episode.albumName || 'NIO Radio',
+        album: episode.albumName || 'NIO Radio',
+        artwork: episode.albumPic ? [{ src: episode.albumPic, sizes: '512x512', type: 'image/jpeg' }] : [],
+      });
+    } catch { /* 某些环境不支持 MediaMetadata */ }
+    const handlers = {
+      play: () => resumePlayback(),
+      pause: () => audioRef.current?.pause(),
+      seekbackward: () => seekBySeconds(-10),
+      seekforward: () => seekBySeconds(10),
+      previoustrack: () => playAdjacent(-1),
+      nexttrack: () => playAdjacent(1),
+    };
+    for (const [action, handler] of Object.entries(handlers)) {
+      try { session.setActionHandler(action, handler); } catch { /* 平台不支持的动作 */ }
+    }
+    return () => {
+      for (const action of Object.keys(handlers)) {
+        try { session.setActionHandler(action, null); } catch { /* noop */ }
+      }
+    };
+  }, [player.currentEpisode, resumePlayback, seekBySeconds, playAdjacent]);
+
+  // Media Session:进度同步(锁屏进度条)
+  useEffect(() => {
+    if (!('mediaSession' in navigator) || typeof navigator.mediaSession.setPositionState !== 'function') return;
+    try {
+      navigator.mediaSession.setPositionState({
+        duration: player.durationSeconds || 0,
+        playbackRate,
+        position: player.positionSeconds || 0,
+      });
+    } catch { /* duration 未就绪时浏览器会抛错 */ }
+  }, [player.positionSeconds, player.durationSeconds, playbackRate]);
+
+  const cyclePlaybackRate = useCallback(() => {
+    setPlaybackRate(previous => {
+      const next = cycleRate(previous);
+      writePlaybackRate(next);
+      return next;
+    });
+  }, []);
+
+  const setSleepMode = useCallback(mode => {
+    if (!mode) {
+      setSleepTimer(null);
+      return;
+    }
+    if (mode === 'episode-end') {
+      setSleepTimer({ mode: 'episode-end' });
+      return;
+    }
+    const minutes = Number(mode);
+    if (!Number.isFinite(minutes) || minutes <= 0) return;
+    setSleepTimer({ mode: 'minutes', minutes, deadline: sleepDeadline(minutes) });
+  }, []);
+
+  const shareCurrent = useCallback(async () => {
+    const episode = playerRef.current.currentEpisode;
+    if (!episode) return;
+    const url = `${window.location.origin}/#/album/${episode.albumId}`;
+    const text = `${episode.title} · ${episode.albumName || 'NIO Radio'}`;
+    if (navigator.share) {
+      try { await navigator.share({ title: text, text, url }); } catch { /* 用户取消 */ }
+    } else if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(`${text} ${url}`);
+        setShareFeedback('copied');
+        window.setTimeout(() => setShareFeedback(null), 1600);
+      } catch { /* 剪贴板不可用 */ }
+    }
+  }, []);
 
   const openSearch = useCallback(() => go('#/search'), [go]);
   const openFavorites = useCallback(() => go('#/favorites'), [go]);
@@ -498,8 +637,8 @@ export default function App({ initialCatalog = null }) {
         </div>}
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
-      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
-      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} /> : null}
+      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} playbackRate={playbackRate} onCycleRate={cyclePlaybackRate} onShare={shareCurrent} shareFeedback={shareFeedback} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
+      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} /> : null}
     </main>
   );
 }
