@@ -9,7 +9,8 @@ test.describe('app smoke', () => {
     });
 
     await page.goto('/#/');
-    await expect(page.getByText('今日更新').first()).toBeVisible();
+    // 标题在目录有新节目时为“今日更新”,跨日后为“最新更新”,两者都算首页已加载
+    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
 
     await page.locator('.primary-button').first().click();
     const queueTrigger = page.getByRole('button', { name: '打开播放列表' });

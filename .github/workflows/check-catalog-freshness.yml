@@ -1,0 +1,45 @@
+name: Check catalog freshness
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Beijing 14:00 daily
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Measure catalog age
+        id: age
+        run: |
+          GENERATED=$(curl -s --max-time 30 https://nio.k4le.top/data/albums.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('generatedAt') or 0)" 2>/dev/null || echo 0)
+          NOW=$(date +%s%3N)
+          AGE_HOURS=$(( (NOW - GENERATED) / 3600000 ))
+          if [ "$AGE_HOURS" -lt 0 ]; then AGE_HOURS=0; fi
+          echo "generated_at=$GENERATED age_hours=$AGE_HOURS"
+          echo "generated_at=$GENERATED" >> "$GITHUB_OUTPUT"
+          echo "age_hours=$AGE_HOURS" >> "$GITHUB_OUTPUT"
+
+      - name: Auto-repair stale catalog
+        if: ${{ fromJson(steps.age.outputs.age_hours) > 26 }}
+        run: gh workflow run update-catalog.yml -f mode=incremental
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Escalate if still stale
+        if: ${{ fromJson(steps.age.outputs.age_hours) > 50 }}
+        run: |
+          EXISTING=$(gh issue list --state open --search "目录已过期" --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -z "$EXISTING" ]; then
+            gh issue create \
+              --title "目录已过期 50+ 小时,需要人工检查" \
+              --body "线上目录 generatedAt=${{ steps.age.outputs.generated_at }}(约 ${{ steps.age.outputs.age_hours }} 小时前生成)。已自动触发一次增量更新修复,请检查 update-catalog 工作流运行状态与 NIO 上游是否正常。"
+          else
+            echo "已有 open issue #$EXISTING,跳过创建"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
