@@ -262,7 +262,47 @@ h1, h2, p { margin: 0; }
 .player-control:hover { color: var(--teal-dark); }
 .queue-control { color: var(--ink); }
 .mini-progress-row { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); color: var(--muted); font-size: 0.68rem; font-variant-numeric: tabular-nums; order: 4; flex-basis: 100%; }
-.mini-progress-row input { min-width: 0; flex: 1; height: 2.75rem; accent-color: var(--teal); }
+.mini-progress-row input {
+  min-width: 0;
+  flex: 1;
+  height: 2.75rem;
+  appearance: none;
+  background: transparent;
+}
+.mini-progress-row input:focus-visible { outline: none; }
+.mini-progress-row input::-webkit-slider-runnable-track {
+  height: 0.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+}
+.mini-progress-row input::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.375rem;
+  border: 0.3rem solid var(--teal);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.mini-progress-row input:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--teal) 30%, transparent);
+}
+.mini-progress-row input::-moz-range-track {
+  height: 0.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+}
+.mini-progress-row input::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  border: 0.3rem solid var(--teal);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.mini-progress-row input:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--teal) 30%, transparent);
+}
 .player-error { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-2); color: var(--danger); font-size: 0.76rem; }
 .player-error button { min-height: 2.75rem; padding: 0 var(--space-2); color: var(--teal-dark); background: transparent; font-weight: 650; }
 .speed-pill {
