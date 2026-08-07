@@ -307,9 +307,9 @@ h1, h2, p { margin: 0; }
 .player-error button { min-height: 2.75rem; padding: 0 var(--space-2); color: var(--teal-dark); background: transparent; font-weight: 650; }
 .speed-pill {
   flex: 0 0 auto;
-  min-height: 2.25rem;
-  padding: 0 0.45rem;
-  border-radius: var(--radius-pill);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
   background: var(--surface-soft);
   color: var(--muted-strong);
   font-size: 0.72rem;
