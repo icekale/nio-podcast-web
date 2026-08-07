@@ -459,7 +459,6 @@ h1, h2, p { margin: 0; }
   .mini-main { flex-wrap: nowrap; }
   .mini-toggle { order: 2; }
   .mini-progress-row { order: 3; flex: 1; min-width: 0; flex-basis: auto; margin-top: 0; }
-  .share-control { order: 4; }
   .queue-control { order: 4; }
 
   .home-screen { display: block; }

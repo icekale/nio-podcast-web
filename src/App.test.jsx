@@ -455,6 +455,18 @@ describe('mobile app shell', () => {
     expect(document.activeElement).toBe(buttons[buttons.length - 1]);
   });
 
+  it('shares a queue episode from the row menu with a clipboard fallback', async () => {
+    const clipboardWrite = vi.fn().mockResolvedValue();
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: clipboardWrite } });
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '管理 第一集' }));
+    fireEvent.click(screen.getByRole('menuitem', { name: '分享' }));
+    expect(clipboardWrite).toHaveBeenCalledWith(expect.stringContaining('第一集'));
+    expect(await screen.findByText('已复制分享链接')).toBeInTheDocument();
+  });
+
   it('supports arrow and boundary keys for queue tabs', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
