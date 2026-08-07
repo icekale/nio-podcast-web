@@ -467,27 +467,6 @@ describe('mobile app shell', () => {
     expect(await screen.findByText('已复制分享链接')).toBeInTheDocument();
   });
 
-  it('picks a playback speed from the mini player menu and persists it', async () => {
-    render(<App initialCatalog={catalog} />);
-    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
-    fireEvent.click(screen.getByRole('button', { name: '播放速度 1×' }));
-    const menu = screen.getByRole('menu');
-    expect(within(menu).getByRole('menuitem', { name: '1.5×' })).toBeInTheDocument();
-    fireEvent.click(within(menu).getByRole('menuitem', { name: '1.5×' }));
-    expect(document.querySelector('audio').playbackRate).toBe(1.5);
-    expect(window.localStorage.getItem('nio_playback_rate_v1')).toBe('1.5');
-    expect(screen.getByRole('button', { name: '播放速度 1.5×' })).toBeInTheDocument();
-  });
-
-  it('closes the speed menu when tapping outside', async () => {
-    render(<App initialCatalog={catalog} />);
-    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
-    fireEvent.click(screen.getByRole('button', { name: '播放速度 1×' }));
-    expect(screen.getByRole('menu')).toBeInTheDocument();
-    fireEvent.pointerDown(document.body);
-    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
-  });
-
   it('supports arrow and boundary keys for queue tabs', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));

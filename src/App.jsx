@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { CircleAlert, RotateCcw } from 'lucide-react';
 import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
-import { readPlaybackRate, sleepDeadline, SPEED_OPTIONS, writePlaybackRate } from './playbackPrefs';
+import { sleepDeadline } from './playbackPrefs';
 import {
   PLAYER_STORAGE_KEY,
   canResume,
@@ -76,7 +76,6 @@ export default function App({ initialCatalog = null }) {
   laterEpisodesRef.current = laterEpisodes;
   const [playerVisible, setPlayerVisible] = useState(() => Boolean(player.currentEpisode));
   const [playerClosing, setPlayerClosing] = useState(false);
-  const [playbackRate, setPlaybackRate] = useState(readPlaybackRate);
   const [sleepTimer, setSleepTimer] = useState(null);
   const lastEpisodeRef = useRef(player.currentEpisode);
   const sleepTimerRef = useRef(sleepTimer);
@@ -487,11 +486,6 @@ export default function App({ initialCatalog = null }) {
     }
   }, [startPlayback]);
 
-  // 倍速:应用到音频元素(切集/load() 会重置,统一在此兜底)
-  useEffect(() => {
-    if (audioRef.current) audioRef.current.playbackRate = playbackRate;
-  }, [playbackRate, player.currentEpisode?.id]);
-
   // 睡眠定时:分钟模式倒计时,到点暂停
   useEffect(() => {
     if (!sleepTimer || sleepTimer.mode !== 'minutes') return undefined;
@@ -546,17 +540,10 @@ export default function App({ initialCatalog = null }) {
     try {
       navigator.mediaSession.setPositionState({
         duration: player.durationSeconds || 0,
-        playbackRate,
         position: player.positionSeconds || 0,
       });
     } catch { /* duration 未就绪时浏览器会抛错 */ }
-  }, [player.positionSeconds, player.durationSeconds, playbackRate]);
-
-  const selectPlaybackRate = useCallback(rate => {
-    if (!SPEED_OPTIONS.includes(rate)) return;
-    setPlaybackRate(rate);
-    writePlaybackRate(rate);
-  }, []);
+  }, [player.positionSeconds, player.durationSeconds]);
 
   const setSleepMode = useCallback(mode => {
     if (!mode) {
@@ -633,7 +620,7 @@ export default function App({ initialCatalog = null }) {
         </div>}
       </div>
       <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
-      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} playbackRate={playbackRate} onSelectRate={selectPlaybackRate} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
+      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} onToggle={togglePlayback} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
       {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} onShareEpisode={shareEpisode} /> : null}
     </main>
   );
