@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786121939817,
+  "generatedAt": 1786164306111,
   "albums": [
     {
       "id": 5,
@@ -47,15 +47,15 @@
       "host": "NIO Radio",
       "episodeCount": 517,
       "latestEpisode": {
-        "id": 11650,
-        "title": "Babyface's R&B World Vol.1",
+        "id": 175671,
+        "title": "Babyface's R&B World Vol.2",
         "albumId": 41,
         "albumName": "乐行记·精选",
         "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
         "host": "NIO Radio",
-        "duration": 2204000,
+        "duration": 2076000,
         "onlineTime": 1786118400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/21/eT39Io1q7DWrK1aS_AAC_192.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/20/OAbEZTFyotXm3Fgm_AAC_192.m4a"
       }
     },
     {
