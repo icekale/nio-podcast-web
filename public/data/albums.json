@@ -1,6 +1,25 @@
 {
-  "generatedAt": 1786164306111,
+  "generatedAt": 1786184295288,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 369,
+      "latestEpisode": {
+        "id": 196803,
+        "title": "MikeWilliams特辑",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2782000,
+        "onlineTime": 1786179600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/EAQSrfyVntyhJFql_AAC_192_1.m4a"
+      }
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -322,25 +341,6 @@
         "duration": 465000,
         "onlineTime": 1786093200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/fPNPsf7LYZMRbxkU_AAC_192_1.m4a"
-      }
-    },
-    {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 368,
-      "latestEpisode": {
-        "id": 196801,
-        "title": "OddMob特辑",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2773000,
-        "onlineTime": 1786093200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/l5anuvOOVfyxQ7Du_AAC_192_1.m4a"
       }
     },
     {
