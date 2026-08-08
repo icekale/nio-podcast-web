@@ -26,6 +26,18 @@ describe('album pagination', () => {
 
   afterEach(cleanup);
 
+  it('loads additional pages until a shared episode is found', async () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/album/1?ep=2');
+    getEpisodes.mockImplementation((_albumId, page) => Promise.resolve(page === 1
+      ? { episodes: [{ id: 1, title: '第一集', duration: 60000, audioUrl: 'https://cdn.example/1.aac' }], hasMore: true }
+      : { episodes: [{ id: 2, title: '第二集', duration: 60000, audioUrl: 'https://cdn.example/2.aac' }], hasMore: false }));
+
+    render(<App initialCatalog={catalog} />);
+
+    await waitFor(() => expect(screen.getByText('第二集')).toBeInTheDocument());
+    expect(getEpisodes.mock.calls.map(([, page]) => page)).toEqual([1, 2]);
+  });
+
   it('retries the failed page instead of the last successful page', async () => {
     getEpisodes.mockImplementation((_albumId, page) => {
       if (page === 1) return Promise.resolve({ episodes: [{ id: 1, title: '第一集', duration: 60000, audioUrl: 'https://cdn.example/1.aac' }], hasMore: true });

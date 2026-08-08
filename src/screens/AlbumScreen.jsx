@@ -38,10 +38,14 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
     loadPage(1);
   }, [loadPage]);
 
-  // 单集深链:定位到目标节目并短暂高亮(仅在已加载的行内查找)
+  // 单集深链:目标节目不在当前页时继续加载分页。
   useEffect(() => {
     if (!episodeId || !episodes.length) return undefined;
-    if (!episodes.some(episode => episode.id === episodeId)) return undefined;
+    const target = episodes.some(episode => String(episode.id) === String(episodeId));
+    if (!target) {
+      if (hasMore && !loading && !error) loadPage(page + 1);
+      return undefined;
+    }
     const timer = window.setTimeout(() => {
       const row = document.querySelector(`.episode-row[data-episode-id="${episodeId}"]`);
       row?.scrollIntoView({ block: 'center' });
@@ -49,7 +53,7 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
       window.setTimeout(() => row?.classList.remove('is-target'), 1600);
     }, 100);
     return () => window.clearTimeout(timer);
-  }, [episodeId, episodes]);
+  }, [episodeId, episodes, error, hasMore, loadPage, loading, page]);
 
   return (
     <div className="screen album-screen">

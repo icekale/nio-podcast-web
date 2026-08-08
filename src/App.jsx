@@ -419,14 +419,14 @@ export default function App({ initialCatalog = null }) {
 
   const handleEnded = useCallback(() => {
     const previous = playerRef.current;
+    const completedEpisode = previous.currentEpisode;
+    if (completedEpisode) removeFromLater(completedEpisode.id);
     if (sleepTimerRef.current?.mode === 'episode-end') {
       setSleepTimer(null);
       setPlayer(state => ({ ...state, isPlaying: false }));
       setIsPlaying(false);
       return;
     }
-    const completedEpisode = previous.currentEpisode;
-    if (completedEpisode) removeFromLater(completedEpisode.id);
     let next = previous;
     let cursor = previous.queueIndex + 1;
     while (cursor < previous.queue.length) {
