@@ -69,6 +69,16 @@ describe('catalog selectors', () => {
     expect(sortAlbumsForDirectory(albums, [9, 5]).map(album => album.id)).toEqual([9, 5, 23, 7, 8]);
   });
 
+  it('ranks boosted albums ahead of the latest-updated rest', () => {
+    const albums = [
+      { id: 35, name: '芝士分子', latestEpisode: episode(351, 100) },
+      { id: 584, name: 'N问', latestEpisode: episode(5841, 200) },
+      { id: 7, name: '普通专辑', latestEpisode: episode(71, 300) },
+      { id: 8, name: '另一张普通专辑', latestEpisode: episode(81, 400) },
+    ];
+    expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([35, 584, 8, 7]);
+  });
+
   it('selects up to twelve episodes published on the requested day', () => {
     const day = new Date('2026-08-02T10:00:00+08:00');
     const albums = Array.from({ length: 14 }, (_, index) => ({

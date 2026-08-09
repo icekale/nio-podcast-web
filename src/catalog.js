@@ -14,6 +14,8 @@ export function sortAlbumsByLatest(albums) {
 }
 
 const PINNED_ALBUM_IDS = [5, 23];
+// 用户要求提高排序权重：芝士分子 (35)、N问 (584)
+const BOOSTED_ALBUM_IDS = [35, 584];
 const CITY_CHANNEL_PATTERN = /城市资讯|城市频道|天气预报/;
 
 export function isCityChannelAlbum(album) {
@@ -22,24 +24,29 @@ export function isCityChannelAlbum(album) {
 
 export function sortAlbumsForDirectory(albums, favoriteIds = []) {
   const pinnedIds = new Set(PINNED_ALBUM_IDS.map(Number));
+  const boostedIds = new Set(BOOSTED_ALBUM_IDS.map(Number));
   const favoriteOrder = new Map(
     favoriteIds.map(Number).filter(Number.isFinite).map((id, index) => [id, index]),
   );
   const favorites = [];
   const pinned = [];
+  const boosted = [];
   const rest = [];
   const city = [];
   for (const album of albums) {
     const id = Number(album.id);
     if (favoriteOrder.has(id)) favorites.push(album);
     else if (pinnedIds.has(id)) pinned.push(album);
+    else if (boostedIds.has(id)) boosted.push(album);
     else if (isCityChannelAlbum(album)) city.push(album);
     else rest.push(album);
   }
   favorites.sort((a, b) => favoriteOrder.get(Number(a.id)) - favoriteOrder.get(Number(b.id)));
   const pinnedOrder = new Map(PINNED_ALBUM_IDS.map((id, index) => [id, index]));
   pinned.sort((a, b) => pinnedOrder.get(Number(a.id)) - pinnedOrder.get(Number(b.id)));
-  return [...favorites, ...pinned, ...sortAlbumsByLatest(rest), ...sortAlbumsByLatest(city)];
+  const boostedOrder = new Map(BOOSTED_ALBUM_IDS.map((id, index) => [id, index]));
+  boosted.sort((a, b) => boostedOrder.get(Number(a.id)) - boostedOrder.get(Number(b.id)));
+  return [...favorites, ...pinned, ...boosted, ...sortAlbumsByLatest(rest), ...sortAlbumsByLatest(city)];
 }
 
 export function getBeijingDayKey(timestamp = Date.now()) {
