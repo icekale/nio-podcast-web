@@ -3,8 +3,12 @@ import { ChevronRight } from 'lucide-react';
 import { groupAlbumsByCategory } from '../catalog';
 import { AlbumResults } from './AlbumResults';
 
+const SECTION_LIMIT = 12;
+const REST_LIMIT = 12;
+
 export const CategorySections = memo(function CategorySections({ albums, onOpenAlbum, favoriteIds, onToggleFavorite, starAction = false }) {
   const [expandedCategory, setExpandedCategory] = useState(null);
+  const [expandedRest, setExpandedRest] = useState(false);
   const { groups, rest } = useMemo(() => groupAlbumsByCategory(albums, favoriteIds), [albums, favoriteIds]);
 
   return (
@@ -23,10 +27,9 @@ export const CategorySections = memo(function CategorySections({ albums, onOpenA
             <ChevronRight size={19} aria-hidden="true" />
           </button>
           <AlbumResults
-            albums={expandedCategory === group.id || starAction ? group.albums : group.albums.slice(0, 12)}
+            albums={expandedCategory === group.id ? group.albums : group.albums.slice(0, SECTION_LIMIT)}
             onOpenAlbum={onOpenAlbum}
-            grid={expandedCategory === group.id || starAction}
-            rail={expandedCategory !== group.id}
+            grid
             favoriteIds={favoriteIds}
             onToggleFavorite={onToggleFavorite}
             starAction={starAction}
@@ -35,8 +38,18 @@ export const CategorySections = memo(function CategorySections({ albums, onOpenA
       ))}
       {rest.length ? (
         <section className="category-section" aria-labelledby="category-more">
-          <h2 className="category-heading" id="category-more"><span className="category-label">更多专辑</span><span className="category-count">{rest.length}</span></h2>
-          <AlbumResults albums={rest} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
+          <button
+            type="button"
+            className="category-heading"
+            id="category-more"
+            aria-expanded={expandedRest}
+            onClick={() => setExpandedRest(previous => !previous)}
+          >
+            <span className="category-label">更多专辑</span>
+            <span className="category-count">{rest.length}</span>
+            <ChevronRight size={19} aria-hidden="true" />
+          </button>
+          <AlbumResults albums={expandedRest ? rest : rest.slice(0, REST_LIMIT)} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
         </section>
       ) : null}
     </>

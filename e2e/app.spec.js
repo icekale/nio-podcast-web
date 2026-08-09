@@ -61,8 +61,9 @@ test.describe('app smoke', () => {
   test('album grid covers align at the top of each row', async ({ page }) => {
     await page.goto('/#/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
-    const columns = await page.locator('.album-results.is-grid').evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ').length);
-    const tops = await page.locator('.album-results.is-grid .album-row').evaluateAll((elements, count) => elements.slice(0, count).map(element => Math.round(element.querySelector('.album-art').getBoundingClientRect().top)), columns);
+    const grid = page.locator('.album-results.is-grid').first();
+    const columns = await grid.evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+    const tops = await grid.locator('.album-row').evaluateAll((elements, count) => elements.slice(0, count).map(element => Math.round(element.querySelector('.album-art').getBoundingClientRect().top)), columns);
     expect(new Set(tops).size).toBe(1);
   });
 

@@ -41,12 +41,12 @@ function FavoriteStarButton({ album, favorited, onToggle }) {
   );
 }
 
-export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender, grid = false, rail = false, favoriteIds = [], onToggleFavorite, starAction = false }) {
+export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender, grid = false, favoriteIds = [], onToggleFavorite, starAction = false }) {
   const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
   const favoriteSet = new Set(favoriteIds.map(Number));
   useEffect(() => { onRender?.(); }, [onRender]);
   return (
-    <ul className={`album-results${grid ? ' is-grid' : ''}${rail ? ' is-rail' : ''}`}>
+    <ul className={`album-results${grid ? ' is-grid' : ''}`}>
       {visibleAlbums.map(album => {
         const favorited = favoriteSet.has(Number(album.id));
         return (
