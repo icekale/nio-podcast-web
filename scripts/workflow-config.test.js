@@ -17,7 +17,7 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('MODE="${INPUT_MODE:-incremental}"');
     expect(workflow).toContain('NIO_CATALOG_MODE=$MODE');
     expect(workflow).toContain('30 23 * * *');
-    expect(workflow).toContain('0 20 * * *');
+    expect(workflow).toContain('0 18 * * *');
     expect(workflow).toContain('0 13 * * *');
     expect(workflow).toContain('0 10 * * *');
     expect(workflow).toContain('0 16 * * *');
