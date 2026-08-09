@@ -2,6 +2,12 @@ import { Heart, ListMusic, Pause, Play, SkipBack, SkipForward } from 'lucide-rea
 import { Artwork } from './Artwork';
 import { formatClock } from '../format';
 
+export function bubbleSecondsFromPointer(clientX, trackLeft, trackWidth, durationSeconds) {
+  if (!Number.isFinite(durationSeconds) || durationSeconds <= 0 || !Number.isFinite(trackWidth) || trackWidth <= 0) return 0;
+  const ratio = (clientX - trackLeft) / trackWidth;
+  return Math.min(Math.max(Math.round(ratio * durationSeconds), 0), durationSeconds);
+}
+
 export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], onToggleFavorite, onToggle, onAdjacent, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
   const queueSize = player.queue?.length || 0;
