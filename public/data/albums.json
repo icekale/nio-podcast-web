@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786248866813,
+  "generatedAt": 1786249823454,
   "albums": [
     {
       "id": 35,
@@ -18,7 +18,8 @@
         "duration": 300000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/aEJ9fcGa5QgJXbrX_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 41,
@@ -37,7 +38,8 @@
         "duration": 2222000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/09/9n6AVuMmkRfYiTpK_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 56,
@@ -56,7 +58,8 @@
         "duration": 614000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/08/UcnPt8nQcdYbaQgy_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 307,
@@ -75,7 +78,8 @@
         "duration": 1466000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/8/a2dc99cf-49cf-4c4d-8c4c-baaa1368f24c_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 411,
@@ -94,7 +98,8 @@
         "duration": 3924000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/Ollb3gTnPZmQNN8F_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 442,
@@ -113,7 +118,8 @@
         "duration": 2800000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/09/yg6XNvbNyuSjh4GA_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 540,
@@ -132,7 +138,8 @@
         "duration": 562000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/mAPvKrZQuD9FfCRM_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 584,
@@ -151,7 +158,8 @@
         "duration": 3454000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/08/9ooXUTXiCOZOXwYd_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 661,
@@ -170,7 +178,8 @@
         "duration": 1663000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/28/DfwLG9y76amEPbrT_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 753,
@@ -189,7 +198,8 @@
         "duration": 10669000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/teXEQw8S8jgKVc0J_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 763,
@@ -208,7 +218,8 @@
         "duration": 2515000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/kiuS184fRUJ9Ja7g_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 804,
@@ -227,7 +238,8 @@
         "duration": 3816000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/wzlX7jPP4udn6Ums_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 806,
@@ -246,7 +258,8 @@
         "duration": 3451000,
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/08/zVUkRd7MWAPqhCqd_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 547,
@@ -265,7 +278,8 @@
         "duration": 2782000,
         "onlineTime": 1786179600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/EAQSrfyVntyhJFql_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 5,
@@ -284,7 +298,8 @@
         "duration": 392000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/ZCQBuXruxNpBVHL6_AAC_192_1.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 22,
@@ -303,7 +318,8 @@
         "duration": 655000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/21/5ccb4431-a789-46a4-bab0-be4079d1e93b_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 651,
@@ -322,7 +338,8 @@
         "duration": 827000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/zdj1tOkOYO6BiuZ9_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 762,
@@ -341,7 +358,8 @@
         "duration": 1635000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/28/Gujgsik6muSkXNng_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 769,
@@ -360,7 +378,8 @@
         "duration": 3899000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/vaknC1qsZOobT0YP_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 773,
@@ -379,7 +398,8 @@
         "duration": 3142000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/ByfA3HXIbUFtZAvb_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 789,
@@ -398,7 +418,8 @@
         "duration": 3610000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/aqOMzIH6DhpvOgsv_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 803,
@@ -417,7 +438,8 @@
         "duration": 1731000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/nisaTXJnVwSRLWQT_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 808,
@@ -436,7 +458,8 @@
         "duration": 4427000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/31/69SL76W6Y6SijyDn_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 820,
@@ -455,7 +478,8 @@
         "duration": 1200000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/CmZizCBWWsjbO9MI_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 831,
@@ -474,7 +498,8 @@
         "duration": 1437000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/1JQ6Kl3YnNmuvA26_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 832,
@@ -493,7 +518,8 @@
         "duration": 544000,
         "onlineTime": 1786118400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/12SdYIlpyW2LPV03_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 23,
@@ -512,7 +538,8 @@
         "duration": 432000,
         "onlineTime": 1786093200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/mDjtzin8l40NMyqb_AAC_192_1.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 120,
@@ -531,7 +558,8 @@
         "duration": 465000,
         "onlineTime": 1786093200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/fPNPsf7LYZMRbxkU_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 618,
@@ -550,7 +578,8 @@
         "duration": 459000,
         "onlineTime": 1786093200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/1LEMTLMXkFzLAfq1_AAC_192_1.m4a"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 809,
@@ -569,7 +598,8 @@
         "duration": 50000,
         "onlineTime": 1786093200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/2IZDQALm7QDOLABl_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 673,
@@ -588,7 +618,8 @@
         "duration": 856000,
         "onlineTime": 1786057200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/HA4HJUibhcrPvh4S_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 11,
@@ -607,7 +638,8 @@
         "duration": 2146000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/iaeSQL4xOLMtASuv_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 18,
@@ -626,7 +658,8 @@
         "duration": 1423000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/9QbP3xUunlJJhbtx_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 30,
@@ -645,7 +678,8 @@
         "duration": 661000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/RaGEbRLbp3meo0DE_AAC_192_1.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 64,
@@ -664,7 +698,8 @@
         "duration": 317000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/32SO1GAKInhxbi9w_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 68,
@@ -683,7 +718,8 @@
         "duration": 306000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/RJlSm4DLPQffzpPz_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 69,
@@ -702,7 +738,8 @@
         "duration": 341000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/ZdRCt6MbQaTuRk56_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 70,
@@ -721,7 +758,8 @@
         "duration": 339000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/Im2Rb35pg5hfXBPo_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 74,
@@ -740,7 +778,8 @@
         "duration": 307000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/lDHGC5bUAWX7LyqX_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 97,
@@ -759,7 +798,8 @@
         "duration": 240000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/12cQsbXP1q4pzf0v_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 103,
@@ -778,7 +818,8 @@
         "duration": 420000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/9yR0TwXol4kAME83_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 121,
@@ -797,7 +838,8 @@
         "duration": 1501000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/M8ox5ihqeHJHozR4_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 147,
@@ -816,7 +858,8 @@
         "duration": 4322000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/Erw8xTz0BVRgLHcH_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 148,
@@ -835,7 +878,8 @@
         "duration": 752000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/TGl7zQ9hWRneKMPt_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 239,
@@ -854,7 +898,8 @@
         "duration": 399000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/euCXShP2OlKUIXdO_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 260,
@@ -873,7 +918,8 @@
         "duration": 638000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/kSZsJNdCeWtS0aje_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 306,
@@ -892,7 +938,8 @@
         "duration": 1753000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/WbIU2sWJq1stzRqX_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 311,
@@ -911,7 +958,8 @@
         "duration": 322000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/Qa1ArctnTRV1VzfY_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 345,
@@ -930,7 +978,8 @@
         "duration": 294000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/MYk6awy5iNmAytnf_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 348,
@@ -949,7 +998,8 @@
         "duration": 1715000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/kP6CVb7EeQ90Wdas_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 358,
@@ -968,7 +1018,8 @@
         "duration": 318000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/tLAufZNvtFWiNiu9_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 388,
@@ -987,7 +1038,8 @@
         "duration": 284000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/KPk0QbskDgG3yeb0_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 419,
@@ -1006,7 +1058,8 @@
         "duration": 372000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/TMRGhiafjrgFfOyj_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 440,
@@ -1025,7 +1078,8 @@
         "duration": 313000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/KFpGof6mQ16snhCb_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 449,
@@ -1044,7 +1098,8 @@
         "duration": 829000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/k0M6tTXKLngSeWoP_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 532,
@@ -1063,7 +1118,8 @@
         "duration": 414000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/zG48A1UdkebFfIVc_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 544,
@@ -1082,7 +1138,8 @@
         "duration": 271000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/487pcMjKpQE9VXCh_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 559,
@@ -1101,7 +1158,8 @@
         "duration": 2093000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/TtjqlYuoxvSgojIw_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 594,
@@ -1120,7 +1178,8 @@
         "duration": 310000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/G7DBRctZIsBY2nDj_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 597,
@@ -1139,7 +1198,8 @@
         "duration": 884000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/pA3TctdEXvJtc4Po_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 614,
@@ -1158,7 +1218,8 @@
         "duration": 1061000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/Toe0HpVswPalzOl0_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 627,
@@ -1177,7 +1238,8 @@
         "duration": 371000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/LHIwqOMgl7sBNWVZ_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 631,
@@ -1196,7 +1258,8 @@
         "duration": 441000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/PntR0gIlpMAE8mRH_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 636,
@@ -1215,7 +1278,8 @@
         "duration": 1089000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/4wjiegrmZtPWnxAL_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 649,
@@ -1234,7 +1298,8 @@
         "duration": 922000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/AYEB13hx83R87VEV_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 683,
@@ -1253,7 +1318,8 @@
         "duration": 4337000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/R5GjKrd2pZuhvFiC_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 713,
@@ -1272,7 +1338,8 @@
         "duration": 364000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/YQzvyFxmQUqAkNzk_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 758,
@@ -1291,7 +1358,8 @@
         "duration": 1272000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/01/0TlejGFCJgQl61qZ_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 767,
@@ -1310,7 +1378,8 @@
         "duration": 841000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/VgnXBYEeqkWwLvS5_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 770,
@@ -1329,7 +1398,8 @@
         "duration": 6201000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/sy6qvrV5cJ5FHkKY_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 771,
@@ -1348,7 +1418,8 @@
         "duration": 682000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/z1GQi9jSIutrJ5IK_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 788,
@@ -1367,7 +1438,8 @@
         "duration": 1881000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/SMfAy32NrY9wV3Av_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 801,
@@ -1386,7 +1458,8 @@
         "duration": 300000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/YKEUoeYMVdfiaPI4_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 814,
@@ -1405,7 +1478,8 @@
         "duration": 286000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/07/QqQd7RUKWfeGHZ1g_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 328,
@@ -1424,7 +1498,8 @@
         "duration": 3990000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tUbGMqXPYy5lnYLK_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 349,
@@ -1443,7 +1518,8 @@
         "duration": 988000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/EPRX2B0KQPdgEvpI_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 381,
@@ -1462,7 +1538,8 @@
         "duration": 462000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/wocNJgbhR3NBVbUG_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 548,
@@ -1481,7 +1558,8 @@
         "duration": 603000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/Xrl0g7pEt97AeAzm_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 563,
@@ -1500,7 +1578,8 @@
         "duration": 680000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/f32kLNJ76aAAghHS_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 608,
@@ -1519,7 +1598,8 @@
         "duration": 300000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/IwXJHEbl9pmPukbv_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 625,
@@ -1538,7 +1618,8 @@
         "duration": 5505000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tqYNweygjNZGyxvu_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 637,
@@ -1557,7 +1638,8 @@
         "duration": 842000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/7bWFuz9ct6zV0YVW_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 662,
@@ -1576,7 +1658,8 @@
         "duration": 4769000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/PM6EExxSOu46ZNvs_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 688,
@@ -1595,7 +1678,8 @@
         "duration": 3073000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/VGmqI7AUaPhiWi09_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 729,
@@ -1614,7 +1698,8 @@
         "duration": 318000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/FDyws84ZYLCTzotk_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 749,
@@ -1633,7 +1718,8 @@
         "duration": 5448000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/9bwQW6upM590PqiO_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 794,
@@ -1652,7 +1738,8 @@
         "duration": 3474000,
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/zuwj3rpCrBn6vrOX_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 334,
@@ -1671,7 +1758,8 @@
         "duration": 1637000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/BjN5vGzhRiNSvkeo_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 344,
@@ -1690,7 +1778,8 @@
         "duration": 357000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/aY6crZxfbu68mNn7_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 439,
@@ -1709,7 +1798,8 @@
         "duration": 451000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/Pscx8c0xHFWzBMVP_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 606,
@@ -1728,7 +1818,8 @@
         "duration": 1567000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/qzDHgAA6eaK1xh09_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 616,
@@ -1747,7 +1838,8 @@
         "duration": 172000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/ahTDKtk1uQBi8ySd_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 670,
@@ -1766,7 +1858,8 @@
         "duration": 3693000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/WVBCdj0IaM5k5eJV_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 681,
@@ -1785,7 +1878,8 @@
         "duration": 3441000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/hK9yVd7WhWXzBN7N_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 751,
@@ -1804,7 +1898,8 @@
         "duration": 1213000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/dIVzyXFRqPpQqxmz_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 759,
@@ -1823,7 +1918,8 @@
         "duration": 2055000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/PGN9o9EL9yX9lDOX_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 798,
@@ -1842,7 +1938,8 @@
         "duration": 979000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tmY2PBfgJenYfvM5_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 805,
@@ -1861,7 +1958,8 @@
         "duration": 371000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/QujbNu7x3R2x6cDH_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 816,
@@ -1880,7 +1978,8 @@
         "duration": 417000,
         "onlineTime": 1785859200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/whfIt09GeiVH2PD3_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 63,
@@ -1899,7 +1998,8 @@
         "duration": 420000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/q2vsWX6qiS5ilnDt_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 129,
@@ -1918,7 +2018,8 @@
         "duration": 1177000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/DDnHaHDJuh0dss1E_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 131,
@@ -1937,7 +2038,8 @@
         "duration": 550000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/TSsY4VM38ghAiI9s_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 401,
@@ -1956,7 +2058,8 @@
         "duration": 1702000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/Zywfshe91RNOaDSh_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 484,
@@ -1975,7 +2078,8 @@
         "duration": 4033000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/LDgzaaqlG31bz9Hb_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 588,
@@ -1994,7 +2098,8 @@
         "duration": 1387000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/00Pm8EXFsPU654Iu_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 604,
@@ -2013,7 +2118,8 @@
         "duration": 396000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/vhITCPj5Uul7AoHu_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 611,
@@ -2032,7 +2138,8 @@
         "duration": 415000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/p7lNxE57VzRvlunS_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 630,
@@ -2051,7 +2158,8 @@
         "duration": 427000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/Sgg3kDPoQXli2Gry_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 648,
@@ -2070,7 +2178,8 @@
         "duration": 2515000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/kiuS184fRUJ9Ja7g_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 669,
@@ -2089,7 +2198,8 @@
         "duration": 6452000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/YFrB83QW21pKGyfe_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 694,
@@ -2108,7 +2218,8 @@
         "duration": 503000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/TlOYTZESFFgVJQ28_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 714,
@@ -2127,7 +2238,8 @@
         "duration": 317000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/zTxwAIhO6zYRFFKO_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 802,
@@ -2146,7 +2258,8 @@
         "duration": 3481000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/jfOgjVyfdQNSRujE_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 812,
@@ -2165,7 +2278,8 @@
         "duration": 8829000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/CkadFOlNpF2UHg8N_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 813,
@@ -2184,7 +2298,8 @@
         "duration": 341000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/maDVBqPhz2KvQjkU_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 827,
@@ -2203,7 +2318,8 @@
         "duration": 3134000,
         "onlineTime": 1785772800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/UekLXBMZcG7IkboP_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 66,
@@ -2222,7 +2338,8 @@
         "duration": 315000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/3fyejlCuJgYs0Vl8_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 88,
@@ -2241,7 +2358,8 @@
         "duration": 362000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/SskVM8YEFUojFr2R_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 93,
@@ -2260,7 +2378,8 @@
         "duration": 329000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/tdAGwdeByMnO4VbZ_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 271,
@@ -2279,7 +2398,8 @@
         "duration": 619000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/dlBKpQjiVXiU0SfM_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 485,
@@ -2298,7 +2418,8 @@
         "duration": 247000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/Vgv9aBK72VMflbYc_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 541,
@@ -2317,7 +2438,8 @@
         "duration": 3013000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/01/NFY9baWynazGFuOo_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 695,
@@ -2336,7 +2458,8 @@
         "duration": 617000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/iemHs5MLWPMAz4Yw_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 703,
@@ -2355,7 +2478,8 @@
         "duration": 5824000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/EbQasSBF5ihduxzo_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 726,
@@ -2374,7 +2498,8 @@
         "duration": 817000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/GbrKthpg9yW7WbhA_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 735,
@@ -2393,7 +2518,8 @@
         "duration": 100000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/31/tuUf6HsjxPIfYiXL_AAC_192_1.m4a"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 752,
@@ -2412,7 +2538,8 @@
         "duration": 182000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/lNlKDsLrIDTIxaV1_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 797,
@@ -2431,7 +2558,8 @@
         "duration": 3199000,
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/JdHObHjTryGDazzH_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 823,
@@ -2450,7 +2578,8 @@
         "duration": 1993000,
         "onlineTime": 1785600000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/29/nMnGpyzIdqoS1JRy_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 539,
@@ -2469,7 +2598,8 @@
         "duration": 4297000,
         "onlineTime": 1785513600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/Ys7tYVkIXhPHxWX9_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 728,
@@ -2488,7 +2618,8 @@
         "duration": 460000,
         "onlineTime": 1785513600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/bD8JHcTHtCX1Nwu5_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 516,
@@ -2507,7 +2638,8 @@
         "duration": 1072000,
         "onlineTime": 1785427200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/74aKMuiWrUwnCjB4_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 696,
@@ -2526,7 +2658,8 @@
         "duration": 2762000,
         "onlineTime": 1785427200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/iieUVKh3zuMl1Qm8_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 680,
@@ -2545,7 +2678,8 @@
         "duration": 4669000,
         "onlineTime": 1785340800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/29/6oPKLwsFGwzBYdw4_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 819,
@@ -2564,7 +2698,8 @@
         "duration": 603000,
         "onlineTime": 1785340800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/29/qrMNU9HmikzNkTcu_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 624,
@@ -2583,7 +2718,8 @@
         "duration": 641000,
         "onlineTime": 1785254400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/28/CoiLNx3cHkIPRFq0_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 675,
@@ -2602,7 +2738,8 @@
         "duration": 2811000,
         "onlineTime": 1785254400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/28/8BdQB5Z0u87AEioc_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 810,
@@ -2621,7 +2758,8 @@
         "duration": 5164000,
         "onlineTime": 1785254400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/23/sezmnmqwEFduc3rW_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 365,
@@ -2640,7 +2778,8 @@
         "duration": 1776000,
         "onlineTime": 1785168000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/27/m3HTary3cIxaBMiB_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 382,
@@ -2659,7 +2798,8 @@
         "duration": 7183000,
         "onlineTime": 1785168000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/28/chg6cmYHlCrQUJ6E_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 748,
@@ -2678,7 +2818,8 @@
         "duration": 943000,
         "onlineTime": 1785081600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/26/07QkHB3dIcmRwTlz_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 346,
@@ -2697,7 +2838,8 @@
         "duration": 799000,
         "onlineTime": 1784908800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/24/nQONyt54ofw2agOB_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 743,
@@ -2716,7 +2858,8 @@
         "duration": 228000,
         "onlineTime": 1784822400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/23/eTNB5tJYEyK7nzrH_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 830,
@@ -2735,7 +2878,8 @@
         "duration": 117000,
         "onlineTime": 1784772000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/jhADYcYFiYjqbilj_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 679,
@@ -2754,7 +2898,8 @@
         "duration": 3796000,
         "onlineTime": 1784736000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/J7ud8Vuz3tO3Uz1D_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 772,
@@ -2773,7 +2918,8 @@
         "duration": 2212000,
         "onlineTime": 1784736000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/21/aLKUCXnHcFcQVHuy_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 824,
@@ -2792,7 +2938,8 @@
         "duration": 4404000,
         "onlineTime": 1784736000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/c5h5aMb29rAAjFAC_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 378,
@@ -2811,7 +2958,8 @@
         "duration": 3527000,
         "onlineTime": 1784649600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/NNcvDacli0S8P4lK_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 674,
@@ -2830,7 +2978,8 @@
         "duration": 3201000,
         "onlineTime": 1784649600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/20/gznBi7v2OYqtG8bp_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 664,
@@ -2849,7 +2998,8 @@
         "duration": 4228000,
         "onlineTime": 1784131200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/15/UwSzsz1IzAqevpEP_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 826,
@@ -2868,7 +3018,8 @@
         "duration": 170000,
         "onlineTime": 1784131200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/15/V8HsS5EVV1etFiTy_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 339,
@@ -2887,7 +3038,8 @@
         "duration": 1058000,
         "onlineTime": 1784044800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/13/dEQu9hpkg4afd7pc_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 552,
@@ -2906,7 +3058,8 @@
         "duration": 3771000,
         "onlineTime": 1784044800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/14/fwoL4t3ROQMClD6x_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 700,
@@ -2925,7 +3078,8 @@
         "duration": 5776000,
         "onlineTime": 1784044800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/14/OG68lr5VDEDkK5om_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 828,
@@ -2944,7 +3098,8 @@
         "duration": 450000,
         "onlineTime": 1783958400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/29/3IXrS9RAqFi1Jlrv_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 149,
@@ -2963,7 +3118,8 @@
         "duration": 548000,
         "onlineTime": 1783872000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/10/TKLvc4Q6WIEehcl3_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 761,
@@ -2982,7 +3138,8 @@
         "duration": 2685000,
         "onlineTime": 1783483200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/07/qclSSJVNgrl7i3PR_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 698,
@@ -3001,7 +3158,8 @@
         "duration": 46000,
         "onlineTime": 1783440000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/07/gp7BhtTn2UfDemqp_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 677,
@@ -3020,7 +3178,8 @@
         "duration": 3250000,
         "onlineTime": 1782921600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/02/0gkYiIkVZB4UcpKV_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 764,
@@ -3039,7 +3198,8 @@
         "duration": 528000,
         "onlineTime": 1782835200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/28/x112rWsT5QtCv1B9_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 136,
@@ -3058,7 +3218,8 @@
         "duration": 1797000,
         "onlineTime": 1782748800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/29/6uXJfaeW8ndtcRGd_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 549,
@@ -3077,7 +3238,8 @@
         "duration": 281000,
         "onlineTime": 1782662400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/18/QSMYPxx9UlX28DIh_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 622,
@@ -3096,7 +3258,8 @@
         "duration": 522000,
         "onlineTime": 1782662400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/12/G7QDL0CWBbqImg28_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 684,
@@ -3115,7 +3278,8 @@
         "duration": 5302000,
         "onlineTime": 1782489600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/27/qxSZl6tU0H7Qbz41_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 438,
@@ -3134,7 +3298,8 @@
         "duration": 845000,
         "onlineTime": 1782230400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/23/KIxDfNxWRmTyfFO7_AAC_192_1.m4a"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 341,
@@ -3153,7 +3318,8 @@
         "duration": 659000,
         "onlineTime": 1781971200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/18/hsdiSdp2HR7URpnZ_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 580,
@@ -3172,7 +3338,8 @@
         "duration": 5217000,
         "onlineTime": 1781798400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/17/bQVV0Z1kc34zYQFy_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 783,
@@ -3191,7 +3358,8 @@
         "duration": 3183000,
         "onlineTime": 1781712000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/17/pDzVgSTRf7Mufgrq_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 744,
@@ -3210,7 +3378,8 @@
         "duration": 1374000,
         "onlineTime": 1781366400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/12/eKtzNifDHcFIIlhG_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 699,
@@ -3229,7 +3398,8 @@
         "duration": 5248000,
         "onlineTime": 1781193600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/11/1OKi7nE71us1uq7m_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 621,
@@ -3248,7 +3418,8 @@
         "duration": 361000,
         "onlineTime": 1780934400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/06/aa8P1jfsxNETNAPO_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 678,
@@ -3267,7 +3438,8 @@
         "duration": 5421000,
         "onlineTime": 1780675200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/05/1Ahpa1m7dbbhGaZ8_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 796,
@@ -3286,7 +3458,8 @@
         "duration": 1774000,
         "onlineTime": 1780156800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/31/yfmgl8BhN6QDMzJJ_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 818,
@@ -3305,7 +3478,8 @@
         "duration": 124000,
         "onlineTime": 1779850800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/27/m7ztrBOjvFarQ35v_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 458,
@@ -3324,7 +3498,8 @@
         "duration": 717000,
         "onlineTime": 1779724800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/24/wshUw44V2wo2fMZv_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 635,
@@ -3343,7 +3518,8 @@
         "duration": 629000,
         "onlineTime": 1779033600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/15/TRXQy1C8nuv7QTvr_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 413,
@@ -3362,7 +3538,8 @@
         "duration": 815000,
         "onlineTime": 1778688000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/13/rueongk3zOMVL9El_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 745,
@@ -3381,7 +3558,8 @@
         "duration": 463000,
         "onlineTime": 1777305600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/27/oI6FqgTfk3N0k9Di_AAC_192_1.m4a"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 275,
@@ -3400,7 +3578,8 @@
         "duration": 381000,
         "onlineTime": 1776387600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/16/0MO3Y0rnrOxDRiOw_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 692,
@@ -3419,7 +3598,8 @@
         "duration": 335000,
         "onlineTime": 1775059200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/01/mfgjNmVhfPKlFojG_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 768,
@@ -3438,7 +3618,8 @@
         "duration": 2002000,
         "onlineTime": 1775059200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/01/Etme2Kv43g46G2bf_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 356,
@@ -3457,7 +3638,8 @@
         "duration": 210000,
         "onlineTime": 1774713600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/28/kmC6gqDlYu7eQJVj_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 530,
@@ -3476,7 +3658,8 @@
         "duration": 1299000,
         "onlineTime": 1774368000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/25/Zh6UgDToaDeBqCaX_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 561,
@@ -3495,7 +3678,8 @@
         "duration": 637000,
         "onlineTime": 1773590400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/13/d7YkQSSUdKtQrMwF_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 791,
@@ -3514,7 +3698,8 @@
         "duration": 2822000,
         "onlineTime": 1773417600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/12/s5aacpgTTApJne3z_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 405,
@@ -3533,7 +3718,8 @@
         "duration": 12399000,
         "onlineTime": 1773158400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/09/SW3iiKofpMCwPLHT_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 799,
@@ -3552,7 +3738,8 @@
         "duration": 261000,
         "onlineTime": 1771689600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/11/6RL5V2lF0nNmfZH7_AAC_192_1.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 72,
@@ -3571,7 +3758,8 @@
         "duration": 286000,
         "onlineTime": 1771603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/13/U0vExMlCLI1Dufoh_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 800,
@@ -3590,7 +3778,8 @@
         "duration": 570000,
         "onlineTime": 1771603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/15/0inloVwLlDWhKQ99_AAC_192_1.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 160,
@@ -3609,7 +3798,8 @@
         "duration": 522000,
         "onlineTime": 1771257600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/13/inH3GJhyRI859zf4_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 790,
@@ -3628,7 +3818,8 @@
         "duration": 637000,
         "onlineTime": 1769184000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/19/G8MDpEpWUComaGBI_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 589,
@@ -3647,7 +3838,8 @@
         "duration": 592000,
         "onlineTime": 1769097600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/21/Qvi5Kzt6p296pKkc_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 750,
@@ -3666,7 +3858,8 @@
         "duration": 679000,
         "onlineTime": 1767628800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/05/grq9vnPVoaxTvnoZ_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 601,
@@ -3685,7 +3878,8 @@
         "duration": 12000,
         "onlineTime": 1767369600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/iWUwYwCLPfrSlRMc_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 128,
@@ -3704,7 +3898,8 @@
         "duration": 9000,
         "onlineTime": 1767283200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/xl71EtOoDu4yldch_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 89,
@@ -3723,7 +3918,8 @@
         "duration": 206000,
         "onlineTime": 1767196800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/31/himwAToLxC5Uwm35_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 65,
@@ -3742,7 +3938,8 @@
         "duration": 285000,
         "onlineTime": 1767110400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/30/VktzOEpiG1imoZQo_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 793,
@@ -3761,7 +3958,8 @@
         "duration": 21000,
         "onlineTime": 1765814400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/18/trNjtkxMikLeD1vB_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 775,
@@ -3780,7 +3978,8 @@
         "duration": 3713000,
         "onlineTime": 1765641600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/12/xq7mdfohOPgrlezd_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 687,
@@ -3799,7 +3998,8 @@
         "duration": 3974000,
         "onlineTime": 1765555200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/12/kgNw4N1cAR0c6IFD_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 792,
@@ -3818,7 +4018,8 @@
         "duration": 933000,
         "onlineTime": 1764864000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/04/FZjWD4LFxTeONz3O_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 173,
@@ -3837,7 +4038,8 @@
         "duration": 509000,
         "onlineTime": 1759507200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/02/cDa4PGpu62vgTkXP_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 206,
@@ -3856,7 +4058,8 @@
         "duration": 265000,
         "onlineTime": 1759161600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/29/Kj4cNzwPGxgVsj6c_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 689,
@@ -3875,7 +4078,8 @@
         "duration": 383000,
         "onlineTime": 1759075200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/25/WipqeVfIS4y8oe1f_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 542,
@@ -3894,7 +4098,8 @@
         "duration": 778000,
         "onlineTime": 1758816000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/25/Dpyz781gjRWeeS0v_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 777,
@@ -3913,7 +4118,8 @@
         "duration": 1964000,
         "onlineTime": 1758816000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/11/y2fakzienZgtlAEJ_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 786,
@@ -3932,7 +4138,8 @@
         "duration": 3025000,
         "onlineTime": 1758470400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/21/Hn9RC3NXEbs6NRg0_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 610,
@@ -3951,7 +4158,8 @@
         "duration": 1301000,
         "onlineTime": 1758211200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/18/bhW3mPdB5nSNujgT_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 360,
@@ -3970,7 +4178,8 @@
         "duration": 1783000,
         "onlineTime": 1756656000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/29/rqcYuw12blpvfIch_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 671,
@@ -3989,7 +4198,8 @@
         "duration": 1174000,
         "onlineTime": 1756483200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/30/T8HqShnAl7IMZqdl_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 781,
@@ -4008,7 +4218,8 @@
         "duration": 515000,
         "onlineTime": 1755878400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/22/WT8d5cO26W3K9cx2_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 780,
@@ -4027,7 +4238,8 @@
         "duration": 93000,
         "onlineTime": 1755792000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/21/U2yHzafK4r2LmDA1_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 782,
@@ -4046,7 +4258,8 @@
         "duration": 1635000,
         "onlineTime": 1755792000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/03/iR9HKrc5seD0aOLn_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 562,
@@ -4065,7 +4278,8 @@
         "duration": 864000,
         "onlineTime": 1755446400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/15/famgSz2gInuiFjVx_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 247,
@@ -4084,7 +4298,8 @@
         "duration": 332000,
         "onlineTime": 1755187200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/14/HE954xfIJbia69dz_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 778,
@@ -4103,7 +4318,8 @@
         "duration": 522000,
         "onlineTime": 1754582400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/07/H86ankkiYOMw4VJ1_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 535,
@@ -4122,7 +4338,8 @@
         "duration": 2110000,
         "onlineTime": 1753632000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/24/e0sCjo2LGw66uFbp_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 613,
@@ -4141,7 +4358,8 @@
         "duration": 120000,
         "onlineTime": 1753027200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/20/DWhtXMJKV2W9UNC3_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 741,
@@ -4160,7 +4378,8 @@
         "duration": 427000,
         "onlineTime": 1752854400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/18/VHMo9HCfPdG9fD4Y_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 470,
@@ -4179,7 +4398,8 @@
         "duration": 1992000,
         "onlineTime": 1752595200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/14/lzaT1VY6ZQUFp2TB_AAC_192_1.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 723,
@@ -4198,7 +4418,8 @@
         "duration": 789000,
         "onlineTime": 1750780800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/06/24/ujS4ezYA1rx3upOq_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 668,
@@ -4217,7 +4438,8 @@
         "duration": 279000,
         "onlineTime": 1749830400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/06/14/gPMhFsqtlzJepdBA_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 67,
@@ -4236,7 +4458,8 @@
         "duration": 256000,
         "onlineTime": 1749139200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/06/05/T3hIwMppSSBqzK4o_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 503,
@@ -4255,7 +4478,8 @@
         "duration": 367000,
         "onlineTime": 1748880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/W3QxvwaEcyY8mxiq_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 686,
@@ -4274,7 +4498,8 @@
         "duration": 3903000,
         "onlineTime": 1748880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/8UO8OkjXesZhALZx_AAC_192_1.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 617,
@@ -4293,7 +4518,8 @@
         "duration": 138000,
         "onlineTime": 1748620800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/QpoYbh4laF7aFcGj_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 623,
@@ -4312,7 +4538,8 @@
         "duration": 912000,
         "onlineTime": 1748534400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/29/wqlWdPnNJ0Auwg2h_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 573,
@@ -4331,7 +4558,8 @@
         "duration": 610000,
         "onlineTime": 1747756800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/14/rw7yWNjkllGPaeN7_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 487,
@@ -4350,7 +4578,8 @@
         "duration": 355000,
         "onlineTime": 1747324800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/15/S9iiXkzjM8QELwDs_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 565,
@@ -4369,7 +4598,8 @@
         "duration": 689000,
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/14/mid0ASs7WWQs3HsC_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 620,
@@ -4388,7 +4618,8 @@
         "duration": 870000,
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/07/nfY0Z1OEDRa9JdGL_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 707,
@@ -4407,7 +4638,8 @@
         "duration": 2463000,
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/13/OTAuuKAF6ubHJHyT_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 755,
@@ -4426,7 +4658,8 @@
         "duration": 13000,
         "onlineTime": 1746028800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/01/PtNEQSfYQC2y9VmG_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 205,
@@ -4445,7 +4678,8 @@
         "duration": 1445000,
         "onlineTime": 1745942400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/29/Qx7f0ncepNd4fvZh_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 760,
@@ -4464,7 +4698,8 @@
         "duration": 3553000,
         "onlineTime": 1745942400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/29/xFNP0pSBIi0THQUQ_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 392,
@@ -4483,7 +4718,8 @@
         "duration": 815000,
         "onlineTime": 1745856000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/28/1prPCoRSCvGxapOt_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 400,
@@ -4502,7 +4738,8 @@
         "duration": 2334000,
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/26/FdQbfuf5YgJTuP25_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 638,
@@ -4521,7 +4758,8 @@
         "duration": 3331000,
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/26/WrnYzlDIcbRBVNpe_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 701,
@@ -4540,7 +4778,8 @@
         "duration": 715000,
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/23/X7CEdzGWyhrpwSyp_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 174,
@@ -4559,7 +4798,8 @@
         "duration": 799000,
         "onlineTime": 1745596800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/25/JdJ79ROxtwLfChVK_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 296,
@@ -4578,7 +4818,8 @@
         "duration": 261000,
         "onlineTime": 1745596800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/24/dVNcsc0uVltCxefW_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 599,
@@ -4597,7 +4838,8 @@
         "duration": 306000,
         "onlineTime": 1745510400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/23/3BiNOst5XmWjWe7W_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 107,
@@ -4616,7 +4858,8 @@
         "duration": 717000,
         "onlineTime": 1744992000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/18/y7VWxuzOPtzcrsg7_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 354,
@@ -4635,7 +4878,8 @@
         "duration": 161000,
         "onlineTime": 1744646400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/14/3lXrAEbttuI1LU7J_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 507,
@@ -4654,7 +4898,8 @@
         "duration": 417000,
         "onlineTime": 1744300800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/10/i1QPawnTvIvalQtO_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 619,
@@ -4673,7 +4918,8 @@
         "duration": 389000,
         "onlineTime": 1744128000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/07/VWFylr14I34C5Vqv_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 244,
@@ -4692,7 +4938,8 @@
         "duration": 406000,
         "onlineTime": 1743782340000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/PvSaUcGoyv1POVhz_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 501,
@@ -4711,7 +4958,8 @@
         "duration": 730000,
         "onlineTime": 1743609600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/02/m1Fy9IcdPNoJLpq4_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 335,
@@ -4730,7 +4978,8 @@
         "duration": 289000,
         "onlineTime": 1743350400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/30/Ufhjuj0Ipkh9N60Y_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 732,
@@ -4749,7 +4998,8 @@
         "duration": 74000,
         "onlineTime": 1743177600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/Xr4euZbrDMt9BKtq_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 747,
@@ -4768,7 +5018,8 @@
         "duration": 335000,
         "onlineTime": 1743177600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/kLdHaVnoGJUMgoEL_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 98,
@@ -4787,7 +5038,8 @@
         "duration": 356000,
         "onlineTime": 1743091197000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/27/dFUJ8IaTkLm8DWoE_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 170,
@@ -4806,7 +5058,8 @@
         "duration": 2289000,
         "onlineTime": 1743091197000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/27/PLdLJ86fNIxXgetq_AAC_192_1.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 330,
@@ -4825,7 +5078,8 @@
         "duration": 460000,
         "onlineTime": 1742745600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/srI7mHzfgBLbdt1Q_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 705,
@@ -4844,7 +5098,8 @@
         "duration": 321000,
         "onlineTime": 1742745600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/hn25LAKNMfD77rYV_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 471,
@@ -4863,7 +5118,8 @@
         "duration": 2258000,
         "onlineTime": 1742659200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/22/nkMDCeY6DNgLO9Dm_AAC_192_1.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 332,
@@ -4882,7 +5138,8 @@
         "duration": 214000,
         "onlineTime": 1742572800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/XLBW2NOkyw5lNjRC_AAC_192_1.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 242,
@@ -4901,7 +5158,8 @@
         "duration": 292000,
         "onlineTime": 1742140800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/4fAcFqepIPbqpbH0_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 482,
@@ -4920,7 +5178,8 @@
         "duration": 226000,
         "onlineTime": 1741968000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/0Vk2yQxSObR0iKOD_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 609,
@@ -4939,7 +5198,8 @@
         "duration": 979000,
         "onlineTime": 1741968000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/N1zD48wMtpEDNxMO_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 511,
@@ -4958,7 +5218,8 @@
         "duration": 3947000,
         "onlineTime": 1741946400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/ztWmzt0rqITlLyjI_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 733,
@@ -4977,7 +5238,8 @@
         "duration": 406000,
         "onlineTime": 1741536000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/07/U4kDVDa7BtjCHahg_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 138,
@@ -4996,7 +5258,8 @@
         "duration": 1261000,
         "onlineTime": 1740672000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/27/HvBXoJKx2O07FWP1_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 734,
@@ -5015,7 +5278,8 @@
         "duration": 3052000,
         "onlineTime": 1739808000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/17/wziaZCswzcB9yJcD_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 685,
@@ -5034,7 +5298,8 @@
         "duration": 3121000,
         "onlineTime": 1739635200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/15/faTxjK4Jhou4Ej4y_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 742,
@@ -5053,7 +5318,8 @@
         "duration": 319000,
         "onlineTime": 1739376000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/12/vXD87hI97K5AitzT_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 739,
@@ -5072,7 +5338,8 @@
         "duration": 358000,
         "onlineTime": 1738512000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/gdBqmD4bGEIdm2nO_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 740,
@@ -5091,7 +5358,8 @@
         "duration": 1156000,
         "onlineTime": 1738512000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/02/Vhur1XKhAC4dGeS8_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 207,
@@ -5110,7 +5378,8 @@
         "duration": 414000,
         "onlineTime": 1738166400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/OilSDX4IDrJpkcCu_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 690,
@@ -5129,7 +5398,8 @@
         "duration": 521000,
         "onlineTime": 1738080000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/yjKaYlSijuDJkAwx_AAC_192.m4a"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 737,
@@ -5148,7 +5418,8 @@
         "duration": 99000,
         "onlineTime": 1737511200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/20/grEQ1PakALuxJTWK_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 736,
@@ -5167,7 +5438,8 @@
         "duration": 210000,
         "onlineTime": 1736956800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/23/eOSGhpMA1on2PqKY_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 546,
@@ -5186,7 +5458,8 @@
         "duration": 7238000,
         "onlineTime": 1736611200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/10/K9M9U9sGNBKohEJF_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 183,
@@ -5205,7 +5478,8 @@
         "duration": 2309000,
         "onlineTime": 1736179200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/04/R1w93oe5zPrlxhH4_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 572,
@@ -5224,7 +5498,8 @@
         "duration": 3834000,
         "onlineTime": 1736006400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/05/uWHYEgC6kYQe6anc_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 315,
@@ -5243,7 +5518,8 @@
         "duration": 110000,
         "onlineTime": 1735833600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/02/r7PUydCm9Ze4Ai2U_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 738,
@@ -5262,7 +5538,8 @@
         "duration": 154000,
         "onlineTime": 1735660800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/23/OijSh7JVQcKY3mt4_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 407,
@@ -5281,7 +5558,8 @@
         "duration": 3254000,
         "onlineTime": 1735142400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/25/SgtHdctfdtXRCjlF_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 731,
@@ -5300,7 +5578,8 @@
         "duration": 2870000,
         "onlineTime": 1734883200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/22/JmLNWyr05hr2muhg_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 730,
@@ -5319,7 +5598,8 @@
         "duration": 1075000,
         "onlineTime": 1733328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/04/Z00nArRCc5FDJmdP_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 727,
@@ -5338,7 +5618,8 @@
         "duration": 1817000,
         "onlineTime": 1733068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/02/JqtlIRRYRLEtgyYg_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 660,
@@ -5357,7 +5638,8 @@
         "duration": 3608000,
         "onlineTime": 1732982400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/29/sz7RGROHahJWyUhi_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 676,
@@ -5376,7 +5658,8 @@
         "duration": 4502000,
         "onlineTime": 1731168000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/08/NIqcFzWCO7DrmFxA_AAC_192.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 472,
@@ -5395,7 +5678,8 @@
         "duration": 306000,
         "onlineTime": 1729785600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/22/T7BwgvSNFATAAbxM_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 632,
@@ -5414,7 +5698,8 @@
         "duration": 397000,
         "onlineTime": 1727366400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/26/6F2lRk62HYdokuox_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 712,
@@ -5433,7 +5718,8 @@
         "duration": 1464000,
         "onlineTime": 1726502400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/19/4PJJZUsRzYwOeee7_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 385,
@@ -5452,7 +5738,8 @@
         "duration": 5908000,
         "onlineTime": 1725379200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/03/i3ZPOVXGg9AuS1Ko_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 467,
@@ -5471,7 +5758,8 @@
         "duration": 280000,
         "onlineTime": 1725379200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/03/GOWWZ8mjwxrbSExd_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 693,
@@ -5490,7 +5778,8 @@
         "duration": 1957000,
         "onlineTime": 1724860800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/28/FNVueOy6dVUznPtc_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 628,
@@ -5509,7 +5798,8 @@
         "duration": 318000,
         "onlineTime": 1724428800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/23/8RqyLxOOLMaoeDy8_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 691,
@@ -5528,7 +5818,8 @@
         "duration": 1657000,
         "onlineTime": 1723737600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/15/en83DwbFWbEdiv6C_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 37,
@@ -5547,7 +5838,8 @@
         "duration": 384000,
         "onlineTime": 1723305600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/10/shNu9XKW6RvheXjZ_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 702,
@@ -5566,7 +5858,8 @@
         "duration": 53000,
         "onlineTime": 1721570745000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/07/21/1Z1Cq1BGnHqhH7uu_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 14,
@@ -5585,7 +5878,8 @@
         "duration": 678000,
         "onlineTime": 1719763200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/07/01/TIRRIRJ60LFtEAuI_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 394,
@@ -5604,7 +5898,8 @@
         "duration": 5969000,
         "onlineTime": 1717603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/06/05/hQdiPSNwvCgatrV6_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 387,
@@ -5623,7 +5918,8 @@
         "duration": 165000,
         "onlineTime": 1717171200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/28/f9779f74-3bf7-4bc5-bd88-847713f52ff4_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 422,
@@ -5642,7 +5938,8 @@
         "duration": 259000,
         "onlineTime": 1717171200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/05/31/IXTEzy6J8GQ3R2jM_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 525,
@@ -5661,7 +5958,8 @@
         "duration": 354000,
         "onlineTime": 1717171200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/3/ffa6b990-cea3-43ef-b9be-8f3d9dc18d32_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 663,
@@ -5680,7 +5978,8 @@
         "duration": 224000,
         "onlineTime": 1716739200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/05/21/EWvyi5fbsWI8K1ta_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 483,
@@ -5699,7 +5998,8 @@
         "duration": 255000,
         "onlineTime": 1716393600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/05/22/3VvcKt6h9VPYnZrr_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 570,
@@ -5718,7 +6018,8 @@
         "duration": 30000,
         "onlineTime": 1715356800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/19/AbnfJ6IUQbKExD3q_AAC_192.m4a"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 634,
@@ -5737,7 +6038,8 @@
         "duration": 285000,
         "onlineTime": 1714579200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/30/peqsy3L9CPtvBAhO_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 665,
@@ -5756,7 +6058,8 @@
         "duration": 1545000,
         "onlineTime": 1713628800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/18/cCDxKolHktPcH2QJ_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 576,
@@ -5775,7 +6078,8 @@
         "duration": 676000,
         "onlineTime": 1712332800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/04/1j6vmRVlXWAPcG2s_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 112,
@@ -5794,7 +6098,8 @@
         "duration": 398000,
         "onlineTime": 1711555200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/03/27/tSv2d5RGTkbwJArL_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 553,
@@ -5813,7 +6118,8 @@
         "duration": 708000,
         "onlineTime": 1711382400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/03/26/0qNBQY3PiAOGsKQZ_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 654,
@@ -5832,7 +6138,8 @@
         "duration": 1808000,
         "onlineTime": 1707926400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/14/o9qjTwQzNJ7LhPx2_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 643,
@@ -5851,7 +6158,8 @@
         "duration": 1259000,
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/13/35ZsJ0bVzJBKrXie_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 653,
@@ -5870,7 +6178,8 @@
         "duration": 242000,
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/08/wpY3u2YkbZigVykB_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 655,
@@ -5889,7 +6198,8 @@
         "duration": 144000,
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/13/2iSz9OgAIfTZM0ZO_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 292,
@@ -5908,7 +6218,8 @@
         "duration": 317000,
         "onlineTime": 1707494400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/09/OeKLTuHbcuctMo1f_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 229,
@@ -5927,7 +6238,8 @@
         "duration": 303000,
         "onlineTime": 1707408000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/08/tNKXBo70TuoZgO8L_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 647,
@@ -5946,7 +6258,8 @@
         "duration": 221000,
         "onlineTime": 1707235200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/04/U1yMoI9QY3INeARj_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 421,
@@ -5965,7 +6278,8 @@
         "duration": 811000,
         "onlineTime": 1705161600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/01/13/QEt9C1h0nUFe8s8D_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 350,
@@ -5984,7 +6298,8 @@
         "duration": 126000,
         "onlineTime": 1704816000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/01/09/0XO77fFgbn606LiP_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 645,
@@ -6003,7 +6318,8 @@
         "duration": 9442000,
         "onlineTime": 1703606400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/28/NldoKOdeerSvQRPa_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 592,
@@ -6022,7 +6338,8 @@
         "duration": 1048000,
         "onlineTime": 1703174400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/21/8dGbbHVZ6YpKdBZ9_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 582,
@@ -6041,7 +6358,8 @@
         "duration": 1385000,
         "onlineTime": 1703088000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/22/EfjXvBCKOZG3Uxid_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 639,
@@ -6060,7 +6378,8 @@
         "duration": 3410000,
         "onlineTime": 1702137600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/10/1YXR9FIjhLMyT1Zp_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 494,
@@ -6079,7 +6398,8 @@
         "duration": 551000,
         "onlineTime": 1700928000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/11/26/WhrF5j450S8JxzqM_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 13,
@@ -6098,7 +6418,8 @@
         "duration": 1965000,
         "onlineTime": 1700323200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/11/20/oU9lRNSOhWvghO6c_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 278,
@@ -6117,7 +6438,8 @@
         "duration": 379000,
         "onlineTime": 1698310800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/10/24/2KI4JmvNgC0E4RRs_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 423,
@@ -6136,7 +6458,8 @@
         "duration": 198000,
         "onlineTime": 1698163200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/15/3e48fba9-1531-4d05-9111-e790d79bfb50_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 585,
@@ -6155,7 +6478,8 @@
         "duration": 460000,
         "onlineTime": 1694880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/16/EyFT0BVoepbmTvaf_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 602,
@@ -6174,7 +6498,8 @@
         "duration": 956000,
         "onlineTime": 1694779200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/15/M5FacSk9gOU9mMqV_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 581,
@@ -6193,7 +6518,8 @@
         "duration": 1193000,
         "onlineTime": 1694534400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/12/d8qF9ry3nIy7AvME_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 172,
@@ -6212,7 +6538,8 @@
         "duration": 137000,
         "onlineTime": 1694102400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/03/VEE5EaPs4PAyVMMZ_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 551,
@@ -6231,7 +6558,8 @@
         "duration": 573000,
         "onlineTime": 1693065600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/25/mPtqb8cXyl5Cjug6_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 560,
@@ -6250,7 +6578,8 @@
         "duration": 748000,
         "onlineTime": 1692720000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/22/WaKIIfYOtmHued7l_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 75,
@@ -6269,7 +6598,8 @@
         "duration": 54000,
         "onlineTime": 1691683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/26/MJyyscQJ7aM9aXGc_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 587,
@@ -6288,7 +6618,8 @@
         "duration": 298000,
         "onlineTime": 1691632800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/09/eoDL7Jt2ajLGvSkm_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 578,
@@ -6307,7 +6638,8 @@
         "duration": 737000,
         "onlineTime": 1691424000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/04/AOWzFN9qir24wGEm_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 253,
@@ -6326,7 +6658,8 @@
         "duration": 775000,
         "onlineTime": 1690732800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/30/Z4Xevb5RVd7KxEK3_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 410,
@@ -6345,7 +6678,8 @@
         "duration": 1767000,
         "onlineTime": 1690387200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/26/ion1QhkpeQxcLXsc_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 575,
@@ -6364,7 +6698,8 @@
         "duration": 87000,
         "onlineTime": 1689091200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/28/EKipINa4pOnSCHmm_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 574,
@@ -6383,7 +6718,8 @@
         "duration": 444000,
         "onlineTime": 1688720400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/07/Meqqjorp9IwVumvd_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 564,
@@ -6402,7 +6738,8 @@
         "duration": 982000,
         "onlineTime": 1688486400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/04/7vomESctms8ulAUd_AAC_192.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 571,
@@ -6421,7 +6758,8 @@
         "duration": 137000,
         "onlineTime": 1688313600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/13/5FNz3C5lQh8uAINh_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 577,
@@ -6440,7 +6778,8 @@
         "duration": 930000,
         "onlineTime": 1688313600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/11/mdGFR1tJbOJwXlJj_AAC_192.m4a"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 383,
@@ -6459,7 +6798,8 @@
         "duration": 614000,
         "onlineTime": 1687881600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/27/D8JxXU1xxd0ryfmc_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 569,
@@ -6478,7 +6818,8 @@
         "duration": 137000,
         "onlineTime": 1687276800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/15/zJNGXle8l4POZCfV_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 504,
@@ -6497,7 +6838,8 @@
         "duration": 5577000,
         "onlineTime": 1686585600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/13/NIdWFmEgwe6PgfZ8_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 399,
@@ -6516,7 +6858,8 @@
         "duration": 3478000,
         "onlineTime": 1685808000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/02/bw4kWFQviZodLXoh_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 397,
@@ -6535,7 +6878,8 @@
         "duration": 629000,
         "onlineTime": 1685635200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/01/Py6nXDymAn91Sow9_AAC_192.m4a"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 286,
@@ -6554,7 +6898,8 @@
         "duration": 154000,
         "onlineTime": 1685030400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/19/608l29thSzolegqI_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 568,
@@ -6573,7 +6918,8 @@
         "duration": 4212000,
         "onlineTime": 1684931400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/24/DGLeaN22KnbxgoSl_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 263,
@@ -6592,7 +6938,8 @@
         "duration": 848000,
         "onlineTime": 1683993600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/11/YWJ5qPQBk5z6ZoPk_AAC_192.m4a"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 481,
@@ -6611,7 +6958,8 @@
         "duration": 334000,
         "onlineTime": 1683820800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/11/m0vw1xLXJLbd64za_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 326,
@@ -6630,7 +6978,8 @@
         "duration": 210000,
         "onlineTime": 1683302400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/04/26/WVaPR1QXY3IEpX9L_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 557,
@@ -6649,7 +6998,8 @@
         "duration": 357000,
         "onlineTime": 1683216000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/03/O5x47vPx1qXGPLJB_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 558,
@@ -6668,7 +7018,8 @@
         "duration": 14000,
         "onlineTime": 1682611200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/12/1KK38QCMXCxgHAjn_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 556,
@@ -6687,7 +7038,8 @@
         "duration": 299000,
         "onlineTime": 1682405520000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/04/23/0lCmmKxcBGSCwS8E_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 555,
@@ -6706,7 +7058,8 @@
         "duration": 1195000,
         "onlineTime": 1682161200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/04/23/ybhgVIyRV7M9KULv_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 550,
@@ -6725,7 +7078,8 @@
         "duration": 419000,
         "onlineTime": 1680364800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/4/2/bee63477-a0b9-4d50-a170-0e4189258aa8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 276,
@@ -6744,7 +7098,8 @@
         "duration": 163000,
         "onlineTime": 1679587200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/23/2470b544-0776-4de8-9188-2425af014efe_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 468,
@@ -6763,7 +7118,8 @@
         "duration": 1947000,
         "onlineTime": 1679068800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/16/b5f80ea6-0223-494c-9e90-b03cd24e1310_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 536,
@@ -6782,7 +7138,8 @@
         "duration": 400000,
         "onlineTime": 1678809600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/2/a0f6e9d1-3df2-4891-85c0-ae1b04a116ad_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 543,
@@ -6801,7 +7158,8 @@
         "duration": 926000,
         "onlineTime": 1678809600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/14/7365d3cb-be68-4228-ba9b-eb2e1ce180b4_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 396,
@@ -6820,7 +7178,8 @@
         "duration": 1979000,
         "onlineTime": 1678291200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/8/f16a2456-38cd-45c2-8fc3-351bafc1c7cd_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 380,
@@ -6839,7 +7198,8 @@
         "duration": 1100000,
         "onlineTime": 1676217600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/02/12/hv9KmMhhwHB4fbFi_AAC_192.m4a"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 506,
@@ -6858,7 +7218,8 @@
         "duration": 282000,
         "onlineTime": 1676217600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/02/15/ELwqs1HQdjBGsZCp_AAC_192.m4a"
-      }
+      },
+      "category": null
     },
     {
       "id": 416,
@@ -6877,7 +7238,8 @@
         "duration": 260000,
         "onlineTime": 1675872000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/8/84d7f6c8-8479-4808-9645-45882e9beeee_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 526,
@@ -6896,7 +7258,8 @@
         "duration": 900000,
         "onlineTime": 1675785600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/9/572429b4-e6a7-48c2-8874-3982a18b1d92_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 393,
@@ -6915,7 +7278,8 @@
         "duration": 739000,
         "onlineTime": 1675440000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/3/a6d9e985-65f6-427f-a0ce-7b5b2b909c23_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 514,
@@ -6934,7 +7298,8 @@
         "duration": 631000,
         "onlineTime": 1674748800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/26/27d20d7c-cf34-4107-a39e-87b633597ff8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 518,
@@ -6953,7 +7318,8 @@
         "duration": 109000,
         "onlineTime": 1674748800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/26/e513b540-9cdb-4870-a4f5-c3efb9c51e9c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 429,
@@ -6972,7 +7338,8 @@
         "duration": 1191000,
         "onlineTime": 1674576000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/24/ec06e502-c690-4b46-a1b3-0ce7ac1e11b9_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 515,
@@ -6991,7 +7358,8 @@
         "duration": 437000,
         "onlineTime": 1674576000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/18/2b5128c7-7654-492d-a2f6-fbb8b97aa44a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 513,
@@ -7010,7 +7378,8 @@
         "duration": 960000,
         "onlineTime": 1674489600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/18/d55e1a2e-16b6-427a-8053-5dacaa33dd41_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 519,
@@ -7029,7 +7398,8 @@
         "duration": 199000,
         "onlineTime": 1674489600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/21/c41413bf-f9b6-4d08-b4fc-a2af820467c1_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 524,
@@ -7048,7 +7418,8 @@
         "duration": 264000,
         "onlineTime": 1674230400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/23/d75e31bc-22b6-4d7a-95ea-ab22eff28fa4_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 499,
@@ -7067,7 +7438,8 @@
         "duration": 952000,
         "onlineTime": 1674203702000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/24/71e3b870-b8fc-4f1d-a73c-6e2c15cd0622_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 284,
@@ -7086,7 +7458,8 @@
         "duration": 1164000,
         "onlineTime": 1673971200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/17/b874ab95-f3d4-452e-a958-5166b003ec0f_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 479,
@@ -7105,7 +7478,8 @@
         "duration": 341000,
         "onlineTime": 1673971200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/10/62a8bdb7-1091-4611-a00c-a30cc889d8c7_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 527,
@@ -7124,7 +7498,8 @@
         "duration": 155000,
         "onlineTime": 1673280000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/9/eb074462-0c3d-44fa-9b99-84469ab2c051_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 433,
@@ -7143,7 +7518,8 @@
         "duration": 5635000,
         "onlineTime": 1672761600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/3/5bf33980-3b28-4287-83ee-b300d6c69689_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 509,
@@ -7162,7 +7538,8 @@
         "duration": 881000,
         "onlineTime": 1671984000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/26/ebfa4a48-ea48-40cf-80a7-4d4732455650_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 497,
@@ -7181,7 +7558,8 @@
         "duration": 1863000,
         "onlineTime": 1671465600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/20/4e49a277-5691-456c-babd-c1655502bd41_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 498,
@@ -7200,7 +7578,8 @@
         "duration": 111000,
         "onlineTime": 1671400800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/19/5aba836f-c513-41c6-bfa2-b1948758d43b_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 288,
@@ -7219,7 +7598,8 @@
         "duration": 640000,
         "onlineTime": 1671120000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/15/b7903250-8749-4427-834a-0b59a04579d8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 502,
@@ -7238,7 +7618,8 @@
         "duration": 937000,
         "onlineTime": 1670947200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/13/5db9d6ca-6e8c-4d30-9340-501debedf424_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 505,
@@ -7257,7 +7638,8 @@
         "duration": 942000,
         "onlineTime": 1670601600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/10/613b821a-34f5-4966-aacb-eeba7ef88a18_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 495,
@@ -7276,7 +7658,8 @@
         "duration": 393000,
         "onlineTime": 1670515200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/8/0b61374f-3742-4620-a21e-dd7b2d94bd53_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 500,
@@ -7295,7 +7678,8 @@
         "duration": 813000,
         "onlineTime": 1669046400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/21/83f36eb9-05b9-4370-a5c9-3140983c3083_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 426,
@@ -7314,7 +7698,8 @@
         "duration": 1835000,
         "onlineTime": 1668787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/18/8ce17d9f-94ef-4671-bfeb-6cfdc0496a22_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 496,
@@ -7333,7 +7718,8 @@
         "duration": 417000,
         "onlineTime": 1668614400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/16/a24704e2-e665-4beb-95db-46b2854bc66a_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 460,
@@ -7352,7 +7738,8 @@
         "duration": 46000,
         "onlineTime": 1668355200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/14/76c19284-56e9-4f8b-af5d-ec26e266847d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 325,
@@ -7371,7 +7758,8 @@
         "duration": 220000,
         "onlineTime": 1668096000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/9/47660a42-82bc-410e-a2dd-1c70ae28ad35_AAC_192.aac"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 443,
@@ -7390,7 +7778,8 @@
         "duration": 2116000,
         "onlineTime": 1666972800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/28/b313fd9d-925c-4b17-ae8e-141f332dd33e_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 493,
@@ -7409,7 +7798,8 @@
         "duration": 405000,
         "onlineTime": 1666713600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/25/917a69ec-be8b-48e3-a54a-fd185768c37e_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 459,
@@ -7428,7 +7818,8 @@
         "duration": 597000,
         "onlineTime": 1665763200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/14/fb6b8699-c8f9-43e7-96d0-26ce104986e8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 491,
@@ -7447,7 +7838,8 @@
         "duration": 955000,
         "onlineTime": 1665244800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/9/1bd76ad0-643d-472b-b516-cfd38594e09d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 486,
@@ -7466,7 +7858,8 @@
         "duration": 673000,
         "onlineTime": 1664467200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/24/429d15fe-dd88-4a11-8b36-45587914c840_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 480,
@@ -7485,7 +7878,8 @@
         "duration": 1220000,
         "onlineTime": 1663171200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/15/edc67127-c0c2-4c4a-87ec-bcc77abf40e5_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 476,
@@ -7504,7 +7898,8 @@
         "duration": 380000,
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/7/b44fa4d2-5870-4170-b14c-0ec4ef684ae2_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 477,
@@ -7523,7 +7918,8 @@
         "duration": 273000,
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/8/ea0ed129-34e8-4499-b863-5c39a1cc4127_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 478,
@@ -7542,7 +7938,8 @@
         "duration": 410000,
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/aa07ed54-1faf-4650-9039-4241829c6479_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 474,
@@ -7561,7 +7958,8 @@
         "duration": 410000,
         "onlineTime": 1662739200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/aa07ed54-1faf-4650-9039-4241829c6479_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 475,
@@ -7580,7 +7978,8 @@
         "duration": 292000,
         "onlineTime": 1662739200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/89bc3e8d-97cf-4826-8e4d-2873d1bffdf6_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 466,
@@ -7599,7 +7998,8 @@
         "duration": 1892000,
         "onlineTime": 1662220800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/3/e7239933-69a2-4aed-8f35-f53ab2d48d04_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 469,
@@ -7618,7 +8018,8 @@
         "duration": 335000,
         "onlineTime": 1661702400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/28/36642dab-cbf6-4afb-a88e-6bf563f1e418_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 431,
@@ -7637,7 +8038,8 @@
         "duration": 1044000,
         "onlineTime": 1661356800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/24/91a604e8-a493-46e8-bf48-232e65c2e05f_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 430,
@@ -7656,7 +8058,8 @@
         "duration": 237000,
         "onlineTime": 1661270400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/17/d81e1d7a-4b77-4e79-b73f-a123fd749f1a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 464,
@@ -7675,7 +8078,8 @@
         "duration": 437000,
         "onlineTime": 1661270400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/16/8cac8cb2-184d-47ef-b397-9881b024349e_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 84,
@@ -7694,7 +8098,8 @@
         "duration": 113000,
         "onlineTime": 1659974400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/8/20853f30-10de-47b6-a178-a9d611635eb6_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 465,
@@ -7713,7 +8118,8 @@
         "duration": 227000,
         "onlineTime": 1659974400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/8/6b505f90-4f69-45b4-b77f-de5176d45bdb_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 462,
@@ -7732,7 +8138,8 @@
         "duration": 294000,
         "onlineTime": 1659542400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/3/2ebed928-2244-4195-bf9e-cebdeab93375_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 454,
@@ -7751,7 +8158,8 @@
         "duration": 552000,
         "onlineTime": 1658764800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/7/74adf8d8-4dbd-4c1b-b50c-d2d7814f3a79_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 444,
@@ -7770,7 +8178,8 @@
         "duration": 152000,
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/15/302522b0-dee8-44af-a59e-bc8485724a60_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 445,
@@ -7789,7 +8198,8 @@
         "duration": 902000,
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/19/a3271b68-4a62-4e5f-bd07-71f67591a0d0_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 447,
@@ -7808,7 +8218,8 @@
         "duration": 145000,
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/18/cfb0b88b-8552-4bc1-b631-883b6b5eb1a3_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 448,
@@ -7827,7 +8238,8 @@
         "duration": 1115000,
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/19/5f895997-86c4-4c26-9ba1-742f904b82ac_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 455,
@@ -7846,7 +8258,8 @@
         "duration": 873000,
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/15/b29cb547-b8e3-42b0-b502-563694e22e66_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 437,
@@ -7865,7 +8278,8 @@
         "duration": 683000,
         "onlineTime": 1657641600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/12/3b0796e8-f48f-4b94-9162-72e8f98df296_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 308,
@@ -7884,7 +8298,8 @@
         "duration": 95000,
         "onlineTime": 1656777600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/29/dc8dd4e3-a759-478a-88df-4104fa40bfc4_AAC_192.aac"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 425,
@@ -7903,7 +8318,8 @@
         "duration": 370000,
         "onlineTime": 1656777600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/28/305ead87-ad56-497f-a3ca-371e5f97fc97_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 268,
@@ -7922,7 +8338,8 @@
         "duration": 95000,
         "onlineTime": 1656518400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/29/dc8dd4e3-a759-478a-88df-4104fa40bfc4_AAC_192.aac"
-      }
+      },
+      "category": "car"
     },
     {
       "id": 436,
@@ -7941,7 +8358,8 @@
         "duration": 2604000,
         "onlineTime": 1656086400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/24/db968b88-6e5d-47d6-8fcd-58450f9a613c_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 427,
@@ -7960,7 +8378,8 @@
         "duration": 328000,
         "onlineTime": 1655654400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/8/754fc5af-3e6d-464d-9f67-1eea479561d9_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 384,
@@ -7979,7 +8398,8 @@
         "duration": 3149000,
         "onlineTime": 1655568000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/18/fd19abab-49eb-4c09-a5d0-65f2dd9fcec8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 417,
@@ -7998,7 +8418,8 @@
         "duration": 598000,
         "onlineTime": 1655395200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/11/2dd39000-cfaa-4677-bada-d841e1db993d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 435,
@@ -8017,7 +8438,8 @@
         "duration": 1133000,
         "onlineTime": 1655309040000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/16/8dc3a551-7ae6-4c78-96db-ee0bf8149d48_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 418,
@@ -8036,7 +8458,8 @@
         "duration": 466000,
         "onlineTime": 1655222400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/12/e08104b7-bb22-43e6-80f6-57edee9460f9_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 414,
@@ -8055,7 +8478,8 @@
         "duration": 367000,
         "onlineTime": 1654704000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/20/e3e45994-290d-429a-a96c-cc497e90741b_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 424,
@@ -8074,7 +8498,8 @@
         "duration": 434000,
         "onlineTime": 1654617600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/6/0f02a485-7016-4df3-b6f7-0aa82f55a517_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 389,
@@ -8093,7 +8518,8 @@
         "duration": 668000,
         "onlineTime": 1654272000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/3/608d8add-2cc9-4f3a-af40-4dc405d2efef_AAC_192.aac"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 256,
@@ -8112,7 +8538,8 @@
         "duration": 1232000,
         "onlineTime": 1654099200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/11/7e92db25-6da4-46d4-b37c-8f0a1b9aedcb_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 415,
@@ -8131,7 +8558,8 @@
         "duration": 429000,
         "onlineTime": 1653753600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/20/6266d331-1fe5-4996-b784-d22a8971ad75_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 408,
@@ -8150,7 +8578,8 @@
         "duration": 508000,
         "onlineTime": 1653494400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/2/0ccfd94d-6b77-487f-9185-2e9280b67a56_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 403,
@@ -8169,7 +8598,8 @@
         "duration": 1930000,
         "onlineTime": 1652198400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/10/c94d02f6-6b44-42d5-80ee-f4a54d42abf0_AAC_192.aac"
-      }
+      },
+      "category": "longhaul"
     },
     {
       "id": 406,
@@ -8188,7 +8618,8 @@
         "duration": 470000,
         "onlineTime": 1651852800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/21/f5843e9d-8839-49e2-b7e1-e8507d6b7dc1_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 409,
@@ -8207,7 +8638,8 @@
         "duration": 389000,
         "onlineTime": 1651852800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/25/6b0ff26c-ffe7-4d28-aa71-ebc35dad22dc_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 390,
@@ -8226,7 +8658,8 @@
         "duration": 392000,
         "onlineTime": 1650643200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/18/661805d9-bcdb-44d3-a18e-fa15576e171b_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 336,
@@ -8245,7 +8678,8 @@
         "duration": 1446000,
         "onlineTime": 1650556800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/18/7d0816c3-f6fe-49a6-bd5c-ffa73cc51ae4_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 404,
@@ -8264,7 +8698,8 @@
         "duration": 478000,
         "onlineTime": 1650470400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/20/c6835508-6fa5-4da1-8a21-3787a3393997_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 274,
@@ -8283,7 +8718,8 @@
         "duration": 350000,
         "onlineTime": 1650211200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/16/431385fc-455e-48cc-bee8-94fa2f849669_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 386,
@@ -8302,7 +8738,8 @@
         "duration": 886000,
         "onlineTime": 1650124800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/14/e8ee12d7-086c-4462-bcb1-acd03f90d74d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 203,
@@ -8321,7 +8758,8 @@
         "duration": 1209000,
         "onlineTime": 1648396800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/27/480d6e31-5062-4a2f-8491-ffeda4797281_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 395,
@@ -8340,7 +8778,8 @@
         "duration": 49000,
         "onlineTime": 1648224000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/17/afed8e99-c437-4839-bc39-81452df23239_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 379,
@@ -8359,7 +8798,8 @@
         "duration": 3632000,
         "onlineTime": 1648137600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/23/11cf1473-b975-40c4-ab3f-7ae5811c7b1c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 24,
@@ -8378,7 +8818,8 @@
         "duration": 226000,
         "onlineTime": 1645804800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/25/78ea18cb-7809-4719-9495-73fa206816da_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 340,
@@ -8397,7 +8838,8 @@
         "duration": 878000,
         "onlineTime": 1645804800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/25/b3177078-c84a-481f-b620-03b67fbe5882_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 359,
@@ -8416,7 +8858,8 @@
         "duration": 443000,
         "onlineTime": 1645718400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/2419c388-e76a-4b16-9ae4-9ae853e851d5_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 368,
@@ -8435,7 +8878,8 @@
         "duration": 471000,
         "onlineTime": 1644854400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/30/dba98570-579e-4477-9c03-6f806f9bf05f_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 304,
@@ -8454,7 +8898,8 @@
         "duration": 772000,
         "onlineTime": 1644422400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/7/4e9cd6fc-28c9-4966-b2b9-7ab75711ad8d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 298,
@@ -8473,7 +8918,8 @@
         "duration": 609000,
         "onlineTime": 1644163200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/69bcf681-d93d-4f38-a75b-4b90b7fb2c78_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 212,
@@ -8492,7 +8938,8 @@
         "duration": 529000,
         "onlineTime": 1644076800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/30/9c96eef3-e704-44c1-9ad6-53baeb029cd9_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 372,
@@ -8511,7 +8958,8 @@
         "duration": 582000,
         "onlineTime": 1644076800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/4/2fcda7f9-d552-4c16-94aa-c0a24eef9fa0_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 213,
@@ -8530,7 +8978,8 @@
         "duration": 178000,
         "onlineTime": 1643817600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/28/c6e9c9c1-282e-4047-b9e2-84687387a56d_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 208,
@@ -8549,7 +8998,8 @@
         "duration": 45000,
         "onlineTime": 1643637600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/9/b65a9d57-b0c9-401b-93c5-2b7f45536801_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 371,
@@ -8568,7 +9018,8 @@
         "duration": 243000,
         "onlineTime": 1643472000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/29/b98cfaa8-9aee-4efd-9a6f-07c79bf3dee1_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 369,
@@ -8587,7 +9038,8 @@
         "duration": 515000,
         "onlineTime": 1643126400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/14/470f9b64-e5f9-4765-815d-4d27aa6cc954_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 42,
@@ -8606,7 +9058,8 @@
         "duration": 485000,
         "onlineTime": 1641657600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/e2b6a7ca-fa15-4188-bdc8-8c921fb07c39_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 364,
@@ -8625,7 +9078,8 @@
         "duration": 148000,
         "onlineTime": 1641398401000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/3de43496-22f3-47cb-8cf7-44b08f09f4aa_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 142,
@@ -8644,7 +9098,8 @@
         "duration": 491000,
         "onlineTime": 1640966400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/31/7d6c4521-1dbc-48a9-ad86-4758c10572ed_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 195,
@@ -8663,7 +9118,8 @@
         "duration": 678000,
         "onlineTime": 1640966400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/31/c5200fbb-9c29-4c0d-a76f-1259146d4755_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 314,
@@ -8682,7 +9138,8 @@
         "duration": 239000,
         "onlineTime": 1640880000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/30/b758e81c-9f58-4d40-a175-cff64bfa63f0_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 287,
@@ -8701,7 +9158,8 @@
         "duration": 236000,
         "onlineTime": 1640620800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/13/28cd4317-914c-42a4-b7e7-997d6d902388_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 76,
@@ -8720,7 +9178,8 @@
         "duration": 930000,
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/a0daa5b9-06d4-4355-bd52-7e0a6760d9d9_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 231,
@@ -8739,7 +9198,8 @@
         "duration": 384000,
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/0c44d68a-c16a-4ed5-9d98-712eabefc835_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 333,
@@ -8758,7 +9218,8 @@
         "duration": 203000,
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/ddeca403-4cd4-4535-a151-d80ec788a1bb_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 363,
@@ -8777,7 +9238,8 @@
         "duration": 167000,
         "onlineTime": 1640188800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/22/256731f8-43d6-452f-bfc6-94e546b7907b_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 317,
@@ -8796,7 +9258,8 @@
         "duration": 1636000,
         "onlineTime": 1639917570000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/19/bbe6c53d-f808-4553-a525-d459e09162ab_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 361,
@@ -8815,7 +9278,8 @@
         "duration": 61000,
         "onlineTime": 1639756800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/17/7c67539d-533a-4563-8137-8ccb45990c28_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 362,
@@ -8834,7 +9298,8 @@
         "duration": 61000,
         "onlineTime": 1639756800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/17/b547394d-affd-4947-965d-70f191f9db30_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 255,
@@ -8853,7 +9318,8 @@
         "duration": 266000,
         "onlineTime": 1639497600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/9/ef70f7cb-4481-411c-9ace-a338e72c87cf_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 351,
@@ -8872,7 +9338,8 @@
         "duration": 140000,
         "onlineTime": 1639065600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/9/a561f9ea-832f-4c6b-9ba5-15fecea20236_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 353,
@@ -8891,7 +9358,8 @@
         "duration": 98000,
         "onlineTime": 1636473600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/11/9/9d105400-ba6e-45bf-ae75-4de31b0c745a_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 188,
@@ -8910,7 +9378,8 @@
         "duration": 635000,
         "onlineTime": 1635523200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/5/3681cc09-f453-4ac1-acb7-035381b8ecb5_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 327,
@@ -8929,7 +9398,8 @@
         "duration": 547000,
         "onlineTime": 1634486400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/13/689ed64a-b6c9-4a15-a7af-c6bdb950c9ef_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 123,
@@ -8948,7 +9418,8 @@
         "duration": 555000,
         "onlineTime": 1634367581000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/16/6ab209a4-c841-4a69-82f0-9722604a997f_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 132,
@@ -8967,7 +9438,8 @@
         "duration": 212000,
         "onlineTime": 1634054400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/12/8e4b67c2-d8f8-47fb-95d3-fb999e90508a_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 303,
@@ -8986,7 +9458,8 @@
         "duration": 479000,
         "onlineTime": 1633881600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/27/799b9e15-7c5d-452c-96c0-5d3fd4748baa_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 343,
@@ -9005,7 +9478,8 @@
         "duration": 211000,
         "onlineTime": 1633536000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/b9d076ff-2769-44d8-b988-ddbf7bb921bb_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 39,
@@ -9024,7 +9498,8 @@
         "duration": 211000,
         "onlineTime": 1633535940000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/b9d076ff-2769-44d8-b988-ddbf7bb921bb_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 21,
@@ -9043,7 +9518,8 @@
         "duration": 516000,
         "onlineTime": 1633449540000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/ad16f855-2b47-4bcd-a23e-2dac3877b867_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 38,
@@ -9062,7 +9538,8 @@
         "duration": 224000,
         "onlineTime": 1633363140000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/efbdbe19-70a0-4a19-8f42-4f3d51671b53_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 125,
@@ -9081,7 +9558,8 @@
         "duration": 774000,
         "onlineTime": 1632931200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/29/e6a75c3f-dea1-4f9e-a2a7-fe5e630344b2_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 114,
@@ -9100,7 +9578,8 @@
         "duration": 978000,
         "onlineTime": 1632240000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/22/c33e88a0-4fdc-4444-a92e-b61af2a1d78f_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 29,
@@ -9119,7 +9598,8 @@
         "duration": 1342000,
         "onlineTime": 1630080000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/8/27/fa557407-f558-4bc4-99d1-bee33644ca18_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 331,
@@ -9138,7 +9618,8 @@
         "duration": 293000,
         "onlineTime": 1628763793000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/8/12/55a9c4b9-8080-4b88-9f8d-2d4d11fecf30_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 329,
@@ -9157,7 +9638,8 @@
         "duration": 377000,
         "onlineTime": 1628158482000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/8/5/0345c752-e877-4274-8525-de4b69a1c341_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 104,
@@ -9176,7 +9658,8 @@
         "duration": 92000,
         "onlineTime": 1627919940000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/0ba0a612-06d3-4fdb-abc1-15e58217bfab_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 109,
@@ -9195,7 +9678,8 @@
         "duration": 92000,
         "onlineTime": 1627833540000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/f3f8aca0-9c88-4904-abb3-6e7d3e3f2cab_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 316,
@@ -9214,7 +9698,8 @@
         "duration": 224000,
         "onlineTime": 1627056000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/23/fbcf94d6-8a56-4be4-afba-cf361c41343c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 321,
@@ -9233,7 +9718,8 @@
         "duration": 224000,
         "onlineTime": 1627056000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/23/393da2a0-7517-4c0c-ab1f-ef6b3f23a4dd_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 258,
@@ -9252,7 +9738,8 @@
         "duration": 236000,
         "onlineTime": 1626451140000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/16/c4acede7-06df-4a94-9f07-5bcb9be8f6ab_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 290,
@@ -9271,7 +9758,8 @@
         "duration": 38000,
         "onlineTime": 1625932800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/30/ca0541bd-b400-4149-a569-63ff882543a0_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 305,
@@ -9290,7 +9778,8 @@
         "duration": 456000,
         "onlineTime": 1625846400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/30/8caf7558-0d84-499b-a07d-d1fa982a25f9_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 313,
@@ -9309,7 +9798,8 @@
         "duration": 50000,
         "onlineTime": 1624896000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/28/6ce9f819-fe56-41d2-a155-ca6691761ef5_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 309,
@@ -9328,7 +9818,8 @@
         "duration": 357000,
         "onlineTime": 1624723200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/6/281b3cae-85fd-4697-aaf3-99a4fd73db56_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 43,
@@ -9347,7 +9838,8 @@
         "duration": 1242000,
         "onlineTime": 1623513600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/10/e6827156-bac2-412f-8358-c3490d342de6_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 295,
@@ -9366,7 +9858,8 @@
         "duration": 206000,
         "onlineTime": 1621612800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/7/4cd7fdd0-aee9-4815-b9eb-9a125128c19a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 140,
@@ -9385,7 +9878,8 @@
         "duration": 408000,
         "onlineTime": 1621440000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/19/5a3c3783-82c1-4870-bc11-a69d31edce98_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 262,
@@ -9404,7 +9898,8 @@
         "duration": 55000,
         "onlineTime": 1621094400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/4/c5eef253-8dce-43d2-9dd5-8f8a88c3c5a3_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 301,
@@ -9423,7 +9918,8 @@
         "duration": 282000,
         "onlineTime": 1621008000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/14/e4cb55f2-08ff-480f-b6ce-caa48403f024_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 187,
@@ -9442,7 +9938,8 @@
         "duration": 248000,
         "onlineTime": 1620489600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/15/2a4578b6-b5b3-4191-bd8e-2c7ead33c33d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 291,
@@ -9461,7 +9958,8 @@
         "duration": 413000,
         "onlineTime": 1620144000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/4/1698f0c9-6b44-476b-b5d1-bb5c556f71d5_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 280,
@@ -9480,7 +9978,8 @@
         "duration": 246000,
         "onlineTime": 1619712000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/29/c33ec4d6-df48-4abb-9400-f6f43b20890b_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 282,
@@ -9499,7 +9998,8 @@
         "duration": 873000,
         "onlineTime": 1619280000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/24/64feba9a-e707-4651-b642-80c45087a9f8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 175,
@@ -9518,7 +10018,8 @@
         "duration": 494000,
         "onlineTime": 1618848000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/15/f84feb3f-0c1d-4d8a-bb39-84e191cd3128_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 251,
@@ -9537,7 +10038,8 @@
         "duration": 67000,
         "onlineTime": 1618416000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/27/8c082cb3-eeab-4b52-87f6-1a3be8782ffd_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 272,
@@ -9556,7 +10058,8 @@
         "duration": 304000,
         "onlineTime": 1618070400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/9/e89ead3a-8e53-42af-ad6b-acad2f4ada86_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 270,
@@ -9575,7 +10078,8 @@
         "duration": 106000,
         "onlineTime": 1617897600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/7/bda1f7f2-7bd9-4922-8d1c-fdf9c4114f94_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 269,
@@ -9594,7 +10098,8 @@
         "duration": 35000,
         "onlineTime": 1617724800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/31/c840b1c7-7bbc-4f14-8ffd-69b1dd00588a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 261,
@@ -9613,7 +10118,8 @@
         "duration": 379000,
         "onlineTime": 1617120000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/1/dc934a8a-11b9-40b9-b6cc-428e753196d6_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 217,
@@ -9632,7 +10138,8 @@
         "duration": 205000,
         "onlineTime": 1616774400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/22/a33f0def-d8d8-4d8b-8fd6-dcb33df98d53_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 237,
@@ -9651,7 +10158,8 @@
         "duration": 113000,
         "onlineTime": 1616256000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/17/361c3600-4cce-4294-804f-4b51fedaf5fc_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 216,
@@ -9670,7 +10178,8 @@
         "duration": 99000,
         "onlineTime": 1616083200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/15/797438e0-94ec-4f15-b1ef-08576f5ba1bc_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 234,
@@ -9689,7 +10198,8 @@
         "duration": 99000,
         "onlineTime": 1616083200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/15/c1a74a7b-1703-4d8d-a0f1-0d0a5230e39d_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 215,
@@ -9708,7 +10218,8 @@
         "duration": 360000,
         "onlineTime": 1615824000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/12/44b14ee9-f108-4c38-9f77-0d7e7a6ba241_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 233,
@@ -9727,7 +10238,8 @@
         "duration": 360000,
         "onlineTime": 1615824000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/24/be3bdfd3-1ecc-44ab-abc6-8af76eadd573_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 249,
@@ -9746,7 +10258,8 @@
         "duration": 86000,
         "onlineTime": 1615507200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/11/36caba30-514e-4bc6-8cb8-bca2009f3b1e_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 214,
@@ -9765,7 +10278,8 @@
         "duration": 80000,
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/10/09083ec2-c6ff-4815-bef1-4d960afcd73a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 235,
@@ -9784,7 +10298,8 @@
         "duration": 80000,
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/20/dc393b02-da25-466a-a276-65357f2f075a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 238,
@@ -9803,7 +10318,8 @@
         "duration": 147000,
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/8/82762181-ffef-4c12-990f-bdcb3e1cd424_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 218,
@@ -9822,7 +10338,8 @@
         "duration": 25000,
         "onlineTime": 1614787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/10/ed71c4fc-2d81-4c70-8f3e-89e228ce794c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 236,
@@ -9841,7 +10358,8 @@
         "duration": 25000,
         "onlineTime": 1614787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/20/59010212-57e6-4585-a4a7-799e70b7c7d3_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 266,
@@ -9860,7 +10378,8 @@
         "duration": 471000,
         "onlineTime": 1614787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/6/9aa9119b-2232-40e4-9a1f-70c2ba65d005_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 219,
@@ -9879,7 +10398,8 @@
         "duration": 36000,
         "onlineTime": 1614528000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/23/7e79801e-0cb4-4f3c-aa1e-6f2aa7c1fcc6_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 267,
@@ -9898,7 +10418,8 @@
         "duration": 831000,
         "onlineTime": 1613923200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/6/90735c6a-e3bb-4dea-b9aa-0c9f4365f912_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 265,
@@ -9917,7 +10438,8 @@
         "duration": 401000,
         "onlineTime": 1613750400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/6/740b8940-aa66-4616-83c7-0de93bd40688_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 134,
@@ -9936,7 +10458,8 @@
         "duration": 630000,
         "onlineTime": 1613577600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/7/08dd5b04-770e-49da-8990-ff291623fe7a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 15,
@@ -9955,7 +10478,8 @@
         "duration": 1924000,
         "onlineTime": 1611936000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/29/f56ec09f-939a-418f-bca7-670152c602a6_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 191,
@@ -9974,7 +10498,8 @@
         "duration": 1592000,
         "onlineTime": 1610985600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/27/28f5e7bb-48fd-4742-8035-c857af93af1f_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 162,
@@ -9993,7 +10518,8 @@
         "duration": 1757000,
         "onlineTime": 1610121600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/11/e60dfb7c-2e54-4c7b-bfe7-d12990d561df_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 168,
@@ -10012,7 +10538,8 @@
         "duration": 395000,
         "onlineTime": 1610035200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/7/09317088-7aaf-4cac-a6b3-56f3b1178e24_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 163,
@@ -10031,7 +10558,8 @@
         "duration": 2062000,
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/9bbe742f-533e-48ae-9ee3-d5de2475037a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 164,
@@ -10050,7 +10578,8 @@
         "duration": 1677000,
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/ac397602-9bd1-4554-ad93-21947ca50f4b_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 165,
@@ -10069,7 +10598,8 @@
         "duration": 1702000,
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/a131793a-7871-44bb-b693-5bd2d28b1d83_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 166,
@@ -10088,7 +10618,8 @@
         "duration": 1678000,
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/5807f5fb-6426-4b30-85d0-b54ffd0b2081_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 167,
@@ -10107,7 +10638,8 @@
         "duration": 1574000,
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/38acbc81-2877-496d-b20e-1ae45975a3a1_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 17,
@@ -10126,7 +10658,8 @@
         "duration": 1224000,
         "onlineTime": 1609516800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/1/70bddec7-4e2e-49c6-8132-eeab09c3cc3c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 158,
@@ -10145,7 +10678,8 @@
         "duration": 236000,
         "onlineTime": 1608998400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/27/5ecea717-c75a-4e50-965e-6e98feff5936_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 152,
@@ -10164,7 +10698,8 @@
         "duration": 1047000,
         "onlineTime": 1608393600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/13/ad5ab161-ac15-41e4-a089-a7caa4216375_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 146,
@@ -10183,7 +10718,8 @@
         "duration": 4244000,
         "onlineTime": 1608220800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/29/c84b7b83-a4cb-4a78-a1b1-bea95551f31a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 135,
@@ -10202,7 +10738,8 @@
         "duration": 336000,
         "onlineTime": 1608156000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/16/0f945aba-d271-4c6e-93e7-a4e0ca479f41_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 51,
@@ -10221,7 +10758,8 @@
         "duration": 177000,
         "onlineTime": 1608134400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/17/e2741089-bab0-41d1-8f89-edf720a9cce2_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 150,
@@ -10240,7 +10778,8 @@
         "duration": 463000,
         "onlineTime": 1608134400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/30/ec2e2435-2449-4404-bb48-fe9c749b37c8_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 118,
@@ -10259,7 +10798,8 @@
         "duration": 1250000,
         "onlineTime": 1607788800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/11/60af4e64-f39c-476f-91bb-793ea9e664f1_AAC_192.aac"
-      }
+      },
+      "category": "relax"
     },
     {
       "id": 161,
@@ -10278,7 +10818,8 @@
         "duration": 1706000,
         "onlineTime": 1607270400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/31/287a9485-e2e6-4980-83e1-4365236b1f17_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 143,
@@ -10297,7 +10838,8 @@
         "duration": 105000,
         "onlineTime": 1606838400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/1/c8f0dfd7-eaa1-42d3-a123-b59d99576708_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 127,
@@ -10316,7 +10858,8 @@
         "duration": 943000,
         "onlineTime": 1604592000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/11/5/1b6654a5-c933-4bb9-a3e3-7a85a9f2e595_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 16,
@@ -10335,7 +10878,8 @@
         "duration": 87000,
         "onlineTime": 1603663200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/10/23/0f616a77-30de-4a11-98da-bbe6677469cf_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 111,
@@ -10354,7 +10898,8 @@
         "duration": 794000,
         "onlineTime": 1601740800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/10/3/688b3406-ecb5-44f7-8fd1-54d1f04eb9af_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 102,
@@ -10373,7 +10918,8 @@
         "duration": 519000,
         "onlineTime": 1598630400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/8/26/d9748347-bba7-4926-8061-e43c2ac7bda2_AAC_192.aac"
-      }
+      },
+      "category": "kids"
     },
     {
       "id": 33,
@@ -10392,7 +10938,8 @@
         "duration": 464000,
         "onlineTime": 1593583200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/1/71451bcf-4f66-4452-9e51-17afe96ecb35_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 81,
@@ -10411,7 +10958,8 @@
         "duration": 2055000,
         "onlineTime": 1592841600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/6/21/a9479cf4-8502-46a2-b819-746093f07944_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 80,
@@ -10430,7 +10978,8 @@
         "duration": 86000,
         "onlineTime": 1592409600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/6/19/18a87525-b1b5-4585-a7ff-88d0e16ebbab_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 40,
@@ -10449,7 +10998,8 @@
         "duration": 753000,
         "onlineTime": 1591459200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/6/3/72447550-80aa-4a90-8b40-efa77ea5821f_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 73,
@@ -10468,7 +11018,8 @@
         "duration": 72000,
         "onlineTime": 1588312800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/4/30/eeda2fd9-9d0b-4a4a-9e4c-1041fc5143fd_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 71,
@@ -10487,7 +11038,8 @@
         "duration": 47000,
         "onlineTime": 1588298400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/4/30/8285c75b-57eb-406f-b4e1-2bdc94ee2a7e_AAC_192.aac"
-      }
+      },
+      "category": "city"
     },
     {
       "id": 59,
@@ -10506,7 +11058,8 @@
         "duration": 1055000,
         "onlineTime": 1583596800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/3/7/0340eb89-6360-4d03-867d-92295287f105_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 91,
@@ -10525,7 +11078,8 @@
         "duration": 638000,
         "onlineTime": 1583596800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/16/f8b85db6-3e61-414e-8228-22374f75c41a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 58,
@@ -10544,7 +11098,8 @@
         "duration": 346000,
         "onlineTime": 1580659200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/1/21/a930339f-0c14-4ca4-880d-3eb5b65f4e1a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 60,
@@ -10563,7 +11118,8 @@
         "duration": 284000,
         "onlineTime": 1580166000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/1/23/e9a82e49-20fe-4275-950e-6d0c3ceb292c_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 32,
@@ -10582,7 +11138,8 @@
         "duration": 64000,
         "onlineTime": 1579429800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/1/19/5931e059-ba08-48e8-8c1f-4b4ba9893758_AAC_192.aac"
-      }
+      },
+      "category": "commute"
     },
     {
       "id": 55,
@@ -10601,7 +11158,8 @@
         "duration": 250000,
         "onlineTime": 1577894400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/31/45d1725f-5fe9-4cd3-863f-32a55c0caf5b_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 53,
@@ -10620,7 +11178,8 @@
         "duration": 1066000,
         "onlineTime": 1577548800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/23/4c9a1f9a-5ee7-4f5c-b201-8002bb6d5ab3_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 52,
@@ -10639,7 +11198,8 @@
         "duration": 245000,
         "onlineTime": 1577376000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/26/4abe5b0f-f153-4da4-931f-e1a6c9f4a82a_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 36,
@@ -10658,7 +11218,8 @@
         "duration": 56000,
         "onlineTime": 1577066400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/23/c174e72e-57f9-4303-aa68-f8769345e331_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 46,
@@ -10677,7 +11238,8 @@
         "duration": 843000,
         "onlineTime": 1575504000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/4/53717353-20e7-4e34-b38c-b6a987c8c9c9_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 44,
@@ -10696,7 +11258,8 @@
         "duration": 266000,
         "onlineTime": 1574870400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/11/27/cbbf8fc7-6355-413b-9662-68168d8482cf_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 90,
@@ -10715,7 +11278,8 @@
         "duration": 956000,
         "onlineTime": 1559318400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/16/577acb69-03ca-44ba-9c92-78304f9c6219_AAC_192.aac"
-      }
+      },
+      "category": null
     },
     {
       "id": 92,
@@ -10734,7 +11298,8 @@
         "duration": 1574000,
         "onlineTime": 1545148800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/16/c2d56b58-41eb-41e7-a387-f1f36a49057b_AAC_192.aac"
-      }
+      },
+      "category": null
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, isCityChannelAlbum, loadCatalog, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -77,6 +77,32 @@ describe('catalog selectors', () => {
       { id: 8, name: '另一张普通专辑', latestEpisode: episode(81, 400) },
     ];
     expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([35, 584, 8, 7]);
+  });
+
+  it('groups albums by scene category in vehicle order with unclassified fallback', () => {
+    const albums = [
+      { id: 1, name: '路人抓马', category: null, latestEpisode: episode(11, 100) },
+      { id: 35, name: '芝士分子', category: 'kids', latestEpisode: episode(351, 300) },
+      { id: 5, name: '资讯充电站·早间版', category: 'commute', latestEpisode: episode(51, 200) },
+      { id: 2, name: '华语经典精选', category: 'relax', latestEpisode: episode(22, 400) },
+    ];
+    const { groups, rest } = groupAlbumsByCategory(albums);
+    expect(groups.map(g => g.id)).toEqual(SCENE_CATEGORY_ORDER);
+    expect(groups[0].albums.map(a => a.id)).toEqual([5]);
+    expect(groups[1].albums.map(a => a.id)).toEqual([35]);
+    expect(groups[2].albums.map(a => a.id)).toEqual([2]);
+    expect(rest.map(a => a.id)).toEqual([1]);
+  });
+
+  it('exposes vehicle scene labels for every category', () => {
+    expect(SCENE_CATEGORY_ORDER.map(id => SCENE_CATEGORY_LABELS[id])).toEqual([
+      '通勤场景|资讯速递',
+      '宝贝同行|哄娃陪伴',
+      '舒缓驾驶|乐伴旅途',
+      '长途驾驶|知识充电',
+      '城市漫游|本地指南',
+      '玩转爱车|提车必听',
+    ]);
   });
 
   it('selects up to twelve episodes published on the requested day', () => {

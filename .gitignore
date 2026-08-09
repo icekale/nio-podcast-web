@@ -27,3 +27,6 @@ blob-report
 *.njsproj
 *.sln
 *.sw?
+
+# local agent tooling
+.pi-subagents/

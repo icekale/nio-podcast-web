@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { categorizeAlbum } from './album-categories.js';
 import {
   buildCatalog,
   assertCatalogScanHasSuccess,
@@ -53,6 +54,10 @@ const albums = mode === 'incremental'
   ? mergeKnownAlbums(previousAlbums, scanResult)
   : reconcileFullScan(previousAlbums, scanResult).albums;
 if (!albums.length) throw new Error('No albums found; refusing to replace the existing catalog');
+
+for (const album of albums) {
+  album.category = categorizeAlbum(album);
+}
 
 const catalog = { generatedAt: Date.now(), albums };
 if (previous && sameCatalogContent(previous, catalog)) {
