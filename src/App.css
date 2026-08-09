@@ -213,11 +213,15 @@ h1, h2, p { margin: 0; }
 .search-field-wrap input { width: 100%; min-height: 2.75rem; padding: 0; border: 0; outline: 0; color: var(--ink); background: transparent; }
 .search-results { padding-top: var(--space-6); }
 .category-section { padding-top: var(--space-5); }
-.category-heading { display: flex; align-items: center; gap: var(--space-2); width: 100%; min-height: 2.75rem; padding: 0; color: var(--ink); background: transparent; text-align: left; }
+.category-heading { display: flex; align-items: center; gap: var(--space-2); width: 100%; min-height: 2.75rem; padding: 0 var(--space-2); margin: 0 calc(-1 * var(--space-2)); border-radius: var(--radius-md); color: var(--ink); background: transparent; text-align: left; transition: background-color 160ms ease; }
+.category-heading:hover, .category-heading:active { background: var(--surface-soft); }
 .category-heading .category-label { font-size: 0.95rem; font-weight: 650; }
 .category-heading .category-count { margin-left: auto; color: var(--muted); font-size: 0.8rem; }
 .category-heading svg { flex: 0 0 auto; color: var(--muted); transition: transform 160ms ease; }
-.category-heading[aria-expanded="true"] svg { transform: rotate(90deg); }
+.category-heading:hover svg { transform: translateX(2px); }
+.category-heading[aria-expanded="true"] svg, .category-heading[aria-expanded="true"]:hover svg { transform: rotate(90deg); }
+.category-section .album-results { animation: category-reveal 200ms ease-out both; }
+@keyframes category-reveal { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 .album-results { border-top: 1px solid var(--line); }
 .album-results.is-grid {
   display: grid;
