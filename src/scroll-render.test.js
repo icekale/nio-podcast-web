@@ -70,9 +70,9 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.search-screen \.top-bar \.icon-button:first-child,\s*\.albums-screen \.top-bar \.icon-button:first-child,\s*\.album-screen \.top-bar \.icon-button:first-child\s*\{[^}]*display:\s*none/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-progress-row\s*\{[^}]*flex:\s*1;/);
     expect(css).toMatch(/\.mini-main\s*\{[^}]*gap:\s*0\s*var\(--space-3\)/);
-    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-toggle\s*\{[^}]*order:\s*2/);
-    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-progress-row\s*\{[^}]*order:\s*3/);
-    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-control\s*\{[^}]*order:\s*4/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-transport\s*\{[^}]*order:\s*4/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-progress-row\s*\{[^}]*order:\s*5/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.queue-control\s*\{[^}]*order:\s*6/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen \.episode-row\s*\{[^}]*transition:\s*background-color\s+160ms\s+ease/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen \.episode-row:hover\s*\{[^}]*background:\s*var\(--surface-soft\)/);
     expect(css).toMatch(/\.album-results\.is-grid \.album-result > svg\s*\{[^}]*display:\s*none/);

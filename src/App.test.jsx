@@ -44,6 +44,23 @@ describe('mobile app shell', () => {
     expect(screen.getAllByText('第一集').length).toBeGreaterThan(0);
   });
 
+  it('shows favorite, previous, and next controls in the mini player', async () => {
+    render(<App initialCatalog={catalog} />);
+    await screen.findByText('今日推荐');
+
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    const player = await screen.findByRole('region', { name: '当前播放' });
+    await within(player).findByRole('button', { name: '暂停' });
+
+    expect(within(player).getByRole('button', { name: '上一首' })).toBeInTheDocument();
+    expect(within(player).getByRole('button', { name: '下一首' })).toBeInTheDocument();
+    const favorite = within(player).getByRole('button', { name: /收藏 / });
+    expect(favorite).toHaveAttribute('aria-pressed', 'false');
+
+    fireEvent.click(favorite);
+    expect(within(player).getByRole('button', { name: /取消收藏 / })).toHaveAttribute('aria-pressed', 'true');
+  });
+
   it('shows a recoverable error when the selected episode has no audio URL', async () => {
     const catalogWithoutAudio = {
       ...catalog,
