@@ -95,6 +95,6 @@ describe('mobile scroll rendering', () => {
   it('places the grid card action beside the title row', () => {
     expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*container-type:\s*inline-size/);
     expect(css).toMatch(/\.album-results\.is-grid \.album-action\s*\{[^}]*top:\s*calc\(100cqw\s*\+\s*var\(--space-3\)\)/);
-    expect(css).toMatch(/\.album-results\.is-grid \.album-action \.favorite-star\.is-favorite\s*\{[^}]*color:\s*var\(--teal-dark\)/);
+    expect(css).toMatch(/\.album-results\.is-grid \.album-action \.favorite-star\.is-favorite\s*\{[^}]*color:\s*var\(--logo-teal\)/);
   });
 });

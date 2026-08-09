@@ -2,6 +2,7 @@
   --surface: #ffffff;
   --surface-soft: #f5f8f9;
   --aqua: #e7f7f7;
+  --logo-teal: #00bebe;
   --teal: #00b9b5;
   --teal-dark: #006f6d;
   --accent-ink: #08162e;
@@ -247,8 +248,8 @@ h1, h2, p { margin: 0; }
 .album-results.is-grid .album-action .icon-button { width: 1.75rem; height: 1.75rem; }
 .album-results.is-grid .album-action .favorite-star { color: var(--muted); }
 .album-results.is-grid .album-action .favorite-star:hover { color: var(--teal-dark); }
-.album-results.is-grid .album-action .favorite-star.is-favorite { color: var(--teal-dark); }
-.album-results.is-grid .album-action .favorite-star.is-favorite:hover { color: var(--teal-dark); }
+.album-results.is-grid .album-action .favorite-star.is-favorite { color: var(--logo-teal); }
+.album-results.is-grid .album-action .favorite-star.is-favorite:hover { color: var(--logo-teal); }
 .album-results.is-grid .album-result { transition: transform 160ms ease, box-shadow 160ms ease; }
 .album-results.is-grid .album-result:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 28, 47, 0.10); }
 .album-results.is-grid .album-result:active { transform: scale(0.98); }
@@ -568,7 +569,7 @@ h1, h2, p { margin: 0; }
   .mini-copy { flex: 1; }
   /* 桌面端车机式：5 个等大按钮排一行 */
   .mini-favorite { display: inline-flex; order: 3; width: 2.75rem; height: 2.75rem; }
-  .mini-favorite.is-favorite { color: var(--teal-dark); }
+  .mini-favorite.is-favorite { color: var(--logo-teal); }
   .mini-skip { display: inline-flex; width: 2.75rem; height: 2.75rem; }
   .mini-toggle { width: 2.75rem; height: 2.75rem; }
   .mini-transport { flex: 0 0 auto; order: 4; gap: var(--space-2); }
