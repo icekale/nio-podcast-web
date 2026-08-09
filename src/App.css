@@ -301,14 +301,13 @@ h1, h2, p { margin: 0; }
 .player-control:disabled { opacity: 0.35; pointer-events: none; }
 .player-control:hover { color: var(--teal-dark); }
 .queue-control { color: var(--ink); }
-.mini-favorite { color: var(--ink); order: 3; }
-.mini-favorite.is-favorite { color: #f2a900; }
-.queue-control { order: 4; }
-.mini-transport { display: flex; align-items: center; gap: var(--space-1); flex: 1 1 100%; justify-content: center; order: 5; margin-top: var(--space-1); }
+/* 移动端回滚至旧布局：隐藏收藏与切歌，播放/队列同排，进度条在底部 */
+.mini-favorite { display: none; }
+.mini-skip { display: none; }
+.mini-transport { display: flex; align-items: center; gap: var(--space-1); }
 .mini-toggle { background: var(--teal); color: var(--accent-ink); }
 .mini-toggle:hover { background: var(--teal-dark); color: var(--surface); }
-.mini-favorite, .mini-skip, .queue-control { width: 2.5rem; height: 2.5rem; }
-.mini-progress-row { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); color: var(--muted); font-size: 0.68rem; font-variant-numeric: tabular-nums; order: 6; flex-basis: 100%; }
+.mini-progress-row { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); color: var(--muted); font-size: 0.68rem; font-variant-numeric: tabular-nums; order: 4; flex-basis: 100%; }
 .mini-progress-row input {
   min-width: 0;
   flex: 1;
@@ -568,10 +567,43 @@ h1, h2, p { margin: 0; }
   .mini-progress-row input { height: 1rem; }
   .mini-main { flex-wrap: nowrap; }
   .mini-copy { flex: 1; }
-  .mini-favorite { order: 3; }
-  .mini-transport { flex: 0 0 auto; justify-content: flex-start; order: 4; margin-top: 0; }
-  .mini-progress-row { order: 5; flex: 1; min-width: 0; flex-basis: auto; margin-top: 0; margin-left: var(--space-2); }
-  .queue-control { order: 6; margin-left: var(--space-2); }
+  /* 桌面端车机式：5 个等大按钮排一行 */
+  .mini-favorite { display: inline-flex; order: 3; width: 2.75rem; height: 2.75rem; }
+  .mini-favorite.is-favorite { color: #f2a900; }
+  .mini-skip { display: inline-flex; width: 2.75rem; height: 2.75rem; }
+  .mini-toggle { width: 2.75rem; height: 2.75rem; }
+  .mini-transport { flex: 0 0 auto; order: 4; gap: var(--space-2); }
+  .queue-control { order: 6; width: 2.75rem; height: 2.75rem; }
+  /* 进度条移到卡片顶部，半隐藏：默认细线，悬停展开 */
+  .mini-progress-row {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    order: 5;
+    height: 0.375rem;
+    margin: 0;
+    padding: 0 var(--space-4);
+    overflow: hidden;
+    opacity: 0.85;
+    transition: height 160ms ease, opacity 160ms ease;
+  }
+  .mini-progress-row span { display: none; }
+  .mini-progress-row input { height: 0.375rem; }
+  .mini-progress-row input::-webkit-slider-runnable-track { height: 0.1875rem; }
+  .mini-progress-row input::-webkit-slider-thumb {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-top: -0.28125rem;
+    border-width: 0.1875rem;
+  }
+  .mini-progress-row input::-moz-range-track { height: 0.1875rem; }
+  .mini-progress-row input::-moz-range-thumb { width: 0.75rem; height: 0.75rem; border-width: 0.1875rem; }
+  .mini-player:hover .mini-progress-row, .mini-progress-row:focus-within {
+    height: 1.5rem;
+    opacity: 1;
+  }
+  .mini-player { position: fixed; }
 
   .home-screen { display: block; }
   .home-screen .recommendation-panel { padding: var(--space-6) var(--space-6); border-radius: var(--radius-md); grid-template-columns: minmax(0, 1fr) auto auto; }
