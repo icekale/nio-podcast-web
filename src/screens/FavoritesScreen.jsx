@@ -11,11 +11,11 @@ export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favorite
     <div className="screen favorites-screen">
       <header className="top-bar">
         <button type="button" className="icon-button" aria-label="返回主页" onClick={onBack}><ArrowLeft size={25} /></button>
-        <span className="top-title">我的收藏</span>
+        <span className="top-title">专辑收藏</span>
         <span className="icon-button-spacer" />
       </header>
       <section className="search-results" aria-labelledby="favorites-title">
-        <div className="section-heading-row"><h1 id="favorites-title">我的收藏</h1><span className="section-count">{favorites.length}</span></div>
+        <div className="section-heading-row"><h1 id="favorites-title">专辑收藏</h1><span className="section-count">{favorites.length}</span></div>
         {favorites.length ? <AlbumResults albums={favorites} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} /> : (
           <div className="favorites-empty">
             <Heart size={32} aria-hidden="true" />

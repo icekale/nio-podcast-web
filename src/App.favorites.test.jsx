@@ -28,7 +28,7 @@ const catalog = {
 
 function openFavorites() {
   const nav = screen.getByRole('navigation', { name: '主导航' });
-  fireEvent.click(within(nav).getByRole('button', { name: '我的收藏' }));
+  fireEvent.click(within(nav).getByRole('button', { name: '专辑收藏' }));
 }
 
 describe('desktop favorites collection', () => {
@@ -65,7 +65,7 @@ describe('desktop favorites collection', () => {
     window.localStorage.setItem('nio_favorite_albums_v1', JSON.stringify([2]));
     render(<App initialCatalog={catalog} />);
     openFavorites();
-    await screen.findByRole('heading', { name: '我的收藏' });
+    await screen.findByRole('heading', { name: '专辑收藏' });
 
     fireEvent.click(screen.getByRole('button', { name: '取消收藏 另一张专辑' }));
 

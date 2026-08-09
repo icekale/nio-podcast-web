@@ -82,6 +82,6 @@ test.describe('app smoke', () => {
 
   test('desktop favorites page renders', async ({ page }) => {
     await page.goto('/#/favorites');
-    await expect(page.getByRole('heading', { name: '我的收藏' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '专辑收藏' })).toBeVisible();
   });
 });

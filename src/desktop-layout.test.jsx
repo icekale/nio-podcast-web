@@ -57,7 +57,7 @@ describe('desktop navigation', () => {
     window.history.replaceState({ nioDepth: 0 }, '', '#/favorites');
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
-    expect(within(nav).getByRole('button', { name: '我的收藏' })).toHaveAttribute('aria-current', 'page');
+    expect(within(nav).getByRole('button', { name: '专辑收藏' })).toHaveAttribute('aria-current', 'page');
   });
 
   it('highlights the active sidebar destination', async () => {
