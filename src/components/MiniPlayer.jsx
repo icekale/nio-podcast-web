@@ -1,3 +1,4 @@
+import { useCallback, useRef, useState } from 'react';
 import { Heart, ListMusic, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Artwork } from './Artwork';
 import { formatClock } from '../format';
@@ -13,6 +14,21 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
   const queueSize = player.queue?.length || 0;
   const favorited = favoriteIds.includes(Number(player.currentEpisode?.albumId));
   const currentAlbumId = player.currentEpisode?.albumId;
+  const progressRef = useRef(null);
+  const [bubbleSeconds, setBubbleSeconds] = useState(null);
+
+  const positionSeconds = Math.min(player.positionSeconds, duration || 0);
+  const progressPercent = duration > 0 ? (positionSeconds / duration) * 100 : 0;
+
+  const updateBubbleFromPointer = useCallback(event => {
+    const track = progressRef.current;
+    if (!track) return;
+    const rect = track.getBoundingClientRect();
+    setBubbleSeconds(bubbleSecondsFromPointer(event.clientX, rect.left, rect.width, duration));
+  }, [duration]);
+
+  const hideBubble = useCallback(() => setBubbleSeconds(null), []);
+
   return (
     <section className={`mini-player${isClosing ? ' is-closing' : ''}`} aria-label="当前播放" onAnimationEnd={event => { if (isClosing && event.animationName === 'mini-player-out') onExited?.(); }}>
       <div className="mini-main">
@@ -28,7 +44,28 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
           <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
           <button type="button" className="player-control mini-skip" aria-label="下一首" disabled={queueSize < 2} onClick={() => onAdjacent?.(1)}><SkipForward size={20} /></button>
         </div>
-        <div className="mini-progress-row"><span>{formatClock(player.positionSeconds)}</span><input aria-label="播放进度" type="range" min="0" max={duration || 0} step="1" value={Math.min(player.positionSeconds, duration || 0)} onChange={onSeek} /><span>{formatClock(duration)}</span></div>
+        <div
+          ref={progressRef}
+          className="mini-progress-row"
+          onPointerMove={updateBubbleFromPointer}
+          onPointerLeave={hideBubble}
+        >
+          <span>{formatClock(positionSeconds)}</span>
+          <input
+            aria-label="播放进度"
+            type="range"
+            min="0"
+            max={duration || 0}
+            step="1"
+            value={positionSeconds}
+            onChange={event => { onSeek(event); setBubbleSeconds(Number(event.target.value)); }}
+            style={{ '--progress': `${progressPercent}%` }}
+          />
+          <span>{formatClock(duration)}</span>
+          {bubbleSeconds != null ? (
+            <span className="mini-progress-bubble" aria-hidden="true">{formatClock(bubbleSeconds)} / {formatClock(duration)}</span>
+          ) : null}
+        </div>
         <button ref={queueButtonRef} type="button" className="player-control queue-control" aria-label="打开播放列表" onClick={onOpenQueue}><ListMusic size={21} /></button>
       </div>
       {audioError ? <div className="player-error" role="alert"><span>{audioError}</span><button type="button" onClick={onRetry}>重试</button></div> : null}
