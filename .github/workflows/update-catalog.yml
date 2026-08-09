@@ -49,7 +49,7 @@ jobs:
           INPUT_MODE: ${{ inputs.mode }}
         run: |
           MODE="${INPUT_MODE:-incremental}"
-          if [ "$SCHEDULE" = "30 23 * * 0-4" ]; then
+          if [ "$SCHEDULE" = "30 23 * * *" ]; then
             MODE=full
           fi
           if [ "$MODE" != "full" ] && [ "$MODE" != "incremental" ]; then

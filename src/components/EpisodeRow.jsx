@@ -55,11 +55,13 @@ export function LaterEpisodeAction({ episode, onAdd }) {
 
   const handleAdd = () => {
     const result = onAdd(episode);
-    setNotice(!result.added
-      ? '已在稍后播放'
-      : result.persisted
-        ? '已添加到稍后播放'
-        : '已添加到稍后播放，但无法保存，刷新后可能丢失');
+    setNotice(result.reason === 'limit'
+      ? '稍后播放最多保存 50 条'
+      : !result.added
+        ? '已在稍后播放'
+        : result.persisted
+          ? '已添加到稍后播放'
+          : '已添加到稍后播放，但无法保存，刷新后可能丢失');
     setOpen(false);
   };
 

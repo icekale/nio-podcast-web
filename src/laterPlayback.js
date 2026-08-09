@@ -1,6 +1,6 @@
 export const LATER_PLAYBACK_STORAGE_KEY = 'nio_play_later_v1';
 
-const MAX_LATER_EPISODES = 200;
+const MAX_LATER_EPISODES = 50;
 
 const SERIALIZED_EPISODE_FIELDS = [
   'id',
@@ -43,6 +43,9 @@ export function addLaterEpisode(items, episode) {
   const normalized = normalizeEpisode(episode);
   if (!normalized || items.some(item => String(item.id) === String(normalized.id))) {
     return { added: false, items };
+  }
+  if (items.length >= MAX_LATER_EPISODES) {
+    return { added: false, reason: 'limit', items };
   }
   return { added: true, items: [...items, normalized] };
 }

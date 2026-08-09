@@ -228,7 +228,7 @@ export default function App({ initialCatalog = null }) {
 
   const addToLater = useCallback(episode => {
     const result = addLaterEpisode(laterEpisodesRef.current, episode);
-    if (!result.added) return { added: false, persisted: true };
+    if (!result.added) return { ...result, persisted: true };
     laterEpisodesRef.current = result.items;
     setLaterEpisodes(result.items);
     return { added: true, persisted: writeLaterEpisodes(result.items) };

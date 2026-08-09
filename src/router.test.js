@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { closeQueueHash, parseHash, withQueueHash } from './router';
+import { sameRoute } from './routeUtils';
 
 describe('hash router', () => {
   it('parses home and album routes', () => {
@@ -32,6 +33,13 @@ describe('hash router', () => {
 
   it('parses the favorites route', () => {
     expect(parseHash('#/favorites')).toEqual({ screen: 'favorites', albumId: null, episodeId: null, queueOpen: false });
+  });
+
+  it('treats different episode deep links as different routes', () => {
+    expect(sameRoute(
+      parseHash('#/album/23?ep=196763'),
+      parseHash('#/album/23?ep=196764'),
+    )).toBe(false);
   });
 
   it('opens and closes the queue without changing the underlying route', () => {

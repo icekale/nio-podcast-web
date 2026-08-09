@@ -17,6 +17,8 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('MODE="${INPUT_MODE:-incremental}"');
     expect(workflow).toContain('NIO_CATALOG_MODE=$MODE');
     expect(workflow).toContain('30 23 * * *');
+    expect(workflow).toContain('if [ "$SCHEDULE" = "30 23 * * *" ]; then');
+    expect(workflow).not.toContain('if [ "$SCHEDULE" = "30 23 * * 0-4" ]; then');
     expect(workflow).toContain('0 18 * * *');
     expect(workflow).toContain('0 13 * * *');
     expect(workflow).toContain('0 10 * * *');
@@ -74,6 +76,8 @@ describe('catalog freshness check workflow', () => {
   it('auto-repairs stale catalogs and escalates via issues', () => {
     expect(workflow).toContain('actions: write');
     expect(workflow).toContain('issues: write');
+    expect(workflow).toContain('gh run list --workflow update-catalog.yml');
+    expect(workflow).not.toContain("get('generatedAt')");
     expect(workflow).toContain('gh workflow run update-catalog.yml');
     expect(workflow).toContain('gh issue create');
     expect(workflow).toContain('age_hours) > 26');

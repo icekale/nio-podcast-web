@@ -4,6 +4,8 @@ import { getEpisodes } from '../api';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow, LaterEpisodeAction } from '../components/EpisodeRow';
 
+const MAX_DEEP_LINK_AUTO_PAGES = 10;
+
 export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack, onPlay, onAddLater }) {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -38,12 +40,12 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
     loadPage(1);
   }, [loadPage]);
 
-  // 单集深链:目标节目不在当前页时继续加载分页。
+  // ponytail: bound automatic deep-link lookup to 10 pages; older links can continue manually.
   useEffect(() => {
     if (!episodeId || !episodes.length) return undefined;
     const target = episodes.some(episode => String(episode.id) === String(episodeId));
     if (!target) {
-      if (hasMore && !loading && !error) loadPage(page + 1);
+      if (hasMore && !loading && !error && page < MAX_DEEP_LINK_AUTO_PAGES) loadPage(page + 1);
       return undefined;
     }
     const timer = window.setTimeout(() => {

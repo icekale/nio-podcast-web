@@ -54,11 +54,16 @@ describe('later playback state', () => {
     expect(read[0].title).toBe('节目 1');
   });
 
-  it('caps the persisted list at 200 entries', () => {
+  it('rejects a new item when the list already contains 50 episodes', () => {
+    const items = Array.from({ length: 50 }, (_, index) => episode(index + 1));
+    expect(addLaterEpisode(items, episode(51))).toEqual({ added: false, reason: 'limit', items });
+  });
+
+  it('caps legacy persisted lists at 50 entries', () => {
     const storage = { value: '', getItem: () => storage.value, setItem: (_key, value) => { storage.value = value; } };
-    const many = Array.from({ length: 250 }, (_, index) => episode(index + 1));
+    const many = Array.from({ length: 60 }, (_, index) => episode(index + 1));
     writeLaterEpisodes(many, storage);
-    expect(readLaterEpisodes(storage).length).toBe(200);
+    expect(readLaterEpisodes(storage).length).toBe(50);
   });
 
   it('trims heavy fields from already-persisted legacy data on read', () => {

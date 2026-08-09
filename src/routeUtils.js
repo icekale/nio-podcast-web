@@ -5,6 +5,7 @@ export function screenRouteKey(route) {
 export function sameRoute(previous, next) {
   return previous.screen === next.screen
     && previous.albumId === next.albumId
+    && previous.episodeId === next.episodeId
     && previous.searchQuery === next.searchQuery
     && previous.queueOpen === next.queueOpen;
 }
