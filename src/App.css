@@ -305,8 +305,6 @@ h1, h2, p { margin: 0; }
 .mini-favorite { display: none; }
 .mini-skip { display: none; }
 .mini-transport { display: flex; align-items: center; gap: var(--space-1); }
-.mini-toggle { background: var(--teal); color: var(--accent-ink); }
-.mini-toggle:hover { background: var(--teal-dark); color: var(--surface); }
 .mini-progress-row { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); color: var(--muted); font-size: 0.68rem; font-variant-numeric: tabular-nums; order: 4; flex-basis: 100%; }
 .mini-progress-row input {
   min-width: 0;
