@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bubbleSecondsFromPointer } from './MiniPlayer';
+import { bubbleSecondsFromPointer } from '../playerProgress';
 
 describe('bubbleSecondsFromPointer', () => {
   it('maps pointer x within the track to seconds', () => {
