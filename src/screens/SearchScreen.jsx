@@ -4,7 +4,7 @@ import { sortAlbumsForDirectory } from '../catalog';
 import { AlbumResults } from '../components/AlbumResults';
 import { CategorySections } from '../components/CategorySections';
 
-export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false, favoriteIds, onToggleFavorite, starAction }) {
+export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = '', onBack, onQueryChange, onOpenAlbum, pinnedFirst = false, favoriteIds, onToggleFavorite }) {
   const [query, setQuery] = useState(searchQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(searchQuery);
   const inputRef = useRef(null);
@@ -36,11 +36,11 @@ export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = 
         <div className="section-heading-row"><h1>全部专辑</h1><span key={searching ? filtered.length : catalog.albums.length} className="section-count" aria-live="polite">{searching ? filtered.length : catalog.albums.length}</span></div>
         {searching ? (
           <>
-            <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
+            <AlbumResults albums={filtered} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
             {!filtered.length ? <div className="empty-state">没有找到匹配的专辑</div> : null}
           </>
         ) : (
-          <CategorySections albums={catalog.albums} onOpenAlbum={onOpenAlbum} favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
+          <CategorySections albums={catalog.albums} onOpenAlbum={onOpenAlbum} favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
         )}
       </section>
     </div>

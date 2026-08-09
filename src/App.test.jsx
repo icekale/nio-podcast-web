@@ -143,14 +143,12 @@ describe('mobile app shell', () => {
     const directoryRows = () => screen.getAllByRole('button', { name: /^(NIO 精选|另一张专辑|上海天气预报)/ });
     expect(directoryRows().map(button => button.textContent)).toEqual(['NIO 精选第一集', '另一张专辑第二集', '上海天气预报天气节目']);
 
-    fireEvent.click(screen.getByRole('button', { name: '管理 上海天气预报' }));
-    fireEvent.click(screen.getByRole('menuitem', { name: '收藏专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: '收藏 上海天气预报' }));
 
     expect(directoryRows().map(button => button.textContent)).toEqual(['上海天气预报天气节目', 'NIO 精选第一集', '另一张专辑第二集']);
     expect(window.localStorage.getItem('nio_favorite_albums_v1')).toBe(JSON.stringify([9]));
 
-    fireEvent.click(screen.getByRole('button', { name: '管理 上海天气预报' }));
-    fireEvent.click(screen.getByRole('menuitem', { name: '取消收藏' }));
+    fireEvent.click(screen.getByRole('button', { name: '取消收藏 上海天气预报' }));
 
     expect(directoryRows().map(button => button.textContent)).toEqual(['NIO 精选第一集', '另一张专辑第二集', '上海天气预报天气节目']);
   });

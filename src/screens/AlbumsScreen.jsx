@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { ArrowLeft, Search } from 'lucide-react';
 import { CategorySections } from '../components/CategorySections';
 
-export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum, favoriteIds, onToggleFavorite, starAction }) {
+export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSearch, onOpenAlbum, favoriteIds, onToggleFavorite }) {
   return (
     <div className="screen albums-screen">
       <header className="top-bar">
@@ -12,7 +12,7 @@ export const AlbumsScreen = memo(function AlbumsScreen({ catalog, onBack, onSear
       </header>
       <section className="search-results" aria-labelledby="albums-title">
         <div className="section-heading-row"><h1 id="albums-title">全部专辑</h1><span className="section-count">{catalog.albums.length}</span></div>
-        <CategorySections albums={catalog.albums} onOpenAlbum={onOpenAlbum} favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
+        <CategorySections albums={catalog.albums} onOpenAlbum={onOpenAlbum} favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
         {!catalog.albums.length ? <div className="empty-state">暂无可用专辑</div> : null}
       </section>
     </div>

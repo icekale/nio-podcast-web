@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { ArrowLeft, Star } from 'lucide-react';
 import { AlbumResults } from '../components/AlbumResults';
 
-export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favoriteIds, onToggleFavorite, onOpenAlbum, onBack, onBrowse, starAction }) {
+export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favoriteIds, onToggleFavorite, onOpenAlbum, onBack, onBrowse }) {
   const favorites = useMemo(() => {
     const byId = new Map(catalog.albums.map(album => [Number(album.id), album]));
     return favoriteIds.map(Number).filter(id => byId.has(id)).map(id => byId.get(id));
@@ -16,7 +16,7 @@ export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favorite
       </header>
       <section className="search-results" aria-labelledby="favorites-title">
         <div className="section-heading-row"><h1 id="favorites-title">我的收藏</h1><span className="section-count">{favorites.length}</span></div>
-        {favorites.length ? <AlbumResults albums={favorites} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} /> : (
+        {favorites.length ? <AlbumResults albums={favorites} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} /> : (
           <div className="favorites-empty">
             <Star size={32} aria-hidden="true" />
             <h2>还没有收藏专辑</h2>

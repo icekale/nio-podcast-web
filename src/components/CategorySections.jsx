@@ -6,7 +6,7 @@ import { AlbumResults } from './AlbumResults';
 const SECTION_LIMIT = 12;
 const REST_LIMIT = 12;
 
-export const CategorySections = memo(function CategorySections({ albums, onOpenAlbum, favoriteIds, onToggleFavorite, starAction = false }) {
+export const CategorySections = memo(function CategorySections({ albums, onOpenAlbum, favoriteIds, onToggleFavorite }) {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [expandedRest, setExpandedRest] = useState(false);
   const { groups, rest } = useMemo(() => groupAlbumsByCategory(albums, favoriteIds), [albums, favoriteIds]);
@@ -32,7 +32,6 @@ export const CategorySections = memo(function CategorySections({ albums, onOpenA
             grid
             favoriteIds={favoriteIds}
             onToggleFavorite={onToggleFavorite}
-            starAction={starAction}
           />
         </section>
       ))}
@@ -49,7 +48,7 @@ export const CategorySections = memo(function CategorySections({ albums, onOpenA
             <span className="category-count">{rest.length}</span>
             <ChevronRight size={19} aria-hidden="true" />
           </button>
-          <AlbumResults albums={expandedRest ? rest : rest.slice(0, REST_LIMIT)} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} starAction={starAction} />
+          <AlbumResults albums={expandedRest ? rest : rest.slice(0, REST_LIMIT)} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
         </section>
       ) : null}
     </>
