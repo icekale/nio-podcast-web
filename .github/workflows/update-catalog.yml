@@ -3,13 +3,11 @@ name: Update NIO Radio catalog
 on:
   # Product times are Asia/Shanghai; GitHub Actions cron is UTC.
   schedule:
-    - cron: '30 23 * * 0-4' # Beijing Mon-Fri 07:30, full discovery
+    - cron: '30 23 * * *' # Beijing 07:30 daily, full discovery
     - cron: '0 20 * * *' # Beijing 04:00 daily
-    - cron: '0 13 * * 1-5' # Beijing Mon-Fri 21:00 (evening publish peak)
-    - cron: '0 10 * * 1-5' # Beijing Mon-Fri 18:00
-    - cron: '0 16 * * 1-5' # Beijing Mon-Fri 24:00 (next local day 00:00)
-    - cron: '0 13 * * 0,6' # Beijing Sat/Sun 21:00 (evening publish peak)
-    - cron: '0 10 * * 0,6' # Beijing Sat/Sun 18:00
+    - cron: '0 13 * * *' # Beijing 21:00 (evening publish peak)
+    - cron: '0 10 * * *' # Beijing 18:00
+    - cron: '0 16 * * *' # Beijing 24:00 (next local day 00:00)
   workflow_dispatch:
     inputs:
       mode:
