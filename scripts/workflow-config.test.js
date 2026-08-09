@@ -18,10 +18,10 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('NIO_CATALOG_MODE=$MODE');
     expect(workflow).toContain('30 23 * * 0-4');
     expect(workflow).toContain('0 20 * * *');
-    expect(workflow).toContain('0 4 * * 1-5');
+    expect(workflow).toContain('0 13 * * 1-5');
     expect(workflow).toContain('0 10 * * 1-5');
     expect(workflow).toContain('0 16 * * 1-5');
-    expect(workflow).toContain('0 4 * * 0,6');
+    expect(workflow).toContain('0 13 * * 0,6');
     expect(workflow).toContain('0 10 * * 0,6');
     expect(workflow).not.toContain('30 0 * * 1-5');
     expect(workflow).not.toContain('30 1 * * 1-5');
