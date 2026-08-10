@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786381059975,
+  "generatedAt": 1786388304029,
   "albums": [
     {
       "id": 5,
@@ -460,6 +460,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/10/wp783sBTpNLoWdKk_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 669,
+      "name": "Vibration 歪波音室",
+      "description": "音乐太多，耳朵太少",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
+      "host": "NIO Radio",
+      "episodeCount": 115,
+      "latestEpisode": {
+        "id": 196895,
+        "title": "惬意宅家Mixtape：松散漫游",
+        "albumId": 669,
+        "albumName": "Vibration 歪波音室",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
+        "host": "NIO Radio",
+        "duration": 4178000,
+        "onlineTime": 1786377600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/qYBEOkmgSvIH2pyL_AAC_192_1.m4a"
+      },
+      "category": "relax"
     },
     {
       "id": 680,
@@ -2620,26 +2640,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/03/Sgg3kDPoQXli2Gry_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 669,
-      "name": "Vibration 歪波音室",
-      "description": "音乐太多，耳朵太少",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
-      "host": "NIO Radio",
-      "episodeCount": 114,
-      "latestEpisode": {
-        "id": 196640,
-        "title": "7月新歌推荐丨麦当娜、Steve Lacy、许钧、浅堤… 不要错过",
-        "albumId": 669,
-        "albumName": "Vibration 歪波音室",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
-        "host": "NIO Radio",
-        "duration": 6452000,
-        "onlineTime": 1785772800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/YFrB83QW21pKGyfe_AAC_192_1.m4a"
-      },
-      "category": "relax"
     },
     {
       "id": 695,
