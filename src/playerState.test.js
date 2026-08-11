@@ -124,4 +124,17 @@ describe('player state', () => {
     const restored = restorePlayerState(JSON.stringify(parsed));
     expect(restored.currentEpisode.audioUrl).toBe('https://cdn.example/1.aac');
   });
+
+  it('preserves loop playback and dark artwork across refresh', () => {
+    const state = selectEpisode(createPlayerState(), {
+      ...episode(1),
+      albumPicDark: 'covers/dark.png',
+      playbackMode: 'loop-one',
+    });
+
+    expect(restorePlayerState(serializePlayerState(state)).currentEpisode).toMatchObject({
+      albumPicDark: 'covers/dark.png',
+      playbackMode: 'loop-one',
+    });
+  });
 });

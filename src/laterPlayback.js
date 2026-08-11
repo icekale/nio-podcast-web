@@ -8,10 +8,12 @@ const SERIALIZED_EPISODE_FIELDS = [
   'albumId',
   'albumName',
   'albumPic',
+  'albumPicDark',
   'host',
   'duration',
   'onlineTime',
   'audioUrl',
+  'playbackMode',
 ];
 
 function serializeEpisode(episode) {

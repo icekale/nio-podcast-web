@@ -1,3 +1,5 @@
+import { getCustomEpisodes } from './customAlbums';
+
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
@@ -105,6 +107,8 @@ async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
 }
 
 export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = globalThis.fetch) {
+  const custom = getCustomEpisodes(albumId, page, pageSize);
+  if (custom) return custom;
   const key = `${albumId}:${page}:${pageSize}`;
   const cached = episodeCache.get(key);
   if (cached && cached.expiresAt > Date.now()) return cached.value;

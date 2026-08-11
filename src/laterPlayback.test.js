@@ -54,6 +54,16 @@ describe('later playback state', () => {
     expect(read[0].title).toBe('节目 1');
   });
 
+  it('preserves loop playback and dark artwork in saved episodes', () => {
+    const storage = { value: '', getItem: () => storage.value, setItem: (_key, value) => { storage.value = value; } };
+    writeLaterEpisodes([{ ...episode(1), albumPicDark: 'covers/dark.png', playbackMode: 'loop-one' }], storage);
+
+    expect(readLaterEpisodes(storage)[0]).toMatchObject({
+      albumPicDark: 'covers/dark.png',
+      playbackMode: 'loop-one',
+    });
+  });
+
   it('rejects a new item when the list already contains 50 episodes', () => {
     const items = Array.from({ length: 50 }, (_, index) => episode(index + 1));
     expect(addLaterEpisode(items, episode(51))).toEqual({ added: false, reason: 'limit', items });

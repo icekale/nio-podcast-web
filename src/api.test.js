@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ApiError, clearEpisodeCache, getEpisodes, normalizeAudioUrl } from './api';
+import { CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const responseFor = result => ({
   ok: true,
@@ -60,6 +61,16 @@ describe('audio API boundary', () => {
     await expect(getEpisodes(6, 1, 30, fetchImpl)).resolves.toMatchObject({
       episodes: [{ id: 10, host: 'NIO Radio' }],
     });
+  });
+
+  it('returns custom episodes without calling the NIO API', async () => {
+    const fetchImpl = vi.fn();
+
+    const result = await getEpisodes(CUSTOM_WHITE_NOISE_ALBUM_ID, 1, 30, fetchImpl);
+
+    expect(result.episodes).toHaveLength(30);
+    expect(result.episodes[0].title).toBe('小雨');
+    expect(fetchImpl).not.toHaveBeenCalled();
   });
 
   it('surfaces HTTP failures as typed errors', async () => {
