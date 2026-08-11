@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786467661352,
+  "generatedAt": 1786474996393,
   "albums": [
     {
       "id": 5,
@@ -240,6 +240,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/dVvRsSLAoqi38MYR_AAC_192_1.m4a"
       },
       "category": "relax"
+    },
+    {
+      "id": 344,
+      "name": "城市记忆",
+      "description": "跟随 @Clark李老师 穿越千年宁波，共同找寻丢失的城市记忆。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/10/18/68251312-6fd8-4e70-83bf-f3f911ccebea.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 233,
+      "latestEpisode": {
+        "id": 196929,
+        "title": "宁波人的抗台法宝",
+        "albumId": 344,
+        "albumName": "城市记忆",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/10/18/68251312-6fd8-4e70-83bf-f3f911ccebea.jpg",
+        "host": "NIO Radio",
+        "duration": 288000,
+        "onlineTime": 1786464000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/4tFIxdPqTHroKFsF_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 345,
+      "name": "宁波城市资讯",
+      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+      "host": "NIO Radio",
+      "episodeCount": 1170,
+      "latestEpisode": {
+        "id": 196921,
+        "title": "镇海陈仓潮市8月下旬正式开街",
+        "albumId": 345,
+        "albumName": "宁波城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+        "host": "NIO Radio",
+        "duration": 294000,
+        "onlineTime": 1786464000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/umZxabQHDRqAmx5y_AAC_192_1.m4a"
+      },
+      "category": "city"
     },
     {
       "id": 358,
@@ -522,6 +562,26 @@
       "category": null
     },
     {
+      "id": 798,
+      "name": "生命周刊",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+      "host": "NIO Radio",
+      "episodeCount": 37,
+      "latestEpisode": {
+        "id": 196922,
+        "title": "焦虑症，恐惧惊恐怎么来的，人能用理性战胜情绪吗？微表情靠谱吗",
+        "albumId": 798,
+        "albumName": "生命周刊",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+        "host": "NIO Radio",
+        "duration": 1240000,
+        "onlineTime": 1786464000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/4ub0oEsxMyz2MTsJ_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 805,
       "name": "吃吃白相相",
       "description": "",
@@ -778,26 +838,6 @@
         "duration": 396000,
         "onlineTime": 1786377600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/10/dpEpflJTNvwYW3ql_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 345,
-      "name": "宁波城市资讯",
-      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-      "host": "NIO Radio",
-      "episodeCount": 1169,
-      "latestEpisode": {
-        "id": 196879,
-        "title": "宁海迎来《武林外传》舞台剧",
-        "albumId": 345,
-        "albumName": "宁波城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-        "host": "NIO Radio",
-        "duration": 303000,
-        "onlineTime": 1786377600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/10/S5pmYBpoJwUVr00d_AAC_192_1.m4a"
       },
       "category": "city"
     },
@@ -2642,26 +2682,6 @@
       "category": null
     },
     {
-      "id": 344,
-      "name": "城市记忆",
-      "description": "跟随 @Clark李老师 穿越千年宁波，共同找寻丢失的城市记忆。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/10/18/68251312-6fd8-4e70-83bf-f3f911ccebea.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 232,
-      "latestEpisode": {
-        "id": 196694,
-        "title": "宁波人舌尖上的第一口鲜",
-        "albumId": 344,
-        "albumName": "城市记忆",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/10/18/68251312-6fd8-4e70-83bf-f3f911ccebea.jpg",
-        "host": "NIO Radio",
-        "duration": 357000,
-        "onlineTime": 1785859200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/aY6crZxfbu68mNn7_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
       "id": 681,
       "name": "科技乱炖",
       "description": "由多名资深从互联网业者主持的科技点评播客，把近期科技热点变成犀利、独到、深刻的独家观点。",
@@ -2680,26 +2700,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/hK9yVd7WhWXzBN7N_AAC_192_1.m4a"
       },
       "category": "longhaul"
-    },
-    {
-      "id": 798,
-      "name": "生命周刊",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-      "host": "NIO Radio",
-      "episodeCount": 36,
-      "latestEpisode": {
-        "id": 196701,
-        "title": "比核废水更荒谬！百年前美国富豪用放射线壮阳?",
-        "albumId": 798,
-        "albumName": "生命周刊",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-        "host": "NIO Radio",
-        "duration": 979000,
-        "onlineTime": 1785859200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tmY2PBfgJenYfvM5_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 630,
