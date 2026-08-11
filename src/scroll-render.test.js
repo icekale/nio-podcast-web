@@ -95,6 +95,10 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*align-items:\s*stretch/);
   });
 
+  it('insets desktop album content from the sidebar divider', () => {
+    expect(css).toMatch(/\.album-content\s*\{[^}]*display:\s*grid[^}]*padding:\s*var\(--space-8\)\s*var\(--space-6\)\s*0/);
+  });
+
   it('places the grid card action beside the title row', () => {
     expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*container-type:\s*inline-size/);
     expect(css).toMatch(/\.album-results\.is-grid \.album-action\s*\{[^}]*top:\s*calc\(100cqw\s*\+\s*var\(--space-3\)\)/);
