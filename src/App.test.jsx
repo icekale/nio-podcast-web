@@ -3,6 +3,7 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-li
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { AlbumResults } from './components/AlbumResults';
+import { CUSTOM_WHITE_NOISE_ALBUM } from './customAlbums';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
   id,
@@ -89,6 +90,12 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: '加载更多专辑' }));
     expect(container.querySelectorAll('.album-results > li:not(.album-results-more)')).toHaveLength(101);
     expect(container.querySelector('.album-results-more')).not.toBeInTheDocument();
+  });
+
+  it('shows a directory-specific subtitle for white noise', () => {
+    render(<AlbumResults albums={[CUSTOM_WHITE_NOISE_ALBUM]} onOpenAlbum={() => {}} />);
+
+    expect(screen.getByRole('button', { name: '白噪音让雨声与风声，陪你安静抵达。' })).toBeInTheDocument();
   });
 
   it('keeps the recommendation panel mounted while the compact header changes', async () => {
