@@ -191,6 +191,23 @@ describe('later playback integration', () => {
     expect(window.localStorage.getItem('nio_play_later_v1')).toContain('专辑节目');
   });
 
+  it('keeps only one album episode action menu open', async () => {
+    getEpisodes.mockResolvedValue({ episodes: [episode(5, '第一条节目'), episode(6, '第二条节目')], hasMore: false });
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
+    const first = await screen.findByRole('button', { name: '管理 第一条节目' });
+    const second = screen.getByRole('button', { name: '管理 第二条节目' });
+
+    fireEvent.click(first);
+    fireEvent.pointerDown(second);
+    fireEvent.click(second);
+
+    expect(screen.getAllByRole('menu')).toHaveLength(1);
+    expect(first).toHaveAttribute('aria-expanded', 'false');
+    expect(second).toHaveAttribute('aria-expanded', 'true');
+  });
+
   it('clears the album action notice after a short confirmation window', async () => {
     vi.useFakeTimers({ shouldAdvanceTime: true });
     getEpisodes.mockResolvedValue({ episodes: [episode(5, '专辑节目')], hasMore: false });

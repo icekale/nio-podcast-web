@@ -80,6 +80,17 @@ test.describe('app smoke', () => {
     await expect(star).toHaveAttribute('aria-pressed', 'true');
   });
 
+  test('mobile album favorite actions meet the minimum touch target', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 760 });
+    await page.goto('/#/albums');
+    const star = page.locator('.album-results.is-grid .album-action button').first();
+    await expect(star).toBeVisible();
+
+    const box = await star.boundingBox();
+    expect(Math.round(box.width)).toBeGreaterThanOrEqual(44);
+    expect(Math.round(box.height)).toBeGreaterThanOrEqual(44);
+  });
+
   test('desktop favorites page renders', async ({ page }) => {
     await page.goto('/#/favorites');
     await expect(page.getByRole('heading', { name: '专辑收藏' })).toBeVisible();

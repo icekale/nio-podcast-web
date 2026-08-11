@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Clock3, ListPlus, MoreHorizontal } from 'lucide-react';
 import { Artwork } from './Artwork';
@@ -29,6 +29,7 @@ export const EpisodeRow = memo(function EpisodeRow({ episode, onPlay, active = f
 export function LaterEpisodeAction({ episode, onAdd }) {
   const [open, setOpen] = useState(false);
   const [notice, setNotice] = useState('');
+  const triggerRef = useRef(null);
   const menuId = `episode-menu-${episode.id}`;
 
   useEffect(() => {
@@ -40,7 +41,8 @@ export function LaterEpisodeAction({ episode, onAdd }) {
   useEffect(() => {
     if (!open) return undefined;
     const closeMenu = event => {
-      if (!event.target?.closest?.('.episode-action')) setOpen(false);
+      const action = triggerRef.current?.closest('.episode-action');
+      if (!action?.contains(event.target)) setOpen(false);
     };
     const handleKeyDown = event => {
       if (event.key === 'Escape') setOpen(false);
@@ -67,10 +69,9 @@ export function LaterEpisodeAction({ episode, onAdd }) {
 
   return (
     <>
-      <button type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={open} aria-haspopup="menu" aria-controls={menuId} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
+      <button ref={triggerRef} type="button" className="icon-button" aria-label={`管理 ${episode.title}`} aria-expanded={open} aria-haspopup="menu" aria-controls={menuId} onClick={() => setOpen(previous => !previous)}><MoreHorizontal size={15} aria-hidden="true" /></button>
       {open ? <div id={menuId} className="row-action-menu" role="menu"><button type="button" role="menuitem" aria-label="稍后播放" onClick={handleAdd}><ListPlus size={16} />稍后播放</button></div> : null}
       {notice ? <span className="episode-action-notice" role="status" aria-live="polite">{notice}</span> : null}
     </>
   );
 }
-

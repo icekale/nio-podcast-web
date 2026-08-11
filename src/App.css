@@ -234,7 +234,7 @@ h1, h2, p { margin: 0; }
 .album-results.is-grid .album-row { align-items: stretch; container-type: inline-size; }
 .album-results.is-grid .album-result { flex-direction: column; align-items: stretch; gap: var(--space-3); padding: 0; }
 .album-results.is-grid .album-art { width: 100%; height: auto; aspect-ratio: 1; }
-.album-results.is-grid .album-result-copy { padding-right: 2.25rem; }
+.album-results.is-grid .album-result-copy { padding-right: 3rem; }
 .album-results.is-grid .album-result-copy strong { font-size: 0.95rem; }
 .album-results.is-grid .album-result-copy span { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .album-results.is-grid .album-results-more { grid-column: 1 / -1; }
@@ -245,7 +245,7 @@ h1, h2, p { margin: 0; }
   right: 0;
   z-index: 1;
 }
-.album-results.is-grid .album-action .icon-button { width: 1.75rem; height: 1.75rem; }
+.album-results.is-grid .album-action .icon-button { width: 2.75rem; height: 2.75rem; }
 .album-results.is-grid .album-action .favorite-star { color: var(--muted); }
 .album-results.is-grid .album-action .favorite-star:hover { color: var(--teal-dark); }
 .album-results.is-grid .album-action .favorite-star.is-favorite { color: var(--logo-teal); }

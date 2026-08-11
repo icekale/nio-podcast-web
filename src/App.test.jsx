@@ -433,6 +433,20 @@ describe('mobile app shell', () => {
     expect(dialog).not.toHaveClass('is-closing');
   });
 
+  it('closes the sleep menu before closing the sheet on Escape', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    const dialog = await screen.findByRole('dialog', { name: '播放列表' });
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(dialog).not.toHaveClass('is-closing');
+  });
+
   it('lets browser Back close the sheet before changing the route', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));

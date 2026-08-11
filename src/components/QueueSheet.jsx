@@ -199,8 +199,8 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
   const noticeTimer = useRef(null);
   const tabRefs = useRef(new Map());
   const items = activeTab === 'queue' ? queue : activeTab === 'history' ? history : laterEpisodes;
-  const menuStateRef = useRef({ actionsFor: null, laterActionsFor: null, pickerOpen: false });
-  menuStateRef.current = { actionsFor, laterActionsFor, pickerOpen };
+  const menuStateRef = useRef({ actionsFor: null, laterActionsFor: null, pickerOpen: false, sleepOpen: false });
+  menuStateRef.current = { actionsFor, laterActionsFor, pickerOpen, sleepOpen };
 
   useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
@@ -208,7 +208,12 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
     closeRef.current?.focus();
     const handleKeyDown = event => {
       if (event.key === 'Escape') {
-        const { actionsFor: openQueueMenu, laterActionsFor: openLaterMenu, pickerOpen: isPickerOpen } = menuStateRef.current;
+        const { actionsFor: openQueueMenu, laterActionsFor: openLaterMenu, pickerOpen: isPickerOpen, sleepOpen: isSleepOpen } = menuStateRef.current;
+        if (isSleepOpen) {
+          setSleepOpen(false);
+          event.preventDefault();
+          return;
+        }
         if (openQueueMenu !== null || openLaterMenu !== null) {
           setActionsFor(null);
           setLaterActionsFor(null);
