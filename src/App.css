@@ -117,6 +117,7 @@ h1, h2, p { margin: 0; }
 }
 .icon-button:hover, .icon-button:active { background: var(--surface-soft); }
 .icon-button-spacer { width: 2.75rem; height: 2.75rem; }
+.album-back-label { display: none; }
 .continue-button {
   display: inline-flex;
   align-items: center;
@@ -557,11 +558,21 @@ h1, h2, p { margin: 0; }
   .app-content { grid-column: 2; min-width: 0; }
   .home-screen .top-bar { display: none; }
   .search-screen .top-bar .icon-button:first-child,
-  .albums-screen .top-bar .icon-button:first-child,
-  .album-screen .top-bar .icon-button:first-child { display: none; }
+  .albums-screen .top-bar .icon-button:first-child { display: none; }
   .search-screen .top-bar,
-  .albums-screen .top-bar,
-  .album-screen .top-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .albums-screen .top-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .album-screen .top-bar { grid-template-columns: auto minmax(0, 1fr); }
+  .album-screen .icon-button-spacer { display: none; }
+  .album-back-button {
+    width: auto;
+    gap: var(--space-1);
+    padding: 0 var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .album-back-label { display: inline; }
   .favorites-screen .top-bar { display: none; }
 
   .mini-player { width: min(calc(100% - 2 * var(--space-3)), 1280px); padding-top: var(--space-4); padding-bottom: var(--space-4); }

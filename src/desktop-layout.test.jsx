@@ -76,6 +76,14 @@ describe('desktop navigation', () => {
     expect(within(nav).getByRole('button', { name: '搜索' })).toHaveAttribute('aria-current', 'page');
   });
 
+  it('labels the album back action for desktop users', () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/album/1');
+    render(<App initialCatalog={catalog} />);
+
+    const backButton = screen.getByRole('button', { name: '返回专辑列表' });
+    expect(within(backButton).getByText('返回')).toBeInTheDocument();
+  });
+
   it('pins briefing albums first when browsing search on desktop', async () => {
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });

@@ -67,7 +67,10 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/@keyframes queue-sheet-in\s*\{[^}]*translate3d\(100%,\s*0,\s*0\)/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.home-screen \.top-bar\s*\{[^}]*display:\s*none/);
     expect(css).toMatch(/\.home-screen \.recommendation-panel\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s*auto\s*auto/);
-    expect(css).toMatch(/\.search-screen \.top-bar \.icon-button:first-child,\s*\.albums-screen \.top-bar \.icon-button:first-child,\s*\.album-screen \.top-bar \.icon-button:first-child\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/\.search-screen \.top-bar \.icon-button:first-child,\s*\.albums-screen \.top-bar \.icon-button:first-child\s*\{[^}]*display:\s*none/);
+    expect(css).not.toMatch(/\.album-screen \.top-bar \.icon-button:first-child\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/\.album-back-label\s*\{[^}]*display:\s*none/);
+    expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.album-back-label\s*\{[^}]*display:\s*inline/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-progress-row\s*\{[^}]*position:\s*absolute/);
     expect(css).toMatch(/\.mini-main\s*\{[^}]*gap:\s*0\s*var\(--space-3\)/);
     expect(css).toMatch(/@media\s*\(min-width:\s*1024px\)[\s\S]*\.mini-transport\s*\{[^}]*order:\s*4/);

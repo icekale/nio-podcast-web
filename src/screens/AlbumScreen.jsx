@@ -60,7 +60,10 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
   return (
     <div className="screen album-screen">
       <header className="top-bar">
-        <button type="button" className="icon-button" aria-label="返回专辑列表" onClick={onBack}><ArrowLeft size={25} /></button>
+        <button type="button" className="icon-button album-back-button" aria-label="返回专辑列表" onClick={onBack}>
+          <ArrowLeft size={25} />
+          <span className="album-back-label">返回</span>
+        </button>
         <div className="album-header-copy"><h1>{album.name}</h1><span>{album.episodeCount || album.count || 0} 集</span></div>
         <span className="icon-button-spacer" />
       </header>
