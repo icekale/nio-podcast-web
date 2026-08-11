@@ -3,6 +3,7 @@ import { CircleAlert, RotateCcw } from 'lucide-react';
 import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
 import { sleepDeadline } from './playbackPrefs';
+import { isLoopingEpisode } from './customAlbums';
 import {
   PLAYER_STORAGE_KEY,
   canResume,
@@ -375,6 +376,7 @@ export default function App({ initialCatalog = null }) {
 
   const startPlayback = useCallback((episode, visibleQueue = null) => {
     if (!episode) return;
+    if (isLoopingEpisode(episode) && sleepTimerRef.current?.mode === 'episode-end') setSleepTimer(null);
     setAudioError(null);
     if (!episode.audioUrl) {
       setPlaybackFailure('该节目没有可播放音频，请稍后重试');
@@ -592,6 +594,7 @@ export default function App({ initialCatalog = null }) {
   const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
   const routeViewKey = screenRouteKey(route);
   const hasCatalog = Boolean(catalogState.catalog);
+  const loopingCurrentEpisode = isLoopingEpisode(player.currentEpisode);
 
   return (
     <main className="app">
@@ -619,9 +622,9 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>
-      <audio ref={audioRef} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
+      <audio ref={audioRef} loop={loopingCurrentEpisode} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
       {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
-      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} onShareEpisode={shareEpisode} /> : null}
+      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} allowEpisodeEnd={!loopingCurrentEpisode} onShareEpisode={shareEpisode} /> : null}
     </main>
   );
 }

@@ -447,6 +447,63 @@ describe('mobile app shell', () => {
     expect(dialog).not.toHaveClass('is-closing');
   });
 
+  it('loops white noise and only offers minute sleep timers', async () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click((await screen.findByText('小雨')).closest('button'));
+
+    expect(document.querySelector('audio')).toHaveAttribute('loop');
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+
+    expect(screen.getByRole('menuitem', { name: '15 分钟' })).toBeInTheDocument();
+    expect(screen.queryByRole('menuitem', { name: '本集结束' })).not.toBeInTheDocument();
+  });
+
+  it('keeps normal episodes sequential with episode-end sleep', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+
+    expect(document.querySelector('audio')).not.toHaveAttribute('loop');
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+
+    expect(screen.getByRole('menuitem', { name: '本集结束' })).toBeInTheDocument();
+  });
+
+  it('pauses looping white noise when a minute timer expires', async () => {
+    const pause = vi.spyOn(HTMLMediaElement.prototype, 'pause');
+    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click((await screen.findByText('小雨')).closest('button'));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+    pause.mockClear();
+    vi.useFakeTimers();
+
+    fireEvent.click(screen.getByRole('menuitem', { name: '15 分钟' }));
+    await vi.advanceTimersByTimeAsync(15 * 60 * 1000);
+
+    expect(pause).toHaveBeenCalled();
+    vi.useRealTimers();
+    pause.mockRestore();
+  });
+
+  it('clears episode-end sleep when switching to looping white noise', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+    fireEvent.click(screen.getByRole('menuitem', { name: '本集结束' }));
+
+    window.history.pushState({ nioDepth: 2 }, '', '#/album/900001?queue=1');
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    fireEvent.click((await screen.findByText('小雨')).closest('button'));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+
+    expect(screen.queryByRole('menuitem', { name: '关闭定时' })).not.toBeInTheDocument();
+  });
+
   it('lets browser Back close the sheet before changing the route', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
