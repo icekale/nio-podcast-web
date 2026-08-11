@@ -1,3 +1,4 @@
+import { spawnSync } from 'node:child_process';
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -15,6 +16,15 @@ import {
 } from './catalog-generator.js';
 
 describe('catalog generator', () => {
+  it('loads shared API helpers with Node ESM resolution', () => {
+    const result = spawnSync(process.execPath, ['--input-type=module', '--eval', "import('./src/api.js')"], {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+    });
+
+    expect(result.status, result.stderr).toBe(0);
+  });
+
   it('treats an explicit empty upstream result as a missing album', async () => {
     const fetchImpl = async () => ({ ok: true, json: async () => ({ result: null }) });
     await expect(requestAlbum(124, fetchImpl)).resolves.toBeNull();

@@ -1,4 +1,4 @@
-import { getCustomEpisodes } from './customAlbums';
+import { getCustomEpisodes } from './customAlbums.js';
 
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
 const FETCH_TIMEOUT_MS = 8000;
