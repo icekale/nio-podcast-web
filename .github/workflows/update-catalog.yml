@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '30 23 * * *' # Beijing 07:30 daily, full discovery
     - cron: '0 18 * * *' # Beijing 02:00 daily (late-night fallback, clear of delayed 24:00 run)
+    - cron: '0 9 * * *' # Beijing 17:00
+    - cron: '30 9 * * *' # Beijing 17:30
+    - cron: '0 11 * * *' # Beijing 19:00
+    - cron: '0 12 * * *' # Beijing 20:00
     - cron: '0 13 * * *' # Beijing 21:00 (evening publish peak)
     - cron: '0 10 * * *' # Beijing 18:00
     - cron: '0 16 * * *' # Beijing 24:00 (next local day 00:00)

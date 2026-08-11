@@ -23,6 +23,10 @@ describe('catalog update workflow', () => {
     expect(workflow).toContain('0 13 * * *');
     expect(workflow).toContain('0 10 * * *');
     expect(workflow).toContain('0 16 * * *');
+    expect(workflow).toContain("- cron: '0 9 * * *'");
+    expect(workflow).toContain("- cron: '30 9 * * *'");
+    expect(workflow).toContain("- cron: '0 11 * * *'");
+    expect(workflow).toContain("- cron: '0 12 * * *'");
     expect(workflow).not.toContain('30 0 * * 1-5');
     expect(workflow).not.toContain('30 1 * * 1-5');
     expect(workflow).not.toContain('30 9 * * 1-5');
