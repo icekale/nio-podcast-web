@@ -70,6 +70,8 @@ describe('audio API boundary', () => {
 
     expect(result.episodes).toHaveLength(30);
     expect(result.episodes[0].title).toBe('小雨');
+    expect(result.totalCount).toBe(113);
+    expect(result.hasMore).toBe(true);
     expect(fetchImpl).not.toHaveBeenCalled();
   });
 
