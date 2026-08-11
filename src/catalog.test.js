@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
   id,
@@ -92,6 +93,24 @@ describe('catalog selectors', () => {
     expect(groups[1].albums.map(a => a.id)).toEqual([35]);
     expect(groups[2].albums.map(a => a.id)).toEqual([2]);
     expect(rest.map(a => a.id)).toEqual([1]);
+  });
+
+  it('injects the custom album once and keeps it out of home updates', () => {
+    const regular = { id: 42, name: '普通专辑', latestEpisode: episode(420, 1000) };
+    const first = normalizeCatalog({ generatedAt: 1, albums: [regular] });
+    const second = normalizeCatalog(first);
+
+    expect(second.albums.filter(item => item.id === CUSTOM_WHITE_NOISE_ALBUM_ID)).toHaveLength(1);
+    expect(selectHomeEpisodes(second.albums, new Date(1000)).episodes).toEqual([regular.latestEpisode]);
+  });
+
+  it('places the custom album last unless it is favorited', () => {
+    const regular = { id: 42, name: '普通专辑', latestEpisode: episode(420, 1000) };
+
+    expect(sortAlbumsForDirectory([CUSTOM_WHITE_NOISE_ALBUM, regular]).map(item => item.id))
+      .toEqual([regular.id, CUSTOM_WHITE_NOISE_ALBUM_ID]);
+    expect(sortAlbumsForDirectory([CUSTOM_WHITE_NOISE_ALBUM, regular], [CUSTOM_WHITE_NOISE_ALBUM_ID]).map(item => item.id))
+      .toEqual([CUSTOM_WHITE_NOISE_ALBUM_ID, regular.id]);
   });
 
   it('exposes vehicle scene labels for every category', () => {

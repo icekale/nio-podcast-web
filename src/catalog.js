@@ -1,3 +1,5 @@
+import { CUSTOM_WHITE_NOISE_ALBUM, isCustomAlbumId } from './customAlbums';
+
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
 const CATALOG_FETCH_TIMEOUT_MS = 8000;
 const CATALOG_CACHE_FRESH_MS = 5 * 60 * 1000;
@@ -84,6 +86,7 @@ function sameBeijingDay(left, right) {
 export function selectHomeEpisodes(albums, now = new Date()) {
   const seenEpisodeIds = new Set();
   const latest = sortAlbumsByLatest(albums)
+    .filter(album => !album.evergreen)
     .map(album => album.latestEpisode)
     .filter(episode => {
       if (!episode || episode.id == null) return false;
@@ -103,7 +106,7 @@ export function normalizeCatalog(payload) {
   if (!payload || !Array.isArray(payload.albums)) {
     throw new Error('目录格式无效');
   }
-  const albums = payload.albums
+  const albums = [...payload.albums.filter(album => !isCustomAlbumId(album?.id)), CUSTOM_WHITE_NOISE_ALBUM]
     .filter(album => album && Number.isFinite(Number(album.id)) && album.latestEpisode?.id)
     .map(album => ({ ...album, id: Number(album.id) }));
   return { generatedAt: Number(payload.generatedAt) || 0, albums: sortAlbumsByLatest(albums) };
