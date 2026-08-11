@@ -8,7 +8,7 @@ export const EpisodeRow = memo(function EpisodeRow({ episode, onPlay, active = f
   return (
     <li className={`episode-row${active ? ' is-active' : ''}`} data-episode-id={episode.id}>
       <button type="button" className="episode-main" aria-label={mainLabel} onClick={() => onPlay(episode)}>
-        <Artwork src={episode.albumPic} alt="" className="episode-art" />
+        <Artwork src={episode.albumPic} darkSrc={episode.albumPicDark} alt="" className="episode-art" />
         <span className="episode-copy">
           <span className="episode-title">{episode.title}</span>
           <span className="episode-meta">

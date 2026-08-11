@@ -11,6 +11,13 @@ describe('Artwork', () => {
     expect(image).toBeInTheDocument();
   });
 
+  it('uses a dark source when the system requests dark mode', () => {
+    render(<Artwork src="light.png" darkSrc="dark.png" alt="封面" />);
+
+    expect(document.querySelector('source[media="(prefers-color-scheme: dark)"]')).toHaveAttribute('srcset', 'dark.png');
+    expect(screen.getByRole('img', { name: '封面' })).toHaveAttribute('src', 'light.png');
+  });
+
   it('falls back to the placeholder icon when the image fails to load', () => {
     render(<Artwork src="https://cdn.example/broken.jpg" alt="封面" />);
     fireEvent.error(screen.getByRole('img', { name: '封面' }));

@@ -63,7 +63,7 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
             </>
           ) : <p>今天还没有新的节目</p>}
         </div>
-        <Artwork src={recommendation?.albumPic} alt="" className="recommendation-art" />
+        <Artwork src={recommendation?.albumPic} darkSrc={recommendation?.albumPicDark} alt="" className="recommendation-art" />
         <button type="button" className="primary-button" disabled={!selection.episodes.length} onClick={() => (playingRecommendation ? onTogglePlayback() : onPlayAll(selection.episodes))}>
           {playingRecommendation
             ? player.isPlaying
@@ -90,4 +90,3 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
     </div>
   );
 });
-

@@ -24,7 +24,7 @@ export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, on
         return (
           <li key={album.id} className="album-row">
             <button type="button" className="album-result" onClick={() => onOpenAlbum(album.id)}>
-              <Artwork src={album.imageUrl} alt="" className="album-art" />
+              <Artwork src={album.imageUrl} darkSrc={album.imageUrlDark} alt="" className="album-art" />
               <span className="album-result-copy"><strong>{album.name}</strong><span>{album.latestEpisode?.title || album.description || '暂无节目'}</span></span>
               {!grid && !onToggleFavorite ? <ChevronRight size={19} aria-hidden="true" /> : null}
             </button>

@@ -159,7 +159,8 @@ h1, h2, p { margin: 0; }
   -webkit-line-clamp: 3;
 }
 .recommendation-copy p { margin-top: var(--space-2); color: var(--muted-strong); font-size: 0.82rem; }
-.artwork { display: block; flex: 0 0 auto; object-fit: cover; background: var(--surface-soft); }
+.artwork { display: block; flex: 0 0 auto; overflow: hidden; background: var(--surface-soft); }
+.artwork-media { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 .artwork-empty { display: inline-flex; align-items: center; justify-content: center; color: var(--teal-dark); }
 .recommendation-art { width: 7.5rem; aspect-ratio: 1; border-radius: var(--radius-sm); }
 .primary-button, .secondary-button {

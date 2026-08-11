@@ -65,7 +65,7 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
         <span className="icon-button-spacer" />
       </header>
       <section className="album-content" aria-labelledby="album-episodes-title">
-        <div className="album-intro"><Artwork src={album.imageUrl} alt="" className="album-hero-art" /><div><h2 id="album-episodes-title">节目列表</h2><p>{album.description || 'NIO Radio 精选内容'}</p></div></div>
+        <div className="album-intro"><Artwork src={album.imageUrl} darkSrc={album.imageUrlDark} alt="" className="album-hero-art" /><div><h2 id="album-episodes-title">节目列表</h2><p>{album.description || 'NIO Radio 精选内容'}</p></div></div>
         {error ? <div className="inline-error" role="alert"><CircleAlert size={18} /><span>节目加载失败，请检查网络后重试</span><button type="button" onClick={() => loadPage(retryPage ?? page)}><RotateCcw size={16} />重新加载</button></div> : null}
         {loading && !episodes.length ? <div className="loading-state" role="status">正在加载节目…</div> : null}
         {episodes.length ? <ul className="episode-list album-episode-list">{episodes.map(episode => <EpisodeRow key={episode.id} episode={episode} onPlay={item => onPlay(item, episodes)} action={<LaterEpisodeAction episode={episode} onAdd={onAddLater} />} />)}</ul> : null}
@@ -76,4 +76,3 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
     </div>
   );
 });
-

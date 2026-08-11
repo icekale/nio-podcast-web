@@ -27,7 +27,7 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
   return (
     <section className={`mini-player${isClosing ? ' is-closing' : ''}`} aria-label="当前播放" onAnimationEnd={event => { if (isClosing && event.animationName === 'mini-player-out') onExited?.(); }}>
       <div className="mini-main">
-        <Artwork src={player.currentEpisode.albumPic} alt="" className="mini-art" />
+        <Artwork src={player.currentEpisode.albumPic} darkSrc={player.currentEpisode.albumPicDark} alt="" className="mini-art" />
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
         {currentAlbumId != null && onToggleFavorite ? (
           <button type="button" className={`player-control mini-favorite${favorited ? ' is-favorite' : ''}`} aria-label={favorited ? `取消收藏 ${player.currentEpisode.albumName || ''}` : `收藏 ${player.currentEpisode.albumName || ''}`} aria-pressed={favorited} onClick={() => onToggleFavorite(currentAlbumId)}>
