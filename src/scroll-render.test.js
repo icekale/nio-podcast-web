@@ -27,8 +27,8 @@ describe('mobile scroll rendering', () => {
   });
 
   it('uses the calmer route and queue motion cadence', () => {
-    expect(css).toContain('.route-view[data-route-motion="forward"] { animation: route-forward-in 400ms cubic-bezier(0.22, 1, 0.36, 1) both; }');
-    expect(css).toContain('.route-view[data-route-motion="back"] { animation: route-back-in 400ms cubic-bezier(0.22, 1, 0.36, 1) both; }');
+    expect(css).toContain('.route-view[data-route-motion="forward"] { animation: route-forward-in 400ms cubic-bezier(0.32, 0.72, 0, 1) both; }');
+    expect(css).toContain('.route-view[data-route-motion="back"] { animation: route-back-in 400ms cubic-bezier(0.32, 0.72, 0, 1) both; }');
     expect(css).toContain('animation: queue-backdrop-in 220ms ease-out both;');
     expect(css).toContain('animation: queue-sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;');
     expect(css).toContain('.queue-sheet.is-closing { animation: queue-sheet-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both; }');
