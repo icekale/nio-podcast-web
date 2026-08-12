@@ -1,8 +1,9 @@
 export const CUSTOM_WHITE_NOISE_ALBUM_ID = 900001;
 
 const CUSTOM_EPISODE_BASE_ID = 900001000;
-const XMSLEEP_REVISION = '3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629';
-const XMSLEEP_RAW = `https://raw.githubusercontent.com/Tosencen/XMSLEEP/${XMSLEEP_REVISION}/audio`;
+// 音频已镜像到 public/audio/，源自 XMSLEEP 仓库
+// revision 3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629（见 THIRD_PARTY_NOTICES.md）
+const AUDIO_BASE = 'audio';
 const LIGHT_COVER = 'covers/white-noise-light.png';
 const DARK_COVER = 'covers/white-noise-dark.png';
 
@@ -132,7 +133,7 @@ export const CUSTOM_WHITE_NOISE_EPISODES = sounds.map(([title, duration, path], 
   host: '',
   duration,
   onlineTime: 0,
-  audioUrl: `${XMSLEEP_RAW}/${path}`,
+  audioUrl: `${AUDIO_BASE}/${path}`,
   playbackMode: 'loop-one',
 }));
 
