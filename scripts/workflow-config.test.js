@@ -58,8 +58,8 @@ describe('catalog update workflow', () => {
     expect(deployWorkflow).toContain('push:');
     expect(deployWorkflow).toContain('branches: [main]');
     expect(deployWorkflow).toContain('workflow_dispatch:');
-    expect(deployWorkflow).toContain('actions/deploy-pages@v4');
-    expect(deployWorkflow).toContain('actions/upload-pages-artifact@v3');
+    expect(deployWorkflow).toContain('actions/deploy-pages@v5');
+    expect(deployWorkflow).toContain('actions/upload-pages-artifact@v5');
     expect(deployWorkflow).toContain('group: nio-pages-deploy');
     expect(packageJson.scripts.deploy).toBeUndefined();
     expect(packageJson.devDependencies['gh-pages']).toBeUndefined();
