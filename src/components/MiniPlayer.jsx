@@ -6,7 +6,14 @@ import { bubbleSecondsFromPointer } from '../playerProgress';
 
 export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], onToggleFavorite, onToggle, onAdjacent, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
-  const queueSize = player.queue?.length || 0;
+  // 与 App.playAdjacent 相同的跳过规则：无音频 URL 的节目不可跳转
+  const hasPlayableNeighbor = direction => {
+    const queue = player.queue || [];
+    for (let index = (player.queueIndex ?? 0) + direction; index >= 0 && index < queue.length; index += direction) {
+      if (queue[index]?.audioUrl) return true;
+    }
+    return false;
+  };
   const favorited = favoriteIds.includes(Number(player.currentEpisode?.albumId));
   const currentAlbumId = player.currentEpisode?.albumId;
   const progressRef = useRef(null);
@@ -35,9 +42,9 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
           </button>
         ) : null}
         <div className="mini-transport">
-          <button type="button" className="player-control mini-skip" aria-label="上一首" disabled={queueSize < 2} onClick={() => onAdjacent?.(-1)}><SkipBack size={20} /></button>
+          <button type="button" className="player-control mini-skip" aria-label="上一首" disabled={!hasPlayableNeighbor(-1)} onClick={() => onAdjacent?.(-1)}><SkipBack size={20} /></button>
           <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
-          <button type="button" className="player-control mini-skip" aria-label="下一首" disabled={queueSize < 2} onClick={() => onAdjacent?.(1)}><SkipForward size={20} /></button>
+          <button type="button" className="player-control mini-skip" aria-label="下一首" disabled={!hasPlayableNeighbor(1)} onClick={() => onAdjacent?.(1)}><SkipForward size={20} /></button>
         </div>
         <div
           ref={progressRef}

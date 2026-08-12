@@ -21,6 +21,7 @@ blob-report
 .idea
 .DS_Store
 .superpowers/
+.impeccable/
 .worktrees/
 *.suo
 *.ntvs*

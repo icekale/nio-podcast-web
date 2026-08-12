@@ -410,7 +410,7 @@ export default function App({ initialCatalog = null }) {
       audio.pause();
       setIsPlaying(false);
       setPlayer(previous => ({ ...previous, isPlaying: false }));
-      savePlayer({ ...player, isPlaying: false }, true);
+      savePlayer({ ...playerRef.current, isPlaying: false }, true);
     } else {
       const result = audio.play();
       result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
@@ -488,20 +488,29 @@ export default function App({ initialCatalog = null }) {
     }
   }, [startPlayback]);
 
-  // 睡眠定时:分钟模式倒计时,到点暂停
+  // 睡眠定时:分钟模式倒计时,到点暂停；回到前台时重算（后台 setTimeout 会被节流/冻结）
   useEffect(() => {
     if (!sleepTimer || sleepTimer.mode !== 'minutes') return undefined;
-    const remaining = Math.max(0, sleepTimer.deadline - Date.now());
-    sleepTimeoutRef.current = window.setTimeout(() => {
-      sleepTimeoutRef.current = null;
-      setSleepTimer(null);
-      audioRef.current?.pause();
-    }, remaining);
+    const arm = () => {
+      if (sleepTimeoutRef.current) window.clearTimeout(sleepTimeoutRef.current);
+      const remaining = Math.max(0, sleepTimer.deadline - Date.now());
+      sleepTimeoutRef.current = window.setTimeout(() => {
+        sleepTimeoutRef.current = null;
+        setSleepTimer(null);
+        audioRef.current?.pause();
+      }, remaining);
+    };
+    arm();
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') arm();
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
     return () => {
       if (sleepTimeoutRef.current) {
         window.clearTimeout(sleepTimeoutRef.current);
         sleepTimeoutRef.current = null;
       }
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, [sleepTimer]);
 

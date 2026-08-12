@@ -36,7 +36,7 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
   const handlePlay = useCallback(item => onPlay(item, selection.episodes), [onPlay, selection.episodes]);
   const progressFor = episode => {
     if (player.currentEpisode?.id === episode.id && player.durationSeconds > 0) {
-      return (player.positionSeconds / player.durationSeconds) * 100;
+      return Math.min((player.positionSeconds / player.durationSeconds) * 100, 100);
     }
     return 0;
   };

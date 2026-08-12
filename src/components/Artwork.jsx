@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Music2 } from 'lucide-react';
 
 export function Artwork({ src, darkSrc, alt = '', className = '' }) {
-  const [failed, setFailed] = useState(false);
-  if (src && !failed) {
+  const [failedSrc, setFailedSrc] = useState(null);
+  if (src && failedSrc !== src) {
     return (
       <picture className={`artwork ${className}`}>
         {darkSrc ? <source media="(prefers-color-scheme: dark)" srcSet={darkSrc} /> : null}
-        <img className="artwork-media" src={src} alt={alt} loading="lazy" decoding="async" onError={() => setFailed(true)} />
+        <img className="artwork-media" src={src} alt={alt} loading="lazy" decoding="async" onError={() => setFailedSrc(src)} />
       </picture>
     );
   }

@@ -25,6 +25,15 @@ describe('Artwork', () => {
     expect(document.querySelector('.artwork-empty')).toBeInTheDocument();
   });
 
+  it('retries a new source after a previous image failed', () => {
+    const { rerender } = render(<Artwork src="https://cdn.example/broken.jpg" alt="封面" />);
+    fireEvent.error(screen.getByRole('img', { name: '封面' }));
+    expect(document.querySelector('.artwork-empty')).toBeInTheDocument();
+
+    rerender(<Artwork src="https://cdn.example/fresh.jpg" alt="封面" />);
+    expect(screen.getByRole('img', { name: '封面' })).toHaveAttribute('src', 'https://cdn.example/fresh.jpg');
+  });
+
   it('renders the placeholder icon when no source is given', () => {
     render(<Artwork alt="" />);
     expect(screen.queryByRole('img')).not.toBeInTheDocument();

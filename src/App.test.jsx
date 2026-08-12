@@ -496,6 +496,29 @@ describe('mobile app shell', () => {
     pause.mockRestore();
   });
 
+  it('fires an expired minute timer when the tab becomes visible again', async () => {
+    const pause = vi.spyOn(HTMLMediaElement.prototype, 'pause');
+    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click((await screen.findByText('小雨')).closest('button'));
+    fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
+    fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
+    pause.mockClear();
+    vi.useFakeTimers();
+
+    fireEvent.click(screen.getByRole('menuitem', { name: '15 分钟' }));
+    // 模拟后台冻结：时间越过 deadline 但 setTimeout 从未执行
+    vi.setSystemTime(Date.now() + 20 * 60 * 1000);
+    expect(pause).not.toHaveBeenCalled();
+
+    document.dispatchEvent(new Event('visibilitychange'));
+    await vi.advanceTimersByTimeAsync(0);
+
+    expect(pause).toHaveBeenCalled();
+    vi.useRealTimers();
+    pause.mockRestore();
+  });
+
   it('clears episode-end sleep when switching to looping white noise', async () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
