@@ -2,7 +2,7 @@
 
 ## XMSLEEP audio catalog
 
-The “白噪音” album streams audio files vendored into this repository under `public/audio/`, sourced from the XMSLEEP repository at revision `3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629`.
+The “白噪音” album streams selected audio files from the XMSLEEP repository at revision `3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629`. The audio files are not copied into this repository.
 
 - Project: https://github.com/Tosencen/XMSLEEP
 - Copyright (c) 2025 XMSLEEP

@@ -1,16 +1,13 @@
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   CUSTOM_WHITE_NOISE_ALBUM,
   CUSTOM_WHITE_NOISE_ALBUM_ID,
-  CUSTOM_WHITE_NOISE_EPISODES,
   getCustomEpisodes,
   isLoopingEpisode,
 } from './customAlbums';
 
 describe('custom white-noise album', () => {
-  it('contains all 113 ordered, looping, locally vendored OGG tracks', () => {
+  it('contains all 113 ordered, looping OGG tracks pinned to the XMSLEEP revision', () => {
     const pages = [1, 2, 3, 4].map(page => getCustomEpisodes(CUSTOM_WHITE_NOISE_ALBUM_ID, page, 30));
     const episodes = pages.flatMap(result => result.episodes);
 
@@ -19,7 +16,7 @@ describe('custom white-noise album', () => {
     expect(episodes).toHaveLength(113);
     expect(episodes.slice(0, 3).map(item => item.title)).toEqual(['小雨', '大雨', '车顶雨声']);
     expect(episodes.every(isLoopingEpisode)).toBe(true);
-    expect(episodes.every(item => item.audioUrl.startsWith('audio/'))).toBe(true);
+    expect(episodes.every(item => item.audioUrl.includes('/3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629/'))).toBe(true);
     expect(episodes.every(item => item.audioUrl.endsWith('.ogg'))).toBe(true);
     expect(new Set(episodes.map(item => item.id)).size).toBe(113);
     expect(new Set(episodes.map(item => item.audioUrl)).size).toBe(113);
@@ -37,12 +34,5 @@ describe('custom white-noise album', () => {
       hasMore: true,
     });
     expect(getCustomEpisodes(5, 1, 30)).toBeNull();
-  });
-
-  it('has every white-noise audio file vendored under public/audio', () => {
-    const missing = CUSTOM_WHITE_NOISE_EPISODES
-      .map(item => join(process.cwd(), 'public', item.audioUrl))
-      .filter(path => !existsSync(path));
-    expect(missing).toEqual([]);
   });
 });
