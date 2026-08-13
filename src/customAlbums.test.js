@@ -16,7 +16,7 @@ describe('custom white-noise album', () => {
     expect(episodes).toHaveLength(113);
     expect(episodes.slice(0, 3).map(item => item.title)).toEqual(['小雨', '大雨', '车顶雨声']);
     expect(episodes.every(isLoopingEpisode)).toBe(true);
-    expect(episodes.every(item => item.audioUrl.includes('/3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629/'))).toBe(true);
+    expect(episodes.every(item => item.audioUrl.startsWith('https://cdn.jsdelivr.net/gh/Tosencen/XMSLEEP@3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629/audio/'))).toBe(true);
     expect(episodes.every(item => item.audioUrl.endsWith('.ogg'))).toBe(true);
     expect(new Set(episodes.map(item => item.id)).size).toBe(113);
     expect(new Set(episodes.map(item => item.audioUrl)).size).toBe(113);
