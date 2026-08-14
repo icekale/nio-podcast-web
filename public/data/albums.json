@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786701630421,
+  "generatedAt": 1786707757122,
   "albums": [
     {
       "id": 23,
@@ -578,6 +578,26 @@
         "duration": 889000,
         "onlineTime": 1786636800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/6kFlmqCy3mgIMZhI_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
+    {
+      "id": 532,
+      "name": "天津城市频道",
+      "description": "九河下稍天津卫，三道浮桥两道关，这里是天津NIO Radio。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/2/22/091b1d99-a0cc-4a58-b3b6-e793b8f81e8c.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 329,
+      "latestEpisode": {
+        "id": 197007,
+        "title": "哏儿都周知道",
+        "albumId": 532,
+        "albumName": "天津城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/2/22/091b1d99-a0cc-4a58-b3b6-e793b8f81e8c.jpg",
+        "host": "NIO Radio",
+        "duration": 414000,
+        "onlineTime": 1786636800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/I7tVMBjfDqWBJw45_AAC_192_1.m4a"
       },
       "category": "city"
     },
@@ -2598,26 +2618,6 @@
         "duration": 638000,
         "onlineTime": 1786032000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/05/kSZsJNdCeWtS0aje_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 532,
-      "name": "天津城市频道",
-      "description": "九河下稍天津卫，三道浮桥两道关，这里是天津NIO Radio。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/2/22/091b1d99-a0cc-4a58-b3b6-e793b8f81e8c.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 328,
-      "latestEpisode": {
-        "id": 196777,
-        "title": "哏儿都周知道",
-        "albumId": 532,
-        "albumName": "天津城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/2/22/091b1d99-a0cc-4a58-b3b6-e793b8f81e8c.jpg",
-        "host": "NIO Radio",
-        "duration": 414000,
-        "onlineTime": 1786032000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/zG48A1UdkebFfIVc_AAC_192_1.m4a"
       },
       "category": "city"
     },
