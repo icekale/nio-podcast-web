@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ApiError, clearEpisodeCache, getEpisodes, normalizeAudioUrl } from './api';
 import { CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const responseFor = result => ({
@@ -7,12 +6,16 @@ const responseFor = result => ({
   json: async () => ({ result }),
 });
 
-describe('audio API boundary', () => {
-  beforeEach(() => clearEpisodeCache());
+let api;
+beforeEach(async () => {
+  vi.resetModules();
+  api = await import('./api');
+});
 
+describe('audio API boundary', () => {
   it('normalizes CDN audio URLs to HTTPS', () => {
-    expect(normalizeAudioUrl('http://cdn.example/audio.aac')).toBe('https://cdn.example/audio.aac');
-    expect(normalizeAudioUrl('')).toBe('');
+    expect(api.normalizeAudioUrl('http://cdn.example/audio.aac')).toBe('https://cdn.example/audio.aac');
+    expect(api.normalizeAudioUrl('')).toBe('');
   });
 
   it('maps episode fields and pagination from the public API', async () => {
@@ -32,7 +35,7 @@ describe('audio API boundary', () => {
       }],
     });
 
-    await expect(getEpisodes(5, 1, 30, fetchImpl)).resolves.toEqual({
+    await expect(api.getEpisodes(5, 1, 30, fetchImpl)).resolves.toEqual({
       episodes: [{
         id: 9,
         title: '测试节目',
@@ -58,7 +61,7 @@ describe('audio API boundary', () => {
       haveNext: 0,
     });
 
-    await expect(getEpisodes(6, 1, 30, fetchImpl)).resolves.toMatchObject({
+    await expect(api.getEpisodes(6, 1, 30, fetchImpl)).resolves.toMatchObject({
       episodes: [{ id: 10, host: 'NIO Radio' }],
     });
   });
@@ -66,7 +69,7 @@ describe('audio API boundary', () => {
   it('returns custom episodes without calling the NIO API', async () => {
     const fetchImpl = vi.fn();
 
-    const result = await getEpisodes(CUSTOM_WHITE_NOISE_ALBUM_ID, 1, 30, fetchImpl);
+    const result = await api.getEpisodes(CUSTOM_WHITE_NOISE_ALBUM_ID, 1, 30, fetchImpl);
 
     expect(result.episodes).toHaveLength(30);
     expect(result.episodes[0].title).toBe('小雨');
@@ -77,12 +80,12 @@ describe('audio API boundary', () => {
 
   it('surfaces HTTP failures as typed errors', async () => {
     const fetchImpl = async () => ({ ok: false, status: 503 });
-    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+    await expect(api.getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
   });
 
   it('surfaces malformed responses instead of returning an empty success', async () => {
     const fetchImpl = async () => ({ ok: true, json: async () => ({ nope: true }) });
-    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toBeInstanceOf(ApiError);
+    await expect(api.getEpisodes(5, 1, 30, fetchImpl)).rejects.toBeInstanceOf(api.ApiError);
   });
 
   it('deduplicates concurrent identical episode requests', async () => {
@@ -95,8 +98,8 @@ describe('audio API boundary', () => {
       });
     };
 
-    const first = getEpisodes(5, 1, 30, fetchImpl);
-    const second = getEpisodes(5, 1, 30, fetchImpl);
+    const first = api.getEpisodes(5, 1, 30, fetchImpl);
+    const second = api.getEpisodes(5, 1, 30, fetchImpl);
     release();
 
     await expect(Promise.all([first, second])).resolves.toEqual([
@@ -115,12 +118,12 @@ describe('audio API boundary', () => {
         return responseFor({ dataList: [], totalCount: 0, haveNext: 0 });
       };
 
-      await getEpisodes(5, 1, 30, fetchImpl);
-      await getEpisodes(5, 1, 30, fetchImpl);
+      await api.getEpisodes(5, 1, 30, fetchImpl);
+      await api.getEpisodes(5, 1, 30, fetchImpl);
       expect(calls).toBe(1);
 
       vi.advanceTimersByTime(10 * 60 * 1000 + 1);
-      await getEpisodes(5, 1, 30, fetchImpl);
+      await api.getEpisodes(5, 1, 30, fetchImpl);
       expect(calls).toBe(2);
     } finally {
       vi.useRealTimers();
@@ -134,8 +137,8 @@ describe('audio API boundary', () => {
       return { ok: false, status: 503 };
     };
 
-    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
-    await expect(getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+    await expect(api.getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
+    await expect(api.getEpisodes(5, 1, 30, fetchImpl)).rejects.toMatchObject({ code: 'HTTP_ERROR' });
     expect(calls).toBe(2);
   });
 
@@ -146,9 +149,9 @@ describe('audio API boundary', () => {
       return responseFor({ dataList: [], totalCount: 0, haveNext: 0 });
     };
 
-    for (let page = 1; page <= 100; page += 1) await getEpisodes(5, page, 30, fetchImpl);
-    await getEpisodes(5, 101, 30, fetchImpl);
-    await getEpisodes(5, 1, 30, fetchImpl);
+    for (let page = 1; page <= 100; page += 1) await api.getEpisodes(5, page, 30, fetchImpl);
+    await api.getEpisodes(5, 101, 30, fetchImpl);
+    await api.getEpisodes(5, 1, 30, fetchImpl);
 
     expect(calls).toBe(102);
   });

@@ -1,20 +1,8 @@
+import { normalizeEpisode, SERIALIZED_EPISODE_FIELDS, uniqueEpisodes } from './playerState';
+
 export const LATER_PLAYBACK_STORAGE_KEY = 'nio_play_later_v1';
 
 const MAX_LATER_EPISODES = 50;
-
-const SERIALIZED_EPISODE_FIELDS = [
-  'id',
-  'title',
-  'albumId',
-  'albumName',
-  'albumPic',
-  'albumPicDark',
-  'host',
-  'duration',
-  'onlineTime',
-  'audioUrl',
-  'playbackMode',
-];
 
 function serializeEpisode(episode) {
   const normalized = normalizeEpisode(episode);
@@ -26,20 +14,6 @@ function serializeEpisode(episode) {
   return serialized;
 }
 
-function normalizeEpisode(episode) {
-  if (!episode || episode.id == null) return null;
-  return { ...episode };
-}
-
-function uniqueEpisodes(episodes) {
-  const seen = new Set();
-  return (Array.isArray(episodes) ? episodes : []).map(normalizeEpisode).filter(episode => {
-    const key = String(episode?.id);
-    if (!episode || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
 
 export function addLaterEpisode(items, episode) {
   const normalized = normalizeEpisode(episode);

@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import {
-  advanceQueue,
   canResume,
   createPlayerState,
   enqueueEpisodes,
@@ -50,14 +49,6 @@ describe('player state', () => {
     expect(movedAfterCurrent.currentEpisode.id).toBe(3);
 
     expect(insertNext(state, episode(3))).toEqual(state);
-  });
-
-  it('advances to the next item without changing the queue order', () => {
-    const state = enqueueEpisodes(createPlayerState(), [episode(1), episode(2)]);
-    const next = advanceQueue(state);
-    expect(next.currentEpisode.id).toBe(2);
-    expect(next.queueIndex).toBe(1);
-    expect(next.queue.map(item => item.id)).toEqual([1, 2]);
   });
 
   it('adds a directly selected episode to the queue when it is not there yet', () => {

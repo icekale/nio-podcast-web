@@ -11,8 +11,6 @@ export const SCENE_CATEGORIES = [
   { id: 'car', label: '玩转爱车', sub: '提车必听' },
 ];
 
-export const CATEGORY_LABELS = new Map(SCENE_CATEGORIES.map(c => [c.id, `${c.label}|${c.sub}`]));
-
 // 截图确认的人工映射（2026-08-09 车机端点播页可见专辑）。
 const MANUAL_ALBUM_IDS = {
   commute: [799, 800, 30, 5, 23],
@@ -49,8 +47,4 @@ export function categorizeAlbum(album) {
   const manual = manualById.get(Number(album.id));
   if (manual) return manual;
   return categorizeAlbumName(album.name);
-}
-
-export function categoryLabel(categoryId) {
-  return CATEGORY_LABELS.get(categoryId) || null;
 }

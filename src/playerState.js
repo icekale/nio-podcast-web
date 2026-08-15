@@ -1,12 +1,12 @@
 export const PLAYER_STATE_VERSION = 2;
 export const PLAYER_STORAGE_KEY = 'nio_player_state_v2';
 
-function normalizeEpisode(episode) {
+export function normalizeEpisode(episode) {
   if (!episode || episode.id == null) return null;
   return { ...episode };
 }
 
-const SERIALIZED_EPISODE_FIELDS = [
+export const SERIALIZED_EPISODE_FIELDS = [
   'id',
   'title',
   'albumId',
@@ -34,7 +34,7 @@ function episodeKey(episode) {
   return String(episode?.id);
 }
 
-function uniqueEpisodes(episodes) {
+export function uniqueEpisodes(episodes) {
   const seen = new Set();
   return episodes.map(normalizeEpisode).filter(episode => {
     const key = episodeKey(episode);
@@ -121,12 +121,6 @@ export function removeFromQueue(state, episodeId) {
     return { ...state, queue, queueIndex, currentEpisode: queue[queueIndex], positionSeconds: 0, durationSeconds: 0 };
   }
   return { ...state, queue, queueIndex: index < state.queueIndex ? state.queueIndex - 1 : state.queueIndex };
-}
-
-export function advanceQueue(state) {
-  if (state.queueIndex >= state.queue.length - 1) return { ...state, isPlaying: false };
-  const queueIndex = state.queueIndex + 1;
-  return { ...state, queueIndex, currentEpisode: state.queue[queueIndex], positionSeconds: 0, durationSeconds: 0, error: null };
 }
 
 export function recordHistory(history, episode) {

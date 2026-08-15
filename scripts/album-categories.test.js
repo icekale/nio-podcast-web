@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { CATEGORY_LABELS, SCENE_CATEGORIES, categorizeAlbum, categorizeAlbumName, categoryLabel } from './album-categories.js';
+import { SCENE_CATEGORIES, categorizeAlbum, categorizeAlbumName } from './album-categories.js';
 
 describe('album categories', () => {
   it('defines the six vehicle scenes with scene|sub labels', () => {
     expect(SCENE_CATEGORIES.map(c => c.id)).toEqual(['commute', 'kids', 'relax', 'longhaul', 'city', 'car']);
-    expect(CATEGORY_LABELS.get('commute')).toBe('通勤场景|资讯速递');
-    expect(CATEGORY_LABELS.get('kids')).toBe('宝贝同行|哄娃陪伴');
-    expect(CATEGORY_LABELS.get('car')).toBe('玩转爱车|提车必听');
+    expect(SCENE_CATEGORIES.find(c => c.id === 'commute')).toMatchObject({ label: '通勤场景', sub: '资讯速递' });
+    expect(SCENE_CATEGORIES.find(c => c.id === 'kids')).toMatchObject({ label: '宝贝同行', sub: '哄娃陪伴' });
+    expect(SCENE_CATEGORIES.find(c => c.id === 'car')).toMatchObject({ label: '玩转爱车', sub: '提车必听' });
   });
 
   it('prefers the manual id mapping over name rules', () => {
@@ -28,10 +28,5 @@ describe('album categories', () => {
     expect(categorizeAlbum({ id: 999, name: '路人抓马' })).toBeNull();
     expect(categorizeAlbumName('')).toBeNull();
     expect(categorizeAlbum(null)).toBeNull();
-  });
-
-  it('maps only known category ids to labels', () => {
-    expect(categoryLabel('relax')).toBe('舒缓驾驶|乐伴旅途');
-    expect(categoryLabel('unknown')).toBeNull();
   });
 });

@@ -42,11 +42,6 @@ function mapEpisode(ep) {
   };
 }
 
-export function clearEpisodeCache() {
-  episodeCache.clear();
-  episodeRequests.clear();
-}
-
 async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
   if (globalThis.navigator?.onLine === false) {
     throw new ApiError('OFFLINE', '当前处于离线状态');

@@ -125,12 +125,6 @@ export function mergeKnownAlbums(previousAlbums, scanResult) {
   }));
 }
 
-export async function updateKnownAlbums(previousAlbums, requestAlbum, concurrency = 12) {
-  const previous = Array.isArray(previousAlbums) ? previousAlbums : [];
-  const scanResult = await scanCatalog(previous.map(album => album.id), requestAlbum, concurrency);
-  return mergeKnownAlbums(previous, scanResult);
-}
-
 export async function requestAlbum(id, fetchImpl = globalThis.fetch, signal) {
   const body = new URLSearchParams({ albumId: String(id), sorttype: '2', pagenum: '1', pagesize: '1' });
   const response = await fetchImpl(API_URL, {
