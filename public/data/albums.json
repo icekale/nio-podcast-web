@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1786726668656,
+  "generatedAt": 1786785876718,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 371,
+      "latestEpisode": {
+        "id": 197023,
+        "title": "SGLewis电梯派对",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2759000,
+        "onlineTime": 1786784400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/JlFhJI12ag9iuRv8_AAC_192_1.m4a"
+      },
+      "category": "relax"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -40,26 +60,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/6DxH6g1wpfhkKb9D_AAC_192_1.m4a"
       },
       "category": "city"
-    },
-    {
-      "id": 30,
-      "name": "前方加速度",
-      "description": "用最欢乐的方式开启每一天，「前方加速度」用最新鲜的新闻段子活跃每一段上班路，解读每日的新闻热点",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
-      "host": "NIO Radio",
-      "episodeCount": 1763,
-      "latestEpisode": {
-        "id": 197030,
-        "title": "“歹物”分享来啦",
-        "albumId": 30,
-        "albumName": "前方加速度",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
-        "host": "NIO Radio",
-        "duration": 7618000,
-        "onlineTime": 1786723200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/07H262J2zFP8D3F1_AAC_192_1.m4a"
-      },
-      "category": "commute"
     },
     {
       "id": 41,
@@ -140,6 +140,46 @@
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/9/19/8b5fd8a7-c89f-4c87-9d4f-0232d7a1f1cf_AAC_192.aac"
       },
       "category": "relax"
+    },
+    {
+      "id": 678,
+      "name": "下班快跑",
+      "description": "告别工位，精力充沛。下班路上，快乐加倍！这里是NIO Radio《下班快跑》，陪你一路嗨到家",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OQIbXTKd9FaVu8_zF0tnC/0H9P4VYLVA9UwuxJpCdZ5",
+      "host": "NIO Radio",
+      "episodeCount": 61,
+      "latestEpisode": {
+        "id": 197030,
+        "title": "“歹物”分享来啦",
+        "albumId": 678,
+        "albumName": "下班快跑",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OQIbXTKd9FaVu8_zF0tnC/0H9P4VYLVA9UwuxJpCdZ5",
+        "host": "NIO Radio",
+        "duration": 7618000,
+        "onlineTime": 1786723200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/07H262J2zFP8D3F1_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 698,
+      "name": "下班快跑",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MnLpMgfwx1VrY9GlC2PXR/5mQhUJteNhRa8O8Aytt8O",
+      "host": "NIO Radio",
+      "episodeCount": 65,
+      "latestEpisode": {
+        "id": 197030,
+        "title": "“歹物”分享来啦",
+        "albumId": 698,
+        "albumName": "下班快跑",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MnLpMgfwx1VrY9GlC2PXR/5mQhUJteNhRa8O8Aytt8O",
+        "host": "NIO Radio",
+        "duration": 7618000,
+        "onlineTime": 1786723200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/07H262J2zFP8D3F1_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 728,
@@ -322,26 +362,6 @@
       "category": null
     },
     {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 370,
-      "latestEpisode": {
-        "id": 197022,
-        "title": "MENU浩室大餐",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2812000,
-        "onlineTime": 1786698000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/u40tNi5RijjWckuA_AAC_192_1.m4a"
-      },
-      "category": "relax"
-    },
-    {
       "id": 618,
       "name": "晚高峰赛车",
       "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
@@ -440,6 +460,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/ExTARyAZqQGN5pMo_AAC_192_1.m4a"
       },
       "category": "relax"
+    },
+    {
+      "id": 30,
+      "name": "前方加速度",
+      "description": "用最欢乐的方式开启每一天，「前方加速度」用最新鲜的新闻段子活跃每一段上班路，解读每日的新闻热点",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
+      "host": "NIO Radio",
+      "episodeCount": 1762,
+      "latestEpisode": {
+        "id": 196944,
+        "title": "减压邪修妙招",
+        "albumId": 30,
+        "albumName": "前方加速度",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
+        "host": "NIO Radio",
+        "duration": 617000,
+        "onlineTime": 1786636800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/12/uguDxKGQbbNOcAD2_AAC_192_1.m4a"
+      },
+      "category": "commute"
     },
     {
       "id": 64,
@@ -1618,26 +1658,6 @@
         "duration": 7686000,
         "onlineTime": 1786464000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/HMUnNwMVTgr2rcgv_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 698,
-      "name": "下班快跑",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MnLpMgfwx1VrY9GlC2PXR/5mQhUJteNhRa8O8Aytt8O",
-      "host": "NIO Radio",
-      "episodeCount": 64,
-      "latestEpisode": {
-        "id": 196924,
-        "title": "买前生产力，买后辣眼睛……“歹物”大赏开启",
-        "albumId": 698,
-        "albumName": "下班快跑",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MnLpMgfwx1VrY9GlC2PXR/5mQhUJteNhRa8O8Aytt8O",
-        "host": "NIO Radio",
-        "duration": 61000,
-        "onlineTime": 1786464000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/PKAXQMmTDJEZ9L8o_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -3438,26 +3458,6 @@
         "duration": 361000,
         "onlineTime": 1780934400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/06/aa8P1jfsxNETNAPO_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 678,
-      "name": "下班快跑",
-      "description": "告别工位，精力充沛。下班路上，快乐加倍！这里是NIO Radio《下班快跑》，陪你一路嗨到家",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OQIbXTKd9FaVu8_zF0tnC/0H9P4VYLVA9UwuxJpCdZ5",
-      "host": "NIO Radio",
-      "episodeCount": 60,
-      "latestEpisode": {
-        "id": 194915,
-        "title": "原来当大人也很香@瑞妞家族",
-        "albumId": 678,
-        "albumName": "下班快跑",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OQIbXTKd9FaVu8_zF0tnC/0H9P4VYLVA9UwuxJpCdZ5",
-        "host": "NIO Radio",
-        "duration": 5421000,
-        "onlineTime": 1780675200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/05/1Ahpa1m7dbbhGaZ8_AAC_192_1.m4a"
       },
       "category": null
     },
