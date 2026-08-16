@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1786897807541,
+  "generatedAt": 1786905012753,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/qRxUKzm9Rrcxty3O_AAC_192_1.m4a"
       },
       "category": "commute"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 1945,
+      "latestEpisode": {
+        "id": 197069,
+        "title": "No Boundaries无国界 Vol.19",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 1771000,
+        "onlineTime": 1786896000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/mTm0HaeZM3jEtZf5_AAC_192_1.m4a"
+      },
+      "category": "relax"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2314,
+      "latestEpisode": {
+        "id": 197067,
+        "title": "奥巴马夏日歌单2026 Vol.2",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1360000,
+        "onlineTime": 1786896000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/mZiXtDGHslzF58Ut_AAC_192_1.m4a"
+      },
+      "category": "relax"
     },
     {
       "id": 30,
@@ -162,6 +202,26 @@
       "category": "city"
     },
     {
+      "id": 121,
+      "name": "英伦音乐前沿",
+      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1090,
+      "latestEpisode": {
+        "id": 197070,
+        "title": "UK Music 26年8月第3周 Vol.1",
+        "albumId": 121,
+        "albumName": "英伦音乐前沿",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+        "host": "NIO Radio",
+        "duration": 1501000,
+        "onlineTime": 1786896000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/8DfzaZq1IiZFdijl_AAC_192_1.m4a"
+      },
+      "category": "relax"
+    },
+    {
       "id": 148,
       "name": "E次元财经报",
       "description": "超强电力，娱乐视角，为你盘点热门财经观点!",
@@ -220,6 +280,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/4uspXY1PdZ85bXcB_AAC_192_1.m4a"
       },
       "category": "city"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1385,
+      "latestEpisode": {
+        "id": 197068,
+        "title": "五彩缤纷的元气",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1617000,
+        "onlineTime": 1786896000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/s9QyqkBW4LH6gJca_AAC_192_1.m4a"
+      },
+      "category": "relax"
     },
     {
       "id": 358,
@@ -1082,46 +1162,6 @@
       "category": "city"
     },
     {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1944,
-      "latestEpisode": {
-        "id": 196998,
-        "title": "Night Ride Home Vol.18｜华语",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 2031000,
-        "onlineTime": 1786636800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/EsW5vRWd2XgTYdvi_AAC_192_1.m4a"
-      },
-      "category": "relax"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2313,
-      "latestEpisode": {
-        "id": 196996,
-        "title": "Top 250 Songs of 21st CEN (45 - 41)",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1399000,
-        "onlineTime": 1786636800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/ExTARyAZqQGN5pMo_AAC_192_1.m4a"
-      },
-      "category": "relax"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1220,26 +1260,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/lDUYD37zzVMYT3T6_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1384,
-      "latestEpisode": {
-        "id": 196997,
-        "title": "风靡校园的时代金曲 Vol.5",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1953000,
-        "onlineTime": 1786636800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/yGSlZSHgRHEqOCvz_AAC_192_1.m4a"
-      },
-      "category": "relax"
     },
     {
       "id": 311,
@@ -1640,26 +1660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/cmQnOnwjSMxELyv0_AAC_192_1.m4a"
       },
       "category": "city"
-    },
-    {
-      "id": 121,
-      "name": "英伦音乐前沿",
-      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1089,
-      "latestEpisode": {
-        "id": 196858,
-        "title": "UK Music 26年8月第2周 Vol.4",
-        "albumId": 121,
-        "albumName": "英伦音乐前沿",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-        "host": "NIO Radio",
-        "duration": 1501000,
-        "onlineTime": 1786550400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/09/m6Myd0kuHX9dfhb2_AAC_192_1.m4a"
-      },
-      "category": "relax"
     },
     {
       "id": 349,
