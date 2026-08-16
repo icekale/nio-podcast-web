@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1786905012753,
+  "generatedAt": 1786924054790,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 507,
+      "latestEpisode": {
+        "id": 197054,
+        "title": "Vans、匡威风光不再，经典帆布鞋为什么卖不动了？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 992000,
+        "onlineTime": 1786921200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/M2rrN18kYxHkOHQ9_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -1138,26 +1158,6 @@
         "duration": 50000,
         "onlineTime": 1786698000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/Bbokivg3EsbBMRxG_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 506,
-      "latestEpisode": {
-        "id": 197010,
-        "title": "咖啡豆｜两次遭遇苹果冲击，运动手表佳明为何还能增长？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 832000,
-        "onlineTime": 1786662000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/ih5KmmnO3jCxWQyV_AAC_192_1.m4a"
       },
       "category": "city"
     },
