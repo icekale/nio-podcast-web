@@ -26,6 +26,18 @@
   <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web"><img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare"></a>
 </p>
 
+## 一键部署
+
+本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），构建命令为 `npm run build`，输出目录为 `dist`。官方站点仍由 GitHub Pages 发布到 [nio.k4le.top](https://nio.k4le.top/)；也可以点上方按钮，用自己的账号再部署一份。
+
+### Vercel
+
+点击 **Deploy with Vercel**，用 GitHub 登录后会克隆本仓库并自动识别 Vite。完成后得到 `*.vercel.app` 地址。之后只要绑定的仓库有新提交（包括目录更新），Vercel 会自动重建。
+
+### Cloudflare
+
+点击 **Deploy to Cloudflare**，用 Cloudflare 账号登录后会按仓库根目录的 `wrangler.toml` 构建，并把 `dist` 发布为 Workers 静态资源，完成后得到 `*.workers.dev` 地址。绑定同一仓库后，目录更新提交同样会触发重建。
+
 ## 主要功能
 
 - 每日自动更新节目目录，并按最新节目时间展示专辑。
@@ -42,10 +54,6 @@
 ## 开发与运维
 
 NIO Radio 通过 GitHub Pages 发布，目录数据由 GitHub Actions 定时更新；所有播放进度、历史记录和“稍后播放”都保存在访问者自己的浏览器中。
-
-## 小程序版（已暂停维护）
-
-原生微信小程序版曾作为独立项目开发，现已暂停维护，完整代码（含 git 历史）存档在 [`miniprogram/`](miniprogram/)。如需恢复维护，可直接基于该目录继续开发；小程序端不参与本仓库的 Pages 部署。
 
 ## 本地开发
 
@@ -93,8 +101,6 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 生产域名为 [nio.k4le.top](https://nio.k4le.top/)。推送 `main` 后，[Deploy NIO Radio to GitHub Pages](.github/workflows/deploy.yml) 会自动构建并发布。`public/CNAME` 和相对资源路径保证自定义域名可用；旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
 
 目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
-
-本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），也可以一键部署到 [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web) 或 [Cloudflare](https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web)。构建命令为 `npm run build`，输出目录为 `dist`。绑定同一 GitHub 仓库后，目录更新提交会触发平台重建。
 
 若要发布自己的 GitHub Pages 副本：Fork 本仓库，在 Settings → Pages 将 Source 设为 GitHub Actions，并启用 Actions。Fork 后请改掉 `public/CNAME`，避免占用生产自定义域名。
 

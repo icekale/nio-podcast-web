@@ -100,6 +100,17 @@ describe('one-click static hosting', () => {
     expect(readme).not.toContain('edgeone.ai');
   });
 
+  it('describes the two one-click hosts and omits the miniprogram intro', () => {
+    expect(readme).toContain('## 一键部署');
+    expect(readme).toContain('### Vercel');
+    expect(readme).toContain('自动识别 Vite');
+    expect(readme).toContain('### Cloudflare');
+    expect(readme).toContain('wrangler.toml');
+    expect(readme).toContain('Workers 静态资源');
+    expect(readme).not.toContain('## 小程序版');
+    expect(readme).not.toContain('miniprogram/');
+  });
+
   it('ships Cloudflare Workers static-asset settings for the Vite output', () => {
     const wrangler = readFileSync(resolve(process.cwd(), 'wrangler.toml'), 'utf8');
     expect(wrangler).toContain('name = "nio-radio"');
