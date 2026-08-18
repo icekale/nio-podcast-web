@@ -1,9 +1,3 @@
-<div align="center">
-  <img src="public/favicon.svg" alt="NIO Radio 图标" width="88" height="88">
-  <h1>NIO Radio</h1>
-  <p>面向手机与电脑浏览器的 NIO 播客 PWA，每日更新节目，并在本地保存你的播放进度。</p>
-</div>
-
 <p align="center"><img src="docs/images/nio-radio-cover.png" alt="NIO Radio 网页播放器" width="100%"></p>
 
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
