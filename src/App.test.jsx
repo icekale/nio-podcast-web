@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { AlbumResults } from './components/AlbumResults';
 import { CUSTOM_WHITE_NOISE_ALBUM } from './customAlbums';
+import * as iosSupport from './iosSupport';
 
 const episode = (id, title, onlineTime = Date.now()) => ({
   id,
@@ -60,6 +61,49 @@ describe('mobile app shell', () => {
 
     fireEvent.click(favorite);
     expect(within(player).getByRole('button', { name: /取消收藏 / })).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  it('starts a new episode by applying audio with play:true once', async () => {
+    const apply = vi.spyOn(iosSupport, 'applyEpisodeToAudio');
+    render(<App initialCatalog={catalog} />);
+    await screen.findByText('今日推荐');
+    fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+    expect(apply).toHaveBeenCalledWith(
+      expect.any(HTMLAudioElement),
+      expect.objectContaining({ audioUrl: catalog.albums[0].latestEpisode.audioUrl }),
+      expect.objectContaining({ play: true }),
+    );
+    await waitFor(() => expect(screen.getByRole('button', { name: '打开播放列表' })).toBeInTheDocument());
+    expect(apply).toHaveBeenCalledTimes(1);
+    apply.mockRestore();
+  });
+
+  it('plays the next queue item by applying audio during ended', async () => {
+    const first = episode(1, '第一集');
+    const second = episode(2, '第二集');
+    localStorage.setItem('nio_player_state_v2', JSON.stringify({
+      version: 2,
+      queue: [first, second],
+      queueIndex: 0,
+      currentEpisode: first,
+      positionSeconds: 0,
+      durationSeconds: 0,
+      history: [],
+      updatedAt: Date.now(),
+    }));
+    render(<App initialCatalog={catalog} />);
+    const audio = document.querySelector('audio');
+    await waitFor(() => expect(audio.getAttribute('src')).toBe(first.audioUrl));
+    const apply = vi.spyOn(iosSupport, 'applyEpisodeToAudio');
+
+    fireEvent.ended(audio);
+
+    expect(apply).toHaveBeenCalledWith(
+      expect.any(HTMLAudioElement),
+      expect.objectContaining({ audioUrl: second.audioUrl }),
+      expect.objectContaining({ play: true }),
+    );
+    apply.mockRestore();
   });
 
   it('shows a recoverable error when the selected episode has no audio URL', async () => {

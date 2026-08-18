@@ -5,6 +5,7 @@ import { Artwork } from './Artwork';
 import { EpisodeRow } from './EpisodeRow';
 import { formatDuration } from '../format';
 import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
+import { lockBodyScroll } from '../iosSupport';
 import { SLEEP_OPTIONS } from '../playbackPrefs';
 
 function LaterPicker({ catalog, onBack, onAdd }) {
@@ -243,9 +244,8 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => { window.removeEventListener('keydown', handleKeyDown); document.body.style.overflow = previousOverflow; };
+    const unlock = lockBodyScroll(document, window.scrollY);
+    return () => { window.removeEventListener('keydown', handleKeyDown); unlock(); };
   }, [onClose]);
 
   useEffect(() => {

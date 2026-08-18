@@ -76,6 +76,24 @@ describe('public app naming', () => {
     expect(readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8'))
       .toContain('.primary-button:hover { background: var(--teal-dark); color: var(--surface); }');
   });
+
+  it('resets iOS search chrome and tap highlight', () => {
+    const css = readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8');
+    expect(css).toContain('input[type="search"] { -webkit-appearance: none; appearance: none; }');
+    expect(css).toContain('-webkit-tap-highlight-color: transparent');
+  });
+
+  it('pads the desktop shell for iPad safe areas', () => {
+    const css = readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8');
+    expect(css).toContain('padding: max(var(--space-5), env(safe-area-inset-top))');
+  });
+
+  it('ships iPhone startup images for light and dark', () => {
+    expect(indexHtml).toContain('rel="apple-touch-startup-image"');
+    expect(indexHtml).toContain('prefers-color-scheme: dark');
+    expect(indexHtml).toContain('splash-1170x2532.png');
+    expect(indexHtml).toContain('splash-1170x2532-dark.png');
+  });
 });
 
 describe('custom domain deployment', () => {

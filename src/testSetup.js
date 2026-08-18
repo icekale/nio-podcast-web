@@ -12,3 +12,7 @@ Object.defineProperty(HTMLMediaElement.prototype, 'load', {
   configurable: true,
   value: () => {},
 });
+Object.defineProperty(HTMLMediaElement.prototype, 'canPlayType', {
+  configurable: true,
+  value: () => 'maybe',
+});

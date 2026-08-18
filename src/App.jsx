@@ -28,6 +28,7 @@ import { routeMotionFor, sameRoute, screenRouteKey } from './routeUtils';
 import { DesktopNav } from './components/DesktopNav';
 import { MiniPlayer } from './components/MiniPlayer';
 import { QueueSheet } from './components/QueueSheet';
+import { applyEpisodeToAudio, canPlayAudioUrl, unsupportedAudioMessage } from './iosSupport';
 import { useDesktopLayout } from './hooks/useDesktopLayout';
 import { AlbumScreen } from './screens/AlbumScreen';
 import { AlbumsScreen } from './screens/AlbumsScreen';
@@ -281,14 +282,17 @@ export default function App({ initialCatalog = null }) {
     if (!audio) return;
     if (!episode?.audioUrl) {
       if (shouldPlay) setPlaybackFailure('该节目没有可播放音频，请稍后重试');
-      audio.pause();
-      audio.removeAttribute('src');
-      audio.load();
+      if (audio.getAttribute('src')) applyEpisodeToAudio(audio, null);
       return;
     }
+    if (!canPlayAudioUrl(episode.audioUrl)) {
+      if (shouldPlay) setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl));
+      applyEpisodeToAudio(audio, null);
+      return;
+    }
+    if (audio.getAttribute('src') === episode.audioUrl || audio.src === episode.audioUrl) return;
     resumeSeekAppliedRef.current = false;
-    audio.src = episode.audioUrl;
-    audio.load();
+    const result = applyEpisodeToAudio(audio, episode, { play: shouldPlay });
     if (canResume(positionSeconds, durationSeconds)) {
       try {
         audio.currentTime = positionSeconds;
@@ -297,12 +301,7 @@ export default function App({ initialCatalog = null }) {
     } else {
       resumeSeekAppliedRef.current = true;
     }
-    if (!shouldPlay) {
-      audio.pause();
-      return;
-    }
-    const result = audio.play();
-    result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+    result?.catch(() => setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl)));
   }, [player.currentEpisode?.id, setPlaybackFailure]);
 
   const saveScrollPosition = useCallback((hash = window.location.hash || '#/') => {
@@ -388,11 +387,23 @@ export default function App({ initialCatalog = null }) {
       });
       return;
     }
+    if (!canPlayAudioUrl(episode.audioUrl)) {
+      setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl));
+      setPlayer(previous => {
+        let next = previous;
+        if (visibleQueue?.length) next = enqueueEpisodes(next, visibleQueue);
+        next = selectEpisode(next, episode, next.queue);
+        return { ...next, isPlaying: false };
+      });
+      return;
+    }
     const sameEpisode = playerRef.current.currentEpisode?.id === episode.id;
-    if (sameEpisode && audioRef.current) {
-      try { audioRef.current.currentTime = 0; } catch { /* media may not be ready */ }
-      const result = audioRef.current.play();
-      result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+    if (audioRef.current) {
+      if (sameEpisode) {
+        try { audioRef.current.currentTime = 0; } catch { /* media may not be ready */ }
+      }
+      applyEpisodeToAudio(audioRef.current, episode, { play: true })
+        ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl)));
     }
     setPlayer(previous => {
       let next = previous;
@@ -413,7 +424,7 @@ export default function App({ initialCatalog = null }) {
       savePlayer({ ...playerRef.current, isPlaying: false }, true);
     } else {
       const result = audio.play();
-      result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+      result?.catch(() => setPlaybackFailure(unsupportedAudioMessage(player.currentEpisode?.audioUrl)));
       setIsPlaying(true);
       setPlayer(previous => ({ ...previous, isPlaying: true }));
     }
@@ -448,19 +459,23 @@ export default function App({ initialCatalog = null }) {
     }
     if (next === previous) next = { ...previous, isPlaying: false };
     const hasNext = Boolean(next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id);
+    if (hasNext && audioRef.current) {
+      applyEpisodeToAudio(audioRef.current, next.currentEpisode, { play: true, seekSeconds: 0 })
+        ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(next.currentEpisode.audioUrl)));
+    }
     setPlayer({
       ...next,
       history: hasNext ? recordHistory(previous.history, next.currentEpisode) : previous.history,
       isPlaying: hasNext,
     });
     setIsPlaying(hasNext);
-  }, [removeFromLater]);
+  }, [removeFromLater, setPlaybackFailure]);
 
   const resumePlayback = useCallback(() => {
     const audio = audioRef.current;
     if (!audio || !playerRef.current.currentEpisode) return;
     const result = audio.play();
-    result?.catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试'));
+    result?.catch(() => setPlaybackFailure(unsupportedAudioMessage(playerRef.current.currentEpisode?.audioUrl)));
     setIsPlaying(true);
     setPlayer(previous => ({ ...previous, isPlaying: true }));
   }, [setPlaybackFailure]);
@@ -631,8 +646,8 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
         </div>}
       </div>
-      <audio ref={audioRef} loop={loopingCurrentEpisode} preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
-      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={() => { setAudioError(null); audioRef.current?.load(); audioRef.current?.play().catch(() => setPlaybackFailure('音频暂时无法播放，请稍后重试')); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
+      <audio ref={audioRef} loop={loopingCurrentEpisode} playsInline preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
+      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={() => { setAudioError(null); applyEpisodeToAudio(audioRef.current, playerRef.current.currentEpisode, { play: true })?.catch(() => setPlaybackFailure(unsupportedAudioMessage(playerRef.current.currentEpisode?.audioUrl))); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
       {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} allowEpisodeEnd={!loopingCurrentEpisode} onShareEpisode={shareEpisode} /> : null}
     </main>
   );

@@ -23,7 +23,9 @@ export const SearchScreen = memo(function SearchScreen({ catalog, searchQuery = 
 
   useEffect(() => setQuery(searchQuery), [searchQuery]);
 
-  useEffect(() => inputRef.current?.focus(), []);
+  useEffect(() => {
+    if (window.matchMedia?.('(pointer: fine)')?.matches) inputRef.current?.focus();
+  }, []);
 
   return (
     <div className="screen search-screen">
