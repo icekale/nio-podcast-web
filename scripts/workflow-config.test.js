@@ -88,3 +88,22 @@ describe('catalog freshness check workflow', () => {
     expect(workflow).toContain('age_hours) > 50');
   });
 });
+
+describe('one-click static hosting', () => {
+  const readme = readFileSync(resolve(process.cwd(), 'README.md'), 'utf8');
+
+  it('publishes Vercel and EdgeOne deploy buttons for this repository', () => {
+    expect(readme).toContain('https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web');
+    expect(readme).toContain('https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web');
+    expect(readme).toContain('https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg');
+    expect(readme).toContain('https://vercel.com/button');
+  });
+
+  it('ships EdgeOne build settings for the Vite output', () => {
+    const config = JSON.parse(readFileSync(resolve(process.cwd(), 'edgeone.json'), 'utf8'));
+    expect(config.installCommand).toBe('npm ci');
+    expect(config.buildCommand).toBe('npm run build');
+    expect(config.outputDirectory).toBe('dist');
+    expect(config.nodeVersion).toBe('22.11.0');
+  });
+});

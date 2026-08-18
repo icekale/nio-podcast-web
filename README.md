@@ -20,6 +20,12 @@
 
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
 
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&repository-name=nio-podcast-web"><img src="https://vercel.com/button" alt="Deploy with Vercel"></a>
+  &nbsp;
+  <a href="https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&install-command=npm%20ci&build-command=npm%20run%20build&output-directory=dist"><img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="使用 EdgeOne Pages 部署"></a>
+</p>
+
 ## 主要功能
 
 - 每日自动更新节目目录，并按最新节目时间展示专辑。
@@ -84,9 +90,13 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 
 ## GitHub Pages 发布
 
-生产域名为 [nio.k4le.top](https://nio.k4le.top/)。`public/CNAME` 和相对资源路径保证自定义域名可用；旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
+生产域名为 [nio.k4le.top](https://nio.k4le.top/)。推送 `main` 后，[Deploy NIO Radio to GitHub Pages](.github/workflows/deploy.yml) 会自动构建并发布。`public/CNAME` 和相对资源路径保证自定义域名可用；旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
 
 目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
+
+本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），也可以一键部署到 [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web) 或腾讯云 [EdgeOne Pages](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web)（橙云）。构建命令为 `npm run build`，输出目录为 `dist`。绑定同一 GitHub 仓库后，目录更新提交会触发平台重建。
+
+若要发布自己的 GitHub Pages 副本：Fork 本仓库，在 Settings → Pages 将 Source 设为 GitHub Actions，并启用 Actions。Fork 后请改掉 `public/CNAME`，避免占用生产自定义域名。
 
 ## 缓存策略
 

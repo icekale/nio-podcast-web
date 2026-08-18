@@ -1,0 +1,7 @@
+{
+  "name": "nio-radio",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "nodeVersion": "22.11.0"
+}
