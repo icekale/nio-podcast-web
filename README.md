@@ -23,7 +23,7 @@
 <p align="center">
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&repository-name=nio-podcast-web"><img src="https://vercel.com/button" alt="Deploy with Vercel"></a>
   &nbsp;
-  <a href="https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&install-command=npm%20ci&build-command=npm%20run%20build&output-directory=dist"><img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="使用 EdgeOne Pages 部署"></a>
+  <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web"><img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare"></a>
 </p>
 
 ## 主要功能
@@ -94,7 +94,7 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 
 目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
 
-本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），也可以一键部署到 [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web) 或腾讯云 [EdgeOne Pages](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web)（橙云）。构建命令为 `npm run build`，输出目录为 `dist`。绑定同一 GitHub 仓库后，目录更新提交会触发平台重建。
+本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），也可以一键部署到 [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web) 或 [Cloudflare](https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web)。构建命令为 `npm run build`，输出目录为 `dist`。绑定同一 GitHub 仓库后，目录更新提交会触发平台重建。
 
 若要发布自己的 GitHub Pages 副本：Fork 本仓库，在 Settings → Pages 将 Source 设为 GitHub Actions，并启用 Actions。Fork 后请改掉 `public/CNAME`，避免占用生产自定义域名。
 
