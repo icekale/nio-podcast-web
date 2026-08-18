@@ -95,9 +95,16 @@ describe('one-click static hosting', () => {
   it('publishes Vercel and Cloudflare deploy buttons for this repository', () => {
     expect(readme).toContain('https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web');
     expect(readme).toContain('https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web');
-    expect(readme).toContain('https://deploy.workers.cloudflare.com/button');
-    expect(readme).toContain('https://vercel.com/button');
+    expect(readme).toContain('docs/images/deploy-vercel.png');
+    expect(readme).toContain('docs/images/deploy-cloudflare.png');
+    expect(readme).not.toContain('https://vercel.com/button');
+    expect(readme).not.toContain('https://deploy.workers.cloudflare.com/button');
     expect(readme).not.toContain('edgeone.ai');
+
+    const vercel = readFileSync(resolve(process.cwd(), 'docs/images/deploy-vercel.png'));
+    const cloudflare = readFileSync(resolve(process.cwd(), 'docs/images/deploy-cloudflare.png'));
+    expect({ width: vercel.readUInt32BE(16), height: vercel.readUInt32BE(20) }).toEqual({ width: 480, height: 80 });
+    expect({ width: cloudflare.readUInt32BE(16), height: cloudflare.readUInt32BE(20) }).toEqual({ width: 480, height: 80 });
   });
 
   it('uses the cover promo image and drops extra screenshots', () => {

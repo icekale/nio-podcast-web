@@ -9,9 +9,9 @@
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
 
 <p align="center">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&repository-name=nio-podcast-web"><img src="https://vercel.com/button" alt="Deploy with Vercel"></a>
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ficekale%2Fnio-podcast-web&project-name=nio-radio&repository-name=nio-podcast-web"><img src="docs/images/deploy-vercel.png" alt="Deploy with Vercel" width="240" height="40"></a>
   &nbsp;
-  <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web"><img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare"></a>
+  <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/icekale/nio-podcast-web"><img src="docs/images/deploy-cloudflare.png" alt="Deploy to Cloudflare" width="240" height="40"></a>
 </p>
 
 ## 一键部署
