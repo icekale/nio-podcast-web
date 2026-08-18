@@ -4,19 +4,8 @@
   <p>面向手机与电脑浏览器的 NIO 播客 PWA，每日更新节目，并在本地保存你的播放进度。</p>
 </div>
 
-<table>
-  <tr>
-    <td width="50%"><img src="docs/images/nio-radio-home.png" alt="NIO Radio 今日更新首页"></td>
-    <td width="50%"><img src="docs/images/nio-radio-queue.png" alt="NIO Radio 播放列表"></td>
-  </tr>
-  <tr>
-    <td align="center">今日更新</td>
-    <td align="center">播放列表</td>
-  </tr>
-</table>
-
-<p align="center"><img src="docs/images/nio-radio-pc.png" alt="NIO Radio 电脑版界面" width="100%"></p>
-<p align="center">电脑版</p>
+<p align="center"><img src="docs/images/nio-radio-cover.png" alt="NIO Radio 网页播放器" width="100%"></p>
+<p align="center"><img src="docs/images/nio-radio-phone.png" alt="NIO Radio 手机界面" width="360"></p>
 
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
 
