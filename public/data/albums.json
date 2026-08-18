@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1787070939404,
+  "generatedAt": 1787078368926,
   "albums": [
     {
       "id": 5,
@@ -598,6 +598,26 @@
         "duration": 1849000,
         "onlineTime": 1787068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/TgGpFh4tJpbOaTQ3_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 798,
+      "name": "生命周刊",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+      "host": "NIO Radio",
+      "episodeCount": 38,
+      "latestEpisode": {
+        "id": 197132,
+        "title": "额叶切除，阿尔茨海默病，我们的人格到底藏在哪里?",
+        "albumId": 798,
+        "albumName": "生命周刊",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+        "host": "NIO Radio",
+        "duration": 2442000,
+        "onlineTime": 1787068800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/e6tmNCe0udkbHchZ_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -2518,26 +2538,6 @@
         "duration": 424000,
         "onlineTime": 1786464000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/28/0y81PKYb0AmgyHO4_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 798,
-      "name": "生命周刊",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-      "host": "NIO Radio",
-      "episodeCount": 37,
-      "latestEpisode": {
-        "id": 196922,
-        "title": "焦虑症，恐惧惊恐怎么来的，人能用理性战胜情绪吗？微表情靠谱吗",
-        "albumId": 798,
-        "albumName": "生命周刊",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-        "host": "NIO Radio",
-        "duration": 1240000,
-        "onlineTime": 1786464000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/4ub0oEsxMyz2MTsJ_AAC_192_1.m4a"
       },
       "category": null
     },
