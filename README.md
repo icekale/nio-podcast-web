@@ -5,7 +5,6 @@
 </div>
 
 <p align="center"><img src="docs/images/nio-radio-cover.png" alt="NIO Radio 网页播放器" width="100%"></p>
-<p align="center"><img src="docs/images/nio-radio-desktop.png" alt="NIO Radio 电脑界面" width="360"></p>
 
 <p align="center"><strong><a href="https://nio.k4le.top/">立即体验 NIO Radio</a></strong></p>
 

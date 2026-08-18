@@ -100,17 +100,14 @@ describe('one-click static hosting', () => {
     expect(readme).not.toContain('edgeone.ai');
   });
 
-  it('uses two promo images and drops the old screenshot set', () => {
+  it('uses the cover promo image and drops extra screenshots', () => {
     expect(readme).toContain('docs/images/nio-radio-cover.png');
-    expect(readme).toContain('docs/images/nio-radio-desktop.png');
+    expect(readme).not.toContain('nio-radio-desktop.png');
     expect(readme).not.toContain('nio-radio-phone.png');
     expect(readme).not.toContain('nio-radio-home.png');
     expect(readme).not.toContain('nio-radio-queue.png');
     expect(readme).not.toContain('nio-radio-pc.png');
     expect(existsSync(resolve(process.cwd(), 'docs/images/nio-radio-cover.png'))).toBe(true);
-    expect(existsSync(resolve(process.cwd(), 'docs/images/nio-radio-desktop.png'))).toBe(true);
-    const desktop = readFileSync(resolve(process.cwd(), 'docs/images/nio-radio-desktop.png'));
-    expect({ width: desktop.readUInt32BE(16), height: desktop.readUInt32BE(20) }).toEqual({ width: 1080, height: 1440 });
   });
 
   it('describes the two one-click hosts and omits the miniprogram intro', () => {
