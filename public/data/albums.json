@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1787157341091,
+  "generatedAt": 1787218397836,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1653,
+      "latestEpisode": {
+        "id": 197182,
+        "title": "空客A350F订单破百",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 383000,
+        "onlineTime": 1787216400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/0UvbOpsr4dB8gZi6_AAC_192_1.m4a"
+      },
+      "category": "commute"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 740,
+      "latestEpisode": {
+        "id": 196981,
+        "title": "托管班发霉变质？",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 491000,
+        "onlineTime": 1787216400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/e4QMLoYTKEhiKkQ8_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 79,
+      "latestEpisode": {
+        "id": 197192,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 51000,
+        "onlineTime": 1787216400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/fKXN5X9kfztDHuo9_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -80,6 +140,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/zMUvn7qdUTK2n1ni_AAC_192_1.m4a"
       },
       "category": "commute"
+    },
+    {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1444,
+      "latestEpisode": {
+        "id": 197172,
+        "title": "超山夏日夜游首发季即将开启",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 284000,
+        "onlineTime": 1787155200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/CrLLeL6g48YfvMbz_AAC_192_1.m4a"
+      },
+      "category": "city"
     },
     {
       "id": 97,
@@ -555,71 +635,11 @@
         "albumName": "摸鱼早报",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
         "host": "NIO Radio",
-        "duration": 1685000,
+        "duration": 1157000,
         "onlineTime": 1787155200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/w1d3dzObhKojadbr_AAC_192_1.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/apq3sF8qoQ0FrS96_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1652,
-      "latestEpisode": {
-        "id": 197143,
-        "title": "OpenAI据悉Q2亏损进一步扩大",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 415000,
-        "onlineTime": 1787130000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/FQYvZ9guYuTzGQCg_AAC_192_1.m4a"
-      },
-      "category": "commute"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 739,
-      "latestEpisode": {
-        "id": 196980,
-        "title": "深圳乐高，要开了？",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 469000,
-        "onlineTime": 1787130000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/13/zjy3nabst72rFXPD_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 78,
-      "latestEpisode": {
-        "id": 197139,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 57000,
-        "onlineTime": 1787130000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/ZlqMQumhm7bzpG0c_AAC_192_1.m4a"
-      },
-      "category": "city"
     },
     {
       "id": 64,
@@ -638,26 +658,6 @@
         "duration": 289000,
         "onlineTime": 1787068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/AergL3DL57qSpUWm_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1443,
-      "latestEpisode": {
-        "id": 197112,
-        "title": "奥运标准冰场开到杭州人家门口",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 285000,
-        "onlineTime": 1787068800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/t8ImE3TnvQYfhArj_AAC_192_1.m4a"
       },
       "category": "city"
     },
