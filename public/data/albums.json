@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1787330345102,
+  "generatedAt": 1787356263282,
   "albums": [
     {
       "id": 5,
@@ -3218,6 +3218,26 @@
         "duration": 548000,
         "onlineTime": 1783872000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/10/TKLvc4Q6WIEehcl3_AAC_192.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 124,
+      "name": "Selector After Dark",
+      "description": "Selector After Dark——黑夜降临，Party才刚刚开始！NIO Radio联合英国文化协会为您带来顶尖的派对音乐！每周一位独立DJ，1小时极致派对体验，想要成为Party Animal？请持续关注 Selector After Dark！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/f36a9196-1e3d-4541-8d93-ed80e5da5016.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 204,
+      "latestEpisode": {
+        "id": 195973,
+        "title": "Selector After Dark Vol.810",
+        "albumId": 124,
+        "albumName": "Selector After Dark",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/f36a9196-1e3d-4541-8d93-ed80e5da5016.jpg",
+        "host": "NIO Radio",
+        "duration": 3302000,
+        "onlineTime": 1783785600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/10/JYaXySJe0R9w7Je8_AAC_192_1.m4a"
       },
       "category": null
     },
