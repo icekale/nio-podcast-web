@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1787356263282,
+  "generatedAt": 1787390728536,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 373,
+      "latestEpisode": {
+        "id": 197184,
+        "title": "kitsch & SASH泳池派对",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2735000,
+        "onlineTime": 1787389200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/P3BazIZOcfC8LPJl_AAC_192_1.m4a"
+      },
+      "category": "relax"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -262,6 +282,26 @@
       "category": null
     },
     {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 46,
+      "latestEpisode": {
+        "id": 197235,
+        "title": "休闲卤味食品赛道大变局/婚姻登记点加速“破圈”",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1058000,
+        "onlineTime": 1787328000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/DzouzVcFzMVE5Fdg_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 832,
       "name": "好梗要",
       "description": "",
@@ -320,26 +360,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/ceLYW8Aa1JF6IeFM_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 372,
-      "latestEpisode": {
-        "id": 197181,
-        "title": "ChrisLuno日间派对",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2754000,
-        "onlineTime": 1787302800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/ZHkDKmEYQeHW6wOO_AAC_192_1.m4a"
-      },
-      "category": "relax"
     },
     {
       "id": 618,
@@ -1240,26 +1260,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/ZQd3TvZg1k25PyAL_AAC_192_1.m4a"
       },
       "category": "city"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 45,
-      "latestEpisode": {
-        "id": 197217,
-        "title": "电解质水成“水替”新宠/“星星人”营收增速逾580%",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1035000,
-        "onlineTime": 1787241600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/7mZe8wqkugQSUN41_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 831,
