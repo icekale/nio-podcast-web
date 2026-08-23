@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1787502653425,
+  "generatedAt": 1787509817012,
   "albums": [
     {
       "id": 5,
@@ -142,6 +142,26 @@
       "category": "city"
     },
     {
+      "id": 93,
+      "name": "东莞城市资讯",
+      "description": "本地新闻，牛屋活动，这里是东莞的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
+      "host": "NIO Radio",
+      "episodeCount": 967,
+      "latestEpisode": {
+        "id": 197268,
+        "title": "塘厦党代会擘画五年新蓝图",
+        "albumId": 93,
+        "albumName": "东莞城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
+        "host": "NIO Radio",
+        "duration": 288000,
+        "onlineTime": 1787500800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/VtgOXoqKxn3hBdjW_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
+    {
       "id": 97,
       "name": "成都城市资讯",
       "description": "本地新闻，牛屋活动，这里是成都的城市资讯",
@@ -202,6 +222,26 @@
       "category": "longhaul"
     },
     {
+      "id": 271,
+      "name": "东莞城市频道",
+      "description": "旗峰山下，东江水畔，这里是东莞车友们的专属栏目！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/2/e60c8681-a98f-461a-a96e-5e98b30ec034.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1148,
+      "latestEpisode": {
+        "id": 197267,
+        "title": "幸运厨房｜滑蛋罐头鲮鱼家常做法",
+        "albumId": 271,
+        "albumName": "东莞城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/2/e60c8681-a98f-461a-a96e-5e98b30ec034.jpg",
+        "host": "NIO Radio",
+        "duration": 372000,
+        "onlineTime": 1787500800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/hkq0AxlO8eTk6hJT_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
+    {
       "id": 306,
       "name": "华语乐动听",
       "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
@@ -220,6 +260,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/K9zbJ11gr1ZRoMvL_AAC_192_1.m4a"
       },
       "category": "relax"
+    },
+    {
+      "id": 345,
+      "name": "宁波城市资讯",
+      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+      "host": "NIO Radio",
+      "episodeCount": 1177,
+      "latestEpisode": {
+        "id": 197274,
+        "title": "第十六届智博会定档",
+        "albumId": 345,
+        "albumName": "宁波城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+        "host": "NIO Radio",
+        "duration": 282000,
+        "onlineTime": 1787500800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/gfDrYiBXMXbHdcAU_AAC_192_1.m4a"
+      },
+      "category": "city"
     },
     {
       "id": 358,
@@ -280,6 +340,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/hrX9WCffJwPaHjHN_AAC_192_1.m4a"
       },
       "category": "kids"
+    },
+    {
+      "id": 419,
+      "name": "体育地平线",
+      "description": "重点关注最热门体育赛事和新闻事件，让你从多方面多角度丰富了解赛事全貌",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
+      "host": "NIO Radio",
+      "episodeCount": 675,
+      "latestEpisode": {
+        "id": 197283,
+        "title": "维斯塔潘留在了红牛",
+        "albumId": 419,
+        "albumName": "体育地平线",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
+        "host": "NIO Radio",
+        "duration": 307000,
+        "onlineTime": 1787500800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/1t4VA4xnbIZLfJjr_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 485,
@@ -1222,26 +1302,6 @@
       "category": "city"
     },
     {
-      "id": 345,
-      "name": "宁波城市资讯",
-      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-      "host": "NIO Radio",
-      "episodeCount": 1176,
-      "latestEpisode": {
-        "id": 197204,
-        "title": "周末象山将迎“吃螃蟹大军”",
-        "albumId": 345,
-        "albumName": "宁波城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-        "host": "NIO Radio",
-        "duration": 296000,
-        "onlineTime": 1787241600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/Co49r0BvkCutxSje_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
       "id": 348,
       "name": "音乐传声机",
       "description": "粤听粤好听—用音乐开启心动信号！",
@@ -1280,26 +1340,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/N0j0OLBiavFSnyrd_AAC_192_1.m4a"
       },
       "category": "city"
-    },
-    {
-      "id": 419,
-      "name": "体育地平线",
-      "description": "重点关注最热门体育赛事和新闻事件，让你从多方面多角度丰富了解赛事全貌",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
-      "host": "NIO Radio",
-      "episodeCount": 674,
-      "latestEpisode": {
-        "id": 197195,
-        "title": "C罗刚结婚就打算退役了？",
-        "albumId": 419,
-        "albumName": "体育地平线",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
-        "host": "NIO Radio",
-        "duration": 365000,
-        "onlineTime": 1787241600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/Pe39cRKvqUXjTw9c_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 440,
@@ -2458,46 +2498,6 @@
         "duration": 284000,
         "onlineTime": 1786896000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/aVEd619P0KA792qS_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 93,
-      "name": "东莞城市资讯",
-      "description": "本地新闻，牛屋活动，这里是东莞的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
-      "host": "NIO Radio",
-      "episodeCount": 966,
-      "latestEpisode": {
-        "id": 197049,
-        "title": "市容新规九月起最高罚千元",
-        "albumId": 93,
-        "albumName": "东莞城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
-        "host": "NIO Radio",
-        "duration": 292000,
-        "onlineTime": 1786896000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/B737OiLIeGrqqAlV_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 271,
-      "name": "东莞城市频道",
-      "description": "旗峰山下，东江水畔，这里是东莞车友们的专属栏目！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/2/e60c8681-a98f-461a-a96e-5e98b30ec034.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1147,
-      "latestEpisode": {
-        "id": 197048,
-        "title": "幸运厨房｜胜瓜脆罗非汤做法分享",
-        "albumId": 271,
-        "albumName": "东莞城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/2/e60c8681-a98f-461a-a96e-5e98b30ec034.jpg",
-        "host": "NIO Radio",
-        "duration": 341000,
-        "onlineTime": 1786896000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/4uspXY1PdZ85bXcB_AAC_192_1.m4a"
       },
       "category": "city"
     },
