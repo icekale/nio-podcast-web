@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1787589741846,
+  "generatedAt": 1787615375985,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 513,
+      "latestEpisode": {
+        "id": 197310,
+        "title": "汽水音乐冲击腾讯、网易",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 478000,
+        "onlineTime": 1787612400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/RhKSZ8FtbroY4jBv_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -602,6 +622,26 @@
       "category": null
     },
     {
+      "id": 834,
+      "name": "童话留声机",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/gIVMnU9BqKGozuIDN5vU2/NeBOSH0LXMpA1EGO1WElt",
+      "host": "NIO Radio",
+      "episodeCount": 45,
+      "latestEpisode": {
+        "id": 197301,
+        "title": "藏在车轮里的童年时光",
+        "albumId": 834,
+        "albumName": "童话留声机",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/gIVMnU9BqKGozuIDN5vU2/NeBOSH0LXMpA1EGO1WElt",
+        "host": "NIO Radio",
+        "duration": 570000,
+        "onlineTime": 1787587200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/2yO3ZkU9cTBzsjzx_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 23,
       "name": "资讯充电站·晚间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
@@ -658,26 +698,6 @@
         "duration": 44000,
         "onlineTime": 1787562000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/FyKudPyDDQzuJkxv_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 512,
-      "latestEpisode": {
-        "id": 197261,
-        "title": "越卖越贵的「山下有松们」，如何持续抢占轻奢包袋市场？ 过去一年",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 883000,
-        "onlineTime": 1787526000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/pcfr5EejzGMy1bUD_AAC_192_1.m4a"
       },
       "category": "city"
     },
