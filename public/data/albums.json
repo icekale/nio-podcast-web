@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1787676103105,
+  "generatedAt": 1787683205992,
   "albums": [
     {
       "id": 5,
@@ -162,6 +162,26 @@
       "category": "relax"
     },
     {
+      "id": 147,
+      "name": "忽左忽右",
+      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 443,
+      "latestEpisode": {
+        "id": 197353,
+        "title": "张诗坪谈战争史视角下的秦末汉初混战",
+        "albumId": 147,
+        "albumName": "忽左忽右",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+        "host": "NIO Radio",
+        "duration": 5900000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/b4A1iS2Xl1gz5FxE_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 148,
       "name": "E次元财经报",
       "description": "超强电力，娱乐视角，为你盘点热门财经观点!",
@@ -262,6 +282,26 @@
       "category": "city"
     },
     {
+      "id": 378,
+      "name": "杯弓舌瘾",
+      "description": "今朝有酒今朝醉，生活不要太疲惫！来，一起微醺邂逅。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/fb9b68cc-535d-4b1e-8a7f-90e8e62a02aa.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 268,
+      "latestEpisode": {
+        "id": 197352,
+        "title": "榜单和比赛失去公信力了吗",
+        "albumId": 378,
+        "albumName": "杯弓舌瘾",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/fb9b68cc-535d-4b1e-8a7f-90e8e62a02aa.jpg",
+        "host": "NIO Radio",
+        "duration": 5395000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/7CXFhexXB6pQIlJj_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 419,
       "name": "体育地平线",
       "description": "重点关注最热门体育赛事和新闻事件，让你从多方面多角度丰富了解赛事全貌",
@@ -278,6 +318,26 @@
         "duration": 365000,
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/5wJTH0TlSjunz5UC_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 552,
+      "name": "疯投圈",
+      "description": "做中文世界最有意思的商业类播客。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/4/6/b5301549-7089-42e0-8b51-43dbd8915258.png",
+      "host": "NIO Radio",
+      "episodeCount": 87,
+      "latestEpisode": {
+        "id": 197354,
+        "title": "改属中资的餐饮洋品牌",
+        "albumId": 552,
+        "albumName": "疯投圈",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/4/6/b5301549-7089-42e0-8b51-43dbd8915258.png",
+        "host": "NIO Radio",
+        "duration": 4328000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/5lHAf0Bw8UwjPevM_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -382,6 +442,46 @@
       "category": null
     },
     {
+      "id": 674,
+      "name": "声东击西",
+      "description": "世界宽广，但人们被日常及社交媒体所限制。\n那就让作为记者的我们，帮你推开一些意想不到的窗户，触及不一样的信息，激发不一样的思考。\n在这里，我们对话各种有趣有料，能带来启发的专业人士，也不定期会有神秘嘉宾出现。\n我们也时不时做各种和声音有关的尝试，打开一些新体验。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/KtDaBLlHTR-ksvnmNfxoD/EKcKvBMGkSNwkH-aPnZVB",
+      "host": "NIO Radio",
+      "episodeCount": 98,
+      "latestEpisode": {
+        "id": 197350,
+        "title": "边域、「慢聚漫奏」：我们还能迎来另外一个达特茅斯的夏天吗？",
+        "albumId": 674,
+        "albumName": "声东击西",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/KtDaBLlHTR-ksvnmNfxoD/EKcKvBMGkSNwkH-aPnZVB",
+        "host": "NIO Radio",
+        "duration": 4607000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/Scg9HVuB84TjLOAH_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 681,
+      "name": "科技乱炖",
+      "description": "由多名资深从互联网业者主持的科技点评播客，把近期科技热点变成犀利、独到、深刻的独家观点。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/4iqAHjccejVuFEsbeStOt/m-AJu0DDNFi60RBzhwB6H",
+      "host": "NIO Radio",
+      "episodeCount": 63,
+      "latestEpisode": {
+        "id": 197349,
+        "title": "当机器人学会认路，物理世界才真正接上了 AI",
+        "albumId": 681,
+        "albumName": "科技乱炖",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/4iqAHjccejVuFEsbeStOt/m-AJu0DDNFi60RBzhwB6H",
+        "host": "NIO Radio",
+        "duration": 4797000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/Ni1ykZMzhN5vcBWf_AAC_192_1.m4a"
+      },
+      "category": "longhaul"
+    },
+    {
       "id": 698,
       "name": "下班快跑",
       "description": "",
@@ -398,6 +498,26 @@
         "duration": 42000,
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/ydFXnKFazovcMlqx_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 700,
+      "name": "剧谈社",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/FPD_l6oh-CGXkoYe8NwPG/YAFE96KFlKbvepQaW5sE8",
+      "host": "NIO Radio",
+      "episodeCount": 21,
+      "latestEpisode": {
+        "id": 197351,
+        "title": "跟着戏剧去旅行：在舞台上读懂英国，在旅途中发现舞台",
+        "albumId": 700,
+        "albumName": "剧谈社",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/FPD_l6oh-CGXkoYe8NwPG/YAFE96KFlKbvepQaW5sE8",
+        "host": "NIO Radio",
+        "duration": 8854000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/xUZYDZQcE6U5UAmU_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -498,6 +618,26 @@
         "duration": 484000,
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/g9v7YfCICymEdHm4_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 49,
+      "latestEpisode": {
+        "id": 197348,
+        "title": "“小电驴”22年来拟首次上调限速/美光警告“内存墙”问题加剧/《龙餐馆》官宣全球上映",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 883000,
+        "onlineTime": 1787673600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/tXvcMHJkxkp7Dlxi_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -958,26 +1098,6 @@
         "duration": 657000,
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/7e4qD2epI02d0BP0_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 48,
-      "latestEpisode": {
-        "id": 197315,
-        "title": "“无座票与二等座同价”引热议/东方甄选一年薪酬少发4个亿/捂脸跑机器人火出圈",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 874000,
-        "onlineTime": 1787587200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/f8KdTcSOo8tGd2yG_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -1862,26 +1982,6 @@
       "category": "city"
     },
     {
-      "id": 147,
-      "name": "忽左忽右",
-      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 442,
-      "latestEpisode": {
-        "id": 197166,
-        "title": "追忆历史学家亚当·麦基翁：华人移民与现代边境制度的形成",
-        "albumId": 147,
-        "albumName": "忽左忽右",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-        "host": "NIO Radio",
-        "duration": 4062000,
-        "onlineTime": 1787241600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/tTVi8ts5pjUa9ixv_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
       "id": 260,
       "name": "深圳城市频道",
       "description": "南腔北调，活力鹏城，这里是深圳NIO Radio！",
@@ -2602,46 +2702,6 @@
       "category": null
     },
     {
-      "id": 674,
-      "name": "声东击西",
-      "description": "世界宽广，但人们被日常及社交媒体所限制。\n那就让作为记者的我们，帮你推开一些意想不到的窗户，触及不一样的信息，激发不一样的思考。\n在这里，我们对话各种有趣有料，能带来启发的专业人士，也不定期会有神秘嘉宾出现。\n我们也时不时做各种和声音有关的尝试，打开一些新体验。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/KtDaBLlHTR-ksvnmNfxoD/EKcKvBMGkSNwkH-aPnZVB",
-      "host": "NIO Radio",
-      "episodeCount": 97,
-      "latestEpisode": {
-        "id": 197103,
-        "title": "社交媒体的「大烟草时刻」：谁该为青少年的成瘾负责？",
-        "albumId": 674,
-        "albumName": "声东击西",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/KtDaBLlHTR-ksvnmNfxoD/EKcKvBMGkSNwkH-aPnZVB",
-        "host": "NIO Radio",
-        "duration": 3629000,
-        "onlineTime": 1787068800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/a19clFPThw0jVFcc_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 681,
-      "name": "科技乱炖",
-      "description": "由多名资深从互联网业者主持的科技点评播客，把近期科技热点变成犀利、独到、深刻的独家观点。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/4iqAHjccejVuFEsbeStOt/m-AJu0DDNFi60RBzhwB6H",
-      "host": "NIO Radio",
-      "episodeCount": 62,
-      "latestEpisode": {
-        "id": 197107,
-        "title": "没有方向盘的出行，走到哪一步了？ NVIDIA × 小马智行一次聊透智能驾驶",
-        "albumId": 681,
-        "albumName": "科技乱炖",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/4iqAHjccejVuFEsbeStOt/m-AJu0DDNFi60RBzhwB6H",
-        "host": "NIO Radio",
-        "duration": 5165000,
-        "onlineTime": 1787068800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/cFiCn9mF575FHBka_AAC_192_1.m4a"
-      },
-      "category": "longhaul"
-    },
-    {
       "id": 802,
       "name": "机智的律师生活",
       "description": "",
@@ -2902,26 +2962,6 @@
       "category": null
     },
     {
-      "id": 552,
-      "name": "疯投圈",
-      "description": "做中文世界最有意思的商业类播客。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/4/6/b5301549-7089-42e0-8b51-43dbd8915258.png",
-      "host": "NIO Radio",
-      "episodeCount": 86,
-      "latestEpisode": {
-        "id": 196926,
-        "title": "国货出海新趋势：山下有松、观夏、PANE",
-        "albumId": 552,
-        "albumName": "疯投圈",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/4/6/b5301549-7089-42e0-8b51-43dbd8915258.png",
-        "host": "NIO Radio",
-        "duration": 3926000,
-        "onlineTime": 1786464000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/XQcEIdyXcvLLVmeb_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
       "id": 584,
       "name": "N问",
       "description": "聚焦蔚来热点话题，趣谈行业见解思考",
@@ -3162,26 +3202,6 @@
       "category": null
     },
     {
-      "id": 378,
-      "name": "杯弓舌瘾",
-      "description": "今朝有酒今朝醉，生活不要太疲惫！来，一起微醺邂逅。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/fb9b68cc-535d-4b1e-8a7f-90e8e62a02aa.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 267,
-      "latestEpisode": {
-        "id": 196305,
-        "title": "在酒吧后门喝拉格啤酒的老登",
-        "albumId": 378,
-        "albumName": "杯弓舌瘾",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/fb9b68cc-535d-4b1e-8a7f-90e8e62a02aa.jpg",
-        "host": "NIO Radio",
-        "duration": 3527000,
-        "onlineTime": 1784649600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/NNcvDacli0S8P4lK_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
       "id": 664,
       "name": "Slow Brand",
       "description": "",
@@ -3218,26 +3238,6 @@
         "duration": 170000,
         "onlineTime": 1784131200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/15/V8HsS5EVV1etFiTy_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 700,
-      "name": "剧谈社",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/FPD_l6oh-CGXkoYe8NwPG/YAFE96KFlKbvepQaW5sE8",
-      "host": "NIO Radio",
-      "episodeCount": 20,
-      "latestEpisode": {
-        "id": 196065,
-        "title": "图像神话与心理迷局：古典名作为什么越看越陌生",
-        "albumId": 700,
-        "albumName": "剧谈社",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/FPD_l6oh-CGXkoYe8NwPG/YAFE96KFlKbvepQaW5sE8",
-        "host": "NIO Radio",
-        "duration": 5776000,
-        "onlineTime": 1784044800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/14/OG68lr5VDEDkK5om_AAC_192_1.m4a"
       },
       "category": null
     },
