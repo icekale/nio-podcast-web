@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1787615375985,
+  "generatedAt": 1787650452227,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1656,
+      "latestEpisode": {
+        "id": 197320,
+        "title": "月之暗面Kimi K2.5月底退役",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 374000,
+        "onlineTime": 1787648400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/W7ywkoHIIkQIOkkb_AAC_192_1.m4a"
+      },
+      "category": "commute"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 743,
+      "latestEpisode": {
+        "id": 197244,
+        "title": "订单爆满，后厨惊魂",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 698000,
+        "onlineTime": 1787648400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/KJVEOKVZVtDEPsBr_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 82,
+      "latestEpisode": {
+        "id": 197329,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 50000,
+        "onlineTime": 1787648400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/06VeZDEtyIht5jqk_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -158,6 +218,26 @@
         "duration": 233000,
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/c5cQwBSWmIuJMvpn_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
+    {
+      "id": 103,
+      "name": "长沙城市频道",
+      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1131,
+      "latestEpisode": {
+        "id": 197316,
+        "title": "星城之声丨暑假余额清零，书包重新上肩",
+        "albumId": 103,
+        "albumName": "长沙城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+        "host": "NIO Radio",
+        "duration": 654000,
+        "onlineTime": 1787587200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/ldbixOfwrywaKVw5_AAC_192_1.m4a"
       },
       "category": "city"
     },
@@ -640,66 +720,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/2yO3ZkU9cTBzsjzx_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1655,
-      "latestEpisode": {
-        "id": 197292,
-        "title": "阿里拟配售800亿港元新股投入AI",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 385000,
-        "onlineTime": 1787562000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/GnPfomQ4ARazBnFu_AAC_192_1.m4a"
-      },
-      "category": "commute"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 742,
-      "latestEpisode": {
-        "id": 197243,
-        "title": "卖金买来一肚子气",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 672000,
-        "onlineTime": 1787562000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/tw3tQHokhrb2rocy_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 81,
-      "latestEpisode": {
-        "id": 197288,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 44000,
-        "onlineTime": 1787562000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/FyKudPyDDQzuJkxv_AAC_192_1.m4a"
-      },
-      "category": "city"
     },
     {
       "id": 64,
@@ -1618,26 +1638,6 @@
         "duration": 333000,
         "onlineTime": 1787241600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/WlSfgYbq4wNJ1l4Z_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 103,
-      "name": "长沙城市频道",
-      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1130,
-      "latestEpisode": {
-        "id": 197213,
-        "title": "奇里爸俚丨天女散花·第117期",
-        "albumId": 103,
-        "albumName": "长沙城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-        "host": "NIO Radio",
-        "duration": 589000,
-        "onlineTime": 1787241600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/WT4W8aSb8Tk3UpiI_AAC_192_1.m4a"
       },
       "category": "city"
     },
