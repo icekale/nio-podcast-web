@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1787683205992,
+  "generatedAt": 1787701842136,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 514,
+      "latestEpisode": {
+        "id": 197345,
+        "title": "腾讯、阿里、字节争夺打工人，互联网大厂为何集体加码 AI 办公？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 682000,
+        "onlineTime": 1787698800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/txpshHLnIt95ztPI_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -698,26 +718,6 @@
         "duration": 50000,
         "onlineTime": 1787648400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/06VeZDEtyIht5jqk_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 513,
-      "latestEpisode": {
-        "id": 197310,
-        "title": "汽水音乐冲击腾讯、网易",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 478000,
-        "onlineTime": 1787612400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/RhKSZ8FtbroY4jBv_AAC_192_1.m4a"
       },
       "category": "city"
     },
