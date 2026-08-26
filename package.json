@@ -16,7 +16,9 @@
     "catalog": "node scripts/generate-catalog.mjs"
   },
   "dependencies": {
+    "lucide": "1.33.0",
     "lucide-react": "^1.33.0",
+    "morphicons": "1.7.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "vite-plugin-pwa": "^1.3.0"

@@ -1,5 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { List, Pause, Play, Search } from 'lucide-react';
+import { List, Search } from 'lucide-react';
+import { Pause, Play } from 'lucide';
+import { MorphIcon } from 'morphicons/react';
 import { selectHomeEpisodes } from '../catalog';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
@@ -67,9 +69,9 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
         <button type="button" className="primary-button" disabled={!selection.episodes.length} onClick={() => (playingRecommendation ? onTogglePlayback() : onPlayAll(selection.episodes))}>
           {playingRecommendation
             ? player.isPlaying
-              ? <><Pause size={18} fill="currentColor" aria-hidden="true" /> 暂停</>
-              : <><Play size={18} fill="currentColor" aria-hidden="true" /> 继续播放</>
-            : <><Play size={18} fill="currentColor" aria-hidden="true" /> 全部播放</>}
+              ? <><MorphIcon icon={Pause} reducedMotion="user" size={18} fill="currentColor" aria-hidden="true" /> 暂停</>
+              : <><MorphIcon icon={Play} reducedMotion="user" size={18} fill="currentColor" aria-hidden="true" /> 继续播放</>
+            : <><MorphIcon icon={Play} reducedMotion="user" size={18} fill="currentColor" aria-hidden="true" /> 全部播放</>}
         </button>
       </section>
 

@@ -1,5 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
-import { Heart, ListMusic, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
+import { Heart, ListMusic, SkipBack, SkipForward } from 'lucide-react';
+import { Pause as PauseIcon, Play as PlayIcon } from 'lucide';
+import { MorphIcon } from 'morphicons/react';
 import { Artwork } from './Artwork';
 import { formatClock } from '../format';
 import { bubbleSecondsFromPointer } from '../playerProgress';
@@ -43,7 +45,7 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
         ) : null}
         <div className="mini-transport">
           <button type="button" className="player-control mini-skip" aria-label="上一首" disabled={!hasPlayableNeighbor(-1)} onClick={() => onAdjacent?.(-1)}><SkipBack size={20} /></button>
-          <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}>{isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}</button>
+          <button type="button" className="player-control mini-toggle" aria-label={isPlaying ? '暂停' : '播放'} onClick={onToggle}><MorphIcon icon={isPlaying ? PauseIcon : PlayIcon} reducedMotion="user" size={20} fill="currentColor" aria-hidden="true" /></button>
           <button type="button" className="player-control mini-skip" aria-label="下一首" disabled={!hasPlayableNeighbor(1)} onClick={() => onAdjacent?.(1)}><SkipForward size={20} /></button>
         </div>
         <div

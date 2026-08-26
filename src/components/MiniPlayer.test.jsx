@@ -52,4 +52,16 @@ describe('MiniPlayer skip buttons', () => {
     expect(screen.getByRole('button', { name: '上一首' })).toBeDisabled();
     expect(screen.getByRole('button', { name: '下一首' })).toBeEnabled();
   });
+
+  it('keeps the current icon as the first frame of a play-pause morph', () => {
+    const player = playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]);
+    const { container, rerender } = render(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
+    const iconPath = () => container.querySelector('.mini-toggle path')?.getAttribute('d');
+    const playPath = iconPath();
+
+    rerender(<MiniPlayer player={player} isPlaying onToggle={() => {}} />);
+
+    expect(playPath).toBeTruthy();
+    expect(iconPath()).toBe(playPath);
+  });
 });
