@@ -74,15 +74,18 @@ export default function App({ initialCatalog = null }) {
   const queueFocusRef = useRef(null);
   const lastCatalogRefreshAt = useRef(0);
   const catalogRefreshPromise = useRef(null);
-  playerRef.current = player;
-  laterEpisodesRef.current = laterEpisodes;
   const [playerVisible, setPlayerVisible] = useState(() => Boolean(player.currentEpisode));
   const [playerClosing, setPlayerClosing] = useState(false);
   const [sleepTimer, setSleepTimer] = useState(null);
   const lastEpisodeRef = useRef(player.currentEpisode);
   const sleepTimerRef = useRef(sleepTimer);
-  sleepTimerRef.current = sleepTimer;
   const sleepTimeoutRef = useRef(null);
+
+  useLayoutEffect(() => {
+    playerRef.current = player;
+    laterEpisodesRef.current = laterEpisodes;
+    sleepTimerRef.current = sleepTimer;
+  }, [laterEpisodes, player, sleepTimer]);
 
   useEffect(() => { if (player.currentEpisode) lastEpisodeRef.current = player.currentEpisode; }, [player.currentEpisode]);
   useEffect(() => {
@@ -275,6 +278,12 @@ export default function App({ initialCatalog = null }) {
     setIsPlaying(false);
     setPlayer(previous => ({ ...previous, isPlaying: false }));
   }, []);
+
+  const retryPlayback = useCallback(() => {
+    setAudioError(null);
+    applyEpisodeToAudio(audioRef.current, playerRef.current.currentEpisode, { play: true })
+      ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(playerRef.current.currentEpisode?.audioUrl)));
+  }, [setPlaybackFailure]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -620,6 +629,10 @@ export default function App({ initialCatalog = null }) {
   const hasCatalog = Boolean(catalogState.catalog);
   const loopingCurrentEpisode = isLoopingEpisode(player.currentEpisode);
 
+  // Keep the previous episode available while the desktop player exits.
+  // oxlint-disable-next-line react/refs
+  const miniPlayer = playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={retryPlayback} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null;
+
   return (
     <main className="app">
       {desktopLayout ? (
@@ -647,7 +660,7 @@ export default function App({ initialCatalog = null }) {
         </div>}
       </div>
       <audio ref={audioRef} loop={loopingCurrentEpisode} playsInline preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
-      {playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={() => { setAudioError(null); applyEpisodeToAudio(audioRef.current, playerRef.current.currentEpisode, { play: true })?.catch(() => setPlaybackFailure(unsupportedAudioMessage(playerRef.current.currentEpisode?.audioUrl))); }} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null}
+      {miniPlayer}
       {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} allowEpisodeEnd={!loopingCurrentEpisode} onShareEpisode={shareEpisode} /> : null}
     </main>
   );

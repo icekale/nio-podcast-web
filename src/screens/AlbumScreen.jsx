@@ -17,6 +17,7 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
 
   const loadPage = useCallback(async pageNumber => {
     const sequence = ++requestSeq.current;
+    if (pageNumber === 1) setEpisodes([]);
     setLoading(true);
     setError(null);
     try {
@@ -36,7 +37,6 @@ export const AlbumScreen = memo(function AlbumScreen({ album, episodeId, onBack,
   }, [album.id]);
 
   useEffect(() => {
-    setEpisodes([]);
     loadPage(1);
   }, [loadPage]);
 

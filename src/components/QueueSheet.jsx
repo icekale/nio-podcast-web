@@ -35,11 +35,15 @@ function LaterPicker({ catalog, onBack, onAdd }) {
     }
   }, []);
 
-  useEffect(() => {
-    if (selectedAlbumId == null) return undefined;
+  const selectAlbum = albumId => {
+    setSelectedAlbumId(albumId);
     setEpisodes([]);
     setPage(1);
     setHasMore(false);
+  };
+
+  useEffect(() => {
+    if (selectedAlbumId == null) return undefined;
     loadPage(selectedAlbumId, 1);
     return undefined;
   }, [loadPage, selectedAlbumId]);
@@ -58,7 +62,7 @@ function LaterPicker({ catalog, onBack, onAdd }) {
       <div className="later-picker">
         <div className="later-picker-header"><button type="button" className="icon-button" aria-label="返回稍后播放" onClick={onBack}><ArrowLeft size={21} /></button><h3>添加节目</h3><span className="icon-button-spacer" /></div>
         <p className="later-picker-intro">选择专辑后添加单期节目</p>
-        <AlbumPickerList albums={catalog.albums} onSelect={setSelectedAlbumId} />
+        <AlbumPickerList albums={catalog.albums} onSelect={selectAlbum} />
       </div>
     );
   }
@@ -200,28 +204,30 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
   const noticeTimer = useRef(null);
   const tabRefs = useRef(new Map());
   const items = activeTab === 'queue' ? queue : activeTab === 'history' ? history : laterEpisodes;
-  const menuStateRef = useRef({ actionsFor: null, laterActionsFor: null, pickerOpen: false, sleepOpen: false });
-  menuStateRef.current = { actionsFor, laterActionsFor, pickerOpen, sleepOpen };
 
   useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
   useEffect(() => {
     closeRef.current?.focus();
+    const unlock = lockBodyScroll(document, window.scrollY);
+    return unlock;
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = event => {
       if (event.key === 'Escape') {
-        const { actionsFor: openQueueMenu, laterActionsFor: openLaterMenu, pickerOpen: isPickerOpen, sleepOpen: isSleepOpen } = menuStateRef.current;
-        if (isSleepOpen) {
+        if (sleepOpen) {
           setSleepOpen(false);
           event.preventDefault();
           return;
         }
-        if (openQueueMenu !== null || openLaterMenu !== null) {
+        if (actionsFor !== null || laterActionsFor !== null) {
           setActionsFor(null);
           setLaterActionsFor(null);
           event.preventDefault();
           return;
         }
-        if (isPickerOpen) {
+        if (pickerOpen) {
           setPickerOpen(false);
           event.preventDefault();
           return;
@@ -244,9 +250,8 @@ export const QueueSheet = memo(function QueueSheet({ queue, history, currentEpis
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    const unlock = lockBodyScroll(document, window.scrollY);
-    return () => { window.removeEventListener('keydown', handleKeyDown); unlock(); };
-  }, [onClose]);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [actionsFor, laterActionsFor, onClose, pickerOpen, sleepOpen]);
 
   useEffect(() => {
     if (!isClosing) return undefined;
