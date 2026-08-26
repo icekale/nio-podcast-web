@@ -1,6 +1,8 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { canonicalD } from 'morphicons/dom';
+import { FILLED_HEART } from './favoriteIcon';
 import App from './App';
 
 const episode = (id, title) => ({
@@ -85,6 +87,23 @@ describe('desktop favorites collection', () => {
     const favorited = screen.getByRole('button', { name: '取消收藏 另一张专辑' });
     expect(favorited).toHaveAttribute('aria-pressed', 'true');
     expect(favorited).toHaveClass('is-favorite');
+  });
+
+  it('morphs only the clicked favorite icon', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '搜索' }));
+    await screen.findByRole('searchbox', { name: '搜索专辑' });
+
+    const target = screen.getByRole('button', { name: '收藏 另一张专辑' });
+    const untouched = screen.getByRole('button', { name: '收藏 NIO 精选' });
+    const untouchedPath = untouched.querySelector('path')?.getAttribute('d');
+
+    fireEvent.click(target);
+
+    const favorited = await screen.findByRole('button', { name: '取消收藏 另一张专辑' });
+    await waitFor(() => expect(favorited.querySelector('path')?.getAttribute('d')).toBe(canonicalD(FILLED_HEART)));
+    expect(favorited.querySelector('svg')).toHaveAttribute('fill-opacity', '1');
+    expect(untouched.querySelector('path')?.getAttribute('d')).toBe(untouchedPath);
   });
 
   it('shows the empty state and browses to the full album directory', async () => {

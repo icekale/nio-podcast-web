@@ -1,13 +1,14 @@
-import { ChevronRight, Heart } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { memo, useEffect } from 'react';
 import { Artwork } from './Artwork';
+import { FavoriteIcon } from './FavoriteIcon';
 import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
 
 function FavoriteStarButton({ album, favorited, onToggle }) {
   return (
     <div className="album-action">
       <button type="button" className={`icon-button favorite-star${favorited ? ' is-favorite' : ''}`} aria-label={favorited ? `取消收藏 ${album.name}` : `收藏 ${album.name}`} aria-pressed={favorited} onClick={() => onToggle(album.id)}>
-        <Heart size={16} aria-hidden="true" fill={favorited ? 'currentColor' : 'none'} />
+        <FavoriteIcon favorited={favorited} />
       </button>
     </div>
   );

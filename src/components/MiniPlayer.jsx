@@ -1,7 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
-import { Heart, ListMusic, SkipBack, SkipForward } from 'lucide-react';
+import { ListMusic, SkipBack, SkipForward } from 'lucide-react';
 import { Pause as PauseIcon, Play as PlayIcon } from 'lucide';
 import { MorphIcon } from 'morphicons/react';
+import { FavoriteIcon } from './FavoriteIcon';
 import { Artwork } from './Artwork';
 import { formatClock } from '../format';
 import { bubbleSecondsFromPointer } from '../playerProgress';
@@ -40,7 +41,7 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
         {currentAlbumId != null && onToggleFavorite ? (
           <button type="button" className={`player-control mini-favorite${favorited ? ' is-favorite' : ''}`} aria-label={favorited ? `取消收藏 ${player.currentEpisode.albumName || ''}` : `收藏 ${player.currentEpisode.albumName || ''}`} aria-pressed={favorited} onClick={() => onToggleFavorite(currentAlbumId)}>
-            <Heart size={19} fill={favorited ? 'currentColor' : 'none'} />
+            <FavoriteIcon favorited={favorited} size={19} />
           </button>
         ) : null}
         <div className="mini-transport">

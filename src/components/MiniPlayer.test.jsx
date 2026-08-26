@@ -1,9 +1,14 @@
-import { afterEach, describe, expect, it } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { Pause as PauseIcon, Play as PlayIcon } from 'lucide';
+import { canonicalD } from 'morphicons/dom';
 import { bubbleSecondsFromPointer } from '../playerProgress';
 import { MiniPlayer } from './MiniPlayer';
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 describe('bubbleSecondsFromPointer', () => {
   it('maps pointer x within the track to seconds', () => {
@@ -61,7 +66,28 @@ describe('MiniPlayer skip buttons', () => {
 
     rerender(<MiniPlayer player={player} isPlaying onToggle={() => {}} />);
 
-    expect(playPath).toBeTruthy();
+    expect(playPath).toBe(canonicalD(PlayIcon));
     expect(iconPath()).toBe(playPath);
   });
+
+  it('settles on the pause icon after a play-pause morph', async () => {
+    const player = playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]);
+    const { container, rerender } = render(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
+    const iconPath = () => container.querySelector('.mini-toggle path')?.getAttribute('d');
+
+    rerender(<MiniPlayer player={player} isPlaying onToggle={() => {}} />);
+
+    await waitFor(() => expect(iconPath()).toBe(canonicalD(PauseIcon)));
+  });
+
+  it('switches immediately when the user prefers reduced motion', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    const player = playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]);
+    const { container, rerender } = render(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
+
+    rerender(<MiniPlayer player={player} isPlaying onToggle={() => {}} />);
+
+    expect(container.querySelector('.mini-toggle path')?.getAttribute('d')).toBe(canonicalD(PauseIcon));
+  });
+
 });
