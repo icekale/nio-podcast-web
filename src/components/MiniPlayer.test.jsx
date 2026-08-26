@@ -80,6 +80,17 @@ describe('MiniPlayer skip buttons', () => {
     await waitFor(() => expect(iconPath()).toBe(canonicalD(PauseIcon)));
   });
 
+  it('settles on the last requested icon after an interrupted morph', async () => {
+    const player = playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]);
+    const { container, rerender } = render(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
+    const iconPath = () => container.querySelector('.mini-toggle path')?.getAttribute('d');
+
+    rerender(<MiniPlayer player={player} isPlaying onToggle={() => {}} />);
+    rerender(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
+
+    await waitFor(() => expect(iconPath()).toBe(canonicalD(PlayIcon)));
+  });
+
   it('switches immediately when the user prefers reduced motion', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
     const player = playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]);

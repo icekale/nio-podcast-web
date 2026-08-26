@@ -47,10 +47,38 @@ test.describe('app smoke', () => {
     expect(seconds(routeDuration)).toBeLessThanOrEqual(0.001);
 
     await page.goto('/#/');
-    await page.locator('.primary-button').first().click();
-    await expect(page.getByRole('region', { name: '当前播放' })).toBeVisible();
+    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    const homePlay = page.locator('.primary-button').first();
+    const homePlayPath = await homePlay.locator('path').getAttribute('d');
+    await homePlay.click();
+    await expect(homePlay).toContainText('暂停');
+    const homePausePath = await homePlay.locator('path').getAttribute('d');
+    expect(homePausePath).not.toBe(homePlayPath);
+    await page.waitForTimeout(50);
+    expect(await homePlay.locator('path').getAttribute('d')).toBe(homePausePath);
+
+    const miniToggle = page.locator('.mini-toggle');
+    await expect(miniToggle).toBeVisible();
     const playerDuration = await page.evaluate(() => getComputedStyle(document.querySelector('.mini-player')).animationDuration);
     expect(seconds(playerDuration)).toBeLessThanOrEqual(0.001);
+    const miniPausePath = await miniToggle.locator('path').getAttribute('d');
+    await miniToggle.click();
+    await expect(miniToggle).toHaveAttribute('aria-label', '播放');
+    const miniPlayPath = await miniToggle.locator('path').getAttribute('d');
+    expect(miniPlayPath).not.toBe(miniPausePath);
+    await page.waitForTimeout(50);
+    expect(await miniToggle.locator('path').getAttribute('d')).toBe(miniPlayPath);
+
+    await page.goto('/#/search');
+    await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
+    const favorite = page.locator('.album-results.is-grid .album-action button').first();
+    const unfavoritedPath = await favorite.locator('path').getAttribute('d');
+    await favorite.click();
+    await expect(favorite).toHaveAttribute('aria-pressed', 'true');
+    const favoritedPath = await favorite.locator('path').getAttribute('d');
+    expect(favoritedPath).not.toBe(unfavoritedPath);
+    await page.waitForTimeout(50);
+    expect(await favorite.locator('path').getAttribute('d')).toBe(favoritedPath);
 
     await page.getByRole('button', { name: '打开播放列表' }).click();
     await expect(page.getByRole('dialog', { name: '播放列表' })).toBeVisible();
@@ -89,6 +117,21 @@ test.describe('app smoke', () => {
     const box = await star.boundingBox();
     expect(Math.round(box.width)).toBeGreaterThanOrEqual(44);
     expect(Math.round(box.height)).toBeGreaterThanOrEqual(44);
+  });
+
+  test('mobile dark-mode favorite controls stay visible and focusable', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.setViewportSize({ width: 320, height: 760 });
+    await page.goto('/#/albums');
+    const star = page.locator('.album-results.is-grid .album-action button').first();
+    await expect(star).toBeVisible();
+    await star.focus();
+    await expect(star).toBeFocused();
+
+    const box = await star.boundingBox();
+    expect(Math.round(box.width)).toBeGreaterThanOrEqual(44);
+    expect(Math.round(box.height)).toBeGreaterThanOrEqual(44);
+    await expect(star.locator('svg')).toBeVisible();
   });
 
   test('desktop favorites page renders', async ({ page }) => {

@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { canonicalD } from 'morphicons/dom';
+import { Heart } from 'lucide';
 import { FILLED_HEART } from './favoriteIcon';
 import App from './App';
 
@@ -104,6 +105,20 @@ describe('desktop favorites collection', () => {
     await waitFor(() => expect(favorited.querySelector('path')?.getAttribute('d')).toBe(canonicalD(FILLED_HEART)));
     expect(favorited.querySelector('svg')).toHaveAttribute('fill-opacity', '1');
     expect(untouched.querySelector('path')?.getAttribute('d')).toBe(untouchedPath);
+  });
+
+  it('returns to the unfavorited icon after a rapid favorite toggle', async () => {
+    render(<App initialCatalog={catalog} />);
+    fireEvent.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '搜索' }));
+    await screen.findByRole('searchbox', { name: '搜索专辑' });
+
+    const target = screen.getByRole('button', { name: '收藏 另一张专辑' });
+    fireEvent.click(target);
+    fireEvent.click(screen.getByRole('button', { name: '取消收藏 另一张专辑' }));
+
+    const unfavorited = await screen.findByRole('button', { name: '收藏 另一张专辑' });
+    await waitFor(() => expect(unfavorited.querySelector('path')?.getAttribute('d')).toBe(canonicalD(Heart)));
+    expect(unfavorited).toHaveAttribute('aria-pressed', 'false');
   });
 
   it('shows the empty state and browses to the full album directory', async () => {
