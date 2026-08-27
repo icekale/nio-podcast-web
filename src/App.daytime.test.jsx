@@ -69,10 +69,11 @@ describe('daytime home playlist', () => {
     });
     const apply = vi.spyOn(iosSupport, 'applyEpisodeToAudio');
 
-    render(<App />);
+    const { container } = render(<App />);
 
     await waitFor(() => expect(screen.getAllByText('日间节目').length).toBeGreaterThan(0));
-    expect(screen.queryByText('目录节目')).not.toBeInTheDocument();
+    expect(screen.getByText('目录节目')).toBeInTheDocument();
+    expect([...container.querySelectorAll('.episode-row')].map(row => row.dataset.episodeId)).toEqual(['2', '1']);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
 
     expect(apply).toHaveBeenCalledWith(

@@ -73,12 +73,23 @@ describe('HomeScreen playback control', () => {
     await waitFor(() => expect(iconPath()).toBe(canonicalD(Pause)));
   });
 
-  it('labels the updates section as daytime when daily data is active', () => {
-    const daytimeEpisode = { ...episode, id: 2, title: '日间节目' };
-    render(<HomeScreen {...callbacks} catalog={catalog} daytimeEpisodes={[daytimeEpisode]} player={player(false)} />);
+  it('puts catalog daily updates after daytime entries without duplicates', () => {
+    const catalogWithUpdates = {
+      generatedAt: Date.now(),
+      albums: [
+        { id: 1, name: '专辑一', latestEpisode: { ...episode, id: 1, title: '每日一' } },
+        { id: 2, name: '专辑二', latestEpisode: { ...episode, id: 2, title: '日间二旧' } },
+        { id: 3, name: '专辑三', latestEpisode: { ...episode, id: 3, title: '每日三' } },
+      ],
+    };
+    const daytimeEpisodes = [
+      { ...episode, id: 2, title: '日间二' },
+      { ...episode, id: 4, title: '日间四' },
+    ];
+    const { container } = render(<HomeScreen {...callbacks} catalog={catalogWithUpdates} daytimeEpisodes={daytimeEpisodes} player={player(false)} />);
 
+    expect([...container.querySelectorAll('.episode-row')].map(row => row.dataset.episodeId)).toEqual(['2', '4', '1', '3']);
     expect(screen.getByRole('heading', { name: '日间' })).toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: '今日更新' })).not.toBeInTheDocument();
   });
 
   it('switches immediately when the user prefers reduced motion', () => {

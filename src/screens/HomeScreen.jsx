@@ -23,7 +23,13 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
 
   const selection = useMemo(() => {
     const fallback = selectHomeEpisodes(catalog.albums, now);
-    return daytimeEpisodes?.length ? { ...fallback, heading: '日间', episodes: daytimeEpisodes } : fallback;
+    if (!daytimeEpisodes?.length) return fallback;
+    const daytimeIds = new Set(daytimeEpisodes.map(episode => String(episode.id)));
+    return {
+      ...fallback,
+      heading: '日间',
+      episodes: [...daytimeEpisodes, ...fallback.episodes.filter(episode => !daytimeIds.has(String(episode.id)))],
+    };
   }, [catalog.albums, daytimeEpisodes, now]);
   const recommendation = selection.episodes[0];
   const playingRecommendation = Boolean(recommendation && player.currentEpisode?.id === recommendation.id);
