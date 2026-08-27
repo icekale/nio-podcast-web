@@ -73,6 +73,14 @@ describe('HomeScreen playback control', () => {
     await waitFor(() => expect(iconPath()).toBe(canonicalD(Pause)));
   });
 
+  it('labels the updates section as daytime when daily data is active', () => {
+    const daytimeEpisode = { ...episode, id: 2, title: '日间节目' };
+    render(<HomeScreen {...callbacks} catalog={catalog} daytimeEpisodes={[daytimeEpisode]} player={player(false)} />);
+
+    expect(screen.getByRole('heading', { name: '日间' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: '今日更新' })).not.toBeInTheDocument();
+  });
+
   it('switches immediately when the user prefers reduced motion', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
     const { container, rerender } = render(<HomeScreen {...callbacks} catalog={catalog} player={player(false)} />);
