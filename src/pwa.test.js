@@ -43,10 +43,11 @@ describe('PWA cache boundaries', () => {
 });
 
 describe('NIO icon resources', () => {
-  it('uses a self-contained 512px NIO SVG', () => {
+  it('uses a self-contained 512px black-on-white NIO SVG', () => {
     expect(favicon).toContain('viewBox="0 0 512 512"');
-    expect(favicon).toMatch(/<rect[^>]*width="512"[^>]*height="512"[^>]*fill="#00BEBE"/);
-    expect(favicon).toMatch(/<path[^>]*fill="#FFFFFF"/);
+    expect(favicon).toMatch(/<rect[^>]*width="512"[^>]*height="512"[^>]*fill="#FFFFFF"/);
+    expect(favicon).toMatch(/<path[^>]*fill="#000000"/);
+    expect(favicon).not.toContain('#00BEBE');
     expect(favicon).not.toContain('<image');
   });
 
@@ -107,9 +108,9 @@ describe('custom domain deployment', () => {
 });
 
 describe('home-screen icon fallbacks', () => {
-  it('ships NIO-colored PNGs for Chrome install prompts', () => {
+  it('ships black NIO logos on white PNG backgrounds', () => {
     for (const [path, size] of [['public/icon-180.png', 180], ['public/icon-192.png', 192], ['public/icon-512.png', 512]]) {
-      expect(readPngSummary(path)).toEqual({ width: size, height: size, firstPixel: [0, 190, 190, 255] });
+      expect(readPngSummary(path)).toEqual({ width: size, height: size, firstPixel: [255, 255, 255, 255] });
     }
   });
 });
