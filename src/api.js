@@ -1,7 +1,7 @@
 import { getCustomEpisodes } from './customAlbums.js';
 
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
-const DAYTIME_BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/radio/list';
+const DAYTIME_BASE = 'https://gateway-front-external.nio.com/moat/100914/v3/radio/list?pageSize=87';
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
 const EPISODE_CACHE_MAX_ENTRIES = 100;
@@ -151,10 +151,11 @@ async function requestDaytimeEpisodes(fetchImpl) {
     }
 
     const first = result[0] || {};
+    const metadata = payload?.other?.dcvId || first.dcvId || {};
     return {
       episodes: result.map(mapDaytimeEpisode),
-      date: first.dcvId?.date || '',
-      schemeId: first.dcvId?.schemeId,
+      date: metadata.date || '',
+      schemeId: metadata.schemeId,
       clockId: first.clockId,
     };
   } finally {

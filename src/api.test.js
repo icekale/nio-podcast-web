@@ -56,26 +56,32 @@ describe('audio API boundary', () => {
 
   it('maps the dynamic daytime radio list and update identifiers', async () => {
     const fetchImpl = vi.fn(async (url, options) => {
-      expect(url).toBe('https://gateway-front-external.nio.com/moat/100914/v2/radio/list');
+      expect(url).toBe('https://gateway-front-external.nio.com/moat/100914/v3/radio/list?pageSize=87');
       expect(options.method).toBe('GET');
-      return responseFor([{
-        hasNextPage: 1,
-        clockId: 1,
-        albumId: 0,
-        albumName: null,
-        albumPic: null,
-        albumDesc: null,
-        audioId: 297,
-        audioName: 'Be Okay My Station',
-        audioPic: 'https://cdn.example/audio-cover.jpg',
-        singer: 'NIO Radio',
-        host: ['NIO Radio'],
-        duration: 12000,
-        updateTime: 1700000000000,
-        aacPlayUrl192: 'http://cdn.example/daytime.aac',
-        aacFileSize192: 297200,
-        dcvId: { date: '2026-08-27', schemeId: 149 },
-      }]);
+      return {
+        ok: true,
+        json: async () => ({
+          result: [{
+            hasNextPage: 1,
+            clockId: 1,
+            albumId: 0,
+            albumName: null,
+            albumPic: null,
+            albumDesc: null,
+            audioId: 297,
+            audioName: 'Be Okay My Station',
+            audioPic: 'https://cdn.example/audio-cover.jpg',
+            singer: 'NIO Radio',
+            host: ['NIO Radio'],
+            duration: 12000,
+            updateTime: 1700000000000,
+            aacPlayUrl192: 'http://cdn.example/daytime.aac',
+            aacFileSize192: 297200,
+            dcvId: null,
+          }],
+          other: { dcvId: { date: '2026-08-27', schemeId: 149 } },
+        }),
+      };
     });
 
     await expect(api.getDaytimeEpisodes(fetchImpl)).resolves.toEqual({
