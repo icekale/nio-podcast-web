@@ -6,6 +6,11 @@ vi.mock('./catalog', async importOriginal => ({
   loadCatalog: vi.fn(),
 }));
 
+vi.mock('./api', async importOriginal => ({
+  ...(await importOriginal()),
+  getDaytimeEpisodes: vi.fn().mockResolvedValue({ episodes: [] }),
+}));
+
 import App from './App';
 import { loadCatalog } from './catalog';
 

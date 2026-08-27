@@ -1,11 +1,14 @@
 import { getCustomEpisodes } from './customAlbums.js';
 
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
+const DAYTIME_BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/radio/list';
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
 const EPISODE_CACHE_MAX_ENTRIES = 100;
 const episodeCache = new Map();
 const episodeRequests = new Map();
+let daytimeCache = null;
+let daytimeRequest = null;
 
 export class ApiError extends Error {
   constructor(code, message, cause) {
@@ -40,6 +43,14 @@ function mapEpisode(ep) {
     audioUrl: normalizeAudioUrl(ep.aacPlayUrl192 || ep.aacPlayUrl128 || ep.mp3PlayUrl64 || ''),
     fileSize: ep.aacFileSize192,
   };
+}
+
+function mapDaytimeEpisode(ep) {
+  return mapEpisode({
+    ...ep,
+    albumPic: ep.albumPic || ep.audioPic || '',
+    onlineTime: ep.onlineTime ?? ep.updateTime,
+  });
 }
 
 async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
@@ -99,6 +110,73 @@ async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function requestDaytimeEpisodes(fetchImpl) {
+  if (globalThis.navigator?.onLine === false) {
+    throw new ApiError('OFFLINE', '当前处于离线状态');
+  }
+  if (typeof fetchImpl !== 'function') {
+    throw new ApiError('NETWORK_ERROR', '无法连接音频服务');
+  }
+
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    let response;
+    try {
+      response = await fetchImpl(DAYTIME_BASE, { method: 'GET', signal: ctrl.signal });
+    } catch (error) {
+      if (error?.name === 'AbortError') {
+        throw new ApiError('TIMEOUT', '请求超时', error);
+      }
+      throw new ApiError('NETWORK_ERROR', '无法连接音频服务', error);
+    }
+
+    if (!response?.ok) {
+      throw new ApiError('HTTP_ERROR', `日间服务返回 ${response?.status || '未知'} 状态`, response?.status);
+    }
+
+    let payload;
+    try {
+      payload = await response.json();
+    } catch (error) {
+      throw new ApiError('INVALID_RESPONSE', '日间服务返回了无法读取的数据', error);
+    }
+
+    const result = payload?.result;
+    if (!Array.isArray(result) || result.some(item => !item || typeof item !== 'object')) {
+      throw new ApiError('INVALID_RESPONSE', '日间服务返回了无法读取的数据');
+    }
+
+    const first = result[0] || {};
+    return {
+      episodes: result.map(mapDaytimeEpisode),
+      date: first.dcvId?.date || '',
+      schemeId: first.dcvId?.schemeId,
+      clockId: first.clockId,
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function getDaytimeEpisodes(fetchImpl = globalThis.fetch) {
+  if (daytimeCache && daytimeCache.expiresAt > Date.now()) return daytimeCache.value;
+  daytimeCache = null;
+  if (daytimeRequest) return daytimeRequest;
+
+  const request = requestDaytimeEpisodes(fetchImpl)
+    .then(result => {
+      if (result.episodes.length) daytimeCache = { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS };
+      return result;
+    })
+    .finally(() => {
+      daytimeRequest = null;
+    });
+  daytimeRequest = request;
+  return request;
 }
 
 export async function getEpisodes(albumId, page = 1, pageSize = 30, fetchImpl = globalThis.fetch) {

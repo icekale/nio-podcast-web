@@ -54,6 +54,88 @@ describe('audio API boundary', () => {
     });
   });
 
+  it('maps the dynamic daytime radio list and update identifiers', async () => {
+    const fetchImpl = vi.fn(async (url, options) => {
+      expect(url).toBe('https://gateway-front-external.nio.com/moat/100914/v2/radio/list');
+      expect(options.method).toBe('GET');
+      return responseFor([{
+        hasNextPage: 1,
+        clockId: 1,
+        albumId: 0,
+        albumName: null,
+        albumPic: null,
+        albumDesc: null,
+        audioId: 297,
+        audioName: 'Be Okay My Station',
+        audioPic: 'https://cdn.example/audio-cover.jpg',
+        singer: 'NIO Radio',
+        host: ['NIO Radio'],
+        duration: 12000,
+        updateTime: 1700000000000,
+        aacPlayUrl192: 'http://cdn.example/daytime.aac',
+        aacFileSize192: 297200,
+        dcvId: { date: '2026-08-27', schemeId: 149 },
+      }]);
+    });
+
+    await expect(api.getDaytimeEpisodes(fetchImpl)).resolves.toEqual({
+      episodes: [{
+        id: 297,
+        title: 'Be Okay My Station',
+        albumId: 0,
+        albumName: '',
+        albumPic: 'https://cdn.example/audio-cover.jpg',
+        albumDesc: '',
+        host: 'NIO Radio',
+        duration: 12000,
+        onlineTime: 1700000000000,
+        audioUrl: 'https://cdn.example/daytime.aac',
+        fileSize: 297200,
+      }],
+      date: '2026-08-27',
+      schemeId: 149,
+      clockId: 1,
+    });
+  });
+
+  it('rejects malformed daytime responses', async () => {
+    const fetchImpl = async () => responseFor({ dataList: [] });
+    await expect(api.getDaytimeEpisodes(fetchImpl)).rejects.toBeInstanceOf(api.ApiError);
+  });
+
+  it('refreshes daytime data after the successful cache expires', async () => {
+    vi.useFakeTimers();
+    try {
+      const fetchImpl = vi.fn()
+        .mockResolvedValueOnce(responseFor([{ audioId: 1, audioName: '第一天', dcvId: { date: '2026-08-27', schemeId: 149 }, clockId: 1 }]))
+        .mockResolvedValueOnce(responseFor([{ audioId: 2, audioName: '第二天', dcvId: { date: '2026-08-28', schemeId: 150 }, clockId: 1 }]));
+
+      await expect(api.getDaytimeEpisodes(fetchImpl)).resolves.toMatchObject({ date: '2026-08-27', schemeId: 149 });
+      vi.advanceTimersByTime(10 * 60 * 1000 + 1);
+      await expect(api.getDaytimeEpisodes(fetchImpl)).resolves.toMatchObject({ date: '2026-08-28', schemeId: 150 });
+      expect(fetchImpl).toHaveBeenCalledTimes(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('deduplicates concurrent daytime requests', async () => {
+    let release;
+    const fetchImpl = vi.fn(() => new Promise(resolve => {
+      release = () => resolve(responseFor([{ audioId: 1, audioName: '日间节目' }]));
+    }));
+
+    const first = api.getDaytimeEpisodes(fetchImpl);
+    const second = api.getDaytimeEpisodes(fetchImpl);
+    release();
+
+    await expect(Promise.all([first, second])).resolves.toEqual([
+      { episodes: [{ id: 1, title: '日间节目', albumId: undefined, albumName: '', albumPic: '', albumDesc: '', host: '', duration: undefined, onlineTime: undefined, audioUrl: '', fileSize: undefined }], date: '', schemeId: undefined, clockId: undefined },
+      { episodes: [{ id: 1, title: '日间节目', albumId: undefined, albumName: '', albumPic: '', albumDesc: '', host: '', duration: undefined, onlineTime: undefined, audioUrl: '', fileSize: undefined }], date: '', schemeId: undefined, clockId: undefined },
+    ]);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
   it('accepts a string host from the upstream API', async () => {
     const fetchImpl = async () => responseFor({
       dataList: [{ audioId: 10, audioName: '字符串主播', host: 'NIO Radio', duration: 60000 }],

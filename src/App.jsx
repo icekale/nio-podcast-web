@@ -4,6 +4,7 @@ import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
 import { parseHash, withQueueHash, closeQueueHash } from './router';
 import { sleepDeadline } from './playbackPrefs';
 import { isLoopingEpisode } from './customAlbums';
+import { getDaytimeEpisodes } from './api';
 import {
   PLAYER_STORAGE_KEY,
   canResume,
@@ -56,6 +57,7 @@ export default function App({ initialCatalog = null }) {
     if (cached) return { catalog: cached, loading: false, error: null, stale: true };
     return { catalog: null, loading: true, error: null, stale: false };
   });
+  const [daytimeResult, setDaytimeResult] = useState(null);
   const [player, setPlayer] = useState(readStoredPlayer);
   const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
   const [favoriteAlbums, setFavoriteAlbums] = useState(readFavoriteAlbums);
@@ -74,6 +76,8 @@ export default function App({ initialCatalog = null }) {
   const queueFocusRef = useRef(null);
   const lastCatalogRefreshAt = useRef(0);
   const catalogRefreshPromise = useRef(null);
+  const lastDaytimeRefreshAt = useRef(0);
+  const daytimeRefreshPromise = useRef(null);
   const [playerVisible, setPlayerVisible] = useState(() => Boolean(player.currentEpisode));
   const [playerClosing, setPlayerClosing] = useState(false);
   const [sleepTimer, setSleepTimer] = useState(null);
@@ -159,6 +163,32 @@ export default function App({ initialCatalog = null }) {
     return request;
   }, []);
 
+  const refreshDaytime = useCallback(({ force = false } = {}) => {
+    if (daytimeRefreshPromise.current) return daytimeRefreshPromise.current;
+    if (!force && Date.now() - lastDaytimeRefreshAt.current < CATALOG_REFRESH_COOLDOWN_MS) return Promise.resolve(null);
+    lastDaytimeRefreshAt.current = Date.now();
+    const request = getDaytimeEpisodes()
+      .then(result => {
+        setDaytimeResult(result?.episodes?.length ? result : null);
+        return result;
+      })
+      .catch(() => {
+        setDaytimeResult(null);
+        return null;
+      })
+      .finally(() => {
+        if (daytimeRefreshPromise.current === request) daytimeRefreshPromise.current = null;
+      });
+    daytimeRefreshPromise.current = request;
+    return request;
+  }, []);
+
+  useEffect(() => {
+    if (initialCatalog || !catalogState.catalog) return undefined;
+    refreshDaytime({ force: true });
+    return undefined;
+  }, [catalogState.catalog, initialCatalog, refreshDaytime]);
+
   useEffect(() => {
     if (initialCatalog) return undefined;
     refreshCatalog({ force: true });
@@ -168,7 +198,10 @@ export default function App({ initialCatalog = null }) {
   useEffect(() => {
     if (initialCatalog) return undefined;
     const refreshWhenVisible = () => {
-      if (document.visibilityState === 'visible') refreshCatalog();
+      if (document.visibilityState === 'visible') {
+        refreshCatalog();
+        if (catalogState.catalog) refreshDaytime();
+      }
     };
     document.addEventListener('visibilitychange', refreshWhenVisible);
     const timer = window.setInterval(refreshWhenVisible, CATALOG_REFRESH_COOLDOWN_MS);
@@ -176,7 +209,7 @@ export default function App({ initialCatalog = null }) {
       document.removeEventListener('visibilitychange', refreshWhenVisible);
       window.clearInterval(timer);
     };
-  }, [initialCatalog, refreshCatalog]);
+  }, [catalogState.catalog, initialCatalog, refreshCatalog, refreshDaytime]);
 
   useEffect(() => {
     if (initialCatalog || !['home', 'albums'].includes(route.screen)) return undefined;
@@ -651,7 +684,7 @@ export default function App({ initialCatalog = null }) {
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} daytimeEpisodes={daytimeResult?.episodes} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}

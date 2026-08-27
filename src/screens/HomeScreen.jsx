@@ -7,7 +7,7 @@ import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
 
-export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums }) {
+export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = null, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
@@ -21,7 +21,10 @@ export const HomeScreen = memo(function HomeScreen({ catalog, player, stale, ref
     };
   }, []);
 
-  const selection = useMemo(() => selectHomeEpisodes(catalog.albums, now), [catalog.albums, now]);
+  const selection = useMemo(() => {
+    const fallback = selectHomeEpisodes(catalog.albums, now);
+    return daytimeEpisodes?.length ? { ...fallback, episodes: daytimeEpisodes } : fallback;
+  }, [catalog.albums, daytimeEpisodes, now]);
   const recommendation = selection.episodes[0];
   const playingRecommendation = Boolean(recommendation && player.currentEpisode?.id === recommendation.id);
 
