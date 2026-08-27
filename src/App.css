@@ -76,7 +76,11 @@ h1, h2, p { margin: 0; }
   background: var(--surface);
   overflow: clip;
 }
-.app-content { min-height: 100dvh; padding-bottom: calc(10rem + env(safe-area-inset-bottom)); }
+.app-content {
+  min-height: 100dvh;
+  padding-bottom: calc(max(10rem, var(--mini-player-height, 0px)) + max(var(--space-3), env(safe-area-inset-bottom)) + var(--space-2));
+  scroll-padding-bottom: calc(max(10rem, var(--mini-player-height, 0px)) + max(var(--space-3), env(safe-area-inset-bottom)) + var(--space-2));
+}
 .screen { min-height: 100dvh; }
 .route-view { min-height: 100%; }
 .desktop-nav { display: none; }
