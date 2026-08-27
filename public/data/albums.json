@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1787763044542,
+  "generatedAt": 1787805618287,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 515,
+      "latestEpisode": {
+        "id": 197384,
+        "title": "外卖成为海底捞增长最快的业务，乐高表示不会用 AI 来设计产品",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 614000,
+        "onlineTime": 1787785200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/3XJCCg8eqGwUxVhU_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -678,26 +698,6 @@
         "duration": 60000,
         "onlineTime": 1787734800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/fxhFquQXiw2c4dtS_AAC_192_1.m4a"
-      },
-      "category": "city"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 514,
-      "latestEpisode": {
-        "id": 197345,
-        "title": "腾讯、阿里、字节争夺打工人，互联网大厂为何集体加码 AI 办公？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 682000,
-        "onlineTime": 1787698800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/txpshHLnIt95ztPI_AAC_192_1.m4a"
       },
       "category": "city"
     },
