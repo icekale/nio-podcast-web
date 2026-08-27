@@ -25,10 +25,11 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
     const fallback = selectHomeEpisodes(catalog.albums, now);
     if (!daytimeEpisodes?.length) return fallback;
     const daytimeIds = new Set(daytimeEpisodes.map(episode => String(episode.id)));
+    const dailyEpisodes = fallback.heading === '今日更新' ? fallback.episodes : [];
     return {
       ...fallback,
       heading: '日间',
-      episodes: [...daytimeEpisodes, ...fallback.episodes.filter(episode => !daytimeIds.has(String(episode.id)))],
+      episodes: [...daytimeEpisodes, ...dailyEpisodes.filter(episode => !daytimeIds.has(String(episode.id)))],
     };
   }, [catalog.albums, daytimeEpisodes, now]);
   const recommendation = selection.episodes[0];

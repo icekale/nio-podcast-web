@@ -92,6 +92,17 @@ describe('HomeScreen playback control', () => {
     expect(screen.getByRole('heading', { name: '日间' })).toBeInTheDocument();
   });
 
+  it('does not append latest catalog updates when there are no updates today', () => {
+    const staleCatalog = {
+      generatedAt: Date.now(),
+      albums: [{ id: 1, name: '旧专辑', latestEpisode: { ...episode, id: 1, title: '旧目录节目', onlineTime: 0 } }],
+    };
+    const daytimeEpisodes = [{ ...episode, id: 2, title: '日间节目' }];
+    const { container } = render(<HomeScreen {...callbacks} catalog={staleCatalog} daytimeEpisodes={daytimeEpisodes} player={player(false)} />);
+
+    expect([...container.querySelectorAll('.episode-row')].map(row => row.dataset.episodeId)).toEqual(['2']);
+  });
+
   it('switches immediately when the user prefers reduced motion', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
     const { container, rerender } = render(<HomeScreen {...callbacks} catalog={catalog} player={player(false)} />);
