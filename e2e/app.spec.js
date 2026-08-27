@@ -8,7 +8,7 @@ test.describe('app smoke', () => {
       if (message.type() === 'error') errors.push(`console: ${message.text()}`);
     });
 
-    await page.goto('/#/');
+    await page.goto('/');
     // 标题在目录有新节目时为“今日更新”,跨日后为“最新更新”,两者都算首页已加载
     await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
 
@@ -22,11 +22,11 @@ test.describe('app smoke', () => {
     await page.keyboard.press('Escape');
     await expect(dialog).toBeHidden();
 
-    await page.goto('/#/search');
+    await page.goto('/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
     await expect(page.getByRole('searchbox', { name: '搜索专辑' })).toBeVisible();
 
-    await page.goto('/#/album/5');
+    await page.goto('/album/5');
     await expect(page.getByRole('heading', { name: '节目列表' })).toBeVisible();
 
     expect(errors).toEqual([]);
@@ -41,13 +41,14 @@ test.describe('app smoke', () => {
       return match[2] === 'ms' ? amount / 1000 : amount;
     };
 
-    await page.goto('/#/search');
+    await page.goto('/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
     const routeDuration = await page.evaluate(() => getComputedStyle(document.querySelector('.route-view')).animationDuration);
     expect(seconds(routeDuration)).toBeLessThanOrEqual(0.001);
 
-    await page.goto('/#/');
+    await page.goto('/');
     await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    await page.getByRole('heading', { name: '日间' }).waitFor({ timeout: 8000 }).catch(() => {});
     const homePlay = page.locator('.primary-button').first();
     const homePlayPath = await homePlay.locator('path').getAttribute('d');
     await homePlay.click();
@@ -69,7 +70,7 @@ test.describe('app smoke', () => {
     await page.waitForTimeout(50);
     expect(await miniToggle.locator('path').getAttribute('d')).toBe(miniPlayPath);
 
-    await page.goto('/#/search');
+    await page.goto('/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
     const favorite = page.locator('.album-results.is-grid .album-action button').first();
     const unfavoritedPath = await favorite.locator('path').getAttribute('d');
@@ -87,7 +88,7 @@ test.describe('app smoke', () => {
   });
 
   test('album grid covers align at the top of each row', async ({ page }) => {
-    await page.goto('/#/search');
+    await page.goto('/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
     const grid = page.locator('.album-results.is-grid').first();
     const columns = await grid.evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ').length);
@@ -96,7 +97,7 @@ test.describe('app smoke', () => {
   });
 
   test('grid card action sits below the artwork beside the title', async ({ page }) => {
-    await page.goto('/#/search');
+    await page.goto('/search');
     await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
     const first = page.locator('.album-results.is-grid .album-row').first();
     const artBottom = await first.locator('.album-art').evaluate(element => element.getBoundingClientRect().bottom);
@@ -110,7 +111,7 @@ test.describe('app smoke', () => {
 
   test('mobile album favorite actions meet the minimum touch target', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 760 });
-    await page.goto('/#/albums');
+    await page.goto('/albums');
     const star = page.locator('.album-results.is-grid .album-action button').first();
     await expect(star).toBeVisible();
 
@@ -122,7 +123,7 @@ test.describe('app smoke', () => {
   test('mobile dark-mode favorite controls stay visible and focusable', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.setViewportSize({ width: 320, height: 760 });
-    await page.goto('/#/albums');
+    await page.goto('/albums');
     const star = page.locator('.album-results.is-grid .album-action button').first();
     await expect(star).toBeVisible();
     await star.focus();
@@ -134,8 +135,46 @@ test.describe('app smoke', () => {
     await expect(star.locator('svg')).toBeVisible();
   });
 
+  test('mobile album content clears the fixed player', async ({ page }) => {
+    await page.setViewportSize({ width: 380, height: 844 });
+    await page.goto('/');
+    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    await page.locator('.primary-button').first().click();
+    await expect(page.locator('.mini-player')).toBeVisible();
+
+    await page.goto('/albums');
+    await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
+    const more = page.locator('#category-more');
+    await more.scrollIntoViewIfNeeded();
+    await more.click();
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await page.waitForTimeout(50);
+
+    const metrics = await page.evaluate(() => {
+      const app = document.querySelector('.app');
+      const player = document.querySelector('.mini-player')?.getBoundingClientRect();
+      const rows = [...document.querySelectorAll('#category-more + .album-results.is-grid .album-row')];
+      const lastRow = rows.at(-1)?.getBoundingClientRect();
+      return {
+        measuredPlayerHeight: Number.parseFloat(getComputedStyle(app).getPropertyValue('--mini-player-height')),
+        actualPlayerHeight: player?.height,
+        clearance: player && lastRow ? player.top - lastRow.bottom : null,
+      };
+    });
+
+    expect(metrics.measuredPlayerHeight).toBeGreaterThan(0);
+    expect(Math.abs(metrics.measuredPlayerHeight - metrics.actualPlayerHeight)).toBeLessThanOrEqual(1);
+    expect(metrics.clearance).toBeGreaterThanOrEqual(8);
+  });
+
   test('desktop favorites page renders', async ({ page }) => {
-    await page.goto('/#/favorites');
+    await page.goto('/favorites');
     await expect(page.getByRole('heading', { name: '专辑收藏' })).toBeVisible();
+  });
+
+  test('legacy hash deep links migrate to the path URL', async ({ page }) => {
+    await page.goto('/#/search');
+    await expect(page.getByRole('heading', { name: '全部专辑' })).toBeVisible();
+    await expect(page).toHaveURL(/\/search$/);
   });
 });

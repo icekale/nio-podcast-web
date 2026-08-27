@@ -10,6 +10,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'splash-*.png'],
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        navigateFallback: 'index.html',
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.endsWith('/data/albums.json'),
@@ -26,11 +27,11 @@ export default defineConfig({
         ],
       },
       manifest: {
-        id: './',
+        id: '/',
         name: 'NIO Radio',
         short_name: 'NIO Radio',
-        start_url: './',
-        scope: './',
+        start_url: '/',
+        scope: '/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#ffffff',
@@ -45,7 +46,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: './',
+  base: '/',
   test: {
     environment: 'jsdom',
     setupFiles: './src/testSetup.js',

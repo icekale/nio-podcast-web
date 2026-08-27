@@ -24,7 +24,7 @@ const episode = {
 
 describe('catalog loading shell', () => {
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.setItem('nio_player_state_v2', JSON.stringify({
       version: 2,
       currentEpisode: episode,

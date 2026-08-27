@@ -10,7 +10,7 @@
 
 ## 一键部署
 
-本仓库是纯静态 Vite PWA（`base: './'`，hash 路由），构建命令为 `npm run build`，输出目录为 `dist`。官方站点仍由 GitHub Pages 发布到 [nio.k4le.top](https://nio.k4le.top/)；也可以点上方按钮，用自己的账号再部署一份。
+本仓库是纯静态 Vite PWA（`base: '/'`，History 路由），构建命令为 `npm run build`，输出目录为 `dist`。官方站点仍由 GitHub Pages 发布到 [nio.k4le.top](https://nio.k4le.top/)；也可以点上方按钮，用自己的账号再部署一份。旧的 `/#/album/23` 链接会自动跳到 `/album/23`。
 
 ### Vercel
 
@@ -52,7 +52,7 @@ npm run lint
 npm run build
 ```
 
-`npm run preview` 可以在生产构建后启动本地预览，检查 PWA 资源和相对路径。
+`npm run preview` 可以在生产构建后启动本地预览，检查 PWA 资源和 History 路由回退。
 
 ## 目录更新
 
@@ -80,7 +80,7 @@ GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行�
 
 ## GitHub Pages 发布
 
-生产域名为 [nio.k4le.top](https://nio.k4le.top/)。推送 `main` 后，[Deploy NIO Radio to GitHub Pages](.github/workflows/deploy.yml) 会自动构建并发布。`public/CNAME` 和相对资源路径保证自定义域名可用；旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
+生产域名为 [nio.k4le.top](https://nio.k4le.top/)。推送 `main` 后，[Deploy NIO Radio to GitHub Pages](.github/workflows/deploy.yml) 会自动构建并发布。`public/CNAME` 和根路径资源保证自定义域名可用；构建会复制 `dist/404.html`，让 `/album/23` 这类 History 路由在 GitHub Pages 上也能打开。旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
 
 目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
 

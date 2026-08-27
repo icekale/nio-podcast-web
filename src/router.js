@@ -1,5 +1,11 @@
-export function parseHash(hash = globalThis.location?.hash || '#/') {
-  const raw = String(hash || '#/').replace(/^#/, '') || '/';
+export function currentPath(location = globalThis.location) {
+  const hash = String(location?.hash || '');
+  if (hash.startsWith('#/')) return hash.slice(1) || '/';
+  return `${location?.pathname || '/'}${location?.search || ''}` || '/';
+}
+
+export function parseHash(url = currentPath()) {
+  const raw = String(url || '/').replace(/^#/, '') || '/';
   const [path] = raw.split('?');
   const query = new URLSearchParams(raw.split('?')[1] || '');
   const queueOpen = query.get('queue') === '1';
@@ -12,16 +18,16 @@ export function parseHash(hash = globalThis.location?.hash || '#/') {
   return { screen: 'home', albumId: null, episodeId: null, queueOpen };
 }
 
-export function withQueueHash(hash, open = true) {
-  const raw = String(hash || '#/').replace(/^#/, '') || '/';
+export function withQueueHash(url, open = true) {
+  const raw = String(url || '/').replace(/^#/, '') || '/';
   const [path, queryString = ''] = raw.split('?');
   const query = new URLSearchParams(queryString);
   if (open) query.set('queue', '1');
   else query.delete('queue');
   const serialized = query.toString();
-  return `#${path}${serialized ? `?${serialized}` : ''}`;
+  return `${path}${serialized ? `?${serialized}` : ''}`;
 }
 
-export function closeQueueHash(hash) {
-  return withQueueHash(hash, false);
+export function closeQueueHash(url) {
+  return withQueueHash(url, false);
 }

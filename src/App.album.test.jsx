@@ -20,14 +20,14 @@ const catalog = {
 
 describe('album pagination', () => {
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     getEpisodes.mockReset();
   });
 
   afterEach(cleanup);
 
   it('loads additional pages until a shared episode is found', async () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/1?ep=2');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/1?ep=2');
     getEpisodes.mockImplementation((_albumId, page) => Promise.resolve(page === 1
       ? { episodes: [{ id: 1, title: '第一集', duration: 60000, audioUrl: 'https://cdn.example/1.aac' }], hasMore: true }
       : { episodes: [{ id: 2, title: '第二集', duration: 60000, audioUrl: 'https://cdn.example/2.aac' }], hasMore: false }));
@@ -39,7 +39,7 @@ describe('album pagination', () => {
   });
 
   it('stops automatic deep-link lookup after ten pages', async () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/1?ep=999999');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/1?ep=999999');
     getEpisodes.mockImplementation((_albumId, page) => Promise.resolve({
       episodes: [{ id: page, title: `第${page}集`, duration: 60000, audioUrl: `https://cdn.example/${page}.aac` }],
       hasMore: page < 11,

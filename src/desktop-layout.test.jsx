@@ -30,7 +30,7 @@ describe('desktop navigation', () => {
   afterEach(cleanup);
 
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.clear();
     window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: query === '(min-width: 1024px)',
@@ -54,7 +54,7 @@ describe('desktop navigation', () => {
   });
 
   it('shows the favorites destination and highlights it on the favorites route', () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/favorites');
+    window.history.replaceState({ nioDepth: 0 }, '', '/favorites');
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
     expect(within(nav).getByRole('button', { name: '专辑收藏' })).toHaveAttribute('aria-current', 'page');
@@ -70,14 +70,14 @@ describe('desktop navigation', () => {
   });
 
   it('highlights search when the album route is open', () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/albums');
+    window.history.replaceState({ nioDepth: 0 }, '', '/albums');
     render(<App initialCatalog={catalog} />);
     const nav = screen.getByRole('navigation', { name: '主导航' });
     expect(within(nav).getByRole('button', { name: '搜索' })).toHaveAttribute('aria-current', 'page');
   });
 
   it('labels the album back action for desktop users', () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/1');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/1');
     render(<App initialCatalog={catalog} />);
 
     const backButton = screen.getByRole('button', { name: '返回专辑列表' });

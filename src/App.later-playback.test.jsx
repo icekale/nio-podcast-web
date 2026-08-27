@@ -32,7 +32,7 @@ describe('later playback integration', () => {
   afterEach(() => vi.useRealTimers());
 
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.clear();
     getEpisodes.mockReset();
   });

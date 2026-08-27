@@ -31,7 +31,7 @@ describe('mobile app shell', () => {
   afterEach(cleanup);
 
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.clear();
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 });
   });
@@ -161,12 +161,22 @@ describe('mobile app shell', () => {
     expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
   });
 
+  it('migrates a legacy hash deep link to the path URL', async () => {
+    window.history.replaceState({ nioDepth: 0 }, '', '#/albums');
+    render(<App initialCatalog={catalog} />);
+    expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
+    await waitFor(() => {
+      expect(`${window.location.pathname}${window.location.search}`).toBe('/albums');
+      expect(window.location.hash).toBe('');
+    });
+  });
+
   it('opens the full album directory from the home back control', async () => {
     render(<App initialCatalog={catalog} />);
 
     fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
 
-    expect(window.location.hash).toBe('#/albums');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/albums');
     expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
     expect(screen.getByText('NIO 精选')).toBeInTheDocument();
 
@@ -283,7 +293,7 @@ describe('mobile app shell', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
     fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
-    expect(window.location.hash).toBe('#/album/1');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/album/1');
 
     fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
     await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
@@ -298,11 +308,11 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: 'NIO 精选第一集' }));
 
     fireEvent.click(await screen.findByRole('button', { name: '返回专辑列表' }));
-    await waitFor(() => expect(window.location.hash).toBe('#/search?q=NIO'));
+    await waitFor(() => expect(`${window.location.pathname}${window.location.search}`).toBe('/search?q=NIO'));
     expect(await screen.findByRole('searchbox', { name: '搜索专辑' })).toHaveValue('NIO');
 
     fireEvent.click(screen.getByRole('button', { name: '返回' }));
-    await waitFor(() => expect(window.location.hash).toBe('#/albums'));
+    await waitFor(() => expect(`${window.location.pathname}${window.location.search}`).toBe('/albums'));
   });
 
   it('keeps the search input mounted while the query changes', async () => {
@@ -430,10 +440,10 @@ describe('mobile app shell', () => {
     expect(screen.getByRole('tab', { name: '最近听过' })).toHaveAttribute('aria-selected', 'true');
     fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
     await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
-    expect(window.location.hash).toBe('#/');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/');
 
     window.history.back();
-    await waitFor(() => expect(window.location.hash).toBe('#/'));
+    await waitFor(() => expect(`${window.location.pathname}${window.location.search}`).toBe('/'));
   });
 
   it('keeps the queue mounted during its closing animation and restores focus', async () => {
@@ -448,7 +458,7 @@ describe('mobile app shell', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '关闭播放列表' }));
     expect(dialog).toHaveClass('is-closing');
-    await waitFor(() => expect(window.location.hash).toBe('#/'));
+    await waitFor(() => expect(`${window.location.pathname}${window.location.search}`).toBe('/'));
     expect(screen.getByRole('dialog', { name: '播放列表' })).toBeInTheDocument();
 
     fireEvent.animationEnd(dialog, { animationName: 'queue-sheet-out' });
@@ -499,7 +509,7 @@ describe('mobile app shell', () => {
   });
 
   it('loops white noise and only offers minute sleep timers', async () => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/900001');
     render(<App initialCatalog={catalog} />);
     fireEvent.click((await screen.findByText('小雨')).closest('button'));
 
@@ -524,7 +534,7 @@ describe('mobile app shell', () => {
 
   it('pauses looping white noise when a minute timer expires', async () => {
     const pause = vi.spyOn(HTMLMediaElement.prototype, 'pause');
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/900001');
     render(<App initialCatalog={catalog} />);
     fireEvent.click((await screen.findByText('小雨')).closest('button'));
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
@@ -542,7 +552,7 @@ describe('mobile app shell', () => {
 
   it('fires an expired minute timer when the tab becomes visible again', async () => {
     const pause = vi.spyOn(HTMLMediaElement.prototype, 'pause');
-    window.history.replaceState({ nioDepth: 0 }, '', '#/album/900001');
+    window.history.replaceState({ nioDepth: 0 }, '', '/album/900001');
     render(<App initialCatalog={catalog} />);
     fireEvent.click((await screen.findByText('小雨')).closest('button'));
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
@@ -570,8 +580,8 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
     fireEvent.click(screen.getByRole('menuitem', { name: '本集结束' }));
 
-    window.history.pushState({ nioDepth: 2 }, '', '#/album/900001?queue=1');
-    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    window.history.pushState({ nioDepth: 2 }, '', '/album/900001?queue=1');
+    window.dispatchEvent(new PopStateEvent('popstate'));
     fireEvent.click((await screen.findByText('小雨')).closest('button'));
     fireEvent.click(screen.getByRole('button', { name: '睡眠定时' }));
 
@@ -582,7 +592,7 @@ describe('mobile app shell', () => {
     render(<App initialCatalog={catalog} />);
     fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
-    expect(window.location.hash).toBe('#/?queue=1');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/?queue=1');
 
     window.history.back();
     await waitFor(() => expect(screen.queryByRole('dialog', { name: '播放列表' })).not.toBeInTheDocument());
@@ -598,7 +608,7 @@ describe('mobile app shell', () => {
     fireEvent.pointerDown(scroll, { clientY: 100 });
     fireEvent.pointerUp(scroll, { clientY: 220 });
 
-    expect(window.location.hash).toBe('#/?queue=1');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/?queue=1');
     expect(dialog).not.toHaveClass('is-closing');
   });
 
@@ -623,7 +633,8 @@ describe('mobile app shell', () => {
     fireEvent.click(await screen.findByRole('button', { name: '打开播放列表' }));
     fireEvent.click(screen.getByRole('button', { name: '管理 第一集' }));
     fireEvent.click(screen.getByRole('menuitem', { name: '分享' }));
-    expect(clipboardWrite).toHaveBeenCalledWith(expect.stringContaining('第一集'));
+    expect(clipboardWrite).toHaveBeenCalledWith(expect.stringContaining(`${window.location.origin}/album/1?ep=1`));
+    expect(clipboardWrite.mock.calls[0][0]).not.toContain('#/');
     expect(await screen.findByText('已复制分享链接')).toBeInTheDocument();
   });
 

@@ -38,7 +38,7 @@ describe('desktop favorites collection', () => {
   afterEach(cleanup);
 
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.clear();
     window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: query === '(min-width: 1024px)',
@@ -127,7 +127,7 @@ describe('desktop favorites collection', () => {
     await screen.findByText('还没有收藏专辑');
 
     fireEvent.click(screen.getByRole('button', { name: '去全部专辑看看' }));
-    expect(window.location.hash).toBe('#/search');
+    expect(`${window.location.pathname}${window.location.search}`).toBe('/search');
     expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
   });
 });

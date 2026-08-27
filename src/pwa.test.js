@@ -98,12 +98,17 @@ describe('public app naming', () => {
 });
 
 describe('custom domain deployment', () => {
-  it('uses a relative base and publishes the GitHub Pages domain marker', () => {
-    expect(viteConfig).toContain("base: './'");
-    expect(viteConfig).toContain("id: './'");
-    expect(viteConfig).toContain("start_url: './'");
-    expect(viteConfig).toContain("scope: './'");
+  it('uses a root base so history routes can load assets', () => {
+    expect(viteConfig).toContain("base: '/'");
+    expect(viteConfig).toContain("id: '/'");
+    expect(viteConfig).toContain("start_url: '/'");
+    expect(viteConfig).toContain("scope: '/'");
     expect(readFileSync(resolve(process.cwd(), 'public/CNAME'), 'utf8').trim()).toBe('nio.k4le.top');
+  });
+
+  it('copies index.html to 404.html for GitHub Pages history fallback', () => {
+    expect(readFileSync(resolve(process.cwd(), 'package.json'), 'utf8')).toContain('cp dist/index.html dist/404.html');
+    expect(readFileSync(resolve(process.cwd(), 'wrangler.toml'), 'utf8')).toContain('not_found_handling = "single-page-application"');
   });
 });
 

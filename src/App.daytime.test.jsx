@@ -52,7 +52,7 @@ const daytimeEpisode = {
 
 describe('daytime home playlist', () => {
   beforeEach(() => {
-    window.history.replaceState({ nioDepth: 0 }, '', '#/');
+    window.history.replaceState({ nioDepth: 0 }, '', '/');
     window.localStorage.clear();
     loadCatalog.mockReset().mockResolvedValue({ catalog, stale: false });
     getDaytimeEpisodes.mockReset();

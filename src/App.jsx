@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { CircleAlert, RotateCcw } from 'lucide-react';
 import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
-import { parseHash, withQueueHash, closeQueueHash } from './router';
+import { closeQueueHash, currentPath, parseHash, withQueueHash } from './router';
 import { sleepDeadline } from './playbackPrefs';
 import { isLoopingEpisode } from './customAlbums';
 import { getDaytimeEpisodes } from './api';
@@ -65,6 +65,7 @@ export default function App({ initialCatalog = null }) {
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
   const audioRef = useRef(null);
+  const appRef = useRef(null);
   const playerRef = useRef(player);
   const laterEpisodesRef = useRef(laterEpisodes);
   const queueButtonRef = useRef(null);
@@ -104,6 +105,24 @@ export default function App({ initialCatalog = null }) {
     const timer = window.setTimeout(handlePlayerExited, 220);
     return () => window.clearTimeout(timer);
   }, [playerClosing, handlePlayerExited]);
+
+  useLayoutEffect(() => {
+    const app = appRef.current;
+    const playerElement = app?.querySelector('.mini-player');
+    if (!app || !playerElement) {
+      app?.style.removeProperty('--mini-player-height');
+      return undefined;
+    }
+    const updateHeight = () => app.style.setProperty('--mini-player-height', `${playerElement.getBoundingClientRect().height}px`);
+    updateHeight();
+    if (typeof globalThis.ResizeObserver !== 'function') return undefined;
+    const observer = new globalThis.ResizeObserver(updateHeight);
+    observer.observe(playerElement);
+    return () => {
+      observer.disconnect();
+      app.style.removeProperty('--mini-player-height');
+    };
+  }, [audioError, player.currentEpisode?.id, playerClosing, playerVisible]);
 
   const applyRoute = useCallback(nextRoute => {
     const previousRoute = routeRef.current;
@@ -223,10 +242,16 @@ export default function App({ initialCatalog = null }) {
     if (!window.history.state?.nioApp) {
       window.history.replaceState({ ...(window.history.state || {}), nioApp: true, nioDepth: 0 }, '', window.location.href);
     }
-    const handleRouteChange = () => applyRoute(parseHash());
+    const handleRouteChange = () => {
+      if (String(window.location.hash || '').startsWith('#/')) {
+        const state = { ...(window.history.state || {}), nioApp: true, nioDepth: Number(window.history.state?.nioDepth) || 0 };
+        window.history.replaceState(state, '', currentPath());
+      }
+      applyRoute(parseHash());
+    };
     window.addEventListener('popstate', handleRouteChange);
     window.addEventListener('hashchange', handleRouteChange);
-    if (!window.location.hash) window.history.replaceState({ nioApp: true, nioDepth: 0 }, '', '#/');
+    if (String(window.location.hash || '').startsWith('#/')) handleRouteChange();
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
       window.removeEventListener('hashchange', handleRouteChange);
@@ -235,7 +260,7 @@ export default function App({ initialCatalog = null }) {
   }, [applyRoute]);
 
   useLayoutEffect(() => {
-    const key = closeQueueHash(window.location.hash || '#/');
+    const key = closeQueueHash(currentPath());
     const position = scrollPositions.current.get(key) || 0;
     if (document.scrollingElement) document.scrollingElement.scrollTop = position;
     document.documentElement.scrollTop = position;
@@ -346,14 +371,14 @@ export default function App({ initialCatalog = null }) {
     result?.catch(() => setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl)));
   }, [player.currentEpisode?.id, setPlaybackFailure]);
 
-  const saveScrollPosition = useCallback((hash = window.location.hash || '#/') => {
+  const saveScrollPosition = useCallback((url = currentPath()) => {
     const position = Math.max(
       window.scrollY || 0,
       document.scrollingElement?.scrollTop || 0,
       document.documentElement.scrollTop || 0,
       document.body.scrollTop || 0,
     );
-    scrollPositions.current.set(closeQueueHash(hash), position);
+    scrollPositions.current.set(closeQueueHash(url), position);
   }, []);
   const go = useCallback((hash, { replace = false } = {}) => {
     if (!replace) saveScrollPosition();
@@ -365,7 +390,7 @@ export default function App({ initialCatalog = null }) {
   }, [applyRoute, saveScrollPosition]);
   const openQueueFrom = useCallback(trigger => {
     queueFocusRef.current = trigger;
-    go(withQueueHash(window.location.hash || '#/', true));
+    go(withQueueHash(currentPath(), true));
   }, [go]);
   const openQueue = useCallback(() => openQueueFrom(queueButtonRef.current), [openQueueFrom]);
   const openLater = useCallback(event => {
@@ -375,13 +400,13 @@ export default function App({ initialCatalog = null }) {
   }, [openQueueFrom, queuePresent]);
   const closeQueue = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
-    if (parseHash(window.location.hash || '#/').queueOpen && depth > 0) {
+    if (parseHash(currentPath()).queueOpen && depth > 0) {
       setQueueClosing(true);
       window.history.back();
       return;
     }
     setQueueClosing(true);
-    go(closeQueueHash(window.location.hash || '#/'), { replace: true });
+    go(closeQueueHash(currentPath()), { replace: true });
   }, [go]);
   const goBack = useCallback(() => {
     const depth = Number(window.history.state?.nioDepth) || 0;
@@ -394,22 +419,22 @@ export default function App({ initialCatalog = null }) {
       window.history.back();
       return;
     }
-    if (route.screen === 'search') go('#/', { replace: true });
-    else if (route.screen === 'album') go('#/albums', { replace: true });
-    else if (route.screen !== 'home') go('#/', { replace: true });
+    if (route.screen === 'search') go('/', { replace: true });
+    else if (route.screen === 'album') go('/albums', { replace: true });
+    else if (route.screen !== 'home') go('/', { replace: true });
   }, [closeQueue, go, route]);
-  const openAlbums = useCallback(() => go('#/albums'), [go]);
+  const openAlbums = useCallback(() => go('/albums'), [go]);
   const updateSearchQuery = useCallback(query => {
-    const raw = String(window.location.hash || '#/search').replace(/^#/, '') || '/search';
+    const raw = currentPath();
     const [path, queryString = ''] = raw.split('?');
     const params = new URLSearchParams(queryString);
     if (query) params.set('q', query);
     else params.delete('q');
     const serialized = params.toString();
-    const hash = `#${path}${serialized ? `?${serialized}` : ''}`;
+    const next = `${path === '/search' ? path : '/search'}${serialized ? `?${serialized}` : ''}`;
     const state = { ...(window.history.state || {}), nioApp: true, nioDepth: Number(window.history.state?.nioDepth) || 0 };
-    window.history.replaceState(state, '', hash);
-    applyRoute(parseHash(hash));
+    window.history.replaceState(state, '', next);
+    applyRoute(parseHash(next));
   }, [applyRoute]);
   const retryCatalog = useCallback(() => {
     refreshCatalog({ showLoading: true, force: true });
@@ -629,7 +654,7 @@ export default function App({ initialCatalog = null }) {
 
   const shareEpisode = useCallback(async episode => {
     if (!episode) return 'none';
-    const url = `${window.location.origin}/#/album/${episode.albumId}?ep=${episode.id}`;
+    const url = `${window.location.origin}/album/${episode.albumId}?ep=${episode.id}`;
     const text = `${episode.title} · ${episode.albumName || 'NIO Radio'}`;
     if (navigator.share) {
       try { await navigator.share({ title: text, text, url }); return 'shared'; } catch { return 'cancelled'; }
@@ -640,9 +665,9 @@ export default function App({ initialCatalog = null }) {
     return 'none';
   }, []);
 
-  const openSearch = useCallback(() => go('#/search'), [go]);
-  const openFavorites = useCallback(() => go('#/favorites'), [go]);
-  const openAlbum = useCallback(id => go(`#/album/${id}`), [go]);
+  const openSearch = useCallback(() => go('/search'), [go]);
+  const openFavorites = useCallback(() => go('/favorites'), [go]);
+  const openAlbum = useCallback(id => go(`/album/${id}`), [go]);
   const playAll = useCallback(episodes => startPlayback(episodes[0], episodes), [startPlayback]);
   const playQueueEpisode = useCallback(episode => startPlayback(episode, playerRef.current.queue), [startPlayback]);
   const playLaterEpisode = useCallback(episode => startPlayback(episode, laterEpisodesRef.current), [startPlayback]);
@@ -667,12 +692,12 @@ export default function App({ initialCatalog = null }) {
   const miniPlayer = playerVisible ? <MiniPlayer player={player.currentEpisode ? player : { ...player, currentEpisode: lastEpisodeRef.current }} isPlaying={isPlaying} audioError={audioError} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onToggle={togglePlayback} onAdjacent={playAdjacent} onRetry={retryPlayback} onOpenQueue={openQueue} queueButtonRef={queueButtonRef} onSeek={updatePosition} isClosing={playerClosing} onExited={handlePlayerExited} /> : null;
 
   return (
-    <main className="app">
+    <main ref={appRef} className="app">
       {desktopLayout ? (
         <DesktopNav
           route={route}
           laterActive={queuePresent && queueTab === 'later'}
-          onHome={() => go('#/')}
+          onHome={() => go('/')}
           onSearch={openSearch}
           onLater={openLater}
           onFavorites={openFavorites}
@@ -689,7 +714,7 @@ export default function App({ initialCatalog = null }) {
           {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} episodeId={route.episodeId} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
-          {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('#/')}>返回首页</button></div> : null}
+          {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('/')}>返回首页</button></div> : null}
         </div>}
       </div>
       <audio ref={audioRef} loop={loopingCurrentEpisode} playsInline preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
