@@ -45,10 +45,11 @@ describe('PWA cache boundaries', () => {
 describe('NIO icon resources', () => {
   it('uses a self-contained 512px black-on-white NIO SVG', () => {
     expect(favicon).toContain('viewBox="0 0 512 512"');
-    expect(favicon).toMatch(/<rect[^>]*width="512"[^>]*height="512"[^>]*fill="#FFFFFF"/);
+    expect(favicon).toMatch(/<rect[^>]*width="512"[^>]*height="512"[^>]*rx="114"[^>]*fill="#FFFFFF"/);
     expect(favicon).toMatch(/<path[^>]*fill="#000000"/);
     expect(favicon).not.toContain('#00BEBE');
     expect(favicon).not.toContain('<image');
+    expect(readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8')).toContain('.desktop-nav-brand img { border-radius: 22.5%; }');
   });
 
   it('references the canonical SVG from the browser and PWA metadata', () => {

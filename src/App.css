@@ -536,7 +536,7 @@ h1, h2, p { margin: 0; }
     border-right: 1px solid var(--line);
   }
   .desktop-nav-brand { display: flex; align-items: center; gap: var(--space-2); color: var(--ink); font-weight: 650; }
-  .desktop-nav-brand img { border-radius: var(--radius-sm); }
+  .desktop-nav-brand img { border-radius: 22.5%; }
   .desktop-nav-links { display: flex; flex-direction: column; gap: var(--space-1); }
   .desktop-nav-link {
     min-height: 2.75rem;
