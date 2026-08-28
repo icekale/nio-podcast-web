@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1787882630145,
+  "generatedAt": 1787900577983,
   "albums": [
     {
       "id": 673,
@@ -198,6 +198,26 @@
         "duration": 299000,
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/tsa0troRK9dXUZBu_AAC_192_1.m4a"
+      },
+      "category": "city"
+    },
+    {
+      "id": 88,
+      "name": "南京城市频道",
+      "description": "金陵城的声音陪伴,一起探索愉悦生活。这里是南京NIO Radio！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/09a4bc7d-c241-418a-b7f9-c03aa0505b7a.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 858,
+      "latestEpisode": {
+        "id": 197425,
+        "title": "你的专属探店计划｜小可爱潮童摄影",
+        "albumId": 88,
+        "albumName": "南京城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/09a4bc7d-c241-418a-b7f9-c03aa0505b7a.jpg",
+        "host": "NIO Radio",
+        "duration": 241000,
+        "onlineTime": 1787846400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/tqNHLBXsiDP0ShBy_AAC_192_1.m4a"
       },
       "category": "city"
     },
@@ -2407,7 +2427,7 @@
       "description": "上海车主@咖啡旅神，带你领略咖啡与美好生活",
       "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/1fcfb2b8-b7c5-4a7a-8e32-393d01e41fab.jpg",
       "host": "NIO Radio",
-      "episodeCount": 320,
+      "episodeCount": 319,
       "latestEpisode": {
         "id": 197231,
         "title": "咖啡小白的“自我修养”",
@@ -2820,26 +2840,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/sAiO2OZSD5UK9H5o_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 88,
-      "name": "南京城市频道",
-      "description": "金陵城的声音陪伴,一起探索愉悦生活。这里是南京NIO Radio！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/09a4bc7d-c241-418a-b7f9-c03aa0505b7a.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 857,
-      "latestEpisode": {
-        "id": 197056,
-        "title": "你的专属探店计划｜poe.cafe",
-        "albumId": 88,
-        "albumName": "南京城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/09a4bc7d-c241-418a-b7f9-c03aa0505b7a.jpg",
-        "host": "NIO Radio",
-        "duration": 284000,
-        "onlineTime": 1786896000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/aVEd619P0KA792qS_AAC_192_1.m4a"
-      },
-      "category": "city"
     },
     {
       "id": 703,
