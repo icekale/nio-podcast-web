@@ -73,6 +73,20 @@ describe('public app naming', () => {
     expect(viteConfig).toContain("theme_color: '#ffffff'");
   });
 
+  it('uses a system CJK stack without webfonts or SF Pro Text', () => {
+    const css = readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8');
+    expect(css).toContain('--font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Noto Sans CJK SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif');
+    expect(css).toContain('font-family: var(--font-sans)');
+    expect(css).toContain('font-synthesis: none');
+    expect(css).toContain('.episode-meta, .queue-copy span { display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; margin-top: var(--space-2); color: var(--muted); font-size: 0.78rem; line-height: 1.25; font-variant-numeric: tabular-nums; }');
+    expect(css).not.toContain('SF Pro Text');
+    expect(css).not.toContain('fonts.googleapis.com');
+    const promo = readFileSync(resolve(process.cwd(), 'scripts/capture-promo.mjs'), 'utf8');
+    expect(promo).toContain('"PingFang SC"');
+    expect(promo).toContain('"Noto Sans SC"');
+    expect(promo).not.toContain('SF Pro Text');
+  });
+
   it('keeps the primary hover label readable', () => {
     expect(readFileSync(resolve(process.cwd(), 'src/App.css'), 'utf8'))
       .toContain('.primary-button:hover { background: var(--teal-dark); color: var(--surface); }');

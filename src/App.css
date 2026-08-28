@@ -23,6 +23,7 @@
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-pill: 999px;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Noto Sans CJK SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   color-scheme: light;
 }
 
@@ -51,9 +52,10 @@ body {
   margin: 0;
   background: var(--surface-soft);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.45;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   font-kerning: normal;
 }
@@ -168,7 +170,7 @@ h1, h2, p { margin: 0; }
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
-.recommendation-copy p { margin-top: var(--space-2); color: var(--muted-strong); font-size: 0.82rem; }
+.recommendation-copy p { margin-top: var(--space-2); color: var(--muted-strong); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
 .artwork { display: block; flex: 0 0 auto; overflow: hidden; background: var(--surface-soft); }
 .artwork-media { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 .artwork-empty { display: inline-flex; align-items: center; justify-content: center; color: var(--teal-dark); }
@@ -207,7 +209,7 @@ h1, h2, p { margin: 0; }
 .episode-art { width: 4.25rem; height: 4.25rem; border-radius: var(--radius-sm); }
 .episode-copy, .album-result-copy, .queue-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; }
 .episode-title, .queue-copy strong { display: -webkit-box; overflow: hidden; color: var(--ink); font-size: 1rem; line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.episode-meta, .queue-copy span { display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; margin-top: var(--space-2); color: var(--muted); font-size: 0.78rem; line-height: 1.25; }
+.episode-meta, .queue-copy span { display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; margin-top: var(--space-2); color: var(--muted); font-size: 0.78rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
 .meta-divider { color: var(--line); }
 .episode-progress-label { color: var(--teal-dark); }
 .episode-row.is-active .episode-title { color: var(--teal-dark); }

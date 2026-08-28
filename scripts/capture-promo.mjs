@@ -18,7 +18,7 @@ function shotUri(name) {
 
 const shell = `
     html, body { margin: 0; padding: 0; }
-    body { background: #ffffff; color: #08162e; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    body { background: #ffffff; color: #08162e; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Noto Sans CJK SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; font-synthesis: none; }
     .brand { display: flex; align-items: center; gap: 14px; font-weight: 650; }
     .brand svg { display: block; border-radius: 10px; }
     .kicker { color: #006f6d; font-weight: 700; letter-spacing: 0.08em; }
