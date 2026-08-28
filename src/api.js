@@ -1,13 +1,16 @@
 import { getCustomEpisodes } from './customAlbums.js';
 
 const BASE = 'https://gateway-front-external.nio.com/moat/100914/v2/audio/list';
-const DAYTIME_BASE = 'https://gateway-front-external.nio.com/moat/100914/v3/radio/list?pageSize=87';
+const DAYTIME_PAGE_SIZE = 87;
+const DAYTIME_SHORT_LIST = 30;
+const DAYTIME_BASE = `https://gateway-front-external.nio.com/moat/100914/v3/radio/list?pageSize=${DAYTIME_PAGE_SIZE}`;
 const FETCH_TIMEOUT_MS = 8000;
 const EPISODE_CACHE_TTL_MS = 10 * 60 * 1000;
 const EPISODE_CACHE_MAX_ENTRIES = 100;
 const episodeCache = new Map();
 const episodeRequests = new Map();
 let daytimeCache = null;
+let daytimeLastGood = null;
 let daytimeRequest = null;
 
 export class ApiError extends Error {
@@ -170,7 +173,18 @@ export async function getDaytimeEpisodes(fetchImpl = globalThis.fetch) {
 
   const request = requestDaytimeEpisodes(fetchImpl)
     .then(result => {
-      if (result.episodes.length) daytimeCache = { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS };
+      const previous = daytimeLastGood;
+      const tooShort = previous?.episodes.length >= DAYTIME_SHORT_LIST
+        && result.episodes.length > 0
+        && result.episodes.length < DAYTIME_SHORT_LIST;
+      if (tooShort) {
+        daytimeCache = { value: previous, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS };
+        return previous;
+      }
+      if (result.episodes.length) {
+        daytimeCache = { value: result, expiresAt: Date.now() + EPISODE_CACHE_TTL_MS };
+        daytimeLastGood = result;
+      }
       return result;
     })
     .finally(() => {

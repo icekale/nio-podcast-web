@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { CircleAlert, RotateCcw } from 'lucide-react';
-import { loadCatalog, normalizeCatalog, readCachedCatalog } from './catalog';
+import { loadCatalog, normalizeCatalog, playableCatalog, readCachedCatalog } from './catalog';
 import { closeQueueHash, currentPath, parseHash, withQueueHash } from './router';
 import { sleepDeadline } from './playbackPrefs';
 import { isLoopingEpisode } from './customAlbums';
@@ -188,13 +188,10 @@ export default function App({ initialCatalog = null }) {
     lastDaytimeRefreshAt.current = Date.now();
     const request = getDaytimeEpisodes()
       .then(result => {
-        setDaytimeResult(result?.episodes?.length ? result : null);
+        setDaytimeResult(previous => (result?.episodes?.length ? result : previous));
         return result;
       })
-      .catch(() => {
-        setDaytimeResult(null);
-        return null;
-      })
+      .catch(() => null)
       .finally(() => {
         if (daytimeRefreshPromise.current === request) daytimeRefreshPromise.current = null;
       });
@@ -339,8 +336,13 @@ export default function App({ initialCatalog = null }) {
 
   const retryPlayback = useCallback(() => {
     setAudioError(null);
-    applyEpisodeToAudio(audioRef.current, playerRef.current.currentEpisode, { play: true })
-      ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(playerRef.current.currentEpisode?.audioUrl)));
+    const episode = playerRef.current.currentEpisode;
+    const playingId = episode?.id;
+    applyEpisodeToAudio(audioRef.current, episode, { play: true })
+      ?.catch(() => {
+        if (playerRef.current.currentEpisode?.id !== playingId) return;
+        setPlaybackFailure(unsupportedAudioMessage(episode?.audioUrl));
+      });
   }, [setPlaybackFailure]);
 
   useEffect(() => {
@@ -368,7 +370,11 @@ export default function App({ initialCatalog = null }) {
     } else {
       resumeSeekAppliedRef.current = true;
     }
-    result?.catch(() => setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl)));
+    const playingId = episode.id;
+    result?.catch(() => {
+      if (playerRef.current.currentEpisode?.id !== playingId) return;
+      setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl));
+    });
   }, [player.currentEpisode?.id, setPlaybackFailure]);
 
   const saveScrollPosition = useCallback((url = currentPath()) => {
@@ -469,8 +475,12 @@ export default function App({ initialCatalog = null }) {
       if (sameEpisode) {
         try { audioRef.current.currentTime = 0; } catch { /* media may not be ready */ }
       }
+      const playingId = episode.id;
       applyEpisodeToAudio(audioRef.current, episode, { play: true })
-        ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl)));
+        ?.catch(() => {
+          if (playerRef.current.currentEpisode?.id !== playingId) return;
+          setPlaybackFailure(unsupportedAudioMessage(episode.audioUrl));
+        });
     }
     setPlayer(previous => {
       let next = previous;
@@ -527,8 +537,12 @@ export default function App({ initialCatalog = null }) {
     if (next === previous) next = { ...previous, isPlaying: false };
     const hasNext = Boolean(next.currentEpisode && next.currentEpisode.id !== previous.currentEpisode?.id);
     if (hasNext && audioRef.current) {
+      const playingId = next.currentEpisode.id;
       applyEpisodeToAudio(audioRef.current, next.currentEpisode, { play: true, seekSeconds: 0 })
-        ?.catch(() => setPlaybackFailure(unsupportedAudioMessage(next.currentEpisode.audioUrl)));
+        ?.catch(() => {
+          if (playerRef.current.currentEpisode?.id !== playingId) return;
+          setPlaybackFailure(unsupportedAudioMessage(next.currentEpisode.audioUrl));
+        });
     }
     setPlayer({
       ...next,
@@ -653,7 +667,7 @@ export default function App({ initialCatalog = null }) {
   }, []);
 
   const shareEpisode = useCallback(async episode => {
-    if (!episode) return 'none';
+    if (!episode || !Number(episode.albumId)) return 'none';
     const url = `${window.location.origin}/album/${episode.albumId}?ep=${episode.id}`;
     const text = `${episode.title} · ${episode.albumName || 'NIO Radio'}`;
     if (navigator.share) {
@@ -682,7 +696,8 @@ export default function App({ initialCatalog = null }) {
     }
     setPlayer(previous => ({ ...previous, positionSeconds: position }));
   };
-  const currentAlbum = catalogState.catalog?.albums.find(album => album.id === route.albumId);
+  const catalog = useMemo(() => playableCatalog(catalogState.catalog), [catalogState.catalog]);
+  const currentAlbum = catalog?.albums.find(album => album.id === route.albumId);
   const routeViewKey = screenRouteKey(route);
   const hasCatalog = Boolean(catalogState.catalog);
   const loopingCurrentEpisode = isLoopingEpisode(player.currentEpisode);
@@ -709,17 +724,17 @@ export default function App({ initialCatalog = null }) {
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalogState.catalog} daytimeEpisodes={daytimeResult?.episodes} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
-          {route.screen === 'albums' ? <AlbumsScreen catalog={catalogState.catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
-          {route.screen === 'search' ? <SearchScreen catalog={catalogState.catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
-          {route.screen === 'favorites' ? <FavoritesScreen catalog={catalogState.catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
+          {route.screen === 'home' ? <HomeScreen catalog={catalog} daytimeEpisodes={daytimeResult?.episodes} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'albums' ? <AlbumsScreen catalog={catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
+          {route.screen === 'search' ? <SearchScreen catalog={catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
+          {route.screen === 'favorites' ? <FavoritesScreen catalog={catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} episodeId={route.episodeId} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('/')}>返回首页</button></div> : null}
         </div>}
       </div>
       <audio ref={audioRef} loop={loopingCurrentEpisode} playsInline preload="metadata" onLoadedMetadata={event => { const duration = event.currentTarget?.duration || 0; const { positionSeconds } = playerRef.current; if (!resumeSeekAppliedRef.current && canResume(positionSeconds, duration)) { try { event.currentTarget.currentTime = positionSeconds; } catch { /* media may not be ready */ } resumeSeekAppliedRef.current = true; } setPlayer(previous => ({ ...previous, durationSeconds: duration || previous.durationSeconds })); }} onTimeUpdate={event => { const position = event.currentTarget?.currentTime || 0; const now = Date.now(); if (now - lastPositionUpdateAt.current < 1000) return; lastPositionUpdateAt.current = now; setPlayer(previous => ({ ...previous, positionSeconds: position })); }} onPlay={() => { setIsPlaying(true); setAudioError(null); setPlayer(previous => ({ ...previous, isPlaying: true })); }} onPause={event => { if (event.currentTarget?.ended) return; setIsPlaying(false); setPlayer(previous => ({ ...previous, isPlaying: false })); }} onError={() => setPlaybackFailure('音频加载失败，请检查网络后重试')} onEnded={handleEnded} />
       {miniPlayer}
-      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalogState.catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} allowEpisodeEnd={!loopingCurrentEpisode} onShareEpisode={shareEpisode} /> : null}
+      {queuePresent ? <QueueSheet queue={player.queue} history={player.history} currentEpisodeId={player.currentEpisode?.id} laterEpisodes={laterEpisodes} activeTab={queueTab} setActiveTab={setQueueTab} isClosing={queueClosing} onExited={handleQueueExited} onClose={closeQueue} onPlay={playQueueEpisode} onPlayLater={playLaterEpisode} onPlayNext={playNextEpisode} onRemove={removeQueueEpisode} catalog={catalog} onAddLater={addToLater} onRemoveLater={removeFromLater} onMoveLater={moveFromLater} sleepTimer={sleepTimer} onSetSleepTimer={setSleepMode} allowEpisodeEnd={!loopingCurrentEpisode} onShareEpisode={shareEpisode} /> : null}
     </main>
   );
 }

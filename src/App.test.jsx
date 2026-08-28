@@ -812,4 +812,23 @@ describe('mobile app shell', () => {
     fireEvent.click(screen.getByRole('tab', { name: '最近听过' }));
     expect(screen.getByText('还没有听过的节目')).toBeInTheDocument();
   });
+
+  it('ignores a stale play() rejection after the episode changed', async () => {
+    let rejectFirst;
+    const apply = vi.spyOn(iosSupport, 'applyEpisodeToAudio').mockImplementation((_audio, episode) => {
+      if (episode?.id === 1) return new Promise((_, reject) => { rejectFirst = reject; });
+      return Promise.resolve();
+    });
+    try {
+      render(<App initialCatalog={catalog} />);
+      fireEvent.click(screen.getByRole('button', { name: '全部播放' }));
+      fireEvent.click(document.querySelector('[data-episode-id="2"] .episode-main'));
+      rejectFirst(new Error('play failed'));
+      await Promise.resolve();
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+      expect(screen.getByRole('region', { name: '当前播放' })).toHaveTextContent('第二集');
+    } finally {
+      apply.mockRestore();
+    }
+  });
 });

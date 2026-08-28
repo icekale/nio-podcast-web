@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, playableCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
@@ -102,6 +102,12 @@ describe('catalog selectors', () => {
 
     expect(second.albums.filter(item => item.id === CUSTOM_WHITE_NOISE_ALBUM_ID)).toHaveLength(1);
     expect(selectHomeEpisodes(second.albums, new Date(1000)).episodes).toEqual([regular.latestEpisode]);
+  });
+
+  it('hides the custom album when the device cannot play ogg', () => {
+    const catalog = normalizeCatalog({ generatedAt: 1, albums: [{ id: 42, name: '普通专辑', latestEpisode: episode(420, 1000) }] });
+    expect(playableCatalog(catalog, () => true).albums.some(album => album.id === CUSTOM_WHITE_NOISE_ALBUM_ID)).toBe(true);
+    expect(playableCatalog(catalog, () => false).albums.some(album => album.id === CUSTOM_WHITE_NOISE_ALBUM_ID)).toBe(false);
   });
 
   it('places the custom album last unless it is favorited', () => {

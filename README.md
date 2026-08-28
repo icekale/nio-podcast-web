@@ -76,13 +76,13 @@ NIO_CATALOG_MODE=full npm run catalog
 
 全量扫描会保留请求失败的旧专辑；明确返回不存在的专辑才会删除。若结果比已有目录减少超过 10%，生成器会失败且不会写入 `public/data/albums.json`。目录写入使用临时文件和原子替换。
 
-GitHub Actions 使用北京时间（`Asia/Shanghai`）：工作日 07:30 执行全量扫描，其余工作日时段执行增量扫描；周末在 12:00 和 18:00 执行增量扫描。工作流通过 `workflow_dispatch` 支持手动选择 `incremental` 或 `full`。
+GitHub Actions 使用北京时间（`Asia/Shanghai`）：每天 07:30 执行全量扫描；其余 02:00、17:00、17:30、18:00、19:00、20:00、21:00、24:00 执行增量扫描。工作流通过 `workflow_dispatch` 支持手动选择 `incremental` 或 `full`。
 
 ## GitHub Pages 发布
 
 生产域名为 [nio.k4le.top](https://nio.k4le.top/)。推送 `main` 后，[Deploy NIO Radio to GitHub Pages](.github/workflows/deploy.yml) 会自动构建并发布。`public/CNAME` 和根路径资源保证自定义域名可用；构建会复制 `dist/404.html`，让 `/album/23` 这类 History 路由在 GitHub Pages 上也能打开。旧地址 [icekale.github.io/nio-podcast-web](https://icekale.github.io/nio-podcast-web/) 由 GitHub Pages 管理重定向。
 
-目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`；提交成功后由独立的 Pages 工作流自动发布。部署失败时不要手动提交残缺目录，直接重新运行失败的工作流即可。
+目录工作流只有在目录发生变化时才会提交 `public/data/albums.json` 到 `main`。该提交使用 `GITHUB_TOKEN`，不会触发 `deploy.yml` 的 `on: push`，所以 catalog 工作流会再 `gh workflow run deploy.yml`。若目录已进 `main` 但 Pages 仍是旧包，到 Actions 手动运行 **Deploy NIO Radio to GitHub Pages**；不要指望重跑一次“目录无变化”的 catalog 工作流（第二次 attempt 才会补触发部署）。部署失败时不要手动提交残缺目录。
 
 若要发布自己的 GitHub Pages 副本：Fork 本仓库，在 Settings → Pages 将 Source 设为 GitHub Actions，并启用 Actions。Fork 后请改掉 `public/CNAME`，避免占用生产自定义域名。
 

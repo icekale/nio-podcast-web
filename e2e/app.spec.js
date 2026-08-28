@@ -9,8 +9,8 @@ test.describe('app smoke', () => {
     });
 
     await page.goto('/');
-    // 标题在目录有新节目时为“今日更新”,跨日后为“最新更新”,两者都算首页已加载
-    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    // 日间成功为“日间”；否则目录有新节目时为“今日更新”，跨日后为“最新更新”
+    await expect(page.getByRole('heading', { name: /日间|今日更新|最新更新/ }).first()).toBeVisible();
 
     await page.locator('.primary-button').first().click();
     const queueTrigger = page.getByRole('button', { name: '打开播放列表' });
@@ -47,7 +47,7 @@ test.describe('app smoke', () => {
     expect(seconds(routeDuration)).toBeLessThanOrEqual(0.001);
 
     await page.goto('/');
-    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: /日间|今日更新|最新更新/ }).first()).toBeVisible();
     await page.getByRole('heading', { name: '日间' }).waitFor({ timeout: 8000 }).catch(() => {});
     const homePlay = page.locator('.primary-button').first();
     const homePlayPath = await homePlay.locator('path').getAttribute('d');
@@ -138,7 +138,7 @@ test.describe('app smoke', () => {
   test('mobile album content clears the fixed player', async ({ page }) => {
     await page.setViewportSize({ width: 380, height: 844 });
     await page.goto('/');
-    await expect(page.getByText(/今日更新|最新更新/).first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: /日间|今日更新|最新更新/ }).first()).toBeVisible();
     await page.locator('.primary-button').first().click();
     await expect(page.locator('.mini-player')).toBeVisible();
 

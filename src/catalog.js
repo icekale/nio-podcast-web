@@ -1,4 +1,5 @@
-import { CUSTOM_WHITE_NOISE_ALBUM, isCustomAlbumId } from './customAlbums';
+import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_EPISODES, isCustomAlbumId } from './customAlbums';
+import { canPlayAudioUrl } from './iosSupport';
 
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
 const CATALOG_FETCH_TIMEOUT_MS = 8000;
@@ -100,6 +101,12 @@ export function selectHomeEpisodes(albums, now = new Date()) {
     heading: today.length ? '今日更新' : '最新更新',
     episodes: (today.length ? today : latest.slice(0, 12)),
   };
+}
+
+export function playableCatalog(catalog, canPlay = canPlayAudioUrl) {
+  if (!catalog) return catalog;
+  if (canPlay(CUSTOM_WHITE_NOISE_EPISODES[0]?.audioUrl)) return catalog;
+  return { ...catalog, albums: catalog.albums.filter(album => !isCustomAlbumId(album.id)) };
 }
 
 export function normalizeCatalog(payload) {

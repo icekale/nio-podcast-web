@@ -3,8 +3,9 @@ export const CUSTOM_WHITE_NOISE_ALBUM_ID = 900001;
 const CUSTOM_EPISODE_BASE_ID = 900001000;
 const XMSLEEP_REVISION = '3fd6fcb03aa5bf60e35bfa7c69a2c465385ea629';
 const XMSLEEP_AUDIO_BASE = `https://cdn.jsdelivr.net/gh/Tosencen/XMSLEEP@${XMSLEEP_REVISION}/audio`;
-const LIGHT_COVER = 'covers/white-noise-light.png';
-const DARK_COVER = 'covers/white-noise-dark.png';
+const COVER_BASE = `${String(import.meta.env?.BASE_URL || '/').replace(/\/?$/, '/')}`;
+const LIGHT_COVER = `${COVER_BASE}covers/white-noise-light.png`;
+const DARK_COVER = `${COVER_BASE}covers/white-noise-dark.png`;
 
 const sounds = [
   ['小雨', 149865, 'rain/light-rain.ogg'],

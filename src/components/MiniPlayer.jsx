@@ -17,8 +17,8 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
     }
     return false;
   };
-  const favorited = favoriteIds.includes(Number(player.currentEpisode?.albumId));
-  const currentAlbumId = player.currentEpisode?.albumId;
+  const currentAlbumId = Number(player.currentEpisode?.albumId);
+  const favorited = favoriteIds.includes(currentAlbumId);
   const progressRef = useRef(null);
   const [bubbleSeconds, setBubbleSeconds] = useState(null);
 
@@ -39,7 +39,7 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
       <div className="mini-main">
         <Artwork src={player.currentEpisode.albumPic} darkSrc={player.currentEpisode.albumPicDark} alt="" className="mini-art" />
         <div className="mini-copy"><strong>{player.currentEpisode.title}</strong><span>{player.currentEpisode.albumName || 'NIO Radio'}</span></div>
-        {currentAlbumId != null && onToggleFavorite ? (
+        {currentAlbumId > 0 && onToggleFavorite ? (
           <button type="button" className={`player-control mini-favorite${favorited ? ' is-favorite' : ''}`} aria-label={favorited ? `取消收藏 ${player.currentEpisode.albumName || ''}` : `收藏 ${player.currentEpisode.albumName || ''}`} aria-pressed={favorited} onClick={() => onToggleFavorite(currentAlbumId)}>
             <FavoriteIcon favorited={favorited} size={19} />
           </button>

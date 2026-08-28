@@ -57,6 +57,7 @@ describe('audio API boundary', () => {
   it('maps the dynamic daytime radio list and update identifiers', async () => {
     const fetchImpl = vi.fn(async (url, options) => {
       expect(url).toBe('https://gateway-front-external.nio.com/moat/100914/v3/radio/list?pageSize=87');
+      expect(url).toContain('pageSize=87');
       expect(options.method).toBe('GET');
       return {
         ok: true,
@@ -102,6 +103,28 @@ describe('audio API boundary', () => {
       schemeId: 149,
       clockId: 1,
     });
+  });
+
+  it('keeps the previous daytime list when a later page is suspiciously short', async () => {
+    vi.useFakeTimers();
+    try {
+      const longList = Array.from({ length: 40 }, (_, index) => ({ audioId: index + 1, audioName: `节目${index + 1}` }));
+      const shortList = Array.from({ length: 19 }, (_, index) => ({ audioId: 100 + index, audioName: `短${index}` }));
+      const fetchImpl = vi.fn()
+        .mockResolvedValueOnce({ ok: true, json: async () => ({ result: longList, other: { dcvId: { date: '2026-08-28', schemeId: 151 } } }) })
+        .mockResolvedValueOnce({ ok: true, json: async () => ({ result: shortList, other: { dcvId: { date: '2026-08-28', schemeId: 151 } } }) });
+
+      const first = await api.getDaytimeEpisodes(fetchImpl);
+      expect(first.episodes).toHaveLength(40);
+
+      vi.advanceTimersByTime(10 * 60 * 1000 + 1);
+      const second = await api.getDaytimeEpisodes(fetchImpl);
+      expect(second.episodes).toHaveLength(40);
+      expect(second.episodes[0].id).toBe(1);
+      expect(fetchImpl).toHaveBeenCalledTimes(2);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it('rejects malformed daytime responses', async () => {

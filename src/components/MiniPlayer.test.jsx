@@ -39,6 +39,13 @@ describe('MiniPlayer skip buttons', () => {
     durationSeconds: 0,
   });
 
+  it('hides favorite when the episode has no real album', () => {
+    const player = playerWith([{ id: 1, title: 'A', albumId: 0, audioUrl: 'https://cdn.example/a.mp3' }]);
+    player.currentEpisode = { ...player.currentEpisode, albumId: 0, albumName: '垫乐' };
+    render(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} onToggleFavorite={() => {}} />);
+    expect(screen.queryByRole('button', { name: /收藏/ })).not.toBeInTheDocument();
+  });
+
   it('disables skips when no playable neighbor exists', () => {
     render(<MiniPlayer player={playerWith([
       { id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' },

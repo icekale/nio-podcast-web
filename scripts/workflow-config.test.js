@@ -47,12 +47,13 @@ describe('catalog update workflow', () => {
     expect(workflow).not.toContain('environment:\n      name: github-pages');
     expect(workflow).not.toContain('gh workflow run update-catalog.yml');
 
-    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state', 'Trigger Pages deployment']) {
+    for (const step of ['Test application', 'Lint application', 'Build PWA', 'Commit catalog state']) {
       const start = workflow.indexOf(`- name: ${step}`);
       const end = workflow.indexOf('\n      - name:', start + 1);
       const block = workflow.slice(start, end < 0 ? undefined : end);
       expect(block).toContain("if: steps.changes.outputs.changed == 'true'");
     }
+    expect(workflow).toContain('github.run_attempt > 1');
     expect(workflow).toContain('git pull --rebase origin main');
 
     expect(deployWorkflow).toContain('push:');

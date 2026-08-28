@@ -28,7 +28,10 @@ describe('custom white-noise album', () => {
       category: 'commute',
       description: '让雨声与风声，陪你安静抵达。',
       episodeCount: 113,
+      imageUrl: '/covers/white-noise-light.png',
+      imageUrlDark: '/covers/white-noise-dark.png',
     });
+    expect(CUSTOM_WHITE_NOISE_ALBUM.latestEpisode.albumPic).toBe('/covers/white-noise-light.png');
     expect(getCustomEpisodes(CUSTOM_WHITE_NOISE_ALBUM_ID, 2, 20)).toMatchObject({
       totalCount: 113,
       hasMore: true,

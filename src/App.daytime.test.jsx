@@ -102,4 +102,27 @@ describe('daytime home playlist', () => {
     await waitFor(() => expect(screen.getAllByText('目录节目').length).toBeGreaterThan(0));
     expect(screen.queryByText('日间节目')).not.toBeInTheDocument();
   });
+
+  it('keeps the daytime list when a later refresh fails', async () => {
+    const now = Date.now();
+    const dateNow = vi.spyOn(Date, 'now').mockReturnValue(now);
+    getDaytimeEpisodes
+      .mockResolvedValueOnce({
+        episodes: [daytimeEpisode],
+        date: '2026-08-27',
+        schemeId: 149,
+        clockId: 1,
+      })
+      .mockRejectedValueOnce(new Error('offline'));
+    try {
+      render(<App />);
+      await waitFor(() => expect(screen.getAllByText('日间节目').length).toBeGreaterThan(0));
+      dateNow.mockReturnValue(now + 5 * 60 * 1000 + 1);
+      document.dispatchEvent(new Event('visibilitychange'));
+      await waitFor(() => expect(getDaytimeEpisodes).toHaveBeenCalledTimes(2));
+      expect(screen.getAllByText('日间节目').length).toBeGreaterThan(0);
+    } finally {
+      dateNow.mockRestore();
+    }
+  });
 });
