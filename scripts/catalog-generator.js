@@ -126,7 +126,7 @@ export function mergeKnownAlbums(previousAlbums, scanResult) {
 }
 
 export async function requestAlbum(id, fetchImpl = globalThis.fetch, signal) {
-  const body = new URLSearchParams({ albumId: String(id), sorttype: '2', pagenum: '1', pagesize: '1' });
+  const body = new URLSearchParams({ albumId: String(id), sorttype: '2', pagenum: '1', pageSize: '1' });
   const response = await fetchImpl(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

@@ -68,7 +68,7 @@ async function requestEpisodes(albumId, page, pageSize, fetchImpl) {
     albumId: String(albumId),
     sorttype: '2',
     pagenum: String(page),
-    pagesize: String(pageSize),
+    pageSize: String(pageSize),
   });
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);

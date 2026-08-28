@@ -29,6 +29,19 @@ describe('catalog generator', () => {
     await expect(requestAlbum(124, fetchImpl)).resolves.toBeNull();
   });
 
+  it('requests only the latest episode with camelCase pageSize', async () => {
+    const fetchImpl = async (_url, options) => {
+      const body = new URLSearchParams(options.body);
+      expect(body.get('albumId')).toBe('5');
+      expect(body.get('sorttype')).toBe('2');
+      expect(body.get('pagenum')).toBe('1');
+      expect(body.get('pageSize')).toBe('1');
+      expect(body.get('pagesize')).toBeNull();
+      return { ok: true, json: async () => ({ result: null }) };
+    };
+    await expect(requestAlbum(5, fetchImpl)).resolves.toBeNull();
+  });
+
   it('honors the concurrency limit and sorts albums by latest episode', async () => {
     let active = 0;
     let peak = 0;

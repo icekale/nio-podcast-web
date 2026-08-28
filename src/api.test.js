@@ -19,20 +19,30 @@ describe('audio API boundary', () => {
   });
 
   it('maps episode fields and pagination from the public API', async () => {
-    const fetchImpl = async () => responseFor({
-      totalCount: 31,
-      haveNext: 1,
-      dataList: [{
-        audioId: 9,
-        audioName: '测试节目',
-        albumId: 5,
-        albumName: '测试专辑',
-        albumPic: 'https://cdn.example/cover.jpg',
-        host: ['NIO Radio'],
-        duration: 125000,
-        onlineTime: 1700000000000,
-        aacPlayUrl192: 'http://cdn.example/audio.aac',
-      }],
+    const fetchImpl = vi.fn(async (_url, options) => {
+      const body = new URLSearchParams(options.body);
+      expect(options.method).toBe('POST');
+      expect(body.get('albumId')).toBe('5');
+      expect(body.get('sorttype')).toBe('2');
+      expect(body.get('pagenum')).toBe('1');
+      expect(body.get('pageSize')).toBe('30');
+      expect(body.get('pagesize')).toBeNull();
+      expect(body.get('pageNum')).toBeNull();
+      return responseFor({
+        totalCount: 31,
+        haveNext: 1,
+        dataList: [{
+          audioId: 9,
+          audioName: '测试节目',
+          albumId: 5,
+          albumName: '测试专辑',
+          albumPic: 'https://cdn.example/cover.jpg',
+          host: ['NIO Radio'],
+          duration: 125000,
+          onlineTime: 1700000000000,
+          aacPlayUrl192: 'http://cdn.example/audio.aac',
+        }],
+      });
     });
 
     await expect(api.getEpisodes(5, 1, 30, fetchImpl)).resolves.toEqual({
