@@ -1,3 +1,4 @@
+import { TOPIC_CATEGORIES } from '../scripts/album-categories.js';
 import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_EPISODES, isCustomAlbumId } from './customAlbums';
 import { canPlayAudioUrl } from './iosSupport';
 
@@ -21,19 +22,11 @@ const PINNED_ALBUM_IDS = [5, 23];
 const BOOSTED_ALBUM_IDS = [35, 584];
 const CITY_CHANNEL_PATTERN = /城市资讯|城市频道|天气预报/;
 
-// 车机端场景分类（与 scripts/album-categories.js 保持一致）
-export const SCENE_CATEGORY_ORDER = ['commute', 'kids', 'relax', 'longhaul', 'city', 'car'];
-export const SCENE_CATEGORY_LABELS = {
-  commute: '通勤场景|资讯速递',
-  kids: '宝贝同行|哄娃陪伴',
-  relax: '舒缓驾驶|乐伴旅途',
-  longhaul: '长途驾驶|知识充电',
-  city: '城市漫游|本地指南',
-  car: '玩转爱车|提车必听',
-};
+export const TOPIC_CATEGORY_ORDER = TOPIC_CATEGORIES.map(category => category.id);
+export const TOPIC_CATEGORY_LABELS = Object.fromEntries(TOPIC_CATEGORIES.map(category => [category.id, category.label]));
 
 export function groupAlbumsByCategory(albums, favoriteIds = []) {
-  const groups = SCENE_CATEGORY_ORDER.map(id => ({ id, label: SCENE_CATEGORY_LABELS[id], albums: [] }));
+  const groups = TOPIC_CATEGORY_ORDER.map(id => ({ id, label: TOPIC_CATEGORY_LABELS[id], albums: [] }));
   const rest = [];
   for (const album of albums) {
     const group = groups.find(g => g.id === album.category);

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, playableCatalog, SCENE_CATEGORY_LABELS, SCENE_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, playableCatalog, TOPIC_CATEGORY_LABELS, TOPIC_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
@@ -80,19 +80,19 @@ describe('catalog selectors', () => {
     expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([35, 584, 8, 7]);
   });
 
-  it('groups albums by scene category in vehicle order with unclassified fallback', () => {
+  it('groups albums by topic category with unclassified fallback', () => {
     const albums = [
       { id: 1, name: '路人抓马', category: null, latestEpisode: episode(11, 100) },
       { id: 35, name: '芝士分子', category: 'kids', latestEpisode: episode(351, 300) },
-      { id: 5, name: '资讯充电站·早间版', category: 'commute', latestEpisode: episode(51, 200) },
-      { id: 2, name: '华语经典精选', category: 'relax', latestEpisode: episode(22, 400) },
+      { id: 5, name: '资讯充电站·早间版', category: 'news', latestEpisode: episode(51, 200) },
+      { id: 2, name: '华语经典精选', category: 'audio', latestEpisode: episode(22, 400) },
     ];
     const { groups, rest } = groupAlbumsByCategory(albums);
-    expect(groups.map(g => g.id)).toEqual(SCENE_CATEGORY_ORDER);
-    expect(groups[0].albums.map(a => a.id)).toEqual([5]);
-    expect(groups[1].albums.map(a => a.id)).toEqual([35]);
-    expect(groups[2].albums.map(a => a.id)).toEqual([2]);
-    expect(rest.map(a => a.id)).toEqual([1]);
+    expect(groups.map(group => group.id)).toEqual(TOPIC_CATEGORY_ORDER);
+    expect(groups.find(group => group.id === 'news').albums.map(album => album.id)).toEqual([5]);
+    expect(groups.find(group => group.id === 'kids').albums.map(album => album.id)).toEqual([35]);
+    expect(groups.find(group => group.id === 'audio').albums.map(album => album.id)).toEqual([2]);
+    expect(rest.map(album => album.id)).toEqual([1]);
   });
 
   it('injects the custom album once and keeps it out of home updates', () => {
@@ -119,14 +119,15 @@ describe('catalog selectors', () => {
       .toEqual([CUSTOM_WHITE_NOISE_ALBUM_ID, regular.id]);
   });
 
-  it('exposes vehicle scene labels for every category', () => {
-    expect(SCENE_CATEGORY_ORDER.map(id => SCENE_CATEGORY_LABELS[id])).toEqual([
-      '通勤场景|资讯速递',
-      '宝贝同行|哄娃陪伴',
-      '舒缓驾驶|乐伴旅途',
-      '长途驾驶|知识充电',
-      '城市漫游|本地指南',
-      '玩转爱车|提车必听',
+  it('exposes short topic labels for every category', () => {
+    expect(TOPIC_CATEGORY_ORDER.map(id => TOPIC_CATEGORY_LABELS[id])).toEqual([
+      '资讯热点',
+      '汽车蔚来',
+      '商业科技',
+      '文化知识',
+      '生活兴趣',
+      '音乐声音',
+      '亲子成长',
     ]);
   });
 
