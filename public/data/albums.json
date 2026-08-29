@@ -19,7 +19,7 @@
         "onlineTime": 1787871600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/S9QEcOLFqd8wWVRH_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "business"
     },
     {
       "id": 5,
@@ -39,7 +39,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/d6OI0HOlnR6SrOye_AAC_192_1.m4a"
       },
-      "category": "commute"
+      "category": "news"
     },
     {
       "id": 11,
@@ -59,7 +59,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/uj9iJVSbIini2lKG_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 18,
@@ -79,7 +79,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/QSifUlapOtrkiyKL_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 30,
@@ -99,7 +99,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/JihkblMqPN2Qtw7h_AAC_192_1.m4a"
       },
-      "category": "commute"
+      "category": "news"
     },
     {
       "id": 64,
@@ -119,7 +119,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/AJvXH1EcYAbyagsE_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 68,
@@ -139,7 +139,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/FecUKyYio04hqb1u_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 69,
@@ -159,7 +159,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/Nebee79XqDIffZRh_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 70,
@@ -179,7 +179,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/39WFcrbjFhozZkgH_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 74,
@@ -199,7 +199,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/tsa0troRK9dXUZBu_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 88,
@@ -219,7 +219,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/tqNHLBXsiDP0ShBy_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 97,
@@ -239,7 +239,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/ZHcQSNAdxckAR1hO_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 103,
@@ -259,7 +259,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/bB7ysA6isog8M8mO_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 148,
@@ -279,7 +279,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/mhwVqYPjxNJujBq5_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 239,
@@ -299,7 +299,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/Ytqeb53KiMtqfI4e_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 306,
@@ -319,7 +319,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/fyeeEkoiLysV4XiW_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 311,
@@ -339,7 +339,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/7HS6Yu7qv7vbrzG1_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 345,
@@ -359,7 +359,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/hOjYJIaDEP3RqjJ5_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 348,
@@ -379,7 +379,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/tnZ97obZ2lpGJ227_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 358,
@@ -399,7 +399,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/CKVoYFVTeoOBaLOe_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 388,
@@ -419,7 +419,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/If6D1sN3e7T4Pilm_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 405,
@@ -459,7 +459,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/crbVNMATACHzRVO8_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 440,
@@ -479,7 +479,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/TabLuWMPmNObETqR_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 449,
@@ -499,7 +499,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/hkx3bq6MmZOTpEdV_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 532,
@@ -519,7 +519,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/PGhKdVZY1lzruKHC_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 544,
@@ -539,7 +539,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/N0yHC3WM48P8ZlUq_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 559,
@@ -559,7 +559,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/7sYIRaX5TOe3xcjE_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 594,
@@ -579,7 +579,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/RYV9OOCGelcwexfZ_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 614,
@@ -599,7 +599,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/LipSTuROy0Wsy90x_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 631,
@@ -619,7 +619,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/9uQMWMfzgvfGEKeW_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "kids"
     },
     {
       "id": 636,
@@ -639,7 +639,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/ZmkFQYeDDg6LpO1L_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 649,
@@ -679,7 +679,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/vvaVwRuwaWHAOyU5_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 758,
@@ -699,7 +699,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/1TEpF7mHZLFPfNyf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 767,
@@ -739,7 +739,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/gNKRlNr042wPuFcl_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 801,
@@ -759,7 +759,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/miNzWO3kbDgaMETO_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 814,
@@ -779,7 +779,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/fBlfWdwm65khvdxR_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 820,
@@ -799,7 +799,7 @@
         "onlineTime": 1787846400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/BY63ixOlq9J50s5P_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 23,
@@ -819,7 +819,7 @@
         "onlineTime": 1787821200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/dsXBUuCyNLxmBpdo_AAC_192_1.m4a"
       },
-      "category": "commute"
+      "category": "news"
     },
     {
       "id": 618,
@@ -859,7 +859,7 @@
         "onlineTime": 1787821200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/7Ye2IvtPxl1PLRAB_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 121,
@@ -879,7 +879,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/AtIkJxPojevX2nMU_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 349,
@@ -899,7 +899,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/MZFfpRAYdhB8xBgA_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 381,
@@ -919,7 +919,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/3zuazLrAvs5seP8l_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 442,
@@ -959,7 +959,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/3IrcTUDiLU7ikhsD_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 541,
@@ -979,7 +979,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/fmHyrboCRkPjMpHg_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 548,
@@ -999,7 +999,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/CwI8nvyqB4f4THc3_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 563,
@@ -1019,7 +1019,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/slwwFuEnj9lWpZjf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 597,
@@ -1039,7 +1039,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/atDkwbdzJ6EjwKqq_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 608,
@@ -1059,7 +1059,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/zwYn5AkKQganFWSF_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "culture"
     },
     {
       "id": 637,
@@ -1079,7 +1079,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/7i575PUfBGjwiDMg_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 688,
@@ -1099,7 +1099,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/sFuIWonYPt6ZY0hl_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 729,
@@ -1119,7 +1119,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/qVBYszvZH9PlehCf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 771,
@@ -1139,7 +1139,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/rDn5952ELRoc5m8s_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 789,
@@ -1159,7 +1159,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/WmK7hCL9ddBrPXl4_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "audio"
     },
     {
       "id": 794,
@@ -1199,7 +1199,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/Qed7KearVLDyTFny_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 823,
@@ -1219,7 +1219,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/ENXsmj36FXH1oxjV_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 831,
@@ -1239,7 +1239,7 @@
         "onlineTime": 1787760000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/t5QURZqpeYFJ9dAG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 147,
@@ -1259,7 +1259,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/b4A1iS2Xl1gz5FxE_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 334,
@@ -1279,7 +1279,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/tMz2rrVUXz4BkyKk_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 378,
@@ -1299,7 +1299,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/7CXFhexXB6pQIlJj_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 552,
@@ -1319,7 +1319,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/5lHAf0Bw8UwjPevM_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 606,
@@ -1339,7 +1339,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/tviwDFzK56Lrak0T_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 616,
@@ -1359,7 +1359,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/rolXPODK3uueUVID_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 624,
@@ -1379,7 +1379,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/O9BuGgypDHSOriL2_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 674,
@@ -1419,7 +1419,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/Ni1ykZMzhN5vcBWf_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 698,
@@ -1459,7 +1459,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/xUZYDZQcE6U5UAmU_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 751,
@@ -1479,7 +1479,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/bm4g17FaU3feiZpB_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 759,
@@ -1499,7 +1499,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/gAcV55TOe4AUvEyN_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 798,
@@ -1519,7 +1519,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/VmpO9RgPjnRRikvS_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 805,
@@ -1539,7 +1539,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/H0Xl9pNAtDqIT5Ka_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 816,
@@ -1559,7 +1559,7 @@
         "onlineTime": 1787673600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/25/g9v7YfCICymEdHm4_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 63,
@@ -1579,7 +1579,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/kpw8ULXPUP2Hl8zA_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 129,
@@ -1599,7 +1599,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/0ENPwgWQM1PYFqx1_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 131,
@@ -1619,7 +1619,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/5TxKZR1mglkQa52B_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 365,
@@ -1639,7 +1639,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/G3wqdiWdlIl2ZJWN_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 382,
@@ -1659,7 +1659,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/bThFVosnbjIJICuI_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 484,
@@ -1679,7 +1679,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/CAMJp3USNGBK9Bpb_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 588,
@@ -1699,7 +1699,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/ecN9h3irERGt4bs0_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 604,
@@ -1739,7 +1739,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/QfCXpprmFd2XI3Sn_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 630,
@@ -1759,7 +1759,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/9VLhgHOvNPllzhpR_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 648,
@@ -1779,7 +1779,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/zpJSatndcsDamJcu_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 680,
@@ -1799,7 +1799,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/Xti7Au3BQbwH4A2E_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 694,
@@ -1819,7 +1819,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/vDFxQ5W821vs0w3g_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 714,
@@ -1839,7 +1839,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/FzRPDnJYe5IRUm4g_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 761,
@@ -1879,7 +1879,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/P5By4I0rP7tfwDUf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 813,
@@ -1899,7 +1899,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/7e4qD2epI02d0BP0_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 827,
@@ -1939,7 +1939,7 @@
         "onlineTime": 1787587200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/2yO3ZkU9cTBzsjzx_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 66,
@@ -1959,7 +1959,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/hQpkL6WLymjfYkBe_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 93,
@@ -1979,7 +1979,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/VtgOXoqKxn3hBdjW_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 271,
@@ -1999,7 +1999,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/hkq0AxlO8eTk6hJT_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 401,
@@ -2019,7 +2019,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/hrX9WCffJwPaHjHN_AAC_192_1.m4a"
       },
-      "category": "kids"
+      "category": "lifestyle"
     },
     {
       "id": 485,
@@ -2039,7 +2039,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/VX6DWxdKALq6KL7W_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 622,
@@ -2059,7 +2059,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/gjUDZbRUgVKcj5ed_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 635,
@@ -2079,7 +2079,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/Bzvp8N0xYl5xy2iV_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 675,
@@ -2099,7 +2099,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/d65srFgspbLYnBzg_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 726,
@@ -2119,7 +2119,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/xPVIL4nhl1PhuogD_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 735,
@@ -2159,7 +2159,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/zB07j5Tw1vjjNYXS_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 752,
@@ -2179,7 +2179,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/DtmWHla7lF5C3cfr_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 797,
@@ -2239,7 +2239,7 @@
         "onlineTime": 1787500800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/O8ezTLNakJUJq1PF_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 35,
@@ -2279,7 +2279,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/04/LGh3xSk7nD1fYKRR_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 56,
@@ -2299,7 +2299,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/MTJYQQSC5fQZIxE0_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 307,
@@ -2319,7 +2319,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/12/Iht6y592xMfUXNdk_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 411,
@@ -2339,7 +2339,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/OSF3Z4kMQhyIWcXG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 661,
@@ -2359,7 +2359,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/31/ab06c802-f442-4bf0-85d6-8d3205532d17_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 669,
@@ -2379,7 +2379,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/QfD9O6rN56M5ffRX_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 806,
@@ -2399,7 +2399,7 @@
         "onlineTime": 1787414400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/lqL6xWrknrVIFFk4_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 547,
@@ -2419,7 +2419,7 @@
         "onlineTime": 1787389200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/P3BazIZOcfC8LPJl_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 22,
@@ -2439,7 +2439,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/0Q6LxblqIi9EyuHD_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 539,
@@ -2459,7 +2459,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/dsKqR9klaa4Dszv2_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 651,
@@ -2479,7 +2479,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/NVePlYZ8pbtS1Wht_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 728,
@@ -2519,7 +2519,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/V4vfrYrauTugrrQw_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 769,
@@ -2539,7 +2539,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/2Z9WshmkeeoZHXHE_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 803,
@@ -2559,7 +2559,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/l1jVMn4GBuaVS9fU_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 808,
@@ -2599,7 +2599,7 @@
         "onlineTime": 1787328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/yRGlE00KKe1ucjWG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 120,
@@ -2619,7 +2619,7 @@
         "onlineTime": 1787302800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/21/ceLYW8Aa1JF6IeFM_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 260,
@@ -2639,7 +2639,7 @@
         "onlineTime": 1787241600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/rlCaumjeEGYdQ8Yc_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 627,
@@ -2659,7 +2659,7 @@
         "onlineTime": 1787241600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/20/mFjKDsrXIGJH3Y9a_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 683,
@@ -2679,7 +2679,7 @@
         "onlineTime": 1787241600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/n24o2Zn13crsODG5_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 699,
@@ -2719,7 +2719,7 @@
         "onlineTime": 1787241600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/10/LatZR89R5dqU7npf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 662,
@@ -2739,7 +2739,7 @@
         "onlineTime": 1787155200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/19/0apo89JV8sFZZAGw_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 749,
@@ -2759,7 +2759,7 @@
         "onlineTime": 1787155200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/NeeckPy0xQmSQAAB_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 772,
@@ -2779,7 +2779,7 @@
         "onlineTime": 1787155200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/RSWYqRPcGeR58icG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 339,
@@ -2799,7 +2799,7 @@
         "onlineTime": 1787068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/dEEaYrvmqT0OFtAl_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 670,
@@ -2819,7 +2819,7 @@
         "onlineTime": 1787068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/18/NlHxdUW6MaM8yp0u_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 802,
@@ -2839,7 +2839,7 @@
         "onlineTime": 1786982400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/sAiO2OZSD5UK9H5o_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 703,
@@ -2859,7 +2859,7 @@
         "onlineTime": 1786896000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/pmbD9u8qxOqpYduL_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 753,
@@ -2879,7 +2879,7 @@
         "onlineTime": 1786809600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/Ofdaglt4GK5oLTwE_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 763,
@@ -2919,7 +2919,7 @@
         "onlineTime": 1786723200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/07H262J2zFP8D3F1_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 773,
@@ -2939,7 +2939,7 @@
         "onlineTime": 1786723200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/14/3qRNwclybRTGyZNV_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 344,
@@ -2959,7 +2959,7 @@
         "onlineTime": 1786464000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/4tFIxdPqTHroKFsF_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 439,
@@ -2979,7 +2979,7 @@
         "onlineTime": 1786464000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/11/ACeWghU8w8p2wVJQ_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 584,
@@ -2999,7 +2999,7 @@
         "onlineTime": 1786204800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/08/9ooXUTXiCOZOXwYd_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "culture"
     },
     {
       "id": 328,
@@ -3019,7 +3019,7 @@
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tUbGMqXPYy5lnYLK_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 625,
@@ -3039,7 +3039,7 @@
         "onlineTime": 1785945600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/04/tqYNweygjNZGyxvu_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 695,
@@ -3059,7 +3059,7 @@
         "onlineTime": 1785686400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/02/iemHs5MLWPMAz4Yw_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 516,
@@ -3079,7 +3079,7 @@
         "onlineTime": 1785427200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/30/74aKMuiWrUwnCjB4_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 696,
@@ -3119,7 +3119,7 @@
         "onlineTime": 1785254400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/23/sezmnmqwEFduc3rW_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 346,
@@ -3139,7 +3139,7 @@
         "onlineTime": 1784908800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/24/nQONyt54ofw2agOB_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 743,
@@ -3159,7 +3159,7 @@
         "onlineTime": 1784822400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/23/eTNB5tJYEyK7nzrH_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 830,
@@ -3179,7 +3179,7 @@
         "onlineTime": 1784772000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/jhADYcYFiYjqbilj_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 679,
@@ -3199,7 +3199,7 @@
         "onlineTime": 1784736000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/22/J7ud8Vuz3tO3Uz1D_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 824,
@@ -3239,7 +3239,7 @@
         "onlineTime": 1784131200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/15/UwSzsz1IzAqevpEP_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 826,
@@ -3259,7 +3259,7 @@
         "onlineTime": 1784131200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/15/V8HsS5EVV1etFiTy_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 828,
@@ -3279,7 +3279,7 @@
         "onlineTime": 1783958400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/29/3IXrS9RAqFi1Jlrv_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 149,
@@ -3299,7 +3299,7 @@
         "onlineTime": 1783872000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/10/TKLvc4Q6WIEehcl3_AAC_192.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 124,
@@ -3319,7 +3319,7 @@
         "onlineTime": 1783785600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/10/JYaXySJe0R9w7Je8_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 677,
@@ -3339,7 +3339,7 @@
         "onlineTime": 1782921600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/07/02/0gkYiIkVZB4UcpKV_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "business"
     },
     {
       "id": 764,
@@ -3379,7 +3379,7 @@
         "onlineTime": 1782748800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/29/6uXJfaeW8ndtcRGd_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 549,
@@ -3399,7 +3399,7 @@
         "onlineTime": 1782662400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/18/QSMYPxx9UlX28DIh_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 684,
@@ -3459,7 +3459,7 @@
         "onlineTime": 1781971200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/18/hsdiSdp2HR7URpnZ_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 580,
@@ -3479,7 +3479,7 @@
         "onlineTime": 1781798400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/17/bQVV0Z1kc34zYQFy_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 783,
@@ -3519,7 +3519,7 @@
         "onlineTime": 1781366400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/12/eKtzNifDHcFIIlhG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 621,
@@ -3539,7 +3539,7 @@
         "onlineTime": 1780934400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/06/06/aa8P1jfsxNETNAPO_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 796,
@@ -3559,7 +3559,7 @@
         "onlineTime": 1780156800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/31/yfmgl8BhN6QDMzJJ_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 818,
@@ -3579,7 +3579,7 @@
         "onlineTime": 1779850800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/27/m7ztrBOjvFarQ35v_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 458,
@@ -3619,7 +3619,7 @@
         "onlineTime": 1778688000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/05/13/rueongk3zOMVL9El_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 745,
@@ -3659,7 +3659,7 @@
         "onlineTime": 1776387600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/16/0MO3Y0rnrOxDRiOw_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 692,
@@ -3679,7 +3679,7 @@
         "onlineTime": 1775059200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/01/mfgjNmVhfPKlFojG_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "lifestyle"
     },
     {
       "id": 768,
@@ -3699,7 +3699,7 @@
         "onlineTime": 1775059200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/04/01/Etme2Kv43g46G2bf_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 356,
@@ -3719,7 +3719,7 @@
         "onlineTime": 1774713600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/28/kmC6gqDlYu7eQJVj_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 530,
@@ -3739,7 +3739,7 @@
         "onlineTime": 1774368000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/25/Zh6UgDToaDeBqCaX_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 561,
@@ -3759,7 +3759,7 @@
         "onlineTime": 1773590400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/13/d7YkQSSUdKtQrMwF_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 791,
@@ -3779,7 +3779,7 @@
         "onlineTime": 1773417600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/03/12/s5aacpgTTApJne3z_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 799,
@@ -3799,7 +3799,7 @@
         "onlineTime": 1771689600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/11/6RL5V2lF0nNmfZH7_AAC_192_1.m4a"
       },
-      "category": "commute"
+      "category": "news"
     },
     {
       "id": 72,
@@ -3819,7 +3819,7 @@
         "onlineTime": 1771603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/13/U0vExMlCLI1Dufoh_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 800,
@@ -3839,7 +3839,7 @@
         "onlineTime": 1771603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/15/0inloVwLlDWhKQ99_AAC_192_1.m4a"
       },
-      "category": "commute"
+      "category": "news"
     },
     {
       "id": 160,
@@ -3859,7 +3859,7 @@
         "onlineTime": 1771257600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/02/13/inH3GJhyRI859zf4_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 790,
@@ -3879,7 +3879,7 @@
         "onlineTime": 1769184000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/19/G8MDpEpWUComaGBI_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 589,
@@ -3899,7 +3899,7 @@
         "onlineTime": 1769097600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/21/Qvi5Kzt6p296pKkc_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 750,
@@ -3919,7 +3919,7 @@
         "onlineTime": 1767628800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/05/grq9vnPVoaxTvnoZ_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 601,
@@ -3939,7 +3939,7 @@
         "onlineTime": 1767369600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/iWUwYwCLPfrSlRMc_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 128,
@@ -3959,7 +3959,7 @@
         "onlineTime": 1767283200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/xl71EtOoDu4yldch_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 89,
@@ -3979,7 +3979,7 @@
         "onlineTime": 1767196800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/31/himwAToLxC5Uwm35_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 65,
@@ -3999,7 +3999,7 @@
         "onlineTime": 1767110400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/30/VktzOEpiG1imoZQo_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 793,
@@ -4019,7 +4019,7 @@
         "onlineTime": 1765814400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/18/trNjtkxMikLeD1vB_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 775,
@@ -4039,7 +4039,7 @@
         "onlineTime": 1765641600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/12/xq7mdfohOPgrlezd_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 687,
@@ -4059,7 +4059,7 @@
         "onlineTime": 1765555200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/12/kgNw4N1cAR0c6IFD_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 792,
@@ -4079,7 +4079,7 @@
         "onlineTime": 1764864000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/12/04/FZjWD4LFxTeONz3O_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 173,
@@ -4099,7 +4099,7 @@
         "onlineTime": 1759507200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/02/cDa4PGpu62vgTkXP_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 206,
@@ -4119,7 +4119,7 @@
         "onlineTime": 1759161600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/29/Kj4cNzwPGxgVsj6c_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 689,
@@ -4139,7 +4139,7 @@
         "onlineTime": 1759075200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/25/WipqeVfIS4y8oe1f_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "lifestyle"
     },
     {
       "id": 542,
@@ -4159,7 +4159,7 @@
         "onlineTime": 1758816000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/25/Dpyz781gjRWeeS0v_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 777,
@@ -4199,7 +4199,7 @@
         "onlineTime": 1758470400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/21/Hn9RC3NXEbs6NRg0_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 610,
@@ -4219,7 +4219,7 @@
         "onlineTime": 1758211200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/18/bhW3mPdB5nSNujgT_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 360,
@@ -4239,7 +4239,7 @@
         "onlineTime": 1756656000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/29/rqcYuw12blpvfIch_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 671,
@@ -4259,7 +4259,7 @@
         "onlineTime": 1756483200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/30/T8HqShnAl7IMZqdl_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 781,
@@ -4279,7 +4279,7 @@
         "onlineTime": 1755878400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/22/WT8d5cO26W3K9cx2_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 780,
@@ -4299,7 +4299,7 @@
         "onlineTime": 1755792000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/21/U2yHzafK4r2LmDA1_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 782,
@@ -4319,7 +4319,7 @@
         "onlineTime": 1755792000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/03/iR9HKrc5seD0aOLn_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 562,
@@ -4339,7 +4339,7 @@
         "onlineTime": 1755446400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/15/famgSz2gInuiFjVx_AAC_192_1.m4a"
       },
-      "category": "kids"
+      "category": null
     },
     {
       "id": 247,
@@ -4359,7 +4359,7 @@
         "onlineTime": 1755187200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/08/14/HE954xfIJbia69dz_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "audio"
     },
     {
       "id": 778,
@@ -4399,7 +4399,7 @@
         "onlineTime": 1753632000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/24/e0sCjo2LGw66uFbp_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 613,
@@ -4419,7 +4419,7 @@
         "onlineTime": 1753027200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/20/DWhtXMJKV2W9UNC3_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 741,
@@ -4459,7 +4459,7 @@
         "onlineTime": 1752595200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/07/14/lzaT1VY6ZQUFp2TB_AAC_192_1.m4a"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 723,
@@ -4479,7 +4479,7 @@
         "onlineTime": 1750780800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/06/24/ujS4ezYA1rx3upOq_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 668,
@@ -4519,7 +4519,7 @@
         "onlineTime": 1749139200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/06/05/T3hIwMppSSBqzK4o_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "kids"
     },
     {
       "id": 503,
@@ -4539,7 +4539,7 @@
         "onlineTime": 1748880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/W3QxvwaEcyY8mxiq_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 686,
@@ -4559,7 +4559,7 @@
         "onlineTime": 1748880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/8UO8OkjXesZhALZx_AAC_192_1.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 617,
@@ -4579,7 +4579,7 @@
         "onlineTime": 1748620800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/30/QpoYbh4laF7aFcGj_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 623,
@@ -4639,7 +4639,7 @@
         "onlineTime": 1747324800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/15/S9iiXkzjM8QELwDs_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 565,
@@ -4659,7 +4659,7 @@
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/14/mid0ASs7WWQs3HsC_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 620,
@@ -4679,7 +4679,7 @@
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/07/nfY0Z1OEDRa9JdGL_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 707,
@@ -4699,7 +4699,7 @@
         "onlineTime": 1747238400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/13/OTAuuKAF6ubHJHyT_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 755,
@@ -4719,7 +4719,7 @@
         "onlineTime": 1746028800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/01/PtNEQSfYQC2y9VmG_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 205,
@@ -4739,7 +4739,7 @@
         "onlineTime": 1745942400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/29/Qx7f0ncepNd4fvZh_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 760,
@@ -4759,7 +4759,7 @@
         "onlineTime": 1745942400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/29/xFNP0pSBIi0THQUQ_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 392,
@@ -4779,7 +4779,7 @@
         "onlineTime": 1745856000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/28/1prPCoRSCvGxapOt_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 400,
@@ -4799,7 +4799,7 @@
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/26/FdQbfuf5YgJTuP25_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 638,
@@ -4819,7 +4819,7 @@
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/26/WrnYzlDIcbRBVNpe_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 701,
@@ -4839,7 +4839,7 @@
         "onlineTime": 1745683200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/23/X7CEdzGWyhrpwSyp_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 174,
@@ -4859,7 +4859,7 @@
         "onlineTime": 1745596800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/25/JdJ79ROxtwLfChVK_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 296,
@@ -4879,7 +4879,7 @@
         "onlineTime": 1745596800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/24/dVNcsc0uVltCxefW_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 599,
@@ -4899,7 +4899,7 @@
         "onlineTime": 1745510400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/23/3BiNOst5XmWjWe7W_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 107,
@@ -4919,7 +4919,7 @@
         "onlineTime": 1744992000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/18/y7VWxuzOPtzcrsg7_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 354,
@@ -4939,7 +4939,7 @@
         "onlineTime": 1744646400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/14/3lXrAEbttuI1LU7J_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 507,
@@ -4959,7 +4959,7 @@
         "onlineTime": 1744300800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/10/i1QPawnTvIvalQtO_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 619,
@@ -4979,7 +4979,7 @@
         "onlineTime": 1744128000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/07/VWFylr14I34C5Vqv_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 244,
@@ -4999,7 +4999,7 @@
         "onlineTime": 1743782340000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/PvSaUcGoyv1POVhz_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 501,
@@ -5019,7 +5019,7 @@
         "onlineTime": 1743609600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/02/m1Fy9IcdPNoJLpq4_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 335,
@@ -5039,7 +5039,7 @@
         "onlineTime": 1743350400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/30/Ufhjuj0Ipkh9N60Y_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 732,
@@ -5059,7 +5059,7 @@
         "onlineTime": 1743177600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/Xr4euZbrDMt9BKtq_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 747,
@@ -5079,7 +5079,7 @@
         "onlineTime": 1743177600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/28/kLdHaVnoGJUMgoEL_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 98,
@@ -5099,7 +5099,7 @@
         "onlineTime": 1743091197000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/27/dFUJ8IaTkLm8DWoE_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 170,
@@ -5119,7 +5119,7 @@
         "onlineTime": 1743091197000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/27/PLdLJ86fNIxXgetq_AAC_192_1.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 330,
@@ -5139,7 +5139,7 @@
         "onlineTime": 1742745600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/srI7mHzfgBLbdt1Q_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 705,
@@ -5159,7 +5159,7 @@
         "onlineTime": 1742745600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/hn25LAKNMfD77rYV_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 471,
@@ -5199,7 +5199,7 @@
         "onlineTime": 1742572800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/21/XLBW2NOkyw5lNjRC_AAC_192_1.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 242,
@@ -5219,7 +5219,7 @@
         "onlineTime": 1742140800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/4fAcFqepIPbqpbH0_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 482,
@@ -5239,7 +5239,7 @@
         "onlineTime": 1741968000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/0Vk2yQxSObR0iKOD_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 609,
@@ -5259,7 +5259,7 @@
         "onlineTime": 1741968000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/N1zD48wMtpEDNxMO_AAC_192.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 511,
@@ -5279,7 +5279,7 @@
         "onlineTime": 1741946400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/03/14/ztWmzt0rqITlLyjI_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 733,
@@ -5319,7 +5319,7 @@
         "onlineTime": 1740672000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/27/HvBXoJKx2O07FWP1_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "kids"
     },
     {
       "id": 734,
@@ -5339,7 +5339,7 @@
         "onlineTime": 1739808000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/17/wziaZCswzcB9yJcD_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 685,
@@ -5359,7 +5359,7 @@
         "onlineTime": 1739635200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/15/faTxjK4Jhou4Ej4y_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 742,
@@ -5379,7 +5379,7 @@
         "onlineTime": 1739376000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/12/vXD87hI97K5AitzT_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 739,
@@ -5399,7 +5399,7 @@
         "onlineTime": 1738512000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/gdBqmD4bGEIdm2nO_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 740,
@@ -5419,7 +5419,7 @@
         "onlineTime": 1738512000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/02/02/Vhur1XKhAC4dGeS8_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 207,
@@ -5439,7 +5439,7 @@
         "onlineTime": 1738166400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/OilSDX4IDrJpkcCu_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 690,
@@ -5459,7 +5459,7 @@
         "onlineTime": 1738080000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/27/yjKaYlSijuDJkAwx_AAC_192.m4a"
       },
-      "category": "commute"
+      "category": "car"
     },
     {
       "id": 737,
@@ -5479,7 +5479,7 @@
         "onlineTime": 1737511200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/20/grEQ1PakALuxJTWK_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 736,
@@ -5499,7 +5499,7 @@
         "onlineTime": 1736956800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/23/eOSGhpMA1on2PqKY_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 546,
@@ -5519,7 +5519,7 @@
         "onlineTime": 1736611200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/10/K9M9U9sGNBKohEJF_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 183,
@@ -5539,7 +5539,7 @@
         "onlineTime": 1736179200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/04/R1w93oe5zPrlxhH4_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 572,
@@ -5559,7 +5559,7 @@
         "onlineTime": 1736006400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/05/uWHYEgC6kYQe6anc_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 315,
@@ -5579,7 +5579,7 @@
         "onlineTime": 1735833600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/02/r7PUydCm9Ze4Ai2U_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 738,
@@ -5599,7 +5599,7 @@
         "onlineTime": 1735660800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/01/23/OijSh7JVQcKY3mt4_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 407,
@@ -5619,7 +5619,7 @@
         "onlineTime": 1735142400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/25/SgtHdctfdtXRCjlF_AAC_192.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 731,
@@ -5639,7 +5639,7 @@
         "onlineTime": 1734883200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/22/JmLNWyr05hr2muhg_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 730,
@@ -5659,7 +5659,7 @@
         "onlineTime": 1733328000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/04/Z00nArRCc5FDJmdP_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 727,
@@ -5679,7 +5679,7 @@
         "onlineTime": 1733068800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/12/02/JqtlIRRYRLEtgyYg_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 660,
@@ -5699,7 +5699,7 @@
         "onlineTime": 1732982400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/29/sz7RGROHahJWyUhi_AAC_192.m4a"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 676,
@@ -5719,7 +5719,7 @@
         "onlineTime": 1731168000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/08/NIqcFzWCO7DrmFxA_AAC_192.m4a"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 472,
@@ -5759,7 +5759,7 @@
         "onlineTime": 1727366400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/26/6F2lRk62HYdokuox_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 712,
@@ -5779,7 +5779,7 @@
         "onlineTime": 1726502400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/19/4PJJZUsRzYwOeee7_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 385,
@@ -5799,7 +5799,7 @@
         "onlineTime": 1725379200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/03/i3ZPOVXGg9AuS1Ko_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 467,
@@ -5819,7 +5819,7 @@
         "onlineTime": 1725379200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/03/GOWWZ8mjwxrbSExd_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 693,
@@ -5859,7 +5859,7 @@
         "onlineTime": 1724428800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/23/8RqyLxOOLMaoeDy8_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 691,
@@ -5899,7 +5899,7 @@
         "onlineTime": 1723305600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/10/shNu9XKW6RvheXjZ_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 702,
@@ -5919,7 +5919,7 @@
         "onlineTime": 1721570745000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/07/21/1Z1Cq1BGnHqhH7uu_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 14,
@@ -5939,7 +5939,7 @@
         "onlineTime": 1719763200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/07/01/TIRRIRJ60LFtEAuI_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 394,
@@ -5959,7 +5959,7 @@
         "onlineTime": 1717603200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/06/05/hQdiPSNwvCgatrV6_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 387,
@@ -5999,7 +5999,7 @@
         "onlineTime": 1717171200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/05/31/IXTEzy6J8GQ3R2jM_AAC_192.m4a"
       },
-      "category": "kids"
+      "category": "car"
     },
     {
       "id": 525,
@@ -6019,7 +6019,7 @@
         "onlineTime": 1717171200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/3/ffa6b990-cea3-43ef-b9be-8f3d9dc18d32_AAC_192.aac"
       },
-      "category": "kids"
+      "category": "culture"
     },
     {
       "id": 663,
@@ -6039,7 +6039,7 @@
         "onlineTime": 1716739200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/05/21/EWvyi5fbsWI8K1ta_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 483,
@@ -6099,7 +6099,7 @@
         "onlineTime": 1714579200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/30/peqsy3L9CPtvBAhO_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 665,
@@ -6119,7 +6119,7 @@
         "onlineTime": 1713628800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/18/cCDxKolHktPcH2QJ_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 576,
@@ -6139,7 +6139,7 @@
         "onlineTime": 1712332800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/04/04/1j6vmRVlXWAPcG2s_AAC_192.m4a"
       },
-      "category": "kids"
+      "category": "lifestyle"
     },
     {
       "id": 112,
@@ -6159,7 +6159,7 @@
         "onlineTime": 1711555200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/03/27/tSv2d5RGTkbwJArL_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 553,
@@ -6179,7 +6179,7 @@
         "onlineTime": 1711382400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/03/26/0qNBQY3PiAOGsKQZ_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 654,
@@ -6199,7 +6199,7 @@
         "onlineTime": 1707926400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/14/o9qjTwQzNJ7LhPx2_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 643,
@@ -6219,7 +6219,7 @@
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/13/35ZsJ0bVzJBKrXie_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 653,
@@ -6239,7 +6239,7 @@
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/08/wpY3u2YkbZigVykB_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 655,
@@ -6259,7 +6259,7 @@
         "onlineTime": 1707840000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/13/2iSz9OgAIfTZM0ZO_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 292,
@@ -6279,7 +6279,7 @@
         "onlineTime": 1707494400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/09/OeKLTuHbcuctMo1f_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 229,
@@ -6299,7 +6299,7 @@
         "onlineTime": 1707408000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/08/tNKXBo70TuoZgO8L_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 647,
@@ -6319,7 +6319,7 @@
         "onlineTime": 1707235200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/02/04/U1yMoI9QY3INeARj_AAC_192.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 421,
@@ -6339,7 +6339,7 @@
         "onlineTime": 1705161600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/01/13/QEt9C1h0nUFe8s8D_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 350,
@@ -6359,7 +6359,7 @@
         "onlineTime": 1704816000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/01/09/0XO77fFgbn606LiP_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 645,
@@ -6379,7 +6379,7 @@
         "onlineTime": 1703606400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/28/NldoKOdeerSvQRPa_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 592,
@@ -6399,7 +6399,7 @@
         "onlineTime": 1703174400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/21/8dGbbHVZ6YpKdBZ9_AAC_192.m4a"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 582,
@@ -6419,7 +6419,7 @@
         "onlineTime": 1703088000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/22/EfjXvBCKOZG3Uxid_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 639,
@@ -6439,7 +6439,7 @@
         "onlineTime": 1702137600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/10/1YXR9FIjhLMyT1Zp_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 494,
@@ -6459,7 +6459,7 @@
         "onlineTime": 1700928000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/11/26/WhrF5j450S8JxzqM_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 13,
@@ -6479,7 +6479,7 @@
         "onlineTime": 1700323200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/11/20/oU9lRNSOhWvghO6c_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 278,
@@ -6499,7 +6499,7 @@
         "onlineTime": 1698310800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/10/24/2KI4JmvNgC0E4RRs_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 423,
@@ -6519,7 +6519,7 @@
         "onlineTime": 1698163200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/15/3e48fba9-1531-4d05-9111-e790d79bfb50_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 585,
@@ -6539,7 +6539,7 @@
         "onlineTime": 1694880000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/16/EyFT0BVoepbmTvaf_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 602,
@@ -6559,7 +6559,7 @@
         "onlineTime": 1694779200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/15/M5FacSk9gOU9mMqV_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 581,
@@ -6579,7 +6579,7 @@
         "onlineTime": 1694534400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/12/d8qF9ry3nIy7AvME_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 172,
@@ -6599,7 +6599,7 @@
         "onlineTime": 1694102400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/03/VEE5EaPs4PAyVMMZ_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 551,
@@ -6619,7 +6619,7 @@
         "onlineTime": 1693065600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/25/mPtqb8cXyl5Cjug6_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 560,
@@ -6639,7 +6639,7 @@
         "onlineTime": 1692720000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/22/WaKIIfYOtmHued7l_AAC_192.m4a"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 75,
@@ -6679,7 +6679,7 @@
         "onlineTime": 1691632800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/09/eoDL7Jt2ajLGvSkm_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 578,
@@ -6699,7 +6699,7 @@
         "onlineTime": 1691424000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/08/04/AOWzFN9qir24wGEm_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 253,
@@ -6719,7 +6719,7 @@
         "onlineTime": 1690732800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/30/Z4Xevb5RVd7KxEK3_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "audio"
     },
     {
       "id": 410,
@@ -6739,7 +6739,7 @@
         "onlineTime": 1690387200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/26/ion1QhkpeQxcLXsc_AAC_192.m4a"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 575,
@@ -6759,7 +6759,7 @@
         "onlineTime": 1689091200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/28/EKipINa4pOnSCHmm_AAC_192.m4a"
       },
-      "category": "kids"
+      "category": "car"
     },
     {
       "id": 574,
@@ -6779,7 +6779,7 @@
         "onlineTime": 1688720400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/07/Meqqjorp9IwVumvd_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 564,
@@ -6799,7 +6799,7 @@
         "onlineTime": 1688486400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/04/7vomESctms8ulAUd_AAC_192.m4a"
       },
-      "category": "longhaul"
+      "category": "culture"
     },
     {
       "id": 571,
@@ -6839,7 +6839,7 @@
         "onlineTime": 1688313600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/07/11/mdGFR1tJbOJwXlJj_AAC_192.m4a"
       },
-      "category": "longhaul"
+      "category": "culture"
     },
     {
       "id": 383,
@@ -6859,7 +6859,7 @@
         "onlineTime": 1687881600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/27/D8JxXU1xxd0ryfmc_AAC_192.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 569,
@@ -6879,7 +6879,7 @@
         "onlineTime": 1687276800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/15/zJNGXle8l4POZCfV_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 504,
@@ -6899,7 +6899,7 @@
         "onlineTime": 1686585600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/13/NIdWFmEgwe6PgfZ8_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 399,
@@ -6919,7 +6919,7 @@
         "onlineTime": 1685808000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/02/bw4kWFQviZodLXoh_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 397,
@@ -6939,7 +6939,7 @@
         "onlineTime": 1685635200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/06/01/Py6nXDymAn91Sow9_AAC_192.m4a"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 286,
@@ -6959,7 +6959,7 @@
         "onlineTime": 1685030400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/19/608l29thSzolegqI_AAC_192.m4a"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 568,
@@ -6979,7 +6979,7 @@
         "onlineTime": 1684931400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/24/DGLeaN22KnbxgoSl_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 263,
@@ -6999,7 +6999,7 @@
         "onlineTime": 1683993600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/11/YWJ5qPQBk5z6ZoPk_AAC_192.m4a"
       },
-      "category": "city"
+      "category": "audio"
     },
     {
       "id": 481,
@@ -7019,7 +7019,7 @@
         "onlineTime": 1683820800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/11/m0vw1xLXJLbd64za_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 326,
@@ -7059,7 +7059,7 @@
         "onlineTime": 1683216000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/05/03/O5x47vPx1qXGPLJB_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 558,
@@ -7079,7 +7079,7 @@
         "onlineTime": 1682611200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/12/1KK38QCMXCxgHAjn_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 556,
@@ -7119,7 +7119,7 @@
         "onlineTime": 1682161200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/04/23/ybhgVIyRV7M9KULv_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 550,
@@ -7139,7 +7139,7 @@
         "onlineTime": 1680364800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/4/2/bee63477-a0b9-4d50-a170-0e4189258aa8_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 276,
@@ -7199,7 +7199,7 @@
         "onlineTime": 1678809600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/2/a0f6e9d1-3df2-4891-85c0-ae1b04a116ad_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 543,
@@ -7219,7 +7219,7 @@
         "onlineTime": 1678809600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/14/7365d3cb-be68-4228-ba9b-eb2e1ce180b4_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 396,
@@ -7239,7 +7239,7 @@
         "onlineTime": 1678291200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/8/f16a2456-38cd-45c2-8fc3-351bafc1c7cd_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 380,
@@ -7259,7 +7259,7 @@
         "onlineTime": 1676217600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/02/12/hv9KmMhhwHB4fbFi_AAC_192.m4a"
       },
-      "category": "kids"
+      "category": "culture"
     },
     {
       "id": 506,
@@ -7279,7 +7279,7 @@
         "onlineTime": 1676217600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/02/15/ELwqs1HQdjBGsZCp_AAC_192.m4a"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 416,
@@ -7299,7 +7299,7 @@
         "onlineTime": 1675872000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/8/84d7f6c8-8479-4808-9645-45882e9beeee_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 526,
@@ -7319,7 +7319,7 @@
         "onlineTime": 1675785600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/2/9/572429b4-e6a7-48c2-8874-3982a18b1d92_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 393,
@@ -7359,7 +7359,7 @@
         "onlineTime": 1674748800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/26/27d20d7c-cf34-4107-a39e-87b633597ff8_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 518,
@@ -7379,7 +7379,7 @@
         "onlineTime": 1674748800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/26/e513b540-9cdb-4870-a4f5-c3efb9c51e9c_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 429,
@@ -7399,7 +7399,7 @@
         "onlineTime": 1674576000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/24/ec06e502-c690-4b46-a1b3-0ce7ac1e11b9_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "culture"
     },
     {
       "id": 515,
@@ -7459,7 +7459,7 @@
         "onlineTime": 1674489600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/21/c41413bf-f9b6-4d08-b4fc-a2af820467c1_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 524,
@@ -7479,7 +7479,7 @@
         "onlineTime": 1674230400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/23/d75e31bc-22b6-4d7a-95ea-ab22eff28fa4_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 499,
@@ -7499,7 +7499,7 @@
         "onlineTime": 1674203702000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/3/24/71e3b870-b8fc-4f1d-a73c-6e2c15cd0622_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 284,
@@ -7519,7 +7519,7 @@
         "onlineTime": 1673971200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/17/b874ab95-f3d4-452e-a958-5166b003ec0f_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 479,
@@ -7539,7 +7539,7 @@
         "onlineTime": 1673971200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/10/62a8bdb7-1091-4611-a00c-a30cc889d8c7_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 527,
@@ -7559,7 +7559,7 @@
         "onlineTime": 1673280000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/9/eb074462-0c3d-44fa-9b99-84469ab2c051_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 433,
@@ -7579,7 +7579,7 @@
         "onlineTime": 1672761600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2023/1/3/5bf33980-3b28-4287-83ee-b300d6c69689_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 509,
@@ -7599,7 +7599,7 @@
         "onlineTime": 1671984000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/26/ebfa4a48-ea48-40cf-80a7-4d4732455650_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 497,
@@ -7619,7 +7619,7 @@
         "onlineTime": 1671465600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/20/4e49a277-5691-456c-babd-c1655502bd41_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 498,
@@ -7639,7 +7639,7 @@
         "onlineTime": 1671400800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/19/5aba836f-c513-41c6-bfa2-b1948758d43b_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 288,
@@ -7659,7 +7659,7 @@
         "onlineTime": 1671120000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/15/b7903250-8749-4427-834a-0b59a04579d8_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 502,
@@ -7679,7 +7679,7 @@
         "onlineTime": 1670947200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/13/5db9d6ca-6e8c-4d30-9340-501debedf424_AAC_192.aac"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 505,
@@ -7699,7 +7699,7 @@
         "onlineTime": 1670601600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/10/613b821a-34f5-4966-aacb-eeba7ef88a18_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 495,
@@ -7719,7 +7719,7 @@
         "onlineTime": 1670515200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/8/0b61374f-3742-4620-a21e-dd7b2d94bd53_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 500,
@@ -7739,7 +7739,7 @@
         "onlineTime": 1669046400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/21/83f36eb9-05b9-4370-a5c9-3140983c3083_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 426,
@@ -7779,7 +7779,7 @@
         "onlineTime": 1668614400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/16/a24704e2-e665-4beb-95db-46b2854bc66a_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 460,
@@ -7799,7 +7799,7 @@
         "onlineTime": 1668355200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/14/76c19284-56e9-4f8b-af5d-ec26e266847d_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 325,
@@ -7819,7 +7819,7 @@
         "onlineTime": 1668096000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/11/9/47660a42-82bc-410e-a2dd-1c70ae28ad35_AAC_192.aac"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 443,
@@ -7839,7 +7839,7 @@
         "onlineTime": 1666972800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/28/b313fd9d-925c-4b17-ae8e-141f332dd33e_AAC_192.aac"
       },
-      "category": null
+      "category": "business"
     },
     {
       "id": 493,
@@ -7859,7 +7859,7 @@
         "onlineTime": 1666713600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/25/917a69ec-be8b-48e3-a54a-fd185768c37e_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 459,
@@ -7879,7 +7879,7 @@
         "onlineTime": 1665763200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/14/fb6b8699-c8f9-43e7-96d0-26ce104986e8_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 491,
@@ -7899,7 +7899,7 @@
         "onlineTime": 1665244800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/10/9/1bd76ad0-643d-472b-b516-cfd38594e09d_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 486,
@@ -7919,7 +7919,7 @@
         "onlineTime": 1664467200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/24/429d15fe-dd88-4a11-8b36-45587914c840_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 480,
@@ -7939,7 +7939,7 @@
         "onlineTime": 1663171200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/15/edc67127-c0c2-4c4a-87ec-bcc77abf40e5_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 476,
@@ -7959,7 +7959,7 @@
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/7/b44fa4d2-5870-4170-b14c-0ec4ef684ae2_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 477,
@@ -7979,7 +7979,7 @@
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/8/ea0ed129-34e8-4499-b863-5c39a1cc4127_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 478,
@@ -7999,7 +7999,7 @@
         "onlineTime": 1662825600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/aa07ed54-1faf-4650-9039-4241829c6479_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 474,
@@ -8019,7 +8019,7 @@
         "onlineTime": 1662739200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/aa07ed54-1faf-4650-9039-4241829c6479_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 475,
@@ -8039,7 +8039,7 @@
         "onlineTime": 1662739200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/9/89bc3e8d-97cf-4826-8e4d-2873d1bffdf6_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 466,
@@ -8059,7 +8059,7 @@
         "onlineTime": 1662220800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/3/e7239933-69a2-4aed-8f35-f53ab2d48d04_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 469,
@@ -8079,7 +8079,7 @@
         "onlineTime": 1661702400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/28/36642dab-cbf6-4afb-a88e-6bf563f1e418_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 431,
@@ -8099,7 +8099,7 @@
         "onlineTime": 1661356800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/24/91a604e8-a493-46e8-bf48-232e65c2e05f_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 430,
@@ -8119,7 +8119,7 @@
         "onlineTime": 1661270400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/17/d81e1d7a-4b77-4e79-b73f-a123fd749f1a_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 464,
@@ -8159,7 +8159,7 @@
         "onlineTime": 1659974400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/8/20853f30-10de-47b6-a178-a9d611635eb6_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 465,
@@ -8179,7 +8179,7 @@
         "onlineTime": 1659974400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/8/6b505f90-4f69-45b4-b77f-de5176d45bdb_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 462,
@@ -8199,7 +8199,7 @@
         "onlineTime": 1659542400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/8/3/2ebed928-2244-4195-bf9e-cebdeab93375_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 454,
@@ -8239,7 +8239,7 @@
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/15/302522b0-dee8-44af-a59e-bc8485724a60_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 445,
@@ -8279,7 +8279,7 @@
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/18/cfb0b88b-8552-4bc1-b631-883b6b5eb1a3_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 448,
@@ -8299,7 +8299,7 @@
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/19/5f895997-86c4-4c26-9ba1-742f904b82ac_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 455,
@@ -8319,7 +8319,7 @@
         "onlineTime": 1658160000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/15/b29cb547-b8e3-42b0-b502-563694e22e66_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 437,
@@ -8339,7 +8339,7 @@
         "onlineTime": 1657641600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/7/12/3b0796e8-f48f-4b94-9162-72e8f98df296_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 308,
@@ -8379,7 +8379,7 @@
         "onlineTime": 1656777600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/28/305ead87-ad56-497f-a3ca-371e5f97fc97_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 268,
@@ -8419,7 +8419,7 @@
         "onlineTime": 1656086400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/24/db968b88-6e5d-47d6-8fcd-58450f9a613c_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 427,
@@ -8439,7 +8439,7 @@
         "onlineTime": 1655654400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/8/754fc5af-3e6d-464d-9f67-1eea479561d9_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 384,
@@ -8459,7 +8459,7 @@
         "onlineTime": 1655568000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/18/fd19abab-49eb-4c09-a5d0-65f2dd9fcec8_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 417,
@@ -8479,7 +8479,7 @@
         "onlineTime": 1655395200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/11/2dd39000-cfaa-4677-bada-d841e1db993d_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 435,
@@ -8499,7 +8499,7 @@
         "onlineTime": 1655309040000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/16/8dc3a551-7ae6-4c78-96db-ee0bf8149d48_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 418,
@@ -8539,7 +8539,7 @@
         "onlineTime": 1654704000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/20/e3e45994-290d-429a-a96c-cc497e90741b_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 424,
@@ -8559,7 +8559,7 @@
         "onlineTime": 1654617600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/6/0f02a485-7016-4df3-b6f7-0aa82f55a517_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 389,
@@ -8579,7 +8579,7 @@
         "onlineTime": 1654272000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/6/3/608d8add-2cc9-4f3a-af40-4dc405d2efef_AAC_192.aac"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 256,
@@ -8599,7 +8599,7 @@
         "onlineTime": 1654099200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/11/7e92db25-6da4-46d4-b37c-8f0a1b9aedcb_AAC_192.aac"
       },
-      "category": "kids"
+      "category": "culture"
     },
     {
       "id": 415,
@@ -8619,7 +8619,7 @@
         "onlineTime": 1653753600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/20/6266d331-1fe5-4996-b784-d22a8971ad75_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 408,
@@ -8639,7 +8639,7 @@
         "onlineTime": 1653494400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/2/0ccfd94d-6b77-487f-9185-2e9280b67a56_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 403,
@@ -8659,7 +8659,7 @@
         "onlineTime": 1652198400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/5/10/c94d02f6-6b44-42d5-80ee-f4a54d42abf0_AAC_192.aac"
       },
-      "category": "longhaul"
+      "category": "business"
     },
     {
       "id": 406,
@@ -8679,7 +8679,7 @@
         "onlineTime": 1651852800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/21/f5843e9d-8839-49e2-b7e1-e8507d6b7dc1_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 409,
@@ -8739,7 +8739,7 @@
         "onlineTime": 1650556800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/18/7d0816c3-f6fe-49a6-bd5c-ffa73cc51ae4_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 404,
@@ -8759,7 +8759,7 @@
         "onlineTime": 1650470400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/20/c6835508-6fa5-4da1-8a21-3787a3393997_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 274,
@@ -8779,7 +8779,7 @@
         "onlineTime": 1650211200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/16/431385fc-455e-48cc-bee8-94fa2f849669_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 386,
@@ -8799,7 +8799,7 @@
         "onlineTime": 1650124800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/14/e8ee12d7-086c-4462-bcb1-acd03f90d74d_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 203,
@@ -8819,7 +8819,7 @@
         "onlineTime": 1648396800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/27/480d6e31-5062-4a2f-8491-ffeda4797281_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 395,
@@ -8839,7 +8839,7 @@
         "onlineTime": 1648224000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/17/afed8e99-c437-4839-bc39-81452df23239_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 379,
@@ -8859,7 +8859,7 @@
         "onlineTime": 1648137600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/23/11cf1473-b975-40c4-ab3f-7ae5811c7b1c_AAC_192.aac"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 24,
@@ -8879,7 +8879,7 @@
         "onlineTime": 1645804800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/25/78ea18cb-7809-4719-9495-73fa206816da_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 340,
@@ -8899,7 +8899,7 @@
         "onlineTime": 1645804800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/25/b3177078-c84a-481f-b620-03b67fbe5882_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 359,
@@ -8919,7 +8919,7 @@
         "onlineTime": 1645718400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/2419c388-e76a-4b16-9ae4-9ae853e851d5_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 368,
@@ -8939,7 +8939,7 @@
         "onlineTime": 1644854400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/30/dba98570-579e-4477-9c03-6f806f9bf05f_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 304,
@@ -8959,7 +8959,7 @@
         "onlineTime": 1644422400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/7/4e9cd6fc-28c9-4966-b2b9-7ab75711ad8d_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 298,
@@ -8979,7 +8979,7 @@
         "onlineTime": 1644163200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/69bcf681-d93d-4f38-a75b-4b90b7fb2c78_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 212,
@@ -8999,7 +8999,7 @@
         "onlineTime": 1644076800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/30/9c96eef3-e704-44c1-9ad6-53baeb029cd9_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 372,
@@ -9019,7 +9019,7 @@
         "onlineTime": 1644076800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/4/2fcda7f9-d552-4c16-94aa-c0a24eef9fa0_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 213,
@@ -9039,7 +9039,7 @@
         "onlineTime": 1643817600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/28/c6e9c9c1-282e-4047-b9e2-84687387a56d_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 208,
@@ -9059,7 +9059,7 @@
         "onlineTime": 1643637600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/2/9/b65a9d57-b0c9-401b-93c5-2b7f45536801_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 371,
@@ -9079,7 +9079,7 @@
         "onlineTime": 1643472000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/29/b98cfaa8-9aee-4efd-9a6f-07c79bf3dee1_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 369,
@@ -9099,7 +9099,7 @@
         "onlineTime": 1643126400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/14/470f9b64-e5f9-4765-815d-4d27aa6cc954_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 42,
@@ -9119,7 +9119,7 @@
         "onlineTime": 1641657600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/e2b6a7ca-fa15-4188-bdc8-8c921fb07c39_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 364,
@@ -9139,7 +9139,7 @@
         "onlineTime": 1641398401000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/1/6/3de43496-22f3-47cb-8cf7-44b08f09f4aa_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 142,
@@ -9159,7 +9159,7 @@
         "onlineTime": 1640966400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/31/7d6c4521-1dbc-48a9-ad86-4758c10572ed_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 195,
@@ -9179,7 +9179,7 @@
         "onlineTime": 1640966400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/31/c5200fbb-9c29-4c0d-a76f-1259146d4755_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 314,
@@ -9199,7 +9199,7 @@
         "onlineTime": 1640880000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/30/b758e81c-9f58-4d40-a175-cff64bfa63f0_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 287,
@@ -9239,7 +9239,7 @@
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/a0daa5b9-06d4-4355-bd52-7e0a6760d9d9_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 231,
@@ -9259,7 +9259,7 @@
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/0c44d68a-c16a-4ed5-9d98-712eabefc835_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 333,
@@ -9279,7 +9279,7 @@
         "onlineTime": 1640361600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/24/ddeca403-4cd4-4535-a151-d80ec788a1bb_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 363,
@@ -9299,7 +9299,7 @@
         "onlineTime": 1640188800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/22/256731f8-43d6-452f-bfc6-94e546b7907b_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 317,
@@ -9319,7 +9319,7 @@
         "onlineTime": 1639917570000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/19/bbe6c53d-f808-4553-a525-d459e09162ab_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 361,
@@ -9339,7 +9339,7 @@
         "onlineTime": 1639756800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/17/7c67539d-533a-4563-8137-8ccb45990c28_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 362,
@@ -9359,7 +9359,7 @@
         "onlineTime": 1639756800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/12/17/b547394d-affd-4947-965d-70f191f9db30_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 255,
@@ -9379,7 +9379,7 @@
         "onlineTime": 1639497600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/9/ef70f7cb-4481-411c-9ace-a338e72c87cf_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 351,
@@ -9419,7 +9419,7 @@
         "onlineTime": 1636473600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/11/9/9d105400-ba6e-45bf-ae75-4de31b0c745a_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 188,
@@ -9439,7 +9439,7 @@
         "onlineTime": 1635523200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/5/3681cc09-f453-4ac1-acb7-035381b8ecb5_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 327,
@@ -9459,7 +9459,7 @@
         "onlineTime": 1634486400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/13/689ed64a-b6c9-4a15-a7af-c6bdb950c9ef_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 123,
@@ -9479,7 +9479,7 @@
         "onlineTime": 1634367581000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/16/6ab209a4-c841-4a69-82f0-9722604a997f_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 132,
@@ -9499,7 +9499,7 @@
         "onlineTime": 1634054400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/10/12/8e4b67c2-d8f8-47fb-95d3-fb999e90508a_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 303,
@@ -9539,7 +9539,7 @@
         "onlineTime": 1633536000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/b9d076ff-2769-44d8-b988-ddbf7bb921bb_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 39,
@@ -9559,7 +9559,7 @@
         "onlineTime": 1633535940000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/b9d076ff-2769-44d8-b988-ddbf7bb921bb_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 21,
@@ -9579,7 +9579,7 @@
         "onlineTime": 1633449540000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/ad16f855-2b47-4bcd-a23e-2dac3877b867_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 38,
@@ -9599,7 +9599,7 @@
         "onlineTime": 1633363140000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/30/efbdbe19-70a0-4a19-8f42-4f3d51671b53_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 125,
@@ -9619,7 +9619,7 @@
         "onlineTime": 1632931200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/29/e6a75c3f-dea1-4f9e-a2a7-fe5e630344b2_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 114,
@@ -9639,7 +9639,7 @@
         "onlineTime": 1632240000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/22/c33e88a0-4fdc-4444-a92e-b61af2a1d78f_AAC_192.aac"
       },
-      "category": "city"
+      "category": "audio"
     },
     {
       "id": 29,
@@ -9659,7 +9659,7 @@
         "onlineTime": 1630080000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/8/27/fa557407-f558-4bc4-99d1-bee33644ca18_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 331,
@@ -9719,7 +9719,7 @@
         "onlineTime": 1627919940000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/0ba0a612-06d3-4fdb-abc1-15e58217bfab_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 109,
@@ -9739,7 +9739,7 @@
         "onlineTime": 1627833540000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/f3f8aca0-9c88-4904-abb3-6e7d3e3f2cab_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 316,
@@ -9759,7 +9759,7 @@
         "onlineTime": 1627056000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/23/fbcf94d6-8a56-4be4-afba-cf361c41343c_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 321,
@@ -9779,7 +9779,7 @@
         "onlineTime": 1627056000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/23/393da2a0-7517-4c0c-ab1f-ef6b3f23a4dd_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 258,
@@ -9799,7 +9799,7 @@
         "onlineTime": 1626451140000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/7/16/c4acede7-06df-4a94-9f07-5bcb9be8f6ab_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 290,
@@ -9819,7 +9819,7 @@
         "onlineTime": 1625932800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/30/ca0541bd-b400-4149-a569-63ff882543a0_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 305,
@@ -9839,7 +9839,7 @@
         "onlineTime": 1625846400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/30/8caf7558-0d84-499b-a07d-d1fa982a25f9_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 313,
@@ -9859,7 +9859,7 @@
         "onlineTime": 1624896000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/28/6ce9f819-fe56-41d2-a155-ca6691761ef5_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 309,
@@ -9879,7 +9879,7 @@
         "onlineTime": 1624723200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/6/6/281b3cae-85fd-4697-aaf3-99a4fd73db56_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 43,
@@ -9919,7 +9919,7 @@
         "onlineTime": 1621612800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/7/4cd7fdd0-aee9-4815-b9eb-9a125128c19a_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 140,
@@ -9939,7 +9939,7 @@
         "onlineTime": 1621440000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/19/5a3c3783-82c1-4870-bc11-a69d31edce98_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 262,
@@ -9959,7 +9959,7 @@
         "onlineTime": 1621094400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/4/c5eef253-8dce-43d2-9dd5-8f8a88c3c5a3_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 301,
@@ -9979,7 +9979,7 @@
         "onlineTime": 1621008000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/14/e4cb55f2-08ff-480f-b6ce-caa48403f024_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 187,
@@ -9999,7 +9999,7 @@
         "onlineTime": 1620489600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/15/2a4578b6-b5b3-4191-bd8e-2c7ead33c33d_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 291,
@@ -10019,7 +10019,7 @@
         "onlineTime": 1620144000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/5/4/1698f0c9-6b44-476b-b5d1-bb5c556f71d5_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 280,
@@ -10039,7 +10039,7 @@
         "onlineTime": 1619712000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/29/c33ec4d6-df48-4abb-9400-f6f43b20890b_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 282,
@@ -10059,7 +10059,7 @@
         "onlineTime": 1619280000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/24/64feba9a-e707-4651-b642-80c45087a9f8_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 175,
@@ -10079,7 +10079,7 @@
         "onlineTime": 1618848000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/15/f84feb3f-0c1d-4d8a-bb39-84e191cd3128_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 251,
@@ -10099,7 +10099,7 @@
         "onlineTime": 1618416000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/27/8c082cb3-eeab-4b52-87f6-1a3be8782ffd_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 272,
@@ -10119,7 +10119,7 @@
         "onlineTime": 1618070400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/9/e89ead3a-8e53-42af-ad6b-acad2f4ada86_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 270,
@@ -10139,7 +10139,7 @@
         "onlineTime": 1617897600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/7/bda1f7f2-7bd9-4922-8d1c-fdf9c4114f94_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 269,
@@ -10159,7 +10159,7 @@
         "onlineTime": 1617724800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/31/c840b1c7-7bbc-4f14-8ffd-69b1dd00588a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 261,
@@ -10179,7 +10179,7 @@
         "onlineTime": 1617120000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/1/dc934a8a-11b9-40b9-b6cc-428e753196d6_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 217,
@@ -10199,7 +10199,7 @@
         "onlineTime": 1616774400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/22/a33f0def-d8d8-4d8b-8fd6-dcb33df98d53_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 237,
@@ -10219,7 +10219,7 @@
         "onlineTime": 1616256000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/17/361c3600-4cce-4294-804f-4b51fedaf5fc_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "audio"
     },
     {
       "id": 216,
@@ -10239,7 +10239,7 @@
         "onlineTime": 1616083200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/15/797438e0-94ec-4f15-b1ef-08576f5ba1bc_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 234,
@@ -10259,7 +10259,7 @@
         "onlineTime": 1616083200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/15/c1a74a7b-1703-4d8d-a0f1-0d0a5230e39d_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 215,
@@ -10279,7 +10279,7 @@
         "onlineTime": 1615824000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/12/44b14ee9-f108-4c38-9f77-0d7e7a6ba241_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 233,
@@ -10299,7 +10299,7 @@
         "onlineTime": 1615824000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/24/be3bdfd3-1ecc-44ab-abc6-8af76eadd573_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 249,
@@ -10319,7 +10319,7 @@
         "onlineTime": 1615507200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/11/36caba30-514e-4bc6-8cb8-bca2009f3b1e_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 214,
@@ -10339,7 +10339,7 @@
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/10/09083ec2-c6ff-4815-bef1-4d960afcd73a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 235,
@@ -10359,7 +10359,7 @@
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/20/dc393b02-da25-466a-a276-65357f2f075a_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 238,
@@ -10379,7 +10379,7 @@
         "onlineTime": 1615132800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/3/8/82762181-ffef-4c12-990f-bdcb3e1cd424_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 218,
@@ -10399,7 +10399,7 @@
         "onlineTime": 1614787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/10/ed71c4fc-2d81-4c70-8f3e-89e228ce794c_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 236,
@@ -10419,7 +10419,7 @@
         "onlineTime": 1614787200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/20/59010212-57e6-4585-a4a7-799e70b7c7d3_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 266,
@@ -10459,7 +10459,7 @@
         "onlineTime": 1614528000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/23/7e79801e-0cb4-4f3c-aa1e-6f2aa7c1fcc6_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 267,
@@ -10479,7 +10479,7 @@
         "onlineTime": 1613923200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/6/90735c6a-e3bb-4dea-b9aa-0c9f4365f912_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 265,
@@ -10499,7 +10499,7 @@
         "onlineTime": 1613750400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/4/6/740b8940-aa66-4616-83c7-0de93bd40688_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 134,
@@ -10519,7 +10519,7 @@
         "onlineTime": 1613577600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/2/7/08dd5b04-770e-49da-8990-ff291623fe7a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 15,
@@ -10539,7 +10539,7 @@
         "onlineTime": 1611936000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/29/f56ec09f-939a-418f-bca7-670152c602a6_AAC_192.aac"
       },
-      "category": "kids"
+      "category": "car"
     },
     {
       "id": 191,
@@ -10559,7 +10559,7 @@
         "onlineTime": 1610985600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/27/28f5e7bb-48fd-4742-8035-c857af93af1f_AAC_192.aac"
       },
-      "category": null
+      "category": "culture"
     },
     {
       "id": 162,
@@ -10579,7 +10579,7 @@
         "onlineTime": 1610121600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/11/e60dfb7c-2e54-4c7b-bfe7-d12990d561df_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 168,
@@ -10599,7 +10599,7 @@
         "onlineTime": 1610035200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/7/09317088-7aaf-4cac-a6b3-56f3b1178e24_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 163,
@@ -10619,7 +10619,7 @@
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/9bbe742f-533e-48ae-9ee3-d5de2475037a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 164,
@@ -10639,7 +10639,7 @@
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/ac397602-9bd1-4554-ad93-21947ca50f4b_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 165,
@@ -10659,7 +10659,7 @@
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/a131793a-7871-44bb-b693-5bd2d28b1d83_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 166,
@@ -10679,7 +10679,7 @@
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/5807f5fb-6426-4b30-85d0-b54ffd0b2081_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 167,
@@ -10699,7 +10699,7 @@
         "onlineTime": 1609948800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/6/38acbc81-2877-496d-b20e-1ae45975a3a1_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 17,
@@ -10719,7 +10719,7 @@
         "onlineTime": 1609516800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/1/70bddec7-4e2e-49c6-8132-eeab09c3cc3c_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 158,
@@ -10739,7 +10739,7 @@
         "onlineTime": 1608998400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/27/5ecea717-c75a-4e50-965e-6e98feff5936_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 152,
@@ -10759,7 +10759,7 @@
         "onlineTime": 1608393600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/1/13/ad5ab161-ac15-41e4-a089-a7caa4216375_AAC_192.aac"
       },
-      "category": null
+      "category": "news"
     },
     {
       "id": 146,
@@ -10779,7 +10779,7 @@
         "onlineTime": 1608220800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/29/c84b7b83-a4cb-4a78-a1b1-bea95551f31a_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 135,
@@ -10799,7 +10799,7 @@
         "onlineTime": 1608156000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/16/0f945aba-d271-4c6e-93e7-a4e0ca479f41_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 51,
@@ -10819,7 +10819,7 @@
         "onlineTime": 1608134400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/17/e2741089-bab0-41d1-8f89-edf720a9cce2_AAC_192.aac"
       },
-      "category": null
+      "category": "audio"
     },
     {
       "id": 150,
@@ -10859,7 +10859,7 @@
         "onlineTime": 1607788800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/11/60af4e64-f39c-476f-91bb-793ea9e664f1_AAC_192.aac"
       },
-      "category": "relax"
+      "category": "car"
     },
     {
       "id": 161,
@@ -10879,7 +10879,7 @@
         "onlineTime": 1607270400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/31/287a9485-e2e6-4980-83e1-4365236b1f17_AAC_192.aac"
       },
-      "category": null
+      "category": "lifestyle"
     },
     {
       "id": 143,
@@ -10899,7 +10899,7 @@
         "onlineTime": 1606838400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/12/1/c8f0dfd7-eaa1-42d3-a123-b59d99576708_AAC_192.aac"
       },
-      "category": "city"
+      "category": "news"
     },
     {
       "id": 127,
@@ -10919,7 +10919,7 @@
         "onlineTime": 1604592000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/11/5/1b6654a5-c933-4bb9-a3e3-7a85a9f2e595_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 16,
@@ -10939,7 +10939,7 @@
         "onlineTime": 1603663200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/10/23/0f616a77-30de-4a11-98da-bbe6677469cf_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 111,
@@ -10959,7 +10959,7 @@
         "onlineTime": 1601740800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/10/3/688b3406-ecb5-44f7-8fd1-54d1f04eb9af_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 102,
@@ -10979,7 +10979,7 @@
         "onlineTime": 1598630400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/8/26/d9748347-bba7-4926-8061-e43c2ac7bda2_AAC_192.aac"
       },
-      "category": "kids"
+      "category": "car"
     },
     {
       "id": 33,
@@ -11039,7 +11039,7 @@
         "onlineTime": 1592409600000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/6/19/18a87525-b1b5-4585-a7ff-88d0e16ebbab_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 40,
@@ -11079,7 +11079,7 @@
         "onlineTime": 1588312800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/4/30/eeda2fd9-9d0b-4a4a-9e4c-1041fc5143fd_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 71,
@@ -11099,7 +11099,7 @@
         "onlineTime": 1588298400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/4/30/8285c75b-57eb-406f-b4e1-2bdc94ee2a7e_AAC_192.aac"
       },
-      "category": "city"
+      "category": "car"
     },
     {
       "id": 59,
@@ -11159,7 +11159,7 @@
         "onlineTime": 1580659200000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/1/21/a930339f-0c14-4ca4-880d-3eb5b65f4e1a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 60,
@@ -11199,7 +11199,7 @@
         "onlineTime": 1579429800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/1/19/5931e059-ba08-48e8-8c1f-4b4ba9893758_AAC_192.aac"
       },
-      "category": "commute"
+      "category": "car"
     },
     {
       "id": 55,
@@ -11219,7 +11219,7 @@
         "onlineTime": 1577894400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/31/45d1725f-5fe9-4cd3-863f-32a55c0caf5b_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 53,
@@ -11239,7 +11239,7 @@
         "onlineTime": 1577548800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/23/4c9a1f9a-5ee7-4f5c-b201-8002bb6d5ab3_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 52,
@@ -11259,7 +11259,7 @@
         "onlineTime": 1577376000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/26/4abe5b0f-f153-4da4-931f-e1a6c9f4a82a_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 36,
@@ -11279,7 +11279,7 @@
         "onlineTime": 1577066400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/23/c174e72e-57f9-4303-aa68-f8769345e331_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 46,
@@ -11299,7 +11299,7 @@
         "onlineTime": 1575504000000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/12/4/53717353-20e7-4e34-b38c-b6a987c8c9c9_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 44,
@@ -11319,7 +11319,7 @@
         "onlineTime": 1574870400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2019/11/27/cbbf8fc7-6355-413b-9662-68168d8482cf_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     },
     {
       "id": 90,
@@ -11339,7 +11339,7 @@
         "onlineTime": 1559318400000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/16/577acb69-03ca-44ba-9c92-78304f9c6219_AAC_192.aac"
       },
-      "category": null
+      "category": "kids"
     },
     {
       "id": 92,
@@ -11359,7 +11359,7 @@
         "onlineTime": 1545148800000,
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2020/7/16/c2d56b58-41eb-41e7-a387-f1f36a49057b_AAC_192.aac"
       },
-      "category": null
+      "category": "car"
     }
   ]
 }
