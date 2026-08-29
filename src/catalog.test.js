@@ -110,13 +110,26 @@ describe('catalog selectors', () => {
     expect(playableCatalog(catalog, () => false).albums.some(album => album.id === CUSTOM_WHITE_NOISE_ALBUM_ID)).toBe(false);
   });
 
-  it('places the custom album last unless it is favorited', () => {
-    const regular = { id: 42, name: '普通专辑', latestEpisode: episode(420, 1000) };
+  it('pins white noise third after the briefing albums', () => {
+    const albums = [
+      CUSTOM_WHITE_NOISE_ALBUM,
+      { id: 7, name: '普通专辑', latestEpisode: episode(71, 400) },
+      { id: 23, name: '资讯充电站·晚间版', latestEpisode: episode(231, 100) },
+      { id: 5, name: '资讯充电站·早间版', latestEpisode: episode(51, 200) },
+    ];
+    expect(sortAlbumsForDirectory(albums).map(album => album.id)).toEqual([5, 23, CUSTOM_WHITE_NOISE_ALBUM_ID, 7]);
+    expect(sortAlbumsForDirectory(albums, [CUSTOM_WHITE_NOISE_ALBUM_ID]).map(album => album.id))
+      .toEqual([CUSTOM_WHITE_NOISE_ALBUM_ID, 5, 23, 7]);
+  });
 
-    expect(sortAlbumsForDirectory([CUSTOM_WHITE_NOISE_ALBUM, regular]).map(item => item.id))
-      .toEqual([regular.id, CUSTOM_WHITE_NOISE_ALBUM_ID]);
-    expect(sortAlbumsForDirectory([CUSTOM_WHITE_NOISE_ALBUM, regular], [CUSTOM_WHITE_NOISE_ALBUM_ID]).map(item => item.id))
-      .toEqual([CUSTOM_WHITE_NOISE_ALBUM_ID, regular.id]);
+  it('files white noise under the first topic category', () => {
+    const { groups } = groupAlbumsByCategory([
+      CUSTOM_WHITE_NOISE_ALBUM,
+      { id: 5, name: '资讯充电站·早间版', category: 'news', latestEpisode: episode(51, 200) },
+      { id: 23, name: '资讯充电站·晚间版', category: 'news', latestEpisode: episode(231, 100) },
+    ]);
+    expect(groups[0].id).toBe('news');
+    expect(groups[0].albums.map(album => album.id)).toEqual([5, 23, CUSTOM_WHITE_NOISE_ALBUM_ID]);
   });
 
   it('exposes short topic labels for every category', () => {

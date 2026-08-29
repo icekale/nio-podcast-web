@@ -1,5 +1,5 @@
 import { TOPIC_CATEGORIES } from '../scripts/album-categories.js';
-import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_EPISODES, isCustomAlbumId } from './customAlbums';
+import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_ALBUM_ID, CUSTOM_WHITE_NOISE_EPISODES, isCustomAlbumId } from './customAlbums';
 import { canPlayAudioUrl } from './iosSupport';
 
 export const CATALOG_CACHE_KEY = 'nio_catalog_cache_v1';
@@ -17,7 +17,7 @@ export function sortAlbumsByLatest(albums) {
   });
 }
 
-const PINNED_ALBUM_IDS = [5, 23];
+const PINNED_ALBUM_IDS = [5, 23, CUSTOM_WHITE_NOISE_ALBUM_ID];
 // 用户要求提高排序权重：芝士分子 (35)、N问 (584)
 const BOOSTED_ALBUM_IDS = [35, 584];
 const CITY_CHANNEL_PATTERN = /城市资讯|城市频道|天气预报/;
