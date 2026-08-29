@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { categorizeAlbum } from './album-categories.js';
+import { categorizeAlbum, reportCategoryCoverage } from './album-categories.js';
 import {
   buildCatalog,
   assertCatalogScanHasSuccess,
@@ -58,6 +58,7 @@ if (!albums.length) throw new Error('No albums found; refusing to replace the ex
 for (const album of albums) {
   album.category = categorizeAlbum(album);
 }
+reportCategoryCoverage(albums);
 
 const catalog = { generatedAt: Date.now(), albums };
 if (previous && sameCatalogContent(previous, catalog)) {
