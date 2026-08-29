@@ -25,7 +25,7 @@ describe('custom white-noise album', () => {
   it('uses the approved album copy and reports complete pagination totals', () => {
     expect(CUSTOM_WHITE_NOISE_ALBUM).toMatchObject({
       name: '白噪音',
-      category: 'commute',
+      category: 'audio',
       description: '让雨声与风声，陪你安静抵达。',
       episodeCount: 113,
       imageUrl: '/covers/white-noise-light.png',

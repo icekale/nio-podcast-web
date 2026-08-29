@@ -142,7 +142,7 @@ export const CUSTOM_WHITE_NOISE_ALBUM = {
   name: '白噪音',
   description: '让雨声与风声，陪你安静抵达。',
   directorySubtitle: '让雨声与风声，陪你安静抵达。',
-  category: 'commute',
+  category: 'audio',
   episodeCount: CUSTOM_WHITE_NOISE_EPISODES.length,
   imageUrl: LIGHT_COVER,
   imageUrlDark: DARK_COVER,
