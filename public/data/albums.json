@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1788109266851,
+  "generatedAt": 1788117061381,
   "albums": [
     {
       "id": 5,
@@ -362,6 +362,26 @@
       "category": "audio"
     },
     {
+      "id": 541,
+      "name": "商业就是这样",
+      "description": "用简单易懂的语言解读商业现象，每周一期。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+      "host": "NIO Radio",
+      "episodeCount": 225,
+      "latestEpisode": {
+        "id": 197480,
+        "title": "2026年了，怎么还有人要做中国版Airbnb？",
+        "albumId": 541,
+        "albumName": "商业就是这样",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+        "host": "NIO Radio",
+        "duration": 5624000,
+        "onlineTime": 1788105600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/BYtZP5WINLEt1ZaC_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 594,
       "name": "西安城市资讯",
       "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
@@ -418,6 +438,26 @@
         "duration": 630000,
         "onlineTime": 1788105600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/sgDkoeaSVD7siaZh_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
+      "id": 703,
+      "name": "果壳时间",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+      "host": "NIO Radio",
+      "episodeCount": 78,
+      "latestEpisode": {
+        "id": 197477,
+        "title": "宇宙里真有一种物质，不含任何“物质”| 对话“胶球”发现团队成员",
+        "albumId": 703,
+        "albumName": "果壳时间",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+        "host": "NIO Radio",
+        "duration": 4554000,
+        "onlineTime": 1788105600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/3rDefChMkV98tLO7_AAC_192_1.m4a"
       },
       "category": "business"
     },
@@ -1702,26 +1742,6 @@
       "category": null
     },
     {
-      "id": 541,
-      "name": "商业就是这样",
-      "description": "用简单易懂的语言解读商业现象，每周一期。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-      "host": "NIO Radio",
-      "episodeCount": 224,
-      "latestEpisode": {
-        "id": 197381,
-        "title": "商业小样｜“健身做题家”的新欢HYROX，到底有什么护城河？",
-        "albumId": 541,
-        "albumName": "商业就是这样",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-        "host": "NIO Radio",
-        "duration": 836000,
-        "onlineTime": 1787760000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/fmHyrboCRkPjMpHg_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
       "id": 548,
       "name": "苏州杂谈",
       "description": "苏州杂谈，听有趣的苏州！",
@@ -2960,26 +2980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/sAiO2OZSD5UK9H5o_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 703,
-      "name": "果壳时间",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-      "host": "NIO Radio",
-      "episodeCount": 77,
-      "latestEpisode": {
-        "id": 197061,
-        "title": "一块常见的厨房台面背后，是一群年轻人被摧毁的肺",
-        "albumId": 703,
-        "albumName": "果壳时间",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-        "host": "NIO Radio",
-        "duration": 4032000,
-        "onlineTime": 1786896000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/16/pmbD9u8qxOqpYduL_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 344,
