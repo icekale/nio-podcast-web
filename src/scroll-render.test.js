@@ -95,6 +95,11 @@ describe('mobile scroll rendering', () => {
     expect(css).toMatch(/\.album-results\.is-grid \.album-row\s*\{[^}]*align-items:\s*stretch/);
   });
 
+  it('aligns the category heading highlight with the list divider', () => {
+    expect(css).toMatch(/\.category-heading\s*\{[^}]*width:\s*100%/);
+    expect(css).not.toMatch(/\.category-heading\s*\{[^}]*margin:\s*0\s+calc\(-1/);
+  });
+
   it('insets desktop album content from the sidebar divider', () => {
     expect(css).toMatch(/\.album-content\s*\{[^}]*display:\s*grid[^}]*padding:\s*var\(--space-8\)\s*var\(--space-6\)\s*0/);
   });
