@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1788117061381,
+  "generatedAt": 1788139945351,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 517,
+      "latestEpisode": {
+        "id": 197471,
+        "title": "难以影响购票决策的飞机餐，为何成为航司升级重点？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 993000,
+        "onlineTime": 1788130800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/vlX14MaWMuJtcbPb_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -1180,26 +1200,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/F20R7J6GG7Ar0t3u_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 516,
-      "latestEpisode": {
-        "id": 197422,
-        "title": "咖啡豆｜美式汉堡炸鸡扎堆来华，快餐品牌为什么又盯上中国市场？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 899000,
-        "onlineTime": 1787871600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/S9QEcOLFqd8wWVRH_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 68,
