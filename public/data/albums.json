@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1788194640895,
+  "generatedAt": 1788196087085,
   "albums": [
     {
       "id": 5,
@@ -102,6 +102,26 @@
       "category": "news"
     },
     {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1452,
+      "latestEpisode": {
+        "id": 197515,
+        "title": "今年中秋杭州多家寺院停售月饼",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 282000,
+        "onlineTime": 1788192000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/01/5u8pLxNlSAlCGOTD_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 97,
       "name": "成都城市资讯",
       "description": "本地新闻，牛屋活动，这里是成都的城市资讯",
@@ -140,6 +160,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/fwUvZGP0hFtXccm5_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 121,
+      "name": "英伦音乐前沿",
+      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1098,
+      "latestEpisode": {
+        "id": 197517,
+        "title": "UK Music 26年9月第1周 Vol.1",
+        "albumId": 121,
+        "albumName": "英伦音乐前沿",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+        "host": "NIO Radio",
+        "duration": 1501000,
+        "onlineTime": 1788192000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/01/0i05Wt8qJcaRmiKv_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 129,
@@ -260,6 +300,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/yYjy9T5tCFRnLpaa_AAC_192_1.m4a"
       },
       "category": "business"
+    },
+    {
+      "id": 588,
+      "name": "城市夜空",
+      "description": "一首歌、一个故事、一次灵感的碰撞，记录城市的律动，感受每一段独特的心声。城市夜空，让每一颗心都有依靠的地方。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 160,
+      "latestEpisode": {
+        "id": 197516,
+        "title": "玫瑰人生",
+        "albumId": 588,
+        "albumName": "城市夜空",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
+        "host": "NIO Radio",
+        "duration": 926000,
+        "onlineTime": 1788192000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/01/GWOAPd0H4v0a0veV_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 594,
@@ -678,26 +738,6 @@
         "duration": 283000,
         "onlineTime": 1788105600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/kQi4MXw7DxZ9JeBY_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1451,
-      "latestEpisode": {
-        "id": 197463,
-        "title": "韩真周莉亚新作《栋梁》杭州启程",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 274000,
-        "onlineTime": 1788105600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/eGIpf6GBFPY5ief2_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -2022,26 +2062,6 @@
       "category": "news"
     },
     {
-      "id": 121,
-      "name": "英伦音乐前沿",
-      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1097,
-      "latestEpisode": {
-        "id": 197272,
-        "title": "UK Music 26年8月第4周 Vol.4",
-        "albumId": 121,
-        "albumName": "英伦音乐前沿",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-        "host": "NIO Radio",
-        "duration": 1501000,
-        "onlineTime": 1787760000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/AtIkJxPojevX2nMU_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 349,
       "name": "时光点唱机",
       "description": "最好的时光，最美的音乐，这里是南京城市频道《时光点唱机》。",
@@ -2560,26 +2580,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/G3wqdiWdlIl2ZJWN_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 588,
-      "name": "城市夜空",
-      "description": "一首歌、一个故事、一次灵感的碰撞，记录城市的律动，感受每一段独特的心声。城市夜空，让每一颗心都有依靠的地方。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 159,
-      "latestEpisode": {
-        "id": 197314,
-        "title": "夏日运动音乐系列Vol.4",
-        "albumId": 588,
-        "albumName": "城市夜空",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
-        "host": "NIO Radio",
-        "duration": 1424000,
-        "onlineTime": 1787587200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/24/ecN9h3irERGt4bs0_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 680,
