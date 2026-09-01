@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1788196087085,
+  "generatedAt": 1788227997008,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 518,
+      "latestEpisode": {
+        "id": 197511,
+        "title": "凯乐石在欧洲开店，广告首次成为 B 站第一大业务",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 566000,
+        "onlineTime": 1788217200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/qB8gomXl2kTHKZU5_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -680,26 +700,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/wBhScjguEW3pg9nI_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 517,
-      "latestEpisode": {
-        "id": 197471,
-        "title": "难以影响购票决策的飞机餐，为何成为航司升级重点？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 993000,
-        "onlineTime": 1788130800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/vlX14MaWMuJtcbPb_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
