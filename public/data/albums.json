@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1788453822979,
+  "generatedAt": 1788462718791,
   "albums": [
     {
       "id": 5,
@@ -720,6 +720,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/J9Zv1tafjPAEswRC_AAC_192_1.m4a"
       },
       "category": "kids"
+    },
+    {
+      "id": 770,
+      "name": "机核游戏频道",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+      "host": "NIO Radio",
+      "episodeCount": 63,
+      "latestEpisode": {
+        "id": 197630,
+        "title": "21世纪最强小众惊悚烧脑恐怖游戏《信号》讲了个什么故事？",
+        "albumId": 770,
+        "albumName": "机核游戏频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+        "host": "NIO Radio",
+        "duration": 9558000,
+        "onlineTime": 1788451200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/xb5uHOyW5lr8FHKo_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 788,
@@ -2660,26 +2680,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/rCL2SnXKCT8KzAsx_AAC_192_1.m4a"
       },
       "category": "kids"
-    },
-    {
-      "id": 770,
-      "name": "机核游戏频道",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-      "host": "NIO Radio",
-      "episodeCount": 62,
-      "latestEpisode": {
-        "id": 197428,
-        "title": "遥遥领先，核周报",
-        "albumId": 770,
-        "albumName": "机核游戏频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-        "host": "NIO Radio",
-        "duration": 6495000,
-        "onlineTime": 1787846400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/gNKRlNr042wPuFcl_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 819,
