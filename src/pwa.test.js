@@ -67,9 +67,11 @@ describe('public app naming', () => {
   });
 
   it('keeps installed system bars aligned with the app surface', () => {
-    expect(indexHtml).toContain('<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />');
-    expect(indexHtml).toContain('<meta name="theme-color" content="#101a27" media="(prefers-color-scheme: dark)" />');
+    expect(indexHtml).toContain('<meta name="theme-color" content="#ffffff" />');
     expect(indexHtml).toContain('<meta name="apple-mobile-web-app-status-bar-style" content="default" />');
+    expect(indexHtml).toContain("matchMedia('(prefers-color-scheme: dark)')");
+    expect(indexHtml).toContain("setAttribute('content', dark ? '#101a27' : '#ffffff')");
+    expect(indexHtml).toContain("setAttribute('content', dark ? 'black-translucent' : 'default')");
     expect(viteConfig).toContain("background_color: '#ffffff'");
     expect(viteConfig).toContain("theme_color: '#ffffff'");
   });

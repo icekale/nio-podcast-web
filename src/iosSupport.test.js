@@ -56,6 +56,14 @@ describe('syncIosStatusBar', () => {
     syncIosStatusBar(document, false);
     expect(document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content).toBe('default');
   });
+
+  it('paints the installed theme-color dark in dark mode and white in light mode', () => {
+    document.head.innerHTML = '<meta name="theme-color" content="#ffffff" />';
+    syncIosStatusBar(document, true);
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#101a27');
+    syncIosStatusBar(document, false);
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#ffffff');
+  });
 });
 
 describe('lockBodyScroll', () => {

@@ -35,8 +35,10 @@ export function applyEpisodeToAudio(audio, episode, { play = false, seekSeconds 
 }
 
 export function syncIosStatusBar(doc = document, isDark) {
-  const meta = doc.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
-  if (meta) meta.setAttribute('content', isDark ? 'black-translucent' : 'default');
+  const status = doc.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+  if (status) status.setAttribute('content', isDark ? 'black-translucent' : 'default');
+  const theme = doc.querySelector('meta[name="theme-color"]');
+  if (theme) theme.setAttribute('content', isDark ? '#101a27' : '#ffffff');
 }
 
 export function lockBodyScroll(doc = document, scrollY = doc.defaultView?.scrollY || 0) {
