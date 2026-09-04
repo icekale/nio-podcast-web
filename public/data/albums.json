@@ -1,6 +1,86 @@
 {
-  "generatedAt": 1788484413598,
+  "generatedAt": 1788527437582,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1664,
+      "latestEpisode": {
+        "id": 197644,
+        "title": "美光计划年内大幅扩产HBM",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 402000,
+        "onlineTime": 1788512400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/km58C4e2cYtQvJBy_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 120,
+      "name": "蔚来直通车",
+      "description": "网罗蔚来资讯，乐享愉悦生活，最热门最有趣的社区热点都在这里！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/zaYoLKKQcKKNVP6Yo_4rp/L7Uv4rZpoIuB22AEnLJzE",
+      "host": "NIO Radio",
+      "episodeCount": 1246,
+      "latestEpisode": {
+        "id": 197643,
+        "title": "不用起早贪黑！把雪山日落都收入囊中",
+        "albumId": 120,
+        "albumName": "蔚来直通车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/zaYoLKKQcKKNVP6Yo_4rp/L7Uv4rZpoIuB22AEnLJzE",
+        "host": "NIO Radio",
+        "duration": 515000,
+        "onlineTime": 1788512400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/NaKbbkVXb7gGK0l5_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 751,
+      "latestEpisode": {
+        "id": 197396,
+        "title": "明星包月大运中心",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 425000,
+        "onlineTime": 1788512400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/zW45C9PE0pWdJRZr_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 90,
+      "latestEpisode": {
+        "id": 197641,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 40000,
+        "onlineTime": 1788512400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/OpRBFzIeT57ObH8v_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -22,6 +102,26 @@
       "category": "business"
     },
     {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 376,
+      "latestEpisode": {
+        "id": 197645,
+        "title": "海底幻境预热Axwell",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2813000,
+        "onlineTime": 1788452220000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/aXs7UWob7Vpx4IOW_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 5,
       "name": "资讯充电站·早间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结",
@@ -35,9 +135,9 @@
         "albumName": "资讯充电站·早间版",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
         "host": "NIO Radio",
-        "duration": 430000,
+        "duration": 425000,
         "onlineTime": 1788451200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/X0WCmI1EQgq1JGr5_AAC_192_1.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/XfFAlCU2Gjy1GzQU_AAC_192_1.m4a"
       },
       "category": "news"
     },
@@ -642,6 +742,26 @@
       "category": "audio"
     },
     {
+      "id": 649,
+      "name": "亲子的抢滩登陆",
+      "description": "小朋友遇到问题不会解决怎么办？小朋友总是害怕逃避问题怎么办？小朋友在遇到选择永远无法做出正确得到答案怎么办？亲子的抢滩登陆邀您一起越过代沟，和孩子共同沟通交流，寻找解决问题的最佳方案！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8xsCiCQPNaGqzLWmiLMea/R0WZosztnnwOw_dBNHdpL",
+      "host": "NIO Radio",
+      "episodeCount": 90,
+      "latestEpisode": {
+        "id": 197632,
+        "title": "四年级上线",
+        "albumId": 649,
+        "albumName": "亲子的抢滩登陆",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8xsCiCQPNaGqzLWmiLMea/R0WZosztnnwOw_dBNHdpL",
+        "host": "NIO Radio",
+        "duration": 1220000,
+        "onlineTime": 1788451200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/yqxeEQ7VPuq8huIf_AAC_192_1.m4a"
+      },
+      "category": "kids"
+    },
+    {
       "id": 669,
       "name": "Vibration 歪波音室",
       "description": "音乐太多，耳朵太少",
@@ -860,66 +980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/RprzBvFreTklCq0U_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1663,
-      "latestEpisode": {
-        "id": 197600,
-        "title": "Meta发布“史上最强模型”",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 376000,
-        "onlineTime": 1788426000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/Io5NayUBxCjiEOuX_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 750,
-      "latestEpisode": {
-        "id": 197394,
-        "title": "封个阳台，房子锁死",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 439000,
-        "onlineTime": 1788426000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/6VezwSRKwan9RbdN_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 89,
-      "latestEpisode": {
-        "id": 197595,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 50000,
-        "onlineTime": 1788426000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/lDUJslLu1Jx43hzX_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 345,
@@ -1782,26 +1842,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 803,
-      "name": "福利情报局",
-      "description": "不只是创业，更是人生选择！NIO Radio与福利合伙人联袂呈现栏目",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
-      "host": "NIO Radio",
-      "episodeCount": 13,
-      "latestEpisode": {
-        "id": 197496,
-        "title": "古镇内河创业：从 0 到 1 打造歇码头水上运动俱乐部",
-        "albumId": 803,
-        "albumName": "福利情报局",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
-        "host": "NIO Radio",
-        "duration": 1878000,
-        "onlineTime": 1788192000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/VaykToW5F7zQXkp9_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 812,
       "name": "不开玩笑",
       "description": "",
@@ -2342,26 +2382,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 375,
-      "latestEpisode": {
-        "id": 197442,
-        "title": "同步奶油田Alesso",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2759000,
-        "onlineTime": 1787994000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/2dQ4ULm3rCDLFtr8_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 22,
       "name": "蔚来牛人 · 咖啡旅神",
       "description": "上海车主@咖啡旅神，带你领略咖啡与美好生活",
@@ -2582,26 +2602,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 120,
-      "name": "蔚来直通车",
-      "description": "网罗蔚来资讯，乐享愉悦生活，最热门最有趣的社区热点都在这里！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/zaYoLKKQcKKNVP6Yo_4rp/L7Uv4rZpoIuB22AEnLJzE",
-      "host": "NIO Radio",
-      "episodeCount": 1245,
-      "latestEpisode": {
-        "id": 197440,
-        "title": "把一趟自驾，开成四种风格的电影",
-        "albumId": 120,
-        "albumName": "蔚来直通车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/zaYoLKKQcKKNVP6Yo_4rp/L7Uv4rZpoIuB22AEnLJzE",
-        "host": "NIO Radio",
-        "duration": 480000,
-        "onlineTime": 1787907600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/f2fTbYz2xUC2s7xx_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 88,
       "name": "南京城市频道",
       "description": "金陵城的声音陪伴,一起探索愉悦生活。这里是南京NIO Radio！",
@@ -2660,26 +2660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/N0yHC3WM48P8ZlUq_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 649,
-      "name": "亲子的抢滩登陆",
-      "description": "小朋友遇到问题不会解决怎么办？小朋友总是害怕逃避问题怎么办？小朋友在遇到选择永远无法做出正确得到答案怎么办？亲子的抢滩登陆邀您一起越过代沟，和孩子共同沟通交流，寻找解决问题的最佳方案！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8xsCiCQPNaGqzLWmiLMea/R0WZosztnnwOw_dBNHdpL",
-      "host": "NIO Radio",
-      "episodeCount": 89,
-      "latestEpisode": {
-        "id": 197409,
-        "title": "龙餐馆与克服恐惧",
-        "albumId": 649,
-        "albumName": "亲子的抢滩登陆",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8xsCiCQPNaGqzLWmiLMea/R0WZosztnnwOw_dBNHdpL",
-        "host": "NIO Radio",
-        "duration": 881000,
-        "onlineTime": 1787846400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/27/rCL2SnXKCT8KzAsx_AAC_192_1.m4a"
-      },
-      "category": "kids"
     },
     {
       "id": 819,
@@ -3000,6 +2980,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/22/OSF3Z4kMQhyIWcXG_AAC_192_1.m4a"
       },
       "category": "lifestyle"
+    },
+    {
+      "id": 803,
+      "name": "福利情报局",
+      "description": "不只是创业，更是人生选择！NIO Radio与福利合伙人联袂呈现栏目",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
+      "host": "NIO Radio",
+      "episodeCount": 12,
+      "latestEpisode": {
+        "id": 197088,
+        "title": "人宠经济 2.0：派特摩登宠物行业蓝海新打法",
+        "albumId": 803,
+        "albumName": "福利情报局",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
+        "host": "NIO Radio",
+        "duration": 1868000,
+        "onlineTime": 1787328000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/17/l1jVMn4GBuaVS9fU_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 699,
