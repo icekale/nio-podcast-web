@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1788462718791,
+  "generatedAt": 1788484413598,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 521,
+      "latestEpisode": {
+        "id": 197625,
+        "title": "咖啡豆｜运动鞋系上绸缎丝带，鞋履品牌为什么集体迷上芭蕾风？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 945000,
+        "onlineTime": 1788476400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/hzem35ZQkgEXI7xL_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -900,26 +920,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/lDUJslLu1Jx43hzX_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 520,
-      "latestEpisode": {
-        "id": 197587,
-        "title": "戴森进入电动牙刷领域，传统金店加盟持续收缩",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 510000,
-        "onlineTime": 1788390000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/02/WX9bOeZJ6G2o7eE4_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 345,
