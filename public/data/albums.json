@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1788527437582,
+  "generatedAt": 1788533263302,
   "albums": [
     {
       "id": 23,
@@ -1322,26 +1322,6 @@
       "category": null
     },
     {
-      "id": 823,
-      "name": "社群声边人",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
-      "host": "NIO Radio",
-      "episodeCount": 6,
-      "latestEpisode": {
-        "id": 197558,
-        "title": "顾问视角｜第三届蔚来杯篮球邀请赛，奔赴 2027 全国总决赛",
-        "albumId": 823,
-        "albumName": "社群声边人",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
-        "host": "NIO Radio",
-        "duration": 1729000,
-        "onlineTime": 1788364800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/02/r9fpRPhuJf3sLpSu_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 334,
       "name": "音乐加电站",
       "description": "每期不同的音乐推荐，在音乐的陪伴下，加电前行。",
@@ -2380,6 +2360,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/29/Gz4nHTKrL93rWbto_AAC_192_1.m4a"
       },
       "category": "lifestyle"
+    },
+    {
+      "id": 823,
+      "name": "社群声边人",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
+      "host": "NIO Radio",
+      "episodeCount": 5,
+      "latestEpisode": {
+        "id": 197372,
+        "title": "不止输赢！2026蔚来杯全国羽毛球邀请赛的赛场前后！",
+        "albumId": 823,
+        "albumName": "社群声边人",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
+        "host": "NIO Radio",
+        "duration": 1846000,
+        "onlineTime": 1788019200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/ENXsmj36FXH1oxjV_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 22,
