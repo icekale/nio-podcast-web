@@ -2,6 +2,21 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
+function stripManifestThemeColor() {
+  return {
+    name: 'strip-manifest-theme-color',
+    enforce: 'post',
+    generateBundle(_options, bundle) {
+      for (const chunk of Object.values(bundle)) {
+        if (chunk.type !== 'asset' || !chunk.fileName.endsWith('manifest.webmanifest')) continue;
+        const manifest = JSON.parse(chunk.source);
+        delete manifest.theme_color;
+        chunk.source = JSON.stringify(manifest);
+      }
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
@@ -34,7 +49,6 @@ export default defineConfig({
         scope: '/',
         display: 'standalone',
         background_color: '#ffffff',
-        theme_color: '#ffffff',
         description: 'NIO Radio 播客客户端',
         lang: 'zh-CN',
         icons: [
@@ -45,6 +59,7 @@ export default defineConfig({
         ],
       },
     }),
+    stripManifestThemeColor(),
   ],
   base: '/',
   test: {
