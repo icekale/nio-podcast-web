@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1788539898516,
+  "generatedAt": 1788611029862,
   "albums": [
     {
       "id": 547,
@@ -1260,26 +1260,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/S3NxVzVNikaYaFwb_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 6,
-      "latestEpisode": {
-        "id": 197620,
-        "title": "漫游中土世界，新西兰南岛",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1535000,
-        "onlineTime": 1788451200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/RprzBvFreTklCq0U_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 345,
@@ -2640,6 +2620,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/8HhaaxN9ysfkZppQ_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 5,
+      "latestEpisode": {
+        "id": 197360,
+        "title": "千亿富翁不是梦，去津巴布韦",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1515000,
+        "onlineTime": 1787932800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/26/t5QURZqpeYFJ9dAG_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 88,
