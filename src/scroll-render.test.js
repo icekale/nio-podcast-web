@@ -17,6 +17,11 @@ describe('mobile scroll rendering', () => {
     expect(topBarRule).toMatch(/background:\s*var\(--surface\)/);
   });
 
+  it('paints the home header with the recommendation surface', () => {
+    expect(css).toMatch(/\.home-screen \.top-bar\s*\{[^}]*background:\s*var\(--aqua\)/);
+    expect(css).toMatch(/\.home-screen \.top-bar-scrolled\s*\{[^}]*background:\s*var\(--surface\)/);
+  });
+
   it('defines bounded route and queue motion with reduced-motion coverage', () => {
     expect(css).toMatch(/@keyframes route-forward-in/);
     expect(css).toMatch(/@keyframes route-back-in/);

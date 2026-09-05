@@ -111,6 +111,8 @@ h1, h2, p { margin: 0; }
   border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
 }
 .top-bar-scrolled { box-shadow: 0 1px 0 var(--line); }
+.home-screen .top-bar { background: var(--aqua); border-bottom-color: transparent; }
+.home-screen .top-bar-scrolled { background: var(--surface); }
 .top-title { min-width: 0; text-align: center; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
 .top-actions { display: flex; min-width: 2.75rem; justify-content: flex-end; align-items: center; gap: var(--space-1); }
 .icon-button, .player-control {
