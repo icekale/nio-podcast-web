@@ -60,7 +60,7 @@ describe('syncIosStatusBar', () => {
   it('paints the installed theme-color dark in dark mode and white in light mode', () => {
     document.head.innerHTML = '<meta name="theme-color" content="#ffffff" />';
     syncIosStatusBar(document, true);
-    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#101a27');
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#133239');
     syncIosStatusBar(document, false);
     expect(document.querySelector('meta[name="theme-color"]').content).toBe('#ffffff');
   });

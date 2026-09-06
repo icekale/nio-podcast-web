@@ -69,7 +69,7 @@ describe('public app naming', () => {
   it('keeps installed system bars aligned with the app surface', () => {
     expect(indexHtml).toContain("matchMedia('(prefers-color-scheme: dark)')");
     expect(indexHtml).toContain('document.write');
-    expect(indexHtml).toContain('#101a27');
+    expect(indexHtml).toContain('#133239');
     expect(indexHtml).toContain('black-translucent');
     expect(indexHtml).not.toMatch(/<meta name="theme-color" content="#ffffff" \/>/);
     expect(viteConfig).toContain("background_color: '#ffffff'");
