@@ -81,7 +81,7 @@ function LaterPicker({ catalog, onBack, onAdd }) {
 }
 
 function AlbumPickerList({ albums, onSelect }) {
-  const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
+  const { visibleAlbums, hasMore, loadMore, sentinelRef } = useVisibleAlbums(albums);
   return (
     <ul className="album-results later-album-picker-list">
       {visibleAlbums.map(album => (
@@ -93,7 +93,7 @@ function AlbumPickerList({ albums, onSelect }) {
           </button>
         </li>
       ))}
-      {hasMore ? <li className="album-results-more"><button type="button" onClick={loadMore}>加载更多专辑</button></li> : null}
+      {hasMore ? <li ref={sentinelRef} className="album-results-more">{typeof IntersectionObserver !== 'function' ? <button type="button" onClick={loadMore}>加载更多专辑</button> : null}</li> : null}
     </ul>
   );
 }

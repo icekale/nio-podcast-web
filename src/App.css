@@ -292,6 +292,7 @@ h1, h2, p { margin: 0; }
 .inline-error button { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 2.75rem; padding: 0.45rem 0.6rem; color: var(--teal-dark); background: var(--surface-soft); border-radius: var(--radius-sm); font-size: 0.8rem; }
 .album-episode-list { border-top: 1px solid var(--line); }
 .load-more-button { width: 100%; margin-top: var(--space-4); border-radius: var(--radius-sm); }
+.load-more-sentinel { height: 1px; }
 .loading-state, .loading-more { padding: 2rem 0; color: var(--muted); text-align: center; }
 
 .mini-player {

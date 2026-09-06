@@ -15,7 +15,7 @@ function FavoriteStarButton({ album, favorited, onToggle }) {
 }
 
 export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, onRender, grid = false, favoriteIds = [], onToggleFavorite }) {
-  const { visibleAlbums, hasMore, loadMore } = useVisibleAlbums(albums);
+  const { visibleAlbums, hasMore, loadMore, sentinelRef } = useVisibleAlbums(albums);
   const favoriteSet = new Set(favoriteIds.map(Number));
   useEffect(() => { onRender?.(); }, [onRender]);
   return (
@@ -33,7 +33,7 @@ export const AlbumResults = memo(function AlbumResults({ albums, onOpenAlbum, on
           </li>
         );
       })}
-      {hasMore ? <li className="album-results-more"><button type="button" onClick={loadMore}>加载更多专辑</button></li> : null}
+      {hasMore ? <li ref={sentinelRef} className="album-results-more">{typeof IntersectionObserver !== 'function' ? <button type="button" onClick={loadMore}>加载更多专辑</button> : null}</li> : null}
     </ul>
   );
 });

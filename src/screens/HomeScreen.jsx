@@ -35,7 +35,7 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
   }, [catalog.albums, daytimeEpisodes, now]);
   const recommendation = selection.episodes[0];
   const playingRecommendation = Boolean(recommendation && player.currentEpisode?.id === recommendation.id);
-  const { visibleAlbums: visibleEpisodes, hasMore, loadMore } = useVisibleAlbums(selection.episodes, 20);
+  const { visibleAlbums: visibleEpisodes, hasMore, loadMore, sentinelRef } = useVisibleAlbums(selection.episodes, 20);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +99,8 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
                 <EpisodeRow key={episode.id} episode={episode} onPlay={handlePlay} active={player.currentEpisode?.id === episode.id} progress={progressFor(episode)} />
               ))}
             </ul>
-            {hasMore ? <button type="button" className="secondary-button load-more-button" onClick={loadMore}>加载更多</button> : null}
+            {hasMore ? <div ref={sentinelRef} className="load-more-sentinel" aria-hidden="true" /> : null}
+            {hasMore && typeof IntersectionObserver !== 'function' ? <button type="button" className="secondary-button load-more-button" onClick={loadMore}>加载更多</button> : null}
           </>
         ) : <div className="empty-state">暂无可播放的节目</div>}
       </section>
