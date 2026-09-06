@@ -38,7 +38,7 @@ export function syncIosStatusBar(doc = document, isDark) {
   const status = doc.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
   if (status) status.setAttribute('content', isDark ? 'black-translucent' : 'default');
   const theme = doc.querySelector('meta[name="theme-color"]');
-  if (theme) theme.setAttribute('content', isDark ? '#133239' : '#ffffff');
+  if (theme) theme.setAttribute('content', isDark ? '#133239' : '#e7f7f7');
 }
 
 export function lockBodyScroll(doc = document, scrollY = doc.defaultView?.scrollY || 0) {

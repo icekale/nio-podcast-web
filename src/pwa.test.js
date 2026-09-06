@@ -70,6 +70,7 @@ describe('public app naming', () => {
     expect(indexHtml).toContain("matchMedia('(prefers-color-scheme: dark)')");
     expect(indexHtml).toContain('document.write');
     expect(indexHtml).toContain('#133239');
+    expect(indexHtml).toContain('#e7f7f7');
     expect(indexHtml).toContain('black-translucent');
     expect(indexHtml).not.toMatch(/<meta name="theme-color" content="#ffffff" \/>/);
     expect(viteConfig).toContain("background_color: '#ffffff'");

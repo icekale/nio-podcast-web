@@ -57,12 +57,12 @@ describe('syncIosStatusBar', () => {
     expect(document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content).toBe('default');
   });
 
-  it('paints the installed theme-color dark in dark mode and white in light mode', () => {
+  it('paints the installed theme-color to match the home aqua surface', () => {
     document.head.innerHTML = '<meta name="theme-color" content="#ffffff" />';
     syncIosStatusBar(document, true);
     expect(document.querySelector('meta[name="theme-color"]').content).toBe('#133239');
     syncIosStatusBar(document, false);
-    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#ffffff');
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#e7f7f7');
   });
 });
 

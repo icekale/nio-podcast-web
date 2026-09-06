@@ -9,7 +9,7 @@
       (() => {
         const dark = matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-        document.write(`<meta name="theme-color" content="${dark ? '#133239' : '#ffffff'}">`);
+        document.write(`<meta name="theme-color" content="${dark ? '#133239' : '#e7f7f7'}">`);
         document.write(`<meta name="apple-mobile-web-app-status-bar-style" content="${dark ? 'black-translucent' : 'default'}">`);
       })();
     </script>
