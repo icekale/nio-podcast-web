@@ -6,6 +6,7 @@ import { selectHomeEpisodes } from '../catalog';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
+import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
 
 export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = null, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums }) {
   const [scrolled, setScrolled] = useState(false);
@@ -34,6 +35,7 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
   }, [catalog.albums, daytimeEpisodes, now]);
   const recommendation = selection.episodes[0];
   const playingRecommendation = Boolean(recommendation && player.currentEpisode?.id === recommendation.id);
+  const { visibleAlbums: visibleEpisodes, hasMore, loadMore } = useVisibleAlbums(selection.episodes, 20);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,11 +93,14 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
           <span className="section-count">{selection.episodes.length}</span>
         </div>
         {selection.episodes.length ? (
-          <ul className="episode-list">
-            {selection.episodes.map(episode => (
-              <EpisodeRow key={episode.id} episode={episode} onPlay={handlePlay} active={player.currentEpisode?.id === episode.id} progress={progressFor(episode)} />
-            ))}
-          </ul>
+          <>
+            <ul className="episode-list">
+              {visibleEpisodes.map(episode => (
+                <EpisodeRow key={episode.id} episode={episode} onPlay={handlePlay} active={player.currentEpisode?.id === episode.id} progress={progressFor(episode)} />
+              ))}
+            </ul>
+            {hasMore ? <button type="button" className="secondary-button load-more-button" onClick={loadMore}>加载更多</button> : null}
+          </>
         ) : <div className="empty-state">暂无可播放的节目</div>}
       </section>
       {(stale || refreshing || catalogError) ? <div className="notice-bar" role={catalogError ? 'alert' : 'status'}>{refreshing ? '正在刷新目录…' : catalogError ? '目录刷新失败，继续使用缓存内容' : '显示的是上次缓存的目录'} <button type="button" onClick={onRetry}>{refreshing ? '刷新中' : '刷新目录'}</button></div> : null}

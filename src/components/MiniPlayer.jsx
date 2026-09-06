@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ListMusic, SkipBack, SkipForward } from 'lucide-react';
 import { Pause as PauseIcon, Play as PlayIcon } from 'lucide';
 import { MorphIcon } from 'morphicons/react';
@@ -7,7 +7,7 @@ import { Artwork } from './Artwork';
 import { formatClock } from '../format';
 import { bubbleSecondsFromPointer } from '../playerProgress';
 
-export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], onToggleFavorite, onToggle, onAdjacent, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
+export function MiniPlayer({ player, audioRef, isPlaying, audioError, favoriteIds = [], onToggleFavorite, onToggle, onAdjacent, onRetry, onOpenQueue, queueButtonRef, onSeek, isClosing = false, onExited }) {
   const duration = player.durationSeconds || (Number(player.currentEpisode?.duration) || 0) / 1000;
   // 与 App.playAdjacent 相同的跳过规则：无音频 URL 的节目不可跳转
   const hasPlayableNeighbor = direction => {
@@ -21,8 +21,29 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
   const favorited = favoriteIds.includes(currentAlbumId);
   const progressRef = useRef(null);
   const [bubbleSeconds, setBubbleSeconds] = useState(null);
+  const episodeId = player.currentEpisode?.id;
+  const [trackedEpisodeId, setTrackedEpisodeId] = useState(episodeId);
+  const [livePosition, setLivePosition] = useState(player.positionSeconds);
+  if (trackedEpisodeId !== episodeId) {
+    setTrackedEpisodeId(episodeId);
+    setLivePosition(player.positionSeconds);
+  }
 
-  const positionSeconds = Math.min(player.positionSeconds, duration || 0);
+  useEffect(() => {
+    const audio = audioRef?.current;
+    if (!audio) return undefined;
+    let lastAt = 0;
+    const onTime = () => {
+      const now = Date.now();
+      if (now - lastAt < 1000) return;
+      lastAt = now;
+      setLivePosition(audio.currentTime || 0);
+    };
+    audio.addEventListener('timeupdate', onTime);
+    return () => audio.removeEventListener('timeupdate', onTime);
+  }, [audioRef, player.currentEpisode?.id]);
+
+  const positionSeconds = Math.min(livePosition, duration || 0);
   const progressPercent = duration > 0 ? (positionSeconds / duration) * 100 : 0;
 
   const updateBubbleFromPointer = useCallback(event => {
@@ -63,7 +84,7 @@ export function MiniPlayer({ player, isPlaying, audioError, favoriteIds = [], on
             max={duration || 0}
             step="1"
             value={positionSeconds}
-            onChange={event => { onSeek(event); setBubbleSeconds(Number(event.target.value)); }}
+            onChange={event => { const next = Number(event.target.value); setLivePosition(next); onSeek(event); setBubbleSeconds(next); }}
             style={{ '--progress': `${progressPercent}%` }}
           />
           <span>{formatClock(duration)}</span>

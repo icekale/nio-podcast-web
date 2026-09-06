@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Pause as PauseIcon, Play as PlayIcon } from 'lucide';
 import { canonicalD } from 'morphicons/dom';
 import { bubbleSecondsFromPointer } from '../playerProgress';
@@ -96,6 +96,22 @@ describe('MiniPlayer skip buttons', () => {
     rerender(<MiniPlayer player={player} isPlaying={false} onToggle={() => {}} />);
 
     await waitFor(() => expect(iconPath()).toBe(canonicalD(PlayIcon)));
+  });
+
+  it('updates the clock from the audio element', () => {
+    const audio = document.createElement('audio');
+    Object.defineProperty(audio, 'currentTime', { configurable: true, writable: true, value: 0 });
+    const player = {
+      ...playerWith([{ id: 1, title: 'A', audioUrl: 'https://cdn.example/a.mp3' }]),
+      currentEpisode: { id: 1, title: 'A', albumPic: '', albumName: 'NIO', duration: 200000 },
+      positionSeconds: 0,
+      durationSeconds: 200,
+    };
+    render(<MiniPlayer player={player} audioRef={{ current: audio }} isPlaying onToggle={() => {}} />);
+    expect(screen.getByText('0:00')).toBeInTheDocument();
+    audio.currentTime = 65;
+    fireEvent.timeUpdate(audio);
+    expect(screen.getByText('1:05')).toBeInTheDocument();
   });
 
   it('switches immediately when the user prefers reduced motion', () => {

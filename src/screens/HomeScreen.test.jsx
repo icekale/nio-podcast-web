@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Pause, Play } from 'lucide';
 import { canonicalD } from 'morphicons/dom';
 import { HomeScreen } from './HomeScreen';
@@ -101,6 +101,14 @@ describe('HomeScreen playback control', () => {
     const { container } = render(<HomeScreen {...callbacks} catalog={staleCatalog} daytimeEpisodes={daytimeEpisodes} player={player(false)} />);
 
     expect([...container.querySelectorAll('.episode-row')].map(row => row.dataset.episodeId)).toEqual(['2']);
+  });
+
+  it('windows long home lists and loads more on demand', () => {
+    const daytimeEpisodes = Array.from({ length: 25 }, (_, index) => ({ ...episode, id: index + 1, title: `节目${index + 1}` }));
+    const { container } = render(<HomeScreen {...callbacks} catalog={{ generatedAt: Date.now(), albums: [] }} daytimeEpisodes={daytimeEpisodes} player={player(false)} />);
+    expect(container.querySelectorAll('.episode-row')).toHaveLength(20);
+    fireEvent.click(screen.getByRole('button', { name: '加载更多' }));
+    expect(container.querySelectorAll('.episode-row')).toHaveLength(25);
   });
 
   it('switches immediately when the user prefers reduced motion', () => {
