@@ -136,6 +136,7 @@ describe('android TWA digital asset links', () => {
     const links = JSON.parse(readFileSync(resolve(process.cwd(), 'public/.well-known/assetlinks.json'), 'utf8'));
     expect(links[0].target.package_name).toBe('top.k4le.nio.twa');
     expect(links[0].target.sha256_cert_fingerprints[0]).toMatch(/^[0-9A-F:]{95}$/);
+    expect(readFileSync(resolve(process.cwd(), '.github/workflows/deploy.yml'), 'utf8')).toContain('include-hidden-files: true');
   });
 });
 
