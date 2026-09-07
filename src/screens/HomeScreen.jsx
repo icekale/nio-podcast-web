@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { List, Search } from 'lucide-react';
 import { Pause, Play } from 'lucide';
 import { MorphIcon } from 'morphicons/react';
@@ -6,9 +6,12 @@ import { selectHomeEpisodes } from '../catalog';
 import { Artwork } from '../components/Artwork';
 import { EpisodeRow } from '../components/EpisodeRow';
 import { formatDuration } from '../format';
+import { syncIosStatusBar } from '../iosSupport';
 import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
 
 export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = null, player, stale, refreshing = false, catalogError = null, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums }) {
+  const recommendationRef = useRef(null);
+  const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
@@ -39,13 +42,27 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
 
   useEffect(() => {
     const handleScroll = () => {
-      const next = window.scrollY > 180;
+      const next = window.scrollY > 0 && recommendationRef.current.getBoundingClientRect().bottom <= headerRef.current.getBoundingClientRect().bottom;
       setScrolled(previous => previous === next ? previous : next);
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
+
+  useLayoutEffect(() => {
+    const sync = () => syncIosStatusBar(document, window.matchMedia?.('(prefers-color-scheme: dark)')?.matches === true);
+    document.documentElement.dataset.homeTop = String(!scrolled);
+    sync();
+    return () => {
+      delete document.documentElement.dataset.homeTop;
+      sync();
+    };
+  }, [scrolled]);
 
   const handlePlay = useCallback(item => onPlay(item, selection.episodes), [onPlay, selection.episodes]);
   const progressFor = episode => {
@@ -57,16 +74,16 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
 
   return (
     <div className="screen home-screen">
-      <header className={`top-bar${scrolled ? ' top-bar-scrolled' : ''}`}>
+      <header ref={headerRef} className={`top-bar${scrolled ? ' top-bar-scrolled' : ''}`}>
         <button type="button" className="icon-button" aria-label="全部专辑" onClick={onOpenAlbums}><List size={24} /></button>
-        <span className="top-title">{scrolled ? '今日推荐' : 'NIO Radio'}</span>
+        <span className="top-title">NIO Radio</span>
         <div className="top-actions">
           {scrolled && player.currentEpisode ? <button type="button" className="continue-button" onClick={onResume}>▶ 继续播放</button> : null}
           <button type="button" className="icon-button" aria-label="搜索" onClick={onSearch}><Search size={22} /></button>
         </div>
       </header>
 
-      <section className="recommendation-panel" aria-labelledby="recommendation-title">
+      <section ref={recommendationRef} className="recommendation-panel" aria-labelledby="recommendation-title">
         <div className="recommendation-copy">
           <span className="section-kicker">TODAY</span>
           <h1 id="recommendation-title">今日推荐</h1>

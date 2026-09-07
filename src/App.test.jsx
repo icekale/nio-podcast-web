@@ -148,7 +148,7 @@ describe('mobile app shell', () => {
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
     fireEvent.scroll(window);
 
-    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('NIO Radio'));
     expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
     expect(document.querySelector('.updates-section')).toBeInTheDocument();
   });
@@ -157,7 +157,7 @@ describe('mobile app shell', () => {
     Object.defineProperty(window, 'scrollY', { configurable: true, value: 220 });
     render(<App initialCatalog={catalog} />);
 
-    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('今日推荐'));
+    await waitFor(() => expect(document.querySelector('.top-title')).toHaveTextContent('NIO Radio'));
     expect(document.querySelector('.recommendation-panel')).toBeInTheDocument();
   });
 

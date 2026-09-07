@@ -52,6 +52,33 @@ const callbacks = {
 };
 
 describe('HomeScreen playback control', () => {
+  it('keeps the brand title and syncs theme color across scroll and unmount', () => {
+    const meta = document.createElement('meta');
+    meta.name = 'theme-color';
+    document.head.append(meta);
+    vi.stubGlobal('scrollY', 0);
+    vi.stubGlobal('matchMedia', () => ({ matches: false }));
+    const { container, unmount } = render(<HomeScreen {...callbacks} catalog={catalog} player={player(false)} />);
+    const panel = container.querySelector('.recommendation-panel');
+    const header = container.querySelector('.top-bar');
+    panel.getBoundingClientRect = () => ({ bottom: 400 });
+    header.getBoundingClientRect = () => ({ bottom: 56 });
+    expect(meta.content).toBe('#e7f7f7');
+    vi.stubGlobal('scrollY', 200);
+    fireEvent.scroll(window);
+    expect(meta.content).toBe('#e7f7f7');
+    panel.getBoundingClientRect = () => ({ bottom: 55 });
+    fireEvent.scroll(window);
+    expect(meta.content).toBe('#ffffff');
+    expect(header.querySelector('.top-title')).toHaveTextContent('NIO Radio');
+    vi.stubGlobal('scrollY', 0);
+    fireEvent.scroll(window);
+    expect(meta.content).toBe('#e7f7f7');
+    unmount();
+    expect(meta.content).toBe('#ffffff');
+    expect(document.documentElement.dataset.homeTop).toBeUndefined();
+    meta.remove();
+  });
   it('keeps the current icon as the first frame of a play-pause morph', () => {
     const { container, rerender } = render(<HomeScreen {...callbacks} catalog={catalog} player={player(false)} />);
     const iconPath = () => container.querySelector('.primary-button path')?.getAttribute('d');

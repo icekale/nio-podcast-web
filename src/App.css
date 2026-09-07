@@ -111,7 +111,12 @@ h1, h2, p { margin: 0; }
   border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
 }
 .top-bar-scrolled { box-shadow: 0 1px 0 var(--line); }
-.home-screen .top-bar { background: var(--aqua); border-bottom-color: transparent; }
+.home-screen .top-bar {
+  min-height: calc(3.5rem + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  background: var(--aqua);
+  border-bottom-color: transparent;
+}
 .home-screen .top-bar-scrolled { background: var(--surface); }
 .top-title { min-width: 0; text-align: center; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
 .top-actions { display: flex; min-width: 2.75rem; justify-content: flex-end; align-items: center; gap: var(--space-1); }
@@ -149,7 +154,7 @@ h1, h2, p { margin: 0; }
   grid-template-columns: minmax(0, 1fr) 7.5rem;
   gap: var(--space-5);
   align-items: center;
-  padding: 2rem var(--space-5) 1.75rem;
+  padding: 1.25rem var(--space-5) 1.75rem;
   background: var(--aqua);
 }
 .recommendation-copy { min-width: 0; }

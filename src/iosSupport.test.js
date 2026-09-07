@@ -46,6 +46,7 @@ describe('applyEpisodeToAudio', () => {
 
 describe('syncIosStatusBar', () => {
   afterEach(() => {
+    document.documentElement.removeAttribute('data-home-top');
     document.head.innerHTML = '';
   });
 
@@ -58,11 +59,19 @@ describe('syncIosStatusBar', () => {
   });
 
   it('paints the installed theme-color to match the home aqua surface', () => {
+    document.documentElement.dataset.homeTop = 'true';
     document.head.innerHTML = '<meta name="theme-color" content="#ffffff" />';
     syncIosStatusBar(document, true);
     expect(document.querySelector('meta[name="theme-color"]').content).toBe('#133239');
     syncIosStatusBar(document, false);
     expect(document.querySelector('meta[name="theme-color"]').content).toBe('#e7f7f7');
+  });
+  it('uses the page surface away from the home top in both themes', () => {
+    document.head.innerHTML = '<meta name="theme-color" content="#e7f7f7" />';
+    syncIosStatusBar(document, false);
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#ffffff');
+    syncIosStatusBar(document, true);
+    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#101a27');
   });
 });
 
