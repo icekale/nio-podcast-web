@@ -1,21 +1,22 @@
 package top.k4le.nio.twa;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.browser.customtabs.CustomTabColorSchemeParams;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.trusted.TrustedWebActivityIntentBuilder;
-import androidx.core.content.ContextCompat;
 import com.google.androidbrowserhelper.trusted.QualityEnforcer;
 import com.google.androidbrowserhelper.trusted.TwaLauncher;
 import com.google.androidbrowserhelper.trusted.splashscreens.PwaWrapperSplashScreenStrategy;
 
 /** 有 Custom Tabs 走 TWA；没有则退回 WebView。只加载线上站点。 */
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
     private static final String TAG = "NioRadioTWA";
     private static final Uri LAUNCHER_URI = Uri.parse("https://nio.k4le.top/");
 
@@ -24,11 +25,14 @@ public class SplashActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         super.onCreate(savedInstanceState);
         if (hasCustomTabsProvider()) {
             Log.i(TAG, "custom tabs provider found, launching TWA");
             twaLauncher = new TwaLauncher(this);
-            int splashBackground = ContextCompat.getColor(this, R.color.splash_background);
+            boolean night = (getResources().getConfiguration().uiMode
+                    & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+            int splashBackground = night ? 0xFF000000 : 0xFFFFFFFF;
             CustomTabColorSchemeParams lightColors = new CustomTabColorSchemeParams.Builder()
                     .setToolbarColor(0xFFFFFFFF)
                     .build();
@@ -41,7 +45,7 @@ public class SplashActivity extends Activity {
                     .setColorSchemeParams(CustomTabsIntent.COLOR_SCHEME_DARK, darkColors);
             splashScreenStrategy = new PwaWrapperSplashScreenStrategy(
                     this,
-                    R.drawable.splash_logo,
+                    night ? R.drawable.splash_logo_dark : R.drawable.splash_logo_light,
                     splashBackground,
                     ImageView.ScaleType.CENTER,
                     null,

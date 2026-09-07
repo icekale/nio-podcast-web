@@ -20,7 +20,7 @@ describe('mobile scroll rendering', () => {
   it('paints the home header with the recommendation surface', () => {
     expect(css).toMatch(/\.home-screen \.top-bar\s*\{[^}]*background:\s*var\(--aqua\)/);
     expect(css).toMatch(/\.home-screen \.top-bar-scrolled\s*\{[^}]*background:\s*var\(--surface\)/);
-    expect(css).toMatch(/html\.android-standalone \.home-screen \.top-bar\s*\{[^}]*background:\s*var\(--surface\)/);
+    expect(css).toMatch(/html\.android-app \.home-screen \.top-bar\s*\{[^}]*background:\s*var\(--surface\)/);
   });
 
   it('defines bounded route and queue motion with reduced-motion coverage', () => {

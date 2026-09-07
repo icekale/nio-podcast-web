@@ -72,7 +72,7 @@ describe('public app naming', () => {
     expect(indexHtml).toContain('#133239');
     expect(indexHtml).toContain('#e7f7f7');
     expect(indexHtml).toContain('#101a27');
-    expect(indexHtml).toContain('android-standalone');
+    expect(indexHtml).toContain('android-app');
     expect(indexHtml).toContain('black-translucent');
     expect(indexHtml).not.toMatch(/<meta name="theme-color" content="#ffffff" \/>/);
     expect(viteConfig).toContain("background_color: '#ffffff'");

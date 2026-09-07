@@ -118,7 +118,7 @@ h1, h2, p { margin: 0; }
   border-bottom-color: transparent;
 }
 .home-screen .top-bar-scrolled { background: var(--surface); }
-html.android-standalone .home-screen .top-bar { background: var(--surface); }
+html.android-app .home-screen .top-bar { background: var(--surface); }
 .top-title { min-width: 0; text-align: center; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
 .top-actions { display: flex; min-width: 2.75rem; justify-content: flex-end; align-items: center; gap: var(--space-1); }
 .icon-button, .player-control {

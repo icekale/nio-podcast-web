@@ -34,16 +34,15 @@ export function applyEpisodeToAudio(audio, episode, { play = false, seekSeconds 
   return undefined;
 }
 
-function isAndroidStandalone(win = globalThis) {
-  return /Android/i.test(win.navigator?.userAgent || '')
-    && win.matchMedia?.('(display-mode: standalone)')?.matches === true;
+function isAndroidApp(win = globalThis) {
+  return /Android/i.test(win.navigator?.userAgent || '');
 }
 
 export function syncIosStatusBar(doc = document, isDark) {
   const status = doc.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
   if (status) status.setAttribute('content', isDark ? 'black-translucent' : 'default');
   const theme = doc.querySelector('meta[name="theme-color"]');
-  const homeTop = !isAndroidStandalone(doc.defaultView || globalThis) && doc.documentElement.dataset.homeTop === 'true';
+  const homeTop = !isAndroidApp(doc.defaultView || globalThis) && doc.documentElement.dataset.homeTop === 'true';
   if (theme) theme.setAttribute('content', homeTop
     ? (isDark ? '#133239' : '#e7f7f7')
     : (isDark ? '#101a27' : '#ffffff'));
