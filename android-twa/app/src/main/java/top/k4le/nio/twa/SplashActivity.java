@@ -34,10 +34,12 @@ public class SplashActivity extends AppCompatActivity {
                     & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
             int splashBackground = night ? 0xFF000000 : 0xFFFFFFFF;
             CustomTabColorSchemeParams lightColors = new CustomTabColorSchemeParams.Builder()
-                    .setToolbarColor(0xFFFFFFFF)
+                    .setToolbarColor(0xFFE7F7F7)
+                    .setNavigationBarColor(0xFFE7F7F7)
                     .build();
             CustomTabColorSchemeParams darkColors = new CustomTabColorSchemeParams.Builder()
-                    .setToolbarColor(0xFF000000)
+                    .setToolbarColor(0xFF133239)
+                    .setNavigationBarColor(0xFF133239)
                     .build();
             TrustedWebActivityIntentBuilder builder = new TrustedWebActivityIntentBuilder(LAUNCHER_URI)
                     .setDefaultColorSchemeParams(lightColors)

@@ -8,10 +8,8 @@
     <script>
       (() => {
         const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-        const androidApp = /Android/i.test(navigator.userAgent);
         document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-        if (androidApp) document.documentElement.classList.add('android-app');
-        document.write(`<meta name="theme-color" content="${androidApp ? (dark ? '#101a27' : '#ffffff') : (dark ? '#133239' : '#e7f7f7')}">`);
+        document.write(`<meta name="theme-color" content="${dark ? '#133239' : '#e7f7f7'}">`);
         document.write(`<meta name="apple-mobile-web-app-status-bar-style" content="${dark ? 'black-translucent' : 'default'}">`);
       })();
     </script>

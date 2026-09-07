@@ -74,15 +74,6 @@ describe('syncIosStatusBar', () => {
     syncIosStatusBar(document, true);
     expect(document.querySelector('meta[name="theme-color"]').content).toBe('#101a27');
   });
-  it('keeps Android app bars on the page surface even at the home top', () => {
-    vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 (Linux; Android 14)' });
-    document.documentElement.dataset.homeTop = 'true';
-    document.head.innerHTML = '<meta name="theme-color" content="#133239" />';
-    syncIosStatusBar(document, true);
-    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#101a27');
-    syncIosStatusBar(document, false);
-    expect(document.querySelector('meta[name="theme-color"]').content).toBe('#ffffff');
-  });
 });
 
 describe('lockBodyScroll', () => {
