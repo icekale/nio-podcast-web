@@ -26,15 +26,15 @@
 - 保存播放进度和最近听过的节目，重新打开后可以继续收听。
 - 将任意节目加入“稍后播放”，在播放列表中统一管理。
 - 支持电脑浏览器：宽屏下自动切换为桌面布局，提供侧边导航与常驻播放器。
-- 支持 Android App（TWA 全屏壳）和添加到手机主屏幕。
+- 支持 Android App 和添加到手机主屏幕。
 
 ## 安装
 
 ### Android App
 
-下载 [NIO Radio Android APK](https://github.com/icekale/nio-podcast-web/releases/latest/download/NIO-Radio.apk)（当前 v1.0.0，侧载安装）。
+下载 [NIO Radio Android APK](https://github.com/icekale/nio-podcast-app/releases/latest/download/NIO-Radio.apk)（Flutter 正式包，约 50MB）。
 
-有 Chrome 时全屏打开 [nio.k4le.top](https://nio.k4le.top/)，没有地址栏；没有 Chrome 的国产系统会走内置 WebView。首次安装需允许未知来源。
+首次安装需允许未知来源。
 
 ### 浏览器 / PWA
 
