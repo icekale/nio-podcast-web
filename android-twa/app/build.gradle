@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+}
+
+def signingPasswordFile = rootProject.file('keystore-password.txt')
+def signingPassword = System.getenv('NIO_TWA_KEYSTORE_PASSWORD')
+if (!signingPassword && signingPasswordFile.isFile()) {
+    signingPassword = signingPasswordFile.getText('UTF-8').trim()
+}
+
+android {
+    namespace 'top.k4le.nio.twa'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'top.k4le.nio.twa'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../nio-twa.keystore')
+            storePassword signingPassword ?: ''
+            keyAlias 'nio'
+            keyPassword signingPassword ?: ''
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.7.3'
+}

@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "top.k4le.nio.twa",
+    "sha256_cert_fingerprints": [
+      "48:53:16:7F:A7:5E:50:87:57:03:5C:06:67:14:F3:09:47:67:D8:94:B1:FE:18:44:E4:A3:46:E4:1F:94:46:81"
+    ]
+  }
+}]

@@ -131,6 +131,14 @@ describe('custom domain deployment', () => {
   });
 });
 
+describe('android TWA digital asset links', () => {
+  it('publishes the sideload signing fingerprint for nio.k4le.top', () => {
+    const links = JSON.parse(readFileSync(resolve(process.cwd(), 'public/.well-known/assetlinks.json'), 'utf8'));
+    expect(links[0].target.package_name).toBe('top.k4le.nio.twa');
+    expect(links[0].target.sha256_cert_fingerprints[0]).toMatch(/^[0-9A-F:]{95}$/);
+  });
+});
+
 describe('home-screen icon fallbacks', () => {
   it('ships black NIO logos on white PNG backgrounds', () => {
     for (const [path, size] of [['public/icon-180.png', 180], ['public/icon-192.png', 192], ['public/icon-512.png', 512]]) {
