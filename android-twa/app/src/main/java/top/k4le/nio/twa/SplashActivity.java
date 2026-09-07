@@ -2,7 +2,6 @@ package top.k4le.nio.twa;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +9,7 @@ import android.widget.ImageView;
 import androidx.browser.customtabs.CustomTabColorSchemeParams;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.trusted.TrustedWebActivityIntentBuilder;
+import androidx.core.content.ContextCompat;
 import com.google.androidbrowserhelper.trusted.QualityEnforcer;
 import com.google.androidbrowserhelper.trusted.TwaLauncher;
 import com.google.androidbrowserhelper.trusted.splashscreens.PwaWrapperSplashScreenStrategy;
@@ -18,8 +18,6 @@ import com.google.androidbrowserhelper.trusted.splashscreens.PwaWrapperSplashScr
 public class SplashActivity extends Activity {
     private static final String TAG = "NioRadioTWA";
     private static final Uri LAUNCHER_URI = Uri.parse("https://nio.k4le.top/");
-    private static final int LIGHT_SYSTEM_BAR_COLOR = Color.rgb(231, 247, 247);
-    private static final int DARK_SYSTEM_BAR_COLOR = Color.rgb(19, 50, 57);
 
     private TwaLauncher twaLauncher;
     private PwaWrapperSplashScreenStrategy splashScreenStrategy;
@@ -30,11 +28,12 @@ public class SplashActivity extends Activity {
         if (hasCustomTabsProvider()) {
             Log.i(TAG, "custom tabs provider found, launching TWA");
             twaLauncher = new TwaLauncher(this);
+            int splashBackground = ContextCompat.getColor(this, R.color.splash_background);
             CustomTabColorSchemeParams lightColors = new CustomTabColorSchemeParams.Builder()
-                    .setToolbarColor(LIGHT_SYSTEM_BAR_COLOR)
+                    .setToolbarColor(0xFFFFFFFF)
                     .build();
             CustomTabColorSchemeParams darkColors = new CustomTabColorSchemeParams.Builder()
-                    .setToolbarColor(DARK_SYSTEM_BAR_COLOR)
+                    .setToolbarColor(0xFF000000)
                     .build();
             TrustedWebActivityIntentBuilder builder = new TrustedWebActivityIntentBuilder(LAUNCHER_URI)
                     .setDefaultColorSchemeParams(lightColors)
@@ -42,8 +41,8 @@ public class SplashActivity extends Activity {
                     .setColorSchemeParams(CustomTabsIntent.COLOR_SCHEME_DARK, darkColors);
             splashScreenStrategy = new PwaWrapperSplashScreenStrategy(
                     this,
-                    R.drawable.ic_launcher,
-                    LIGHT_SYSTEM_BAR_COLOR,
+                    R.drawable.splash_logo,
+                    splashBackground,
                     ImageView.ScaleType.CENTER,
                     null,
                     300,
