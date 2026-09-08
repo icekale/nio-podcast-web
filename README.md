@@ -32,9 +32,11 @@
 
 ### Android App
 
-下载 [NIO Radio Android APK](https://github.com/icekale/nio-podcast-app/releases/latest/download/NIO-Radio.apk)（Flutter 正式包，约 50MB）。
+下载 [NIO Radio Android APK](https://github.com/icekale/nio-podcast-web/releases/latest/download/NIO-Radio.apk)（Flutter 原生客户端，非 TWA，arm64 约 23MB）。
 
-首次安装需允许未知来源。
+32 位机型用 [NIO-Radio-armv7.apk](https://github.com/icekale/nio-podcast-web/releases/latest/download/NIO-Radio-armv7.apk)。
+
+首次安装需允许未知来源。锁屏和下拉菜单播放卡片需要通知权限。
 
 ### 浏览器 / PWA
 

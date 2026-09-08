@@ -11,7 +11,7 @@
 想留着的丢进稍后播放。
 白噪音也能垫着通勤或书桌。
 
-安卓：下载 App https://github.com/icekale/nio-podcast-app/releases/latest/download/NIO-Radio.apk
+安卓：下载 App https://github.com/icekale/nio-podcast-web/releases/latest/download/NIO-Radio.apk
 或浏览器菜单 → 添加到主屏幕
 iPhone：分享 → 添加到主屏幕
 
@@ -30,7 +30,7 @@ https://nio.k4le.top/
 手机和电脑都能用的 NIO 播客播放器。每日更新目录，进度和稍后播放存在本地，可以加到主屏幕。
 
 打开：https://nio.k4le.top/
-安卓 App：https://github.com/icekale/nio-podcast-app/releases/latest/download/NIO-Radio.apk
+安卓 App：https://github.com/icekale/nio-podcast-web/releases/latest/download/NIO-Radio.apk
 iPhone：分享 → 添加到主屏幕。
 
 标签：蔚来、NIO、播客、PWA
