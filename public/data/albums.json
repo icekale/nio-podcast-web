@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1788972921572,
+  "generatedAt": 1789003286648,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 525,
+      "latestEpisode": {
+        "id": 197788,
+        "title": "OpenAI 突破性数学成果陷入争议，LV 旗下基金牵头收购 Hyrox 控股权",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 562000,
+        "onlineTime": 1788994800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/M732xoAfHMOnNH9h_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -38,6 +58,26 @@
         "duration": 2278000,
         "onlineTime": 1788969600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/OVGDA1y3eYP58SG5_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2332,
+      "latestEpisode": {
+        "id": 197795,
+        "title": "去油听歌 Vol.280",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1172000,
+        "onlineTime": 1788969600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/d3bkn5nlcYXdGgP5_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -620,46 +660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/f1PxA3XyYTNYNeUN_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 524,
-      "latestEpisode": {
-        "id": 197752,
-        "title": "猪肉价格经历漫长下跌，为什么「猪周期」不再遵循老节奏",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 867000,
-        "onlineTime": 1788908400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/jVoGWFKK9yMwiq4u_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2331,
-      "latestEpisode": {
-        "id": 197760,
-        "title": "你听过的K-POP BGM Vol.1",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1161000,
-        "onlineTime": 1788883200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/joUAnwP9TrhdE1gB_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 64,
