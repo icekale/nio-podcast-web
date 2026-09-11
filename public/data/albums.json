@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1789058599880,
+  "generatedAt": 1789089803769,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 526,
+      "latestEpisode": {
+        "id": 197834,
+        "title": "咖啡豆｜从飞机潜艇走进日常生活，钛为什么成了水杯的热门材料？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 826000,
+        "onlineTime": 1789081200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/7Mjkys1sooCIGVAA_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -562,6 +582,26 @@
       "category": "car"
     },
     {
+      "id": 614,
+      "name": "音乐曼曼听",
+      "description": "和@李小曼一起，用音乐开启周末的美好时光。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
+      "host": "NIO Radio",
+      "episodeCount": 150,
+      "latestEpisode": {
+        "id": 197837,
+        "title": "低吟落心间",
+        "albumId": 614,
+        "albumName": "音乐曼曼听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
+        "host": "NIO Radio",
+        "duration": 1045000,
+        "onlineTime": 1789056000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/EXfQ32ZHtwScy4OK_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 631,
       "name": "东莞吃喝玩乐地图",
       "description": "分享东莞本地吃喝玩乐好去处，让你的周末更添精彩。",
@@ -840,26 +880,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/5uKwOnGBYpyMSW7m_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 525,
-      "latestEpisode": {
-        "id": 197788,
-        "title": "OpenAI 突破性数学成果陷入争议，LV 旗下基金牵头收购 Hyrox 控股权",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 562000,
-        "onlineTime": 1788994800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/M732xoAfHMOnNH9h_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 328,
@@ -2700,26 +2720,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/02/xgIByTEL3IDPf07o_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 614,
-      "name": "音乐曼曼听",
-      "description": "和@李小曼一起，用音乐开启周末的美好时光。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
-      "host": "NIO Radio",
-      "episodeCount": 149,
-      "latestEpisode": {
-        "id": 197593,
-        "title": "人间寻常",
-        "albumId": 614,
-        "albumName": "音乐曼曼听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
-        "host": "NIO Radio",
-        "duration": 922000,
-        "onlineTime": 1788451200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/Np5eIVu8QbqEEEd0_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 627,
