@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1789145290521,
+  "generatedAt": 1789216703490,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 379,
+      "latestEpisode": {
+        "id": 197808,
+        "title": "海底幻境预热JoelCorry",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2674000,
+        "onlineTime": 1789203600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/tm6pBhUipJ8Ng5uP_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -320,26 +340,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/11/V5wiEG7Ln7xPkXVd_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 378,
-      "latestEpisode": {
-        "id": 197807,
-        "title": "海底幻境预热Bhaskar",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2868000,
-        "onlineTime": 1789117200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/5vKwS7tFja9RtpBI_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 618,
