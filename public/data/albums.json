@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1789216703490,
+  "generatedAt": 1789224046605,
   "albums": [
     {
       "id": 547,
@@ -1140,26 +1140,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/GvO0CSTayBgDKfbr_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 7,
-      "latestEpisode": {
-        "id": 197743,
-        "title": "南极这片“热土”，我环球旅行的起点",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1490000,
-        "onlineTime": 1789056000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/xIXOo3zCdPjHYQVr_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 328,
@@ -2620,6 +2600,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/02/r9fpRPhuJf3sLpSu_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 6,
+      "latestEpisode": {
+        "id": 197620,
+        "title": "漫游中土世界，新西兰南岛",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1535000,
+        "onlineTime": 1788624000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/03/RprzBvFreTklCq0U_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 684,
