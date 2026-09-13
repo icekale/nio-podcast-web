@@ -130,4 +130,56 @@ describe('desktop favorites collection', () => {
     expect(`${window.location.pathname}${window.location.search}`).toBe('/search');
     expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
   });
+
+  it('lists only favorited albums updated since the last visit', async () => {
+    const now = Date.now();
+    const aged = { ...catalog.albums[1], latestEpisode: { ...catalog.albums[1].latestEpisode, onlineTime: now - 3 * 60 * 60 * 1000 } };
+    window.localStorage.setItem('nio_favorite_albums_v1', JSON.stringify([1, 2]));
+    window.localStorage.setItem('nio_album_seen_v1', String(now - 60 * 60 * 1000));
+    render(<App initialCatalog={{ generatedAt: now, albums: [catalog.albums[0], aged] }} />);
+    openFavorites();
+
+    const updates = await screen.findByRole('region', { name: '有更新' });
+    const cards = within(updates).getAllByRole('button', { name: /^(NIO 精选|另一张专辑)/ });
+    expect(cards).toHaveLength(1);
+    expect(cards[0]).toHaveAccessibleName('NIO 精选第一集');
+  });
+
+  it('clears the update dot after the collection is visited again', async () => {
+    window.localStorage.setItem('nio_favorite_albums_v1', JSON.stringify([1]));
+    window.localStorage.setItem('nio_album_seen_v1', String(Date.now() - 60 * 60 * 1000));
+    render(<App initialCatalog={catalog} />);
+
+    expect(document.querySelector('.nav-update-dot')).not.toBeNull();
+
+    openFavorites();
+    await screen.findByRole('region', { name: '有更新' });
+    expect(Number(window.localStorage.getItem('nio_album_seen_v1'))).toBeGreaterThan(Date.now() - 10000);
+
+    const nav = screen.getByRole('navigation', { name: '主导航' });
+    fireEvent.click(within(nav).getByRole('button', { name: '搜索' }));
+    await waitFor(() => expect(document.querySelector('.nav-update-dot')).toBeNull());
+
+    openFavorites();
+    await screen.findByRole('heading', { name: '专辑收藏' });
+    expect(screen.queryByRole('region', { name: '有更新' })).not.toBeInTheDocument();
+  });
+
+  it('opens the collection from the home top bar on phones', async () => {
+    window.matchMedia = vi.fn().mockImplementation(query => ({
+      matches: false,
+      media: query,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      onchange: null,
+      dispatchEvent: vi.fn(),
+    }));
+    render(<App initialCatalog={catalog} />);
+
+    fireEvent.click(await screen.findByRole('button', { name: '专辑收藏' }));
+    expect(await screen.findByRole('heading', { name: '专辑收藏' })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/favorites');
+  });
 });

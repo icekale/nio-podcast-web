@@ -68,6 +68,15 @@ export function sortAlbumsForDirectory(albums, favoriteIds = []) {
   return [...favorites, ...pinned, ...boosted, ...sortAlbumsByLatest(rest), ...sortAlbumsByLatest(city)];
 }
 
+// 已收藏专辑里，在上次查看收藏页之后有新节目的那些。
+// 没有水位（首次使用）时返回空——不猜，避免一上来就把所有收藏标成「有更新」。
+export function selectUpdatedAlbums(albums, favoriteIds = [], seenAt = 0) {
+  const since = Number(seenAt) || 0;
+  if (!since) return [];
+  const favorites = new Set(favoriteIds.map(Number).filter(Number.isFinite));
+  return sortAlbumsByLatest(albums.filter(album => favorites.has(Number(album.id)) && (Number(album.latestEpisode?.onlineTime) || 0) > since));
+}
+
 export function getBeijingDayKey(timestamp = Date.now()) {
   const shifted = new Date(Number(timestamp) + 8 * 60 * 60 * 1000);
   return `${shifted.getUTCFullYear()}-${shifted.getUTCMonth()}-${shifted.getUTCDate()}`;

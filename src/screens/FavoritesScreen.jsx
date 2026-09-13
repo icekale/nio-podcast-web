@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { ArrowLeft, Heart } from 'lucide-react';
 import { AlbumResults } from '../components/AlbumResults';
 
-export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favoriteIds, onToggleFavorite, onOpenAlbum, onBack, onBrowse }) {
+export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favoriteIds, updatedAlbums = [], onToggleFavorite, onOpenAlbum, onBack, onBrowse }) {
   const favorites = useMemo(() => {
     const byId = new Map(catalog.albums.map(album => [Number(album.id), album]));
     return favoriteIds.map(Number).filter(id => byId.has(id)).map(id => byId.get(id));
@@ -16,11 +16,17 @@ export const FavoritesScreen = memo(function FavoritesScreen({ catalog, favorite
       </header>
       <section className="search-results" aria-labelledby="favorites-title">
         <div className="section-heading-row"><h1 id="favorites-title">专辑收藏</h1><span className="section-count">{favorites.length}</span></div>
+        {updatedAlbums.length ? (
+          <section className="favorites-updates" aria-labelledby="favorites-updates-title">
+            <div className="section-heading-row"><h2 id="favorites-updates-title">有更新</h2><span className="section-count">{updatedAlbums.length}</span></div>
+            <AlbumResults albums={updatedAlbums} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} />
+          </section>
+        ) : null}
         {favorites.length ? <AlbumResults albums={favorites} onOpenAlbum={onOpenAlbum} grid favoriteIds={favoriteIds} onToggleFavorite={onToggleFavorite} /> : (
           <div className="favorites-empty">
             <Heart size={32} aria-hidden="true" />
             <h2>还没有收藏专辑</h2>
-            <p>在「全部专辑」里点击专辑标题右侧的 ☆ 即可收藏。</p>
+            <p>在「全部专辑」里点击专辑标题右侧的 ☆ 即可订阅，之后这里会显示有更新的专辑。</p>
             <button type="button" className="secondary-button" onClick={onBrowse}>去全部专辑看看</button>
           </div>
         )}

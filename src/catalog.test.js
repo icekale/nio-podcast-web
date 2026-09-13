@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, playableCatalog, TOPIC_CATEGORY_LABELS, TOPIC_CATEGORY_ORDER, selectHomeEpisodes, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
+import { getBeijingDayKey, groupAlbumsByCategory, isCityChannelAlbum, loadCatalog, normalizeCatalog, playableCatalog, TOPIC_CATEGORY_LABELS, TOPIC_CATEGORY_ORDER, selectHomeEpisodes, selectUpdatedAlbums, sortAlbumsByLatest, sortAlbumsForDirectory, writeCatalogCache } from './catalog';
 import { CUSTOM_WHITE_NOISE_ALBUM, CUSTOM_WHITE_NOISE_ALBUM_ID } from './customAlbums';
 
 const episode = (id, onlineTime, title = `节目 ${id}`) => ({
@@ -228,5 +228,31 @@ describe('catalog selectors', () => {
 
     await assertion;
     vi.useRealTimers();
+  });
+});
+
+describe('selectUpdatedAlbums', () => {
+  const albums = [
+    { id: 1, name: '收藏且有更新', latestEpisode: episode(11, 3000) },
+    { id: 2, name: '收藏但没更新', latestEpisode: episode(12, 1000) },
+    { id: 3, name: '没收藏但有更新', latestEpisode: episode(13, 5000) },
+  ];
+
+  it('returns nothing before the first visit', () => {
+    expect(selectUpdatedAlbums(albums, [1, 2, 3], 0)).toEqual([]);
+  });
+
+  it('keeps only favorited albums newer than the watermark', () => {
+    expect(selectUpdatedAlbums(albums, [2, 1], 2000).map(album => album.id)).toEqual([1]);
+  });
+
+  it('sorts updates newest first without mutating input', () => {
+    const order = selectUpdatedAlbums(albums, [1, 2], 500).map(album => album.id);
+    expect(order).toEqual([1, 2]);
+    expect(albums.map(album => album.id)).toEqual([1, 2, 3]);
+  });
+
+  it('ignores albums without a latest episode time', () => {
+    expect(selectUpdatedAlbums([{ id: 9, name: '空专辑' }], [9], 1)).toEqual([]);
   });
 });

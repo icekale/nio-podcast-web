@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { CircleAlert, RotateCcw } from 'lucide-react';
-import { loadCatalog, normalizeCatalog, playableCatalog, readCachedCatalog } from './catalog';
+import { loadCatalog, normalizeCatalog, playableCatalog, readCachedCatalog, selectUpdatedAlbums } from './catalog';
 import { closeQueueHash, currentPath, parseHash, withQueueHash } from './router';
 import { sleepDeadline } from './playbackPrefs';
 import { isLoopingEpisode } from './customAlbums';
@@ -24,6 +24,7 @@ import {
   removeLaterEpisode,
   writeLaterEpisodes,
 } from './laterPlayback';
+import { readAlbumsSeenAt, writeAlbumsSeenAt } from './albumSeen';
 import { readFavoriteAlbums, toggleFavoriteAlbum, writeFavoriteAlbums } from './favoriteAlbums';
 import { routeMotionFor, sameRoute, screenRouteKey } from './routeUtils';
 import { DesktopNav } from './components/DesktopNav';
@@ -61,6 +62,7 @@ export default function App({ initialCatalog = null }) {
   const [player, setPlayer] = useState(readStoredPlayer);
   const [laterEpisodes, setLaterEpisodes] = useState(readLaterEpisodes);
   const [favoriteAlbums, setFavoriteAlbums] = useState(readFavoriteAlbums);
+  const [albumsSeenAt, setAlbumsSeenAt] = useState(readAlbumsSeenAt);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(null);
   const [queueTab, setQueueTab] = useState('queue');
@@ -318,6 +320,14 @@ export default function App({ initialCatalog = null }) {
       return next.ids;
     });
   }, []);
+
+  // 订阅更新水位：进收藏页立刻落盘（关掉 App 也不会重复提醒），离开时才清掉内存里的角标，
+  // 于是页面上的「有更新」分区在本次浏览期间保持不变。
+  useEffect(() => {
+    if (route.screen !== 'favorites') return undefined;
+    writeAlbumsSeenAt(Date.now());
+    return () => setAlbumsSeenAt(Date.now());
+  }, [route.screen]);
 
   useEffect(() => { savePlayer(player); }, [player, savePlayer]);
   useEffect(() => { savePlayer(playerRef.current, true); }, [player.currentEpisode?.id, savePlayer]);
@@ -696,6 +706,7 @@ export default function App({ initialCatalog = null }) {
     setPlayer(previous => ({ ...previous, positionSeconds: position }));
   };
   const catalog = useMemo(() => playableCatalog(catalogState.catalog), [catalogState.catalog]);
+  const updatedAlbums = useMemo(() => selectUpdatedAlbums(catalog?.albums || [], favoriteAlbums, albumsSeenAt), [catalog, favoriteAlbums, albumsSeenAt]);
   const currentAlbum = catalog?.albums.find(album => album.id === route.albumId);
   const routeViewKey = screenRouteKey(route);
   const hasCatalog = Boolean(catalogState.catalog);
@@ -715,6 +726,7 @@ export default function App({ initialCatalog = null }) {
           onSearch={openSearch}
           onLater={openLater}
           onFavorites={openFavorites}
+          updatesCount={updatedAlbums.length}
           showInstall={Boolean(installPrompt)}
           onInstall={promptInstall}
         />
@@ -723,10 +735,10 @@ export default function App({ initialCatalog = null }) {
         {!hasCatalog ? <div className="full-state">
           {catalogState.loading ? <><div className="loading-dot" /><p>正在准备 NIO Radio…</p></> : <><CircleAlert size={28} /><h1>目录暂时无法加载</h1><p>请检查网络后重试，已缓存的节目仍可继续播放。</p><button type="button" className="primary-button" onClick={retryCatalog}><RotateCcw size={17} />重新加载</button></>}
         </div> : <div key={routeViewKey} className="route-view" data-route-motion={routeMotion}>
-          {route.screen === 'home' ? <HomeScreen catalog={catalog} daytimeEpisodes={daytimeResult?.episodes} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} /> : null}
+          {route.screen === 'home' ? <HomeScreen catalog={catalog} daytimeEpisodes={daytimeResult?.episodes} player={player} stale={catalogState.stale} refreshing={catalogState.loading} catalogError={catalogState.error} onRetry={retryCatalog} onPlay={startPlayback} onPlayAll={playAll} onResume={resumePlayback} onTogglePlayback={togglePlayback} onSearch={openSearch} onOpenAlbums={openAlbums} onOpenFavorites={openFavorites} updatesCount={updatedAlbums.length} /> : null}
           {route.screen === 'albums' ? <AlbumsScreen catalog={catalog} onBack={goBack} onSearch={openSearch} onOpenAlbum={openAlbum} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
           {route.screen === 'search' ? <SearchScreen catalog={catalog} searchQuery={route.searchQuery} onBack={goBack} onQueryChange={updateSearchQuery} onOpenAlbum={openAlbum} pinnedFirst={desktopLayout} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} /> : null}
-          {route.screen === 'favorites' ? <FavoritesScreen catalog={catalog} favoriteIds={favoriteAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
+          {route.screen === 'favorites' ? <FavoritesScreen catalog={catalog} favoriteIds={favoriteAlbums} updatedAlbums={updatedAlbums} onToggleFavorite={toggleAlbumFavorite} onOpenAlbum={openAlbum} onBack={goBack} onBrowse={openSearch} /> : null}
           {route.screen === 'album' && currentAlbum ? <AlbumScreen album={currentAlbum} episodeId={route.episodeId} onBack={goBack} onPlay={startPlayback} onAddLater={addToLater} /> : null}
           {route.screen === 'album' && !currentAlbum ? <div className="full-state"><h1>专辑不存在</h1><button type="button" className="secondary-button" onClick={() => go('/')}>返回首页</button></div> : null}
         </div>}

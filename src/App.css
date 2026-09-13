@@ -120,6 +120,8 @@ h1, h2, p { margin: 0; }
 .home-screen .top-bar-scrolled { background: var(--surface); }
 .top-title { min-width: 0; text-align: center; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
 .top-actions { display: flex; min-width: 2.75rem; justify-content: flex-end; align-items: center; gap: var(--space-1); }
+.icon-button.has-update { position: relative; }
+.icon-button.has-update::after { position: absolute; top: 0.5rem; right: 0.5rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 2px var(--surface); content: ''; }
 .icon-button, .player-control {
   display: inline-flex;
   align-items: center;
@@ -227,6 +229,8 @@ h1, h2, p { margin: 0; }
 .favorites-empty h2 { margin: 0.5rem 0 0; color: var(--ink); font-size: 1.15rem; font-weight: 620; }
 .favorites-empty p { max-width: 24rem; margin: 0; font-size: 0.88rem; }
 .favorites-empty .secondary-button { margin-top: var(--space-2); }
+.favorites-updates { margin-bottom: var(--space-5); padding-bottom: var(--space-4); border-bottom: 1px solid var(--line); }
+.favorites-updates .section-heading-row h2 { color: var(--teal-dark); }
 .notice-bar { margin: var(--space-5); padding: var(--space-3) var(--space-4); color: var(--muted-strong); background: var(--surface-soft); border-radius: var(--radius-sm); font-size: 0.8rem; }
 .notice-bar button { min-height: 2.75rem; margin-left: var(--space-2); padding: 0 var(--space-2); color: var(--teal-dark); background: transparent; font-weight: 650; }
 
@@ -558,6 +562,7 @@ h1, h2, p { margin: 0; }
   .desktop-nav-link:hover { background: var(--surface-soft); color: var(--ink); }
   .desktop-nav-link[aria-current="page"] { background: var(--aqua); color: var(--teal-dark); font-weight: 650; }
   .desktop-nav-link { transition: background-color 160ms ease, color 160ms ease; }
+  .nav-update-dot { display: inline-block; width: 0.45rem; height: 0.45rem; margin-left: 0.35rem; border-radius: 50%; background: var(--teal); vertical-align: middle; }
   .desktop-nav-install { animation: desktop-install-in 200ms ease-out both; }
   @keyframes desktop-install-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
   .desktop-nav-install {
