@@ -610,22 +610,21 @@ h1, h2, p { margin: 0; }
   .mini-toggle { width: 2.75rem; height: 2.75rem; }
   .mini-transport { flex: 0 0 auto; order: 4; gap: var(--space-2); }
   .queue-control { order: 6; width: 2.75rem; height: 2.75rem; }
-  /* 进度条移到卡片顶部，半隐藏：默认细线，悬停展开 */
+  /* 进度条常驻卡片顶部：细线不随悬停升降（拖拽热区改由输入框向下加高，不动线）
+     ponytail: 热区高度顶到卡片内边距（padding-top: 1rem）为止，再多会盖住下面按钮的上缘 */
   .mini-progress-row {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     order: 5;
-    height: 0.25rem;
+    height: 1rem;
     margin: 0;
     padding: 0 var(--space-4);
     overflow: visible;
-    opacity: 0.85;
-    transition: height 160ms ease, opacity 160ms ease;
   }
   .mini-progress-row span { display: none; }
-  .mini-progress-row input { height: 0.25rem; }
+  .mini-progress-row input { height: 1rem; padding-bottom: 0.75rem; }
   .mini-progress-row input::-webkit-slider-runnable-track {
     height: 0.125rem;
     background: linear-gradient(to right, var(--teal) var(--progress, 0%), var(--line) var(--progress, 0%));
@@ -654,10 +653,6 @@ h1, h2, p { margin: 0; }
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
     pointer-events: none;
-  }
-  .mini-player:hover .mini-progress-row, .mini-progress-row:focus-within {
-    height: 1.5rem;
-    opacity: 1;
   }
   .mini-player { position: fixed; }
 
