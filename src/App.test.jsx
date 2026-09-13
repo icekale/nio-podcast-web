@@ -288,6 +288,16 @@ describe('mobile app shell', () => {
     await waitFor(() => expect(screen.getByRole('heading', { name: '全部专辑' })).toBeInTheDocument());
   });
 
+  it('only offers one directory entry on the home top bar', async () => {
+    render(<App initialCatalog={catalog} />);
+
+    expect(screen.queryByRole('button', { name: '搜索' })).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: '全部专辑' }));
+    expect(await screen.findByRole('heading', { name: '全部专辑' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '搜索' })).toBeInTheDocument();
+  });
+
   it('returns to the album directory after opening an album from the directory', async () => {
     render(<App initialCatalog={catalog} />);
 

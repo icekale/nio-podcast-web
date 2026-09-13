@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Heart, List, Search } from 'lucide-react';
+import { Heart, List } from 'lucide-react';
 import { Pause, Play } from 'lucide';
 import { MorphIcon } from 'morphicons/react';
 import { selectHomeEpisodes } from '../catalog';
@@ -9,7 +9,7 @@ import { formatDuration } from '../format';
 import { syncIosStatusBar } from '../iosSupport';
 import { useVisibleAlbums } from '../hooks/useVisibleAlbums';
 
-export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = null, player, stale, refreshing = false, catalogError = null, updatesCount = 0, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onSearch, onOpenAlbums, onOpenFavorites }) {
+export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = null, player, stale, refreshing = false, catalogError = null, updatesCount = 0, onRetry, onPlay, onPlayAll, onResume, onTogglePlayback, onOpenAlbums, onOpenFavorites }) {
   const recommendationRef = useRef(null);
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
@@ -80,7 +80,6 @@ export const HomeScreen = memo(function HomeScreen({ catalog, daytimeEpisodes = 
         <div className="top-actions">
           {scrolled && player.currentEpisode ? <button type="button" className="continue-button" onClick={onResume}>▶ 继续播放</button> : null}
           <button type="button" className={`icon-button${updatesCount > 0 ? ' has-update' : ''}`} aria-label="专辑收藏" onClick={onOpenFavorites}><Heart size={21} /></button>
-          <button type="button" className="icon-button" aria-label="搜索" onClick={onSearch}><Search size={22} /></button>
         </div>
       </header>
 
