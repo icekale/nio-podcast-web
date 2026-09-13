@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1789236836248,
+  "generatedAt": 1789312820059,
   "albums": [
+    {
+      "id": 594,
+      "name": "西安城市资讯",
+      "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
+      "host": "NIO Radio",
+      "episodeCount": 560,
+      "latestEpisode": {
+        "id": 197867,
+        "title": "西安研发投入强度位列全国第三",
+        "albumId": 594,
+        "albumName": "西安城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
+        "host": "NIO Radio",
+        "duration": 286000,
+        "onlineTime": 1789311600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/13/dwwBgkLZkhL4DLA1_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
     {
       "id": 35,
       "name": "芝士分子",
@@ -1100,26 +1120,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/EK6FrKw0daDNtj0X_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 594,
-      "name": "西安城市资讯",
-      "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
-      "host": "NIO Radio",
-      "episodeCount": 559,
-      "latestEpisode": {
-        "id": 197806,
-        "title": "李乃文领衔主演舞台剧登陆西安",
-        "albumId": 594,
-        "albumName": "西安城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
-        "host": "NIO Radio",
-        "duration": 272000,
-        "onlineTime": 1789056000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/GHdUjpnSz2T7mLHG_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 614,
