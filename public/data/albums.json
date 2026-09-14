@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1789402499294,
+  "generatedAt": 1789404412964,
   "albums": [
     {
       "id": 5,
@@ -180,6 +180,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/14/1bx1FYOK24q5bCXU_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 121,
+      "name": "英伦音乐前沿",
+      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1106,
+      "latestEpisode": {
+        "id": 197926,
+        "title": "UK Music 26年9月第3周 Vol.1",
+        "albumId": 121,
+        "albumName": "英伦音乐前沿",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+        "host": "NIO Radio",
+        "duration": 1501000,
+        "onlineTime": 1789401600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/15/wh8kkrR3eU6jlwtG_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 129,
@@ -1538,26 +1558,6 @@
         "duration": 313000,
         "onlineTime": 1789056000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/rvAlvLDoqVNIXN6O_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 121,
-      "name": "英伦音乐前沿",
-      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1105,
-      "latestEpisode": {
-        "id": 197730,
-        "title": "UK Music 26年9月第2周 Vol.4",
-        "albumId": 121,
-        "albumName": "英伦音乐前沿",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-        "host": "NIO Radio",
-        "duration": 1501000,
-        "onlineTime": 1789056000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/4pHgaBm0pER8LFsG_AAC_192_1.m4a"
       },
       "category": "car"
     },
