@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1789331173161,
+  "generatedAt": 1789349233170,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 527,
+      "latestEpisode": {
+        "id": 197882,
+        "title": "把校徽印上卫衣 T 恤，美国大学如何把授权校名做成一门生意？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 1026000,
+        "onlineTime": 1789340400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/13/UyRrv0T8YMJ7CP2M_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -1040,26 +1060,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/11/Kys4UFXaPqiZWgyl_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 526,
-      "latestEpisode": {
-        "id": 197834,
-        "title": "咖啡豆｜从飞机潜艇走进日常生活，钛为什么成了水杯的热门材料？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 826000,
-        "onlineTime": 1789081200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/10/7Mjkys1sooCIGVAA_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 68,
