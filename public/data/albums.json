@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1789834062921,
+  "generatedAt": 1789842609830,
   "albums": [
     {
       "id": 35,
@@ -120,6 +120,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/09/YfHXyupcNpNq8RvH_AAC_192.m4a"
       },
       "category": "audio"
+    },
+    {
+      "id": 345,
+      "name": "宁波城市资讯",
+      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+      "host": "NIO Radio",
+      "episodeCount": 1194,
+      "latestEpisode": {
+        "id": 198063,
+        "title": "宁波二手房交易占比达到76%",
+        "albumId": 345,
+        "albumName": "宁波城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+        "host": "NIO Radio",
+        "duration": 299000,
+        "onlineTime": 1789833600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/19/L5nh6hWSBYVEcLmr_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 540,
@@ -818,26 +838,6 @@
         "duration": 354000,
         "onlineTime": 1789660800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/sfiWEVAG1TyMo8BA_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 345,
-      "name": "宁波城市资讯",
-      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-      "host": "NIO Radio",
-      "episodeCount": 1193,
-      "latestEpisode": {
-        "id": 198033,
-        "title": "宁波发布中秋假期高速大流量预警",
-        "albumId": 345,
-        "albumName": "宁波城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-        "host": "NIO Radio",
-        "duration": 327000,
-        "onlineTime": 1789660800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/lqdxM7PJ1xa7rK1v_AAC_192_1.m4a"
       },
       "category": "car"
     },
