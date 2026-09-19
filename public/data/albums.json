@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1789749954142,
+  "generatedAt": 1789822390389,
   "albums": [
     {
       "id": 5,
@@ -1140,26 +1140,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/lIaksjCodi5bqNVk_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 8,
-      "latestEpisode": {
-        "id": 198022,
-        "title": "在东非最原始的部落，被治愈",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1545000,
-        "onlineTime": 1789660800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/YsE9EP9ip6TabjI7_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 97,
@@ -2438,6 +2418,26 @@
         "duration": 3978000,
         "onlineTime": 1789228800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/12/vxfOsRUPkjq4iVZS_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 7,
+      "latestEpisode": {
+        "id": 197743,
+        "title": "南极这片“热土”，我环球旅行的起点",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1490000,
+        "onlineTime": 1789228800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/xIXOo3zCdPjHYQVr_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
