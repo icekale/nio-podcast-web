@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790009287518,
+  "generatedAt": 1790011731454,
   "albums": [
     {
       "id": 5,
@@ -538,6 +538,26 @@
         "duration": 2496000,
         "onlineTime": 1790006400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/MOWtzrMPDeRDhuVi_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 812,
+      "name": "不开玩笑",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
+      "host": "NIO Radio",
+      "episodeCount": 20,
+      "latestEpisode": {
+        "id": 198130,
+        "title": "义，你咋才来呢：聊聊仗义",
+        "albumId": 812,
+        "albumName": "不开玩笑",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
+        "host": "NIO Radio",
+        "duration": 7960000,
+        "onlineTime": 1790006400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/CC6WXzQGB4POtmSJ_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -2560,26 +2580,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/14/g6kJEmlEL5Sjl1aa_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 812,
-      "name": "不开玩笑",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
-      "host": "NIO Radio",
-      "episodeCount": 19,
-      "latestEpisode": {
-        "id": 197917,
-        "title": "你成功引起了我的好奇：聊聊好奇心",
-        "albumId": 812,
-        "albumName": "不开玩笑",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
-        "host": "NIO Radio",
-        "duration": 8287000,
-        "onlineTime": 1789401600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/14/WbZtz9KNYxbXfuj0_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 411,
