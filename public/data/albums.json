@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790007636593,
+  "generatedAt": 1790009287518,
   "albums": [
     {
       "id": 5,
@@ -282,6 +282,26 @@
       "category": null
     },
     {
+      "id": 484,
+      "name": "硅谷101",
+      "description": "这是一档分享当下最新鲜的技术、知识与思想的科技播客",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/9/19/a7587b97-680c-4191-b9ab-c85ebfb34077.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 175,
+      "latestEpisode": {
+        "id": 198132,
+        "title": "推理芯片之战：聊聊Groq、Cerebras与OpenAI三大路径与Bill Dally的设计哲学",
+        "albumId": 484,
+        "albumName": "硅谷101",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/9/19/a7587b97-680c-4191-b9ab-c85ebfb34077.jpg",
+        "host": "NIO Radio",
+        "duration": 5493000,
+        "onlineTime": 1790006400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/P6wlbJWOqMq9KyF2_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 588,
       "name": "城市夜空",
       "description": "一首歌、一个故事、一次灵感的碰撞，记录城市的律动，感受每一段独特的心声。城市夜空，让每一颗心都有依靠的地方。",
@@ -378,6 +398,46 @@
         "duration": 411000,
         "onlineTime": 1790006400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/xNrfgt3CNPcOJ7B3_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 669,
+      "name": "Vibration 歪波音室",
+      "description": "音乐太多，耳朵太少",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
+      "host": "NIO Radio",
+      "episodeCount": 121,
+      "latestEpisode": {
+        "id": 198134,
+        "title": "神专丨何勇《垃圾场》：一张唱片，和那阵吹过北京、台北与香港的风",
+        "albumId": 669,
+        "albumName": "Vibration 歪波音室",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
+        "host": "NIO Radio",
+        "duration": 6008000,
+        "onlineTime": 1790006400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/nGkWeYSNdsaKxJn6_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 680,
+      "name": "津津有味",
+      "description": "听几位吃货主播们每期给你一记“纳尼？居然是这样！”的暴击！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/3TcIBfL50USEm3vFlJLdO/AXeg9QYTT5_8J3lz3d8FW",
+      "host": "NIO Radio",
+      "episodeCount": 59,
+      "latestEpisode": {
+        "id": 198135,
+        "title": "2026过半，谁进了我们的百大零食榜",
+        "albumId": 680,
+        "albumName": "津津有味",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/3TcIBfL50USEm3vFlJLdO/AXeg9QYTT5_8J3lz3d8FW",
+        "host": "NIO Radio",
+        "duration": 6749000,
+        "onlineTime": 1790006400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/wxaKviEPbAnrquPN_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -2482,26 +2542,6 @@
       "category": "culture"
     },
     {
-      "id": 669,
-      "name": "Vibration 歪波音室",
-      "description": "音乐太多，耳朵太少",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
-      "host": "NIO Radio",
-      "episodeCount": 120,
-      "latestEpisode": {
-        "id": 197916,
-        "title": "当音乐走进电影：一首歌，如何改变我们看见的东西",
-        "albumId": 669,
-        "albumName": "Vibration 歪波音室",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-WaslAi4npSmgVYTX8Pbc/CWQUazWWGWZZfuFUkQEBt",
-        "host": "NIO Radio",
-        "duration": 3927000,
-        "onlineTime": 1789401600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/14/bI1dTAI2zIcU67hx_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 803,
       "name": "福利情报局",
       "description": "不只是创业，更是人生选择！NIO Radio与福利合伙人联袂呈现栏目",
@@ -3022,26 +3062,6 @@
       "category": "business"
     },
     {
-      "id": 484,
-      "name": "硅谷101",
-      "description": "这是一档分享当下最新鲜的技术、知识与思想的科技播客",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/9/19/a7587b97-680c-4191-b9ab-c85ebfb34077.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 174,
-      "latestEpisode": {
-        "id": 197503,
-        "title": "mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破",
-        "albumId": 484,
-        "albumName": "硅谷101",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/9/19/a7587b97-680c-4191-b9ab-c85ebfb34077.jpg",
-        "host": "NIO Radio",
-        "duration": 4611000,
-        "onlineTime": 1788192000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/31/yYjy9T5tCFRnLpaa_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
       "id": 358,
       "name": "苏州城市资讯",
       "description": "本地新闻，牛屋活动，这里是苏州城市资讯",
@@ -3160,26 +3180,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/28/A10kf8V7Har2WeHY_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 680,
-      "name": "津津有味",
-      "description": "听几位吃货主播们每期给你一记“纳尼？居然是这样！”的暴击！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/3TcIBfL50USEm3vFlJLdO/AXeg9QYTT5_8J3lz3d8FW",
-      "host": "NIO Radio",
-      "episodeCount": 58,
-      "latestEpisode": {
-        "id": 197279,
-        "title": "如何有效体检，这值得聊一期最直白不绕弯子的",
-        "albumId": 680,
-        "albumName": "津津有味",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/3TcIBfL50USEm3vFlJLdO/AXeg9QYTT5_8J3lz3d8FW",
-        "host": "NIO Radio",
-        "duration": 5481000,
-        "onlineTime": 1787587200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/23/Xti7Au3BQbwH4A2E_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 584,
