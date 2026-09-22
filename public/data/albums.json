@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790011731454,
+  "generatedAt": 1790041529790,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 533,
+      "latestEpisode": {
+        "id": 198126,
+        "title": "京沪高铁中秋节前出现降价，新百伦起诉迪卡侬侵权",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 487000,
+        "onlineTime": 1790031600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/c555QetgZorjW2FJ_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -502,6 +522,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 761,
+      "name": "电波未来",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/CE0Xq6SfoqqnRCcRFT_GC/_Fz58nG-huNoHiP5vUcUn",
+      "host": "NIO Radio",
+      "episodeCount": 35,
+      "latestEpisode": {
+        "id": 198136,
+        "title": "核能重回C位：最被高估的是速度，最被低估的是未来",
+        "albumId": 761,
+        "albumName": "电波未来",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/CE0Xq6SfoqqnRCcRFT_GC/_Fz58nG-huNoHiP5vUcUn",
+        "host": "NIO Radio",
+        "duration": 2048000,
+        "onlineTime": 1790006400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/gqTqNfvwnzeDjUz3_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 789,
       "name": "城市频道精选",
       "description": "",
@@ -700,26 +740,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/TPGrtbNdvA2izty3_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 532,
-      "latestEpisode": {
-        "id": 198093,
-        "title": "阿那亚变身热门景点，一度销售难的地产项目如何摆脱困境？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 985000,
-        "onlineTime": 1789945200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/20/GtPnm2l9TRawsdUd_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
@@ -2880,26 +2900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/07/cMooW4om18Rfee1S_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 761,
-      "name": "电波未来",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/CE0Xq6SfoqqnRCcRFT_GC/_Fz58nG-huNoHiP5vUcUn",
-      "host": "NIO Radio",
-      "episodeCount": 34,
-      "latestEpisode": {
-        "id": 197712,
-        "title": "灵巧手：从柔性场景落地，到让AGI摸到物理世界",
-        "albumId": 761,
-        "albumName": "电波未来",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/CE0Xq6SfoqqnRCcRFT_GC/_Fz58nG-huNoHiP5vUcUn",
-        "host": "NIO Radio",
-        "duration": 2597000,
-        "onlineTime": 1788796800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/07/jkAD82pzf570L282_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 696,
