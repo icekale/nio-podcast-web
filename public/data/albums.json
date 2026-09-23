@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790105894272,
+  "generatedAt": 1790127765760,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 534,
+      "latestEpisode": {
+        "id": 198160,
+        "title": "一辆「小电驴」卖到三四千元，小牛、九号如何实现电动两轮车高端化？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 966000,
+        "onlineTime": 1790118000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/JKE4q8AKPljxQxVI_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -640,26 +660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/EUZp88JI5sGGh70i_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 533,
-      "latestEpisode": {
-        "id": 198126,
-        "title": "京沪高铁中秋节前出现降价，新百伦起诉迪卡侬侵权",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 487000,
-        "onlineTime": 1790031600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/c555QetgZorjW2FJ_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 63,
