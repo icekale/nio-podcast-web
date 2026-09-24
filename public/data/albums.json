@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1790213827484,
+  "generatedAt": 1790258550293,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1678,
+      "latestEpisode": {
+        "id": 198213,
+        "title": "微软将在海湾地区追加投资20亿美元",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 409000,
+        "onlineTime": 1790240400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/Z4Y1f6e3gy6x6YYy_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 765,
+      "latestEpisode": {
+        "id": 198100,
+        "title": "智能猫舱，让猫咪领养看得见",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 474000,
+        "onlineTime": 1790240400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/UHnFJF9ro8975Vv2_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 104,
+      "latestEpisode": {
+        "id": 198215,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 59000,
+        "onlineTime": 1790240400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/zh1STDkyacQDI6It_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -542,6 +602,26 @@
       "category": "car"
     },
     {
+      "id": 819,
+      "name": "把安徽的声音开进NIO Radio",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/5CRDMZnLMh4Nf2fS2X2DF/gnSlBQS55cw8NZ59x_Lfg",
+      "host": "NIO Radio",
+      "episodeCount": 10,
+      "latestEpisode": {
+        "id": 198202,
+        "title": "淮北方言｜安徽的北大门",
+        "albumId": 819,
+        "albumName": "把安徽的声音开进NIO Radio",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/5CRDMZnLMh4Nf2fS2X2DF/gnSlBQS55cw8NZ59x_Lfg",
+        "host": "NIO Radio",
+        "duration": 719000,
+        "onlineTime": 1790179200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/LVcsA6JEWZx0QV2Z_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 820,
       "name": "摸鱼早报",
       "description": "",
@@ -555,9 +635,9 @@
         "albumName": "摸鱼早报",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
         "host": "NIO Radio",
-        "duration": 1382000,
+        "duration": 1257000,
         "onlineTime": 1790179200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/FfECKbJBmdF3xQJz_AAC_192_1.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/BG9u1r8S4JeN91WW_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -620,66 +700,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/a5Sl0ckffT3clGLD_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1677,
-      "latestEpisode": {
-        "id": 198175,
-        "title": "高通发布“全球最快移动 CPU”",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 392000,
-        "onlineTime": 1790154000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/ZMfSZIlqefvCsMoT_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 764,
-      "latestEpisode": {
-        "id": 198099,
-        "title": "稀罕客机要来深圳了！",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 420000,
-        "onlineTime": 1790154000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/awzqi1KrWx2bewQZ_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 103,
-      "latestEpisode": {
-        "id": 198174,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 40000,
-        "onlineTime": 1790154000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/Vo6ltbMxcDlTb3qk_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 64,
@@ -2880,26 +2900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/dN58zogQeH0FPuk9_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 819,
-      "name": "把安徽的声音开进NIO Radio",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/5CRDMZnLMh4Nf2fS2X2DF/gnSlBQS55cw8NZ59x_Lfg",
-      "host": "NIO Radio",
-      "episodeCount": 9,
-      "latestEpisode": {
-        "id": 197770,
-        "title": "芜湖百年｜一声汽笛，叫开一座城",
-        "albumId": 819,
-        "albumName": "把安徽的声音开进NIO Radio",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/5CRDMZnLMh4Nf2fS2X2DF/gnSlBQS55cw8NZ59x_Lfg",
-        "host": "NIO Radio",
-        "duration": 802000,
-        "onlineTime": 1788969600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/bqSIbACLCzXu9fnB_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 339,
