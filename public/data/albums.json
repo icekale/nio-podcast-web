@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790184688452,
+  "generatedAt": 1790213827484,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 535,
+      "latestEpisode": {
+        "id": 198195,
+        "title": "月饼市场持续降温，豆包缩减对话业务团队",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 662000,
+        "onlineTime": 1790204400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/w1xt3SyazN2HIhMk_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -582,6 +602,26 @@
       "category": null
     },
     {
+      "id": 835,
+      "name": "道途趣说",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
+      "host": "NIO Radio",
+      "episodeCount": 46,
+      "latestEpisode": {
+        "id": 198177,
+        "title": "中秋节打算怎么过？",
+        "albumId": 835,
+        "albumName": "道途趣说",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
+        "host": "NIO Radio",
+        "duration": 409000,
+        "onlineTime": 1790179200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/a5Sl0ckffT3clGLD_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 23,
       "name": "资讯充电站·晚间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
@@ -640,26 +680,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/Vo6ltbMxcDlTb3qk_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 534,
-      "latestEpisode": {
-        "id": 198160,
-        "title": "一辆「小电驴」卖到三四千元，小牛、九号如何实现电动两轮车高端化？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 966000,
-        "onlineTime": 1790118000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/JKE4q8AKPljxQxVI_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
@@ -2638,26 +2658,6 @@
         "duration": 2487000,
         "onlineTime": 1789574400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/16/AWrxLTsncUmE4kEl_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 794,
-      "name": "阿叔有嘢广",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
-      "host": "NIO Radio",
-      "episodeCount": 38,
-      "latestEpisode": {
-        "id": 197979,
-        "title": "30年河东，30年河西：广州商业板块的变迁",
-        "albumId": 794,
-        "albumName": "阿叔有嘢广",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
-        "host": "NIO Radio",
-        "duration": 2761000,
-        "onlineTime": 1789574400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/16/gZmonvwHJ3Kw3OAl_AAC_192_1.m4a"
       },
       "category": "business"
     },
