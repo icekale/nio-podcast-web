@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790352687200,
+  "generatedAt": 1790357771570,
   "albums": [
     {
       "id": 5,
@@ -40,6 +40,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/09/22/KDQOqsxLxTAVsBwi_AAC_192.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 41,
+      "name": "乐行记·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 523,
+      "latestEpisode": {
+        "id": 196798,
+        "title": "Joy Ride Vol.40",
+        "albumId": 41,
+        "albumName": "乐行记·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+        "host": "NIO Radio",
+        "duration": 2146000,
+        "onlineTime": 1790352000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/06/iaeSQL4xOLMtASuv_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 307,
+      "name": "华语乐动听·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 375,
+      "latestEpisode": {
+        "id": 174267,
+        "title": "一场秋日的自驾",
+        "albumId": 307,
+        "albumName": "华语乐动听·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+        "host": "NIO Radio",
+        "duration": 1803000,
+        "onlineTime": 1790352000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/09/14/ClQlkrPS0YrzgQFW_AAC_192.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 378,
@@ -102,6 +142,26 @@
       "category": "audio"
     },
     {
+      "id": 661,
+      "name": "塞萌不塞车·精选",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！每日更新！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
+      "host": "NIO Radio",
+      "episodeCount": 229,
+      "latestEpisode": {
+        "id": 183033,
+        "title": "别问我什么是R&B Vol.3",
+        "albumId": 661,
+        "albumName": "塞萌不塞车·精选",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
+        "host": "NIO Radio",
+        "duration": 1182000,
+        "onlineTime": 1790352000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/04/21/cC4hBAtYNaHyKLeU_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 728,
       "name": "诗情话意",
       "description": "让我们在文字与声音的交织中感悟人生的美好与力量。",
@@ -140,6 +200,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/xozrSlMCoYcsPpCG_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 804,
+      "name": "嘎嘎杂货铺",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
+      "host": "NIO Radio",
+      "episodeCount": 54,
+      "latestEpisode": {
+        "id": 198260,
+        "title": "每逢佳节倍思亲，送啥不如送礼金。聊聊：月圆之夜想起谁？",
+        "albumId": 804,
+        "albumName": "嘎嘎杂货铺",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
+        "host": "NIO Radio",
+        "duration": 3531000,
+        "onlineTime": 1790352000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/25/ogLCkhPp1lbHtKIk_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 808,
@@ -2482,26 +2562,6 @@
       "category": null
     },
     {
-      "id": 804,
-      "name": "嘎嘎杂货铺",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
-      "host": "NIO Radio",
-      "episodeCount": 53,
-      "latestEpisode": {
-        "id": 198088,
-        "title": "公交地铁大家坐，总有奇葩逗您乐？聊聊：公共交通上的奇葩人",
-        "albumId": 804,
-        "albumName": "嘎嘎杂货铺",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
-        "host": "NIO Radio",
-        "duration": 3530000,
-        "onlineTime": 1789920000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/20/34f0zs81zQvqvm1v_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
       "id": 833,
       "name": "幸福同频",
       "description": "",
@@ -2542,26 +2602,6 @@
       "category": "kids"
     },
     {
-      "id": 41,
-      "name": "乐行记·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 523,
-      "latestEpisode": {
-        "id": 173400,
-        "title": "Sabrina Carpenter精选",
-        "albumId": 41,
-        "albumName": "乐行记·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-        "host": "NIO Radio",
-        "duration": 1403000,
-        "onlineTime": 1789833600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/08/25/CeEMZMU23aDUAehu_AAC_192.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 56,
       "name": "蔚来牛人 · 席安的古典乐",
       "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
@@ -2580,46 +2620,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/18/b4FztYc1X98UHu66_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 307,
-      "name": "华语乐动听·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 375,
-      "latestEpisode": {
-        "id": 175243,
-        "title": "R&B心动节拍",
-        "albumId": 307,
-        "albumName": "华语乐动听·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-        "host": "NIO Radio",
-        "duration": 1848000,
-        "onlineTime": 1789833600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/09/YfHXyupcNpNq8RvH_AAC_192.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 661,
-      "name": "塞萌不塞车·精选",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！每日更新！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
-      "host": "NIO Radio",
-      "episodeCount": 228,
-      "latestEpisode": {
-        "id": 183457,
-        "title": "陶喆为别人写的歌 Vol.1",
-        "albumId": 661,
-        "albumName": "塞萌不塞车·精选",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
-        "host": "NIO Radio",
-        "duration": 1313000,
-        "onlineTime": 1789833600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/05/04/xrtrXYDs5vkPbPdU_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 753,
