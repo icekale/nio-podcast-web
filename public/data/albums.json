@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790271402399,
+  "generatedAt": 1790300830761,
   "albums": [
     {
       "id": 5,
@@ -722,6 +722,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 836,
+      "name": "流动的月光",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Usi5UN-lx1PkFyhbogWI6/SgcmZqXcaQo3xo1G3iAAK",
+      "host": "NIO Radio",
+      "episodeCount": 1,
+      "latestEpisode": {
+        "id": 198205,
+        "title": "NIO Radio祝你月圆人团圆",
+        "albumId": 836,
+        "albumName": "流动的月光",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Usi5UN-lx1PkFyhbogWI6/SgcmZqXcaQo3xo1G3iAAK",
+        "host": "NIO Radio",
+        "duration": 390000,
+        "onlineTime": 1790265600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/g1ncSruHCyFxlCol_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 23,
       "name": "资讯充电站·晚间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
@@ -1180,6 +1200,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/wzykmOK5Rnq529Zr_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 794,
+      "name": "阿叔有嘢广",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
+      "host": "NIO Radio",
+      "episodeCount": 39,
+      "latestEpisode": {
+        "id": 198200,
+        "title": "八月十五的天棚：阿叔旧时这样过中秋",
+        "albumId": 794,
+        "albumName": "阿叔有嘢广",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
+        "host": "NIO Radio",
+        "duration": 2806000,
+        "onlineTime": 1790179200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/5YqAupwzNWvoUs3C_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 819,
