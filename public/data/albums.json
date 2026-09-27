@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790525064744,
+  "generatedAt": 1790529611428,
   "albums": [
     {
       "id": 5,
@@ -182,6 +182,26 @@
       "category": "car"
     },
     {
+      "id": 121,
+      "name": "英伦音乐前沿",
+      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1110,
+      "latestEpisode": {
+        "id": 198295,
+        "title": "UK Music 26年9月第4周 Vol.1",
+        "albumId": 121,
+        "albumName": "英伦音乐前沿",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+        "host": "NIO Radio",
+        "duration": 1501000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/skPf6jcckdEM5zKu_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 148,
       "name": "E次元财经报",
       "description": "超强电力，娱乐视角，为你盘点热门财经观点!",
@@ -220,6 +240,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/YMiSylz0JO0Hmutu_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1415,
+      "latestEpisode": {
+        "id": 198291,
+        "title": "时代之声——告别刘欢",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 2464000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/fJnW66moPgPLd0z2_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 381,
@@ -1040,26 +1080,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/6UjF3LPTW9RbAmul_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1414,
-      "latestEpisode": {
-        "id": 198248,
-        "title": "中秋节——故乡明月",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 2052000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/DUv9zQh2Cz3twLl4_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 311,
@@ -2760,26 +2780,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/18/2xaNvHjWaIaAI7TV_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 121,
-      "name": "英伦音乐前沿",
-      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1109,
-      "latestEpisode": {
-        "id": 197929,
-        "title": "UK Music 26年9月第3周 Vol.4",
-        "albumId": 121,
-        "albumName": "英伦音乐前沿",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-        "host": "NIO Radio",
-        "duration": 1501000,
-        "onlineTime": 1789660800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/15/CVMtpfnCJq4OQQpZ_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 627,
