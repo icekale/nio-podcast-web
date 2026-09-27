@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790529611428,
+  "generatedAt": 1790537947013,
   "albums": [
     {
       "id": 5,
@@ -322,6 +322,26 @@
       "category": "audio"
     },
     {
+      "id": 541,
+      "name": "商业就是这样",
+      "description": "用简单易懂的语言解读商业现象，每周一期。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+      "host": "NIO Radio",
+      "episodeCount": 231,
+      "latestEpisode": {
+        "id": 198303,
+        "title": "做月嫂育儿嫂的姐姐，都有故事",
+        "albumId": 541,
+        "albumName": "商业就是这样",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+        "host": "NIO Radio",
+        "duration": 6790000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/TepbBpB84QIWMtyI_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 594,
       "name": "西安城市资讯",
       "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
@@ -360,6 +380,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/IRMU4fuZlGQxTYah_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 679,
+      "name": "津津乐道",
+      "description": "分享经历，传播体验，厘清世界与你的关系",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
+      "host": "NIO Radio",
+      "episodeCount": 73,
+      "latestEpisode": {
+        "id": 198301,
+        "title": "在日本做生意，关系户可能是一种硬实力 | 在野",
+        "albumId": 679,
+        "albumName": "津津乐道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
+        "host": "NIO Radio",
+        "duration": 6584000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/zFhx1ZDeP8HzZwrU_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 703,
+      "name": "果壳时间",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+      "host": "NIO Radio",
+      "episodeCount": 81,
+      "latestEpisode": {
+        "id": 198302,
+        "title": "最怕幻觉的芯片工程师，正在把狂野的AI变成无所不知的小孩",
+        "albumId": 703,
+        "albumName": "果壳时间",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+        "host": "NIO Radio",
+        "duration": 3172000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/SjTeZoCir34FUbgQ_AAC_192_1.m4a"
+      },
+      "category": "business"
     },
     {
       "id": 726,
@@ -440,6 +500,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/ylLOBW9IFBokzhkN_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 75,
+      "latestEpisode": {
+        "id": 198300,
+        "title": "今年月饼市场谁在退潮谁在大卖/牛肉价格创下两年多新高/三大运营商集体叫停“0元购机”",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1161000,
+        "onlineTime": 1790524800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/v1CgrYO1FSNwNomE_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 35,
@@ -1762,26 +1842,6 @@
       "category": "business"
     },
     {
-      "id": 679,
-      "name": "津津乐道",
-      "description": "分享经历，传播体验，厘清世界与你的关系",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
-      "host": "NIO Radio",
-      "episodeCount": 72,
-      "latestEpisode": {
-        "id": 198184,
-        "title": "从充电枪出发，搞懂电车背后的绿电、环保和车网互动",
-        "albumId": 679,
-        "albumName": "津津乐道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
-        "host": "NIO Radio",
-        "duration": 4506000,
-        "onlineTime": 1790179200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/95jLaGVpftdlCOV0_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 688,
       "name": "十字路口",
       "description": "",
@@ -1880,26 +1940,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/LVcsA6JEWZx0QV2Z_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 74,
-      "latestEpisode": {
-        "id": 198198,
-        "title": "AI面试让应届生更焦虑/Seedance2.5上线样片模式/中秋特辑：人能仰望就是幸福",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1257000,
-        "onlineTime": 1790179200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/BG9u1r8S4JeN91WW_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 824,
@@ -2622,26 +2662,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 541,
-      "name": "商业就是这样",
-      "description": "用简单易懂的语言解读商业现象，每周一期。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-      "host": "NIO Radio",
-      "episodeCount": 230,
-      "latestEpisode": {
-        "id": 198089,
-        "title": "澳洲保健品是怎么火起来的?",
-        "albumId": 541,
-        "albumName": "商业就是这样",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-        "host": "NIO Radio",
-        "duration": 2342000,
-        "onlineTime": 1789920000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/20/nnalgfAeorojCcqu_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
       "id": 622,
       "name": "蔚爱发声",
       "description": "用倾听与陪伴治愈人生，用童心与天真传递故事。童真、童趣、童言无忌，天津蔚二代一起为爱发声。",
@@ -2678,26 +2698,6 @@
         "duration": 3770000,
         "onlineTime": 1789920000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/20/jsZpNhvdMFj2WZgl_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 703,
-      "name": "果壳时间",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-      "host": "NIO Radio",
-      "episodeCount": 80,
-      "latestEpisode": {
-        "id": 198085,
-        "title": "AI疯狂收割数学难题，数学家为什么集体抗议",
-        "albumId": 703,
-        "albumName": "果壳时间",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-        "host": "NIO Radio",
-        "duration": 4390000,
-        "onlineTime": 1789920000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/20/awE82iO3NiSFcHgO_AAC_192_1.m4a"
       },
       "category": "business"
     },
