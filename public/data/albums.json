@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790537947013,
+  "generatedAt": 1790560563303,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 536,
+      "latestEpisode": {
+        "id": 198289,
+        "title": "昂跑签下姆巴佩之后，跑鞋品牌做足球生意还有哪些难题？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 903000,
+        "onlineTime": 1790550000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/fYOLc9pCQDRJKlTq_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -1620,26 +1640,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/zh1STDkyacQDI6It_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 535,
-      "latestEpisode": {
-        "id": 198195,
-        "title": "月饼市场持续降温，豆包缩减对话业务团队",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 662000,
-        "onlineTime": 1790204400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/w1xt3SyazN2HIhMk_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 328,
