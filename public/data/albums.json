@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790702346714,
+  "generatedAt": 1790706065478,
   "albums": [
     {
       "id": 5,
@@ -160,6 +160,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/DagBiBy0JrC1vzdf_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 147,
+      "name": "忽左忽右",
+      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 453,
+      "latestEpisode": {
+        "id": 198368,
+        "title": "无锡·台北·匹兹堡：冯俊文回忆时代巨变中的历史学家许倬云",
+        "albumId": 147,
+        "albumName": "忽左忽右",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+        "host": "NIO Radio",
+        "duration": 6530000,
+        "onlineTime": 1790697600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/gplI5fwextICEp50_AAC_192_1.m4a"
+      },
+      "category": "culture"
     },
     {
       "id": 148,
@@ -382,6 +402,26 @@
       "category": "culture"
     },
     {
+      "id": 664,
+      "name": "Slow Brand",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/YP3PwsKKrTBlz3f4UOGD7/6oklx4qiSBz7mgwUH8lvD",
+      "host": "NIO Radio",
+      "episodeCount": 92,
+      "latestEpisode": {
+        "id": 198370,
+        "title": "克罗心 Chrome Hearts - 为什么每一代人，都觉得它很“顶”？",
+        "albumId": 664,
+        "albumName": "Slow Brand",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/YP3PwsKKrTBlz3f4UOGD7/6oklx4qiSBz7mgwUH8lvD",
+        "host": "NIO Radio",
+        "duration": 4121000,
+        "onlineTime": 1790697600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/LcnEus9ypFzeJqxH_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 759,
       "name": "乱劈柴",
       "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
@@ -438,6 +478,26 @@
         "duration": 387000,
         "onlineTime": 1790697600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/qyHEk0mQD6SmgyWW_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 812,
+      "name": "不开玩笑",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
+      "host": "NIO Radio",
+      "episodeCount": 21,
+      "latestEpisode": {
+        "id": 198369,
+        "title": "退！退！退！退役运动员的人生下半场",
+        "albumId": 812,
+        "albumName": "不开玩笑",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
+        "host": "NIO Radio",
+        "duration": 8115000,
+        "onlineTime": 1790697600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/Mi7Ha7POnVlzGD4t_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -1782,26 +1842,6 @@
       "category": "car"
     },
     {
-      "id": 147,
-      "name": "忽左忽右",
-      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 452,
-      "latestEpisode": {
-        "id": 198245,
-        "title": "宇宙超级工程是如何垮掉的：刘怡谈「挑战者号」事故四十周年",
-        "albumId": 147,
-        "albumName": "忽左忽右",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-        "host": "NIO Radio",
-        "duration": 3775000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/8aAmvNfj15j8hUYM_AAC_192_1.m4a"
-      },
-      "category": "culture"
-    },
-    {
       "id": 239,
       "name": "苏州城市频道",
       "description": "姑苏有声，这里是苏州NIO Radio！",
@@ -2702,26 +2742,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 812,
-      "name": "不开玩笑",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
-      "host": "NIO Radio",
-      "episodeCount": 20,
-      "latestEpisode": {
-        "id": 198130,
-        "title": "义，你咋才来呢：聊聊仗义",
-        "albumId": 812,
-        "albumName": "不开玩笑",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/lrZ8VDjIkSmHxv-Zp8X0e/LlnYzqhxaMduGnzJaVndh",
-        "host": "NIO Radio",
-        "duration": 7960000,
-        "onlineTime": 1790006400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/CC6WXzQGB4POtmSJ_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 401,
       "name": "故事FM",
       "description": "用你的声音，讲述你的故事",
@@ -3040,26 +3060,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/NCQC13rQtuZVkrgn_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 664,
-      "name": "Slow Brand",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/YP3PwsKKrTBlz3f4UOGD7/6oklx4qiSBz7mgwUH8lvD",
-      "host": "NIO Radio",
-      "episodeCount": 91,
-      "latestEpisode": {
-        "id": 197764,
-        "title": "美式旧爱复宠记（下集）",
-        "albumId": 664,
-        "albumName": "Slow Brand",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/YP3PwsKKrTBlz3f4UOGD7/6oklx4qiSBz7mgwUH8lvD",
-        "host": "NIO Radio",
-        "duration": 3675000,
-        "onlineTime": 1788883200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/09/9N7OZL622jEatgFd_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 696,
