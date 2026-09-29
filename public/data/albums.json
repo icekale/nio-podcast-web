@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790697634968,
+  "generatedAt": 1790700461078,
   "albums": [
     {
       "id": 5,
@@ -38,6 +38,26 @@
         "duration": 2213000,
         "onlineTime": 1790697600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/BN7KTGHU0ESvtA6q_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2346,
+      "latestEpisode": {
+        "id": 198364,
+        "title": "K-Pop ON!｜ITZY",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1033000,
+        "onlineTime": 1790697600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/mdxQTWxGuNTNmHdg_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -460,26 +480,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/xasqDzJWk7IxX7Cm_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2345,
-      "latestEpisode": {
-        "id": 198343,
-        "title": "世界50酒店趋势",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1058000,
-        "onlineTime": 1790640000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/geJkyEHt3uSZCTCe_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 673,
