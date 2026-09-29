@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1790649680604,
+  "generatedAt": 1790695399274,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1680,
+      "latestEpisode": {
+        "id": 198350,
+        "title": "扎克伯格官宣Meta企业平台",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 399000,
+        "onlineTime": 1790672400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/tUWwkWtU1W9C1VuT_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 768,
+      "latestEpisode": {
+        "id": 198308,
+        "title": "老外也玩丝滑过闸",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 413000,
+        "onlineTime": 1790672400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/X6qXontqLJLC2ZYU_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 106,
+      "latestEpisode": {
+        "id": 198356,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 40000,
+        "onlineTime": 1790672400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/xasqDzJWk7IxX7Cm_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
     {
       "id": 18,
       "name": "塞萌不塞车",
@@ -235,9 +295,9 @@
         "albumName": "沈阳城市频道   ",
         "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/1f9fdffc-efef-4c07-9edb-267bae80d06f.jpg",
         "host": "NIO Radio",
-        "duration": 550000,
+        "duration": 560000,
         "onlineTime": 1790611200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/PKYdw1Uxbcuhg48j_AAC_192_1.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/apuSlC5UvJLJyHkS_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -660,66 +720,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/iA5O6gqTnSlKByFU_AAC_192_1.m4a"
       },
       "category": "kids"
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1679,
-      "latestEpisode": {
-        "id": 198309,
-        "title": "粤芯半导体创业板IPO中签率出炉",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 394000,
-        "onlineTime": 1790586000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/60ZJZOzDq1bTDNDp_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 767,
-      "latestEpisode": {
-        "id": 198272,
-        "title": "1500元！赶紧领",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 343000,
-        "onlineTime": 1790586000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/iE4Z6tOk0AlreyJr_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 105,
-      "latestEpisode": {
-        "id": 198307,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 38000,
-        "onlineTime": 1790586000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/zGUWtWzXYyOxSJpP_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 64,
