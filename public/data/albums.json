@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790785190825,
+  "generatedAt": 1790786381475,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/waxFgq1l1GY71uAX_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 1978,
+      "latestEpisode": {
+        "id": 198400,
+        "title": "或是史诗 Vol.8",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 1880000,
+        "onlineTime": 1790784000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/7jwT6JyN4LwIQNqg_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 18,
@@ -120,6 +140,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/d3KP30XwQja4J3c4_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1418,
+      "latestEpisode": {
+        "id": 198401,
+        "title": "锦绣中华，盛世华诞",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1803000,
+        "onlineTime": 1790784000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/HnXD7cWd7Ntu55Pn_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 349,
@@ -442,26 +482,6 @@
       "category": "business"
     },
     {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1977,
-      "latestEpisode": {
-        "id": 198284,
-        "title": "What's New Vol.441",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 2213000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/BN7KTGHU0ESvtA6q_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 64,
       "name": "广州城市资讯",
       "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
@@ -540,26 +560,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/vHrR4vpFPAD7b5ls_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1417,
-      "latestEpisode": {
-        "id": 198363,
-        "title": "假期预备起",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1642000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/LwvQxQ8lCm449vuC_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 334,
