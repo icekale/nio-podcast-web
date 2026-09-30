@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1790734725781,
+  "generatedAt": 1790782759275,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1681,
+      "latestEpisode": {
+        "id": 198385,
+        "title": "OpenAI据称拟再融资至少300亿",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 414000,
+        "onlineTime": 1790758800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/OUGTKeRhyr25dSZg_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 769,
+      "latestEpisode": {
+        "id": 198344,
+        "title": "脑中活虫长五厘米",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 382000,
+        "onlineTime": 1790758800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/JBEopEwtnq9dxJc1_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 107,
+      "latestEpisode": {
+        "id": 198390,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 75000,
+        "onlineTime": 1790758800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/LrueFvk6hNVhc9V7_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -482,6 +542,26 @@
       "category": "business"
     },
     {
+      "id": 798,
+      "name": "生命周刊",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+      "host": "NIO Radio",
+      "episodeCount": 44,
+      "latestEpisode": {
+        "id": 198359,
+        "title": "9.29世界心脏日特辑｜猝死为什么年轻化？心梗和猝死到底是什么关系？",
+        "albumId": 798,
+        "albumName": "生命周刊",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
+        "host": "NIO Radio",
+        "duration": 3141000,
+        "onlineTime": 1790697600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/0NhaJv8QVKtF2i6L_AAC_192_1.m4a"
+      },
+      "category": "culture"
+    },
+    {
       "id": 805,
       "name": "吃吃白相相",
       "description": "",
@@ -558,66 +638,6 @@
         "duration": 1289000,
         "onlineTime": 1790697600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/GBGIJI287VOb6LtM_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1680,
-      "latestEpisode": {
-        "id": 198350,
-        "title": "扎克伯格官宣Meta企业平台",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 399000,
-        "onlineTime": 1790672400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/tUWwkWtU1W9C1VuT_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 768,
-      "latestEpisode": {
-        "id": 198308,
-        "title": "老外也玩丝滑过闸",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 413000,
-        "onlineTime": 1790672400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/X6qXontqLJLC2ZYU_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 106,
-      "latestEpisode": {
-        "id": 198356,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 40000,
-        "onlineTime": 1790672400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/xasqDzJWk7IxX7Cm_AAC_192_1.m4a"
       },
       "category": "news"
     },
@@ -2660,26 +2680,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/LdfgJY0h83hL3K9f_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 798,
-      "name": "生命周刊",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-      "host": "NIO Radio",
-      "episodeCount": 43,
-      "latestEpisode": {
-        "id": 198159,
-        "title": "秋季早晚温差大，鼻过敏患者更要注意鼻腔保护",
-        "albumId": 798,
-        "albumName": "生命周刊",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/x-_k9G1EB74EiAOsywD7Z/ySk6tFmeV2JpbAP6iKvN0",
-        "host": "NIO Radio",
-        "duration": 327000,
-        "onlineTime": 1790092800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/HKp4zRnFYzuGNPBM_AAC_192_1.m4a"
-      },
-      "category": "culture"
     },
     {
       "id": 365,
