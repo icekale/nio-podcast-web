@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790706065478,
+  "generatedAt": 1790734725781,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 538,
+      "latestEpisode": {
+        "id": 198362,
+        "title": "索道赚钱能力堪比茅台，山岳景区为何还在为增长发愁？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 1035000,
+        "onlineTime": 1790722800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/MkzwuKPqnFy4CTLk_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -600,26 +620,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/xasqDzJWk7IxX7Cm_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 537,
-      "latestEpisode": {
-        "id": 198340,
-        "title": "京东开出购物中心，周杰伦 IP 零售店落地上海",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 579000,
-        "onlineTime": 1790636400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/FkGXbkQQjJUDMpmB_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 63,
