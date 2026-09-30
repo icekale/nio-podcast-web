@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790786381475,
+  "generatedAt": 1790791834144,
   "albums": [
     {
       "id": 5,
@@ -302,6 +302,26 @@
       "category": "culture"
     },
     {
+      "id": 625,
+      "name": "暂停实验",
+      "description": "这里是暂停实验室聊天的地方，我们关心你的各种情绪和生活中的困扰，希望来自临床心理学研究者的分享，带给你新的视角~\n每天暂停一下，用专业的方式照顾自己。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/NdWm-y8tXNAmODXhIhSpH/DnYxt4HLfQznS7QTU13Qe",
+      "host": "NIO Radio",
+      "episodeCount": 58,
+      "latestEpisode": {
+        "id": 198411,
+        "title": "无处可说，说了也没人能真的懂，感觉孤独怎么解？",
+        "albumId": 625,
+        "albumName": "暂停实验",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/NdWm-y8tXNAmODXhIhSpH/DnYxt4HLfQznS7QTU13Qe",
+        "host": "NIO Radio",
+        "duration": 5375000,
+        "onlineTime": 1790784000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/Jx54kyj3iYf72wAK_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 637,
       "name": "大口说",
       "description": "说美食、说生活、说蔚来的乐事奇闻！大口说，没有什么不能说。",
@@ -320,6 +340,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/nSSnP5y2KkktSoCh_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 679,
+      "name": "津津乐道",
+      "description": "分享经历，传播体验，厘清世界与你的关系",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
+      "host": "NIO Radio",
+      "episodeCount": 74,
+      "latestEpisode": {
+        "id": 198409,
+        "title": "当 App 正在变成日抛品，硬件却可能迎来了新时代",
+        "albumId": 679,
+        "albumName": "津津乐道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
+        "host": "NIO Radio",
+        "duration": 3197000,
+        "onlineTime": 1790784000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/rcJybpSD4BAtzw61_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 688,
+      "name": "十字路口",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/SEK4KkXcRT7GmXnMYrPvR/TDPgqvpwpkwPGoJph4Bn9",
+      "host": "NIO Radio",
+      "episodeCount": 102,
+      "latestEpisode": {
+        "id": 198410,
+        "title": "“我看到了 Scaling Law 的信号” | 对谈清华叉院助理教授徐梦迪：具身智能、世界模型、真正的泛化",
+        "albumId": 688,
+        "albumName": "十字路口",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/SEK4KkXcRT7GmXnMYrPvR/TDPgqvpwpkwPGoJph4Bn9",
+        "host": "NIO Radio",
+        "duration": 4844000,
+        "onlineTime": 1790784000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/AifsSyfdokEaTose_AAC_192_1.m4a"
+      },
+      "category": "business"
     },
     {
       "id": 758,
@@ -1378,26 +1438,6 @@
         "duration": 756000,
         "onlineTime": 1790524800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/IRMU4fuZlGQxTYah_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 679,
-      "name": "津津乐道",
-      "description": "分享经历，传播体验，厘清世界与你的关系",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
-      "host": "NIO Radio",
-      "episodeCount": 73,
-      "latestEpisode": {
-        "id": 198301,
-        "title": "在日本做生意，关系户可能是一种硬实力 | 在野",
-        "albumId": 679,
-        "albumName": "津津乐道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/-eLTZDl_wnFhMJkemv-us/mud1XHBUVuKpMNVRYln-k",
-        "host": "NIO Radio",
-        "duration": 6584000,
-        "onlineTime": 1790524800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/zFhx1ZDeP8HzZwrU_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -2462,26 +2502,6 @@
       "category": "business"
     },
     {
-      "id": 688,
-      "name": "十字路口",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/SEK4KkXcRT7GmXnMYrPvR/TDPgqvpwpkwPGoJph4Bn9",
-      "host": "NIO Radio",
-      "episodeCount": 101,
-      "latestEpisode": {
-        "id": 198188,
-        "title": "于是转身向具身走去｜对话王家伟：24 岁的具身智能首席科学家",
-        "albumId": 688,
-        "albumName": "十字路口",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/SEK4KkXcRT7GmXnMYrPvR/TDPgqvpwpkwPGoJph4Bn9",
-        "host": "NIO Radio",
-        "duration": 4172000,
-        "onlineTime": 1790179200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/dSg5xwAVI3GLRp64_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
       "id": 729,
       "name": "打天鸭",
       "description": "打天鸭是以东莞本土方言为特色的栏目，每周四，主播阿正正正子和俊人大叔会跟你谈天说地，一起打牙胶，讲D同你有关噶天文地理！",
@@ -3160,26 +3180,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/30/sgDkoeaSVD7siaZh_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 625,
-      "name": "暂停实验",
-      "description": "这里是暂停实验室聊天的地方，我们关心你的各种情绪和生活中的困扰，希望来自临床心理学研究者的分享，带给你新的视角~\n每天暂停一下，用专业的方式照顾自己。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/NdWm-y8tXNAmODXhIhSpH/DnYxt4HLfQznS7QTU13Qe",
-      "host": "NIO Radio",
-      "episodeCount": 57,
-      "latestEpisode": {
-        "id": 197449,
-        "title": "不会来事不够社会，怎么才能变成游刃有余的「大人」？",
-        "albumId": 625,
-        "albumName": "暂停实验",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/NdWm-y8tXNAmODXhIhSpH/DnYxt4HLfQznS7QTU13Qe",
-        "host": "NIO Radio",
-        "duration": 4944000,
-        "onlineTime": 1788019200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/08/29/m0v226FYa92lwNLM_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 678,
