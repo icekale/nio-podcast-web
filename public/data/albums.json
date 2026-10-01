@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790872420318,
+  "generatedAt": 1790873822030,
   "albums": [
     {
       "id": 5,
@@ -160,6 +160,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/yqfW7d11k9pGPuy1_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 147,
+      "name": "忽左忽右",
+      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 454,
+      "latestEpisode": {
+        "id": 198431,
+        "title": "林行止、《信报》与香港经济黄金年代",
+        "albumId": 147,
+        "albumName": "忽左忽右",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+        "host": "NIO Radio",
+        "duration": 4806000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/02/gpaJpMFaqpqRqASS_AAC_192_1.m4a"
+      },
+      "category": "business"
     },
     {
       "id": 148,
@@ -440,6 +460,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/HmttI5jXSMFYuJ3R_AAC_192_1.m4a"
       },
       "category": "kids"
+    },
+    {
+      "id": 770,
+      "name": "机核游戏频道",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+      "host": "NIO Radio",
+      "episodeCount": 67,
+      "latestEpisode": {
+        "id": 198432,
+        "title": "疯狂推荐战争狗，太难安利金刚狼｜《安利之王》",
+        "albumId": 770,
+        "albumName": "机核游戏频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+        "host": "NIO Radio",
+        "duration": 6837000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/02/ZmT0bhxWh5INY8mT_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 801,
@@ -940,26 +980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/k3XYheCz26LbhnVF_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 147,
-      "name": "忽左忽右",
-      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 453,
-      "latestEpisode": {
-        "id": 198368,
-        "title": "无锡·台北·匹兹堡：冯俊文回忆时代巨变中的历史学家许倬云",
-        "albumId": 147,
-        "albumName": "忽左忽右",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-        "host": "NIO Radio",
-        "duration": 6530000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/gplI5fwextICEp50_AAC_192_1.m4a"
-      },
-      "category": "culture"
     },
     {
       "id": 345,
@@ -2400,26 +2420,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/rtPtkvaJAwKHoBUz_AAC_192_1.m4a"
       },
       "category": "kids"
-    },
-    {
-      "id": 770,
-      "name": "机核游戏频道",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-      "host": "NIO Radio",
-      "episodeCount": 66,
-      "latestEpisode": {
-        "id": 198244,
-        "title": "游戏是今天买的，朋友是今天散的：联机游戏闲聊，游戏茶话会",
-        "albumId": 770,
-        "albumName": "机核游戏频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-        "host": "NIO Radio",
-        "duration": 5711000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/J9QzPy9GWvM0MKKY_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 836,
