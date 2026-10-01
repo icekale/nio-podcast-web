@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790821158860,
+  "generatedAt": 1790870447525,
   "albums": [
     {
       "id": 5,
@@ -7,17 +7,17 @@
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结",
       "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
       "host": "NIO Radio",
-      "episodeCount": 2165,
+      "episodeCount": 2166,
       "latestEpisode": {
-        "id": 198396,
-        "title": "多款智能体手机密集入网",
+        "id": 198422,
+        "title": "谷歌发布Gemini 4 Argon模型",
         "albumId": 5,
         "albumName": "资讯充电站·早间版",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
         "host": "NIO Radio",
-        "duration": 298000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/waxFgq1l1GY71uAX_AAC_192_1.m4a"
+        "duration": 310000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/6mvk2ImHrTsup2WI_AAC_192_1.m4a"
       },
       "category": "news"
     },
@@ -27,17 +27,17 @@
       "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
       "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
       "host": "NIO Radio",
-      "episodeCount": 1978,
+      "episodeCount": 1979,
       "latestEpisode": {
-        "id": 198400,
-        "title": "或是史诗 Vol.8",
+        "id": 198428,
+        "title": "踏秋·中文女声特辑",
         "albumId": 11,
         "albumName": "乐行记",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
         "host": "NIO Radio",
-        "duration": 1880000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/7jwT6JyN4LwIQNqg_AAC_192_1.m4a"
+        "duration": 1871000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/Sddm9GAX1AzrGyzF_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -47,17 +47,17 @@
       "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
       "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
       "host": "NIO Radio",
-      "episodeCount": 2347,
+      "episodeCount": 2348,
       "latestEpisode": {
-        "id": 198365,
-        "title": "去油听歌 Vol.283",
+        "id": 198426,
+        "title": "Top 250 Songs of 21st CEN (10 - 06)",
         "albumId": 18,
         "albumName": "塞萌不塞车",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
         "host": "NIO Radio",
-        "duration": 1104000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/gomsgSbvUfzA2t1d_AAC_192_1.m4a"
+        "duration": 1462000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/k5z3T2408T6rCz84_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -67,19 +67,379 @@
       "description": "用最欢乐的方式开启每一天，「前方加速度」用最新鲜的新闻段子活跃每一段上班路，解读每日的新闻热点",
       "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
       "host": "NIO Radio",
-      "episodeCount": 1796,
+      "episodeCount": 1797,
       "latestEpisode": {
-        "id": 198399,
-        "title": "祝大家长假长甜蜜",
+        "id": 198402,
+        "title": "一起旅游，一起最重要！",
         "albumId": 30,
         "albumName": "前方加速度",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/foBkI_hWwHE3t0X2L9vdx/XxMfy5FxM_CJ-yrZ6-hGp",
         "host": "NIO Radio",
-        "duration": 552000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/RYWgFz2YIsGTn0m8_AAC_192_1.m4a"
+        "duration": 533000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CAlzPiLsuW0KdFjr_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 69,
+      "name": "武汉城市资讯",
+      "description": "本地新闻，牛屋活动，这里是武汉的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/1829dbbf-8012-483b-9849-2ba5c7fc7156.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 898,
+      "latestEpisode": {
+        "id": 198416,
+        "title": "新洲邀你畅游金秋89项活动",
+        "albumId": 69,
+        "albumName": "武汉城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/1829dbbf-8012-483b-9849-2ba5c7fc7156.jpg",
+        "host": "NIO Radio",
+        "duration": 327000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/pvD3TiSEJGziEW1W_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 70,
+      "name": "长沙城市资讯",
+      "description": "本地新闻，牛屋活动，这里是长沙城市资讯！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/bcce9651-106e-40da-b977-1954bba229e9.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 802,
+      "latestEpisode": {
+        "id": 198417,
+        "title": "大王山“山海奇幻季”热闹启幕",
+        "albumId": 70,
+        "albumName": "长沙城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/bcce9651-106e-40da-b977-1954bba229e9.jpg",
+        "host": "NIO Radio",
+        "duration": 357000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CWCIuh6ivA73wa5l_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 103,
+      "name": "长沙城市频道",
+      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1148,
+      "latestEpisode": {
+        "id": 198413,
+        "title": "奇里爸俚丨十兄弟·第123期",
+        "albumId": 103,
+        "albumName": "长沙城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+        "host": "NIO Radio",
+        "duration": 457000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/yqfW7d11k9pGPuy1_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 148,
+      "name": "E次元财经报",
+      "description": "超强电力，娱乐视角，为你盘点热门财经观点!",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7yo2MjNoCUfqww_eZ3FbS/Ichub4WIrKly7RpvDcrUc",
+      "host": "NIO Radio",
+      "episodeCount": 910,
+      "latestEpisode": {
+        "id": 198423,
+        "title": "国庆第二天，弹窗别添乱！",
+        "albumId": 148,
+        "albumName": "E次元财经报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7yo2MjNoCUfqww_eZ3FbS/Ichub4WIrKly7RpvDcrUc",
+        "host": "NIO Radio",
+        "duration": 713000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/rbf7loXwRk0kpOVX_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
+      "id": 239,
+      "name": "苏州城市频道",
+      "description": "姑苏有声，这里是苏州NIO Radio！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/1/27/f819c425-5fca-4351-a945-ff034a0bfd3b.png",
+      "host": "NIO Radio",
+      "episodeCount": 1119,
+      "latestEpisode": {
+        "id": 198381,
+        "title": "苏州玩乐地图｜国庆趣玩苏城，逛市集、看喜剧品秋日美味",
+        "albumId": 239,
+        "albumName": "苏州城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/1/27/f819c425-5fca-4351-a945-ff034a0bfd3b.png",
+        "host": "NIO Radio",
+        "duration": 214000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/cZoTQ4A8wgTR5ESq_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 311,
+      "name": "南京城市资讯",
+      "description": "本地新闻，牛屋活动，这里是南京城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/ae5fd374-83a2-4733-8c19-a72ad990afce.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1069,
+      "latestEpisode": {
+        "id": 198425,
+        "title": "市委常委会部署安全，国庆文商旅体活动精彩继续",
+        "albumId": 311,
+        "albumName": "南京城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/ae5fd374-83a2-4733-8c19-a72ad990afce.jpg",
+        "host": "NIO Radio",
+        "duration": 284000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/h59eLdsxh6fSqRAL_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 334,
+      "name": "音乐加电站",
+      "description": "每期不同的音乐推荐，在音乐的陪伴下，加电前行。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/969aeeea-cda0-4b93-81a9-48ff204bffb0.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 286,
+      "latestEpisode": {
+        "id": 198382,
+        "title": "【特别节目】去有风的地方遇见你",
+        "albumId": 334,
+        "albumName": "音乐加电站",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/969aeeea-cda0-4b93-81a9-48ff204bffb0.jpg",
+        "host": "NIO Radio",
+        "duration": 357000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/OhMzyjJzpcU8hJJK_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 419,
+      "name": "体育地平线",
+      "description": "重点关注最热门体育赛事和新闻事件，让你从多方面多角度丰富了解赛事全貌",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
+      "host": "NIO Radio",
+      "episodeCount": 692,
+      "latestEpisode": {
+        "id": 198386,
+        "title": "新赛季的费城76人能夺冠吗？",
+        "albumId": 419,
+        "albumName": "体育地平线",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
+        "host": "NIO Radio",
+        "duration": 362000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/DGKGs3WCsjjnCy0f_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 544,
+      "name": "金华城市资讯",
+      "description": "本地新闻，牛屋活动，这里是金华城市资讯！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/8/ab048a0d-8827-4625-8cc6-a4e549dbada8.png",
+      "host": "NIO Radio",
+      "episodeCount": 605,
+      "latestEpisode": {
+        "id": 198412,
+        "title": "国庆金华文旅活动超400场",
+        "albumId": 544,
+        "albumName": "金华城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/8/ab048a0d-8827-4625-8cc6-a4e549dbada8.png",
+        "host": "NIO Radio",
+        "duration": 304000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/I5nJsEP0BekAEweJ_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 559,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+      "host": "NIO Radio",
+      "episodeCount": 188,
+      "latestEpisode": {
+        "id": 198415,
+        "title": "慢炖自然好材，赴一场轻养之约",
+        "albumId": 559,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+        "host": "NIO Radio",
+        "duration": 1970000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/N2x3Ru5YRIcNsoL7_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 614,
+      "name": "音乐曼曼听",
+      "description": "和@李小曼一起，用音乐开启周末的美好时光。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
+      "host": "NIO Radio",
+      "episodeCount": 152,
+      "latestEpisode": {
+        "id": 198373,
+        "title": "秋日慢板",
+        "albumId": 614,
+        "albumName": "音乐曼曼听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
+        "host": "NIO Radio",
+        "duration": 1056000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/9waC47wpdTV1WUV9_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 631,
+      "name": "东莞吃喝玩乐地图",
+      "description": "分享东莞本地吃喝玩乐好去处，让你的周末更添精彩。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MIHzwKWG9ANhYyZ6y7lyr/9mA8zMgmnwopVV9ag46fn",
+      "host": "NIO Radio",
+      "episodeCount": 146,
+      "latestEpisode": {
+        "id": 198421,
+        "title": "去石排国防潮玩嘉年华欢度国庆",
+        "albumId": 631,
+        "albumName": "东莞吃喝玩乐地图",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MIHzwKWG9ANhYyZ6y7lyr/9mA8zMgmnwopVV9ag46fn",
+        "host": "NIO Radio",
+        "duration": 346000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/YOPQvYQSTcC1h6s6_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 636,
+      "name": "耳朵里的乐光",
+      "description": "春雨骤降，夏日炎炎，秋叶飘零，冬雪纷飞。唯二不变的是日落和月升。我是@wutan，陪你一起透过四季的声音，用耳朵将乐光聆听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8CYVAxfdZdrOKyvFWekyP/J1gslLFo0wjGPYgSydRP6",
+      "host": "NIO Radio",
+      "episodeCount": 163,
+      "latestEpisode": {
+        "id": 198232,
+        "title": "十全十美举家出行指南",
+        "albumId": 636,
+        "albumName": "耳朵里的乐光",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8CYVAxfdZdrOKyvFWekyP/J1gslLFo0wjGPYgSydRP6",
+        "host": "NIO Radio",
+        "duration": 1184000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/DqoO0LzpykeZq1Ym_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 713,
+      "name": "厦门城市资讯",
+      "description": "网罗城市热点，享愉悦生活。这里是厦门城市资讯！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/mcN-7g6nUcdyMNAQAbgZq/cGrasi1vQ2nhlxp68hQh7",
+      "host": "NIO Radio",
+      "episodeCount": 103,
+      "latestEpisode": {
+        "id": 198420,
+        "title": "厦门推出国庆惠民乐游系列措施",
+        "albumId": 713,
+        "albumName": "厦门城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/mcN-7g6nUcdyMNAQAbgZq/cGrasi1vQ2nhlxp68hQh7",
+        "host": "NIO Radio",
+        "duration": 321000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/sHdrBhCxuwUQDf39_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 767,
+      "name": "亲子一起玩",
+      "description": "亲子怎么玩、怎么学、怎么买，我们给您支支招！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Wc4bjzevvrTTYSFuBvfBU/euth91c3Bi7Itzvhr7Q5j",
+      "host": "NIO Radio",
+      "episodeCount": 70,
+      "latestEpisode": {
+        "id": 198418,
+        "title": "南城，北京城的历史地层，来场穿越百年的Citywalk",
+        "albumId": 767,
+        "albumName": "亲子一起玩",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Wc4bjzevvrTTYSFuBvfBU/euth91c3Bi7Itzvhr7Q5j",
+        "host": "NIO Radio",
+        "duration": 1168000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/HmttI5jXSMFYuJ3R_AAC_192_1.m4a"
+      },
+      "category": "kids"
+    },
+    {
+      "id": 801,
+      "name": "郑州城市资讯",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/wutcERkszm10XCY-o54wE/R7eWNkAb0LGoWA4Ksh0YS",
+      "host": "NIO Radio",
+      "episodeCount": 30,
+      "latestEpisode": {
+        "id": 198397,
+        "title": "中原国际会展中心推出闯关嘉年华",
+        "albumId": 801,
+        "albumName": "郑州城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/wutcERkszm10XCY-o54wE/R7eWNkAb0LGoWA4Ksh0YS",
+        "host": "NIO Radio",
+        "duration": 302000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/yLHzvka57W2etRNd_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 10,
+      "latestEpisode": {
+        "id": 198408,
+        "title": "去趟南法，顺便逛个戛纳电影节",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1615000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/GBLwVQQznkLELq6O_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 770,
+      "latestEpisode": {
+        "id": 198383,
+        "title": "姐妹国庆冲浪 注意安全",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 371000,
+        "onlineTime": 1790845200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/lUoElHEI5oYubDtg_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 97,
@@ -100,26 +460,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/irBjbI6WzM3AF7Cd_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 103,
-      "name": "长沙城市频道",
-      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1147,
-      "latestEpisode": {
-        "id": 198392,
-        "title": "蔚你读诗丨艾青·国庆特辑",
-        "albumId": 103,
-        "albumName": "长沙城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-        "host": "NIO Radio",
-        "duration": 471000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/9n5fMsyzLI9c67XV_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 121,
@@ -482,26 +822,6 @@
       "category": "news"
     },
     {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 769,
-      "latestEpisode": {
-        "id": 198344,
-        "title": "脑中活虫长五厘米",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 382000,
-        "onlineTime": 1790758800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/JBEopEwtnq9dxJc1_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 809,
       "name": "上海天气预报",
       "description": "",
@@ -602,46 +922,6 @@
       "category": "culture"
     },
     {
-      "id": 148,
-      "name": "E次元财经报",
-      "description": "超强电力，娱乐视角，为你盘点热门财经观点!",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7yo2MjNoCUfqww_eZ3FbS/Ichub4WIrKly7RpvDcrUc",
-      "host": "NIO Radio",
-      "episodeCount": 909,
-      "latestEpisode": {
-        "id": 198349,
-        "title": "国人消费观，清醒了？",
-        "albumId": 148,
-        "albumName": "E次元财经报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7yo2MjNoCUfqww_eZ3FbS/Ichub4WIrKly7RpvDcrUc",
-        "host": "NIO Radio",
-        "duration": 789000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/vHrR4vpFPAD7b5ls_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 334,
-      "name": "音乐加电站",
-      "description": "每期不同的音乐推荐，在音乐的陪伴下，加电前行。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/969aeeea-cda0-4b93-81a9-48ff204bffb0.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 285,
-      "latestEpisode": {
-        "id": 198358,
-        "title": "假日松弛感精选",
-        "albumId": 334,
-        "albumName": "音乐加电站",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/969aeeea-cda0-4b93-81a9-48ff204bffb0.jpg",
-        "host": "NIO Radio",
-        "duration": 1377000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/neW6RbDvHQtfLG9J_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 345,
       "name": "宁波城市资讯",
       "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
@@ -660,26 +940,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/8XUYU7UdRXoVMHgF_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 419,
-      "name": "体育地平线",
-      "description": "重点关注最热门体育赛事和新闻事件，让你从多方面多角度丰富了解赛事全貌",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
-      "host": "NIO Radio",
-      "episodeCount": 691,
-      "latestEpisode": {
-        "id": 198360,
-        "title": "中国男女篮为什么全面退步？",
-        "albumId": 419,
-        "albumName": "体育地平线",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DRoNhdL2i2iLbq3sWmfBI/3UI8EgVaD9LqhJLkdiBQ-",
-        "host": "NIO Radio",
-        "duration": 365000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/UiPgnue9mF49NlTc_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 552,
@@ -1782,26 +2042,6 @@
       "category": "culture"
     },
     {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 9,
-      "latestEpisode": {
-        "id": 198246,
-        "title": "闯入南疆塔吉克族同胞的家，拥抱真诚",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1784000,
-        "onlineTime": 1790438400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/Oru7lpglFjH55pvf_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 22,
       "name": "蔚来牛人 · 咖啡旅神",
       "description": "上海车主@咖啡旅神，带你领略咖啡与美好生活",
@@ -1982,66 +2222,6 @@
       "category": "car"
     },
     {
-      "id": 69,
-      "name": "武汉城市资讯",
-      "description": "本地新闻，牛屋活动，这里是武汉的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/1829dbbf-8012-483b-9849-2ba5c7fc7156.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 897,
-      "latestEpisode": {
-        "id": 198210,
-        "title": "长江看烟花活动国庆在汉举办",
-        "albumId": 69,
-        "albumName": "武汉城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/1829dbbf-8012-483b-9849-2ba5c7fc7156.jpg",
-        "host": "NIO Radio",
-        "duration": 330000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/B9Y3KEiMi0rfW2Jt_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 70,
-      "name": "长沙城市资讯",
-      "description": "本地新闻，牛屋活动，这里是长沙城市资讯！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/bcce9651-106e-40da-b977-1954bba229e9.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 801,
-      "latestEpisode": {
-        "id": 198228,
-        "title": "中秋国庆假期湖南多个路段易堵",
-        "albumId": 70,
-        "albumName": "长沙城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/bcce9651-106e-40da-b977-1954bba229e9.jpg",
-        "host": "NIO Radio",
-        "duration": 390000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/6OEw49dJstf88jny_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 239,
-      "name": "苏州城市频道",
-      "description": "姑苏有声，这里是苏州NIO Radio！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/1/27/f819c425-5fca-4351-a945-ff034a0bfd3b.png",
-      "host": "NIO Radio",
-      "episodeCount": 1118,
-      "latestEpisode": {
-        "id": 198218,
-        "title": "苏州玩乐地图｜中秋赏桂观大戏，湖畔品蟹欢度佳节",
-        "albumId": 239,
-        "albumName": "苏州城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/1/27/f819c425-5fca-4351-a945-ff034a0bfd3b.png",
-        "host": "NIO Radio",
-        "duration": 225000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/BczWcLXh2G1pHZz1_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 260,
       "name": "深圳城市频道",
       "description": "南腔北调，活力鹏城，这里是深圳NIO Radio！",
@@ -2058,26 +2238,6 @@
         "duration": 423000,
         "onlineTime": 1790265600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/21/6UjF3LPTW9RbAmul_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 311,
-      "name": "南京城市资讯",
-      "description": "本地新闻，牛屋活动，这里是南京城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/ae5fd374-83a2-4733-8c19-a72ad990afce.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1068,
-      "latestEpisode": {
-        "id": 198242,
-        "title": "南京“市50条”新政发布，金洽会80个项目总投资821亿",
-        "albumId": 311,
-        "albumName": "南京城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/ae5fd374-83a2-4733-8c19-a72ad990afce.jpg",
-        "host": "NIO Radio",
-        "duration": 343000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/5z7Qv6iokhTtlDw8_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -2202,106 +2362,6 @@
       "category": "car"
     },
     {
-      "id": 544,
-      "name": "金华城市资讯",
-      "description": "本地新闻，牛屋活动，这里是金华城市资讯！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/8/ab048a0d-8827-4625-8cc6-a4e549dbada8.png",
-      "host": "NIO Radio",
-      "episodeCount": 604,
-      "latestEpisode": {
-        "id": 198207,
-        "title": "金华十五五蓝图",
-        "albumId": 544,
-        "albumName": "金华城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/8/ab048a0d-8827-4625-8cc6-a4e549dbada8.png",
-        "host": "NIO Radio",
-        "duration": 305000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/DLZnOOW58ETGo09F_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 559,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-      "host": "NIO Radio",
-      "episodeCount": 187,
-      "latestEpisode": {
-        "id": 198216,
-        "title": "中秋家宴寻味记：在成都的土货川味",
-        "albumId": 559,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-        "host": "NIO Radio",
-        "duration": 2072000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/AeSjYTEXEu72l5FA_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
-      "id": 614,
-      "name": "音乐曼曼听",
-      "description": "和@李小曼一起，用音乐开启周末的美好时光。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
-      "host": "NIO Radio",
-      "episodeCount": 151,
-      "latestEpisode": {
-        "id": 197999,
-        "title": "自在人间",
-        "albumId": 614,
-        "albumName": "音乐曼曼听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/m_uG3lQ7juyVdVhNrXbPT/XDnriq3fX7QzsbCcmCIyD",
-        "host": "NIO Radio",
-        "duration": 1013000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/euga1BvP07JozUaG_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 631,
-      "name": "东莞吃喝玩乐地图",
-      "description": "分享东莞本地吃喝玩乐好去处，让你的周末更添精彩。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MIHzwKWG9ANhYyZ6y7lyr/9mA8zMgmnwopVV9ag46fn",
-      "host": "NIO Radio",
-      "episodeCount": 145,
-      "latestEpisode": {
-        "id": 198252,
-        "title": "中秋看烟花拜月逛墟市",
-        "albumId": 631,
-        "albumName": "东莞吃喝玩乐地图",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MIHzwKWG9ANhYyZ6y7lyr/9mA8zMgmnwopVV9ag46fn",
-        "host": "NIO Radio",
-        "duration": 354000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/25/FRAdMe4NtyB6BnbO_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
-      "id": 636,
-      "name": "耳朵里的乐光",
-      "description": "春雨骤降，夏日炎炎，秋叶飘零，冬雪纷飞。唯二不变的是日落和月升。我是@wutan，陪你一起透过四季的声音，用耳朵将乐光聆听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8CYVAxfdZdrOKyvFWekyP/J1gslLFo0wjGPYgSydRP6",
-      "host": "NIO Radio",
-      "episodeCount": 162,
-      "latestEpisode": {
-        "id": 198231,
-        "title": "愉悦出行重庆",
-        "albumId": 636,
-        "albumName": "耳朵里的乐光",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8CYVAxfdZdrOKyvFWekyP/J1gslLFo0wjGPYgSydRP6",
-        "host": "NIO Radio",
-        "duration": 1356000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/P8Bp4S2bQ1nu7QdX_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 649,
       "name": "亲子的抢滩登陆",
       "description": "小朋友遇到问题不会解决怎么办？小朋友总是害怕逃避问题怎么办？小朋友在遇到选择永远无法做出正确得到答案怎么办？亲子的抢滩登陆邀您一起越过代沟，和孩子共同沟通交流，寻找解决问题的最佳方案！",
@@ -2322,46 +2382,6 @@
       "category": "kids"
     },
     {
-      "id": 713,
-      "name": "厦门城市资讯",
-      "description": "网罗城市热点，享愉悦生活。这里是厦门城市资讯！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/mcN-7g6nUcdyMNAQAbgZq/cGrasi1vQ2nhlxp68hQh7",
-      "host": "NIO Radio",
-      "episodeCount": 102,
-      "latestEpisode": {
-        "id": 198206,
-        "title": "鼓浪屿中秋文化周踏月而来",
-        "albumId": 713,
-        "albumName": "厦门城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/mcN-7g6nUcdyMNAQAbgZq/cGrasi1vQ2nhlxp68hQh7",
-        "host": "NIO Radio",
-        "duration": 352000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/moMQ1JZb4u7ljgdg_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 767,
-      "name": "亲子一起玩",
-      "description": "亲子怎么玩、怎么学、怎么买，我们给您支支招！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Wc4bjzevvrTTYSFuBvfBU/euth91c3Bi7Itzvhr7Q5j",
-      "host": "NIO Radio",
-      "episodeCount": 69,
-      "latestEpisode": {
-        "id": 198226,
-        "title": "岁岁农耕年年相伴，蔚来与三元农场的四季之约",
-        "albumId": 767,
-        "albumName": "亲子一起玩",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Wc4bjzevvrTTYSFuBvfBU/euth91c3Bi7Itzvhr7Q5j",
-        "host": "NIO Radio",
-        "duration": 1017000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/awybp8jtraA18fls_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 770,
       "name": "机核游戏频道",
       "description": "",
@@ -2380,26 +2400,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/J9QzPy9GWvM0MKKY_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 801,
-      "name": "郑州城市资讯",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/wutcERkszm10XCY-o54wE/R7eWNkAb0LGoWA4Ksh0YS",
-      "host": "NIO Radio",
-      "episodeCount": 29,
-      "latestEpisode": {
-        "id": 198204,
-        "title": "郑州交警发布双节假期出行提示",
-        "albumId": 801,
-        "albumName": "郑州城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/wutcERkszm10XCY-o54wE/R7eWNkAb0LGoWA4Ksh0YS",
-        "host": "NIO Radio",
-        "duration": 310000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/9smIkCnIPUBK6bKh_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 814,
