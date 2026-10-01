@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790870447525,
+  "generatedAt": 1790872420318,
   "albums": [
     {
       "id": 5,
@@ -80,6 +80,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CAlzPiLsuW0KdFjr_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 64,
+      "name": "广州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1249,
+      "latestEpisode": {
+        "id": 198433,
+        "title": "广州现房销售定金不得高于5%",
+        "albumId": 64,
+        "albumName": "广州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+        "host": "NIO Radio",
+        "duration": 291000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/02/RQ8mPJCQ014Ilw57_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 69,
@@ -182,6 +202,26 @@
       "category": "car"
     },
     {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1419,
+      "latestEpisode": {
+        "id": 198427,
+        "title": "假日出游季",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1673000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/WAKoU3KHA1mctH4F_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 311,
       "name": "南京城市资讯",
       "description": "本地新闻，牛屋活动，这里是南京城市资讯",
@@ -220,6 +260,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/OhMzyjJzpcU8hJJK_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 348,
+      "name": "音乐传声机",
+      "description": "粤听粤好听—用音乐开启心动信号！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
+      "host": "NIO Radio",
+      "episodeCount": 259,
+      "latestEpisode": {
+        "id": 198430,
+        "title": "男歌女唱 Vol.7",
+        "albumId": 348,
+        "albumName": "音乐传声机",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
+        "host": "NIO Radio",
+        "duration": 1888000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CoN6AVf91Xj7pPBf_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 419,
@@ -402,6 +462,26 @@
       "category": "news"
     },
     {
+      "id": 814,
+      "name": "常州城市资讯",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/BmPMUumGNX1gSWywTcxOU/0Mrs92g63IIjbMEQzpLUW",
+      "host": "NIO Radio",
+      "episodeCount": 21,
+      "latestEpisode": {
+        "id": 198429,
+        "title": "常州民生再加码",
+        "albumId": 814,
+        "albumName": "常州城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/BmPMUumGNX1gSWywTcxOU/0Mrs92g63IIjbMEQzpLUW",
+        "host": "NIO Radio",
+        "duration": 284000,
+        "onlineTime": 1790870400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CRYwvHDf5XSzD4zM_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
       "id": 831,
       "name": "山川漫游记",
       "description": "",
@@ -480,26 +560,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/27/d3KP30XwQja4J3c4_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1418,
-      "latestEpisode": {
-        "id": 198401,
-        "title": "锦绣中华，盛世华诞",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1803000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/HnXD7cWd7Ntu55Pn_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 349,
@@ -860,26 +920,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/MkzwuKPqnFy4CTLk_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 64,
-      "name": "广州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1248,
-      "latestEpisode": {
-        "id": 198353,
-        "title": "广州海洋馆国庆有新玩法",
-        "albumId": 64,
-        "albumName": "广州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-        "host": "NIO Radio",
-        "duration": 336000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/4TI0yHPentvFfMBq_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 74,
@@ -2242,26 +2282,6 @@
       "category": "car"
     },
     {
-      "id": 348,
-      "name": "音乐传声机",
-      "description": "粤听粤好听—用音乐开启心动信号！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
-      "host": "NIO Radio",
-      "episodeCount": 258,
-      "latestEpisode": {
-        "id": 198236,
-        "title": "蔚来车友爱听榜",
-        "albumId": 348,
-        "albumName": "音乐传声机",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
-        "host": "NIO Radio",
-        "duration": 1735000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/If5dKqU7s1VpSOoz_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 388,
       "name": "重庆城市资讯",
       "description": "本地新闻，牛屋活动，这里是重庆的城市资讯",
@@ -2400,26 +2420,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/J9QzPy9GWvM0MKKY_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 814,
-      "name": "常州城市资讯",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/BmPMUumGNX1gSWywTcxOU/0Mrs92g63IIjbMEQzpLUW",
-      "host": "NIO Radio",
-      "episodeCount": 20,
-      "latestEpisode": {
-        "id": 198229,
-        "title": "罗森伯格再投常州",
-        "albumId": 814,
-        "albumName": "常州城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/BmPMUumGNX1gSWywTcxOU/0Mrs92g63IIjbMEQzpLUW",
-        "host": "NIO Radio",
-        "duration": 290000,
-        "onlineTime": 1790265600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/7Hv4vwScVbi9gZaW_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 836,
