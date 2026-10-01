@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1790791834144,
+  "generatedAt": 1790821158860,
   "albums": [
     {
       "id": 5,
@@ -3980,46 +3980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/05/grq9vnPVoaxTvnoZ_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 601,
-      "name": " 王安宇伴你换电",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/EHV2v9yJNhx2LGxDNR1LP/u0q2VdlDbEBhhoeiWHW3w",
-      "host": "NIO Radio",
-      "episodeCount": 1,
-      "latestEpisode": {
-        "id": 190528,
-        "title": "换电三分钟 灵感每一程",
-        "albumId": 601,
-        "albumName": " 王安宇伴你换电",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/EHV2v9yJNhx2LGxDNR1LP/u0q2VdlDbEBhhoeiWHW3w",
-        "host": "NIO Radio",
-        "duration": 12000,
-        "onlineTime": 1767369600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/iWUwYwCLPfrSlRMc_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 128,
-      "name": "王安宇伴你出行",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/WJs7g-GLS9HqQCJYEqmqK/4EqroucCVh-Z8B68hPuQj",
-      "host": "NIO Radio",
-      "episodeCount": 1,
-      "latestEpisode": {
-        "id": 190527,
-        "title": "灵感激发 每时每刻",
-        "albumId": 128,
-        "albumName": "王安宇伴你出行",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/WJs7g-GLS9HqQCJYEqmqK/4EqroucCVh-Z8B68hPuQj",
-        "host": "NIO Radio",
-        "duration": 9000,
-        "onlineTime": 1767283200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/01/15/xl71EtOoDu4yldch_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 89,
