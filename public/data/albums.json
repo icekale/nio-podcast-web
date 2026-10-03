@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1790958568047,
+  "generatedAt": 1791036551742,
   "albums": [
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 772,
+      "latestEpisode": {
+        "id": 198439,
+        "title": "炖鱼吃出铁鱼钩",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 362000,
+        "onlineTime": 1791018000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/03/7EmeDAqx1pK0fXqW_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -78,6 +98,26 @@
         "duration": 1853000,
         "onlineTime": 1790956800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/22/wudhZIgo00ujotU0_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 387,
+      "latestEpisode": {
+        "id": 198445,
+        "title": "TonyCortez特辑",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2816000,
+        "onlineTime": 1790956800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/03/HfvngJJoOXdoxpZM_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -258,26 +298,6 @@
         "duration": 575000,
         "onlineTime": 1790931600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/4gZvzKe4Zovr7EIc_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 771,
-      "latestEpisode": {
-        "id": 198419,
-        "title": "城际延期，分段先跑",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 431000,
-        "onlineTime": 1790931600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/QXCuWaE03hW5ZdUq_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -780,26 +800,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/CRYwvHDf5XSzD4zM_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 10,
-      "latestEpisode": {
-        "id": 198408,
-        "title": "去趟南法，顺便逛个戛纳电影节",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1615000,
-        "onlineTime": 1790870400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/GBLwVQQznkLELq6O_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 97,
@@ -2142,26 +2142,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 384,
-      "latestEpisode": {
-        "id": 198269,
-        "title": "VAC阵容公布Above&Beyond",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2718000,
-        "onlineTime": 1790438400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/26/i2ZpqXJm3PC040fS_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 683,
       "name": "记者下班",
       "description": "把新闻背后的真实经历、多元人物命运、采访所见所想、个人成长故事……串烧成独特体验，还原鲜活生动的故事。",
@@ -2240,6 +2220,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/23/EssHCqcvTtjXBCnb_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 9,
+      "latestEpisode": {
+        "id": 198246,
+        "title": "闯入南疆塔吉克族同胞的家，拥抱真诚",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1784000,
+        "onlineTime": 1790438400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/Oru7lpglFjH55pvf_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 378,
