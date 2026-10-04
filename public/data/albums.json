@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791054379810,
+  "generatedAt": 1791126739246,
   "albums": [
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 773,
+      "latestEpisode": {
+        "id": 198451,
+        "title": "水贝金局，卷百余亿",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 388000,
+        "onlineTime": 1791104400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/04/3xJPP3jPDhpTlpQH_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -240,26 +260,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/28/4GxxV0FbEFpse1kI_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 772,
-      "latestEpisode": {
-        "id": 198439,
-        "title": "炖鱼吃出铁鱼钩",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 362000,
-        "onlineTime": 1791018000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/03/7EmeDAqx1pK0fXqW_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 22,
