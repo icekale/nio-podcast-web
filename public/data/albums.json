@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791222965805,
+  "generatedAt": 1791301345547,
   "albums": [
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 775,
+      "latestEpisode": {
+        "id": 198453,
+        "title": "抛弃糟糠，重婚判刑",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 347000,
+        "onlineTime": 1791277200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/04/yl9CpnNiPDIrodYd_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -420,26 +440,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/pA9Hikqh8lD9pqhq_AAC_192_1.m4a"
       },
       "category": "kids"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 774,
-      "latestEpisode": {
-        "id": 198452,
-        "title": "胆囊藏石五百颗",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 350000,
-        "onlineTime": 1791190800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/04/605WJLxFapzOK62N_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 64,
