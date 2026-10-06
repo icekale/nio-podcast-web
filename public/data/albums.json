@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1791302612467,
+  "generatedAt": 1791304580073,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/06/Zss4GWy8qiP44TD6_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 1982,
+      "latestEpisode": {
+        "id": 198501,
+        "title": "What's New Vol.442",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 2904000,
+        "onlineTime": 1791302400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/K8oFe4wOBKXTY7Mp_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2351,
+      "latestEpisode": {
+        "id": 198500,
+        "title": "K-pop ON!｜新沙洞老虎",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1059000,
+        "onlineTime": 1791302400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/06/8eHPkmQCekUCKuX3_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 30,
@@ -340,46 +380,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/04/yl9CpnNiPDIrodYd_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1981,
-      "latestEpisode": {
-        "id": 198482,
-        "title": "No Boundaries无国界 Vol.20",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 1983000,
-        "onlineTime": 1791216000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/05/j1zMoxPp2W0RJvbr_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2350,
-      "latestEpisode": {
-        "id": 198480,
-        "title": "爆火的“旅行兴趣班”",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1141000,
-        "onlineTime": 1791216000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/05/QRjWil5pw0KZwx81_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 103,
