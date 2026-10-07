@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1791391331396,
+  "generatedAt": 1791396597107,
   "albums": [
     {
       "id": 5,
@@ -420,6 +420,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/bHpYY80HRJNaNWnD_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 78,
+      "latestEpisode": {
+        "id": 198519,
+        "title": "高速充电“八分饱”会成常态吗/《只此青绿》水立方首演“翻车”/派拉蒙天舞完成对华纳兄弟收购",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1084000,
+        "onlineTime": 1791388800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/9qLIZx182JuI0138_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 835,
@@ -2040,26 +2060,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/0NhaJv8QVKtF2i6L_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 77,
-      "latestEpisode": {
-        "id": 198366,
-        "title": "房企集体“爆改”算力公司/为何演唱会退票这么难？",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1289000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/GBGIJI287VOb6LtM_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 63,
