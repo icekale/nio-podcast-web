@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1791389193388,
+  "generatedAt": 1791391331396,
   "albums": [
     {
       "id": 5,
@@ -120,6 +120,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/dnyX8PSxz6xTsMJB_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 97,
+      "name": "成都城市资讯",
+      "description": "本地新闻，牛屋活动，这里是成都的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/be255d52-89ad-4d3e-8635-4a912d45f0d8.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1395,
+      "latestEpisode": {
+        "id": 198508,
+        "title": "《哈利·波特：魔法幻境》中国首秀10月8日成都启幕",
+        "albumId": 97,
+        "albumName": "成都城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/be255d52-89ad-4d3e-8635-4a912d45f0d8.jpg",
+        "host": "NIO Radio",
+        "duration": 193000,
+        "onlineTime": 1791388800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/uZHAU7tUgIZsykT1_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 103,
+      "name": "长沙城市频道",
+      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1150,
+      "latestEpisode": {
+        "id": 198510,
+        "title": "蔚你读诗丨张孝祥",
+        "albumId": 103,
+        "albumName": "长沙城市频道",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
+        "host": "NIO Radio",
+        "duration": 591000,
+        "onlineTime": 1791388800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/bLBmhL5q8UmYujxW_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 121,
@@ -262,6 +302,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 563,
+      "name": "蔚爱成长",
+      "description": "在蔚来社区让我们一起成为更好的父母，拥有更温暖的家庭。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/5/8/83ed768b-3bc4-45ac-8125-5dc24529958a.png",
+      "host": "NIO Radio",
+      "episodeCount": 188,
+      "latestEpisode": {
+        "id": 198509,
+        "title": "职场哪些，学校给不了 Vol.7：蔚来HRBP角度的总结",
+        "albumId": 563,
+        "albumName": "蔚爱成长",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/5/8/83ed768b-3bc4-45ac-8125-5dc24529958a.png",
+        "host": "NIO Radio",
+        "duration": 1308000,
+        "onlineTime": 1791388800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/egVcUfS71Wyc7nLD_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 594,
       "name": "西安城市资讯",
       "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
@@ -340,6 +400,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/06/gXxh8TUtRF4CJwhb_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 794,
+      "name": "阿叔有嘢广",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
+      "host": "NIO Radio",
+      "episodeCount": 41,
+      "latestEpisode": {
+        "id": 198518,
+        "title": "粤车南下，香港交规跟内地有何不同？（番外篇）",
+        "albumId": 794,
+        "albumName": "阿叔有嘢广",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
+        "host": "NIO Radio",
+        "duration": 725000,
+        "onlineTime": 1791388800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/bHpYY80HRJNaNWnD_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 835,
@@ -620,26 +700,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/06/hYWlHuFRgGpUPyk6_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 103,
-      "name": "长沙城市频道",
-      "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1149,
-      "latestEpisode": {
-        "id": 198476,
-        "title": "星城之声丨假期过半，方向盘还在手里",
-        "albumId": 103,
-        "albumName": "长沙城市频道",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/b3759839-aff1-42da-a8c6-3bbb935f8782.jpg",
-        "host": "NIO Radio",
-        "duration": 580000,
-        "onlineTime": 1791216000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/05/8pYiN1QEHkweyFOy_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 129,
@@ -1742,46 +1802,6 @@
       "category": "news"
     },
     {
-      "id": 97,
-      "name": "成都城市资讯",
-      "description": "本地新闻，牛屋活动，这里是成都的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/be255d52-89ad-4d3e-8635-4a912d45f0d8.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1394,
-      "latestEpisode": {
-        "id": 198375,
-        "title": "山河共庆华诞，蓉城多彩文旅活动点亮国庆假期",
-        "albumId": 97,
-        "albumName": "成都城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/be255d52-89ad-4d3e-8635-4a912d45f0d8.jpg",
-        "host": "NIO Radio",
-        "duration": 228000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/irBjbI6WzM3AF7Cd_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 563,
-      "name": "蔚爱成长",
-      "description": "在蔚来社区让我们一起成为更好的父母，拥有更温暖的家庭。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/5/8/83ed768b-3bc4-45ac-8125-5dc24529958a.png",
-      "host": "NIO Radio",
-      "episodeCount": 187,
-      "latestEpisode": {
-        "id": 198321,
-        "title": "值得“预制”的第零种能力",
-        "albumId": 563,
-        "albumName": "蔚爱成长",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/5/8/83ed768b-3bc4-45ac-8125-5dc24529958a.png",
-        "host": "NIO Radio",
-        "duration": 777000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/xQbwhivjMc4iXjHR_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 608,
       "name": "星星书房",
       "description": "Nikita小姐姐有一个装满阳光的星星书房，让我们一起走进英语的世界，来一场细水长流的陪伴，赐予你不懈成长的力量。",
@@ -1860,26 +1880,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/26/GwqcZxvhcg6LHuH7_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 794,
-      "name": "阿叔有嘢广",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
-      "host": "NIO Radio",
-      "episodeCount": 40,
-      "latestEpisode": {
-        "id": 198391,
-        "title": "考驾照这事，不同年代的人有不一样的看法",
-        "albumId": 794,
-        "albumName": "阿叔有嘢广",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Na67wntMNuhDtqzLoI36c/hkEiErJrswRjNF7RtlYL-",
-        "host": "NIO Radio",
-        "duration": 2031000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/jlMbZ3tz846xKPDy_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 23,
