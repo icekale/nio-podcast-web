@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791481378492,
+  "generatedAt": 1791500479998,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 540,
+      "latestEpisode": {
+        "id": 198545,
+        "title": "咖啡豆｜「希尔顿们」入驻县域市场，国际中端连锁酒店为何加速扩张？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 777000,
+        "onlineTime": 1791500400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/bhtqEBZDjMQTEmah_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -800,26 +820,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/zyu7abWVKlODSpbH_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 539,
-      "latestEpisode": {
-        "id": 198517,
-        "title": "国庆假期「多城串游」热度攀升，星巴克因无糖饮料中含糖被起诉",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 678000,
-        "onlineTime": 1791414000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/07/P4x7MpBOaEyS6DSd_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 66,
