@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791736422018,
+  "generatedAt": 1791772590194,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 541,
+      "latestEpisode": {
+        "id": 198619,
+        "title": "顶级机场到海外「开分店」，机场运营如何变身跨国生意？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 834000,
+        "onlineTime": 1791759600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/11/k5zEvxqp5HTkyXQT_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -882,6 +902,26 @@
       "category": "kids"
     },
     {
+      "id": 762,
+      "name": "我是探险家",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/UYfC956YI5b5qIQzzQse7/PH1bp9PVYSrHOLoecWpm9",
+      "host": "NIO Radio",
+      "episodeCount": 66,
+      "latestEpisode": {
+        "id": 198346,
+        "title": "地球没闲着 狂上新物种",
+        "albumId": 762,
+        "albumName": "我是探险家",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/UYfC956YI5b5qIQzzQse7/PH1bp9PVYSrHOLoecWpm9",
+        "host": "NIO Radio",
+        "duration": 1206000,
+        "onlineTime": 1791561600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/29/uBLOVj9Bhw73alqF_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 769,
       "name": "机核生活频道",
       "description": "",
@@ -980,26 +1020,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/04/hyEr6OP1nmmehqOq_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 540,
-      "latestEpisode": {
-        "id": 198545,
-        "title": "咖啡豆｜「希尔顿们」入驻县域市场，国际中端连锁酒店为何加速扩张？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 777000,
-        "onlineTime": 1791500400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/08/bhtqEBZDjMQTEmah_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 68,
@@ -1422,6 +1442,26 @@
       "category": "news"
     },
     {
+      "id": 758,
+      "name": "百事有感觉",
+      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OePcK3--7hfWlLir8MKg3/iPI0OXRzT2_DIEHsluWRj",
+      "host": "NIO Radio",
+      "episodeCount": 112,
+      "latestEpisode": {
+        "id": 198568,
+        "title": "煎饼侠下 独到创新",
+        "albumId": 758,
+        "albumName": "百事有感觉",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OePcK3--7hfWlLir8MKg3/iPI0OXRzT2_DIEHsluWRj",
+        "host": "NIO Radio",
+        "duration": 1320000,
+        "onlineTime": 1791475200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/09/tPX09Alf0qD0EDgG_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 767,
       "name": "亲子一起玩",
       "description": "亲子怎么玩、怎么学、怎么买，我们给您支支招！",
@@ -1760,6 +1800,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/06/Ai1Ze1JlfR4Xwm5g_AAC_192_1.m4a"
       },
       "category": "audio"
+    },
+    {
+      "id": 759,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+      "host": "NIO Radio",
+      "episodeCount": 70,
+      "latestEpisode": {
+        "id": 198415,
+        "title": "慢炖自然好材，赴一场轻养之约",
+        "albumId": 759,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+        "host": "NIO Radio",
+        "duration": 1970000,
+        "onlineTime": 1791302400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/01/N2x3Ru5YRIcNsoL7_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 805,
@@ -2142,26 +2202,6 @@
       "category": "kids"
     },
     {
-      "id": 762,
-      "name": "我是探险家",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/UYfC956YI5b5qIQzzQse7/PH1bp9PVYSrHOLoecWpm9",
-      "host": "NIO Radio",
-      "episodeCount": 65,
-      "latestEpisode": {
-        "id": 198140,
-        "title": "自然之旅酒店怎么选？",
-        "albumId": 762,
-        "albumName": "我是探险家",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/UYfC956YI5b5qIQzzQse7/PH1bp9PVYSrHOLoecWpm9",
-        "host": "NIO Radio",
-        "duration": 1690000,
-        "onlineTime": 1790956800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/22/uw9HWcLoQba3tf9k_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 789,
       "name": "城市频道精选",
       "description": "",
@@ -2242,26 +2282,6 @@
       "category": "car"
     },
     {
-      "id": 758,
-      "name": "百事有感觉",
-      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OePcK3--7hfWlLir8MKg3/iPI0OXRzT2_DIEHsluWRj",
-      "host": "NIO Radio",
-      "episodeCount": 110,
-      "latestEpisode": {
-        "id": 198262,
-        "title": "京焱烧肉 情绪至上",
-        "albumId": 758,
-        "albumName": "百事有感觉",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OePcK3--7hfWlLir8MKg3/iPI0OXRzT2_DIEHsluWRj",
-        "host": "NIO Radio",
-        "duration": 1146000,
-        "onlineTime": 1790784000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/26/GwqcZxvhcg6LHuH7_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 552,
       "name": "疯投圈",
       "description": "做中文世界最有意思的商业类播客。",
@@ -2300,26 +2320,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/30/LcnEus9ypFzeJqxH_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 759,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-      "host": "NIO Radio",
-      "episodeCount": 69,
-      "latestEpisode": {
-        "id": 198216,
-        "title": "中秋家宴寻味记：在成都的土货川味",
-        "albumId": 759,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-        "host": "NIO Radio",
-        "duration": 2072000,
-        "onlineTime": 1790697600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/24/AeSjYTEXEu72l5FA_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 764,
