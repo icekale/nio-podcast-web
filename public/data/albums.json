@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791830244354,
+  "generatedAt": 1791850492547,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 542,
+      "latestEpisode": {
+        "id": 198652,
+        "title": "微信上线免费短剧小程序，星巴克拒绝评论收购 Chipotle 的消息",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 571000,
+        "onlineTime": 1791846000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/12/nCghNXPIXSXwmjJq_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -660,26 +680,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/12/4rYI1XxkkiqsnePi_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 541,
-      "latestEpisode": {
-        "id": 198619,
-        "title": "顶级机场到海外「开分店」，机场运营如何变身跨国生意？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 834000,
-        "onlineTime": 1791759600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/11/k5zEvxqp5HTkyXQT_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
