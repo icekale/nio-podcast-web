@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1791994370065,
+  "generatedAt": 1791999548187,
   "albums": [
     {
       "id": 5,
@@ -82,6 +82,26 @@
       "category": "news"
     },
     {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1478,
+      "latestEpisode": {
+        "id": 198718,
+        "title": "杭州招聘会AI企业占比超五成",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 279000,
+        "onlineTime": 1791993600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/g4J8szAW6xH5Nl0o_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 97,
       "name": "成都城市资讯",
       "description": "本地新闻，牛屋活动，这里是成都的城市资讯",
@@ -120,6 +140,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/sshs3FlB03fETiYQ_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1428,
+      "latestEpisode": {
+        "id": 198722,
+        "title": "前奏响起时青春 Vol.1",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1958000,
+        "onlineTime": 1791993600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/JdnAuS3SG2mdANUy_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 328,
@@ -582,26 +622,6 @@
       "category": "car"
     },
     {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1477,
-      "latestEpisode": {
-        "id": 198682,
-        "title": "富阳第二十届房交会本周五启幕",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 288000,
-        "onlineTime": 1791907200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/vNzIqnqFR1UC73qm_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 147,
       "name": "忽左忽右",
       "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
@@ -640,26 +660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/xbEFdlaO0Tp1LJmS_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1427,
-      "latestEpisode": {
-        "id": 198676,
-        "title": "华语爵士随餐",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1638000,
-        "onlineTime": 1791907200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/bnPeQ3OdWI7GXlHD_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 334,
