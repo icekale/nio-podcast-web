@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1791999548187,
+  "generatedAt": 1792028612090,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 544,
+      "latestEpisode": {
+        "id": 198715,
+        "title": "豆包增加水电缴费功能，瑞幸引入奶茶品类",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 521000,
+        "onlineTime": 1792018800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/s36ygALhgtDlI865_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -522,6 +542,26 @@
       "category": "business"
     },
     {
+      "id": 837,
+      "name": "出逃在即",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/eDDy20o2aDoM4FzDJfXp_/DRN1pE_k29ipF8lMxk1gB",
+      "host": "NIO Radio",
+      "episodeCount": 1,
+      "latestEpisode": {
+        "id": 198661,
+        "title": "不要和为你服务的人做朋友，保持纯洁的金钱关系就好",
+        "albumId": 837,
+        "albumName": "出逃在即",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/eDDy20o2aDoM4FzDJfXp_/DRN1pE_k29ipF8lMxk1gB",
+        "host": "NIO Radio",
+        "duration": 2568000,
+        "onlineTime": 1791993600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/mduPsUw3kxDwOm2w_AAC_192_1.m4a"
+      },
+      "category": null
+    },
+    {
       "id": 23,
       "name": "资讯充电站·晚间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
@@ -580,26 +620,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/8kF5RlHQWJ4hApnC_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 543,
-      "latestEpisode": {
-        "id": 198684,
-        "title": "火锅连锁能开上千家，同样做聚餐生意的烧烤品牌为何扩张难？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 777000,
-        "onlineTime": 1791932400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/gN0mZfAc4QdfyoTG_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
