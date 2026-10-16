@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1792085112005,
+  "generatedAt": 1792114564916,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 545,
+      "latestEpisode": {
+        "id": 198758,
+        "title": "咖啡豆｜从万圣节限定到常年项目，环球影城为何押注「惊吓体验」？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 967000,
+        "onlineTime": 1792105200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/QzR3LNgiglrFfKWO_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -880,26 +900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/6wgCnb9htLAXZVFk_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 544,
-      "latestEpisode": {
-        "id": 198715,
-        "title": "豆包增加水电缴费功能，瑞幸引入奶茶品类",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 521000,
-        "onlineTime": 1792018800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/s36ygALhgtDlI865_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 328,
