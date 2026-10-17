@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792252823799,
+  "generatedAt": 1792261081876,
   "albums": [
     {
       "id": 35,
@@ -22,6 +22,26 @@
       "category": "kids"
     },
     {
+      "id": 41,
+      "name": "乐行记·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 525,
+      "latestEpisode": {
+        "id": 135541,
+        "title": "配乐大师作品集·Hans Zimmer（上）",
+        "albumId": 41,
+        "albumName": "乐行记·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+        "host": "NIO Radio",
+        "duration": 1961000,
+        "onlineTime": 1792252800000,
+        "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/9/29/50a0ce70-c6db-4abf-a73c-6da3eccd33f2_AAC_192.aac"
+      },
+      "category": "audio"
+    },
+    {
       "id": 56,
       "name": "蔚来牛人 · 席安的古典乐",
       "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
@@ -40,6 +60,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/17/TUOmkA8npwoyqrJd_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 307,
+      "name": "华语乐动听·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 379,
+      "latestEpisode": {
+        "id": 161438,
+        "title": "落叶下的情愫",
+        "albumId": 307,
+        "albumName": "华语乐动听·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+        "host": "NIO Radio",
+        "duration": 2165000,
+        "onlineTime": 1792252800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/11/01/q1qhAXBguZNYtjmU_AAC_192.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 540,
@@ -280,46 +320,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/16/gdVD7G1uJFUgIaqQ_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 41,
-      "name": "乐行记·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 524,
-      "latestEpisode": {
-        "id": 188208,
-        "title": "A Very Simple Day",
-        "albumId": 41,
-        "albumName": "乐行记·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-        "host": "NIO Radio",
-        "duration": 2175000,
-        "onlineTime": 1792166400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/15/qZffcHAoN6ZliJYC_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 307,
-      "name": "华语乐动听·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 378,
-      "latestEpisode": {
-        "id": 113428,
-        "title": "秋日情歌",
-        "albumId": 307,
-        "albumName": "华语乐动听·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-        "host": "NIO Radio",
-        "duration": 1885000,
-        "onlineTime": 1792166400000,
-        "audioUrl": "https://cdn-app.nio.com/NIORadio/2021/9/21/0f20d4a1-9d39-4ad9-aa74-faef0c471dca_AAC_192.aac"
-      },
-      "category": "audio"
     },
     {
       "id": 539,
