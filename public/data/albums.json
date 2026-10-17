@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792170099349,
+  "generatedAt": 1792200473836,
   "albums": [
     {
       "id": 5,
@@ -1760,6 +1760,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/hWIB3dwPa6NaRPCr_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 838,
+      "name": "乐道生活家",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
+      "host": "NIO Radio",
+      "episodeCount": 1,
+      "latestEpisode": {
+        "id": 198681,
+        "title": "Vol.01 | 对话00后超级奶爸Mark：带娃出行的实用干货，来自合肥车友的生活观察",
+        "albumId": 838,
+        "albumName": "乐道生活家",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
+        "host": "NIO Radio",
+        "duration": 1025000,
+        "onlineTime": 1791907200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/xR4BLjqTM8pmfQyd_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 63,
@@ -8820,26 +8840,6 @@
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/14/e8ee12d7-086c-4462-bcb1-acd03f90d74d_AAC_192.aac"
       },
       "category": "kids"
-    },
-    {
-      "id": 203,
-      "name": "上海城市频道 Ⅱ",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/0ac7a4c3-d101-4348-bbbc-77481a739e67.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 25,
-      "latestEpisode": {
-        "id": 121794,
-        "title": "【seeds in Shanghai】｜ 露营大牛带你入坑",
-        "albumId": 203,
-        "albumName": "上海城市频道 Ⅱ",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/0ac7a4c3-d101-4348-bbbc-77481a739e67.jpg",
-        "host": "NIO Radio",
-        "duration": 1209000,
-        "onlineTime": 1648396800000,
-        "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/3/27/480d6e31-5062-4a2f-8491-ffeda4797281_AAC_192.aac"
-      },
-      "category": "news"
     },
     {
       "id": 395,
