@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792339862469,
+  "generatedAt": 1792348268425,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/DhOaAg6rGRKgtJlY_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 1990,
+      "latestEpisode": {
+        "id": 198819,
+        "title": "Rock the Road Vol.33",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 1875000,
+        "onlineTime": 1792339200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/kIvcwHEsxrvb91N6_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2360,
+      "latestEpisode": {
+        "id": 198820,
+        "title": "2026 Best Cities for Nightlife",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1151000,
+        "onlineTime": 1792339200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/Cofjis4jyyWdUflU_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 30,
@@ -160,6 +200,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/YItsTCUitJqfNI8r_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1430,
+      "latestEpisode": {
+        "id": 198818,
+        "title": "青春里的潮流律动 Vol.10",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1909000,
+        "onlineTime": 1792339200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/HOugGbAQPXTLNjOr_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 345,
@@ -1062,46 +1122,6 @@
       "category": "business"
     },
     {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1989,
-      "latestEpisode": {
-        "id": 198748,
-        "title": "Pink Friday",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 1955000,
-        "onlineTime": 1792080000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/hPn3SHE1LExwkJ0F_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2359,
-      "latestEpisode": {
-        "id": 198746,
-        "title": "C-Pop声浪 Vol.12",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1361000,
-        "onlineTime": 1792080000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/V0fxU8P1efgT8UE2_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1240,26 +1260,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/jZqzVxy3WL8r20aa_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1429,
-      "latestEpisode": {
-        "id": 198747,
-        "title": "淡淡的... 慢慢的...",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1807000,
-        "onlineTime": 1792080000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/vwdIcLIF49MLVLQd_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 311,
