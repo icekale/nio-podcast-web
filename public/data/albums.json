@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792426389144,
+  "generatedAt": 1792430400958,
   "albums": [
     {
       "id": 5,
@@ -118,6 +118,26 @@
         "duration": 369000,
         "onlineTime": 1792425600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/llsP23b98gR21Ujy_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1481,
+      "latestEpisode": {
+        "id": 198856,
+        "title": "杭州将迎四所新学校",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 275000,
+        "onlineTime": 1792425600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/0hkWbeaqezpIRuC3_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -322,6 +342,26 @@
       "category": "business"
     },
     {
+      "id": 588,
+      "name": "城市夜空",
+      "description": "一首歌、一个故事、一次灵感的碰撞，记录城市的律动，感受每一段独特的心声。城市夜空，让每一颗心都有依靠的地方。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 167,
+      "latestEpisode": {
+        "id": 198855,
+        "title": "当孩子们飞向世界",
+        "albumId": 588,
+        "albumName": "城市夜空",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
+        "host": "NIO Radio",
+        "duration": 1317000,
+        "onlineTime": 1792425600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/u5pwpxlL4pSTsD16_AAC_192_1.m4a"
+      },
+      "category": "kids"
+    },
+    {
       "id": 594,
       "name": "西安城市资讯",
       "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
@@ -420,6 +460,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/yq8ZRFTPmDyDekJj_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 714,
+      "name": "厦门城市频道",
+      "description": "好吃好喝好玩好看好听，为厦漳泉龙岩的朋友带来轻松和乐趣！这里是厦门城市频道。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
+      "host": "NIO Radio",
+      "episodeCount": 111,
+      "latestEpisode": {
+        "id": 198857,
+        "title": "一周活动斗阵行丨金秋线上福利派送",
+        "albumId": 714,
+        "albumName": "厦门城市频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
+        "host": "NIO Radio",
+        "duration": 219000,
+        "onlineTime": 1792425600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/oKeURd63D5DcZgoM_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 758,
@@ -562,6 +622,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 88,
+      "latestEpisode": {
+        "id": 198858,
+        "title": "星巴克“消费入座”全国落地/一线二手房价连涨7个月",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1009000,
+        "onlineTime": 1792425600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/JYR7SJxloX25L8vD_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
       "id": 827,
       "name": "她言有物",
       "description": "",
@@ -698,26 +778,6 @@
         "duration": 309000,
         "onlineTime": 1792339200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/qHk3iKK49XzuM0da_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1480,
-      "latestEpisode": {
-        "id": 198797,
-        "title": "杭州公积金装修提取正式落地",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 288000,
-        "onlineTime": 1792339200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/isqkmLSQNAmQM92K_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -1040,26 +1100,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/16/vvd5IbLUixZXPl6A_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 87,
-      "latestEpisode": {
-        "id": 198817,
-        "title": "魔芋零食不好卖了/多地试点直升高中/公交转型：大车退场/电影院要变“运动场”？",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1009000,
-        "onlineTime": 1792339200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/SU7mlcJaXWNURq5T_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 833,
@@ -2542,26 +2582,6 @@
       "category": "car"
     },
     {
-      "id": 588,
-      "name": "城市夜空",
-      "description": "一首歌、一个故事、一次灵感的碰撞，记录城市的律动，感受每一段独特的心声。城市夜空，让每一颗心都有依靠的地方。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 166,
-      "latestEpisode": {
-        "id": 198645,
-        "title": "45+女博士的游戏人生",
-        "albumId": 588,
-        "albumName": "城市夜空",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/8/8/919e92c2-606d-4e38-9b5f-99cac42aff7c.jpg",
-        "host": "NIO Radio",
-        "duration": 807000,
-        "onlineTime": 1791820800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/12/kkHSt42eAYS9XocQ_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 669,
       "name": "Vibration 歪波音室",
       "description": "音乐太多，耳朵太少",
@@ -2580,26 +2600,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/XAqT9rBJd7Pt95DA_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 714,
-      "name": "厦门城市频道",
-      "description": "好吃好喝好玩好看好听，为厦漳泉龙岩的朋友带来轻松和乐趣！这里是厦门城市频道。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
-      "host": "NIO Radio",
-      "episodeCount": 110,
-      "latestEpisode": {
-        "id": 198649,
-        "title": "一周活动斗阵行丨自驾游福建最美海岸线啦！",
-        "albumId": 714,
-        "albumName": "厦门城市频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
-        "host": "NIO Radio",
-        "duration": 274000,
-        "onlineTime": 1791820800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/12/Kp5wnU526ijmS1x5_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 803,
