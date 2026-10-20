@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792512233535,
+  "generatedAt": 1792517766558,
   "albums": [
     {
       "id": 5,
@@ -360,6 +360,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/18/NDFVhhIsfd0re2ni_AAC_192_1.m4a"
       },
       "category": "lifestyle"
+    },
+    {
+      "id": 670,
+      "name": "皮蛋漫游记",
+      "description": "B站科技区UP主两颗皮蛋@DerrickMa负责的播客频道。在这里我们不仅聊科技产品，也关注科技产品背后的故事和人。希望用对话和你一起发现科技行业背后更广大的世界。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/44ij9Bf_QObHevDr6S3ZG/P7r7DAzQbT2jyOce2lqzC",
+      "host": "NIO Radio",
+      "episodeCount": 37,
+      "latestEpisode": {
+        "id": 198888,
+        "title": "对谈刘飞：从锤子、滴滴到半拿铁，人生有多少事能提前想清楚",
+        "albumId": 670,
+        "albumName": "皮蛋漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/44ij9Bf_QObHevDr6S3ZG/P7r7DAzQbT2jyOce2lqzC",
+        "host": "NIO Radio",
+        "duration": 5997000,
+        "onlineTime": 1792512000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/9ZcgNy8Z1fn6Wfn4_AAC_192_1.m4a"
+      },
+      "category": "business"
     },
     {
       "id": 674,
@@ -3118,26 +3138,6 @@
         "duration": 2487000,
         "onlineTime": 1789574400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/16/AWrxLTsncUmE4kEl_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 670,
-      "name": "皮蛋漫游记",
-      "description": "B站科技区UP主两颗皮蛋@DerrickMa负责的播客频道。在这里我们不仅聊科技产品，也关注科技产品背后的故事和人。希望用对话和你一起发现科技行业背后更广大的世界。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/44ij9Bf_QObHevDr6S3ZG/P7r7DAzQbT2jyOce2lqzC",
-      "host": "NIO Radio",
-      "episodeCount": 36,
-      "latestEpisode": {
-        "id": 197953,
-        "title": "加州来电：和云飞 张黑黑一起聊聊 A20 Pro",
-        "albumId": 670,
-        "albumName": "皮蛋漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/44ij9Bf_QObHevDr6S3ZG/P7r7DAzQbT2jyOce2lqzC",
-        "host": "NIO Radio",
-        "duration": 3649000,
-        "onlineTime": 1789488000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/15/fUfHsT6V8VaG0OdB_AAC_192_1.m4a"
       },
       "category": "business"
     },
