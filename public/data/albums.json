@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792599636558,
+  "generatedAt": 1792612716806,
   "albums": [
     {
       "id": 5,
@@ -200,6 +200,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/H5BwAuGzFqh0iiLf_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 349,
+      "name": "时光点唱机",
+      "description": "最好的时光，最美的音乐，这里是南京城市频道《时光点唱机》。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/11/3/be48f1f4-b2e6-495e-8028-a65288634493.jpeg",
+      "host": "NIO Radio",
+      "episodeCount": 266,
+      "latestEpisode": {
+        "id": 198919,
+        "title": "江山青山的自在回响",
+        "albumId": 349,
+        "albumName": "时光点唱机",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/11/3/be48f1f4-b2e6-495e-8028-a65288634493.jpeg",
+        "host": "NIO Radio",
+        "duration": 940000,
+        "onlineTime": 1792598400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/dyaiCjgVBw2iIHMY_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 381,
@@ -2540,26 +2560,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/15/7ZKVInF1kRj7fEvJ_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 349,
-      "name": "时光点唱机",
-      "description": "最好的时光，最美的音乐，这里是南京城市频道《时光点唱机》。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/11/3/be48f1f4-b2e6-495e-8028-a65288634493.jpeg",
-      "host": "NIO Radio",
-      "episodeCount": 265,
-      "latestEpisode": {
-        "id": 198719,
-        "title": "秋天慢慢爱",
-        "albumId": 349,
-        "albumName": "时光点唱机",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/11/3/be48f1f4-b2e6-495e-8028-a65288634493.jpeg",
-        "host": "NIO Radio",
-        "duration": 825000,
-        "onlineTime": 1791993600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/HM7WiTGE3GmboR06_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 679,
