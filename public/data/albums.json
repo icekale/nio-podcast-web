@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1792517766558,
+  "generatedAt": 1792547647603,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 548,
+      "latestEpisode": {
+        "id": 198886,
+        "title": "欧洲青旅一边关店一边扩张，这门生意发生了什么改变？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 921000,
+        "onlineTime": 1792537200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/IxHSyn398aQbDgpp_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -42,6 +62,26 @@
       "category": "audio"
     },
     {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2362,
+      "latestEpisode": {
+        "id": 198894,
+        "title": " K-POP大事记2003",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1370000,
+        "onlineTime": 1792512000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/BW7Amf9LlheVlBGG_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 30,
       "name": "前方加速度",
       "description": "用最欢乐的方式开启每一天，「前方加速度」用最新鲜的新闻段子活跃每一段上班路，解读每日的新闻热点",
@@ -78,6 +118,26 @@
         "duration": 318000,
         "onlineTime": 1792512000000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/Wag9CHBlMDL9lIgR_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1482,
+      "latestEpisode": {
+        "id": 198893,
+        "title": "杭州绕城高速改扩建正式启动",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 286000,
+        "onlineTime": 1792512000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/LchTIkc3i4W7As15_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -582,46 +642,6 @@
       "category": "news"
     },
     {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 547,
-      "latestEpisode": {
-        "id": 198850,
-        "title": "千余家影院直播体育赛事，上半年国内金饰消费量下跌三成",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 528000,
-        "onlineTime": 1792450800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/umwPbck85ZcxII39_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2361,
-      "latestEpisode": {
-        "id": 198851,
-        "title": "FALL HARVEST Vol.1",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1345000,
-        "onlineTime": 1792425600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/DdlVbqbPE1ID0Y7o_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 63,
       "name": "上海城市资讯",
       "description": "本地新闻，车主活动，这里是上海的城市资讯",
@@ -658,26 +678,6 @@
         "duration": 369000,
         "onlineTime": 1792425600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/llsP23b98gR21Ujy_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1481,
-      "latestEpisode": {
-        "id": 198856,
-        "title": "杭州将迎四所新学校",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 275000,
-        "onlineTime": 1792425600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/0hkWbeaqezpIRuC3_AAC_192_1.m4a"
       },
       "category": "car"
     },
