@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792771763353,
+  "generatedAt": 1792776723509,
   "albums": [
     {
       "id": 5,
@@ -240,6 +240,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/20/TrHVZgcWgMiem0pH_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 92,
+      "latestEpisode": {
+        "id": 198983,
+        "title": "“在么在么”APP进入政府采购清单/番茄小说贡献超7成短剧剧本",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1742000,
+        "onlineTime": 1792771200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/24/QaqIoOL16ExwfQ9U_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 23,
@@ -1118,26 +1138,6 @@
         "duration": 269000,
         "onlineTime": 1792684800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/F8yUAjoMRvtRmu1r_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 91,
-      "latestEpisode": {
-        "id": 198963,
-        "title": "塔斯汀悄悄开披萨店/红果短剧分阶段下线金币功能/段永平回应泡泡玛特五连跌",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1009000,
-        "onlineTime": 1792684800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/69p1rl5MSXezS68X_AAC_192_1.m4a"
       },
       "category": "news"
     },
