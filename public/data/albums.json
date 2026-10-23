@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1792685999868,
+  "generatedAt": 1792720119248,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 550,
+      "latestEpisode": {
+        "id": 198958,
+        "title": "咖啡豆｜山姆限购、黄牛加价，开心果为什么变得紧俏？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 866000,
+        "onlineTime": 1792710000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/mfBlun1LoYjhLqln_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -880,26 +900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/v4Ks0Bv41H32JLtb_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 549,
-      "latestEpisode": {
-        "id": 198916,
-        "title": "低价城际大巴吸引乘客，AI 短剧算力用量引发争议",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 488000,
-        "onlineTime": 1792623600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/vSpaJB4bsHVHzrtj_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 328,
