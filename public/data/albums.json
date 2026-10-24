@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1792858734325,
+  "generatedAt": 1792867182827,
   "albums": [
     {
       "id": 35,
@@ -40,6 +40,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/05/nAzRkTdWelXF3fTc_AAC_192.m4a"
       },
       "category": "audio"
+    },
+    {
+      "id": 56,
+      "name": "蔚来牛人 · 席安的古典乐",
+      "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 315,
+      "latestEpisode": {
+        "id": 198997,
+        "title": "莫扎特小提琴奏鸣曲",
+        "albumId": 56,
+        "albumName": "蔚来牛人 · 席安的古典乐",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
+        "host": "NIO Radio",
+        "duration": 542000,
+        "onlineTime": 1792857600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/OPetdC9wa1jfbzng_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 307,
@@ -102,6 +122,26 @@
       "category": "business"
     },
     {
+      "id": 540,
+      "name": "百事有感觉",
+      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
+      "host": "NIO Radio",
+      "episodeCount": 350,
+      "latestEpisode": {
+        "id": 198987,
+        "title": "“上周日”如此欢乐",
+        "albumId": 540,
+        "albumName": "百事有感觉",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
+        "host": "NIO Radio",
+        "duration": 1214000,
+        "onlineTime": 1792857600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/24/0aFzPkYobyh4UltK_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 661,
       "name": "塞萌不塞车·精选",
       "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！每日更新！",
@@ -142,6 +182,26 @@
       "category": "business"
     },
     {
+      "id": 759,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+      "host": "NIO Radio",
+      "episodeCount": 75,
+      "latestEpisode": {
+        "id": 198996,
+        "title": "重走八年来时路，全程换电到新疆 Vol.4",
+        "albumId": 759,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+        "host": "NIO Radio",
+        "duration": 1040000,
+        "onlineTime": 1792857600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/S2qHGUtJ0AY4KVVX_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 763,
       "name": "劈情操",
       "description": "",
@@ -178,6 +238,46 @@
         "duration": 1538000,
         "onlineTime": 1792857600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/x28IW4rZYRyi1iKP_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 832,
+      "name": "好梗要",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/uLLmHe_CEKCuYa7rKZW6e/5svjvQttPZru-cn1jrbTh",
+      "host": "NIO Radio",
+      "episodeCount": 13,
+      "latestEpisode": {
+        "id": 198998,
+        "title": "韦一敏效应是什么梗",
+        "albumId": 832,
+        "albumName": "好梗要",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/uLLmHe_CEKCuYa7rKZW6e/5svjvQttPZru-cn1jrbTh",
+        "host": "NIO Radio",
+        "duration": 629000,
+        "onlineTime": 1792857600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/vIweQ9VEfTrPHV1r_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 835,
+      "name": "道途趣说",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
+      "host": "NIO Radio",
+      "episodeCount": 55,
+      "latestEpisode": {
+        "id": 198995,
+        "title": "美食的神奇吃法",
+        "albumId": 835,
+        "albumName": "道途趣说",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
+        "host": "NIO Radio",
+        "duration": 336000,
+        "onlineTime": 1792857600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/24/uw4N1XowTXVkSCfZ_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -1322,26 +1422,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 540,
-      "name": "百事有感觉",
-      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
-      "host": "NIO Radio",
-      "episodeCount": 349,
-      "latestEpisode": {
-        "id": 198908,
-        "title": "京津冀 欢乐Day",
-        "albumId": 540,
-        "albumName": "百事有感觉",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
-        "host": "NIO Radio",
-        "duration": 2218000,
-        "onlineTime": 1792598400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/ZyPZKWn7z9rHoVQV_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 541,
       "name": "商业就是这样",
       "description": "用简单易懂的语言解读商业现象，每周一期。",
@@ -1522,26 +1602,6 @@
       "category": "business"
     },
     {
-      "id": 759,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-      "host": "NIO Radio",
-      "episodeCount": 74,
-      "latestEpisode": {
-        "id": 198900,
-        "title": "重走八年来时路，全程换电到新疆Vol.3",
-        "albumId": 759,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-        "host": "NIO Radio",
-        "duration": 911000,
-        "onlineTime": 1792598400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/gTw0LEqgoonYJWi9_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 794,
       "name": "阿叔有嘢广",
       "description": "",
@@ -1578,26 +1638,6 @@
         "duration": 1781000,
         "onlineTime": 1792598400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/DNvErkQTCtkXILh3_AAC_192_1.m4a"
-      },
-      "category": null
-    },
-    {
-      "id": 835,
-      "name": "道途趣说",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
-      "host": "NIO Radio",
-      "episodeCount": 54,
-      "latestEpisode": {
-        "id": 198906,
-        "title": "在外打拼学会的新技能",
-        "albumId": 835,
-        "albumName": "道途趣说",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/Dr1Q1oJhmon0x4tT1tt7A/gVX2s5rQJJFidxeMaOQZR",
-        "host": "NIO Radio",
-        "duration": 383000,
-        "onlineTime": 1792598400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/21/NxrJTRl6mpznnD4I_AAC_192_1.m4a"
       },
       "category": null
     },
@@ -2482,26 +2522,6 @@
       "category": "car"
     },
     {
-      "id": 56,
-      "name": "蔚来牛人 · 席安的古典乐",
-      "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 314,
-      "latestEpisode": {
-        "id": 198788,
-        "title": "维宝浅谈",
-        "albumId": 56,
-        "albumName": "蔚来牛人 · 席安的古典乐",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
-        "host": "NIO Radio",
-        "duration": 597000,
-        "onlineTime": 1792252800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/17/TUOmkA8npwoyqrJd_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 806,
       "name": "周日映画室",
       "description": "",
@@ -2558,26 +2578,6 @@
         "duration": 5271000,
         "onlineTime": 1792166400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/4h3ZOmGzrtceET0S_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
-      "id": 832,
-      "name": "好梗要",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/uLLmHe_CEKCuYa7rKZW6e/5svjvQttPZru-cn1jrbTh",
-      "host": "NIO Radio",
-      "episodeCount": 12,
-      "latestEpisode": {
-        "id": 198775,
-        "title": "云玩家是什么梗",
-        "albumId": 832,
-        "albumName": "好梗要",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/uLLmHe_CEKCuYa7rKZW6e/5svjvQttPZru-cn1jrbTh",
-        "host": "NIO Radio",
-        "duration": 709000,
-        "onlineTime": 1792166400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/16/TRmimSD5R1oApGsV_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
