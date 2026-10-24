@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1792776723509,
+  "generatedAt": 1792847264488,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 394,
+      "latestEpisode": {
+        "id": 198980,
+        "title": "TOMORA英国电台特辑",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2780000,
+        "onlineTime": 1792832400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/23/6mrfeoNHnf1PP7Od_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -300,26 +320,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/23/qx8mFtj5mYV3RckO_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 393,
-      "latestEpisode": {
-        "id": 198979,
-        "title": "阿明和Argy的F2F现场特辑",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2867000,
-        "onlineTime": 1792746000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/23/6KdT9q3VimGNt4jA_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 618,
