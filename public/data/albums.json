@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793205024178,
+  "generatedAt": 1793209244715,
   "albums": [
     {
       "id": 5,
@@ -302,6 +302,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 559,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+      "host": "NIO Radio",
+      "episodeCount": 197,
+      "latestEpisode": {
+        "id": 199120,
+        "title": "重走八年来时路，全程换电到新疆 Vol.6",
+        "albumId": 559,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+        "host": "NIO Radio",
+        "duration": 1181000,
+        "onlineTime": 1793203200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/vtVmLWzI6EpVGaFH_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 563,
       "name": "蔚爱成长",
       "description": "在蔚来社区让我们一起成为更好的父母，拥有更温暖的家庭。",
@@ -420,26 +440,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/xpfx8b1FX581MU90_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 759,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-      "host": "NIO Radio",
-      "episodeCount": 77,
-      "latestEpisode": {
-        "id": 199120,
-        "title": "重走八年来时路，全程换电到新疆 Vol.6",
-        "albumId": 759,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-        "host": "NIO Radio",
-        "duration": 1181000,
-        "onlineTime": 1793203200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/vtVmLWzI6EpVGaFH_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 789,
@@ -920,6 +920,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/M5Zyge2Ieh3A1mD5_AAC_192_1.m4a"
       },
       "category": "lifestyle"
+    },
+    {
+      "id": 759,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+      "host": "NIO Radio",
+      "episodeCount": 77,
+      "latestEpisode": {
+        "id": 199082,
+        "title": "重走八年来时路，全程换电到新疆 Vol.5",
+        "albumId": 759,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+        "host": "NIO Radio",
+        "duration": 995000,
+        "onlineTime": 1793116800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/uwMZykgfDovxyLar_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 805,
@@ -2260,26 +2280,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/AvTvBuGXBZK90gCX_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 559,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-      "host": "NIO Radio",
-      "episodeCount": 195,
-      "latestEpisode": {
-        "id": 198940,
-        "title": "生活聊天室，说说身边事（下）",
-        "albumId": 559,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-        "host": "NIO Radio",
-        "duration": 1995000,
-        "onlineTime": 1792684800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/vKEhuHruu8n4O2WS_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 614,
