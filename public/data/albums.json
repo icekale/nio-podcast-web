@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793203818003,
+  "generatedAt": 1793205024178,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/LjLRPATiebc0kylo_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 1998,
+      "latestEpisode": {
+        "id": 199129,
+        "title": "芭乐·王菲",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 2742000,
+        "onlineTime": 1793203200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/9pjBNw5l64k7ujGT_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 18,
@@ -640,26 +660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/b3n1aXU8v26sukPV_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1997,
-      "latestEpisode": {
-        "id": 199097,
-        "title": "What’s New Vol.445",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 2358000,
-        "onlineTime": 1793116800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/ph6EYj5L0tuWn1mE_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 64,
