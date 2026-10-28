@@ -1,6 +1,66 @@
 {
-  "generatedAt": 1793154737646,
+  "generatedAt": 1793202280415,
   "albums": [
+    {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1697,
+      "latestEpisode": {
+        "id": 199107,
+        "title": "谷歌发布新一代世界模型Genie 4",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 403000,
+        "onlineTime": 1793178000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/AOhUEentQcpLtQXu_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 618,
+      "name": "晚高峰赛车",
+      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+      "host": "NIO Radio",
+      "episodeCount": 791,
+      "latestEpisode": {
+        "id": 199004,
+        "title": "机场买药，竟然能按粒卖！",
+        "albumId": 618,
+        "albumName": "晚高峰赛车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
+        "host": "NIO Radio",
+        "duration": 513000,
+        "onlineTime": 1793178000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/v1ybPLiEfTBeQN9n_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 809,
+      "name": "上海天气预报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+      "host": "NIO Radio",
+      "episodeCount": 123,
+      "latestEpisode": {
+        "id": 199102,
+        "title": "上海天气预报",
+        "albumId": 809,
+        "albumName": "上海天气预报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
+        "host": "NIO Radio",
+        "duration": 47000,
+        "onlineTime": 1793178000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/919KXjiEDS8K57YQ_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
     {
       "id": 673,
       "name": "声动早咖啡",
@@ -560,66 +620,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/bQjQ4C84MGMMQykJ_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1696,
-      "latestEpisode": {
-        "id": 199067,
-        "title": "Anthropic上半年净亏807亿美元",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 425000,
-        "onlineTime": 1793091600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/9YkgmEEuy3B2Kh3A_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 618,
-      "name": "晚高峰赛车",
-      "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-      "host": "NIO Radio",
-      "episodeCount": 790,
-      "latestEpisode": {
-        "id": 199002,
-        "title": "护士私单被叫停！",
-        "albumId": 618,
-        "albumName": "晚高峰赛车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/xkGSg71AZx4CNSKfYy7HM/lxMiP4M61p1BrWhWM8Saa",
-        "host": "NIO Radio",
-        "duration": 503000,
-        "onlineTime": 1793091600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/rxyAMVEc5ouZxAc4_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 809,
-      "name": "上海天气预报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-      "host": "NIO Radio",
-      "episodeCount": 122,
-      "latestEpisode": {
-        "id": 199072,
-        "title": "上海天气预报",
-        "albumId": 809,
-        "albumName": "上海天气预报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ybe9tkzOwgxFZNbznHVzI/wPH5r25yZBRYZ6QFi1cSY",
-        "host": "NIO Radio",
-        "duration": 37000,
-        "onlineTime": 1793091600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/CY7N4A6oBvdlwDuJ_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 63,
@@ -2350,7 +2350,7 @@
       "episodeCount": 190,
       "latestEpisode": {
         "id": 198902,
-        "title": "职场哪些，学校给不了 Vol.8：律师的角度",
+        "title": "职场哪些，学校给不了 Vol.8：律师的角度（上）",
         "albumId": 563,
         "albumName": "蔚爱成长",
         "albumPic": "https://cdn-app.nio.com/NIORadio/2023/5/8/83ed768b-3bc4-45ac-8125-5dc24529958a.png",
