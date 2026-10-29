@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793294310207,
+  "generatedAt": 1793296118911,
   "albums": [
     {
       "id": 5,
@@ -220,6 +220,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/Xa3fUAyWgB6noYJo_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 147,
+      "name": "忽左忽右",
+      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 461,
+      "latestEpisode": {
+        "id": 199168,
+        "title": "重新发现费孝通：文学视角下的三十年代江南丝业危机与北平青年思潮",
+        "albumId": 147,
+        "albumName": "忽左忽右",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
+        "host": "NIO Radio",
+        "duration": 7092000,
+        "onlineTime": 1793289600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/qWctNK1L83XcblaF_AAC_192_1.m4a"
+      },
+      "category": "culture"
     },
     {
       "id": 148,
@@ -582,6 +602,26 @@
       "category": "audio"
     },
     {
+      "id": 696,
+      "name": "自然选择NaturalSelection",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DwXd_UJytbFr1dtZokXPR/q8wzGZds_lPBnZsDJFPBw",
+      "host": "NIO Radio",
+      "episodeCount": 28,
+      "latestEpisode": {
+        "id": 199171,
+        "title": "去过几十趟南北极，牛津生态学博士的极地冒险与反打卡旅行",
+        "albumId": 696,
+        "albumName": "自然选择NaturalSelection",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DwXd_UJytbFr1dtZokXPR/q8wzGZds_lPBnZsDJFPBw",
+        "host": "NIO Radio",
+        "duration": 4335000,
+        "onlineTime": 1793289600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/qnRYnYy3AveMrSx2_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 713,
       "name": "厦门城市资讯",
       "description": "网罗城市热点，享愉悦生活。这里是厦门城市资讯！",
@@ -640,6 +680,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/mgNhN213uPSDxRjy_AAC_192_1.m4a"
       },
       "category": "kids"
+    },
+    {
+      "id": 770,
+      "name": "机核游戏频道",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+      "host": "NIO Radio",
+      "episodeCount": 71,
+      "latestEpisode": {
+        "id": 199169,
+        "title": "辣手摧花，核周报",
+        "albumId": 770,
+        "albumName": "机核游戏频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
+        "host": "NIO Radio",
+        "duration": 6103000,
+        "onlineTime": 1793289600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/HGLstbqgHPN74mDh_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 788,
@@ -1160,26 +1220,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/R2Lcxl7ga7PWSkhW_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 147,
-      "name": "忽左忽右",
-      "description": "苹果2019最佳播客，内容丰富的文化沙龙，左还是右？",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 460,
-      "latestEpisode": {
-        "id": 199051,
-        "title": "泰国侨批沉浮录：下南洋浪潮中的跨国华人经济网络",
-        "albumId": 147,
-        "albumName": "忽左忽右",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/bc3b741c-f4b5-4e52-87e1-1c3c161f5d7e.jpg",
-        "host": "NIO Radio",
-        "duration": 5151000,
-        "onlineTime": 1793116800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/fxmymOaDql55dF0S_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 334,
@@ -2542,26 +2582,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 770,
-      "name": "机核游戏频道",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-      "host": "NIO Radio",
-      "episodeCount": 70,
-      "latestEpisode": {
-        "id": 198953,
-        "title": "战争的机器与希弗的翅膀，都棒棒｜《安利之王》",
-        "albumId": 770,
-        "albumName": "机核游戏频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/XmOtH92z6qW7onZGzMJI-/wxEBDwN558yH6PvIkCfTH",
-        "host": "NIO Radio",
-        "duration": 5651000,
-        "onlineTime": 1792684800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/P5DCO2zbmFqFJL4X_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 680,
       "name": "津津有味",
       "description": "听几位吃货主播们每期给你一记“纳尼？居然是这样！”的暴击！",
@@ -3200,26 +3220,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/08/1NMExgh1SIMzNsCy_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 696,
-      "name": "自然选择NaturalSelection",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DwXd_UJytbFr1dtZokXPR/q8wzGZds_lPBnZsDJFPBw",
-      "host": "NIO Radio",
-      "episodeCount": 27,
-      "latestEpisode": {
-        "id": 197657,
-        "title": "以为AI判案还是科幻片？深圳法院已经用2年了",
-        "albumId": 696,
-        "albumName": "自然选择NaturalSelection",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DwXd_UJytbFr1dtZokXPR/q8wzGZds_lPBnZsDJFPBw",
-        "host": "NIO Radio",
-        "duration": 4503000,
-        "onlineTime": 1788624000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/04/dAzWh9qtAcnzV3H4_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 358,
