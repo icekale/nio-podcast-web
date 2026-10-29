@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793290611530,
+  "generatedAt": 1793294310207,
   "albums": [
     {
       "id": 5,
@@ -462,6 +462,26 @@
       "category": "car"
     },
     {
+      "id": 541,
+      "name": "商业就是这样",
+      "description": "用简单易懂的语言解读商业现象，每周一期。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+      "host": "NIO Radio",
+      "episodeCount": 236,
+      "latestEpisode": {
+        "id": 199170,
+        "title": "商业小样｜什么，瑞银要把总部搬离瑞士？",
+        "albumId": 541,
+        "albumName": "商业就是这样",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
+        "host": "NIO Radio",
+        "duration": 804000,
+        "onlineTime": 1793289600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/UM9T2NQvVbrAXPxt_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 544,
       "name": "金华城市资讯",
       "description": "本地新闻，牛屋活动，这里是金华城市资讯！",
@@ -678,6 +698,26 @@
         "duration": 234000,
         "onlineTime": 1793289600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/PLkZaVEW3d5wIIaM_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 97,
+      "latestEpisode": {
+        "id": 199167,
+        "title": "国内最长地铁环线开通/红果成为国内第四大App/84岁英国教授被中国年轻人追着提问",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 585000,
+        "onlineTime": 1793289600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/hJqM3wskCik55VJe_AAC_192_1.m4a"
       },
       "category": "news"
     },
@@ -1060,26 +1100,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/5cpJBjWz32yfpx3L_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 96,
-      "latestEpisode": {
-        "id": 199125,
-        "title": "一条鲟鱼养20年堪比法拉利/李宁销售也下滑了/杭州坐燃油出租车要多付2元",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1099000,
-        "onlineTime": 1793203200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/ERUfOWuqagushwOE_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 823,
@@ -1880,26 +1900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/4oyzr2i6eMXiRSp0_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 541,
-      "name": "商业就是这样",
-      "description": "用简单易懂的语言解读商业现象，每周一期。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-      "host": "NIO Radio",
-      "episodeCount": 235,
-      "latestEpisode": {
-        "id": 198992,
-        "title": "为什么银行门口会有石狮子？",
-        "albumId": 541,
-        "albumName": "商业就是这样",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aM_uR67je99OBU07_gWtf/QLBM_hUpo0juRQkEUHbds",
-        "host": "NIO Radio",
-        "duration": 2852000,
-        "onlineTime": 1792944000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/24/ELQn2mnjr0nXlFen_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 635,
