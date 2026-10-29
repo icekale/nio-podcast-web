@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1793209244715,
+  "generatedAt": 1793241800921,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 554,
+      "latestEpisode": {
+        "id": 199128,
+        "title": "苹果新系统可禁止「摇一摇」广告，张一鸣再登胡润百富榜首",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 569000,
+        "onlineTime": 1793228400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/zCdr7af6UhiOazGt_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -300,26 +320,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/DGlRDv3YM6KQFPQn_AAC_192_1.m4a"
       },
       "category": "lifestyle"
-    },
-    {
-      "id": 559,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-      "host": "NIO Radio",
-      "episodeCount": 197,
-      "latestEpisode": {
-        "id": 199120,
-        "title": "重走八年来时路，全程换电到新疆 Vol.6",
-        "albumId": 559,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
-        "host": "NIO Radio",
-        "duration": 1181000,
-        "onlineTime": 1793203200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/vtVmLWzI6EpVGaFH_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 563,
@@ -640,26 +640,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/919KXjiEDS8K57YQ_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 553,
-      "latestEpisode": {
-        "id": 199090,
-        "title": "抛弃合作近 40 年的百事，美国肯德基在折腾什么？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 900000,
-        "onlineTime": 1793142000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/b3n1aXU8v26sukPV_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
@@ -2280,6 +2260,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/AvTvBuGXBZK90gCX_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 559,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！\n",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+      "host": "NIO Radio",
+      "episodeCount": 195,
+      "latestEpisode": {
+        "id": 198940,
+        "title": "生活聊天室，说说身边事（下）",
+        "albumId": 559,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/g-wcJov0lXGnd7vbwq-ao/jQwkt3yYzhupr_QP0cL8b",
+        "host": "NIO Radio",
+        "duration": 1995000,
+        "onlineTime": 1792684800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/22/vKEhuHruu8n4O2WS_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 614,
