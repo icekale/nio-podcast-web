@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793381377188,
+  "generatedAt": 1793392491503,
   "albums": [
     {
       "id": 5,
@@ -42,6 +42,46 @@
       "category": "car"
     },
     {
+      "id": 41,
+      "name": "乐行记·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 525,
+      "latestEpisode": {
+        "id": 164130,
+        "title": "In Harmonica口琴",
+        "albumId": 41,
+        "albumName": "乐行记·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
+        "host": "NIO Radio",
+        "duration": 1876000,
+        "onlineTime": 1793376000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/01/07/w9nLmlvnYoqQJr2R_AAC_192.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 307,
+      "name": "华语乐动听·精选",
+      "description": "",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 380,
+      "latestEpisode": {
+        "id": 163062,
+        "title": "滚石唱片——江湖往事回忆录",
+        "albumId": 307,
+        "albumName": "华语乐动听·精选",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
+        "host": "NIO Radio",
+        "duration": 1867000,
+        "onlineTime": 1793376000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2023/12/11/46EXRui7KMkGuhPt_AAC_192.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 539,
       "name": "知行小酒馆",
       "description": "我们关注投资理财，更关注怎样更好地生活。",
@@ -60,6 +100,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/EgS0f4nwYcsQvNYx_AAC_192_1.m4a"
       },
       "category": "business"
+    },
+    {
+      "id": 661,
+      "name": "塞萌不塞车·精选",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！每日更新！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
+      "host": "NIO Radio",
+      "episodeCount": 233,
+      "latestEpisode": {
+        "id": 176183,
+        "title": "摇滚名人堂遗珠 Vol.2",
+        "albumId": 661,
+        "albumName": "塞萌不塞车·精选",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
+        "host": "NIO Radio",
+        "duration": 1112000,
+        "onlineTime": 1793376000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/10/31/VmDPeB87r0ohEBl1_AAC_192.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 728,
@@ -2302,26 +2362,6 @@
       "category": "kids"
     },
     {
-      "id": 41,
-      "name": "乐行记·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 526,
-      "latestEpisode": {
-        "id": 176307,
-        "title": "Jacob Collier｜Djesse Vol.4",
-        "albumId": 41,
-        "albumName": "乐行记·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/21df3f29-247c-4260-b66b-0fa43ac2b889.jpg",
-        "host": "NIO Radio",
-        "duration": 1872000,
-        "onlineTime": 1792857600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2024/11/05/nAzRkTdWelXF3fTc_AAC_192.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 56,
       "name": "蔚来牛人 · 席安的古典乐",
       "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
@@ -2340,46 +2380,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/OPetdC9wa1jfbzng_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 307,
-      "name": "华语乐动听·精选",
-      "description": "",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 381,
-      "latestEpisode": {
-        "id": 188344,
-        "title": "晚秋之歌",
-        "albumId": 307,
-        "albumName": "华语乐动听·精选",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/18/8528e2f2-36bb-431c-bc32-8af10407a4ca.jpg",
-        "host": "NIO Radio",
-        "duration": 1914000,
-        "onlineTime": 1792857600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/10/20/p56aWOw3UT27bRMO_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
-      "id": 661,
-      "name": "塞萌不塞车·精选",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！每日更新！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
-      "host": "NIO Radio",
-      "episodeCount": 234,
-      "latestEpisode": {
-        "id": 140523,
-        "title": "华语经典｜年代经典1998",
-        "albumId": 661,
-        "albumName": "塞萌不塞车·精选",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/bMGHa8RRbtqGGqfo8tmOn/5wm5HPc5scQ3dyGzkXiRu",
-        "host": "NIO Radio",
-        "duration": 1523000,
-        "onlineTime": 1792857600000,
-        "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/12/4/28b98273-053b-417b-8788-fccf08b9cc00_AAC_192.aac"
-      },
-      "category": "audio"
     },
     {
       "id": 753,
