@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1793296118911,
+  "generatedAt": 1793328606664,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 555,
+      "latestEpisode": {
+        "id": 199164,
+        "title": "咖啡豆｜好莱坞迎来恐怖片大年，为什么这类电影越来越多？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 971000,
+        "onlineTime": 1793314800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/OxV5ozLYH6WksGul_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -860,26 +880,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/1l8UoZuxlxNpM6mK_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 554,
-      "latestEpisode": {
-        "id": 199128,
-        "title": "苹果新系统可禁止「摇一摇」广告，张一鸣再登胡润百富榜首",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 569000,
-        "onlineTime": 1793228400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/28/zCdr7af6UhiOazGt_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 328,
