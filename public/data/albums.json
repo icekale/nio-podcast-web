@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793552396880,
+  "generatedAt": 1793556581515,
   "albums": [
     {
       "id": 5,
@@ -138,6 +138,26 @@
         "duration": 304000,
         "onlineTime": 1793548800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/el1ovHOPF9xWwSaI_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 93,
+      "name": "东莞城市资讯",
+      "description": "本地新闻，牛屋活动，这里是东莞的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
+      "host": "NIO Radio",
+      "episodeCount": 976,
+      "latestEpisode": {
+        "id": 199227,
+        "title": "天鹅湖周末登陆松山湖",
+        "albumId": 93,
+        "albumName": "东莞城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
+        "host": "NIO Radio",
+        "duration": 263000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/1RuwtCThiBFQfCzg_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -398,6 +418,26 @@
         "duration": 3736000,
         "onlineTime": 1793548800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/yZomXmY521ffTuYh_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
+      "id": 703,
+      "name": "果壳时间",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+      "host": "NIO Radio",
+      "episodeCount": 83,
+      "latestEpisode": {
+        "id": 199214,
+        "title": "三小时，我们来彻底聊聊人口问题",
+        "albumId": 703,
+        "albumName": "果壳时间",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
+        "host": "NIO Radio",
+        "duration": 13737000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/A2exa9z8apOoQzVX_AAC_192_1.m4a"
       },
       "category": "business"
     },
@@ -2362,26 +2402,6 @@
       "category": "car"
     },
     {
-      "id": 93,
-      "name": "东莞城市资讯",
-      "description": "本地新闻，牛屋活动，这里是东莞的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
-      "host": "NIO Radio",
-      "episodeCount": 975,
-      "latestEpisode": {
-        "id": 198984,
-        "title": "人才大会松山湖开幕",
-        "albumId": 93,
-        "albumName": "东莞城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/4/11/06d7a173-09da-4d44-b481-086c13672449.png",
-        "host": "NIO Radio",
-        "duration": 217000,
-        "onlineTime": 1792944000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/24/7hNDixbQcjTs8Owp_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 485,
       "name": "星空点歌台",
       "description": "用音乐与你相逢在每一个清晨的出发和深夜的到达，这里是《星空点歌台》。",
@@ -2798,26 +2818,6 @@
         "duration": 2392000,
         "onlineTime": 1792425600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/19/eeRnixJQ7bEM81Zk_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 703,
-      "name": "果壳时间",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-      "host": "NIO Radio",
-      "episodeCount": 82,
-      "latestEpisode": {
-        "id": 198784,
-        "title": "人类连题目都没读完，AI已经交卷了。这比赛有意义么？",
-        "albumId": 703,
-        "albumName": "果壳时间",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JLY8QVQA36vJWDY13rtKH/uW6a0mneyhggbFeJC2ZHO",
-        "host": "NIO Radio",
-        "duration": 3725000,
-        "onlineTime": 1792339200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/16/AJ7sxy7RAOTPNgdO_AAC_192_1.m4a"
       },
       "category": "business"
     },
