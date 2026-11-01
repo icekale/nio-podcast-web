@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793551237771,
+  "generatedAt": 1793552396880,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/Nr1qKCGeDRn4A5C4_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 2000,
+      "latestEpisode": {
+        "id": 199226,
+        "title": "一首歌一座城",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 2116000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/uvFzQfTFrBCl0DzC_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 18,
@@ -960,26 +980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/OxV5ozLYH6WksGul_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 1999,
-      "latestEpisode": {
-        "id": 199161,
-        "title": "后摇，你的心里有一块不想被打扰的土地 Vol.3",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 2333000,
-        "onlineTime": 1793289600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/BkTzqElEHbnmcgqI_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 68,
