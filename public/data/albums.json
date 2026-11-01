@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793549388530,
+  "generatedAt": 1793551237771,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/Nr1qKCGeDRn4A5C4_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2370,
+      "latestEpisode": {
+        "id": 199224,
+        "title": "苹果怎么了？",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 998000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/dAvCXCwOgfe9WAmy_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 30,
@@ -160,6 +180,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/SJjnfi3dWHdAewWS_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1440,
+      "latestEpisode": {
+        "id": 199225,
+        "title": "前奏响起的青春 Vol.2",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1891000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/3H5sgINKIL1yI85H_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 345,
@@ -322,6 +362,26 @@
       "category": "car"
     },
     {
+      "id": 675,
+      "name": "What's Next｜科技早知道",
+      "description": "原「硅谷早知道」，全新改版的「What's Next｜科技早知道」我们会继续放眼全球，不仅聚焦纯科技的话题，也会关注科技引领世界以及商业格局变化等新话题。\n新一季节目会由多个模块共同组成，除了延续我们以往不同科技领域新技术新动向的话题，我们也会加入出海、多视角解读科技行业大事件。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/QxRkZI9usOpiw0W3mXHV_/tWpe0GKwDwYzloJyolRAa",
+      "host": "NIO Radio",
+      "episodeCount": 104,
+      "latestEpisode": {
+        "id": 199215,
+        "title": "Anthropic冲刺IPO：2万亿美元估值贵不贵？拆解Claude的增长、成本与竞争",
+        "albumId": 675,
+        "albumName": "What's Next｜科技早知道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/QxRkZI9usOpiw0W3mXHV_/tWpe0GKwDwYzloJyolRAa",
+        "host": "NIO Radio",
+        "duration": 3736000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/yZomXmY521ffTuYh_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 726,
       "name": "玩嘢联盟",
       "description": "《玩嘢联盟》每期深挖一家欢趣店铺，畅聊粤语文化，力推福利优惠，带您尽享羊城吃喝玩乐新风尚",
@@ -380,6 +440,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/QWS59RweUi1A3g2U_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 804,
+      "name": "嘎嘎杂货铺",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
+      "host": "NIO Radio",
+      "episodeCount": 63,
+      "latestEpisode": {
+        "id": 199218,
+        "title": "人生大事要谨慎，千万别把日子混！聊聊：婚姻观",
+        "albumId": 804,
+        "albumName": "嘎嘎杂货铺",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
+        "host": "NIO Radio",
+        "duration": 3030000,
+        "onlineTime": 1793548800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/aruwUYY395Zw1sla_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 820,
@@ -560,26 +640,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/reCM4llmAVc8CXt0_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 804,
-      "name": "嘎嘎杂货铺",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
-      "host": "NIO Radio",
-      "episodeCount": 62,
-      "latestEpisode": {
-        "id": 199174,
-        "title": "恐怖鬼屋吓软脚，胆子大还是胆子小！",
-        "albumId": 804,
-        "albumName": "嘎嘎杂货铺",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/7FKc7WR9ut_3Q44zxQmZv/tT4XXybvcBNZo9wssCCPT",
-        "host": "NIO Radio",
-        "duration": 4173000,
-        "onlineTime": 1793462400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/SYuIQoDHZQN4glfv_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 806,
@@ -922,26 +982,6 @@
       "category": "audio"
     },
     {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2369,
-      "latestEpisode": {
-        "id": 199163,
-        "title": "FALL HARVEST Vol.2",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1413000,
-        "onlineTime": 1793289600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/ogI2YttSPfOafw1r_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1080,26 +1120,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/ojU8ycxJJ1cAY5dM_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1439,
-      "latestEpisode": {
-        "id": 199162,
-        "title": "风靡校园的时代金曲 Vol.8",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1932000,
-        "onlineTime": 1793289600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/2mnwXrTufJ54IEAc_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 311,
@@ -2380,26 +2400,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/4oyzr2i6eMXiRSp0_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 675,
-      "name": "What's Next｜科技早知道",
-      "description": "原「硅谷早知道」，全新改版的「What's Next｜科技早知道」我们会继续放眼全球，不仅聚焦纯科技的话题，也会关注科技引领世界以及商业格局变化等新话题。\n新一季节目会由多个模块共同组成，除了延续我们以往不同科技领域新技术新动向的话题，我们也会加入出海、多视角解读科技行业大事件。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/QxRkZI9usOpiw0W3mXHV_/tWpe0GKwDwYzloJyolRAa",
-      "host": "NIO Radio",
-      "episodeCount": 103,
-      "latestEpisode": {
-        "id": 199020,
-        "title": "从免费披萨到订错机票：硅谷创业者正在解决 Agent 的哪些麻烦？ | 硅谷线下活动 ",
-        "albumId": 675,
-        "albumName": "What's Next｜科技早知道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/QxRkZI9usOpiw0W3mXHV_/tWpe0GKwDwYzloJyolRAa",
-        "host": "NIO Radio",
-        "duration": 2124000,
-        "onlineTime": 1792944000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/gqPcHgD742njPuuq_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 679,
