@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1793556581515,
+  "generatedAt": 1793587335192,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 556,
+      "latestEpisode": {
+        "id": 199212,
+        "title": "7-11 败走印度市场，为何牵手本土巨头仍难站稳脚跟？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 953000,
+        "onlineTime": 1793574000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/xjZC5i3WvuiTUHWp_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -1000,26 +1020,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/TyKjJowltmTEghCp_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 555,
-      "latestEpisode": {
-        "id": 199164,
-        "title": "咖啡豆｜好莱坞迎来恐怖片大年，为什么这类电影越来越多？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 971000,
-        "onlineTime": 1793314800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/29/OxV5ozLYH6WksGul_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 68,
@@ -2282,26 +2282,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 803,
-      "name": "福利情报局",
-      "description": "不只是创业，更是人生选择！NIO Radio与福利合伙人联袂呈现栏目",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
-      "host": "NIO Radio",
-      "episodeCount": 17,
-      "latestEpisode": {
-        "id": 199061,
-        "title": "海鲜餐饮如何打造质价比|连鹭海鲜的破局心法",
-        "albumId": 803,
-        "albumName": "福利情报局",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
-        "host": "NIO Radio",
-        "duration": 1928000,
-        "onlineTime": 1793030400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/f9T60IUuxLkV3YiR_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 812,
       "name": "不开玩笑",
       "description": "",
@@ -2960,6 +2940,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/wkaOlPXisrvqk8Pi_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 803,
+      "name": "福利情报局",
+      "description": "不只是创业，更是人生选择！NIO Radio与福利合伙人联袂呈现栏目",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
+      "host": "NIO Radio",
+      "episodeCount": 16,
+      "latestEpisode": {
+        "id": 198646,
+        "title": "千山继泸沽湖创业录（下）：服务才是民宿真正的护城河",
+        "albumId": 803,
+        "albumName": "福利情报局",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZkoYdbmka7NmFGt-dLJn1/misJLFwS-rAuwScsvdAV_",
+        "host": "NIO Radio",
+        "duration": 1906000,
+        "onlineTime": 1791820800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/12/x2DTqw1f0ogbPfmN_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 121,
