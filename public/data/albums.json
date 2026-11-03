@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793661705213,
+  "generatedAt": 1793678400793,
   "albums": [
     {
       "id": 673,
@@ -180,6 +180,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/t077oTVD8uchNqzR_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 121,
+      "name": "英伦音乐前沿",
+      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1118,
+      "latestEpisode": {
+        "id": 199259,
+        "title": "UK Music 26年11月第1周 Vol.1",
+        "albumId": 121,
+        "albumName": "英伦音乐前沿",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
+        "host": "NIO Radio",
+        "duration": 1501000,
+        "onlineTime": 1793635200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/03/m8gmNKdroVDW8a6I_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 129,
@@ -442,6 +462,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 714,
+      "name": "厦门城市频道",
+      "description": "好吃好喝好玩好看好听，为厦漳泉龙岩的朋友带来轻松和乐趣！这里是厦门城市频道。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
+      "host": "NIO Radio",
+      "episodeCount": 113,
+      "latestEpisode": {
+        "id": 199258,
+        "title": "一周活动斗阵行丨漳州五代站即将上线",
+        "albumId": 714,
+        "albumName": "厦门城市频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
+        "host": "NIO Radio",
+        "duration": 231000,
+        "onlineTime": 1793635200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/03/oW45EzY5SWafCvnl_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
       "id": 761,
       "name": "电波未来",
       "description": "",
@@ -580,6 +620,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/Shfu5EpOoHETtZkG_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 827,
+      "name": "她言有物",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MHKA8nIolEi3JtS3TwsDC/F2TUkfBzlBw-CbxfXeUUH",
+      "host": "NIO Radio",
+      "episodeCount": 29,
+      "latestEpisode": {
+        "id": 199243,
+        "title": "离婚预测准确率90%，打败感情的从来不是争吵",
+        "albumId": 827,
+        "albumName": "她言有物",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MHKA8nIolEi3JtS3TwsDC/F2TUkfBzlBw-CbxfXeUUH",
+        "host": "NIO Radio",
+        "duration": 2693000,
+        "onlineTime": 1793635200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/02/cocdPOUviYebuY3i_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 834,
@@ -2442,26 +2502,6 @@
       "category": "culture"
     },
     {
-      "id": 714,
-      "name": "厦门城市频道",
-      "description": "好吃好喝好玩好看好听，为厦漳泉龙岩的朋友带来轻松和乐趣！这里是厦门城市频道。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
-      "host": "NIO Radio",
-      "episodeCount": 112,
-      "latestEpisode": {
-        "id": 199045,
-        "title": "一周活动斗阵行丨福利领取即将截止",
-        "albumId": 714,
-        "albumName": "厦门城市频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/DN7qJ7hmHi4hegp8cETzH/Z9nC0pJN8KKw7AOATbeBp",
-        "host": "NIO Radio",
-        "duration": 290000,
-        "onlineTime": 1793030400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/rD1tYsGKREmCIeTg_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
       "id": 802,
       "name": "机智的律师生活",
       "description": "",
@@ -2478,26 +2518,6 @@
         "duration": 2471000,
         "onlineTime": 1793030400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/OqTzqXQ6QZ97xK0w_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
-      "id": 827,
-      "name": "她言有物",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/MHKA8nIolEi3JtS3TwsDC/F2TUkfBzlBw-CbxfXeUUH",
-      "host": "NIO Radio",
-      "episodeCount": 28,
-      "latestEpisode": {
-        "id": 199036,
-        "title": "生活发来一张好人卡",
-        "albumId": 827,
-        "albumName": "她言有物",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/MHKA8nIolEi3JtS3TwsDC/F2TUkfBzlBw-CbxfXeUUH",
-        "host": "NIO Radio",
-        "duration": 2336000,
-        "onlineTime": 1793030400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/QnvniE3qGtBtwKJ1_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -2960,26 +2980,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/13/wkaOlPXisrvqk8Pi_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 121,
-      "name": "英伦音乐前沿",
-      "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1117,
-      "latestEpisode": {
-        "id": 198486,
-        "title": "UK Music 26年10月第1周 Vol.4",
-        "albumId": 121,
-        "albumName": "英伦音乐前沿",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/7/29/8137621d-d995-4cdb-ad95-e2152d7eac2d.jpg",
-        "host": "NIO Radio",
-        "duration": 1501000,
-        "onlineTime": 1791475200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/05/gNwOFCPFLLp3rwnD_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 694,
