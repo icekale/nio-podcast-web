@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1793898397862,
+  "generatedAt": 1793936148465,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 560,
+      "latestEpisode": {
+        "id": 199375,
+        "title": "咖啡豆｜喜茶、瑞幸摆上商超货架，现制饮品起家的品牌们为什么都在发力瓶装饮料？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 953000,
+        "onlineTime": 1793919600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/ZizSAP65sFLtkyK2_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -22,22 +42,42 @@
       "category": "news"
     },
     {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 2004,
+      "latestEpisode": {
+        "id": 199361,
+        "title": "或是史诗 Vol.9",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 1968000,
+        "onlineTime": 1793894400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/OpdocZtNiTVc8sXY_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 18,
       "name": "塞萌不塞车",
       "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
       "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
       "host": "NIO Radio",
-      "episodeCount": 2375,
+      "episodeCount": 2374,
       "latestEpisode": {
-        "id": 199361,
-        "title": "或是史诗 Vol.9",
+        "id": 199378,
+        "title": "尘埃落定市场预测",
         "albumId": 18,
         "albumName": "塞萌不塞车",
         "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
         "host": "NIO Radio",
-        "duration": 1968000,
+        "duration": 1128000,
         "onlineTime": 1793894400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/OpdocZtNiTVc8sXY_AAC_192_1.m4a"
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/06/IQzjdkdRHTVCnbJp_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -880,46 +920,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/dVsaAFFV119sXvim_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 559,
-      "latestEpisode": {
-        "id": 199324,
-        "title": "京沪高铁前三季度净赚百亿，瑞幸成新加坡第二大咖啡品牌",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 606000,
-        "onlineTime": 1793833200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/04/CYwOZjdXaZMunHWi_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 2003,
-      "latestEpisode": {
-        "id": 199335,
-        "title": "时光机 Vol.3",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 1995000,
-        "onlineTime": 1793808000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/mO9W7CPARsaWe5t6_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 328,
