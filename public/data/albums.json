@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793982997669,
+  "generatedAt": 1793983862839,
   "albums": [
     {
       "id": 5,
@@ -200,6 +200,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/27/GgvfOh7QVaAjxQbA_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 820,
+      "name": "摸鱼早报",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+      "host": "NIO Radio",
+      "episodeCount": 104,
+      "latestEpisode": {
+        "id": 199397,
+        "title": "TVB联手腾讯视频布局横屏短剧/重庆再登顶全国消费第一城",
+        "albumId": 820,
+        "albumName": "摸鱼早报",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
+        "host": "NIO Radio",
+        "duration": 1417000,
+        "onlineTime": 1793980800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/agixOzK3X8SBVvTf_AAC_192_1.m4a"
+      },
+      "category": "news"
     },
     {
       "id": 832,
@@ -1118,26 +1138,6 @@
         "duration": 284000,
         "onlineTime": 1793894400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/q0WwgpO4zEZIa2Gq_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 820,
-      "name": "摸鱼早报",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-      "host": "NIO Radio",
-      "episodeCount": 103,
-      "latestEpisode": {
-        "id": 199376,
-        "title": "“双十一”猫粮越买越贵吗/金饰卖不动但金条受追捧/OpenAI 自曝其旗舰模型会摸鱼",
-        "albumId": 820,
-        "albumName": "摸鱼早报",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0wCP1nbdicmvbMOTSKK7r/HntvyTSqOtIm-WpWeMXrA",
-        "host": "NIO Radio",
-        "duration": 1084000,
-        "onlineTime": 1793894400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/ghNrevCyBUUnfLPr_AAC_192_1.m4a"
       },
       "category": "news"
     },
