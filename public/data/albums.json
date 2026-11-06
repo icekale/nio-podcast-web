@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1793985375949,
+  "generatedAt": 1793987314155,
   "albums": [
     {
       "id": 5,
@@ -180,6 +180,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/25/Ouzj6W31ot04SrS7_AAC_192_1.m4a"
       },
       "category": "kids"
+    },
+    {
+      "id": 769,
+      "name": "机核生活频道",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/VpsBhQKlP4PHlMqFSf1F0/-fQhe02La1cMdgntIK3Iy",
+      "host": "NIO Radio",
+      "episodeCount": 65,
+      "latestEpisode": {
+        "id": 199399,
+        "title": "怀念刘欢｜和重轻重温那些熟悉的旋律，也聊聊音乐背后的那个人",
+        "albumId": 769,
+        "albumName": "机核生活频道",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/VpsBhQKlP4PHlMqFSf1F0/-fQhe02La1cMdgntIK3Iy",
+        "host": "NIO Radio",
+        "duration": 5083000,
+        "onlineTime": 1793980800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/Dc2y5KaT1toZzilE_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 773,
+      "name": "三五环",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/nygzdw3woeYFNkljCoNTb/6Pxp1rmdwoatZYllVVLbG",
+      "host": "NIO Radio",
+      "episodeCount": 39,
+      "latestEpisode": {
+        "id": 199398,
+        "title": "捷克游记：属于城堡、银矿与酒馆的波西米亚地图",
+        "albumId": 773,
+        "albumName": "三五环",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/nygzdw3woeYFNkljCoNTb/6Pxp1rmdwoatZYllVVLbG",
+        "host": "NIO Radio",
+        "duration": 7742000,
+        "onlineTime": 1793980800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/ET0ZM8Ai7Bt4jFVn_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 789,
@@ -3002,26 +3042,6 @@
       "category": "lifestyle"
     },
     {
-      "id": 769,
-      "name": "机核生活频道",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/VpsBhQKlP4PHlMqFSf1F0/-fQhe02La1cMdgntIK3Iy",
-      "host": "NIO Radio",
-      "episodeCount": 64,
-      "latestEpisode": {
-        "id": 198713,
-        "title": "最尴尬的事儿 核聚变篇第二辑【赛博告解室】",
-        "albumId": 769,
-        "albumName": "机核生活频道",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/VpsBhQKlP4PHlMqFSf1F0/-fQhe02La1cMdgntIK3Iy",
-        "host": "NIO Radio",
-        "duration": 5271000,
-        "onlineTime": 1792166400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/14/4h3ZOmGzrtceET0S_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 798,
       "name": "生命周刊",
       "description": "",
@@ -3200,26 +3220,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/17/b5HjBDIsBEcDJQ7m_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 773,
-      "name": "三五环",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/nygzdw3woeYFNkljCoNTb/6Pxp1rmdwoatZYllVVLbG",
-      "host": "NIO Radio",
-      "episodeCount": 38,
-      "latestEpisode": {
-        "id": 197856,
-        "title": "单口｜手机为什么要折叠？Apple 为什么要「跟风」？",
-        "albumId": 773,
-        "albumName": "三五环",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/nygzdw3woeYFNkljCoNTb/6Pxp1rmdwoatZYllVVLbG",
-        "host": "NIO Radio",
-        "duration": 4651000,
-        "onlineTime": 1789228800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/09/12/jrpPazcToE5qXFuK_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 339,
