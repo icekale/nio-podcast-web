@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1794067919451,
+  "generatedAt": 1794081609153,
   "albums": [
     {
       "id": 35,
@@ -40,6 +40,26 @@
         "audioUrl": "https://cdn-app.nio.com/NIORadio/2022/4/10/e68d645b-8fba-4823-ab3e-af188fdae5b2_AAC_192.aac"
       },
       "category": "audio"
+    },
+    {
+      "id": 56,
+      "name": "蔚来牛人 · 席安的古典乐",
+      "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 317,
+      "latestEpisode": {
+        "id": 199411,
+        "title": "肖邦钢协第二乐章",
+        "albumId": 56,
+        "albumName": "蔚来牛人 · 席安的古典乐",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
+        "host": "NIO Radio",
+        "duration": 483000,
+        "onlineTime": 1794067200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/8HciM1XnciHvYyro_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 124,
@@ -98,6 +118,26 @@
         "duration": 3528000,
         "onlineTime": 1794067200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/2iLjduPet9e8hWcg_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 540,
+      "name": "百事有感觉",
+      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
+      "host": "NIO Radio",
+      "episodeCount": 354,
+      "latestEpisode": {
+        "id": 199409,
+        "title": "驭鳞而生 逐光而行",
+        "albumId": 540,
+        "albumName": "百事有感觉",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
+        "host": "NIO Radio",
+        "duration": 1060000,
+        "onlineTime": 1794067200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/jYy7lRfHVgkc1lAx_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
@@ -180,6 +220,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/BptBtxHHyyPTGlGq_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 806,
+      "name": "周日映画室",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
+      "host": "NIO Radio",
+      "episodeCount": 27,
+      "latestEpisode": {
+        "id": 199410,
+        "title": "《心迷宫之三重罪》：毫无必要的劣质重制版",
+        "albumId": 806,
+        "albumName": "周日映画室",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
+        "host": "NIO Radio",
+        "duration": 3326000,
+        "onlineTime": 1794067200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/bkO9iYXn19Lva00c_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 823,
@@ -1442,26 +1502,6 @@
       "category": null
     },
     {
-      "id": 540,
-      "name": "百事有感觉",
-      "description": "百无聊赖，但有我们在。栏目主播@派哥泡百事 @晴朗的桃子 @勇敢的悦悦 @懒人不得闲  N个欢乐的灵魂，百种有趣的灵感，侃侃而谈后的情绪价值拉满。",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
-      "host": "NIO Radio",
-      "episodeCount": 353,
-      "latestEpisode": {
-        "id": 199275,
-        "title": "友情若只如初见",
-        "albumId": 540,
-        "albumName": "百事有感觉",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/1/7f3b9722-f01a-40cc-adc9-71f99ef58df2.jpeg",
-        "host": "NIO Radio",
-        "duration": 1845000,
-        "onlineTime": 1793808000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/03/RO71rQ8HvXHWoz6R_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 548,
       "name": "苏州杂谈",
       "description": "苏州杂谈，听有趣的苏州！",
@@ -2640,46 +2680,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/30/k6QrUwo7qQLulFLV_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 56,
-      "name": "蔚来牛人 · 席安的古典乐",
-      "description": "跟随国家大剧院演奏家、北京车主@席安，一起领略古典乐的魅力",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 316,
-      "latestEpisode": {
-        "id": 199198,
-        "title": "布鲁赫浪漫曲",
-        "albumId": 56,
-        "albumName": "蔚来牛人 · 席安的古典乐",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/8/20/d6cbc76e-e067-4d81-ac13-0149a2d3dd0a.jpg",
-        "host": "NIO Radio",
-        "duration": 699000,
-        "onlineTime": 1793462400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/mSwFJ4NjuVCLbS2z_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 806,
-      "name": "周日映画室",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
-      "host": "NIO Radio",
-      "episodeCount": 26,
-      "latestEpisode": {
-        "id": 199197,
-        "title": " 当你觉得压力的时候，不妨想想最近的电影市场",
-        "albumId": 806,
-        "albumName": "周日映画室",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
-        "host": "NIO Radio",
-        "duration": 4030000,
-        "onlineTime": 1793462400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/31/sn31oBx3hNi4saSE_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 260,
