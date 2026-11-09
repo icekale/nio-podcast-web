@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1794156898133,
+  "generatedAt": 1794192912425,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 561,
+      "latestEpisode": {
+        "id": 199425,
+        "title": "体验经济火热升温，主打玩乐生意的 Klook 为何依然难赚钱？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 876000,
+        "onlineTime": 1794178800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/XLg5YRU6kB6LWc2H_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -260,6 +280,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/ZHe0RDRAq8qFG06r_AAC_192_1.m4a"
       },
       "category": "audio"
+    },
+    {
+      "id": 381,
+      "name": "晨曦说养生",
+      "description": "顺应自然，做我们自己健康的第一责任人，智慧养生会很简单！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/2ed1f5e5-09b7-4586-b852-6ea39c7bbbb0.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 489,
+      "latestEpisode": {
+        "id": 199432,
+        "title": " 一孕为何傻三年",
+        "albumId": 381,
+        "albumName": "晨曦说养生",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/2ed1f5e5-09b7-4586-b852-6ea39c7bbbb0.jpg",
+        "host": "NIO Radio",
+        "duration": 577000,
+        "onlineTime": 1794153600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/fa6P3nsf0uQDW5z5_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 401,
@@ -1082,26 +1122,6 @@
       "category": "news"
     },
     {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 560,
-      "latestEpisode": {
-        "id": 199375,
-        "title": "咖啡豆｜喜茶、瑞幸摆上商超货架，现制饮品起家的品牌们为什么都在发力瓶装饮料？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 953000,
-        "onlineTime": 1793919600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/ZizSAP65sFLtkyK2_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1700,26 +1720,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/04/rg2axBSxisxI7hKC_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 381,
-      "name": "晨曦说养生",
-      "description": "顺应自然，做我们自己健康的第一责任人，智慧养生会很简单！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/2/6/2ed1f5e5-09b7-4586-b852-6ea39c7bbbb0.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 488,
-      "latestEpisode": {
-        "id": 199205,
-        "title": " 养神为养生之重",
-        "albumId": 381,
-        "albumName": "晨曦说养生",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/2/6/2ed1f5e5-09b7-4586-b852-6ea39c7bbbb0.jpg",
-        "host": "NIO Radio",
-        "duration": 560000,
-        "onlineTime": 1793808000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/4PZb2RV1b9TWUyS4_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 442,
