@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1794252632013,
+  "generatedAt": 1794268902507,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 562,
+      "latestEpisode": {
+        "id": 199454,
+        "title": "英伟达启动对黄仁勋的调查，消费品牌集体跨界宠物生意",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 624000,
+        "onlineTime": 1794265200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/R7X8aTRsZ1SrLyss_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -580,26 +600,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/cbNjZX9UYa8rB7wu_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 561,
-      "latestEpisode": {
-        "id": 199425,
-        "title": "体验经济火热升温，主打玩乐生意的 Klook 为何依然难赚钱？",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 876000,
-        "onlineTime": 1794178800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/XLg5YRU6kB6LWc2H_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 64,
