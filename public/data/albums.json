@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1794504148727,
+  "generatedAt": 1794525383527,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 565,
+      "latestEpisode": {
+        "id": 199575,
+        "title": "黄仁勋卸任英伟达CEO，GTA6预售下载牵动部分运营商网速",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 327000,
+        "onlineTime": 1794524400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/t2JHTvfaZ2vubfM4_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -800,26 +820,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/UpXb8BkfaIVwRigA_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 564,
-      "latestEpisode": {
-        "id": 199530,
-        "title": "京东内测短剧产品，华为将推出全新子品牌「星芒」",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 509000,
-        "onlineTime": 1794438000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/00g7E9HV39dQNy2y_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 121,
