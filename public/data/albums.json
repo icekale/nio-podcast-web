@@ -1,26 +1,6 @@
 {
-  "generatedAt": 1794525383527,
+  "generatedAt": 1794540763794,
   "albums": [
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 565,
-      "latestEpisode": {
-        "id": 199575,
-        "title": "黄仁勋卸任英伟达CEO，GTA6预售下载牵动部分运营商网速",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 327000,
-        "onlineTime": 1794524400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/t2JHTvfaZ2vubfM4_AAC_192_1.m4a"
-      },
-      "category": "business"
-    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -100,6 +80,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/10/0vFpzpv6wU5vAW2a_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 64,
+      "name": "广州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1267,
+      "latestEpisode": {
+        "id": 199579,
+        "title": "周末带“毛孩子”出门放风",
+        "albumId": 64,
+        "albumName": "广州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+        "host": "NIO Radio",
+        "duration": 308000,
+        "onlineTime": 1794499200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/4r2CNBCBoLggessM_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 68,
@@ -340,6 +340,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/5ldmyMm3LpwH8IUh_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 348,
+      "name": "音乐传声机",
+      "description": "粤听粤好听—用音乐开启心动信号！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
+      "host": "NIO Radio",
+      "episodeCount": 265,
+      "latestEpisode": {
+        "id": 199578,
+        "title": "DtMF ｜ 一首西语歌霸榜六十五个星期",
+        "albumId": 348,
+        "albumName": "音乐传声机",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
+        "host": "NIO Radio",
+        "duration": 2121000,
+        "onlineTime": 1794499200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/GD9sM3AQrscrAFF5_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 388,
@@ -822,6 +842,26 @@
       "category": "news"
     },
     {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 564,
+      "latestEpisode": {
+        "id": 199530,
+        "title": "京东内测短剧产品，华为将推出全新子品牌「星芒」",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 509000,
+        "onlineTime": 1794438000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/00g7E9HV39dQNy2y_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
+    {
       "id": 121,
       "name": "英伦音乐前沿",
       "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
@@ -1200,26 +1240,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/qpyKIbZBDPWKyZvS_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 64,
-      "name": "广州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1266,
-      "latestEpisode": {
-        "id": 199494,
-        "title": "增城首单跨区房票兑付到账",
-        "albumId": 64,
-        "albumName": "广州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-        "host": "NIO Radio",
-        "duration": 319000,
-        "onlineTime": 1794326400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/10/C9ggthHfrjDGQITG_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 334,
@@ -2460,26 +2480,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/rExISjGTERlukfYm_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 348,
-      "name": "音乐传声机",
-      "description": "粤听粤好听—用音乐开启心动信号！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
-      "host": "NIO Radio",
-      "episodeCount": 264,
-      "latestEpisode": {
-        "id": 199365,
-        "title": "「DUO：时间最后会把我们带到哪里 」",
-        "albumId": 348,
-        "albumName": "音乐传声机",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/JnVlI0Upgo3PDwWxoEx5c/aRlDFHzj26-Vqx46JjHTc",
-        "host": "NIO Radio",
-        "duration": 2324000,
-        "onlineTime": 1793894400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/PFpWjBABv2pdzrv9_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 625,
