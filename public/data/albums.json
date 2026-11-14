@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1794590232426,
+  "generatedAt": 1794670489494,
   "albums": [
+    {
+      "id": 547,
+      "name": "Weekend Dance",
+      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+      "host": "NIO Radio",
+      "episodeCount": 400,
+      "latestEpisode": {
+        "id": 199552,
+        "title": "R3hab演出登录上海专访预热",
+        "albumId": 547,
+        "albumName": "Weekend Dance",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
+        "host": "NIO Radio",
+        "duration": 2729000,
+        "onlineTime": 1794646800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/hx2D5obQhrqX9FmF_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -320,26 +340,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/xhB5FXLc9Os75XsV_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 547,
-      "name": "Weekend Dance",
-      "description": "电音浪潮来袭，一起迎接周末的第一场派对！",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-      "host": "NIO Radio",
-      "episodeCount": 399,
-      "latestEpisode": {
-        "id": 199551,
-        "title": "Argy演出登录上海专访上线",
-        "albumId": 547,
-        "albumName": "Weekend Dance",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2023/3/9/5f6d3ec5-3abc-479d-abfc-225eb0bb6221.png",
-        "host": "NIO Radio",
-        "duration": 2743000,
-        "onlineTime": 1794560400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/8q2UKVaONZCQdewF_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 618,
@@ -1122,26 +1122,6 @@
       "category": "news"
     },
     {
-      "id": 831,
-      "name": "山川漫游记",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-      "host": "NIO Radio",
-      "episodeCount": 16,
-      "latestEpisode": {
-        "id": 199560,
-        "title": "无论南极还是山西，团长出发都是有爱之行",
-        "albumId": 831,
-        "albumName": "山川漫游记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
-        "host": "NIO Radio",
-        "duration": 1664000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/pw14XTtWFpaGod4b_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
-    },
-    {
       "id": 673,
       "name": "声动早咖啡",
       "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
@@ -1458,26 +1438,6 @@
         "duration": 631000,
         "onlineTime": 1794412800000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/sb3vWAgtS5SWLmxO_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 823,
-      "name": "社群声边人",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
-      "host": "NIO Radio",
-      "episodeCount": 12,
-      "latestEpisode": {
-        "id": 199527,
-        "title": "一个人跑得快，一群人才能跑得远！｜湖南蔚来跑团",
-        "albumId": 823,
-        "albumName": "社群声边人",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
-        "host": "NIO Radio",
-        "duration": 1847000,
-        "onlineTime": 1794412800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/kjZoCy5BPSKhvY7Y_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -2438,6 +2398,46 @@
         "duration": 3326000,
         "onlineTime": 1794067200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/bkO9iYXn19Lva00c_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
+      "id": 823,
+      "name": "社群声边人",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
+      "host": "NIO Radio",
+      "episodeCount": 11,
+      "latestEpisode": {
+        "id": 199322,
+        "title": "一针一线的非遗手工，串联社群文化的“唐小蔚”",
+        "albumId": 823,
+        "albumName": "社群声边人",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/vMh0Q7NgbZy1n9sk90IjI/TDpQmkb_UJxlOx4pm2LCM",
+        "host": "NIO Radio",
+        "duration": 1587000,
+        "onlineTime": 1794067200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/04/Ci1EOYZMmjn1TpHh_AAC_192_1.m4a"
+      },
+      "category": "culture"
+    },
+    {
+      "id": 831,
+      "name": "山川漫游记",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+      "host": "NIO Radio",
+      "episodeCount": 15,
+      "latestEpisode": {
+        "id": 199367,
+        "title": "“第二座山”山大王融汇中西的厨艺进阶之旅",
+        "albumId": 831,
+        "albumName": "山川漫游记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/v2V1HiB2ju-6KU5CPZ0WT/4f9mzNk03GX4XuNglpmL3",
+        "host": "NIO Radio",
+        "duration": 1421000,
+        "onlineTime": 1794067200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/05/PejX7kQZ0m1padd8_AAC_192_1.m4a"
       },
       "category": "lifestyle"
     },
