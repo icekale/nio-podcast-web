@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1794761553785,
+  "generatedAt": 1794764019824,
   "albums": [
     {
       "id": 5,
@@ -20,6 +20,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/qeKZCGD5cOIstJmO_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 2010,
+      "latestEpisode": {
+        "id": 199624,
+        "title": "Live House in Your Car Vol.36",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 2105000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/5UY5FjdngK9vDbdd_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 30,
@@ -1000,26 +1020,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/jhpXRDYuofhTBCoC_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 2009,
-      "latestEpisode": {
-        "id": 199548,
-        "title": "Joy Ride Vol.42",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 1957000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/StVvJZGOOnwV8Uf6_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 18,
