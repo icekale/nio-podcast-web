@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1794764019824,
+  "generatedAt": 1794776059295,
   "albums": [
     {
       "id": 5,
@@ -38,6 +38,26 @@
         "duration": 2105000,
         "onlineTime": 1794758400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/5UY5FjdngK9vDbdd_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
+      "id": 18,
+      "name": "塞萌不塞车",
+      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+      "host": "NIO Radio",
+      "episodeCount": 2380,
+      "latestEpisode": {
+        "id": 199627,
+        "title": "乐队为什么会解散？",
+        "albumId": 18,
+        "albumName": "塞萌不塞车",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
+        "host": "NIO Radio",
+        "duration": 1395000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/mGnimd1FpHtyuHTm_AAC_192_1.m4a"
       },
       "category": "audio"
     },
@@ -98,6 +118,26 @@
         "duration": 310000,
         "onlineTime": 1794758400000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/tYC1IffQM8na4ERC_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 74,
+      "name": "杭州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1500,
+      "latestEpisode": {
+        "id": 199625,
+        "title": "杭州年内体量最大涉宅地挂牌",
+        "albumId": 74,
+        "albumName": "杭州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
+        "host": "NIO Radio",
+        "duration": 298000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/Z67X1RqioPjsghXO_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -220,6 +260,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/14/yroNINZ7kLP1sSPM_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1450,
+      "latestEpisode": {
+        "id": 199626,
+        "title": "2026新歌新听 Vol.16",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 1699000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/rveA0snxa2JX0WrX_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 345,
@@ -1022,26 +1082,6 @@
       "category": "news"
     },
     {
-      "id": 18,
-      "name": "塞萌不塞车",
-      "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-      "host": "NIO Radio",
-      "episodeCount": 2379,
-      "latestEpisode": {
-        "id": 199564,
-        "title": "2027 Coachella官宣亮点",
-        "albumId": 18,
-        "albumName": "塞萌不塞车",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ezZeRfRCsmmX8XEtI56l9/uhM3gp76pD3jiWV0_xJK2",
-        "host": "NIO Radio",
-        "duration": 1049000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/i5yUlUJpFsWX2TOW_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1102,26 +1142,6 @@
       "category": "car"
     },
     {
-      "id": 74,
-      "name": "杭州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是杭州城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1499,
-      "latestEpisode": {
-        "id": 199558,
-        "title": "第十三届中国大运河庙会启幕",
-        "albumId": 74,
-        "albumName": "杭州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/a95c6306-dea3-4fc7-b139-f923933b931d.jpg",
-        "host": "NIO Radio",
-        "duration": 290000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/4rzIJnAMI3EnfCCS_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 103,
       "name": "长沙城市频道",
       "description": "浏阳河声声不息，橘子洲勇立潮头，不改的是乡音，不变的是湘情，这里是长沙城市频道！",
@@ -1160,26 +1180,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/guZWI8jcN8tjad8x_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1449,
-      "latestEpisode": {
-        "id": 199549,
-        "title": "2026经典回响 Vol.16",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 2143000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/sRIlvHX1XVBbrJqJ_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 311,
