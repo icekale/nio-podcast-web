@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1794758728483,
+  "generatedAt": 1794761553785,
   "albums": [
     {
       "id": 5,
@@ -40,6 +40,46 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/10/5soglcoiwxRrnepp_AAC_192_1.m4a"
       },
       "category": "news"
+    },
+    {
+      "id": 64,
+      "name": "广州城市资讯",
+      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1268,
+      "latestEpisode": {
+        "id": 199609,
+        "title": "广州园博会11月20日开幕",
+        "albumId": 64,
+        "albumName": "广州城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
+        "host": "NIO Radio",
+        "duration": 307000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/ogYRhTfYRc8LASHH_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 66,
+      "name": "北京城市资讯",
+      "description": "本地新闻，牛屋活动，这里是北京的城市资讯",
+      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/690bd8fd-87ab-4c96-8e1e-1f4a22f07782.jpg",
+      "host": "NIO Radio",
+      "episodeCount": 1338,
+      "latestEpisode": {
+        "id": 199611,
+        "title": "北京延庆奥林匹克园区启动造雪",
+        "albumId": 66,
+        "albumName": "北京城市资讯",
+        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/690bd8fd-87ab-4c96-8e1e-1f4a22f07782.jpg",
+        "host": "NIO Radio",
+        "duration": 310000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/tYC1IffQM8na4ERC_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 93,
@@ -162,6 +202,26 @@
       "category": "car"
     },
     {
+      "id": 345,
+      "name": "宁波城市资讯",
+      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+      "host": "NIO Radio",
+      "episodeCount": 1226,
+      "latestEpisode": {
+        "id": 199613,
+        "title": "宁波再启住房“帮卖换新”",
+        "albumId": 345,
+        "albumName": "宁波城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
+        "host": "NIO Radio",
+        "duration": 322000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/ofMs8oTMaV62oFMX_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 401,
       "name": "故事FM",
       "description": "用你的声音，讲述你的故事",
@@ -240,6 +300,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/WzeU9BUrp5SrxB8J_AAC_192_1.m4a"
       },
       "category": "business"
+    },
+    {
+      "id": 594,
+      "name": "西安城市资讯",
+      "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
+      "host": "NIO Radio",
+      "episodeCount": 600,
+      "latestEpisode": {
+        "id": 199612,
+        "title": "龙头装备企业落子西安浐灞国际港",
+        "albumId": 594,
+        "albumName": "西安城市资讯",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
+        "host": "NIO Radio",
+        "duration": 275000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/KocztF0pxOY54oqn_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 635,
@@ -322,6 +402,26 @@
       "category": "car"
     },
     {
+      "id": 748,
+      "name": "V道北京",
+      "description": "用耳朵聆听京城的声音，寻迹古都的故事，感受历史的脉搏。跟随栏目主播@VICKEY Lee的脚步，穿行京城肌理，探寻北京的文化脉络与民俗风情，用声音绘制古今交织的北京人文地图。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/AoH6oOCR4-uIpkKJQF5_8/6i_YGMIk6H-5C1ZnQyH2_",
+      "host": "NIO Radio",
+      "episodeCount": 53,
+      "latestEpisode": {
+        "id": 199610,
+        "title": "北风起，京城入冬藏",
+        "albumId": 748,
+        "albumName": "V道北京",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/AoH6oOCR4-uIpkKJQF5_8/6i_YGMIk6H-5C1ZnQyH2_",
+        "host": "NIO Radio",
+        "duration": 710000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/gPLFT9C5vAwCwkjo_AAC_192_1.m4a"
+      },
+      "category": "culture"
+    },
+    {
       "id": 752,
       "name": "周一见",
       "description": "每周一，和您唠唠武汉区域公司新鲜事儿！能源建设、新车资讯、用车贴士……尽在周一与您分享，让我们“周一见”！",
@@ -340,6 +440,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/dLtCWVlAuotnVzhb_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 797,
+      "name": "叽里呱啦",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/J-ht4fuA9qTpp1g8sYQGw/tx9OVBF8juQhfV-VvnI9s",
+      "host": "NIO Radio",
+      "episodeCount": 38,
+      "latestEpisode": {
+        "id": 199623,
+        "title": "奔赴身心的二次成长·共庆20w栏目特辑",
+        "albumId": 797,
+        "albumName": "叽里呱啦",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/J-ht4fuA9qTpp1g8sYQGw/tx9OVBF8juQhfV-VvnI9s",
+        "host": "NIO Radio",
+        "duration": 3026000,
+        "onlineTime": 1794758400000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/15/oucObJWhfWVqHzFz_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 804,
@@ -922,26 +1042,6 @@
       "category": "audio"
     },
     {
-      "id": 64,
-      "name": "广州城市资讯",
-      "description": "本地新闻，牛屋活动，这里是广州的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1267,
-      "latestEpisode": {
-        "id": 199579,
-        "title": "周末带“毛孩子”出门放风",
-        "albumId": 64,
-        "albumName": "广州城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2022/1/17/99f8b808-0d4d-4810-8067-8308e7f360cb.jpg",
-        "host": "NIO Radio",
-        "duration": 308000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/13/4r2CNBCBoLggessM_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 68,
       "name": "合肥城市资讯",
       "description": "本地新闻，牛屋活动，这里是合肥的城市资讯",
@@ -1102,26 +1202,6 @@
       "category": "car"
     },
     {
-      "id": 345,
-      "name": "宁波城市资讯",
-      "description": "本地新闻，牛屋活动，这里是宁波的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-      "host": "NIO Radio",
-      "episodeCount": 1225,
-      "latestEpisode": {
-        "id": 199569,
-        "title": "二零二六海丝文旅大展今日启幕",
-        "albumId": 345,
-        "albumName": "宁波城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/86l62ofC6mxFB9D5ex8LR/TKRyeeoZw3us90nJhLcjq",
-        "host": "NIO Radio",
-        "duration": 291000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/5ldmyMm3LpwH8IUh_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 348,
       "name": "音乐传声机",
       "description": "粤听粤好听—用音乐开启心动信号！",
@@ -1258,26 +1338,6 @@
         "duration": 2128000,
         "onlineTime": 1794499200000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/VTRbErNz4PfFyWRt_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
-      "id": 594,
-      "name": "西安城市资讯",
-      "description": "本地新闻，牛屋活动，这里是西安的城市资讯",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
-      "host": "NIO Radio",
-      "episodeCount": 599,
-      "latestEpisode": {
-        "id": 199543,
-        "title": "演员金世佳和海清亮相西安舞台",
-        "albumId": 594,
-        "albumName": "西安城市资讯",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8s-ZXS_FK3cSBhnXKhy-K/6Q2BhL3dtA5H0blhQV2Ad",
-        "host": "NIO Radio",
-        "duration": 330000,
-        "onlineTime": 1794499200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/uJ9ewWe3UlCj5sa9_AAC_192_1.m4a"
       },
       "category": "car"
     },
@@ -2342,26 +2402,6 @@
       "category": "kids"
     },
     {
-      "id": 66,
-      "name": "北京城市资讯",
-      "description": "本地新闻，牛屋活动，这里是北京的城市资讯",
-      "imageUrl": "https://cdn-app.nio.com/NIORadio/2021/12/16/690bd8fd-87ab-4c96-8e1e-1f4a22f07782.jpg",
-      "host": "NIO Radio",
-      "episodeCount": 1337,
-      "latestEpisode": {
-        "id": 199415,
-        "title": "明年9月前北京中小学取消外送餐",
-        "albumId": 66,
-        "albumName": "北京城市资讯",
-        "albumPic": "https://cdn-app.nio.com/NIORadio/2021/12/16/690bd8fd-87ab-4c96-8e1e-1f4a22f07782.jpg",
-        "host": "NIO Radio",
-        "duration": 326000,
-        "onlineTime": 1794153600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/SXPBmXtKbKXIOfKu_AAC_192_1.m4a"
-      },
-      "category": "car"
-    },
-    {
       "id": 703,
       "name": "果壳时间",
       "description": "",
@@ -2380,26 +2420,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/ya4B8d9YGz5QlQW5_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 797,
-      "name": "叽里呱啦",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/J-ht4fuA9qTpp1g8sYQGw/tx9OVBF8juQhfV-VvnI9s",
-      "host": "NIO Radio",
-      "episodeCount": 37,
-      "latestEpisode": {
-        "id": 199427,
-        "title": "小学家长初体验",
-        "albumId": 797,
-        "albumName": "叽里呱啦",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/J-ht4fuA9qTpp1g8sYQGw/tx9OVBF8juQhfV-VvnI9s",
-        "host": "NIO Radio",
-        "duration": 3560000,
-        "onlineTime": 1794153600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/08/yKlSJd1rY8bhzoDL_AAC_192_1.m4a"
-      },
-      "category": null
     },
     {
       "id": 124,
@@ -2880,26 +2900,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/FtPWsJAQ32AXWFff_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 748,
-      "name": "V道北京",
-      "description": "用耳朵聆听京城的声音，寻迹古都的故事，感受历史的脉搏。跟随栏目主播@VICKEY Lee的脚步，穿行京城肌理，探寻北京的文化脉络与民俗风情，用声音绘制古今交织的北京人文地图。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/AoH6oOCR4-uIpkKJQF5_8/6i_YGMIk6H-5C1ZnQyH2_",
-      "host": "NIO Radio",
-      "episodeCount": 52,
-      "latestEpisode": {
-        "id": 199202,
-        "title": "秋赴京华寻胜处",
-        "albumId": 748,
-        "albumName": "V道北京",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/AoH6oOCR4-uIpkKJQF5_8/6i_YGMIk6H-5C1ZnQyH2_",
-        "host": "NIO Radio",
-        "duration": 872000,
-        "onlineTime": 1793548800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/01/CLVtaJ4DY2SmtTie_AAC_192_1.m4a"
-      },
-      "category": "culture"
     },
     {
       "id": 260,
