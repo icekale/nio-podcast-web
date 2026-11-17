@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1794873847421,
+  "generatedAt": 1794892383552,
   "albums": [
     {
       "id": 673,
@@ -240,6 +240,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/fu9bsA8FP7ZhVdxO_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1451,
+      "latestEpisode": {
+        "id": 199664,
+        "title": "前奏响起的青春 Vol.3",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 2041000,
+        "onlineTime": 1794844800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/17/aXHPirYlOebUjgwf_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 365,
@@ -562,6 +582,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 813,
+      "name": "海棠朵朵阅生活",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/doU0mf_dJGMlqNIrrvIE3/s1rHXqq-x_6cQRBUda9Wy",
+      "host": "NIO Radio",
+      "episodeCount": 27,
+      "latestEpisode": {
+        "id": 199663,
+        "title": "《也许生命就像一场小地震》｜没有强行坚强，她选择这样面对接纳",
+        "albumId": 813,
+        "albumName": "海棠朵朵阅生活",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/doU0mf_dJGMlqNIrrvIE3/s1rHXqq-x_6cQRBUda9Wy",
+        "host": "NIO Radio",
+        "duration": 539000,
+        "onlineTime": 1794844800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/17/5f63cw8ESLc1TTbP_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
+    },
+    {
       "id": 820,
       "name": "摸鱼早报",
       "description": "",
@@ -800,26 +840,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/14/yroNINZ7kLP1sSPM_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1450,
-      "latestEpisode": {
-        "id": 199626,
-        "title": "2026新歌新听 Vol.16",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1699000,
-        "onlineTime": 1794758400000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/16/rveA0snxa2JX0WrX_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 345,
@@ -2500,26 +2520,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/t1jRdClMvFqCD415_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 813,
-      "name": "海棠朵朵阅生活",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/doU0mf_dJGMlqNIrrvIE3/s1rHXqq-x_6cQRBUda9Wy",
-      "host": "NIO Radio",
-      "episodeCount": 26,
-      "latestEpisode": {
-        "id": 199472,
-        "title": "《人生意义设计课》｜不追求完美人生，只造鲜活当下",
-        "albumId": 813,
-        "albumName": "海棠朵朵阅生活",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/doU0mf_dJGMlqNIrrvIE3/s1rHXqq-x_6cQRBUda9Wy",
-        "host": "NIO Radio",
-        "duration": 497000,
-        "onlineTime": 1794240000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/sicjEadFkd7jNRbg_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 703,
