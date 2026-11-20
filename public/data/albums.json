@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1795111123101,
+  "generatedAt": 1795134082622,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 569,
+      "latestEpisode": {
+        "id": 199760,
+        "title": "咖啡豆｜咖啡店和披萨店都在卖汉堡，塔斯汀为何反而做起了披萨？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 833000,
+        "onlineTime": 1795129200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/VsqqSY1JDZsS2qjB_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 18,
       "name": "塞萌不塞车",
@@ -820,26 +840,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/fDpi3kAhLsh8QuLG_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 568,
-      "latestEpisode": {
-        "id": 199725,
-        "title": "英伟达董事会回绝黄仁勋复职，冷冻食品企业加码烘焙生意",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 629000,
-        "onlineTime": 1795042800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/SclpdXKknXYVzLsA_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 5,
