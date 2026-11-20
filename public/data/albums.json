@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1795134082622,
+  "generatedAt": 1795147975628,
   "albums": [
     {
       "id": 673,
@@ -22,6 +22,46 @@
       "category": "business"
     },
     {
+      "id": 5,
+      "name": "资讯充电站·早间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
+      "host": "NIO Radio",
+      "episodeCount": 2209,
+      "latestEpisode": {
+        "id": 199759,
+        "title": "谷歌推出Gemini 4 Neon模型",
+        "albumId": 5,
+        "albumName": "资讯充电站·早间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
+        "host": "NIO Radio",
+        "duration": 442000,
+        "onlineTime": 1795104000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/zsOnYTrVPTXQQ1f4_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
+      "id": 11,
+      "name": "乐行记",
+      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+      "host": "NIO Radio",
+      "episodeCount": 2014,
+      "latestEpisode": {
+        "id": 199774,
+        "title": "《This Is Us我们这一天》插曲集",
+        "albumId": 11,
+        "albumName": "乐行记",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
+        "host": "NIO Radio",
+        "duration": 1828000,
+        "onlineTime": 1795104000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/20/CxEyGvcsl6Ra0gzb_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 18,
       "name": "塞萌不塞车",
       "description": "一个酷DJ陪你路上的活力时间。听塞萌，不塞车！",
@@ -40,26 +80,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/JxNXYNVM3mVqvsDo_AAC_192_1.m4a"
       },
       "category": "audio"
-    },
-    {
-      "id": 23,
-      "name": "资讯充电站·晚间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-      "host": "NIO Radio",
-      "episodeCount": 1714,
-      "latestEpisode": {
-        "id": 199759,
-        "title": "谷歌推出Gemini 4 Neon模型",
-        "albumId": 23,
-        "albumName": "资讯充电站·晚间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
-        "host": "NIO Radio",
-        "duration": 442000,
-        "onlineTime": 1795104000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/zsOnYTrVPTXQQ1f4_AAC_192_1.m4a"
-      },
-      "category": "news"
     },
     {
       "id": 30,
@@ -280,6 +300,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/d2SsoQvYhQF9TuKS_AAC_192_1.m4a"
       },
       "category": "car"
+    },
+    {
+      "id": 306,
+      "name": "华语乐动听",
+      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+      "host": "NIO Radio",
+      "episodeCount": 1454,
+      "latestEpisode": {
+        "id": 199775,
+        "title": "风靡校园的时代金曲 Vol.9",
+        "albumId": 306,
+        "albumName": "华语乐动听",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
+        "host": "NIO Radio",
+        "duration": 2245000,
+        "onlineTime": 1795104000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/20/5ohKBpCh8J3l2zjK_AAC_192_1.m4a"
+      },
+      "category": "audio"
     },
     {
       "id": 311,
@@ -802,6 +842,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 23,
+      "name": "资讯充电站·晚间版",
+      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+      "host": "NIO Radio",
+      "episodeCount": 1713,
+      "latestEpisode": {
+        "id": 199747,
+        "title": "Anthropic IPO打破SpaceX纪录",
+        "albumId": 23,
+        "albumName": "资讯充电站·晚间版",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/j8R8D8J8jA4nUSJncHZ_v/fvFVYvXWipDoIX53kaQiW",
+        "host": "NIO Radio",
+        "duration": 427000,
+        "onlineTime": 1795078800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/rcFaXGI2SideU9rS_AAC_192_1.m4a"
+      },
+      "category": "news"
+    },
+    {
       "id": 618,
       "name": "晚高峰赛车",
       "description": "你的生活还在一成不变吗？晚高峰赛车为你提供深圳本地热点话题，让你的晚高峰不再无聊！",
@@ -842,46 +902,6 @@
       "category": "news"
     },
     {
-      "id": 5,
-      "name": "资讯充电站·早间版",
-      "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
-      "host": "NIO Radio",
-      "episodeCount": 2208,
-      "latestEpisode": {
-        "id": 199710,
-        "title": "消息称Anthropic将上调发行价",
-        "albumId": 5,
-        "albumName": "资讯充电站·早间版",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/_Y4wF-7h51mF2ECxeInPX/EMU9UvtjILmpVTHMuv1Mo",
-        "host": "NIO Radio",
-        "duration": 455000,
-        "onlineTime": 1795017600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/ZKrZ5Sq6VboKRXz6_AAC_192_1.m4a"
-      },
-      "category": "news"
-    },
-    {
-      "id": 11,
-      "name": "乐行记",
-      "description": "在匆忙的工作日，让我们换一种方式听音乐，打造你在路上的BGM",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-      "host": "NIO Radio",
-      "episodeCount": 2013,
-      "latestEpisode": {
-        "id": 199712,
-        "title": "《万神殿》插曲集",
-        "albumId": 11,
-        "albumName": "乐行记",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ZOjoiCuEveT4VNiAcTknB/T37Nfnp9edfRAFnitckdE",
-        "host": "NIO Radio",
-        "duration": 2075000,
-        "onlineTime": 1795017600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/7JzxcgCZLFNxsUgQ_AAC_192_1.m4a"
-      },
-      "category": "audio"
-    },
-    {
       "id": 121,
       "name": "英伦音乐前沿",
       "description": "Selector英伦音乐前沿 ——NIO Radio联合英国文化协会为您带来英国顶尖的独立音乐！每周一到周四，将当代英国的音乐文化悉数分享，纯正原版沉浸式英伦体验，就在Selector！",
@@ -920,26 +940,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/3zWKinypXy2wwHYR_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 306,
-      "name": "华语乐动听",
-      "description": "当旋律响起，那些你曾热爱的都会回来！这里是，华语乐动听。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-      "host": "NIO Radio",
-      "episodeCount": 1453,
-      "latestEpisode": {
-        "id": 199713,
-        "title": "乐队的浪漫邂逅",
-        "albumId": 306,
-        "albumName": "华语乐动听",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/OkffX5SVS5TVXIS-xySZC/0xbqmnFlryD9MG1k_jtFB",
-        "host": "NIO Radio",
-        "duration": 1940000,
-        "onlineTime": 1795017600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/sbOEG2zyHJ4mrfqk_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 349,
@@ -2700,6 +2700,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/10/ZuQnAt3RTiStnrT1_AAC_192_1.m4a"
       },
       "category": "culture"
+    },
+    {
+      "id": 839,
+      "name": "片刻流金·沉浸专辑",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/8O2dSOpwxt2yrfsCTCBS8/DGNXHs1Hi2PPTKjyVOFdF",
+      "host": "NIO Radio",
+      "episodeCount": 3,
+      "latestEpisode": {
+        "id": 199510,
+        "title": "落地雨",
+        "albumId": 839,
+        "albumName": "片刻流金·沉浸专辑",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/8O2dSOpwxt2yrfsCTCBS8/DGNXHs1Hi2PPTKjyVOFdF",
+        "host": "NIO Radio",
+        "duration": 602000,
+        "onlineTime": 1794240000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/11/M6VaS5UM9TEKbwId_AAC_192_1.m4a"
+      },
+      "category": null
     },
     {
       "id": 703,
