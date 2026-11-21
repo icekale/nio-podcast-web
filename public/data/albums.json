@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1795279930548,
+  "generatedAt": 1795281246038,
   "albums": [
     {
       "id": 35,
@@ -160,6 +160,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/20/XS5V5wXrUQ94LXK8_AAC_192_1.m4a"
       },
       "category": null
+    },
+    {
+      "id": 806,
+      "name": "周日映画室",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
+      "host": "NIO Radio",
+      "episodeCount": 28,
+      "latestEpisode": {
+        "id": 199804,
+        "title": "《饥饿游戏：收获日出》：文戏凑合，武戏一言难尽",
+        "albumId": 806,
+        "albumName": "周日映画室",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
+        "host": "NIO Radio",
+        "duration": 3942000,
+        "onlineTime": 1795276800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/21/RIshi0d0duvDGKMs_AAC_192_1.m4a"
+      },
+      "category": "lifestyle"
     },
     {
       "id": 823,
@@ -2800,26 +2820,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/10/26/RZdqQj1oRrNCCRs5_AAC_192_1.m4a"
       },
       "category": "culture"
-    },
-    {
-      "id": 806,
-      "name": "周日映画室",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
-      "host": "NIO Radio",
-      "episodeCount": 27,
-      "latestEpisode": {
-        "id": 199410,
-        "title": "《心迷宫之三重罪》：毫无必要的劣质重制版",
-        "albumId": 806,
-        "albumName": "周日映画室",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/9i0_EFl7F6RJCejSlvYPG/vaQbyGA57-EeLcnDrilqy",
-        "host": "NIO Radio",
-        "duration": 3326000,
-        "onlineTime": 1794067200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/07/bkO9iYXn19Lva00c_AAC_192_1.m4a"
-      },
-      "category": "lifestyle"
     },
     {
       "id": 769,
