@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1795566480441,
+  "generatedAt": 1795585069067,
   "albums": [
     {
       "id": 673,
@@ -422,6 +422,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 610,
+      "name": "云朵点唱机",
+      "description": "草原之上，云朵之下，一个特别的来自内蒙古的音乐栏目。不同的是，这档音乐栏目聚焦内蒙古本地的音乐人和音乐，但不仅仅只是草原风格歌曲，在音乐的选择上，涉及流行、民谣、摇滚、Hip-Hop等等各种各样的来自大草原的音乐人演绎或创作的作品。草原不只是草原歌，但从草原上走出来的音乐人和音乐作品都具有一样辽阔而洒脱的基因。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/PrY0epGshbv-CJd2BwHDZ/sqJt8pxblCW0fcIs3UCZL",
+      "host": "NIO Radio",
+      "episodeCount": 29,
+      "latestEpisode": {
+        "id": 199888,
+        "title": "安达与青山",
+        "albumId": 610,
+        "albumName": "云朵点唱机",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/PrY0epGshbv-CJd2BwHDZ/sqJt8pxblCW0fcIs3UCZL",
+        "host": "NIO Radio",
+        "duration": 493000,
+        "onlineTime": 1795536000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/25/U6hYQIRcVzwHu5h6_AAC_192_1.m4a"
+      },
+      "category": "audio"
+    },
+    {
       "id": 616,
       "name": "荆文楚声",
       "description": "透过声音，在文学大家的作品里漫步城市，享受市井。",
@@ -500,6 +520,26 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/24/IGIB9fPI0M75SwRu_AAC_192_1.m4a"
       },
       "category": "lifestyle"
+    },
+    {
+      "id": 759,
+      "name": "乱劈柴",
+      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+      "host": "NIO Radio",
+      "episodeCount": 81,
+      "latestEpisode": {
+        "id": 199745,
+        "title": "重走八年来时路，全程换电到新疆（中）",
+        "albumId": 759,
+        "albumName": "乱劈柴",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
+        "host": "NIO Radio",
+        "duration": 1864000,
+        "onlineTime": 1795536000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/19/hZDutMsOFzK29C7z_AAC_192_1.m4a"
+      },
+      "category": "car"
     },
     {
       "id": 805,
@@ -2300,26 +2340,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/18/1nwYVAZ1rfeZmlOA_AAC_192_1.m4a"
       },
       "category": "business"
-    },
-    {
-      "id": 759,
-      "name": "乱劈柴",
-      "description": "多少巴蜀事，藏在醒目间。属于巴蜀人的方言节目，乱劈柴等你来！",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-      "host": "NIO Radio",
-      "episodeCount": 80,
-      "latestEpisode": {
-        "id": 199555,
-        "title": "重走八年来时路，全程换电到新疆（上）",
-        "albumId": 759,
-        "albumName": "乱劈柴",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/0oLnwOEKvtBWUemLfzH0B/nmPc-J-LduIleKVwapghw",
-        "host": "NIO Radio",
-        "duration": 2128000,
-        "onlineTime": 1795017600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/12/VTRbErNz4PfFyWRt_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 794,
@@ -4300,26 +4320,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/21/Hn9RC3NXEbs6NRg0_AAC_192_1.m4a"
       },
       "category": "car"
-    },
-    {
-      "id": 610,
-      "name": "云朵点唱机",
-      "description": "草原之上，云朵之下，一个特别的来自内蒙古的音乐栏目。不同的是，这档音乐栏目聚焦内蒙古本地的音乐人和音乐，但不仅仅只是草原风格歌曲，在音乐的选择上，涉及流行、民谣、摇滚、Hip-Hop等等各种各样的来自大草原的音乐人演绎或创作的作品。草原不只是草原歌，但从草原上走出来的音乐人和音乐作品都具有一样辽阔而洒脱的基因。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/PrY0epGshbv-CJd2BwHDZ/sqJt8pxblCW0fcIs3UCZL",
-      "host": "NIO Radio",
-      "episodeCount": 28,
-      "latestEpisode": {
-        "id": 187466,
-        "title": "蓝领海市乐队——节奏的锋芒",
-        "albumId": 610,
-        "albumName": "云朵点唱机",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/PrY0epGshbv-CJd2BwHDZ/sqJt8pxblCW0fcIs3UCZL",
-        "host": "NIO Radio",
-        "duration": 1301000,
-        "onlineTime": 1758211200000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2025/09/18/bhW3mPdB5nSNujgT_AAC_192_1.m4a"
-      },
-      "category": "audio"
     },
     {
       "id": 360,
