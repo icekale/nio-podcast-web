@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1795550220275,
+  "generatedAt": 1795566480441,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 572,
+      "latestEpisode": {
+        "id": 199879,
+        "title": "看书的美国人越来越少，为什么美国书店还在变多？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 1045000,
+        "onlineTime": 1795561200000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/24/txWpoSTXWeQUZB6d_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -640,26 +660,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/24/PMmR2RPf4YhpLdIO_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 571,
-      "latestEpisode": {
-        "id": 199848,
-        "title": "绝味创始人辞任总裁，网易上线短剧应用",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 572000,
-        "onlineTime": 1795474800000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/23/zpR4pv8QbgO2KdcA_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 63,
