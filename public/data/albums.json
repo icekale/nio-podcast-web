@@ -1,6 +1,26 @@
 {
-  "generatedAt": 1795719021333,
+  "generatedAt": 1795739130651,
   "albums": [
+    {
+      "id": 673,
+      "name": "声动早咖啡",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+      "host": "NIO Radio",
+      "episodeCount": 574,
+      "latestEpisode": {
+        "id": 199954,
+        "title": "咖啡豆｜《后会友期》火了，芒果的经营难题解决了吗？",
+        "albumId": 673,
+        "albumName": "声动早咖啡",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
+        "host": "NIO Radio",
+        "duration": 916000,
+        "onlineTime": 1795734000000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/26/o6iBVEAmqNTUDzgV_AAC_192_1.m4a"
+      },
+      "category": "business"
+    },
     {
       "id": 5,
       "name": "资讯充电站·早间版",
@@ -820,26 +840,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/26/sh6FzLfS66sgxD42_AAC_192_1.m4a"
       },
       "category": "news"
-    },
-    {
-      "id": 673,
-      "name": "声动早咖啡",
-      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。\n这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-      "host": "NIO Radio",
-      "episodeCount": 573,
-      "latestEpisode": {
-        "id": 199914,
-        "title": "B 站表示平台不受短剧影响，国产女装进驻高端商圈",
-        "albumId": 673,
-        "albumName": "声动早咖啡",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/fXW_JlBR7ltEYd3R6_2pK/zELRaGwHqyZKFy3tZOQA9",
-        "host": "NIO Radio",
-        "duration": 652000,
-        "onlineTime": 1795647600000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/25/n8u6FREilz7d3N9U_AAC_192_1.m4a"
-      },
-      "category": "business"
     },
     {
       "id": 121,
