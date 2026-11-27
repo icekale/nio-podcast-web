@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1795739130651,
+  "generatedAt": 1795756612478,
   "albums": [
     {
       "id": 673,
@@ -782,6 +782,26 @@
       "category": "lifestyle"
     },
     {
+      "id": 840,
+      "name": "为AI加电",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/aRAd38L76UKuMQxbIh60k/kvUv0db8Iev_-q0geDA7F",
+      "host": "NIO Radio",
+      "episodeCount": 1,
+      "latestEpisode": {
+        "id": 199941,
+        "title": "告别选择困难症：用AI当你的“私人营养师”与“周菜单管家”",
+        "albumId": 840,
+        "albumName": "为AI加电",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/aRAd38L76UKuMQxbIh60k/kvUv0db8Iev_-q0geDA7F",
+        "host": "NIO Radio",
+        "duration": 548000,
+        "onlineTime": 1795708800000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/26/aLM5O2MCRKoDzCkt_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
       "id": 23,
       "name": "资讯充电站·晚间版",
       "description": "为你打包全天最有价值的资讯，开车不离线，与世界同步连结。",
@@ -1460,26 +1480,6 @@
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/24/d7CYZDF3M24YSlLG_AAC_192_1.m4a"
       },
       "category": null
-    },
-    {
-      "id": 838,
-      "name": "乐道生活家",
-      "description": "",
-      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
-      "host": "NIO Radio",
-      "episodeCount": 4,
-      "latestEpisode": {
-        "id": 199882,
-        "title": "宠物社群铲屎官 @子乔 的携宠自驾全攻略",
-        "albumId": 838,
-        "albumName": "乐道生活家",
-        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
-        "host": "NIO Radio",
-        "duration": 875000,
-        "onlineTime": 1795536000000,
-        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/24/sArXy16QtDANmviP_AAC_192_1.m4a"
-      },
-      "category": "car"
     },
     {
       "id": 63,
@@ -2718,6 +2718,26 @@
         "duration": 1667000,
         "onlineTime": 1794585600000,
         "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/09/5lKlou9r7Z05xVrf_AAC_192_1.m4a"
+      },
+      "category": "car"
+    },
+    {
+      "id": 838,
+      "name": "乐道生活家",
+      "description": "",
+      "imageUrl": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
+      "host": "NIO Radio",
+      "episodeCount": 3,
+      "latestEpisode": {
+        "id": 199497,
+        "title": "绝美！从广州到新疆往返一万公里的蜜月自驾@秋北先笙",
+        "albumId": 838,
+        "albumName": "乐道生活家",
+        "albumPic": "https://cdn-udp-public.nio.com/nio-muses-admin/ULcsQiEtzGsH0rlKqgs3D/ySiVZ-4jGpL64GnqHo8A7",
+        "host": "NIO Radio",
+        "duration": 980000,
+        "onlineTime": 1794585600000,
+        "audioUrl": "https://cdn-new-muses.nio.com/nio-radio/2026/11/10/5pR8hlLJs9YUb9d3_AAC_192_1.m4a"
       },
       "category": "car"
     },
